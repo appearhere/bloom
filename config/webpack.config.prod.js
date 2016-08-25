@@ -5,6 +5,7 @@ var HtmlWebpackPlugin = require('html-webpack-plugin');
 var ExtractTextPlugin = require('extract-text-webpack-plugin');
 var url = require('url');
 var paths = require('./paths');
+var combineLoaders = require('webpack-combine-loaders');
 
 var homepagePath = require(paths.appPackageJson).homepage;
 var publicPath = homepagePath ? url.parse(homepagePath).pathname : '/';
@@ -65,11 +66,18 @@ module.exports = {
         // Disable autoprefixer in css-loader itself:
         // https://github.com/webpack/css-loader/issues/281
         // We already have it thanks to postcss.
-        loader: ExtractTextPlugin.extract([
-          'style',
-          'css?-autoprefixercss&modules=true&localIdentName[name]__[local]___[hash:base64:5]',
-          'postcss'
-        ]),
+        loader: ExtractTextPlugin.extract(
+          combineLoaders([{
+            loader: 'css',
+            query: {
+              autoprefixercss: false,
+              modules: true,
+              localIdentName: '[name]__[local]___[hash:base64:5]'
+            },
+          }, {
+            loader: 'postcss',
+          }])
+        ),
       },
       {
         test: /\.json$/,
