@@ -1,10 +1,14 @@
 var path = require('path');
 var autoprefixer = require('autoprefixer');
+var customproperties = require('postcss-custom-properties');
 var webpack = require('webpack');
 var HtmlWebpackPlugin = require('html-webpack-plugin');
 var CaseSensitivePathsPlugin = require('case-sensitive-paths-webpack-plugin');
 var paths = require('./paths');
 var combineLoaders = require('webpack-combine-loaders');
+
+var webpackPostcssTools = require('webpack-postcss-tools');
+var varMap = webpackPostcssTools.makeVarMap(path.join(paths.globalsSrc, 'index.css'));
 
 module.exports = {
   devtool: 'eval',
@@ -56,17 +60,18 @@ module.exports = {
       },
       {
         test: /\.css$/,
-        include: [paths.appSrc, paths.appNodeModules],
+        include: [paths.appSrc, paths.appNodeModules, paths.globalsSrc],
         loader: combineLoaders([{
           loader: 'style'
         }, {
           loader: 'css',
           query: {
+            autoprefixercss: false,
             modules: true,
             localIdentName: '[name]__[local]___[hash:base64:5]'
           },
         }, {
-          loader: 'postcss',
+          loader: 'postcss'
         }]),
       },
       {
@@ -98,7 +103,9 @@ module.exports = {
     useEslintrc: false
   },
   postcss: function() {
-    return [autoprefixer];
+    return [autoprefixer, customproperties({
+      variables: varMap.vars,
+    })];
   },
   plugins: [
     new HtmlWebpackPlugin({

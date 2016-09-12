@@ -31,7 +31,8 @@ if (isInCreateReactAppSource) {
     appPackageJson: resolveOwn('../package.json'),
     appSrc: resolveOwn('../template/src'),
     appNodeModules: resolveOwn('../node_modules'),
-    ownNodeModules: resolveOwn('../node_modules')
+    ownNodeModules: resolveOwn('../node_modules'),
+    globalsSrc: resolveApp('../globals'),
   };
 } else if (!isEjected) {
   // before eject: we're in ./node_modules/react-scripts/config/
@@ -42,7 +43,8 @@ if (isInCreateReactAppSource) {
     appPackageJson: resolveApp('package.json'),
     appSrc: resolveApp('src'),
     appNodeModules: resolveApp('node_modules'),
-    // this is empty with npm3 but node resolution searches higher anyway:
+    // this is empty with npm3 but node resolution searches higher anyway:,
+    globalsSrc: resolveApp('globals'),
     ownNodeModules: resolveOwn('../node_modules')
   };
 } else {
@@ -54,6 +56,7 @@ if (isInCreateReactAppSource) {
     appPackageJson: resolveApp('package.json'),
     appSrc: resolveApp('styleguide'),
     appNodeModules: resolveApp('node_modules'),
-    ownNodeModules: resolveApp('node_modules')
+    ownNodeModules: resolveApp('node_modules'),
+    globalsSrc: resolveApp('globals'),
   };
 }
