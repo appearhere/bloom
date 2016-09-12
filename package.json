@@ -53,8 +53,8 @@
   "scripts": {
     "start": "node ./scripts/start.js",
     "build": "node ./scripts/build.js",
-    "storybook": "node ./scripts/storybook.js",
-    "build-storybook": "node ./scripts/build-storybook.js"
+    "storybook": "start-storybook -p 9009",
+    "build-storybook": "build-storybook"
   },
   "eslintConfig": {
     "extends": "./config/eslint.js"

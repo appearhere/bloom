@@ -52,7 +52,7 @@ if (isInCreateReactAppSource) {
     appHtml: resolveApp('index.html'),
     appFavicon: resolveApp('favicon.ico'),
     appPackageJson: resolveApp('package.json'),
-    appSrc: resolveApp('src'),
+    appSrc: resolveApp('styleguide'),
     appNodeModules: resolveApp('node_modules'),
     ownNodeModules: resolveApp('node_modules')
   };
