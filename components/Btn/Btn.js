@@ -6,11 +6,15 @@ const Btn = props => {
     className,
     type,
     children,
+    context,
+    variant,
     ...rest,
   } = props;
 
   const classes = [
     css.root,
+    context ? css[context] : null,
+    variant ? css[variant] : null,
     className,
   ].join(' ');
 
@@ -24,6 +28,8 @@ const Btn = props => {
 Btn.propTypes = {
   className: PropTypes.string,
   type: PropTypes.oneOf(['submit', 'reset', 'button', 'menu']),
+  context: PropTypes.oneOf(['primary', 'danger', 'whiteOut']),
+  variant: PropTypes.oneOf(['default', 'hollow', 'text']),
   children: PropTypes.node.isRequired,
 };
 
