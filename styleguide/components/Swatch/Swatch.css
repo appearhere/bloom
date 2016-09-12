@@ -1,0 +1,19 @@
+.root {
+  width: 100%;
+  border: 1px solid #eee;
+}
+
+.colour {
+  width: 100%;
+  height: 90%;
+  min-height: 120px;
+}
+
+.hash {
+  width: 100%;
+  height: 10%;
+  background-color: rgba(230, 230, 230, 0.2);
+  text-align: center;
+  padding: 0.5rem;
+  color: var(--color-gold);
+}
