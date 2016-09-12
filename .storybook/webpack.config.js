@@ -20,6 +20,14 @@ module.exports = {
           loader: 'postcss'
         }]),
       },
+      {
+        test: /\.(jpg|png|gif|eot|svg|ttf|woff|woff2)(\?.*)?$/,
+        include: path.resolve(__dirname, '../'),
+        loader: 'file',
+        query: {
+          name: 'static/media/[name].[ext]'
+        }
+      },
     ]
   }
 }

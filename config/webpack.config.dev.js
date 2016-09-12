@@ -54,13 +54,13 @@ module.exports = {
     loaders: [
       {
         test: /\.js$/,
-        include: paths.appSrc,
+        include: [paths.appSrc, paths.componentSrc],
         loader: 'babel',
         query: require('./babel.dev')
       },
       {
         test: /\.css$/,
-        include: [paths.appSrc, paths.appNodeModules, paths.globalsSrc],
+        include: [paths.appSrc, paths.componentSrc, paths.appNodeModules, paths.globalsSrc],
         loader: combineLoaders([{
           loader: 'style'
         }, {
@@ -76,20 +76,26 @@ module.exports = {
       },
       {
         test: /\.json$/,
-        include: [paths.appSrc, paths.appNodeModules],
+        include: [paths.appSrc, paths.componentSrc, paths.appNodeModules],
         loader: 'json'
       },
       {
         test: /\.(jpg|png|gif|eot|svg|ttf|woff|woff2)(\?.*)?$/,
-        include: [paths.appSrc, paths.appNodeModules],
+        exclude: /icons\/.+\.svg$/,
+        include: [paths.appSrc, paths.componentSrc, paths.appNodeModules],
         loader: 'file',
         query: {
           name: 'static/media/[name].[ext]'
         }
       },
       {
+        test: /icons\/.+\.svg$/,
+        include: [paths.componentSrc],
+        loader: 'raw',
+      },
+      {
         test: /\.(mp4|webm)(\?.*)?$/,
-        include: [paths.appSrc, paths.appNodeModules],
+        include: [paths.appSrc, paths.componentSrc, paths.appNodeModules],
         loader: 'url',
         query: {
           limit: 10000,
