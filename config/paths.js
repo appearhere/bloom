@@ -27,6 +27,7 @@ module.exports = {
   appPackageJson: resolveApp('package.json'),
   appSrc: resolveApp('styleguide'),
   componentSrc: resolveApp('components'),
+  globalsSrc: resolveApp('globals'),
   testsSetup: resolveApp('styleguide/setupTests.js'),
   appNodeModules: resolveApp('node_modules'),
   ownNodeModules: resolveApp('node_modules'),

@@ -7,6 +7,10 @@ var url = require('url');
 var paths = require('./paths');
 var env = require('./env');
 var combineLoaders = require('webpack-combine-loaders');
+var customProperties = require('postcss-custom-properties');
+var webpackPostcssTools = require('webpack-postcss-tools');
+
+var { vars: cssVars } = webpackPostcssTools.makeVarMap(path.join(paths.globalsSrc, 'index.css'));
 
 // Assert this just to be safe.
 // Development builds of React are slow and not intended for production.
@@ -195,6 +199,9 @@ module.exports = {
           'Firefox ESR',
           'not ie < 9', // React doesn't support IE8 anyway
         ]
+      }),
+      customProperties({
+        variables: cssVars,
       }),
     ];
   },

@@ -7,6 +7,10 @@ var WatchMissingNodeModulesPlugin = require('../scripts/utils/WatchMissingNodeMo
 var paths = require('./paths');
 var env = require('./env');
 var combineLoaders = require('webpack-combine-loaders');
+var customProperties = require('postcss-custom-properties');
+var webpackPostcssTools = require('webpack-postcss-tools');
+
+var { vars: cssVars } = webpackPostcssTools.makeVarMap(path.join(paths.globalsSrc, 'index.css'));
 
 // This is the development configuration.
 // It is focused on developer experience and fast rebuilds.
@@ -185,6 +189,9 @@ module.exports = {
           'Firefox ESR',
           'not ie < 9', // React doesn't support IE8 anyway
         ]
+      }),
+      customProperties({
+        variables: cssVars,
       }),
     ];
   },

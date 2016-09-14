@@ -1,0 +1,21 @@
+/**
+ * Declare z-index values based on presets. Every z-index value should
+ * be a variable that directly maps to one of these presets, e.g.:
+ *
+ * --z-modal: var(--z-9);
+ * --z-modalOverlay: var(--z-8);
+ *
+ * https://css-tricks.com/handling-z-index/
+ */
+
+:root {
+  --z-1: 10;
+  --z-2: 20;
+  --z-3: 30;
+  --z-4: 40;
+  --z-5: 50;
+  --z-6: 60;
+  --z-7: 70;
+  --z-8: 80;
+  --z-9: 90;
+}
