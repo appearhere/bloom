@@ -7,12 +7,14 @@ module.exports = {
   // It enables caching results in OS temporary directory for faster rebuilds.
   cacheDirectory: true,
   presets: [
+    // JSX, Flow
+    require.resolve('babel-preset-react'),
     // Latest stable ECMAScript features
     require.resolve('babel-preset-latest'),
-    // JSX, Flow
-    require.resolve('babel-preset-react')
   ],
   plugins: [
+    // Plugin to allow us to hot reload components
+    require.resolve('react-hot-loader/babel'),
     // class { handleClick = () => { } }
     require.resolve('babel-plugin-transform-class-properties'),
     // { ...todo, completed: true }

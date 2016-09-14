@@ -20,6 +20,7 @@ module.exports = {
   // This means they will be the "root" imports that are included in JS bundle.
   // The first two entry points enable "hot" CSS and auto-refreshes for JS.
   entry: [
+    require.resolve('react-hot-loader/patch'),
     // Include WebpackDevServer client. It connects to WebpackDevServer via
     // sockets and waits for recompile notifications. When WebpackDevServer
     // recompiles, it sends a message to the client by socket. If only CSS
@@ -34,7 +35,7 @@ module.exports = {
     // low-level so we need to put all the pieces together. The runtime listens
     // to the events received by the client above, and applies updates (such as
     // new CSS) to the running application.
-    require.resolve('webpack/hot/dev-server'),
+    require.resolve('webpack/hot/only-dev-server'),
     // We ship a few polyfills by default.
     require.resolve('./polyfills'),
     // Finally, this is your app's code:

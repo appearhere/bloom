@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
-import './Styleguide.css';
 
+import './Styleguide.css';
 import Link from 'components/Link/Link';
 
 class Styleguide extends Component {
