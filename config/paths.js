@@ -25,8 +25,9 @@ module.exports = {
   appBuild: resolveApp('build'),
   appHtml: resolveApp('index.html'),
   appPackageJson: resolveApp('package.json'),
-  appSrc: resolveApp('src'),
-  testsSetup: resolveApp('src/setupTests.js'),
+  appSrc: resolveApp('styleguide'),
+  componentSrc: resolveApp('components'),
+  testsSetup: resolveApp('styleguide/setupTests.js'),
   appNodeModules: resolveApp('node_modules'),
   ownNodeModules: resolveApp('node_modules'),
   nodePaths: nodePaths

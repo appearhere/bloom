@@ -56,6 +56,7 @@ module.exports = {
     publicPath: '/'
   },
   resolve: {
+    root: path.resolve(__dirname),
     // This allows you to set a fallback for where Webpack should look for modules.
     // We read `NODE_PATH` environment variable in `paths.js` and pass paths here.
     // We use `fallback` instead of `root` because we want `node_modules` to "win"
@@ -70,7 +71,9 @@ module.exports = {
     alias: {
       // Support React Native Web
       // https://www.smashingmagazine.com/2016/08/a-glimpse-into-the-future-with-react-native-for-web/
-      'react-native': 'react-native-web'
+      'react-native': 'react-native-web',
+      // No more relative component imports
+      'components': '../components',
     }
   },
   // Resolve loaders (webpack plugins for CSS, images, transpilation) from the
@@ -87,14 +90,14 @@ module.exports = {
       {
         test: /\.(js|jsx)$/,
         loader: 'eslint',
-        include: paths.appSrc,
+        include: [paths.appSrc, paths.componentSrc],
       }
     ],
     loaders: [
       // Process JS with Babel.
       {
         test: /\.(js|jsx)$/,
-        include: paths.appSrc,
+        include: [paths.appSrc, paths.componentSrc],
         loader: 'babel',
         query: require('./babel.dev')
       },
