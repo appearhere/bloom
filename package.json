@@ -1,5 +1,5 @@
 {
-  "name": "bloom",
+  "name": "@appearhere/bloom",
   "version": "0.0.1",
   "private": true,
   "devDependencies": {
@@ -33,28 +33,33 @@
     "fs-extra": "0.30.0",
     "gzip-size": "3.0.0",
     "html-webpack-plugin": "2.22.0",
+    "invariant": "^2.2.1",
     "json-loader": "0.5.4",
     "opn": "4.0.2",
+    "postcss-custom-properties": "^5.0.1",
     "postcss-loader": "0.9.1",
     "promise": "7.1.1",
+    "raw-loader": "^0.5.1",
     "rimraf": "2.5.4",
     "style-loader": "0.13.1",
     "url-loader": "0.5.7",
     "webpack": "1.13.1",
     "webpack-dev-server": "1.14.1",
+    "webpack-postcss-tools": "^1.1.2",
     "whatwg-fetch": "1.0.0"
   },
   "dependencies": {
     "react": "^15.2.1",
     "react-dom": "^15.2.1",
+    "react-modal": "^1.4.0",
     "style-loader": "^0.13.1",
     "webpack-combine-loaders": "^2.0.0"
   },
   "scripts": {
     "start": "node ./scripts/start.js",
     "build": "node ./scripts/build.js",
-    "storybook": "node ./scripts/storybook.js",
-    "build-storybook": "node ./scripts/build-storybook.js"
+    "storybook": "start-storybook -p 9009",
+    "build-storybook": "build-storybook"
   },
   "eslintConfig": {
     "extends": "./config/eslint.js"

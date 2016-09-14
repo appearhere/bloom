@@ -1,0 +1,18 @@
+.root {
+  display: inline-block;
+  position: relative;
+  width: 1.1em;
+  height: 1.1em;
+  vertical-align: -0.15em;
+}
+
+.root :global svg {
+  width: inherit;
+  height: inherit;
+  line-height: inherit;
+}
+
+.example {
+  fill: transparent;
+  stroke: currentColor;
+}

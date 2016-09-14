@@ -1,5 +1,6 @@
 var path = require('path');
 var autoprefixer = require('autoprefixer');
+var customproperties = require('postcss-custom-properties');
 var webpack = require('webpack');
 var HtmlWebpackPlugin = require('html-webpack-plugin');
 var ExtractTextPlugin = require('extract-text-webpack-plugin');
@@ -13,6 +14,9 @@ if (!publicPath.endsWith('/')) {
   // Prevents incorrect paths in file-loader
   publicPath += '/';
 }
+
+var webpackPostcssTools = require('webpack-postcss-tools');
+var varMap = webpackPostcssTools.makeVarMap(paths.globalsSrc);
 
 module.exports = {
   bail: true,
@@ -62,7 +66,7 @@ module.exports = {
       },
       {
         test: /\.css$/,
-        include: [paths.appSrc, paths.appNodeModules],
+        include: [paths.appSrc, paths.appNodeModules, paths.globalsSrc],
         // Disable autoprefixer in css-loader itself:
         // https://github.com/webpack/css-loader/issues/281
         // We already have it thanks to postcss.
@@ -110,7 +114,9 @@ module.exports = {
     useEslintrc: false
   },
   postcss: function() {
-    return [autoprefixer];
+    return [autoprefixer, customproperties({
+      variables: varMap.vars,
+    })];
   },
   plugins: [
     new HtmlWebpackPlugin({

@@ -1,0 +1,31 @@
+.fgBlack {
+  color: var(--color-black);
+}
+.fgBlue {
+  color: var(--color-blue);
+}
+.fgGold {
+  color: var(--color-gold);
+}
+.fgRed {
+  color: var(--color-red);
+}
+.fgWhite {
+  color: var(--color-white);
+}
+
+.bgBlack {
+  background-color: var(--color-black);
+}
+.bgBlue {
+  background-color: var(--color-blue);
+}
+.bgGold {
+  background-color: var(--color-gold);
+}
+.bgRed {
+  background-color: var(--color-red);
+}
+.bgWhite {
+  background-color: var(--color-white);
+}

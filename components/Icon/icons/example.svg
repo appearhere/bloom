@@ -1,0 +1,67 @@
+<svg width="226px" height="287px" viewBox="606 97 226 287" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" preserveAspectRatio>
+  <style>
+    #Path-3 {
+      stroke-dasharray: 160;
+      stroke-dashoffset: 160;
+      animation: dash 2s forwards;
+    }
+
+    #Path-4 {
+      stroke-dasharray: 200;
+      stroke-dashoffset: 200;
+      animation: dash 1.5s forwards;
+    }
+
+    #Path-5 {
+      stroke-dasharray: 130;
+      stroke-dashoffset: 130;
+      animation: dash 2s forwards;
+    }
+
+    #Path-6 {
+      stroke-dasharray: 250;
+      stroke-dashoffset: 250;
+      animation: dash 1.5s forwards;
+    }
+
+    #Path-7 {
+      stroke-dasharray: 170;
+      stroke-dashoffset: 170;
+      animation: dash 2s forwards;
+    }
+
+    #Path-8 {
+      stroke-dasharray: 170;
+      stroke-dashoffset: 170;
+      animation: dash 2s forwards;
+    }
+
+    #Path-9 {
+      stroke-dasharray: 150;
+      stroke-dashoffset: 150;
+      animation: dash 2s forwards;
+    }
+
+    #Path-10 {
+      stroke-dasharray: 170;
+      stroke-dashoffset: 170;
+      animation: dash 2s forwards;
+    }
+
+    @keyframes dash {
+      to {
+        stroke-dashoffset: 0;
+      }
+    }
+  </style>
+  <g id="Group" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd" transform="translate(607.000000, 99.000000)">
+    <path class="outline" d="M1.5,188.5 L45.0537109,131 L1.5,188.5 Z" id="Path-3" stroke="#C1373F" stroke-width="3"></path>
+    <path class="outline" d="M45.4570312,132.598633 L110.562538,132.598633 C110.562538,132.598633 151.073242,129.787109 151.073242,94.9921875 C151.073242,60.1972656 125.249023,52.1757813 112.393555,52.1757813" id="Path-4" stroke="yellow" stroke-width="3"></path>
+    <path class="outline" d="M112.599609,52.1464844 L153.609375,0.1171875" id="Path-5" stroke="green" stroke-width="3"></path>
+    <path class="outline" d="M153.576172,178.446289 C153.576172,178.446289 214.107422,152.339844 215.178711,92.7246094 C216.25,33.109375 153.866211,0.565429688 153.866211,0.565429688" id="Path-6" stroke="pink" stroke-width="3"></path>
+    <path class="outline" d="M1.59472656,189.5 L87.5623325,189.5" id="Path-7" stroke="orange" stroke-width="3"></path>
+    <path class="outline" d="M149.966797,281.039062 L87.4335938,189.44043" id="Path-8" stroke="cyan" stroke-width="3"></path>
+    <path class="outline" d="M150.395508,281.5 L222.259845,281.5" id="Path-9" stroke="white" stroke-width="3"></path>
+    <path class="outline" d="M222.576172,281.032227 L154.21582,178.40625" id="Path-10" stroke="magenta" stroke-width="3"></path>
+  </g>
+</svg>

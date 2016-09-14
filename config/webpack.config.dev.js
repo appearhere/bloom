@@ -1,10 +1,14 @@
 var path = require('path');
 var autoprefixer = require('autoprefixer');
+var customproperties = require('postcss-custom-properties');
 var webpack = require('webpack');
 var HtmlWebpackPlugin = require('html-webpack-plugin');
 var CaseSensitivePathsPlugin = require('case-sensitive-paths-webpack-plugin');
 var paths = require('./paths');
 var combineLoaders = require('webpack-combine-loaders');
+
+var webpackPostcssTools = require('webpack-postcss-tools');
+var varMap = webpackPostcssTools.makeVarMap(path.join(paths.globalsSrc, 'index.css'));
 
 module.exports = {
   devtool: 'eval',
@@ -50,41 +54,48 @@ module.exports = {
     loaders: [
       {
         test: /\.js$/,
-        include: paths.appSrc,
+        include: [paths.appSrc, paths.componentSrc],
         loader: 'babel',
         query: require('./babel.dev')
       },
       {
         test: /\.css$/,
-        include: [paths.appSrc, paths.appNodeModules],
+        include: [paths.appSrc, paths.componentSrc, paths.appNodeModules, paths.globalsSrc],
         loader: combineLoaders([{
           loader: 'style'
         }, {
           loader: 'css',
           query: {
+            autoprefixercss: false,
             modules: true,
             localIdentName: '[name]__[local]___[hash:base64:5]'
           },
         }, {
-          loader: 'postcss',
+          loader: 'postcss'
         }]),
       },
       {
         test: /\.json$/,
-        include: [paths.appSrc, paths.appNodeModules],
+        include: [paths.appSrc, paths.componentSrc, paths.appNodeModules],
         loader: 'json'
       },
       {
         test: /\.(jpg|png|gif|eot|svg|ttf|woff|woff2)(\?.*)?$/,
-        include: [paths.appSrc, paths.appNodeModules],
+        exclude: /icons\/.+\.svg$/,
+        include: [paths.appSrc, paths.componentSrc, paths.appNodeModules],
         loader: 'file',
         query: {
           name: 'static/media/[name].[ext]'
         }
       },
       {
+        test: /icons\/.+\.svg$/,
+        include: [paths.componentSrc],
+        loader: 'raw',
+      },
+      {
         test: /\.(mp4|webm)(\?.*)?$/,
-        include: [paths.appSrc, paths.appNodeModules],
+        include: [paths.appSrc, paths.componentSrc, paths.appNodeModules],
         loader: 'url',
         query: {
           limit: 10000,
@@ -98,7 +109,9 @@ module.exports = {
     useEslintrc: false
   },
   postcss: function() {
-    return [autoprefixer];
+    return [autoprefixer, customproperties({
+      variables: varMap.vars,
+    })];
   },
   plugins: [
     new HtmlWebpackPlugin({
