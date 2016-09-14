@@ -6,6 +6,7 @@ var CaseSensitivePathsPlugin = require('case-sensitive-paths-webpack-plugin');
 var WatchMissingNodeModulesPlugin = require('../scripts/utils/WatchMissingNodeModulesPlugin');
 var paths = require('./paths');
 var env = require('./env');
+var combineLoaders = require('webpack-combine-loaders');
 
 // This is the development configuration.
 // It is focused on developer experience and fast rebuilds.
@@ -109,7 +110,18 @@ module.exports = {
       // in development "style" loader enables hot editing of CSS.
       {
         test: /\.css$/,
-        loader: 'style!css!postcss'
+        loader: combineLoaders([{
+          loader: 'style',
+        }, {
+          loader: 'css',
+          query: {
+            // enable css modules: https://github.com/css-modules/css-modules
+            modules: true,
+            localIdentName: '[name]__[local]___[hash:base64:5]',
+          },
+        }, {
+          loader: 'postcss',
+        }]),
       },
       // JSON is not enabled by default in Webpack but both Node and Browserify
       // allow it implicitly so we also enable it.
