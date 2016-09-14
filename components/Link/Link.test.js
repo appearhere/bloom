@@ -1,8 +1,8 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
-import Styleguide from './Styleguide';
+import Link from './Link';
 
 it('renders without crashing', () => {
   const div = document.createElement('div');
-  ReactDOM.render(<Styleguide />, div);
+  ReactDOM.render(<Link />, div);
 });
