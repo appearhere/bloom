@@ -3,6 +3,7 @@
   "version": "0.0.1",
   "private": true,
   "devDependencies": {
+    "@kadira/storybook": "^2.14.0",
     "autoprefixer": "6.4.0",
     "babel-core": "6.14.0",
     "babel-eslint": "6.1.2",
@@ -63,7 +64,9 @@
   "scripts": {
     "start": "node scripts/start.js",
     "build": "node scripts/build.js",
-    "test": "jest --watch --env=jsdom"
+    "test": "jest --watch --env=jsdom",
+    "storybook": "start-storybook -p 9009",
+    "build-storybook": "build-storybook"
   },
   "eslintConfig": {
     "extends": "./config/eslint.js"
