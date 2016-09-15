@@ -18,10 +18,13 @@ ReactDOM.render(
 // reload properly. Not so nice, but it works 👍
 if (module.hot) {
   module.hot.accept('./Styleguide', () => {
+    /* eslint-disable global-require */
     const NextApp = require('./Styleguide').default;
+    /* eslint-enable global-require */
+
     ReactDOM.render(
       <AppContainer>
-        <NextApp/>
+        <NextApp />
       </AppContainer>
       ,
       document.getElementById('root')

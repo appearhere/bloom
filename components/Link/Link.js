@@ -1,3 +1,9 @@
-import React from 'react';
+import React, { PropTypes } from 'react';
 
-export default ({ children, ...rest }) => <a {...rest}>{children}</a>;
+const Link = ({ children, ...rest }) => <a { ...rest }>{ children }</a>;
+
+Link.propTypes = {
+  children: PropTypes.node,
+};
+
+export default Link;
