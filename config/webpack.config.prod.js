@@ -6,6 +6,11 @@ var ExtractTextPlugin = require('extract-text-webpack-plugin');
 var url = require('url');
 var paths = require('./paths');
 var env = require('./env');
+var combineLoaders = require('webpack-combine-loaders');
+var customProperties = require('postcss-custom-properties');
+var webpackPostcssTools = require('webpack-postcss-tools');
+
+var { vars: cssVars } = webpackPostcssTools.makeVarMap(path.join(paths.globalsSrc, 'index.css'));
 
 // Assert this just to be safe.
 // Development builds of React are slow and not intended for production.
@@ -65,7 +70,9 @@ module.exports = {
     alias: {
       // Support React Native Web
       // https://www.smashingmagazine.com/2016/08/a-glimpse-into-the-future-with-react-native-for-web/
-      'react-native': 'react-native-web'
+      'react-native': 'react-native-web',
+      // No more relative component imports
+      'components': '../components',
     }
   },
   // Resolve loaders (webpack plugins for CSS, images, transpilation) from the
@@ -82,14 +89,14 @@ module.exports = {
       {
         test: /\.(js|jsx)$/,
         loader: 'eslint',
-        include: paths.appSrc
+        include: [paths.appSrc, paths.componentSrc],
       }
     ],
     loaders: [
       // Process JS with Babel.
       {
         test: /\.(js|jsx)$/,
-        include: paths.appSrc,
+        include: [paths.appSrc, paths.componentSrc],
         loader: 'babel',
         query: require('./babel.prod')
       },
@@ -107,16 +114,27 @@ module.exports = {
       // in the main CSS file.
       {
         test: /\.css$/,
-        // "?-autoprefixer" disables autoprefixer in css-loader itself:
-        // https://github.com/webpack/css-loader/issues/281
-        // We already have it thanks to postcss. We only pass this flag in
-        // production because "css" loader only enables autoprefixer-powered
-        // removal of unnecessary prefixes when Uglify plugin is enabled.
-        // Webpack 1.x uses Uglify plugin as a signal to minify *all* the assets
-        // including CSS. This is confusing and will be removed in Webpack 2:
-        // https://github.com/webpack/webpack/issues/283
-        loader: ExtractTextPlugin.extract('style', 'css?-autoprefixer!postcss')
-        // Note: this won't work without `new ExtractTextPlugin()` in `plugins`.
+        loader: ExtractTextPlugin.extract('style', combineLoaders(
+          [{
+            loader: 'css',
+            query: {
+              // "?-autoprefixer" disables autoprefixer in css-loader itself:
+              // https://github.com/webpack/css-loader/issues/281
+              // We already have it thanks to postcss. We only pass this flag in
+              // production because "css" loader only enables autoprefixer-powered
+              // removal of unnecessary prefixes when Uglify plugin is enabled.
+              // Webpack 1.x uses Uglify plugin as a signal to minify *all* the assets
+              // including CSS. This is confusing and will be removed in Webpack 2:
+              // https://github.com/webpack/webpack/issues/283
+              autoprefixer: false,
+              // enable css modules: https://github.com/css-modules/css-modules
+              modules: true,
+              localIdentName: '[name]__[local]___[hash:base64:5]',
+            },
+          }, {
+            loader: 'postcss',
+          }]
+        )),
       },
       // JSON is not enabled by default in Webpack but both Node and Browserify
       // allow it implicitly so we also enable it.
@@ -181,6 +199,9 @@ module.exports = {
           'Firefox ESR',
           'not ie < 9', // React doesn't support IE8 anyway
         ]
+      }),
+      customProperties({
+        variables: cssVars,
       }),
     ];
   },

@@ -1,0 +1,24 @@
+/**
+ * The official colour scheme for everything in our apps. If it doesn't exist
+ * here, you probably shouldn't use it.
+ *
+ * Use semantic aliases, e.g., --color-error is preferred to --color-red where
+ * possible, to imply the intent of your colour choice.
+ */
+:root {
+
+  /* Brand colors */
+  --color-white: rgb(255, 255, 255);
+  --color-black: rgb(25, 25, 25);
+  --color-gold: rgb(211, 161, 81);
+
+  /* Application colors */
+  --color-red: rgb(213, 84, 68);
+  --color-green: rgb(72, 213, 108);
+
+  /* Aliases */
+  --color-primary: var(--color-gold);
+  --color-success: var(--color-green);
+  --color-error: var(--color-red);
+  --color-text: var(--color-black);
+}

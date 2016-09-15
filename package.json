@@ -1,8 +1,9 @@
 {
-  "name": "bloom",
+  "name": "@appearhere/bloom",
   "version": "0.0.1",
   "private": true,
   "devDependencies": {
+    "@kadira/storybook": "^2.14.0",
     "autoprefixer": "6.4.0",
     "babel-core": "6.14.0",
     "babel-eslint": "6.1.2",
@@ -22,12 +23,14 @@
     "cross-spawn": "4.0.0",
     "css-loader": "0.24.0",
     "detect-port": "1.0.0",
-    "eslint": "3.4.0",
+    "eslint": "^3.5.0",
+    "eslint-config-airbnb": "^11.1.0",
+    "eslint-config-airbnb-base": "^7.1.0",
     "eslint-loader": "1.5.0",
     "eslint-plugin-flowtype": "2.11.4",
-    "eslint-plugin-import": "1.12.0",
+    "eslint-plugin-import": "^1.15.0",
     "eslint-plugin-jsx-a11y": "2.2.1",
-    "eslint-plugin-react": "5.2.2",
+    "eslint-plugin-react": "^6.2.2",
     "extract-text-webpack-plugin": "1.0.1",
     "file-loader": "0.9.0",
     "filesize": "3.3.0",
@@ -41,15 +44,19 @@
     "object-assign": "4.1.0",
     "opn": "4.0.2",
     "path-exists": "3.0.0",
+    "postcss-custom-properties": "^5.0.1",
     "postcss-loader": "0.11.1",
     "promise": "7.1.1",
+    "react-hot-loader": "^3.0.0-beta.3",
     "recursive-readdir": "2.0.0",
     "rimraf": "2.5.4",
     "strip-ansi": "3.0.1",
     "style-loader": "0.13.1",
     "url-loader": "0.5.7",
     "webpack": "1.13.2",
+    "webpack-combine-loaders": "^2.0.0",
     "webpack-dev-server": "1.15.1",
+    "webpack-postcss-tools": "^1.1.2",
     "whatwg-fetch": "1.0.0"
   },
   "dependencies": {
@@ -59,7 +66,9 @@
   "scripts": {
     "start": "node scripts/start.js",
     "build": "node scripts/build.js",
-    "test": "jest --watch --env=jsdom"
+    "test": "jest --watch --env=jsdom",
+    "storybook": "start-storybook -p 9009",
+    "build-storybook": "build-storybook"
   },
   "eslintConfig": {
     "extends": "./config/eslint.js"

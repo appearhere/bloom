@@ -6,6 +6,11 @@ var CaseSensitivePathsPlugin = require('case-sensitive-paths-webpack-plugin');
 var WatchMissingNodeModulesPlugin = require('../scripts/utils/WatchMissingNodeModulesPlugin');
 var paths = require('./paths');
 var env = require('./env');
+var combineLoaders = require('webpack-combine-loaders');
+var customProperties = require('postcss-custom-properties');
+var webpackPostcssTools = require('webpack-postcss-tools');
+
+var { vars: cssVars } = webpackPostcssTools.makeVarMap(path.join(paths.globalsSrc, 'index.css'));
 
 // This is the development configuration.
 // It is focused on developer experience and fast rebuilds.
@@ -20,6 +25,7 @@ module.exports = {
   // This means they will be the "root" imports that are included in JS bundle.
   // The first two entry points enable "hot" CSS and auto-refreshes for JS.
   entry: [
+    require.resolve('react-hot-loader/patch'),
     // Include WebpackDevServer client. It connects to WebpackDevServer via
     // sockets and waits for recompile notifications. When WebpackDevServer
     // recompiles, it sends a message to the client by socket. If only CSS
@@ -34,7 +40,7 @@ module.exports = {
     // low-level so we need to put all the pieces together. The runtime listens
     // to the events received by the client above, and applies updates (such as
     // new CSS) to the running application.
-    require.resolve('webpack/hot/dev-server'),
+    require.resolve('webpack/hot/only-dev-server'),
     // We ship a few polyfills by default.
     require.resolve('./polyfills'),
     // Finally, this is your app's code:
@@ -56,6 +62,7 @@ module.exports = {
     publicPath: '/'
   },
   resolve: {
+    root: path.resolve(__dirname),
     // This allows you to set a fallback for where Webpack should look for modules.
     // We read `NODE_PATH` environment variable in `paths.js` and pass paths here.
     // We use `fallback` instead of `root` because we want `node_modules` to "win"
@@ -70,7 +77,9 @@ module.exports = {
     alias: {
       // Support React Native Web
       // https://www.smashingmagazine.com/2016/08/a-glimpse-into-the-future-with-react-native-for-web/
-      'react-native': 'react-native-web'
+      'react-native': 'react-native-web',
+      // No more relative component imports
+      'components': '../components',
     }
   },
   // Resolve loaders (webpack plugins for CSS, images, transpilation) from the
@@ -87,14 +96,14 @@ module.exports = {
       {
         test: /\.(js|jsx)$/,
         loader: 'eslint',
-        include: paths.appSrc,
+        include: [paths.appSrc, paths.componentSrc],
       }
     ],
     loaders: [
       // Process JS with Babel.
       {
         test: /\.(js|jsx)$/,
-        include: paths.appSrc,
+        include: [paths.appSrc, paths.componentSrc],
         loader: 'babel',
         query: require('./babel.dev')
       },
@@ -105,7 +114,18 @@ module.exports = {
       // in development "style" loader enables hot editing of CSS.
       {
         test: /\.css$/,
-        loader: 'style!css!postcss'
+        loader: combineLoaders([{
+          loader: 'style',
+        }, {
+          loader: 'css',
+          query: {
+            // enable css modules: https://github.com/css-modules/css-modules
+            modules: true,
+            localIdentName: '[name]__[local]___[hash:base64:5]',
+          },
+        }, {
+          loader: 'postcss',
+        }]),
       },
       // JSON is not enabled by default in Webpack but both Node and Browserify
       // allow it implicitly so we also enable it.
@@ -169,6 +189,9 @@ module.exports = {
           'Firefox ESR',
           'not ie < 9', // React doesn't support IE8 anyway
         ]
+      }),
+      customProperties({
+        variables: cssVars,
       }),
     ];
   },
