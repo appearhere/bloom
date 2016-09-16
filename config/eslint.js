@@ -58,5 +58,11 @@ module.exports = {
     // nicer. import/no-extraneous-dependencies do NOT like that one bit.
     // We'll disable it until theres a decent work around
     'import/no-extraneous-dependencies': 0,
+
+    // TODO: This rule is problematic for React components as not all
+    // life cycle methods require the use of `this`. We'll disable the
+    // rule until theres a release of
+    // https://github.com/eslint/eslint/pull/7120
+    'class-methods-use-this': 0,
   },
 };
