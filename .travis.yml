@@ -1,0 +1,12 @@
+language: node_js
+node_js: node
+
+sudo: false
+cache:
+  directories:
+  - "node_modules"
+
+notifications:
+  slack:
+    rooms:
+    - appearhere:7NDfKdoIg75HRj18QRW0uy4c#developer

@@ -1,4 +1,5 @@
 # Bloom
+[![Build Status](https://travis-ci.com/appearhere/bloom.svg?token=Dby1wcjAJdzRsf4NN8um&branch=master)](https://travis-ci.com/appearhere/bloom)
 
 ![Bloom v0.0.1 Icon](https://dl.dropboxusercontent.com/u/15027214/bloom-icon.png)
 
