@@ -26,6 +26,27 @@ module.exports = {
           loader: 'postcss'
         }]),
       },
+      // "file" loader makes sure those assets get served by WebpackDevServer.
+      // When you `import` an asset, you get its (virtual) filename.
+      // In production, they would get copied to the `build` folder.
+      {
+        test: /\.(ico|jpg|png|gif|eot|otf|webp|svg|ttf|woff|woff2)(\?.*)?$/,
+        exclude: /(\/favicon.ico|\/icons\/.+\.svg)$/,
+        loader: 'file',
+        query: {
+          name: 'static/media/[name].[hash:8].[ext]'
+        }
+      },
+      // "raw" loader for certain SVGs, i.e., icons, so we can embed them
+      // in the page itself
+      {
+        test: /icons\/.+\.svg$/,
+        include: [paths.componentSrc],
+        loaders: [
+          'raw',
+          'svgo',
+        ],
+      },
     ]
   },
   // We use PostCSS for autoprefixing only.

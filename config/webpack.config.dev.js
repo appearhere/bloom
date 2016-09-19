@@ -138,11 +138,21 @@ module.exports = {
       // In production, they would get copied to the `build` folder.
       {
         test: /\.(ico|jpg|png|gif|eot|otf|webp|svg|ttf|woff|woff2)(\?.*)?$/,
-        exclude: /\/favicon.ico$/,
+        exclude: /(\/favicon.ico|\/icons\/.+\.svg)$/,
         loader: 'file',
         query: {
           name: 'static/media/[name].[hash:8].[ext]'
         }
+      },
+      // "raw" loader for certain SVGs, i.e., icons, so we can embed them
+      // in the page itself
+      {
+        test: /icons\/.+\.svg$/,
+        include: [paths.componentSrc],
+        loaders: [
+          'raw',
+          'svgo',
+        ],
       },
       // A special case for favicon.ico to place it into build root directory.
       {
