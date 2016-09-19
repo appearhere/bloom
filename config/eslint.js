@@ -5,6 +5,9 @@ module.exports = {
     classes: true,
     jsx: true,
   },
+  env: {
+    jest: true,
+  },
   plugins: [
     'flowtype',
     'jsx-a11y',
