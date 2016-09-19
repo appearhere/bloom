@@ -1,0 +1,41 @@
+/**
+ * Each property declaration should have its own variable, which are then
+ * composed together to make `font` property declarations.
+ *
+ * Typically, start by using the `font` properties and override **individual
+ * properties**:
+ *
+ * ```css
+ * .example {
+ *   font: var(--font-base);
+ *   line-height: 1.8;
+ * }
+ * ```
+ */
+:root {
+  --font-avenir: 'Avenir Next W01', 'Helvetica Neue', 'Helvetica', 'sans-serif';
+
+  --fontweight-bold: 800;
+  --fontweight-demi: 700;
+  --fontweight-base: 400;
+  --fontweight-light: 300;
+
+  --fontsize--title-large: 2.75rem;
+  --fontsize--title-base: 2.125rem;
+  --fontsize--title-small: 1.5rem;
+
+  --fontsize-large: 1.1875rem;
+  --fontsize-base: 1rem;
+  --fontsize-small: 0.875rem;
+  --fontsize-micro: 0.6875rem;
+
+  --font--title-large: var(--fontweight-bold) var(--fontsize--title-large)/3.375em var(--font-avenir);
+  --font--title-base: var(--fontweight-bold) var(--fontsize--title-base)/2.75em var(--font-avenir);
+  --font--title-small: var(--fontweight-bold) var(--fontsize--title-small)/2em var(--font-avenir);
+
+  --font-large: var(--fontweight-base) var(--fontsize-large)/1.5em var(--font-avenir);
+  --font-base: var(--fontweight-base) var(--fontsize-base)/1.4375em var(--font-avenir);
+  --font-small: var(--fontweight-base) var(--fontsize-small)/1.125em var(--font-avenir);
+  --font-micro: var(--fontweight-base) var(--fontsize-micro)/0.9375em var(--font-avenir);
+}
+
