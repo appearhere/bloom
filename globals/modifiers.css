@@ -1,0 +1,129 @@
+:root {
+/*
+  These exist in the design style guide, but lets add them in as we use them
+  --space-200: 12.5rem;
+  --space-96: 6rem;
+  --space-80: 5rem;
+  --space-64: 4rem;
+  --space-48: 3rem;
+*/
+/*
+  We use these sizes already, but `--size-small` etc. is easier to grok
+  --space-24: 1.5rem;
+  --space-16: 1rem;
+  --space-8: 0.5rem;
+*/
+
+  --size-large: 1.5rem;
+  --size-medium: 1rem;
+  --size-small: 0.5rem;
+}
+
+/* Foreground colors */
+.fgWhite { color: var(--color-white); }
+.fgBlack { color: var(--color-black); }
+.fgGold { color: var(--color-gold); }
+.fgRed { color: var(--color-red); }
+.fgGreen { color: var(--color-green); }
+.fgPrimary { color: var(--color-primary); }
+.fgSuccess { color: var(--color-success); }
+.fgDanger { color: var(--color-danger); }
+.fgText { color: var(--color-text); }
+
+/* Background colors */
+.bgWhite { background-color: var(--color-white); }
+.bgBlack { background-color: var(--color-black); }
+.bgGold { background-color: var(--color-gold); }
+.bgRed { background-color: var(--color-red); }
+.bgGreen { background-color: var(--color-green); }
+.bgPrimary { background-color: var(--color-primary); }
+.bgSuccess { background-color: var(--color-success); }
+.bgDanger { background-color: var(--color-danger); }
+.bgText { background-color: var(--color-text); }
+
+/* Padding */
+.pt0  { padding-top:    0;                  }
+.pts  { padding-top:    var(--size-small);  }
+.ptm  { padding-top:    var(--size-medium); }
+.ptl  { padding-top:    var(--size-large);  }
+.pl0  { padding-left:   0;                  }
+.pls  { padding-left:   var(--size-small);  }
+.plm  { padding-left:   var(--size-medium); }
+.pll  { padding-left:   var(--size-large);  }
+.pb0  { padding-bottom: 0;              }
+.pbs  { padding-bottom: var(--size-small);  }
+.pbm  { padding-bottom: var(--size-medium); }
+.pbl  { padding-bottom: var(--size-large);  }
+.pr0  { padding-right:  0;                  }
+.prs  { padding-right:  var(--size-small);  }
+.prm  { padding-right:  var(--size-medium); }
+.prl  { padding-right:  var(--size-large);  }
+.pa0  { padding:        0;                  }
+.pas  { padding:        var(--size-small);  }
+.pam  { padding:        var(--size-medium); }
+.pal  { padding:        var(--size-large);  }
+
+/* Margin */
+.mt0  { margin-top:    0;                  }
+.mts  { margin-top:    var(--size-small);  }
+.mtm  { margin-top:    var(--size-medium); }
+.mtl  { margin-top:    var(--size-large);  }
+.ml0  { margin-left:   0;                  }
+.mls  { margin-left:   var(--size-small);  }
+.mlm  { margin-left:   var(--size-medium); }
+.mll  { margin-left:   var(--size-large);  }
+.mb0  { margin-bottom: 0;                  }
+.mbs  { margin-bottom: var(--size-small);  }
+.mbm  { margin-bottom: var(--size-medium); }
+.mbl  { margin-bottom: var(--size-large);  }
+.mr0  { margin-right:  0;                  }
+.mrs  { margin-right:  var(--size-small);  }
+.mrm  { margin-right:  var(--size-medium); }
+.mrl  { margin-right:  var(--size-large);  }
+.ma0  { margin:        0;                  }
+.mas  { margin:        var(--size-small);  }
+.mam  { margin:        var(--size-medium); }
+.mal  { margin:        var(--size-large);  }
+
+/* Full font styles */
+.fontTitleLarge { font: var(--font--title-large); }
+.fontTitleBase { font: var(--font--title-base); }
+.fontTitleSmall { font: var(--font--title-small); }
+.fontLarge { font: var(--font-large); }
+.fontBase { font: var(--font-base); }
+.fontSmall { font: var(--font-small); }
+.fontMicro { font: var(--font-micro); }
+
+/* Font sizes */
+.titleLarge { font-size: var(--fontsize--title-large); }
+.titleBase { font-size: var(--fontsize--title-base); }
+.titleSmall { font-size: var(--fontsize--title-small); }
+.large { font-size: var(--fontsize-large); }
+.base { font-size: var(--fontsize-base); }
+.small { font-size: var(--fontsize-small); }
+.micro { font-size: var(--fontsize-micro); }
+
+/* Font modifiers */
+.bold { font-weight: var(--fontweight-bold); }
+.demi { font-weight: var(--fontweight-demi); }
+.light { font-weight: var(--fontweight-light); }
+.italic { font-style: italic; }
+.strike { text-decoration: line-through; }
+.code { font-family: monospace; }
+.underline { text-decoration: underline; }
+.uppercase { text-transform: uppercase; }
+
+/* Rotation */
+.rotate90 { transform: rotate(90deg); }
+.rotate180 { transform: rotate(180deg); }
+.rotate270 { transform: rotate(270deg); }
+
+/* Display */
+.dib { display: inline-block; }
+.db { display: block; }
+.di { display: inline; }
+
+/* Vertical alignment */
+.valignt { vertical-align: top; }
+.valignm { vertical-align: middle; }
+.valignb { vertical-align: bottom; }

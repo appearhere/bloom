@@ -19,6 +19,6 @@
   /* Aliases */
   --color-primary: var(--color-gold);
   --color-success: var(--color-green);
-  --color-error: var(--color-red);
+  --color-danger: var(--color-red);
   --color-text: var(--color-black);
 }
