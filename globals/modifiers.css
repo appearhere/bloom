@@ -1,18 +1,9 @@
 :root {
-/*
-  These exist in the design style guide, but lets add them in as we use them
   --space-200: 12.5rem;
   --space-96: 6rem;
   --space-80: 5rem;
   --space-64: 4rem;
   --space-48: 3rem;
-*/
-/*
-  We use these sizes already, but `--size-small` etc. is easier to grok
-  --space-24: 1.5rem;
-  --space-16: 1rem;
-  --space-8: 0.5rem;
-*/
 
   --size-large: 1.5rem;
   --size-medium: 1rem;
@@ -42,48 +33,98 @@
 .bgText { background-color: var(--color-text); }
 
 /* Padding */
-.pt0  { padding-top:    0;                  }
-.pts  { padding-top:    var(--size-small);  }
-.ptm  { padding-top:    var(--size-medium); }
-.ptl  { padding-top:    var(--size-large);  }
-.pl0  { padding-left:   0;                  }
-.pls  { padding-left:   var(--size-small);  }
-.plm  { padding-left:   var(--size-medium); }
-.pll  { padding-left:   var(--size-large);  }
-.pb0  { padding-bottom: 0;              }
-.pbs  { padding-bottom: var(--size-small);  }
-.pbm  { padding-bottom: var(--size-medium); }
-.pbl  { padding-bottom: var(--size-large);  }
-.pr0  { padding-right:  0;                  }
-.prs  { padding-right:  var(--size-small);  }
-.prm  { padding-right:  var(--size-medium); }
-.prl  { padding-right:  var(--size-large);  }
-.pa0  { padding:        0;                  }
-.pas  { padding:        var(--size-small);  }
-.pam  { padding:        var(--size-medium); }
-.pal  { padding:        var(--size-large);  }
+.pt0 { padding-top: 0; }
+.pts { padding-top: var(--size-small); }
+.ptm { padding-top: var(--size-medium); }
+.ptl { padding-top: var(--size-large); }
+.pt48 { padding-top: var(--space-48); }
+.pt64 { padding-top: var(--space-64); }
+.pt80 { padding-top: var(--space-80); }
+.pt96 { padding-top: var(--space-96); }
+.pt200 { padding-top: var(--space-200); }
+.pl0 { padding-left: 0; }
+.pls { padding-left: var(--size-small); }
+.plm { padding-left: var(--size-medium); }
+.pll { padding-left: var(--size-large); }
+.pl48 { padding-left: var(--space-48); }
+.pl64 { padding-left: var(--space-64); }
+.pl80 { padding-left: var(--space-80); }
+.pl96 { padding-left: var(--space-96); }
+.pl200 { padding-left: var(--space-200); }
+.pb0 { padding-bottom: 0; }
+.pbs { padding-bottom: var(--size-small); }
+.pbm { padding-bottom: var(--size-medium); }
+.pbl { padding-bottom: var(--size-large); }
+.pb48 { padding-bottom: var(--space-48); }
+.pb64 { padding-bottom: var(--space-64); }
+.pb80 { padding-bottom: var(--space-80); }
+.pb96 { padding-bottom: var(--space-96); }
+.pb200 { padding-bottom: var(--space-200); }
+.pr0 { padding-right:  0; }
+.prs { padding-right:  var(--size-small); }
+.prm { padding-right:  var(--size-medium); }
+.prl { padding-right:  var(--size-large); }
+.pr48 { padding-right: var(--space-48); }
+.pr64 { padding-right: var(--space-64); }
+.pr80 { padding-right: var(--space-80); }
+.pr96 { padding-right: var(--space-96); }
+.pr200 { padding-right: var(--space-200); }
+.pa0 { padding: 0; }
+.pas { padding: var(--size-small); }
+.pam { padding: var(--size-medium); }
+.pal { padding: var(--size-large); }
+.pa48 { padding: var(--space-48); }
+.pa64 { padding: var(--space-64); }
+.pa80 { padding: var(--space-80); }
+.pa96 { padding: var(--space-96); }
+.pa200 { padding: var(--space-200); }
 
 /* Margin */
-.mt0  { margin-top:    0;                  }
-.mts  { margin-top:    var(--size-small);  }
-.mtm  { margin-top:    var(--size-medium); }
-.mtl  { margin-top:    var(--size-large);  }
-.ml0  { margin-left:   0;                  }
-.mls  { margin-left:   var(--size-small);  }
-.mlm  { margin-left:   var(--size-medium); }
-.mll  { margin-left:   var(--size-large);  }
-.mb0  { margin-bottom: 0;                  }
-.mbs  { margin-bottom: var(--size-small);  }
-.mbm  { margin-bottom: var(--size-medium); }
-.mbl  { margin-bottom: var(--size-large);  }
-.mr0  { margin-right:  0;                  }
-.mrs  { margin-right:  var(--size-small);  }
-.mrm  { margin-right:  var(--size-medium); }
-.mrl  { margin-right:  var(--size-large);  }
-.ma0  { margin:        0;                  }
-.mas  { margin:        var(--size-small);  }
-.mam  { margin:        var(--size-medium); }
-.mal  { margin:        var(--size-large);  }
+.mt0 { margin-top: 0; }
+.mts { margin-top: var(--size-small); }
+.mtm { margin-top: var(--size-medium); }
+.mtl { margin-top: var(--size-large); }
+.mt48 { margin-top: var(--space-48); }
+.mt64 { margin-top: var(--space-64); }
+.mt80 { margin-top: var(--space-80); }
+.mt96 { margin-top: var(--space-96); }
+.mt200 { margin-top: var(--space-200); }
+.ml0 { margin-left: 0; }
+.mls { margin-left: var(--size-small); }
+.mlm { margin-left: var(--size-medium); }
+.mll { margin-left: var(--size-large); }
+.ml48 { margin-left: var(--space-48); }
+.ml64 { margin-left: var(--space-64); }
+.ml80 { margin-left: var(--space-80); }
+.ml96 { margin-left: var(--space-96); }
+.ml200 { margin-left: var(--space-200); }
+.mb0 { margin-bottom: 0; }
+.mbs { margin-bottom: var(--size-small); }
+.mbm { margin-bottom: var(--size-medium); }
+.mbl { margin-bottom: var(--size-large); }
+.mb48 { margin-bottom: var(--space-48); }
+.mb64 { margin-bottom: var(--space-64); }
+.mb80 { margin-bottom: var(--space-80); }
+.mb96 { margin-bottom: var(--space-96); }
+.mb200 { margin-bottom: var(--space-200); }
+.mr0 { margin-right:  0; }
+.mrs { margin-right:  var(--size-small); }
+.mrm { margin-right:  var(--size-medium); }
+.mrl { margin-right:  var(--size-large); }
+.mr48 { margin-right: var(--space-48); }
+.mr64 { margin-right: var(--space-64); }
+.mr80 { margin-right: var(--space-80); }
+.mr96 { margin-right: var(--space-96); }
+.mr200 { margin-right: var(--space-200); }
+.ma0 { margin: 0; }
+.mas { margin: var(--size-small); }
+.mam { margin: var(--size-medium); }
+.mal { margin: var(--size-large); }
+.ma48 { margin: var(--space-48); }
+.ma64 { margin: var(--space-64); }
+.ma80 { margin: var(--space-80); }
+.ma96 { margin: var(--space-96); }
+.ma200 { margin: var(--space-200); }
 
 /* Full font styles */
 .fontTitleLarge { font: var(--font--title-large); }

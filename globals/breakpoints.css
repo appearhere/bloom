@@ -1,0 +1,7 @@
+/**
+ * Breakpoints get defined on the global level so
+ * it's easier to tell what content breaks and when
+ */
+:root {
+  @custom-media --hero-large (min-width: 50rem);
+}

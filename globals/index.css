@@ -1,4 +1,5 @@
 @import './colors.css';
 @import './z-index.css';
 @import './typography.css';
+@import './breakpoints.css';
 @import './modifiers.css'
