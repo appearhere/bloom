@@ -3,9 +3,10 @@ var paths = require('../config/paths');
 const combineLoaders = require('webpack-combine-loaders');
 const autoprefixer = require('autoprefixer');
 const customProperties = require('postcss-custom-properties');
-const webpackPostcssTools = require('webpack-postcss-tools');
+var customMedia = require('postcss-custom-media');
+var webpackPostcssTools = require('webpack-postcss-tools');
 
-const { vars: cssVars } = webpackPostcssTools.makeVarMap(path.join(paths.globalsSrc, 'index.css'));
+var cssMap = webpackPostcssTools.makeVarMap(path.join(paths.globalsSrc, 'index.css'));
 
 module.exports = {
   module: {
@@ -61,7 +62,10 @@ module.exports = {
         ]
       }),
       customProperties({
-        variables: cssVars,
+        variables: cssMap.vars,
+      }),
+      customMedia({
+        extensions: cssMap.media,
       }),
     ];
   },

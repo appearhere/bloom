@@ -8,9 +8,10 @@ var paths = require('./paths');
 var env = require('./env');
 var combineLoaders = require('webpack-combine-loaders');
 var customProperties = require('postcss-custom-properties');
+var customMedia = require('postcss-custom-media');
 var webpackPostcssTools = require('webpack-postcss-tools');
 
-var { vars: cssVars } = webpackPostcssTools.makeVarMap(path.join(paths.globalsSrc, 'index.css'));
+var cssMap = webpackPostcssTools.makeVarMap(path.join(paths.globalsSrc, 'index.css'));
 
 // This is the development configuration.
 // It is focused on developer experience and fast rebuilds.
@@ -201,7 +202,10 @@ module.exports = {
         ]
       }),
       customProperties({
-        variables: cssVars,
+        variables: cssMap.vars,
+      }),
+      customMedia({
+        extensions: cssMap.media,
       }),
     ];
   },

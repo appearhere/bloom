@@ -8,9 +8,10 @@ var paths = require('./paths');
 var env = require('./env');
 var combineLoaders = require('webpack-combine-loaders');
 var customProperties = require('postcss-custom-properties');
+var customMedia = require('postcss-custom-media');
 var webpackPostcssTools = require('webpack-postcss-tools');
 
-var { vars: cssVars } = webpackPostcssTools.makeVarMap(path.join(paths.globalsSrc, 'index.css'));
+var cssMap = webpackPostcssTools.makeVarMap(path.join(paths.globalsSrc, 'index.css'));
 
 // Assert this just to be safe.
 // Development builds of React are slow and not intended for production.
@@ -213,6 +214,9 @@ module.exports = {
       }),
       customProperties({
         variables: cssVars,
+      }),
+      customMedia({
+        extensions: cssMap.media,
       }),
     ];
   },

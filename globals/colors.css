@@ -32,4 +32,7 @@
   /* Tint Aliases */
   --color-primary--light: var(--color-gold--light);
   --color-danger--light: var(--color-red--light);
+
+  /* Overlays */
+  --overlay-default: rgba(20, 20, 21, 0.5);
 }

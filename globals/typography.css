@@ -20,8 +20,8 @@
   --fontweight-base: 400;
   --fontweight-light: 300;
 
-  --fontsize--title-large: 2.75rem;
-  --fontsize--title-base: 2.125rem;
+  --fontsize--title-large: 2rem;
+  --fontsize--title-base: 1.75rem;
   --fontsize--title-small: 1.5rem;
 
   --fontsize-large: 1.1875rem;
@@ -29,13 +29,14 @@
   --fontsize-small: 0.875rem;
   --fontsize-micro: 0.6875rem;
 
-  --font--title-large: var(--fontweight-bold) var(--fontsize--title-large)/3.375em var(--font-avenir);
-  --font--title-base: var(--fontweight-bold) var(--fontsize--title-base)/2.75em var(--font-avenir);
-  --font--title-small: var(--fontweight-bold) var(--fontsize--title-small)/2em var(--font-avenir);
+  --font--title-large: var(--fontweight-bold) var(--fontsize--title-large)/1.34375 var(--font-avenir);
+  --font--title-base: var(--fontweight-bold) var(--fontsize--title-base)/1.571 var(--font-avenir);
+  --font--title-small: var(--fontweight-bold) var(--fontsize--title-small)/1.333 var(--font-avenir);
 
-  --font-large: var(--fontweight-base) var(--fontsize-large)/1.5em var(--font-avenir);
-  --font-base: var(--fontweight-base) var(--fontsize-base)/1.4375em var(--font-avenir);
-  --font-small: var(--fontweight-base) var(--fontsize-small)/1.125em var(--font-avenir);
-  --font-micro: var(--fontweight-base) var(--fontsize-micro)/0.9375em var(--font-avenir);
+  --font-large: var(--fontweight-base) var(--fontsize-large)/1.263 var(--font-avenir);
+  --font-base: var(--fontweight-base) var(--fontsize-base)/1.4375 var(--font-avenir);
+  --font-small: var(--fontweight-base) var(--fontsize-small)/1.285 var(--font-avenir);
+  --font-micro: var(--fontweight-base) var(--fontsize-micro)/1.363 var(--font-avenir);
+
+  --letterspacing-wide: 0.125rem;
 }
-
