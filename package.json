@@ -1,6 +1,6 @@
 {
   "name": "@appearhere/bloom",
-  "version": "0.0.1",
+  "version": "0.1.0",
   "private": true,
   "devDependencies": {
     "@kadira/storybook": "^2.14.0",
