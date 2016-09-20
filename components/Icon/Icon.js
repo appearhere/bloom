@@ -1,5 +1,6 @@
-import React from 'react';
-import IconHelper from './IconHelper';
+import iconHelper from './iconHelper';
 import icons from './icons';
 
-export default IconHelper(icons);
+import css from './Icon.css';
+
+export default iconHelper(icons, css);
