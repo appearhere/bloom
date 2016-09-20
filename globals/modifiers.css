@@ -153,6 +153,7 @@
 .code { font-family: monospace; }
 .underline { text-decoration: underline; }
 .uppercase { text-transform: uppercase; }
+.wideSpacing { letter-spacing: var(--letterspacing-wide) }
 
 /* Rotation */
 .rotate90 { transform: rotate(90deg); }

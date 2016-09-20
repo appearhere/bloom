@@ -11,6 +11,7 @@ storiesOf('Hero', module)
       m.fontTitleLarge,
       m.fgWhite,
       m.uppercase,
+      m.wideSpacing,
     );
 
     const paraClasses = classnames(

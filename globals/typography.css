@@ -37,4 +37,6 @@
   --font-base: var(--fontweight-base) var(--fontsize-base)/1.4375 var(--font-avenir);
   --font-small: var(--fontweight-base) var(--fontsize-small)/1.285 var(--font-avenir);
   --font-micro: var(--fontweight-base) var(--fontsize-micro)/1.363 var(--font-avenir);
+
+  --letterspacing-wide: 0.125rem;
 }
