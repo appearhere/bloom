@@ -1,0 +1,23 @@
+---
+engines:
+  csslint:
+    enabled: false
+  fixme:
+    enabled: false
+  duplication:
+    enabled: true
+    config:
+      languages:
+      - javascript
+  eslint:
+    enabled: true
+    channel: "eslint-2"
+    config:
+      config: "config/eslint.js"
+ratings:
+  paths:
+  - components/**/*.js
+  - styleguide/**/*.js
+exclude_paths:
+- "config/**/*"
+- "scripts/**/*"
