@@ -1,6 +1,7 @@
 import React, { PropTypes } from 'react';
 import classnames from 'classnames';
 
+import m from '../../globals/modifiers.css';
 import css from './Hero.css';
 
 const Hero = (props) => {
@@ -8,6 +9,7 @@ const Hero = (props) => {
     className,
     backgroundImage,
     children,
+    caption,
     ...rest,
   } = props;
 
@@ -21,6 +23,11 @@ const Hero = (props) => {
     backgroundImage ? css.innerOverlay : null,
   );
 
+  const captionClasses = classnames(
+    css.caption,
+    m.fontBase,
+  )
+
   const styles = { backgroundImage: `url(${backgroundImage})` };
 
   return (
@@ -32,6 +39,11 @@ const Hero = (props) => {
       <div className={ innerClasses }>
         { children }
       </div>
+      { caption && backgroundImage && (
+        <div className={ captionClasses }>
+          { caption }
+        </div>
+      )}
     </div>
   );
 };
@@ -40,6 +52,7 @@ Hero.propTypes = {
   className: PropTypes.string,
   backgroundImage: PropTypes.string,
   children: PropTypes.node.isRequired,
+  caption: PropTypes.node,
 };
 
 export default Hero;

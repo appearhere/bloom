@@ -23,6 +23,7 @@ storiesOf('Hero', module)
       <Hero
         className={ m.bgBlack }
         backgroundImage="https://unsplash.it/1600/1201"
+        caption="A random image from unsplash"
       >
         <h1 className={ headingClasses }>List a space, host an idea</h1>
         <p className={ paraClasses }>
