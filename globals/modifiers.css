@@ -165,6 +165,11 @@
 .db { display: block; }
 .di { display: inline; }
 
+/* Text alignment */
+.left { text-align: left; }
+.center { text-align: center; }
+.right { text-align: right; }
+
 /* Vertical alignment */
 .valignt { vertical-align: top; }
 .valignm { vertical-align: middle; }

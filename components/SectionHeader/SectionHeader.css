@@ -1,0 +1,17 @@
+/*
+  This means we can supply a class to the outer element and
+  it'll color the whole block as required
+ */
+.base {
+  color: currentColor;
+}
+
+.title {
+  margin-top: 0;
+  margin-bottom: 0;
+}
+
+.strapline {
+  margin-top: var(--size-medium);
+  margin-bottom: 0;
+}
