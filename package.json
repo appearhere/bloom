@@ -68,7 +68,8 @@
     "classnames": "^2.2.5",
     "invariant": "^2.2.1",
     "react": "^15.3.1",
-    "react-dom": "^15.3.1"
+    "react-dom": "^15.3.1",
+    "react-stickynode": "^1.2.1"
   },
   "scripts": {
     "start": "node scripts/start.js",
