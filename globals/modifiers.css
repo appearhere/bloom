@@ -32,6 +32,13 @@
 .bgDanger { background-color: var(--color-danger); }
 .bgText { background-color: var(--color-text); }
 
+/* Brand ornaments */
+.goldUnderline {
+  border-bottom: 4px solid var(--color-gold);
+  display: inline-block;
+  padding-bottom: 0.3rem;
+}
+
 /* Padding */
 .pt0 { padding-top: 0; }
 .pts { padding-top: var(--size-small); }
