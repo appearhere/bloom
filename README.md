@@ -190,7 +190,38 @@ Additional bonus: if the loader you're using is setup to work with hot module re
 
 ## Publishing Bloom
 
-TBC
+### Pre `v1.0.0` / open sourcing
+
+Bloom, as required by NPM, follows [Semvar](http://semver.org/). That said, given it has yet to reach a MVP state, only minor and patch versions will be incremented. This is because the whole project should be treated as **unstable**, i.e., we might change any component at a moments notice. Given that it will only be used internally for now, that's fine.
+
+In this time, a Bloom release will be made, at most, once a day. When publishing Bloom to NPM, increment the minor or patch versions, publish then bump the version of Bloom used in our other projects. This should ensure we're always using the latest and greatest in our applications, and ensure that they never get too far out of sync.
+
+When the frequency of work on Bloom decreases to significantly enough, then consider releasing a `v1.0.0`. This should be when we're making very few changes to components already in the library and we're only adding new ones.
+
+### Post `v1.0.0` / open sourcing
+
+Once we've released `v1.0.0` or open sourced the project, we'll adopt true Semvar. Ideally, we'll make releases based on a roadmap of some form, probably dictated by our internal sprints.
+
+So as to not slow us down, we should continue to publish Bloom on a regular basis, but instead us [pre-releases](https://medium.com/@mbostock/prereleases-and-npm-e778fc5e2420#.6vr4xc28c), e.g., `v1.0.0-0.0.1`. The current thought is that the pre-release versions will follow a similar pattern to Semvar itself, i.e., major.minor.patch.
+
+### Making a release
+
+Pull down latest master. Then on master,
+
+1. `npm version [major|minor|patch]` (see below for which one to use)
+2. npm will automatically check to make sure the build succeeds and all tests pass
+3. `git push [REMOTE] master && git push [REMOTE] master --tags`
+4. `npm publish`
+
+When to use what:
+
+- `major`: A change where a consumer of this library will have to change their code to work with this new version
+- `minor`: Adding a new feature, or making a major internal change without outward-facing consequences
+- `patch`: Fixing a small bug, typo, or other small change
+
+Do not create tags as part of pull requests. Adding new features to master is different to publishing a version to npm.
+
+More info will be added here when we need to tackle the `v1.0.0` release.
 
 ## Why "Bloom"?
 
