@@ -5,3 +5,22 @@
 }
 
 /* Fills: TBC; */
+
+/* Specials */
+
+.root.appearhere svg {
+  /* Should only ever appear black or white */
+  fill: currentColor;
+  stroke: transparent;
+  /*
+    Has a min width so it's always readable. It does mean that using sizing via
+    the parent's font-size will only work after a certain point
+   */
+  min-width: 5.75rem;
+}
+
+.root.appearherebrackets svg {
+  /* Should only ever appear black or white */
+  fill: currentColor;
+  stroke: transparent;
+}

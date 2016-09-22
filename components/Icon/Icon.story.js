@@ -6,17 +6,42 @@ import m from '../../globals/modifiers.css';
 
 storiesOf('Icon', module)
   .add('Bogroll', () => (
-    <p className={ m.base }>
+    <div className={ m.base }>
       <Icon name="bogroll" /> Flush
-    </p>
+    </div>
   ))
   .add('Bogroll large', () => (
-    <p className={ m.titleLarge }>
+    <div className={ m.titleLarge }>
       <Icon name="bogroll" /> Flush
-    </p>
+    </div>
   ))
   .add('Bogroll primary', () => (
-    <p className={ m.fgPrimary }>
+    <div className={ m.fgPrimary }>
       <Icon name="bogroll" /> Flush
-    </p>
+    </div>
+  ))
+  .add('Appearhere', () => (
+    <div className={ m.base }>
+      <Icon name="appearhere" />
+    </div>
+  ))
+  .add('Appearhere white', () => (
+    <div className={ [m.titleLarge, m.bgBlack, m.fgWhite].join(' ') }>
+      <Icon name="appearhere" />
+    </div>
+  ))
+  .add('Appearhere brackets', () => (
+    <div className={ m.base }>
+      <Icon name="appearherebrackets" />
+    </div>
+  ))
+  .add('Appearhere brackets large', () => (
+    <div className={ m.titleLarge }>
+      <Icon name="appearherebrackets" />
+    </div>
+  ))
+  .add('Appearhere brackets white', () => (
+    <div className={ [m.titleLarge, m.bgBlack, m.fgWhite].join(' ') }>
+      <Icon name="appearherebrackets" />
+    </div>
   ));
