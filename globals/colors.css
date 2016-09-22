@@ -19,6 +19,7 @@
   /* Application colors */
   --color-red: rgb(213, 84, 68);
   --color-green: rgb(72, 213, 108);
+  --color-greyLight: rgb(228, 228, 228);
 
   /* Application tints */
   --color-red--light: rgb(236, 94, 77);
