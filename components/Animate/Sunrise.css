@@ -1,0 +1,10 @@
+.root {
+  transform: translateY(75px);
+  opacity: 0;
+  transition: transform 700ms, opacity 700ms;
+}
+
+.root.visible {
+  transform: translateY(0);
+  opacity: 1;
+}
