@@ -10,6 +10,7 @@ var combineLoaders = require('webpack-combine-loaders');
 var customProperties = require('postcss-custom-properties');
 var customMedia = require('postcss-custom-media');
 var webpackPostcssTools = require('webpack-postcss-tools');
+var lost = require('lost');
 
 var cssMap = webpackPostcssTools.makeVarMap(path.join(paths.globalsSrc, 'index.css'));
 
@@ -207,6 +208,7 @@ module.exports = {
       customMedia({
         extensions: cssMap.media,
       }),
+      lost,
     ];
   },
   plugins: [
