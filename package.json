@@ -68,7 +68,8 @@
     "invariant": "^2.2.1",
     "lost": "^7.1.0",
     "npm-git-install": "^0.2.0",
-    "react": "^15.3.1",
+    "react": "^15.3.2",
+    "react-addons-css-transition-group": "^15.3.2",
     "react-dom": "^15.3.1",
     "react-stickynode": "^1.2.1"
   },
