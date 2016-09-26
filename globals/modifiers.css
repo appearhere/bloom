@@ -20,6 +20,11 @@
 .fgSuccess { color: var(--color-success); }
 .fgDanger { color: var(--color-danger); }
 .fgText { color: var(--color-text); }
+.fgGreyLightest { color: var(--color-greyLightest); }
+.fgGreyLight { color: var(--color-greyLight); }
+.fgGrey { color: var(--color-grey); }
+.fgGreyDark { color: var(--color-greyDark); }
+.fgGreyDarker { color: var(--color-greyDarker); }
 
 /* Background colors */
 .bgWhite { background-color: var(--color-white); }
@@ -31,6 +36,11 @@
 .bgSuccess { background-color: var(--color-success); }
 .bgDanger { background-color: var(--color-danger); }
 .bgText { background-color: var(--color-text); }
+.bgGreyLightest { background-color: var(--color-greyLightest); }
+.bgGreyLight { background-color: var(--color-greyLight); }
+.bgGrey { background-color: var(--color-grey); }
+.bgGreyDark { background-color: var(--color-greyDark); }
+.bgGreyDarker { background-color: var(--color-greyDarker); }
 
 /* Brand ornaments */
 .goldUnderline {

@@ -1,7 +1,7 @@
 .root {
   width: var(--size-small);
   height: var(--size-small);
-  background-color: var(--color-grey);
+  background-color: var(--color-greyLightest);
   border-radius: 50%;
 }
 

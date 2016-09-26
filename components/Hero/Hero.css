@@ -33,7 +33,7 @@
   .caption {
     display: block;
     position: absolute;
-    color: var(--color-greyLight);
+    color: var(--color-greyLightest);
     bottom: var(--size-large);
     right: var(--size-large);
   }
