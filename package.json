@@ -56,7 +56,6 @@
     "strip-ansi": "3.0.1",
     "style-loader": "0.13.1",
     "svgo": "^0.7.0",
-    "svgo-loader": "git+https://git@github.com/rdjpalmer/svgo-loader.git#invalid-svg-err",
     "url-loader": "0.5.7",
     "webpack": "1.13.2",
     "webpack-combine-loaders": "^2.0.0",
@@ -67,9 +66,14 @@
   "dependencies": {
     "classnames": "^2.2.5",
     "invariant": "^2.2.1",
+    "npm-git-install": "^0.2.0",
     "react": "^15.3.1",
     "react-dom": "^15.3.1",
     "react-stickynode": "^1.2.1"
+  },
+  "gitDependencies": {
+    "react-on-visible": "https://git@github.com/rdjpalmer/react-on-visible.git#onChange-support",
+    "svgo-loader": "https://git@github.com/rdjpalmer/svgo-loader.git#invalid-svg-err"
   },
   "scripts": {
     "start": "node scripts/start.js",
@@ -77,7 +81,8 @@
     "test": "jest --env=jsdom",
     "test:watch": "jest --watch --env=jsdom",
     "storybook": "start-storybook -p 9009",
-    "build-storybook": "build-storybook"
+    "build-storybook": "build-storybook",
+    "postinstall": "npm-git install"
   },
   "eslintConfig": {
     "extends": "./config/eslint.js"
