@@ -1,5 +1,5 @@
 import React from 'react';
-import { storiesOf } from '@kadira/storybook';
+import { storiesOf, linkTo } from '@kadira/storybook';
 
 import Sunrise from './Sunrise';
 import m from '../../globals/modifiers.css';
@@ -23,8 +23,10 @@ storiesOf('Animation', module)
         </Sunrise>
       )) }
     </div>
+  ))
+  .add('Swap', () => (
+    <div>
+      <p>See <code>&lt;Swap /&gt;</code> in action in the <code>&lt;GridFader /&gt;</code> component</p>
+      <button onClick={ linkTo('GridFader', 'First') }>Go to GridFader</button>
+    </div>
   ));
-  // The swap story is going to link straight to
-  // the GridFader as thats a much better example
-  // of it in use
-  // .add('Swap', () => ());
