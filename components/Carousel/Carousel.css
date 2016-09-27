@@ -1,0 +1,18 @@
+:global(*) {
+  box-sizing: border-box;
+}
+
+.root {
+  white-space: nowrap;
+}
+
+.animate {
+  transition: transform 500ms;
+}
+
+.slide {
+  display: inline-block;
+  width: 100%;
+  padding-left: 2px;
+  padding-right: 2px;
+}
