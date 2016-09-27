@@ -1,0 +1,7 @@
+.row {
+  lost-utility: clearfix;
+}
+
+.column {
+  position: relative;
+}

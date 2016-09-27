@@ -25,6 +25,7 @@ module.exports = {
     'eol-last': 0,
     'react/jsx-curly-spacing': ['error', 'always'],
     'react/jsx-filename-extension': 0,
+    'react/forbid-prop-types': 0,
 
     // https://github.com/benmosher/eslint-plugin-import/blob/master/docs/rules/
 
