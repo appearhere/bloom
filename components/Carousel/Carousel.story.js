@@ -1,7 +1,6 @@
 import React, { PropTypes } from 'react';
-
-import Carousel from 'components/Carousel/Carousel';
-import css from './Styleguide.css';
+import { storiesOf } from '@kadira/storybook';
+import Carousel from './Carousel';
 
 const Slide = ({ i }) => (
   <div
@@ -28,13 +27,9 @@ Slide.propTypes = {
 
 const slides = [<Slide i={ 0 } />, <Slide i={ 1 } />, <Slide i={ 2 } />, <Slide i={ 3 } />, <Slide i={ 4 } />, <Slide i={ 5 } />, <Slide i={ 6 } />, <Slide i={ 7 } />];
 
-const Styleguide = () => (
-  <div className={ css.root } style={{ overflowX: 'hidden' }}>
-    <h1>Welcome to Bloom</h1>
-    <div className={css.carouselContainer}>
+storiesOf('Carousel', module)
+  .add('lol', () => (
+    <div style={ { width: '80vW', overflowX: 'visible', margin: '0 auto' } }>
       <Carousel items={ slides } />
     </div>
-  </div>
-);
-
-export default Styleguide;
+  ));

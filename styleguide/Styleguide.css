@@ -1,3 +1,18 @@
 .root {
   text-align: center;
 }
+
+
+.carouselContainer {
+  width: 100vW;
+  overflow-x: scroll;
+  -webkit-overflow-scrolling: touch;
+}
+
+@media (min-width: 800px) {
+  .carouselContainer {
+    width: 80vW;
+    overflow-x: visible;
+    margin: 0 auto;
+  }
+}
