@@ -1,0 +1,19 @@
+.root {
+  white-space: nowrap;
+  -webkit-overflow-scrolling: touch;
+  width: 100%;
+}
+
+.root * {
+  box-sizing: border-box;
+}
+
+.animate {
+  transition: transform 500ms;
+}
+
+.slide {
+  display: inline-block;
+  padding-left: 2px;
+  padding-right: 2px;
+}
