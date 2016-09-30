@@ -1,5 +1,7 @@
 /* Strokes */
-.root.bogroll svg {
+.root.bogroll svg,
+.root.play svg,
+.root.play-c svg {
   stroke: currentColor;
   fill: transparent;
 }
