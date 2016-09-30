@@ -7,7 +7,7 @@ import iconHelper from './iconHelper';
 describe('Icon helper', () => {
   it('outputs a valid react component', () => {
     const Icon = iconHelper();
-    expect(isElement(<Icon />)).toBe(true);
+    expect(isElement(<Icon name="" />)).toBe(true);
   });
 });
 
@@ -29,31 +29,7 @@ describe('Icon component', () => {
     const Icon = iconHelper(icons);
     const elm = React.createElement(Icon, { name: incorrectIconName });
     const div = document.createElement('div');
-    let hasThrown = false;
 
-    try {
-      ReactDOM.render(elm, div);
-    } catch (e) {
-      hasThrown = true;
-    }
-
-    expect(hasThrown).toBeTruthy();
-  });
-
-  it('throws when given no icon name', () => {
-    const svg = <svg />;
-    const icons = { icon: svg };
-    const Icon = iconHelper(icons);
-    const elm = React.createElement(Icon);
-    const div = document.createElement('div');
-    let hasThrown = false;
-
-    try {
-      ReactDOM.render(elm, div);
-    } catch (e) {
-      hasThrown = true;
-    }
-
-    expect(hasThrown).toBeTruthy();
+    expect(() => { ReactDOM.render(elm, div) }).toThrow();
   });
 });

@@ -16,7 +16,12 @@ class TestComp extends Component {
 
 it('renders without crashing', () => {
   const div = document.createElement('div');
-  ReactDOM.render(<IndicatorGroup />, div);
+  ReactDOM.render(
+    <IndicatorGroup>
+      { indicator => indicator({ i: 0 }) }
+    </IndicatorGroup>,
+    div
+  );
 });
 
 it('outputs children of the correct type', () => {
