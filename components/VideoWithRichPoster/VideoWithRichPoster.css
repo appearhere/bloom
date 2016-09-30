@@ -1,0 +1,18 @@
+.root {
+  position: relative;
+  width: 100%;
+  height: 100%;
+}
+
+.btn.btn,
+.btn.btn:hover,
+.btn.btn:focus,
+.btn.btn:active {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  left: 0;
+  top: 0;
+  color: var(--color-white);
+  text-align: center;
+}
