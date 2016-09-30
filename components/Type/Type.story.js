@@ -1,6 +1,5 @@
 import React from 'react';
-import { storiesOf, action } from '@kadira/storybook';
-import classnames from 'classnames';
+import { storiesOf } from '@kadira/storybook';
 
 import SectionHeader from './SectionHeader/SectionHeader';
 import Synopsis from './Synopsis/Synopsis';
