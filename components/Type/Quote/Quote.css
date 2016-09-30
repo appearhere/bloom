@@ -1,0 +1,38 @@
+.base {
+  color: currentColor;
+}
+
+.quoteBody {
+  margin-top: 0;
+  margin-bottom: 0;
+  position: relative;
+  display: block;
+}
+
+.quoteBody:before,
+.quoteBody:after {
+  font-family: serif;
+  font-size: var(--fontsize--title-large);
+  color: var(--color-greyLight);
+  position: relative;
+  top: var(--size-micro);
+}
+
+.quoteBody:before {
+  content: "\201C";
+  margin-right: var(--size-small) ;
+  margin-left: calc(-1 * var(--size-large));
+}
+
+.quoteBody:after {
+  content: "\201D";
+  margin-left: var(--size-small);
+  margin-right: calc(-1 * var(--size-large));
+}
+
+.cite {
+  margin-top: var(--size-medium);
+  margin-bottom: 0;
+  font-style: normal;
+  display: block;
+}

@@ -4,6 +4,7 @@ import classnames from 'classnames';
 
 import SectionHeader from './SectionHeader/SectionHeader';
 import Synopsis from './Synopsis/Synopsis';
+import Quote from './Quote/Quote';
 import m from '../../globals/modifiers.css';
 
 storiesOf('Type', module)
@@ -35,4 +36,16 @@ storiesOf('Type', module)
       title="Focus on your idea."
       body="We’ve organised legals & deposits simply so you can focus on the one thing that really matters - making your idea happen."
     />
+  )).add('<Quote /> default', () => (
+    <Quote citation="Rhett Butler" >
+      Frankly my dear, I don’t give a damn
+    </Quote>
+  )).add('<Quote /> reverse and centered', () => (
+    <Quote
+      citation={ <span>Charles Babbage, Genius</span> }
+      cite="http://www.brainyquote.com/quotes/quotes/c/charlesbab141832.html"
+      className={ [m.fgWhite, m.bgBlack, m.pa48, m.center].join(' ') }
+    >
+      I am not able rightly to apprehend the kind of confusion of ideas that could provoke such n question
+    </Quote>
   ));
