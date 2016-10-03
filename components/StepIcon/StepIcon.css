@@ -1,0 +1,12 @@
+.circle {
+  stroke: var(--color-primary);
+  stroke-width: 2px;
+  stroke-linecap: square;
+}
+
+.text {
+  font: var(--font-small);
+  font-weight: var(--fontweight-bold);
+  line-spacing: 15;
+  fill: var(--color-greyDarker);
+}
