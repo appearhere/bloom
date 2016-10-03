@@ -1,7 +1,7 @@
 import React from 'react';
 import { storiesOf, action } from '@kadira/storybook';
 import Btn from './Btn';
-import m from '../../globals/modifiers.css';
+import m from 'globals/modifiers.css';
 
 storiesOf('Btn', module)
   .add('Default button', () => (

@@ -4,7 +4,7 @@ import classnames from 'classnames';
 
 import SectionHeader from './SectionHeader/SectionHeader';
 import Synopsis from './Synopsis/Synopsis';
-import m from '../../globals/modifiers.css';
+import m from 'globals/modifiers.css';
 
 storiesOf('Type', module)
   .add('<SectionHeader />', () => (

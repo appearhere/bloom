@@ -28,6 +28,7 @@ module.exports = {
   appSrc: resolveApp('styleguide'),
   componentSrc: resolveApp('components'),
   globalsSrc: resolveApp('globals'),
+  utilsSrc: resolveApp('utils'),
   testsSetup: resolveApp('styleguide/setupTests.js'),
   appNodeModules: resolveApp('node_modules'),
   ownNodeModules: resolveApp('node_modules'),

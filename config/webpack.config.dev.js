@@ -11,6 +11,7 @@ var customProperties = require('postcss-custom-properties');
 var customMedia = require('postcss-custom-media');
 var webpackPostcssTools = require('webpack-postcss-tools');
 var lost = require('lost');
+var aliases = require('./webpack.config.alias');
 
 var cssMap = webpackPostcssTools.makeVarMap(path.join(paths.globalsSrc, 'index.css'));
 
@@ -76,13 +77,7 @@ module.exports = {
     // some tools, although we do not recommend using it, see:
     // https://github.com/facebookincubator/create-react-app/issues/290
     extensions: ['.js', '.json', '.jsx', ''],
-    alias: {
-      // Support React Native Web
-      // https://www.smashingmagazine.com/2016/08/a-glimpse-into-the-future-with-react-native-for-web/
-      'react-native': 'react-native-web',
-      // No more relative component imports
-      components: paths.componentSrc,
-    }
+    alias: aliases
   },
   // Resolve loaders (webpack plugins for CSS, images, transpilation) from the
   // directory of `react-scripts` itself rather than the project directory.
