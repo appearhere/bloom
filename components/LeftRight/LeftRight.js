@@ -39,8 +39,8 @@ LeftRight.propTypes = {
   className: PropTypes.string,
   leftClassName: PropTypes.string,
   rightClassName: PropTypes.string,
-  leftChildren: PropTypes.node,
-  rightChildren: PropTypes.node,
+  leftChildren: PropTypes.node.isRequired,
+  rightChildren: PropTypes.node.isRequired,
   primarySide: PropTypes.oneOf(['left', 'right']),
 };
 
