@@ -2,7 +2,7 @@ import React from 'react';
 import { storiesOf } from '@kadira/storybook';
 
 import GridFader from './GridFader';
-import m from '../../globals/modifiers.css';
+import m from 'globals/modifiers.css';
 
 const style = {
   width: '100px',

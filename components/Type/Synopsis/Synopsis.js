@@ -1,7 +1,7 @@
 import React, { PropTypes } from 'react';
 import cx from 'classnames';
 
-import m from '../../../globals/modifiers.css';
+import m from 'globals/modifiers.css';
 import css from './Synopsis.css';
 
 const titleClasses = cx(

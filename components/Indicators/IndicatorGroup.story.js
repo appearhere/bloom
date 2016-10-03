@@ -2,7 +2,7 @@ import React from 'react';
 import { storiesOf } from '@kadira/storybook';
 import IndicatorGroup from './IndicatorGroup';
 
-import m from '../../globals/modifiers.css';
+import m from 'globals/modifiers.css';
 
 const simpleIndicators = [1, 2, 3, 4];
 

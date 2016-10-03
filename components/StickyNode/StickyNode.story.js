@@ -1,8 +1,8 @@
 import React from 'react';
 import { storiesOf } from '@kadira/storybook';
 
-import Hero from '../Hero/Hero';
-import m from '../../globals/modifiers.css';
+import Hero from 'components/Hero/Hero';
+import m from 'globals/modifiers.css';
 import StickyNode from './StickyNode';
 
 storiesOf('StickyNode', module)

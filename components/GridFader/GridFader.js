@@ -1,8 +1,8 @@
 import React, { PropTypes, Component } from 'react';
 import cx from 'classnames';
 
-import getRandomInt from '../../utils/getRandomInt';
-import Swap from '../Animate/Swap';
+import getRandomInt from 'utils/getRandomInt';
+import Swap from 'components/Animate/Swap';
 import css from './GridFader.css';
 
 export default class GridFader extends Component {

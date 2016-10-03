@@ -2,7 +2,7 @@ import React from 'react';
 import { storiesOf } from '@kadira/storybook';
 import Icon from './Icon';
 
-import m from '../../globals/modifiers.css';
+import m from 'globals/modifiers.css';
 
 storiesOf('Icon', module)
   .add('Bogroll', () => (
