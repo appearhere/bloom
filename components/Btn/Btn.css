@@ -1,5 +1,5 @@
 .root {
-  padding: 0.75rem 2.5rem;
+  padding: var(--size-medium) var(--size-large);
   background-color: var(--color-black);
   color: var(--color-white);
   border-width: 1px;
