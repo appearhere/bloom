@@ -1,0 +1,4 @@
+.root {
+  position: relative;
+  z-index: var(--z-stickyNode);
+}
