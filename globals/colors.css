@@ -19,6 +19,7 @@
   /* Application colors */
   --color-red: rgb(213, 84, 68);
   --color-green: rgb(72, 213, 108);
+  --color-focusRing: rgb(91, 157, 217);
 
   --color-greyLightest: rgb(221, 221, 221);
   --color-greyLight: rgb(190, 190, 190);

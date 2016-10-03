@@ -1,0 +1,9 @@
+.root,
+.root:hover,
+.root:focus,
+.root:active {
+  width: 100%;
+  height: 100%;
+  color: var(--color-white);
+  text-align: center;
+}
