@@ -12,8 +12,10 @@
   cursor: pointer;
   transition: background-color 300ms, color 300ms;
   transition-timing-function: cubic-bezier(0,1,.75,1);
+  border-radius: 0;
 }
 
+.root:focus,
 .root:hover {
   background-color: var(--color-black--light);
 }
@@ -32,6 +34,7 @@
   border-color: currentColor;
 }
 
+.root.hollow:focus,
 .root.hollow:hover {
   background-color: var(--color-black);
   color: var(--color-white);
@@ -45,6 +48,7 @@
   text-decoration-color: var(--color-primary);
 }
 
+.root.subtle:focus,
 .root.subtle:hover {
   color: var(--color-primary--light);
 }
@@ -55,6 +59,7 @@
   border-color: var(--color-primary);
 }
 
+.primary:focus,
 .primary:hover {
   background-color: var(--color-primary--light);
   border-color: var(--color-primary--light);
@@ -66,6 +71,7 @@
   border-color: var(--color-primary);
 }
 
+.primary.hollow:focus,
 .primary.hollow:hover {
   background-color: var(--color-primary);
   color: var(--color-white);
@@ -79,6 +85,7 @@
   text-decoration-color: var(--color-black);
 }
 
+.primary.subtle:focus,
 .primary.subtle:hover {
   color: var(--color-primary--light);
   background-color: transparent;
@@ -93,6 +100,7 @@
   border-color: var(--color-danger);
 }
 
+.danger:focus,
 .danger:hover {
   background-color: var(--color-danger--light);
   border-color: var(--color-danger--light);
@@ -104,6 +112,7 @@
   border-color: currentColor;
 }
 
+.danger.hollow:focus,
 .danger.hollow:hover {
   background-color: var(--color-danger);
   color: var(--color-white);
@@ -117,6 +126,7 @@
   text-decoration-color: var(--color-black);
 }
 
+.danger.subtle:focus,
 .danger.subtle:hover {
   color: var(--color-danger--light);
   background-color: transparent;
@@ -131,6 +141,7 @@
   border-color: var(--color-white);
 }
 
+.whiteout:focus,
 .whiteout:hover {
   background-color: var(--color-black--light);
   border-color: var(--color-black--light);
@@ -143,6 +154,7 @@
   border-color: var(--color-white);
 }
 
+.whiteout.hollow:focus,
 .whiteout.hollow:hover {
   background-color: var(--color-white);
   color: var(--color-black);
@@ -155,6 +167,7 @@
   text-decoration: none;
 }
 
+.whiteout.subtle:focus,
 .whiteout.subtle:hover {
   color: var(--color-primary);
 }
