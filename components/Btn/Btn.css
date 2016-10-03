@@ -7,7 +7,7 @@
   border-color: var(--color-black);
   text-transform: uppercase;
   line-height: 1.4;
-  font: var(--font-micro);
+  font: var(--font-small);
   font-weight: var(--fontweight-demi);
   cursor: pointer;
   transition: background-color 300ms, color 300ms;
