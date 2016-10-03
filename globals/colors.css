@@ -21,7 +21,8 @@
   --color-green: rgb(72, 213, 108);
   --color-focusRing: rgb(91, 157, 217);
 
-  --color-greyLightest: rgb(221, 221, 221);
+  --color-greyLightest: rgb(245, 245, 245);
+  --color-greyLighter: rgb(221, 221, 221);
   --color-greyLight: rgb(190, 190, 190);
   --color-grey: rgb(139, 139, 139);
   --color-greyDark: rgb(90, 90, 90);

@@ -21,6 +21,7 @@
 .fgDanger { color: var(--color-danger); }
 .fgText { color: var(--color-text); }
 .fgGreyLightest { color: var(--color-greyLightest); }
+.fgGreyLighter { color: var(--color-greyLighter); }
 .fgGreyLight { color: var(--color-greyLight); }
 .fgGrey { color: var(--color-grey); }
 .fgGreyDark { color: var(--color-greyDark); }
@@ -37,6 +38,7 @@
 .bgDanger { background-color: var(--color-danger); }
 .bgText { background-color: var(--color-text); }
 .bgGreyLightest { background-color: var(--color-greyLightest); }
+.bgGreyLighter { background-color: var(--color-greyLighter); }
 .bgGreyLight { background-color: var(--color-greyLight); }
 .bgGrey { background-color: var(--color-grey); }
 .bgGreyDark { background-color: var(--color-greyDark); }
