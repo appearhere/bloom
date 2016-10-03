@@ -5,15 +5,13 @@ const autoprefixer = require('autoprefixer');
 const customProperties = require('postcss-custom-properties');
 var customMedia = require('postcss-custom-media');
 var webpackPostcssTools = require('webpack-postcss-tools');
+var aliases = require('../config/webpack.config.alias');
 
 var cssMap = webpackPostcssTools.makeVarMap(path.join(paths.globalsSrc, 'index.css'));
 
 module.exports = {
   resolve: {
-    alias: {
-      // No more relative component imports
-      components: paths.componentSrc,
-    },
+    alias: aliases
   },
   module: {
     loaders: [
@@ -74,5 +72,5 @@ module.exports = {
         extensions: cssMap.media,
       }),
     ];
-  },
+  }
 }
