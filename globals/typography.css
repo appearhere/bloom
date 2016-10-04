@@ -30,7 +30,7 @@
   --fontsize-micro: 0.6875rem;
 
   --font--title-large: var(--fontweight-bold) var(--fontsize--title-large)/1.34375 var(--font-avenir);
-  --font--title-base: var(--fontweight-bold) var(--fontsize--title-base)/1.571 var(--font-avenir);
+  --font--title-base: var(--fontweight-bold) var(--fontsize--title-base)/1.28571 var(--font-avenir);
   --font--title-small: var(--fontweight-bold) var(--fontsize--title-small)/1.333 var(--font-avenir);
 
   --font-large: var(--fontweight-base) var(--fontsize-large)/1.263 var(--font-avenir);
