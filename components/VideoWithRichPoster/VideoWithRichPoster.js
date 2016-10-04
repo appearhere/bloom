@@ -1,12 +1,12 @@
 import React, { Component, PropTypes } from 'react';
 import cx from 'classnames';
 
-import ScreenReadable from 'components/ScreenReadable/ScreenReadable';
-import Controls from 'components/Video/Controls/Controls';
-import PlayBtn from 'components/Video/PlayBtn/PlayBtn';
+import ScreenReadable from '../ScreenReadable/ScreenReadable';
+import Controls from '../Video/Controls/Controls';
+import PlayBtn from '../Video/PlayBtn/PlayBtn';
 import css from './VideoWithRichPoster.css';
-import Video from 'components/Video/Video';
-import Icon from 'components/Icon/Icon';
+import Video from '../Video/Video';
+import Icon from '../Icon/Icon';
 
 export default class VideoWithPoster extends Component {
   static propTypes = {

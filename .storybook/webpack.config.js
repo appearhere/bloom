@@ -9,12 +9,6 @@ var webpackPostcssTools = require('webpack-postcss-tools');
 var cssMap = webpackPostcssTools.makeVarMap(path.join(paths.globalsSrc, 'index.css'));
 
 module.exports = {
-  resolve: {
-    alias: {
-      // No more relative component imports
-      components: paths.componentSrc,
-    },
-  },
   module: {
     loaders: [
       {
