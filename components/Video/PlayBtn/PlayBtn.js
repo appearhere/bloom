@@ -1,8 +1,8 @@
 import React, { PropTypes } from 'react';
 
-import ScreenReadable from 'components/ScreenReadable/ScreenReadable';
-import BtnContainer from 'components/BtnContainer/BtnContainer';
-import Icon from 'components/Icon/Icon';
+import ScreenReadable from '../../ScreenReadable/ScreenReadable';
+import BtnContainer from '../../BtnContainer/BtnContainer';
+import Icon from '../../Icon/Icon';
 import css from './PlayBtn.css';
 
 const PlayBtn = ({ play, pause, paused }) => {
