@@ -4,4 +4,5 @@
  */
 :root {
   @custom-media --hero-large (min-width: 50rem);
+  @custom-media --wrapper-large (min-width: 62.25rem);
 }
