@@ -1,7 +1,14 @@
 .root {
   max-width: 80rem;
-  padding-left: var(--size-large);
-  padding-right: var(--size-large);
   margin-left: auto;
   margin-right: auto;
+  padding-left: var(--size-large);
+  padding-right: var(--size-large);
+}
+
+@media (--wrapper-large) {
+  .root {
+    padding-left: var(--space-48);
+    padding-right: var(--space-48);
+  }
 }
