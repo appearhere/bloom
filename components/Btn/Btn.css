@@ -13,11 +13,14 @@
   transition: background-color 300ms, color 300ms;
   transition-timing-function: cubic-bezier(0,1,.75,1);
   border-radius: 0;
+  text-decoration: none;
+  display: inline-block;
 }
 
 .root:focus,
 .root:hover {
   background-color: var(--color-black--light);
+  color: var(--color-white);
 }
 
 .root:active {
