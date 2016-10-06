@@ -1,5 +1,5 @@
 .circle {
-  stroke: var(--color-primary);
+  stroke: var(--color-greyLighter);
   stroke-width: 2px;
   stroke-linecap: square;
 }
