@@ -1,7 +1,25 @@
 {
   "name": "@appearhere/bloom",
   "version": "0.1.0",
-  "private": true,
+  "description": "Appear Here's pattern library and styleguide",
+  "keywords": ["Pattern library", "styleguide", "Appear Here", "react", "components"],
+  "homepage": "https://github.com/appearhere/bloom",
+  "repository" : {
+    "type" : "git",
+    "url" : "https://github.com/appearhere/bloom.git"
+  },
+  "contributors": [
+    "Richard Palmer <rich@rdjpalmer.com> (http://rdjpalmer.com)",
+    "Nick Maher <nick@appearhere.co.uk>",
+    "Daniel Magliola <daniel@appearhere.co.uk>",
+    "Nique Woodhouse <nique@appearhere.co.uk>"
+  ],
+  "engines" : {
+    "node" : ">=6.5.0"
+  },
+  "publishConfig": {
+    "access": "restricted"
+  },
   "devDependencies": {
     "@kadira/storybook": "^2.14.0",
     "autoprefixer": "6.4.0",
