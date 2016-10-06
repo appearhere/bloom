@@ -1,0 +1,17 @@
+.root {
+  display: table;
+  width: 100%;
+}
+
+.left,
+.right {
+  display: table-cell;
+  width: 1%;
+  vertical-align: middle;
+  white-space: nowrap;
+}
+
+.large {
+  width: 99%;
+  white-space: inherit;
+}
