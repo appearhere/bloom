@@ -1,10 +1,33 @@
 /* Strokes */
 .root.bogroll svg,
 .root.play svg,
-.root.play-c svg {
+.root.play-c svg,
+.root.chart-arrow svg,
+.root.play-c svg,
+.root.tick-starred svg,
+.root.travel-idea svg,
+.root.vip-entrance svg,
+.root.bogroll svg,
+.root.camera svg,
+.root.chatting svg,
+.root.comment svg,
+.root.dollar svg,
+.root.download svg,
+.root.globe svg,
+.root.manage svg,
+.root.percentage svg,
+.root.play svg,
+.root.search svg,
+.root.shield svg,
+.root.signature svg,
+.root.tick svg,
+.root.ticket svg,
+.root.teamwork svg {
   stroke: currentColor;
   fill: transparent;
+  stroke-linecap: round;
 }
+
 
 /* Fills: TBC; */
 
