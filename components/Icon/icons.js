@@ -21,6 +21,7 @@ export default {
   search: svgClean(require('./icons/icon-search.svg')),
   shield: svgClean(require('./icons/icon-shield.svg')),
   signature: svgClean(require('./icons/icon-signature.svg')),
+  star: svgClean(require('./icons/icon-star.svg')),
   tick: svgClean(require('./icons/icon-tick.svg')),
   ticket: svgClean(require('./icons/icon-ticket.svg')),
   teamwork: svgClean(require('./icons/icon-teamwork.svg')),
