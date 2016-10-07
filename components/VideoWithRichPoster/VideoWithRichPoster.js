@@ -18,6 +18,8 @@ export default class VideoWithPoster extends Component {
       PropTypes.arrayOf(PropTypes.element),
       PropTypes.element,
     ]).isRequired,
+    posterClassName: PropTypes.string,
+    videoClassName: PropTypes.string,
   };
 
   constructor(props) {
@@ -37,7 +39,12 @@ export default class VideoWithPoster extends Component {
   };
 
   render() {
-    const { videoSrc, posterSrc } = this.props;
+    const {
+      videoSrc,
+      posterSrc,
+      videoClassName,
+      posterClassName,
+    } = this.props;
     const { isPlaying } = this.state;
 
     const btnClasses = cx(
@@ -49,7 +56,7 @@ export default class VideoWithPoster extends Component {
       <div className={ css.root }>
         { isPlaying ? (
           <Video
-            className={ css.video }
+            className={ cx(css.video, videoClassName) }
             key="video"
             autoPlay
             controls
@@ -59,7 +66,7 @@ export default class VideoWithPoster extends Component {
         ) : (
           <div>
             <Video
-              className={ css.video }
+              className={ cx(css.video, posterClassName) }
               autoPlay
               loop
               muted
