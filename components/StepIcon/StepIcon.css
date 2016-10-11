@@ -4,6 +4,10 @@
   stroke-linecap: square;
 }
 
+.circleCompleted {
+  stroke: var(--color-primary);
+}
+
 .text {
   font: var(--font-small);
   font-weight: var(--fontweight-bold);

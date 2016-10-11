@@ -1,0 +1,95 @@
+.root {
+  overflow: hidden;
+}
+
+.step {
+  margin-bottom: var(--size-medium);
+  box-sizing: border-box;
+}
+
+.stepIconContainer {
+  position: relative;
+  margin-bottom: var(--size-medium);
+  vertical-align: top;
+}
+
+.stepIcon {
+  background-color: var(--color-white);
+  padding: var(--size-small);
+}
+
+.stepContent {
+  margin-top: calc(var(--size-medium) + (var(--size-small) / 2));
+  margin-bottom: var(--size-medium);
+  margin-left: var(--size-medium);
+  font: var(--font-base);
+  vertical-align: top;
+}
+
+.step + .step .stepIconContainer:before {
+  content: ' ';
+  background-color: var(--color-greyLighter);
+  height: 100%;
+  width: 2px;
+  position: absolute;
+  display: block;
+  top: calc(-100% + (var(--size-medium) * 2));
+  left: 50%;
+  z-index: -1;
+}
+
+.step + .step .stepIconContainerCompleted:before {
+  background-color: var(--color-primary);
+}
+
+.stepIconContainerCompleted:last-of-type:before {
+  background-color: var(--color-greyLighter);
+}
+
+.stepTitle {
+  font: var(--font-base);
+  font-weight: var(--fontweight-demi);
+  text-transform: uppercase;
+  color: var(--color-grey);
+}
+
+.stepBody {
+  margin-left: 0;
+  color: var(--color-greyLight);
+}
+
+.stepContentCompleted .stepTitle {
+  color: var(--color-black);
+}
+
+.stepContentCompleted .stepBody {
+  color: var(--color-greyDark);
+}
+
+.horizontal .step {
+  display: inline-block;
+  text-align: center;
+  padding-left: var(--size-medium);
+  padding-right: var(--size-medium);
+}
+
+.horizontal .stepIconContainer,
+.horizontal .stepContent {
+  display: block;
+}
+
+.horizontal .stepIconContainer {
+  margin-bottom: 0;
+  width: 100%;
+}
+
+.horizontal .stepContent {
+  margin-left: 0;
+}
+
+.horizontal .step + .step .stepIconContainer:before {
+  height: 2px;
+  width: calc(100% - (var(--size-medium) * 2));
+  left: -50%;
+  top: 50%;
+}
