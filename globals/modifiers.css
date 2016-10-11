@@ -194,3 +194,6 @@
 .valignt { vertical-align: top; }
 .valignm { vertical-align: middle; }
 .valignb { vertical-align: bottom; }
+
+/* Clearfix */
+.cf { lost-utility: clearfix; }
