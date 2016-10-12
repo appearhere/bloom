@@ -11,6 +11,7 @@ const LeftRight = (props) => {
     primarySide,
     leftChildren,
     rightChildren,
+    ...rest
   } = props;
 
   const classes = cx(css.root, className);
@@ -28,7 +29,7 @@ const LeftRight = (props) => {
   );
 
   return (
-    <div className={ classes }>
+    <div { ...rest } className={ classes }>
       <div className={ leftClasses }>{ leftChildren }</div>
       <div className={ rightClasses }>{ rightChildren }</div>
     </div>
