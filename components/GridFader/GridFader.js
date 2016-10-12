@@ -18,9 +18,9 @@ export default class GridFader extends Component {
       }),
     ).isRequired,
     GridItemComponent: PropTypes.oneOfType([
-      PropTypes.element,
       PropTypes.string,
-    ]).isRequired,
+      PropTypes.func,
+    ]),
     columnClass: PropTypes.string,
     limit: PropTypes.number,
     swapInterval: PropTypes.number,
