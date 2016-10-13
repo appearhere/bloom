@@ -80,6 +80,7 @@
     "strip-ansi": "3.0.1",
     "style-loader": "0.13.1",
     "svgo": "^0.7.0",
+    "svgo-loader": "^1.1.1",
     "url-loader": "0.5.7",
     "webpack": "1.13.2",
     "webpack-combine-loaders": "^2.0.0",
@@ -102,8 +103,7 @@
     "react-stickynode": "^1.2.1"
   },
   "gitDependencies": {
-    "react-on-visible": "https://git@github.com/rdjpalmer/react-on-visible.git#onChange-support",
-    "svgo-loader": "https://git@github.com/rdjpalmer/svgo-loader.git#invalid-svg-err"
+    "react-on-visible": "https://git@github.com/rdjpalmer/react-on-visible.git#onChange-support"
   },
   "scripts": {
     "start": "node scripts/start.js",
