@@ -28,6 +28,7 @@
   },
   "devDependencies": {
     "@kadira/storybook": "^2.14.0",
+    "@kadira/storybook-deployer": "^1.2.0",
     "autoprefixer": "6.4.0",
     "babel-core": "6.14.0",
     "babel-eslint": "6.1.2",
@@ -108,7 +109,10 @@
     "test": "jest --env=jsdom",
     "test:watch": "jest --watch --env=jsdom",
     "storybook": "start-storybook -p 9009",
-    "build-storybook": "build-storybook"
+    "build-storybook": "build-storybook",
+    "postinstall": "npm-git install",
+    "deploy-storybook": "storybook-to-ghpages",
+    "postpublish": "npm run deploy-storybook"
   },
   "eslintConfig": {
     "extends": "./config/eslint.js"
