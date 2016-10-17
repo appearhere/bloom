@@ -1,0 +1,17 @@
+.root {
+  transform: scaleX(-1) rotate(-90deg);
+}
+
+.circle {
+  stroke-width: 2;
+  fill: transparent;
+  stroke-linecap: round;
+}
+
+.circleTrack {
+  stroke: var(--color-greyDark);
+}
+
+.circleFilled {
+  stroke: var(--color-primary);
+}
