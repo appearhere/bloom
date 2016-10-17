@@ -181,6 +181,10 @@ module.exports = {
         query: {
           attrs: ['link:href'],
         }
+      },
+      {
+        test: /\.md$/,
+        loader: 'raw'
       }
     ]
   },

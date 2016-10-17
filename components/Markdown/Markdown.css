@@ -1,0 +1,161 @@
+/**
+ * Allow figures to break the grid, so their contents (images) can be bigger
+ * and therefore have a greater impact
+ */
+.root > *:not(figure) {
+  margin-left: auto;
+  margin-right: auto;
+  max-width: 42.5rem;
+}
+
+.root h1,
+.root h2,
+.root h3,
+.root h4,
+.root p,
+.root a,
+.root ol,
+.root ul,
+.root blockquote {
+  color: var(--color-greyDarker);
+  font: var(--font-base);
+}
+
+.root * + * {
+  margin-top: var(--size-large);
+  margin-bottom: 0;
+}
+
+.root h1 {
+  font: var(--font--title-large);
+  font-weight: var(--fontweight-bold);
+}
+
+.root h2 {
+  font: var(--font--title-base);
+  font-weight: var(--fontweight-bold);
+}
+
+.root * + h1,
+.root * + h2 {
+  margin-top: var(--size-large) * 2;
+}
+
+.root h3 {
+  font: var(--font--title-small);
+}
+
+.root h4 {
+  font: var(--font-large);
+}
+
+.root p {
+  font-size: var(--font-large);
+}
+
+.root iframe {
+  display: block;
+}
+
+.root img {
+  width: auto;
+  height: auto;
+  max-height: 80vh;
+  max-width: 100%;
+}
+
+.root figure {
+  margin-left: 0;
+  margin-right: 0;
+  text-align: center;
+}
+
+.root figcaption {
+  font: var(--font-small);
+  margin-top: var(--size-small);
+  margin-left: auto;
+  margin-right: auto;
+  max-width: 42.5rem;
+  text-align: left;
+}
+
+.root figcaption * {
+  font: var(--font-small);
+}
+
+@media (min-width: 60rem) {
+  .root img {
+    max-width: 60rem;
+    margin-left: auto;
+    margin-right: auto;
+  }
+
+  .root p > img {
+    max-width: 100%;
+  }
+}
+
+.root strong {
+  font-weight: var(--fontweight-bold);
+}
+
+.root em {
+  font-style: italic;
+}
+
+.root a {
+  color: var(--color-gold);
+  text-decoration: underline;
+}
+
+.root ol, ul {
+  padding: 0;
+  margin-left: auto;
+  list-style-position: inside;
+}
+
+.root li {
+  margin-top: var(--size-micro);
+}
+
+.root ol ol, ul ul {
+  margin-left: var(--size-large);
+  margin-bottom: var(--size-micro);
+}
+
+.root blockquote {
+  padding: 2rem 0;
+  border-top: 2px solid var(--color-grey);
+  border-bottom: 2px solid var(--color-grey);
+}
+
+.root blockquote p {
+  font: var(--font--title-base);
+  font-weight: var(--fontweight-bold);
+  margin-bottom: 0;
+}
+
+.root blockquote p:before,
+.root blockquote p:after {
+  font-family: 'georgia';
+}
+
+.root blockquote p:before {
+  content: "\201C";
+}
+
+.root blockquote p:after {
+  content: "\201D";
+}
+
+@media (min-width: 46.75rem) {
+  .root blockquote p {
+    position: relative;
+    margin-left: -3rem;
+  }
+
+  .root blockquote p:before {
+    position: absolute;
+    left: -1.3rem;
+  }
+}
