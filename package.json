@@ -93,17 +93,14 @@
     "invariant": "^2.2.1",
     "lodash": "^4.16.3",
     "lost": "^7.1.0",
-    "npm-git-install": "^0.2.0",
     "react": "^15.3.2",
     "react-addons-css-transition-group": "^15.3.2",
     "react-container-query": "^0.6.0",
     "react-dom": "^15.3.1",
     "react-html5video": "^1.2.12",
     "react-motion": "^0.4.5",
+    "react-on-visible": "^1.0.3",
     "react-stickynode": "^1.2.1"
-  },
-  "gitDependencies": {
-    "react-on-visible": "https://git@github.com/rdjpalmer/react-on-visible.git#onChange-support"
   },
   "scripts": {
     "start": "node scripts/start.js",
@@ -111,8 +108,7 @@
     "test": "jest --env=jsdom",
     "test:watch": "jest --watch --env=jsdom",
     "storybook": "start-storybook -p 9009",
-    "build-storybook": "build-storybook",
-    "postinstall": "npm-git install"
+    "build-storybook": "build-storybook"
   },
   "eslintConfig": {
     "extends": "./config/eslint.js"
