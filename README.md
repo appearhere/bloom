@@ -223,6 +223,12 @@ Do not create tags as part of pull requests. Adding new features to master is di
 
 More info will be added here when we need to tackle the `v1.0.0` release.
 
+### Post release
+
+As part of the release process, Bloom will automatically be published to [GitHub pages](https://appearhere.github.io/bloom/). This happens via npm's `postpublish` script, and **requires** the publisher to have the Appear Here remote set up as `origin`, as per [storybook-deployer#8](https://github.com/kadirahq/storybook-deployer/issues/8).
+
+This is a stop gap solution until we have time to set up auto deploying via GitHub or similar.
+
 ## Why "Bloom"?
 
 It's the collective name for Jellyfish; they're pretty dumb, [look cool](http://static2.businessinsider.com/image/55a7ee522acae7c23f8b4cf6/youtubers-caught-a-jellyfish-sting-in-slow-motion--and-what-they-saw-gave-a-scientist-goosebumps.jpg)
