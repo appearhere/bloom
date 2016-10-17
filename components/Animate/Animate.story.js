@@ -2,8 +2,9 @@ import React from 'react';
 import { storiesOf, linkTo } from '@kadira/storybook';
 
 import Sunrise from './Sunrise';
-import Counter from './Counter.js';
+import Counter from './Counter';
 import m from '../../globals/modifiers.css';
+import Circle from './Circle';
 
 const sunrisePanels = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20];
 
@@ -48,4 +49,13 @@ storiesOf('Animation', module)
       startValue={ 0 }
       endValue={ 33000000 }
     />
+  ))
+  .add('<Circle />', () => (
+    <div style={ { maxWidth: '100px' } }>
+      <Circle percent={ 50 }/>
+      <Circle percent={ 75 }/>
+      <Circle percent={ 25 }/>
+      <Circle percent={ 100 }/>
+
+    </div>
   ));
