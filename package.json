@@ -110,7 +110,6 @@
     "test:watch": "jest --watch --env=jsdom",
     "storybook": "start-storybook -p 9009",
     "build-storybook": "build-storybook",
-    "postinstall": "npm-git install",
     "deploy-storybook": "storybook-to-ghpages",
     "postpublish": "npm run deploy-storybook"
   },
