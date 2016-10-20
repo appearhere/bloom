@@ -111,7 +111,8 @@
     "storybook": "start-storybook -p 9009",
     "build-storybook": "build-storybook",
     "deploy-storybook": "storybook-to-ghpages",
-    "postpublish": "npm run deploy-storybook"
+    "prepublish": "yarn test",
+    "postpublish": "yarn run deploy-storybook"
   },
   "eslintConfig": {
     "extends": "./config/eslint.js"
