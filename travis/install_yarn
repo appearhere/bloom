@@ -1,0 +1,8 @@
+#!/bin/sh
+if [ ! -d "$TRAVIS_BUILD_DIR/yarn/bin" ]; then
+  wget https://yarnpkg.com/latest.tar.gz -O /tmp/yarnpkg.tar.gz
+  mkdir -p $TRAVIS_BUILD_DIR/yarn
+  tar -xvf /tmp/yarnpkg.tar.gz -C $TRAVIS_BUILD_DIR/yarn --strip-components=1
+fi
+export PATH=$PATH:$TRAVIS_BUILD_DIR/yarn/bin
+echo "yarn --version $(yarn --version)"

@@ -11,10 +11,16 @@ Find the [development roadmap on Trello](https://trello.com/b/GEtat29h/bloom-dev
 
 ## Use Bloom in your project
 
-Include Bloom in your projects like any other npm module:
+Include Bloom in your projects like any other npm/yarn module:
 
 ```shell
 npm install @appearhere/bloom
+```
+
+or
+
+```shell
+yarn install @appearhere/bloom
 ```
 
 You'll now be able to require components from bloom like any other module:
@@ -53,7 +59,7 @@ If the module import fails like so, `You may need an appropriate loader to handl
 To build the style guide for deployment:
 
 ```shell
-npm run build
+yarn run build
 ```
 
 This will create a static version of the style guide in `/build`.
@@ -61,7 +67,7 @@ This will create a static version of the style guide in `/build`.
 To build the style guide for development:
 
 ```shell
-npm start
+yarn start
 ```
 
 This will run the style guide, automatically opening your browser window at the root page. We use hot module reloading, so the vast majority of changes you'll make to components or the style guide itself will auto update on the page.
@@ -78,7 +84,7 @@ To use storybook, simply run:
 
 
 ```shell
-npm run storybook
+yarn run storybook
 ```
 
 ## Building components
@@ -144,22 +150,22 @@ Be careful when adding tests; we want to ensure that a simple change to a compon
 
 ### Developing Bloom alongside your main project
 
-Sometimes you might need to make changes to Bloom while you're working on your main project. Having to flip over to Bloom, PR the changes and get them published is slow and cumbersome. `npm install ../path/to/bloom` is one option, but every time you make a change, you'll have to redo the command _and_ recompile.
+Sometimes you might need to make changes to Bloom while you're working on your main project. Having to flip over to Bloom, PR the changes and get them published is slow and cumbersome. `yarn install ../path/to/bloom` is one option, but every time you make a change, you'll have to redo the command _and_ recompile.
 
-**Enter `npm link`**
+**Enter `yarn link`**
 
-`npm link` uses symlinks to reference your local copy of Bloom in your main project, meaning changes are reflected in **every** project that consumes your local copy of Bloom.
+`yarn link` uses symlinks to reference your local copy of Bloom in your main project, meaning changes are reflected in **every** project that consumes your local copy of Bloom.
 
 To get started, head to your copy of Bloom and run
 
 ```shell
-npm link
+yarn link
 ```
 
 This will create a global symlink to your copy of Bloom. Head to your project and run to use this reference instead of the regularly installed package:
 
 ```shell
-npm link @appearhere/bloom
+yarn link @appearhere/bloom
 ```
 
 One flaw with this, is that a Webpack loader's `include` property **won't** follow symlinks. Earlier in the README, we managed to get Bloom into your project like so:
@@ -208,10 +214,10 @@ So as to not slow us down, we should continue to publish Bloom on a regular basi
 
 Pull down latest master. Then on master,
 
-1. `npm version [major|minor|patch]` (see below for which one to use)
-2. npm will automatically check to make sure the build succeeds and all tests pass
+1. `yarn version [major|minor|patch]` (see below for which one to use)
+2. yarn will automatically check to make sure the build succeeds and all tests pass
 3. `git push [REMOTE] master && git push [REMOTE] master --tags`
-4. `npm publish`
+4. `yarn publish`
 
 When to use what:
 
@@ -219,13 +225,13 @@ When to use what:
 - `minor`: Adding a new feature, or making a major internal change without outward-facing consequences
 - `patch`: Fixing a small bug, typo, or other small change
 
-Do not create tags as part of pull requests. Adding new features to master is different to publishing a version to npm.
+Do not create tags as part of pull requests. Adding new features to master is different to publishing a version to yarn.
 
 More info will be added here when we need to tackle the `v1.0.0` release.
 
 ### Post release
 
-As part of the release process, Bloom will automatically be published to [GitHub pages](https://appearhere.github.io/bloom/). This happens via npm's `postpublish` script, and **requires** the publisher to have the Appear Here remote set up as `origin`, as per [storybook-deployer#8](https://github.com/kadirahq/storybook-deployer/issues/8).
+As part of the release process, Bloom will automatically be published to [GitHub pages](https://appearhere.github.io/bloom/). This happens via yarn's `postpublish` script, and **requires** the publisher to have the Appear Here remote set up as `origin`, as per [storybook-deployer#8](https://github.com/kadirahq/storybook-deployer/issues/8).
 
 This is a stop gap solution until we have time to set up auto deploying via GitHub or similar.
 
