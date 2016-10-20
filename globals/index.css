@@ -2,4 +2,5 @@
 @import './z-index.css';
 @import './typography.css';
 @import './breakpoints.css';
-@import './modifiers.css'
+@import './modifiers.css';
+@import './animation-timing-functions.css'

@@ -1,0 +1,103 @@
+.root {
+  position: relative;
+}
+
+.root * {
+  box-sizing: border-box;
+}
+
+.input {
+  border: 1px solid var(--color-greyLighter);
+  padding: var(--size-small);
+  font: var(--font-base);
+  letter-spacing: 0.2px;
+  color: var(--color-greyDarker);
+  transition: border 300ms var(--animation-sharp), color 300ms var(--animation-sharp);
+  width: 100%;
+}
+
+.inputFocused {
+  border-color: var(--color-greyDarker);
+  color: var(--color-greyDarker);
+  outline: none;
+}
+
+.inputErrored {
+  border-color: var(--color-danger);
+  color: var(--color-danger);
+}
+
+.label {
+  font: var(--font-small);
+  margin-bottom: var(--size-small);
+  border: 1px solid transparent;
+  display: block;
+  transition: color 300ms var(--animation-sharp);
+}
+
+.labelErrored {
+  color: var(--color-danger);
+}
+
+.optional {
+  font: var(--font-micro);
+  color: var(--color-grey);
+  margin-left: var(--size-small);
+}
+
+.helperContainer {
+  position: relative;
+  z-index: -1;
+}
+
+.description {
+  position: relative;
+  width: 100%;
+  padding-top: var(--size-small);
+  padding-bottom: var(--size-small);
+  background-color: transparent;
+  color: var(--color-grey);
+  font: var(--font-micro);
+  transform: translateY(-100%);
+  opacity: 0;
+  transition: transform 300ms var(--animation-sharp), opacity 500ms var(--animation-sharp);
+}
+
+.descriptionFocused {
+  transform: translateY(0);
+  opacity: 1;
+}
+
+.error {
+  position: absolute;
+  top: 0;
+  width: 100%;
+  padding: var(--size-small);
+  background-color: var(--color-danger);
+  color: var(--color-white);
+  font: var(--font-micro);
+  transition: transform 300ms var(--animation-sharp), opacity 300ms var(--animation-sharp);
+}
+
+/* Error transitions */
+.enter,
+.appear {
+  transform: translateY(-100%);
+  opacity: 0;
+}
+
+.enterActive,
+.appearActive {
+  transform: translateY(0);
+  opacity: 1;
+}
+
+.leave {
+  transform: translateY(0);
+  opacity: 1;
+}
+
+.leaveActive {
+  transform: translateY(-100%);
+  opacity: 0;
+}
