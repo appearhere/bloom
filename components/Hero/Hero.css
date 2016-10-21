@@ -6,6 +6,7 @@
   width: 100%;
   height: 100%;
   position: relative;
+  min-height: 88vh;
 }
 
 .inner {
@@ -24,7 +25,6 @@
   display: none;
 }
 
-/* Media query variable support pls */
 @media(--hero-large) {
   .inner {
     padding: var(--space-200) var(--space-200);
