@@ -91,9 +91,12 @@
   },
   "dependencies": {
     "classnames": "^2.2.5",
+    "commonmark": "^0.26.0",
+    "commonmark-react-renderer": "^4.3.1",
     "invariant": "^2.2.1",
     "lodash": "^4.16.3",
     "lost": "^7.1.0",
+    "prismjs": "^1.5.1",
     "react": "^15.3.2",
     "react-addons-css-transition-group": "^15.3.2",
     "react-container-query": "^0.6.0",
@@ -125,7 +128,7 @@
     ],
     "moduleNameMapper": {
       "^[./a-zA-Z0-9$_-]+\\.(jpg|png|gif|eot|otf|webp|svg|ttf|woff|woff2|mp4|webm)$": "<rootDir>/config/jest/FileStub.js",
-      "^[./a-zA-Z0-9$_-]+\\.css$": "<rootDir>/config/jest/CSSStub.js"
+      "^[./a-zA-Z0-9$_\\-\\!]+\\.css": "<rootDir>/config/jest/CSSStub.js"
     },
     "scriptPreprocessor": "<rootDir>/config/jest/transform.js",
     "setupFiles": [

@@ -48,6 +48,14 @@ module.exports = {
           'svgo',
         ],
       },
+      {
+        test: /\.json$/,
+        loader: 'json',
+      },
+      {
+        test: /\.md$/,
+        loader: 'raw'
+      }
     ]
   },
   // We use PostCSS for autoprefixing only.
