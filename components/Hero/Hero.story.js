@@ -1,5 +1,5 @@
 import React from 'react';
-import { storiesOf, action } from '@kadira/storybook';
+import { storiesOf } from '@kadira/storybook';
 import classnames from 'classnames';
 
 import Hero from './Hero';
@@ -27,17 +27,19 @@ storiesOf('Hero', module)
       >
         <h1 className={ headingClasses }>List a space, host an idea</h1>
         <p className={ paraClasses }>
-          Join the world's leading online marketplace for short-term space.
+          Join the world’s leading online marketplace for short-term space.
         </p>
         <button>lol</button>
-        <div style={{
-          color: 'white',
-          position: 'absolute',
-          bottom: '2rem',
-          textAlign: 'center',
-          left: '50%',
-          transform: 'translateX(-50%)',
-        }}>
+        <div
+          style={ {
+            color: 'white',
+            position: 'absolute',
+            bottom: '2rem',
+            textAlign: 'center',
+            left: '50%',
+            transform: 'translateX(-50%)',
+          } }
+        >
           <p className={ paraClasses }>Look here, son</p> 👇🏻
         </div>
       </Hero>
@@ -65,8 +67,12 @@ storiesOf('Hero', module)
           <p className={ paraClasses }>
             Light. Years ahead.
           </p>
-          <div className={m.pt64}>
-            <img style={{ width: '80%' }} src="http://images.apple.com/v/mac/home/t/images/home/macbook_opt_large.jpg" />
+          <div className={ m.pt64 }>
+            <img
+              style={ { width: '80%' } }
+              src="http://images.apple.com/v/mac/home/t/images/home/macbook_opt_large.jpg"
+              role="presentation"
+            />
           </div>
         </Hero>
       </div>

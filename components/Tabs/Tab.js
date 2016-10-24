@@ -11,7 +11,7 @@ export default class Tab extends Component {
     children: PropTypes.node,
     onClick: PropTypes.func,
     onFocus: PropTypes.func,
-    onBlur: PropTypes.func
+    onBlur: PropTypes.func,
   }
 
   handleClick = (e) => {
@@ -43,7 +43,7 @@ export default class Tab extends Component {
       selected,
       className,
       children,
-      ...rest,
+      ...rest
     } = this.props;
 
     const classes = cx(
@@ -52,6 +52,13 @@ export default class Tab extends Component {
       className
     );
 
+
+    /**
+     * The pattern has been taken from http://a11yproject.com/patterns/#accordions-and-tabs
+     * which is a good source for best practises. Trusting a11y project over the linter
+     * in this case. http://codepen.io/svinkle/pen/edmDF
+     */
+    /* eslint-disable jsx-a11y/role-supports-aria-props */
     return (
       <button
         { ...rest }
@@ -62,12 +69,13 @@ export default class Tab extends Component {
         onBlur={ this.handleBlur }
         onClick={ this.handleClick }
         className={ classes }
-        aria-selected= { selected }
+        aria-selected={ selected }
         value={ value }
         tabIndex={ selected ? 0 : -1 }
       >
         { children }
       </button>
     );
+    /* eslint-enable jsx-a11y/role-supports-aria-props */
   }
 }

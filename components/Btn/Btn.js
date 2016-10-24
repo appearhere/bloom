@@ -12,7 +12,7 @@ const Btn = (props) => {
     disabled,
     context,
     variant,
-    ...rest,
+    ...rest
   } = props;
 
   const handleClick = (e) => {

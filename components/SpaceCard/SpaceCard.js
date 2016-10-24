@@ -32,7 +32,7 @@ class SpaceCard extends Component {
       href,
       className,
       containerQuery,
-      ...rest,
+      ...rest
     } = this.props;
 
     return (

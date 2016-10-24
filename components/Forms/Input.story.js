@@ -1,8 +1,12 @@
-import React, { Component } from 'react';
+import React, { PropTypes, Component } from 'react';
 import { storiesOf, action } from '@kadira/storybook';
 import Input from './Input';
 
 class StateManager extends Component {
+  static propTypes = {
+    children: PropTypes.node,
+  };
+
   state = {
     value: '',
     error: '',
@@ -30,39 +34,45 @@ storiesOf('Input', module)
       label="Name"
       onChange={ action('Change') }
     />
-  )).add('optional', () => (
+  ))
+  .add('optional', () => (
     <Input
       label="Name"
       onChange={ action('Change') }
       optional
     />
-  )).add('with description', () => (
+  ))
+  .add('with description', () => (
     <Input
       label="Name"
       description="What shall we call you?"
       onChange={ action('Change') }
       value=" "
     />
-  )).add('with custom optional label', () => (
+  ))
+  .add('with custom optional label', () => (
     <Input
       label="Name"
       optionalLabel="optionnel"
       onChange={ action('Change') }
       optional
     />
-  )).add('with error', () => (
+  ))
+  .add('with error', () => (
     <Input
       label="Name"
       error="Uh oh, something went wrong"
       onChange={ action('Change') }
     />
-  )).add('with placeholder', () => (
+  ))
+  .add('with placeholder', () => (
     <Input
       label="Name"
       placeholder="First and last name"
       onChange={ action('Change') }
     />
-  )).add('with everything', () => (
+  ))
+  .add('with everything', () => (
     <StateManager>
       <Input
         label="Name"
@@ -72,4 +82,4 @@ storiesOf('Input', module)
         optional
       />
     </StateManager>
-  ))
+  ));

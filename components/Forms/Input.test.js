@@ -19,7 +19,7 @@ it('handles external focusing and blurring', () => {
 
   ReactDOM.render(
     <Input
-      ref={ (c) => { component = c; }}
+      ref={ (c) => { component = c; } }
       label=""
     />,
     div

@@ -27,4 +27,4 @@ storiesOf('LeftRight', module)
       }
       primaryLeft="left"
     />
-  ))
+  ));
