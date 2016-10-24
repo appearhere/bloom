@@ -1,10 +1,7 @@
 import React, { Component, PropTypes } from 'react';
-import { findDOMNode } from 'react-dom';
 import CSSTransitionGroup from 'react-addons-css-transition-group';
 import cx from 'classnames';
 import uniqueId from 'lodash/fp/uniqueId';
-
-import m from '../../globals/modifiers.css';
 
 import css from './Input.css';
 
@@ -19,6 +16,9 @@ export default class Input extends Component {
     error: PropTypes.string,
     placeholder: PropTypes.string,
     name: PropTypes.string,
+    className: PropTypes.string,
+    description: PropTypes.node,
+    value: PropTypes.string,
     /**
      * Subset of the HTML5 spec, as other types will most likely have their
      * own, bespoke component
@@ -54,12 +54,12 @@ export default class Input extends Component {
   };
 
   focus = () => {
-    findDOMNode(this.input).focus();
+    this.input.focus();
     this.handleFocus();
   };
 
   blur = () => {
-    findDOMNode(this.input).blur();
+    this.input.blur();
     this.handleBlur();
   };
 
@@ -95,7 +95,7 @@ export default class Input extends Component {
       name,
       type,
       className,
-      ...rest,
+      ...rest
     } = this.props;
 
     const labelClasses = cx(
@@ -155,7 +155,7 @@ export default class Input extends Component {
             transitionEnterTimeout={ 500 }
             transitionLeaveTimeout={ 300 }
             transitionAppearTimeout={ 500 }
-            transitionAppear={ true }
+            transitionAppear
           >
             { error.length > 0 && (
               <div

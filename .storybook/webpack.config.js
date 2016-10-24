@@ -10,6 +10,15 @@ var cssMap = webpackPostcssTools.makeVarMap(path.join(paths.globalsSrc, 'index.c
 
 module.exports = {
   module: {
+    // First, run the linter.
+    // It's important to do this before Babel processes the JS.
+    preLoaders: [
+      {
+        test: /\.(js|jsx)$/,
+        loader: 'eslint',
+        include: [paths.appSrc, paths.componentSrc],
+      }
+    ],
     loaders: [
       {
         test: /\.css$/,

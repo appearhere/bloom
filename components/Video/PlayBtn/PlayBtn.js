@@ -34,6 +34,6 @@ PlayBtn.propTypes = {
 PlayBtn.propTypes = {
   play: () => {},
   pause: () => {},
-}
+};
 
 export default PlayBtn;

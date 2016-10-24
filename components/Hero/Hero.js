@@ -10,7 +10,7 @@ const Hero = (props) => {
     backgroundImage,
     children,
     caption,
-    ...rest,
+    ...rest
   } = props;
 
   const classes = classnames(
@@ -26,7 +26,7 @@ const Hero = (props) => {
   const captionClasses = classnames(
     css.caption,
     m.fontBase,
-  )
+  );
 
   const styles = { backgroundImage: `url(${backgroundImage})` };
 

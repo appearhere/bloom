@@ -1,7 +1,6 @@
 import React, { PropTypes, Component } from 'react';
 
 import Inner from './CarouselInner';
-import getValidIndex from '../../utils/getValidIndex/getValidIndex';
 
 export default class Carousel extends Component {
   static propTypes = {

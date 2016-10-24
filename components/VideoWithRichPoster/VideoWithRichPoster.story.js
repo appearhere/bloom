@@ -13,7 +13,7 @@ storiesOf('VideoWithRichPoster', module)
         <source
           src="https://s3-eu-west-1.amazonaws.com/appearhere/assets/bloom/example-video-rich-poster.webm"
           type="video/webm"
-        />
+        />,
       ] }
       videoSrc={ [
         <source
@@ -23,7 +23,7 @@ storiesOf('VideoWithRichPoster', module)
         <source
           src="https://s3-eu-west-1.amazonaws.com/appearhere/assets/bloom/example-video.webm"
           type="video/webm"
-        />
+        />,
       ] }
     />
   ));

@@ -21,7 +21,7 @@ export default class ProgressSteps extends Component {
       lastCompletedIndex,
       className,
       containerQuery,
-      ...rest,
+      ...rest
     } = this.props;
 
     const stepStyles = {};
