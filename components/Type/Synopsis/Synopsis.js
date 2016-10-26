@@ -7,25 +7,23 @@ import css from './Synopsis.css';
 const titleClasses = cx(
   css.base,
   css.title,
-  m.fontTitleBase,
 );
 
 const bodyClasses = cx(
   css.base,
   css.body,
-  m.fontBase,
 );
 
-const Synopsis = ({ title, body, className, ...rest }) => (
+const Synopsis = ({ title, children, className, ...rest }) => (
   <div className={ className } { ...rest }>
     <h2 className={ titleClasses }>{ title }</h2>
-    <p className={ bodyClasses }>{ body }</p>
+    <div className={ bodyClasses }>{ children }</div>
   </div>
 );
 
 Synopsis.propTypes = {
   title: PropTypes.node.isRequired,
-  body: PropTypes.node.isRequired,
+  children: PropTypes.node.isRequired,
   className: PropTypes.string,
 };
 
