@@ -1,0 +1,7 @@
+.icon {
+  vertical-align: top;
+}
+
+.label {
+  padding-left: var(--size-small);
+}
