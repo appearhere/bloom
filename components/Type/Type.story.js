@@ -4,6 +4,7 @@ import { storiesOf } from '@kadira/storybook';
 import SectionHeader from './SectionHeader/SectionHeader';
 import Synopsis from './Synopsis/Synopsis';
 import Quote from './Quote/Quote';
+import IconLabel from './IconLabel/IconLabel';
 import m from '../../globals/modifiers.css';
 
 storiesOf('Type', module)
@@ -47,4 +48,9 @@ storiesOf('Type', module)
     >
       I am not able rightly to apprehend the kind of confusion of ideas that could provoke such n question
     </Quote>
+  ))
+  .add('<IconLabel />', () => (
+    <IconLabel iconName="bogroll">
+      Bog roll
+    </IconLabel>
   ));
