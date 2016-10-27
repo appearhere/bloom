@@ -28,14 +28,28 @@ storiesOf('Type', module)
   )).add('<Synopsis /> default', () => (
     <Synopsis className={[m.pa48].join(' ')}
       title="Thousands of spaces, for any idea and budget."
-      body="Find a space that matches your price, location, and audience, or browse our destination guides for inspiration."
-    />
+    >
+      Find a space that matches your price, location, and audience, or browse our destination guides for inspiration.
+    </Synopsis>
   ))
   .add('<Synopsis /> centered', () => (
     <Synopsis className={[m.pa48, m.center].join(' ')}
       title="Focus on your idea."
-      body="We’ve organised legals & deposits simply so you can focus on the one thing that really matters - making your idea happen."
-    />
+    >
+      We’ve organised legals & deposits simply so you can focus on the one thing that really matters - making your idea happen.
+    </Synopsis>
+  ))
+  .add('<Synopsis /> advanced', () => (
+    <Synopsis className={[m.pa48].join(' ')}
+      title={
+        <span>
+          <span className={ [m.fontSmall, m.bold, m.db, m.pbs].join(' ') }>Label</span>
+          <span>Focus on your idea.</span>
+        </span>
+      }
+    >
+      We’ve organised legals & deposits simply so you can focus on the one thing that really matters - making your idea happen.
+    </Synopsis>
   )).add('<Quote /> default', () => (
     <Quote citation="Rhett Butler" >
       Frankly my dear, I don’t give a damn
