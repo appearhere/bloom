@@ -1,0 +1,22 @@
+.root,
+.frame,
+.inner {
+  max-width: 100%;
+}
+
+.root {
+  position: relative;
+}
+
+.inner {
+  position: absolute;
+  top: 12.3%;
+  left: 7%;
+  width: 86.2%;
+  background-color: #030303;
+}
+
+.img {
+  max-width: 100%;
+  position: absolute;
+}
