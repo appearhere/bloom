@@ -1,0 +1,42 @@
+.root {
+  width: 100%;
+  max-width: 17.875rem;
+  height: 4.6875rem;
+  background-position: center center;
+  background-size: cover;
+  display: inline-block;
+  position: relative;
+}
+
+@media(--imageoverlaycard-small-aspect-ratio) {
+  .root {
+    height: 0;
+    max-height: 8.333333333rem;
+    padding-bottom: 46.6200466%;
+  }
+}
+
+@media(--imageoverlaycard-small-fixed) {
+  .root {
+    padding-bottom: 0;
+    height: 8.333333333rem;
+  }
+}
+
+@media(--imageoverlaycard-full) {
+  .root {
+    padding-bottom: 0;
+    height: 25rem;
+    max-height: 25rem;
+  }
+}
+
+.inner {
+  display: block;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  max-width: 150px;
+  max-height: 150px;
+}
