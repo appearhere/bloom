@@ -5,4 +5,7 @@
 :root {
   @custom-media --hero-large (min-width: 50rem);
   @custom-media --wrapper-large (min-width: 62.25rem);
+  @custom-media --imageoverlaycard-small-aspect-ratio (min-width: 10rem);
+  @custom-media --imageoverlaycard-small-fixed (min-width: 17.875rem);
+  @custom-media --imageoverlaycard-full (min-height: 30rem) and (min-width: 17.875rem);
 }
