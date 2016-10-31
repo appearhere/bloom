@@ -50,4 +50,5 @@
   /* Old style spacing */
   /* TODO: Remove in future version */
   --letterspacing-wide: 0.125rem;
+  --letterspacing-less-wide: 0.009375rem;
 }
