@@ -1,0 +1,5 @@
+.caption {
+  padding-top: var(--size-small);
+  color: var(--color-greyDark);
+  font: var(--font-micro);
+}
