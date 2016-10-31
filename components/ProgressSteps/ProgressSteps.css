@@ -1,5 +1,6 @@
 .root {
   overflow: hidden;
+  z-index: 1;
 }
 
 .step {
@@ -16,6 +17,7 @@
 .stepIcon {
   background-color: var(--color-white);
   padding: var(--size-small);
+  vertical-align: middle;
 }
 
 .stepContent {
@@ -50,20 +52,16 @@
   font: var(--font-regular);
   font-weight: var(--fontweight-demi);
   text-transform: uppercase;
-  color: var(--color-grey);
+  color: var(--color-greyDarker);
 }
 
 .stepBody {
   margin-left: 0;
-  color: var(--color-greyLight);
-}
-
-.stepContentCompleted .stepTitle {
-  color: var(--color-black);
-}
-
-.stepContentCompleted .stepBody {
   color: var(--color-greyDark);
+}
+
+.stepTitleCompleted {
+  color: var(--color-black);
 }
 
 .horizontal .step {
@@ -85,11 +83,12 @@
 
 .horizontal .stepContent {
   margin-left: 0;
+  width: 100%;
 }
 
 .horizontal .step + .step .stepIconContainer:before {
   height: 2px;
   width: calc(100% - (var(--size-medium) * 2));
   left: -50%;
-  top: 50%;
+  top: calc(50% - 1px);
 }
