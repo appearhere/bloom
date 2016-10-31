@@ -3,10 +3,19 @@ import cx from 'classnames';
 
 import css from './StepIcon.css';
 
-const StepIcon = ({ children, className, completed, ...rest }) => {
+const StepIcon = (props) => {
+  const {
+    children,
+    className,
+    circleClassName,
+    completed,
+    ...rest,
+  } = props;
+
   const circleClasses = cx(
     css.circle,
     completed ? css.circleCompleted : null,
+    circleClassName,
   );
 
   return (
@@ -36,6 +45,7 @@ StepIcon.propTypes = {
   children: PropTypes.node.isRequired,
   className: PropTypes.string,
   completed: PropTypes.bool,
+  circleClassName: PropTypes.string,
 };
 
 export default StepIcon;

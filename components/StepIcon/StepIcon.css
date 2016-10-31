@@ -4,7 +4,7 @@
   stroke-linecap: square;
 }
 
-.circleCompleted {
+.circle.circleCompleted {
   stroke: var(--color-primary);
 }
 
