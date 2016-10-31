@@ -1,0 +1,23 @@
+.statement {
+  font: var(--font-large-v);
+  letter-spacing: 0.3125rem;
+  text-transform: uppercase;
+}
+
+.number {
+  font: var(--font-large-ii);
+  font-weight: var(--fontweight-bold);
+  display: block;
+  margin-top: var(--size-large);
+}
+
+.number:before {
+  content: ' ';
+  display: inline-block;
+  background-color: var(--color-primary);
+  width: var(--size-large);
+  height: 0.15em;
+  margin-top: -0.15em;
+  margin-right: var(--size-small);
+  vertical-align: middle;
+}

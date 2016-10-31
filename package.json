@@ -116,7 +116,9 @@
     "build-storybook": "build-storybook",
     "deploy-storybook": "storybook-to-ghpages",
     "prepublish": "yarn test",
-    "postpublish": "yarn run deploy-storybook"
+    "postpublish": "yarn run deploy-storybook",
+    "lint": "esw -c ./config/eslint.js ./components",
+    "lint:watch": "esw -w -c ./config/eslint.js ./components"
   },
   "eslintConfig": {
     "extends": "./config/eslint.js"

@@ -18,7 +18,7 @@
 .root ul,
 .root blockquote {
   color: var(--color-greyDarker);
-  font: var(--font-base);
+  font: var(--font-regular);
 }
 
 .root * + * {
@@ -27,12 +27,12 @@
 }
 
 .root h1 {
-  font: var(--font--title-large);
+  font: var(--font-large-iv);
   font-weight: var(--fontweight-bold);
 }
 
 .root h2 {
-  font: var(--font--title-base);
+  font: var(--font-large-iii);
   font-weight: var(--fontweight-bold);
 }
 
@@ -42,15 +42,15 @@
 }
 
 .root h3 {
-  font: var(--font--title-small);
+  font: var(--font-large-ii);
 }
 
 .root h4 {
-  font: var(--font-large);
+  font: var(--font-large-i);
 }
 
 .root p {
-  font-size: var(--font-large);
+  font-size: var(--font-large-i);
 }
 
 .root iframe {
@@ -71,7 +71,7 @@
 }
 
 .root figcaption {
-  font: var(--font-small);
+  font: var(--font-small-i);
   margin-top: var(--size-small);
   margin-left: auto;
   margin-right: auto;
@@ -80,7 +80,7 @@
 }
 
 .root figcaption * {
-  font: var(--font-small);
+  font: var(--font-small-i);
 }
 
 @media (min-width: 60rem) {
@@ -130,7 +130,7 @@
 }
 
 .root blockquote p {
-  font: var(--font--title-base);
+  font: var(--font-large-iii);
   font-weight: var(--fontweight-bold);
   margin-bottom: 0;
 }

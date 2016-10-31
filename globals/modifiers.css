@@ -147,22 +147,24 @@
 .ma200 { margin: var(--space-200); }
 
 /* Full font styles */
-.fontTitleLarge { font: var(--font--title-large); }
-.fontTitleBase { font: var(--font--title-base); }
-.fontTitleSmall { font: var(--font--title-small); }
-.fontLarge { font: var(--font-large); }
-.fontBase { font: var(--font-base); }
-.fontSmall { font: var(--font-small); }
-.fontMicro { font: var(--font-micro); }
+.fontLgV { font: var(--font-large-v); }
+.fontLgIv { font: var(--font-large-iv); }
+.fontLgIii { font: var(--font-large-iii); }
+.fontLgIi { font: var(--font-large-ii); }
+.fontLgI { font: var(--font-large-i); }
+.fontRegular { font: var(--font-regular); }
+.fontSmI { font: var(--font-small-i); }
+.fontSmIi { font: var(--font-small-ii); }
 
 /* Font sizes */
-.titleLarge { font-size: var(--fontsize--title-large); }
-.titleBase { font-size: var(--fontsize--title-base); }
-.titleSmall { font-size: var(--fontsize--title-small); }
-.large { font-size: var(--fontsize-large); }
-.base { font-size: var(--fontsize-base); }
-.small { font-size: var(--fontsize-small); }
-.micro { font-size: var(--fontsize-micro); }
+.largeV { font-size: var(--fontsize-large-v); }
+.titleLarge { font-size: var(--fontsize-large-iv); }
+.titleBase { font-size: var(--fontsize-large-iii); }
+.titleSmall { font-size: var(--fontsize-large-ii); }
+.large { font-size: var(--fontsize-large-i); }
+.base { font-size: var(--fontsize-regular); }
+.small { font-size: var(--fontsize-small-i); }
+.micro { font-size: var(--fontsize-small-ii); }
 
 /* Font modifiers */
 .bold { font-weight: var(--fontweight-bold); }

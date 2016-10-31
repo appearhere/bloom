@@ -5,6 +5,7 @@ import SectionHeader from './SectionHeader/SectionHeader';
 import Synopsis from './Synopsis/Synopsis';
 import Quote from './Quote/Quote';
 import IconLabel from './IconLabel/IconLabel';
+import Statement from './Statement/Statement';
 import m from '../../globals/modifiers.css';
 
 storiesOf('Type', module)
@@ -43,7 +44,7 @@ storiesOf('Type', module)
     <Synopsis className={[m.pa48].join(' ')}
       title={
         <span>
-          <span className={ [m.fontSmall, m.bold, m.db, m.pbs].join(' ') }>Label</span>
+          <span className={ [m.fontSmI, m.bold, m.db, m.pbs].join(' ') }>Label</span>
           <span>Focus on your idea.</span>
         </span>
       }
@@ -67,4 +68,14 @@ storiesOf('Type', module)
     <IconLabel iconName="bogroll">
       Bog roll
     </IconLabel>
+  ))
+  .add('<Statement />', () => (
+    <Statement>
+      More <span className={ m.fgPrimary }>experiences</span> mean better cities.
+    </Statement>
+  ))
+  .add('<Statement /> with number', () => (
+    <Statement number={ 1 } >
+      More <span className={ m.fgPrimary }>experiences</span> mean better cities.
+    </Statement>
   ));

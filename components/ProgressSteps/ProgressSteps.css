@@ -22,7 +22,7 @@
   margin-top: calc(var(--size-medium) + (var(--size-small) / 2));
   margin-bottom: var(--size-medium);
   margin-left: var(--size-medium);
-  font: var(--font-base);
+  font: var(--font-regular);
   vertical-align: top;
 }
 
@@ -47,7 +47,7 @@
 }
 
 .stepTitle {
-  font: var(--font-base);
+  font: var(--font-regular);
   font-weight: var(--fontweight-demi);
   text-transform: uppercase;
   color: var(--color-grey);
