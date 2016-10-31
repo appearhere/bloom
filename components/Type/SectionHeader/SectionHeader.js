@@ -7,14 +7,14 @@ import css from './SectionHeader.css';
 const titleClasses = classnames(
   css.base,
   css.title,
-  m.fontTitleLarge,
+  m.fontLgIv,
   m.uppercase,
 );
 
 const straplineClasses = classnames(
   css.base,
   css.strapline,
-  m.fontBase
+  m.fontRegular
 );
 
 const SectionHeader = ({ title, strapline, className, ...rest }) => (

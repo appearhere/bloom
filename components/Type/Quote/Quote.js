@@ -7,14 +7,14 @@ import css from './Quote.css';
 const bodyClasses = cx(
   css.base,
   css.quoteBody,
-  m.fontTitleBase,
+  m.fontLgIii,
   m.uppercase,
 );
 
 const citeClasses = cx(
   css.base,
   css.cite,
-  m.fontBase,
+  m.fontRegular,
   m.demi,
   m.uppercase,
 );

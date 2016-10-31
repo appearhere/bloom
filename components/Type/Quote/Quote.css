@@ -12,7 +12,7 @@
 .quoteBody:before,
 .quoteBody:after {
   font-family: serif;
-  font-size: var(--fontsize--title-large);
+  font-size: var(--fontsize-large-iv);
   color: var(--color-greyLight);
   position: relative;
   top: var(--size-micro);

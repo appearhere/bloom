@@ -25,7 +25,7 @@ const Hero = (props) => {
 
   const captionClasses = classnames(
     css.caption,
-    m.fontBase,
+    m.fontRegular,
   )
 
   const styles = { backgroundImage: `url(${backgroundImage})` };

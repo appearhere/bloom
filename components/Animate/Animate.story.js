@@ -37,7 +37,7 @@ storiesOf('Animation', module)
   ))
   .add('<Counter />', () => (
     <Counter
-      className={ m.fontBase }
+      className={ m.fontRegular }
       transform={ val => val.toFixed(0) }
       startValue={ 0 }
       endValue={ 33000000 }
@@ -45,7 +45,7 @@ storiesOf('Animation', module)
   ))
   .add('<Counter />: Naive currency', () => (
     <Counter
-      className={ m.fontBase }
+      className={ m.fontRegular }
       transform={ val => `£${val.toFixed(0)}` }
       startValue={ 0 }
       endValue={ 33000000 }

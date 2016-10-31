@@ -8,14 +8,14 @@ import m from '../../globals/modifiers.css';
 storiesOf('Hero', module)
   .add('Default', () => {
     const headingClasses = classnames(
-      m.fontTitleLarge,
+      m.fontLgIv,
       m.fgWhite,
       m.uppercase,
       m.wideSpacing,
     );
 
     const paraClasses = classnames(
-      m.fontBase,
+      m.fontRegular,
       m.fgWhite,
     );
 
@@ -45,14 +45,14 @@ storiesOf('Hero', module)
   })
   .add('with body image', () => {
     const headingClasses = classnames(
-      m.fontTitleLarge,
+      m.fontLgIv,
       m.fgText,
       m.uppercase,
       m.wideSpacing,
     );
 
     const paraClasses = classnames(
-      m.fontBase,
+      m.fontRegular,
       m.fgText,
     );
 

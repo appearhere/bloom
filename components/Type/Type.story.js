@@ -43,7 +43,7 @@ storiesOf('Type', module)
     <Synopsis className={[m.pa48].join(' ')}
       title={
         <span>
-          <span className={ [m.fontSmall, m.bold, m.db, m.pbs].join(' ') }>Label</span>
+          <span className={ [m.fontSmI, m.bold, m.db, m.pbs].join(' ') }>Label</span>
           <span>Focus on your idea.</span>
         </span>
       }

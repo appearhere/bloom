@@ -7,7 +7,7 @@
  *
  * ```css
  * .example {
- *   font: var(--font-base);
+ *   font: var(--font-regular);
  *   line-height: 1.8;
  * }
  * ```
@@ -17,26 +17,26 @@
 
   --fontweight-bold: 800;
   --fontweight-demi: 700;
-  --fontweight-base: 400;
+  --fontweight-regular: 400;
   --fontweight-light: 300;
 
-  --fontsize--title-large: 2rem;
-  --fontsize--title-base: 1.75rem;
-  --fontsize--title-small: 1.5rem;
+  --fontsize-large-v: 5.125rem;
+  --fontsize-large-iv: 2rem;
+  --fontsize-large-iii: 1.75rem;
+  --fontsize-large-ii: 1.5rem;
+  --fontsize-large-i: 1.1875rem;
+  --fontsize-regular: 1rem;
+  --fontsize-small-i: 0.875rem;
+  --fontsize-small-ii: 0.6875rem;
 
-  --fontsize-large: 1.1875rem;
-  --fontsize-base: 1rem;
-  --fontsize-small: 0.875rem;
-  --fontsize-micro: 0.6875rem;
-
-  --font--title-large: var(--fontweight-bold) var(--fontsize--title-large)/1.34375 var(--font-avenir);
-  --font--title-base: var(--fontweight-bold) var(--fontsize--title-base)/1.28571 var(--font-avenir);
-  --font--title-small: var(--fontweight-bold) var(--fontsize--title-small)/1.333 var(--font-avenir);
-
-  --font-large: var(--fontweight-base) var(--fontsize-large)/1.263 var(--font-avenir);
-  --font-base: var(--fontweight-base) var(--fontsize-base)/1.4375 var(--font-avenir);
-  --font-small: var(--fontweight-base) var(--fontsize-small)/1.285 var(--font-avenir);
-  --font-micro: var(--fontweight-base) var(--fontsize-micro)/1.363 var(--font-avenir);
+  --font-large-v: var(--fontweight-bold) var(--fontsize-large-v)/0.9024 var(--font-avenir);
+  --font-large-iv: var(--fontweight-bold) var(--fontsize-large-iv)/1.34375 var(--font-avenir);
+  --font-large-iii: var(--fontweight-bold) var(--fontsize-large-iii)/1.28571 var(--font-avenir);
+  --font-large-ii: var(--fontweight-bold) var(--fontsize-large-ii)/1.333 var(--font-avenir);
+  --font-large-i: var(--fontweight-regular) var(--fontsize-large-i)/1.263 var(--font-avenir);
+  --font-regular: var(--fontweight-regular) var(--fontsize-regular)/1.4375 var(--font-avenir);
+  --font-small-i: var(--fontweight-regular) var(--fontsize-small-i)/1.285 var(--font-avenir);
+  --font-small-ii: var(--fontweight-regular) var(--fontsize-small-ii)/1.363 var(--font-avenir);
 
   --letterspacing-wide: 0.125rem;
 }

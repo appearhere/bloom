@@ -9,7 +9,7 @@
 }
 
 .text {
-  font: var(--font-small);
+  font: var(--font-small-i);
   font-weight: var(--fontweight-bold);
   line-spacing: 15;
   fill: var(--color-greyDarker);

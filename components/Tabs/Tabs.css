@@ -22,7 +22,7 @@
 .tab {
   padding: 0;
   margin: 0;
-  font: var(--font-small);
+  font: var(--font-small-i);
   vertical-align: top;
   text-align: left;
   cursor: pointer;

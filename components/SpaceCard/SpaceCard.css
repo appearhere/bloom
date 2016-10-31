@@ -30,7 +30,7 @@
 }
 
 .name {
-  font: var(--font-large);
+  font: var(--font-large-i);
   font-weight: var(--fontweight-bold);
   color: var(--color-white);
   padding-left: var(--size-small);
@@ -47,7 +47,7 @@
   color: var(--color-white);
   padding: var(--size-small);
   text-align: center;
-  font: var(--font-small);
+  font: var(--font-small-i);
 }
 
 .containerQueryMedium {
@@ -56,5 +56,5 @@
 }
 
 .containerQueryMedium .name {
-  font: var(--font--title-small);
+  font: var(--font-large-ii);
 }
