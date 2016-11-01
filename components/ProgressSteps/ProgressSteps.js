@@ -13,6 +13,7 @@ export default class ProgressSteps extends Component {
       [css.horizontal]: PropTypes.bool,
     }),
     /* eslint-enable react/no-unused-prop-types */
+    stepCss: PropTypes.string,
   };
 
   render() {
@@ -21,10 +22,12 @@ export default class ProgressSteps extends Component {
       lastCompletedIndex,
       className,
       containerQuery,
+      stepCss,
       ...rest,
     } = this.props;
 
     const stepStyles = {};
+
     if (containerQuery && containerQuery[css.horizontal]) {
       stepStyles.width = `${100 / steps.length}%`;
     }
@@ -41,6 +44,7 @@ export default class ProgressSteps extends Component {
             step: i + 1,
             completed,
             style: stepStyles,
+            css: stepCss,
           });
         }) }
       </dl>

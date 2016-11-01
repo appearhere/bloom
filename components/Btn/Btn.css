@@ -69,7 +69,7 @@
 }
 
 .primary.hollow {
-  color: var(--color-black);
+  color: var(--color-primary);
   background-color: transparent;
   border-color: var(--color-primary);
 }
