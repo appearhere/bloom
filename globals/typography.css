@@ -38,5 +38,17 @@
   --font-small-i: var(--fontweight-regular) var(--fontsize-small-i)/1.285 var(--font-avenir);
   --font-small-ii: var(--fontweight-regular) var(--fontsize-small-ii)/1.363 var(--font-avenir);
 
+  --letter-spacing-large-v: 0.3125rem;
+  --letter-spacing-large-iv: 0.125rem;
+  --letter-spacing-large-iii: 0.01875rem;
+  --letter-spacing-large-ii: 0.01875rem;
+  --letter-spacing-large-i: 0.0125rem;
+  --letter-spacing-regular: 0.10625rem;
+  --letter-spacing-small-i: 0.009375rem;
+  --letter-spacing-small-ii: 0.009375rem;
+
+  /* Old style spacing */
+  /* TODO: Remove in future version */
   --letterspacing-wide: 0.125rem;
+  --letterspacing-less-wide: 0.009375rem;
 }
