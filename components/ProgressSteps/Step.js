@@ -96,7 +96,7 @@ Step.propTypes = {
   }),
 };
 
-Step.defualtProps = {
+Step.defaultProps = {
   css: {
     stepIconContainer: '',
     stepIconContainerCompleted: '',
