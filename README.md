@@ -212,12 +212,14 @@ So as to not slow us down, we should continue to publish Bloom on a regular basi
 
 ### Making a release
 
+**Unfortunately, `yarn`'s publishing mechanism doesn't work quite as we'd like, so for now we use `npm`:**
+
 Pull down latest master. Then on master,
 
-1. `yarn version [major|minor|patch]` (see below for which one to use)
-2. yarn will automatically check to make sure the build succeeds and all tests pass
+1. `npm version [major|minor|patch]` (see below for which one to use)
+2. npm will automatically check to make sure the build succeeds and all tests pass
 3. `git push [REMOTE] master && git push [REMOTE] master --tags`
-4. `yarn publish`
+4. `npm publish`
 
 When to use what:
 
@@ -228,6 +230,16 @@ When to use what:
 Do not create tags as part of pull requests. Adding new features to master is different to publishing a version to yarn.
 
 More info will be added here when we need to tackle the `v1.0.0` release.
+
+#### Adding a change log
+
+Once you’ve pushed the new version to GitHub and published the release, head to [Bloom's releases](https://github.com/appearhere/bloom/releases/) and add a change log.
+
+You can auto generate one by running:
+
+```bash
+git --no-pager log [PREVIOUS_VERSION_TAG]..[NEW_VERSION_TAG] --pretty=format:'- %s %H ' --reverse --no-merges
+```
 
 ### Post release
 
