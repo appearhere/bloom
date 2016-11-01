@@ -148,14 +148,38 @@
 .ma200.ma200 { margin: var(--space-200); }
 
 /* Full font styles */
-.fontLgV.fontLgV { font: var(--font-large-v); }
-.fontLgIv.fontLgIv { font: var(--font-large-iv); }
-.fontLgIii.fontLgIii { font: var(--font-large-iii); }
-.fontLgIi.fontLgIi { font: var(--font-large-ii); }
-.fontLgI.fontLgI { font: var(--font-large-i); }
-.fontRegular.fontRegular { font: var(--font-regular); }
-.fontSmI.fontSmI { font: var(--font-small-i); }
-.fontSmIi.fontSmIi { font: var(--font-small-ii); }
+.fontLgV.fontLgV {
+  font: var(--font-large-v);
+  letter-spacing: var(--letter-spacing-large-v);
+}
+.fontLgIv.fontLgIv {
+  font: var(--font-large-iv);
+  letter-spacing: var(--letter-spacing-large-iv);
+}
+.fontLgIii.fontLgIii {
+  font: var(--font-large-iii);
+  letter-spacing: var(--letter-spacing-large-iii);
+}
+.fontLgIi.fontLgIi {
+  font: var(--font-large-ii);
+  letter-spacing: var(--letter-spacing-large-ii);
+}
+.fontLgI.fontLgI {
+  font: var(--font-large-i);
+  letter-spacing: var(--letter-spacing-large-i);
+}
+.fontRegular.fontRegular {
+  font: var(--font-regular);
+  letter-spacing: var(--letter-spacing-regular);
+}
+.fontSmI.fontSmI {
+  font: var(--font-small-i);
+  letter-spacing: var(--letter-spacing-small-i);
+}
+.fontSmIi.fontSmIi {
+  font: var(--font-small-ii);
+  letter-spacing: var(--letter-spacing-small-ii);
+}
 
 /* Font sizes */
 .largeV.largeV { font-size: var(--fontsize-large-v); }
@@ -188,6 +212,19 @@
 .code.code { font-family: monospace; }
 .underline.underline { text-decoration: underline; }
 .uppercase.uppercase { text-transform: uppercase; }
+
+/* Letter spacing */
+.letSpacingLargeV.letSpacingLargeV { letter-spacing: var(--letter-spacing-large-v); }
+.letSpacingLargeIv.letSpacingLargeIv { letter-spacing: var(--letter-spacing-large-iv); }
+.letSpacingLargeIii.letSpacingLargeIii { letter-spacing: var(--letter-spacing-large-iii); }
+.letSpacingLargeIi.letSpacingLargeIi { letter-spacing: var(--letter-spacing-large-ii); }
+.letSpacingLargeI.letSpacingLargeI { letter-spacing: var(--letter-spacing-large-i); }
+.letSpacingRegular.letSpacingRegular { letter-spacing: var(--letter-spacing-regular); }
+.letSpacingSmallI.letSpacingSmallI { letter-spacing: var(--letter-spacing-small-i); }
+.letSpacingSmallIi.letSpacingSmallIi { letter-spacing: var(--letter-spacing-small-ii); }
+
+/* Old style spacing */
+/* TODO: Remove in future version */
 .wideSpacing.wideSpacing { letter-spacing: var(--letterspacing-wide) }
 
 /* Rotation */
