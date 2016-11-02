@@ -4,5 +4,5 @@ import SectionHeader from './SectionHeader';
 
 it('renders without crashing', () => {
   const div = document.createElement('div');
-  ReactDOM.render(<SectionHeader />, div);
+  ReactDOM.render(<SectionHeader title="" />, div);
 });

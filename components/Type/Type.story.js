@@ -26,6 +26,12 @@ storiesOf('Type', module)
       title="Bloom: Pattern library"
       strapline="A styleguide & library of React components"
     />
+  )).add('<SectionHeader /> without strapline', () => (
+    <SectionHeader
+      className={[m.pa48, m.center].join(' ')}
+      level={ 2 }
+      title="Bloom: Pattern library"
+    />
   )).add('<Synopsis /> default', () => (
     <Synopsis className={[m.pa48].join(' ')}
       title="Thousands of spaces, for any idea and budget."
