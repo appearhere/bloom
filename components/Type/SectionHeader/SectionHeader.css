@@ -4,14 +4,28 @@
  */
 .base {
   color: currentColor;
+  display: block;
 }
 
 .title {
   margin-top: 0;
   margin-bottom: 0;
+  font: var(--font-large-iv);
+  letter-spacing: var(--letter-spacing-regular);
+  text-transform: uppercase;
 }
 
 .strapline {
   margin-top: var(--size-medium);
   margin-bottom: 0;
+  font: var(--font-large-iii);
+  font-weight: var(--fontweight-demi);
+}
+
+.titleWithStrapline {
+  text-transform: uppercase;
+  font: var(--font-regular);
+  font-weight: var(--fontweight-demi);
+  letter-spacing: var(--letter-spacing-regular);
+  color: var(--color-greyDark);
 }

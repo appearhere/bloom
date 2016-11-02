@@ -212,6 +212,7 @@
 .code.code { font-family: monospace; }
 .underline.underline { text-decoration: underline; }
 .uppercase.uppercase { text-transform: uppercase; }
+.normal.normal { text-transform: none; }
 
 /* Letter spacing */
 .letSpacingLargeV.letSpacingLargeV { letter-spacing: var(--letter-spacing-large-v); }
