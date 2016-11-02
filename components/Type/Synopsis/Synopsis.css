@@ -4,6 +4,7 @@
  */
 .base {
   color: currentColor;
+  display: block;
 }
 
 .title {
