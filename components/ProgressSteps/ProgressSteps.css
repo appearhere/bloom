@@ -69,6 +69,7 @@
   text-align: center;
   padding-left: var(--size-medium);
   padding-right: var(--size-medium);
+  vertical-align: top;
 }
 
 .horizontal .stepIconContainer,

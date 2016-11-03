@@ -148,6 +148,10 @@
 .ma200.ma200 { margin: var(--space-200); }
 
 /* Full font styles */
+.fontLgVi.fontLgVi {
+  font: var(--font-large-vi);
+  letter-spacing: var(--letter-spacing-large-vi);
+}
 .fontLgV.fontLgV {
   font: var(--font-large-v);
   letter-spacing: var(--letter-spacing-large-v);
@@ -182,6 +186,7 @@
 }
 
 /* Font sizes */
+.largeVi.largeVi { font-size: var(--fontsize-large-vi); }
 .largeV.largeV { font-size: var(--fontsize-large-v); }
 .largeIV.largeIV { font-size: var(--fontsize-large-iv); }
 .largeIII.largeIII { font-size: var(--fontsize-large-iii); }
@@ -250,3 +255,9 @@
 
 /* Clearfix */
 .cf.cf { lost-utility: clearfix; }
+
+/* Position */
+.pr.pr { position: relative; }
+.pa.pa { position: absolute; }
+.ps.ps { position: static; }
+.pf.pf { position: fixed; }

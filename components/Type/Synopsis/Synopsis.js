@@ -10,18 +10,19 @@ const bodyClasses = cx(
 
 const Synopsis = ({ title, children, className, level, ...rest }) => {
   const titleClasses = cx(
-    className,
     css.base,
     css.title,
   );
 
-  const bodyEl = <span className={ bodyClasses }>{ children }</span>;
-
-  return createElement(
-    `h${level}`,
-    { className: titleClasses, ...rest },
-    title,
-    bodyEl
+  return (
+    <div className={ className } { ...rest }>
+      { createElement(
+        `h${level}`,
+        { className: titleClasses, ...rest },
+        title
+      ) }
+      <div className={ bodyClasses }>{ children }</div>
+    </div>
   );
 };
 
@@ -33,7 +34,7 @@ Synopsis.propTypes = {
 };
 
 Synopsis.defaultProps = {
-  level: 1,
+  level: 2,
 };
 
 export default Synopsis;
