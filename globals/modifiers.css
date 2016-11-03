@@ -255,3 +255,9 @@
 
 /* Clearfix */
 .cf.cf { lost-utility: clearfix; }
+
+/* Position */
+.pr.pr { position: relative; }
+.pa.pa { position: absolute; }
+.ps.ps { position: static; }
+.pf.pf { position: fixed; }
