@@ -20,7 +20,8 @@
   --fontweight-regular: 400;
   --fontweight-light: 300;
 
-  --fontsize-large-v: 5.125rem;
+  --fontsize-large-vi: 5.125rem;
+  --fontsize-large-v: 2.75rem;
   --fontsize-large-iv: 2rem;
   --fontsize-large-iii: 1.75rem;
   --fontsize-large-ii: 1.5rem;
@@ -29,7 +30,8 @@
   --fontsize-small-i: 0.875rem;
   --fontsize-small-ii: 0.6875rem;
 
-  --font-large-v: var(--fontweight-bold) var(--fontsize-large-v)/0.9024 var(--font-avenir);
+  --font-large-vi: var(--fontweight-bold) var(--fontsize-large-vi)/0.9024 var(--font-avenir);
+  --font-large-v: var(--fontweight-bold) var(--fontsize-large-v)/0.8148 var(--font-avenir);
   --font-large-iv: var(--fontweight-bold) var(--fontsize-large-iv)/1.34375 var(--font-avenir);
   --font-large-iii: var(--fontweight-bold) var(--fontsize-large-iii)/1.28571 var(--font-avenir);
   --font-large-ii: var(--fontweight-bold) var(--fontsize-large-ii)/1.333 var(--font-avenir);
@@ -38,7 +40,8 @@
   --font-small-i: var(--fontweight-regular) var(--fontsize-small-i)/1.285 var(--font-avenir);
   --font-small-ii: var(--fontweight-regular) var(--fontsize-small-ii)/1.363 var(--font-avenir);
 
-  --letter-spacing-large-v: 0.3125rem;
+  --letter-spacing-large-vi: 0.3125rem;
+  --letter-spacing-large-v: 0.32rem;
   --letter-spacing-large-iv: 0.125rem;
   --letter-spacing-large-iii: 0.01875rem;
   --letter-spacing-large-ii: 0.01875rem;
