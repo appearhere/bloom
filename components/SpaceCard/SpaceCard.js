@@ -1,18 +1,12 @@
 import React, { Component, PropTypes } from 'react';
-import { applyContainerQuery } from 'react-container-query';
 import cx from 'classnames';
 
+import ImageOverlayCard from '../ImageOverlayCard/ImageOverlayCard';
+
 import css from './SpaceCard.css';
+import linkcss from '../Link/Link.css';
 
-const query = {
-  [css.containerQueryMedium]: {
-    minWidth: 300,
-  },
-};
-
-/* eslint-disable react/prefer-stateless-function */
-// https://github.com/d6u/react-container-query/issues/15
-class SpaceCard extends Component {
+export default class SpaceCard extends Component {
   static propTypes = {
     name: PropTypes.string.isRequired,
     image: PropTypes.string.isRequired,
@@ -30,6 +24,7 @@ class SpaceCard extends Component {
       price,
       type,
       href,
+      location,
       className,
       containerQuery,
       ...rest,
@@ -38,23 +33,22 @@ class SpaceCard extends Component {
     return (
       <article
         { ...rest }
-        className={ cx(css.root, containerQuery, className) }
-        style={ {
-          backgroundImage: `url(${image})`,
-        } }
+        className={ cx(css.root, className) }
       >
         <a className={ css.link } href={ href }>
-          <header className={ css.header }>
-            <h1 className={ css.name }>{ name }</h1>
-          </header>
-          <div className={ css.detail }>
-            { price } · { type }
-          </div>
+          <ImageOverlayCard
+            className={ css.overlayCard }
+            image={ image }
+          >
+            <header className={ css.header }>
+              <h1 className={ css.name }>{ name }</h1>
+            </header>
+            <div className={ cx(css.detail, linkcss.root) }>
+              { price } · { location }
+            </div>
+          </ImageOverlayCard>
         </a>
       </article>
     );
   }
 }
-/* eslint-enable react/prefer-stateless-function */
-
-export default applyContainerQuery(SpaceCard, query);

@@ -10,6 +10,7 @@ storiesOf('SpaceCard', module)
       image="https://unsplash.it/600/600"
       price="£46/day"
       type="Retail"
+      location="London"
       href="#"
     />
   ));
