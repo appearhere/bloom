@@ -1,36 +1,48 @@
 /* Strokes */
+.root.automatic-payments svg,
 .root.bogroll svg,
-.root.play svg,
-.root.play-c svg,
-.root.chart-arrow svg,
-.root.play-c svg,
-.root.tick-starred svg,
-.root.travel-idea svg,
-.root.vip-entrance svg,
 .root.bogroll svg,
+.root.book svg,
+.root.calendar svg,
+.root.calendar-insight svg,
 .root.camera svg,
+.root.chart-arrow svg,
 .root.chatting svg,
 .root.comment svg,
+.root.clock svg,
 .root.dollar svg,
 .root.download svg,
 .root.globe svg,
+.root.location svg,
 .root.manage svg,
+.root.notification svg,
 .root.percentage svg,
 .root.play svg,
+.root.play svg,
+.root.play-c svg,
 .root.search svg,
 .root.shield svg,
 .root.signature svg,
 .root.star svg,
 .root.tick svg,
+.root.tick-starred svg,
 .root.ticket svg,
-.root.teamwork svg {
+.root.travel-idea svg,
+.root.teamwork svg,
+.root.vip-entrance svg {
   stroke: currentColor;
   fill: transparent;
   stroke-linecap: round;
 }
 
 
-/* Fills: TBC; */
+/* Fills */
+
+.root.chevron svg {
+  stroke: transparent;
+  fill: currentColor;
+  stroke-linecap: round;
+}
 
 /* Specials */
 

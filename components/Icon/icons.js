@@ -1,28 +1,69 @@
 import svgClean from '../../utils/svg-clean';
 
+import appearhere from './icons/icon-appearhere.svg';
+import appearhereBrackets from './icons/icon-appearhere-brackets.svg';
+import automaticPayments from './icons/icon-automatic-payments.svg';
+import bogroll from './icons/icon-bogroll.svg';
+import book from './icons/icon-book.svg';
+import calendar from './icons/icon-calendar.svg';
+import calendarInsight from './icons/icon-calendar-insight.svg';
+import camera from './icons/icon-camera.svg';
+import chartArrow from './icons/icon-chart-arrow.svg';
+import chatting from './icons/icon-chatting.svg';
+import clock from './icons/icon-clock.svg';
+import chevron from './icons/icon-chevron.svg';
+import comment from './icons/icon-comment.svg';
+import dollar from './icons/icon-dollar.svg';
+import download from './icons/icon-download.svg';
+import globe from './icons/icon-globe.svg';
+import location from './icons/icon-location.svg';
+import manage from './icons/icon-manage.svg';
+import notification from './icons/icon-notification.svg';
+import percentage from './icons/icon-percentage.svg';
+import play from './icons/icon-play.svg';
+import playC from './icons/icon-play-c.svg';
+import search from './icons/icon-search.svg';
+import shield from './icons/icon-shield.svg';
+import signature from './icons/icon-signature.svg';
+import star from './icons/icon-star.svg';
+import teamwork from './icons/icon-teamwork.svg';
+import tick from './icons/icon-tick.svg';
+import ticket from './icons/icon-ticket.svg';
+import tickStarred from './icons/icon-tick-starred.svg';
+import travelIdea from './icons/icon-travel-idea.svg';
+import vipEntrance from './icons/icon-vip-entrance.svg';
+
 export default {
-  'appearhere-brackets': svgClean(require('./icons/icon-appearhere-brackets.svg')),
-  'chart-arrow': svgClean(require('./icons/icon-chart-arrow.svg')),
-  'play-c': svgClean(require('./icons/icon-play-c.svg')),
-  'tick-starred': svgClean(require('./icons/icon-tick-starred.svg')),
-  'travel-idea': svgClean(require('./icons/icon-travel-idea.svg')),
-  'vip-entrance': svgClean(require('./icons/icon-vip-entrance.svg')),
-  appearhere: svgClean(require('./icons/icon-appearhere.svg')),
-  bogroll: svgClean(require('./icons/icon-bogroll.svg')),
-  camera: svgClean(require('./icons/icon-camera.svg')),
-  chatting: svgClean(require('./icons/icon-chatting.svg')),
-  comment: svgClean(require('./icons/icon-comment.svg')),
-  dollar: svgClean(require('./icons/icon-dollar.svg')),
-  download: svgClean(require('./icons/icon-download.svg')),
-  globe: svgClean(require('./icons/icon-globe.svg')),
-  manage: svgClean(require('./icons/icon-manage.svg')),
-  percentage: svgClean(require('./icons/icon-percentage.svg')),
-  play: svgClean(require('./icons/icon-play.svg')),
-  search: svgClean(require('./icons/icon-search.svg')),
-  shield: svgClean(require('./icons/icon-shield.svg')),
-  signature: svgClean(require('./icons/icon-signature.svg')),
-  star: svgClean(require('./icons/icon-star.svg')),
-  tick: svgClean(require('./icons/icon-tick.svg')),
-  ticket: svgClean(require('./icons/icon-ticket.svg')),
-  teamwork: svgClean(require('./icons/icon-teamwork.svg')),
+  'appearhere-brackets': svgClean(appearhereBrackets),
+  'automatic-payments': svgClean(automaticPayments),
+  'calendar-insight': svgClean(calendarInsight),
+  'chart-arrow': svgClean(chartArrow),
+  'play-c': svgClean(playC),
+  'tick-starred': svgClean(tickStarred),
+  'travel-idea': svgClean(travelIdea),
+  'vip-entrance': svgClean(vipEntrance),
+  appearhere: svgClean(appearhere),
+  bogroll: svgClean(bogroll),
+  book: svgClean(book),
+  calendar: svgClean(calendar),
+  camera: svgClean(camera),
+  chatting: svgClean(chatting),
+  chevron: svgClean(chevron),
+  clock: svgClean(clock),
+  comment: svgClean(comment),
+  dollar: svgClean(dollar),
+  download: svgClean(download),
+  globe: svgClean(globe),
+  location: svgClean(location),
+  manage: svgClean(manage),
+  notification: svgClean(notification),
+  percentage: svgClean(percentage),
+  play: svgClean(play),
+  search: svgClean(search),
+  shield: svgClean(shield),
+  signature: svgClean(signature),
+  star: svgClean(star),
+  teamwork: svgClean(teamwork),
+  tick: svgClean(tick),
+  ticket: svgClean(ticket),
 };
