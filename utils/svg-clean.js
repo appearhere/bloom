@@ -7,10 +7,6 @@ const cleanups = {
   comment: /<!--.*-->/gi,
   defs: /<defs>.*<\/defs>/gi,
 
-  // remove hardcoded dimensions
-  width: / +width="\d+(\.\d+)?(px)?"/gi,
-  height: / +height="\d+(\.\d+)?(px)?"/gi,
-
   // remove fill
   fill: / +fill=\"(none|#[0-9a-f]+)\"/gi,
 
