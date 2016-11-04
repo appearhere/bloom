@@ -10,7 +10,7 @@ const story = storiesOf('ValueIcon', module);
 Object.keys(icons).forEach(icon => {
   story.add(icon, () => (
     <div className={ m.titleLarge }>
-      {icon}: <ValueIcon name={icon} />
+      { icon }: <ValueIcon name={ icon } />
     </div>
   ));
 });
