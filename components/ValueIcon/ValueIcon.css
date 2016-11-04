@@ -1,0 +1,23 @@
+/*/* Strokes */
+.root.boxing-glove svg,
+.root.thumbs-up svg,
+.root.no-bull svg,
+.root.handshake svg,
+.root.open svg,
+.root.scissors svg {
+  stroke: currentColor;
+  fill: transparent;
+  stroke-linecap: round;
+}
+
+.highlight {
+  stroke: #BBA080;
+}
+
+.fill {
+  fill: #BBA080;
+}
+
+.noStroke {
+  stroke: none;
+}
