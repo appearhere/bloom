@@ -263,3 +263,7 @@
 .pa.pa { position: absolute; }
 .ps.ps { position: static; }
 .pf.pf { position: fixed; }
+
+/* Floats */
+.fr.fr { float: right; }
+.fl.fl { float: left; }
