@@ -18,6 +18,7 @@ export default class VideoWithPoster extends Component {
       PropTypes.arrayOf(PropTypes.element),
       PropTypes.element,
     ]).isRequired,
+    className: PropTypes.string,
     posterClassName: PropTypes.string,
     videoClassName: PropTypes.string,
   };
@@ -42,6 +43,7 @@ export default class VideoWithPoster extends Component {
     const {
       videoSrc,
       posterSrc,
+      className,
       videoClassName,
       posterClassName,
     } = this.props;
@@ -53,7 +55,7 @@ export default class VideoWithPoster extends Component {
     );
 
     return (
-      <div className={ css.root }>
+      <div className={ cx(css.root, className) }>
         { isPlaying ? (
           <Video
             className={ cx(css.video, videoClassName) }

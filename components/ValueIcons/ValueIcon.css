@@ -1,0 +1,19 @@
+.root {
+  stroke: currentColor;
+  fill: transparent;
+  stroke-linecap: round;
+
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  /* fix webkit/blink poor rendering issues */
+  transform: translate3d(0,0,0);
+}
+
+.root svg {
+  width: 1em;
+  height: 0.6562em;
+  line-height: inherit;
+  stroke: inherit;
+  fill: inherit;
+  vertical-align: middle;
+}
