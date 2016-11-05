@@ -218,6 +218,8 @@
 .underline.underline { text-decoration: underline; }
 .uppercase.uppercase { text-transform: uppercase; }
 .normal.normal { text-transform: none; }
+.wrap.wrap { white-space: normal; }
+.nowrap.nowrap { white-space: nowrap; }
 
 /* Letter spacing */
 .letSpacingLargeV.letSpacingLargeV { letter-spacing: var(--letter-spacing-large-v); }

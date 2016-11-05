@@ -9,6 +9,19 @@
   margin-top: var(--size-small);
 }
 
-.active {
+.root:after {
+  content: '';
+  display: block;
+  width: var(--size-small);
+  height: var(--size-small);
   background-color: var(--color-greyDark);
+  border-radius: 50%;
+  opacity: 0;
+  transform: scale(0);
+  transition: transform 300ms var(--animation-sharp), opacity 300ms var(--animation-sharp);
+}
+
+.active:after {
+  opacity: 1;
+  transform: scale(1);
 }

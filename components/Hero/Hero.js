@@ -7,6 +7,7 @@ import css from './Hero.css';
 const Hero = (props) => {
   const {
     className,
+    innerClassName,
     backgroundImage,
     children,
     caption,
@@ -22,6 +23,7 @@ const Hero = (props) => {
   const innerClasses = classnames(
     css.inner,
     backgroundImage ? css.innerOverlay : null,
+    innerClassName,
   );
 
   const captionClasses = classnames(
@@ -51,6 +53,7 @@ const Hero = (props) => {
 
 Hero.propTypes = {
   className: PropTypes.string,
+  innerClassName: PropTypes.string,
   backgroundImage: PropTypes.string,
   children: PropTypes.node.isRequired,
   caption: PropTypes.node,
