@@ -1,0 +1,31 @@
+.root {
+  position: relative;
+  display: inline-block;
+  width: 100%;
+  height: 100%;
+  vertical-align: bottom;
+  color: var(--color-white);
+  text-decoration: none;
+  cursor: pointer;
+}
+
+.root:after {
+  content: '';
+  position: absolute;
+  z-index: 0;
+  width: 100%;
+  height: 100%;
+  box-shadow: 0 2px 14px 0 rgba(139, 139, 139, 0.6);
+  opacity: 0;
+  top: 0;
+  left: 0;
+  transition: opacity 200ms ease-in-out;
+}
+
+.root:hover:after {
+  opacity: 1;
+}
+
+.root > * {
+  vertical-align: bottom;
+}

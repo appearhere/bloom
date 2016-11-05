@@ -1,0 +1,48 @@
+.root {
+  width: 100%;
+  max-width: 18.125rem;
+  min-height: 12.333333333rem;
+}
+
+.name {
+  font: var(--font-large-i);
+  font-weight: var(--fontweight-bold);
+  color: var(--color-white);
+  padding-left: var(--size-small);
+  padding-right: var(--size-small);
+  text-align: center;
+}
+
+.detail {
+  white-space: nowrap;
+  color: var(--color-white);
+  padding: var(--size-small);
+  text-align: center;
+  font: var(--font-small-i);
+}
+
+.underline {
+  background-image: linear-gradient(
+    to top,
+    rgba(192, 31, 46, 0) 11%,
+    var(--color-gold) 11%,
+    var(--color-gold) 16%,
+    rgba(192, 31, 46, 0) 16%
+  );
+}
+
+.root:hover .underline {
+  background-image: linear-gradient(
+    to top,
+    rgba(192, 31, 46, 0) 11%,
+    var(--color-white) 11%,
+    var(--color-white) 16%,
+    rgba(192, 31, 46, 0) 16%
+  );
+}
+
+@media(min-height: 23.75rem) and (min-width: 18.125rem) {
+  .root {
+    height: 22.5rem;
+  }
+}
