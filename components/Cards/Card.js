@@ -1,10 +1,12 @@
 import React, { PropTypes } from 'react';
+import cx from 'classnames';
 
-import css from './ImageOverlayCard.css';
+import css from './Card.css';
 
-const ImageOverlayCard = ({ children, image }) => (
+const Card = ({ children, image, className, ...rest }) => (
   <div
-    className={ css.root }
+    { ...rest }
+    className={ cx(css.root, className) }
     style={ { backgroundImage: `url(${image})` } }
   >
     <div className={ css.inner }>
@@ -13,9 +15,10 @@ const ImageOverlayCard = ({ children, image }) => (
   </div>
 );
 
-ImageOverlayCard.propTypes = {
+Card.propTypes = {
   children: PropTypes.node.isRequired,
   image: PropTypes.string.isRequired,
+  className: PropTypes.string,
 };
 
-export default ImageOverlayCard;
+export default Card;
