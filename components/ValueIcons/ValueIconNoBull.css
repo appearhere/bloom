@@ -1,0 +1,4 @@
+.noCircle {
+  stroke: var(--color-gold);
+  stroke-width: 2px;
+}
