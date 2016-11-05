@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<svg width="16px" height="16px" viewBox="0 0 16 16" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <!-- Generator: Sketch 40.3 (33839) - http://www.bohemiancoding.com/sketch -->
+    <title>Chevron-up</title>
+    <desc>Created with Sketch.</desc>
+    <defs></defs>
+    <g id="Page-1" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g id="Chevron-up" fill="#000000">
+            <polygon id="Right-Arrow" transform="translate(8.000000, 8.000000) rotate(-90.000000) translate(-8.000000, -8.000000) " points="4.89189189 0 3 1.86666667 9.21621622 8 3 14.1333333 4.89189189 16 13 8"></polygon>
+        </g>
+    </g>
+</svg>
