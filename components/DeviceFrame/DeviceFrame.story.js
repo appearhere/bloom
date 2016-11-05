@@ -25,6 +25,11 @@ storiesOf('Device frame', module)
       { macbookImages }
     </Macbook>
   ))
+  .add('Macbook gold', () => (
+    <Macbook deviceColor="gold">
+      { macbookImages }
+    </Macbook>
+  ))
   .add('IPhone', () => (
     <IPhone>
       { iphoneImages }
