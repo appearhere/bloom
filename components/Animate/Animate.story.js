@@ -5,6 +5,7 @@ import Circle from './Circle';
 import Sunrise from './Sunrise';
 import Counter from './Counter';
 import GraphOrnament from './GraphOrnament';
+import EdgeFade from './EdgeFade';
 import m from '../../globals/modifiers.css';
 
 const sunrisePanels = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20];
@@ -62,5 +63,14 @@ storiesOf('Animation', module)
   .add('<GraphOrnament />', () => (
     <div style={ { maxWidth: '500px' } }>
       <GraphOrnament animate play />
+    </div>
+  ))
+  .add('<EdgeFade />', () => (
+    <div>
+      <div style={ { height: '100vh' } } />
+      <EdgeFade>
+        Text that’ll fade in an out when it reaches a certain distance from the top or bottom edge
+      </EdgeFade>
+      <div style={ { height: '100vh' } } />
     </div>
   ));
