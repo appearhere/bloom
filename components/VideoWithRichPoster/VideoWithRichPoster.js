@@ -46,6 +46,7 @@ export default class VideoWithPoster extends Component {
       className,
       videoClassName,
       posterClassName,
+      children
     } = this.props;
     const { isPlaying } = this.state;
 
@@ -80,6 +81,7 @@ export default class VideoWithPoster extends Component {
                 play={ this.handleToggleVideo }
                 paused
               />
+              { children }
             </Controls>
           </div>
         ) }
