@@ -29,7 +29,7 @@
   display: none;
 }
 
-@media(--hero-large) {
+@media(--hero-width-lg-i) {
   .inner {
     padding: var(--space-200) var(--space-200);
   }
@@ -40,5 +40,17 @@
     color: var(--color-greyLightest);
     bottom: var(--size-large);
     right: var(--size-large);
+  }
+}
+
+@media(--hero-height-lg-i) {
+  .root {
+    max-height: 50rem;
+  }
+}
+
+@media(--hero-height-lg-ii) {
+  .root {
+    max-height: 64rem;
   }
 }
