@@ -4,7 +4,7 @@ import Video from './Video';
 
 storiesOf('Video', module)
   .add('with controls', () => (
-    <Video controls>
+    <Video controls aspectRatio="4:3">
       <source
         src="https://s3-eu-west-1.amazonaws.com/appearhere/assets/bloom/example-video.mp4"
         type="video/mp4"

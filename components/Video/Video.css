@@ -1,6 +1,5 @@
 .root {
   position: relative;
-  padding-bottom: 56.25%; /* 16:9 */
   height: 0;
   background-color: var(--color-black);
 }
