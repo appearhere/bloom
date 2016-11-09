@@ -11,25 +11,29 @@ const bodyClasses = cx(
   m.uppercase,
 );
 
-const citeClasses = cx(
-  css.base,
-  css.cite,
-  m.fontRegular,
-  m.demi,
-  m.uppercase,
-);
+const Quote = ({ children, citation, className, citeClassName, ...rest }) => {
+  const citeClasses = cx(
+    citeClassName,
+    css.base,
+    css.cite,
+    m.fontRegular,
+    m.demi,
+    m.uppercase,
+  );
 
-const Quote = ({ children, citation, className, ...rest }) => (
-  <blockquote className={ className } { ...rest }>
-    <div className={ bodyClasses }>{ children }</div>
-    <cite className={ citeClasses }>{ citation }</cite>
-  </blockquote>
-);
+  return (
+    <blockquote className={ className } { ...rest }>
+      <div className={ bodyClasses }>{ children }</div>
+      <cite className={ citeClasses }>{ citation }</cite>
+    </blockquote>
+  );
+};
 
 Quote.propTypes = {
   children: PropTypes.node.isRequired,
   citation: PropTypes.node,
   className: PropTypes.string,
+  citeClassName: PropTypes.string,
 };
 
 export default Quote;
