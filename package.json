@@ -105,7 +105,8 @@
     "react-html5video": "^1.2.12",
     "react-motion": "^0.4.5",
     "react-on-visible": "^1.0.3",
-    "react-stickynode": "^1.2.1"
+    "react-stickynode": "^1.2.1",
+    "subscribe-ui-event": "^1.0.14"
   },
   "scripts": {
     "start": "node scripts/start.js",
