@@ -1,5 +1,6 @@
 import svgClean from '../../utils/svg-clean';
 
+import account from './icons/icon-account.svg';
 import appearhere from './icons/icon-appearhere.svg';
 import appearhereBrackets from './icons/icon-appearhere-brackets.svg';
 import automaticPayments from './icons/icon-automatic-payments.svg';
@@ -26,6 +27,7 @@ import search from './icons/icon-search.svg';
 import shield from './icons/icon-shield.svg';
 import signature from './icons/icon-signature.svg';
 import star from './icons/icon-star.svg';
+import store from './icons/icon-store.svg';
 import teamwork from './icons/icon-teamwork.svg';
 import tick from './icons/icon-tick.svg';
 import ticket from './icons/icon-ticket.svg';
@@ -42,6 +44,7 @@ export default {
   'tick-starred': svgClean(tickStarred),
   'travel-idea': svgClean(travelIdea),
   'vip-entrance': svgClean(vipEntrance),
+  account: svgClean(account),
   appearhere: svgClean(appearhere),
   bogroll: svgClean(bogroll),
   book: svgClean(book),
@@ -63,6 +66,7 @@ export default {
   shield: svgClean(shield),
   signature: svgClean(signature),
   star: svgClean(star),
+  store: svgClean(store),
   teamwork: svgClean(teamwork),
   tick: svgClean(tick),
   ticket: svgClean(ticket),
