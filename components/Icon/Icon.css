@@ -1,4 +1,5 @@
 /* Strokes */
+.root.account svg,
 .root.automatic-payments svg,
 .root.bogroll svg,
 .root.bogroll svg,
@@ -24,6 +25,7 @@
 .root.shield svg,
 .root.signature svg,
 .root.star svg,
+.root.store svg,
 .root.tick svg,
 .root.tick-starred svg,
 .root.ticket svg,
