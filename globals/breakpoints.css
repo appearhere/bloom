@@ -3,7 +3,9 @@
  * it's easier to tell what content breaks and when
  */
 :root {
-  @custom-media --hero-large (min-width: 50rem);
+  @custom-media --hero-width-lg-i (min-width: 50rem);
+  @custom-media --hero-height-lg-i (min-height: 50rem);
+  @custom-media --hero-height-lg-ii (min-height: 64rem);
   @custom-media --wrapper-large (min-width: 62.25rem);
   @custom-media --signpost-full (min-width: 31.25rem);
 }
