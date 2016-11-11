@@ -1,9 +1,12 @@
 .root {
   color: currentColor;
   text-decoration: none;
-  background-image: linear-gradient(to top, rgba(192, 31, 46, 0) 11%, var(--color-gold) 11%, var(--color-gold) 16%, rgba(192, 31, 46, 0) 16%)
+  background-image: linear-gradient(to top, rgba(192, 31, 46, 0) 11%, var(--color-gold) 11%, var(--color-gold) 16%, rgba(192, 31, 46, 0) 16%);
+  transition: background-position 100ms;
 }
 
 .root:hover {
   color: currentColor;
+  background-image: linear-gradient(to top, rgba(192, 31, 46, 0) 11%, var(--color-gold) 11%, var(--color-gold) 16%, rgba(192, 31, 46, 0) 16%);
+  background-position: 0 0.1em;
 }
