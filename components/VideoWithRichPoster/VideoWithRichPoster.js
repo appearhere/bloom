@@ -58,7 +58,7 @@ export default class VideoWithPoster extends Component {
       <div className={ cx(css.root, className) }>
         { isPlaying ? (
           <Video
-            className={ cx(css.video, videoClassName) }
+            className={ cx(css.video, css.overlay, videoClassName) }
             key="video"
             autoPlay
             controls
