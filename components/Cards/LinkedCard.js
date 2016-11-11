@@ -19,7 +19,7 @@ const LinkedCard = (props) => {
       target={ target }
       className={ cx(css.root, className) }
     >
-      <Card { ...rest }>
+      <Card { ...rest } className={ css.overlay }>
         { children }
       </Card>
     </a>
