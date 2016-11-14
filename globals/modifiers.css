@@ -28,6 +28,7 @@
 .fgGrey.fgGrey { color: var(--color-grey); }
 .fgGreyDark.fgGreyDark { color: var(--color-greyDark); }
 .fgGreyDarker.fgGreyDarker { color: var(--color-greyDarker); }
+.fgGreyDarkest.fgGreyDarkest { color: var(--color-greyDarkest); }
 
 /* Background colors */
 .bgWhite.bgWhite { background-color: var(--color-white); }
@@ -45,6 +46,7 @@
 .bgGrey.bgGrey { background-color: var(--color-grey); }
 .bgGreyDark.bgGreyDark { background-color: var(--color-greyDark); }
 .bgGreyDarker.bgGreyDarker { background-color: var(--color-greyDarker); }
+.fgGreyDarkest.fgGreyDarkest { color: var(--color-greyDarkest); }
 
 /* Brand ornaments */
 .goldUnderline.goldUnderline {
