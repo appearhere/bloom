@@ -41,8 +41,11 @@
 }
 
 
-.animate.backgroundImage .overlay {
+.backgroundImage .overlay {
   background-color: rgba(0, 0, 0, 0.5);
+}
+
+.animate.backgroundImage {
   animation-name: overlayFadeIn;
   animation-duration: 500ms;
   animation-delay: 2000ms;
