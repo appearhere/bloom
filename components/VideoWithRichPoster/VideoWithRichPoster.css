@@ -16,3 +16,28 @@
   color: var(--color-white);
   text-align: center;
 }
+
+.overlay:after {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: var(--color-black);
+  z-index: 0;
+  opacity: 1;
+  animation-name: overlayFadeOut;
+  animation-duration: 1000ms;
+  animation-fill-mode: forwards;
+  animation-iteration-count: 1;
+}
+
+@keyframes overlayFadeOut {
+  from {
+    opacity: 1;
+  }
+  to {
+    opacity: 0;
+  }
+}

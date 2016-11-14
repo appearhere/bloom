@@ -16,7 +16,10 @@ const SpaceCard = (props) => {
 
   return (
     <div className={ cx(css.root, className) }>
-      <LinkedCard className={ innerClassName } { ...rest }>
+      <LinkedCard
+        className={ innerClassName }
+        { ...rest }
+      >
         <h1 className={ css.name }>{ name }</h1>
         <div className={ css.detail }>
           <span className={ css.underline }>

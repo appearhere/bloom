@@ -43,4 +43,5 @@
 
   /* Overlays */
   --overlay-default: rgba(20, 20, 21, 0.5);
+  --overlay-dark: rgba(20, 20, 21, 0.6);
 }

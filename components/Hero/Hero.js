@@ -1,5 +1,5 @@
 import React, { PropTypes } from 'react';
-import classnames from 'classnames';
+import cx from 'classnames';
 
 import m from '../../globals/modifiers.css';
 import css from './Hero.css';
@@ -11,42 +11,55 @@ const Hero = (props) => {
     backgroundImage,
     children,
     caption,
+    animate,
     ...rest,
   } = props;
 
-  const classes = classnames(
+  const cl = cx(
     css.root,
     backgroundImage ? css.backgroundImage : null,
+    animate ? css.animate : null,
     className
   );
 
-  const innerClasses = classnames(
+  const overlayCl = cx(
+    css.overlay,
+    backgroundImage ? css.overlayActive : null
+  );
+
+  const innerCl = cx(
     css.inner,
-    backgroundImage ? css.innerOverlay : null,
     innerClassName,
   );
 
-  const captionClasses = classnames(
+  const captionClasses = cx(
     css.caption,
     m.fontRegular,
-  )
+  );
 
   const styles = { backgroundImage: backgroundImage ? `url(${backgroundImage})` : null };
 
   return (
     <div
       { ...rest }
-      className={ classes }
-      style={ styles }
+      className={ cl }
     >
-      <div className={ innerClasses }>
-        { children }
-      </div>
-      { caption && backgroundImage && (
-        <div className={ captionClasses }>
-          { caption }
+      <div
+        className={ css.background }
+        style={ styles }
+      />
+
+      <div className={ overlayCl }>
+        <div className={ innerCl }>
+          { children }
         </div>
-      )}
+
+        { caption && backgroundImage && (
+          <div className={ captionClasses }>
+            { caption }
+          </div>
+        )}
+      </div>
     </div>
   );
 };
@@ -57,6 +70,7 @@ Hero.propTypes = {
   backgroundImage: PropTypes.string,
   children: PropTypes.node.isRequired,
   caption: PropTypes.node,
+  animate: PropTypes.bool,
 };
 
 export default Hero;

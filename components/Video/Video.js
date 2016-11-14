@@ -1,4 +1,4 @@
-import React, { PropTypes } from 'react';
+import React, { PropTypes, Component } from 'react';
 import ReactVideo from 'react-html5video';
 import cx from 'classnames';
 
@@ -7,36 +7,75 @@ import Scrubber from './Scrubber/Scrubber';
 import PlayBtn from './PlayBtn/PlayBtn';
 import css from './Video.css';
 
-const Video = (props) => {
-  const { children: source, className, controls, ...rest } = props;
-  const classes = cx(css.root, className);
+class Video extends Component {
+  static propTypes = {
+    children: PropTypes.oneOfType([
+      PropTypes.element,
+      PropTypes.arrayOf(PropTypes.element),
+    ]).isRequired,
+    className: PropTypes.string,
+    controls: PropTypes.bool,
+  };
 
-  return (
-    <ReactVideo
-      className={ classes }
-      controls={ controls }
-      { ...rest }
-    >
-      { source }
-      <Controls>
-        <PlayBtn />
-        <Scrubber />
-      </Controls>
-    </ReactVideo>
-  );
-};
+  static defaultProps = {
+    controls: false,
+  };
 
-Video.propTypes = {
-  children: PropTypes.oneOfType([
-    PropTypes.element,
-    PropTypes.arrayOf(PropTypes.element),
-  ]).isRequired,
-  className: PropTypes.string,
-  controls: PropTypes.bool,
-};
+  state = {
+    isPlaying: false,
+    hasPlayed: false,
+  }
 
-Video.defaultProps = {
-  controls: false,
-};
+  handlePlay = () => {
+    const { hasPlayed } = this.state;
+
+    const newState = {
+      isPlaying: true,
+    };
+
+    if (!hasPlayed) newState.hasPlayed = true;
+
+    this.setState(newState);
+  }
+
+  handlePause = () => {
+    this.setState({
+      isPlaying: false,
+    });
+  }
+
+  render() {
+    const {
+      children: source,
+      className,
+      controls,
+      ...rest,
+    } = this.props;
+
+    const { hasPlayed, isPlaying } = this.state;
+
+    const classes = cx(
+      css.root,
+      hasPlayed && !isPlaying ? css.overlay : null,
+      className
+    );
+
+    return (
+      <ReactVideo
+        className={ classes }
+        controls={ controls }
+        onPlay={ this.handlePlay }
+        onPause={ this.handlePause }
+        { ...rest }
+      >
+        { source }
+        <Controls>
+          <PlayBtn />
+          <Scrubber />
+        </Controls>
+      </ReactVideo>
+    );
+  }
+}
 
 export default Video;

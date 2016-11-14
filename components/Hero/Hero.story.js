@@ -27,48 +27,34 @@ storiesOf('Hero', module)
       >
         <h1 className={ headingClasses }>List a space, host an idea</h1>
         <p className={ paraClasses }>
-          Join the world's leading online marketplace for short-term space.
+          Join the world’s leading online marketplace for short-term space.
         </p>
-        <button>lol</button>
-        <div style={{
-          color: 'white',
-          position: 'absolute',
-          bottom: '2rem',
-          textAlign: 'center',
-          left: '50%',
-          transform: 'translateX(-50%)',
-        }}>
-          <p className={ paraClasses }>Look here, son</p> 👇🏻
-        </div>
       </Hero>
     );
-  })
-  .add('with body image', () => {
+  }).add('Animated', () => {
     const headingClasses = classnames(
       m.fontLgIv,
-      m.fgText,
+      m.fgWhite,
       m.uppercase,
       m.wideSpacing,
     );
 
     const paraClasses = classnames(
       m.fontRegular,
-      m.fgText,
+      m.fgWhite,
     );
 
     return (
-      <div>
-        <Hero
-          className={ m.bgWhite }
-        >
-          <h1 className={ headingClasses }>MacBook</h1>
-          <p className={ paraClasses }>
-            Light. Years ahead.
-          </p>
-          <div className={m.pt64}>
-            <img style={{ width: '80%' }} src="http://images.apple.com/v/mac/home/t/images/home/macbook_opt_large.jpg" />
-          </div>
-        </Hero>
-      </div>
+      <Hero
+        className={ m.bgBlack }
+        backgroundImage="https://source.unsplash.com/random/1200x800"
+        caption="A random image from unsplash"
+        animate
+      >
+        <h1 className={ headingClasses }>List a space, host an idea</h1>
+        <p className={ paraClasses }>
+          Join the world’s leading online marketplace for short-term space.
+        </p>
+      </Hero>
     );
   });
