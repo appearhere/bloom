@@ -1,7 +1,6 @@
 import React, { PropTypes, Component } from 'react';
 
 import Inner from './CarouselInner';
-import getValidIndex from '../../utils/getValidIndex/getValidIndex';
 
 export default class Carousel extends Component {
   static propTypes = {
@@ -19,7 +18,11 @@ export default class Carousel extends Component {
   render() {
     const { items, itemsPerColumn, lowestVisibleItemIndex } = this.props;
 
-    const renderPerColumn = itemsPerColumn < items.length ? itemsPerColumn : items.length;
+    const renderItems = items.filter(item => item);
+
+    const renderPerColumn = itemsPerColumn < renderItems.length
+      ? itemsPerColumn
+      : renderItems.length;
     const slideWidth = 100 / renderPerColumn;
 
     const position = lowestVisibleItemIndex * (-1 * slideWidth);
@@ -33,7 +36,7 @@ export default class Carousel extends Component {
           } }
           slideWidth={ slideWidth }
         >
-          { items }
+          { renderItems }
         </Inner>
       </div>
     );
