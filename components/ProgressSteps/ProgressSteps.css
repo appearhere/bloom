@@ -23,7 +23,7 @@
 .stepContent {
   margin-top: calc(var(--size-medium) + (var(--size-small) / 2));
   margin-bottom: var(--size-medium);
-  margin-left: var(--size-medium);
+  padding-left: var(--size-large);
   font: var(--font-regular);
   vertical-align: top;
 }
@@ -31,11 +31,11 @@
 .step + .step .stepIconContainer:before {
   content: ' ';
   background-color: var(--color-greyLighter);
-  height: 100%;
+  height: calc(100% - (var(--size-medium) * 3));
   width: 2px;
   position: absolute;
   display: block;
-  top: calc(-100% + (var(--size-medium) * 2));
+  top: calc(-100% + (var(--size-medium) * 3));
   left: 50%;
   z-index: -1;
 }
@@ -50,7 +50,7 @@
 
 .stepTitle {
   font: var(--font-regular);
-  font-weight: var(--fontweight-demi);
+  font-weight: var(--fontweight-bold);
   text-transform: uppercase;
   color: var(--color-greyDarker);
 }
@@ -83,13 +83,24 @@
 }
 
 .horizontal .stepContent {
-  margin-left: 0;
+  margin-left: auto;
   width: 100%;
+  max-width: 16rem;
+  margin-right: auto;
+  padding-left: 0;
 }
 
 .horizontal .step + .step .stepIconContainer:before {
   height: 2px;
-  width: calc(100% - (var(--size-medium) * 2));
-  left: -50%;
+  width: calc(100% - (var(--size-medium) * 8));
+  left: calc(-50% + (var(--size-medium) * 3));
   top: calc(50% - 1px);
+}
+
+.icon {
+  font-size: 2.5rem;
+}
+
+.stepIconContainerCompleted .icon svg {
+  stroke: var(--color-primary);
 }
