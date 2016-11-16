@@ -3,6 +3,7 @@ import cx from 'classnames';
 
 import LeftRight from '../LeftRight/LeftRight';
 import StepIcon from '../StepIcon/StepIcon';
+import Icon from '../Icon/Icon';
 import m from '../../globals/modifiers.css';
 import defaultCss from './ProgressSteps.css';
 
@@ -13,6 +14,7 @@ const Step = (props) => {
     title,
     children,
     css,
+    icon,
     ...rest,
   } = props;
 
@@ -59,7 +61,12 @@ const Step = (props) => {
       className={ cx(defaultCss.step, css.step) }
       leftClassName={ leftClassName }
       rightClassName={ rightClassName }
-      leftChildren={
+      leftChildren={ icon ? (
+        <Icon
+          className={ defaultCss.icon }
+          name={ icon }
+        />
+      ) : (
         <StepIcon
           circleClassName={ css.stepIconCircle }
           className={ stepIconClassName }
@@ -67,7 +74,7 @@ const Step = (props) => {
         >
           { step }
         </StepIcon>
-      }
+      ) }
       rightChildren={
         <div>
           <dt className={ stepTitleClassName }>{ title }</dt>
@@ -80,7 +87,6 @@ const Step = (props) => {
 };
 
 Step.propTypes = {
-  step: PropTypes.node.isRequired,
   completed: PropTypes.bool,
   title: PropTypes.node,
   children: PropTypes.node,
@@ -94,6 +100,8 @@ Step.propTypes = {
     stepBody: PropTypes.string,
     stepBodyCompleted: PropTypes.string,
   }),
+  step: PropTypes.node,
+  icon: PropTypes.string,
 };
 
 Step.defaultProps = {
