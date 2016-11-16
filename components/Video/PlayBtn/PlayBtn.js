@@ -15,7 +15,7 @@ const PlayBtn = ({ play, pause, paused }) => {
     >
       { paused ? (
         <span>
-          <Icon name="play" />
+          <Icon name="play-c" className={ css.icon } />
           <ScreenReadable>Play</ScreenReadable>
         </span>
       ) : (
