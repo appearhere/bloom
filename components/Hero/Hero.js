@@ -8,6 +8,7 @@ const Hero = (props) => {
   const {
     className,
     innerClassName,
+    backgroundClassName,
     backgroundImage,
     children,
     caption,
@@ -45,7 +46,7 @@ const Hero = (props) => {
       className={ cl }
     >
       <div
-        className={ css.background }
+        className={ cx(css.background, backgroundClassName) }
         style={ styles }
       />
 
@@ -71,6 +72,7 @@ Hero.propTypes = {
   children: PropTypes.node.isRequired,
   caption: PropTypes.node,
   animate: PropTypes.bool,
+  backgroundClassName: PropTypes.string,
 };
 
 export default Hero;
