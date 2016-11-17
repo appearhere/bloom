@@ -30,7 +30,7 @@ export default class GridFader extends Component {
     grid: [],
     limit: 30,
     GridItemComponent: 'div',
-    swapInterval: 1500,
+    swapInterval: 2100,
   };
 
   constructor(props) {
