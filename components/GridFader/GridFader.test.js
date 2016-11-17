@@ -32,7 +32,7 @@ it('swaps correctly swaps items on a timed basis', () => {
   jasmine.clock().install();
 
   const grid = [{ key: 1 }, { key: 2 }];
-  const interval = 1500;
+  const interval = 2100;
   const div = document.createElement('div');
   /* eslint-disable react/no-render-return-value */
   const instance = ReactDOM.render(
