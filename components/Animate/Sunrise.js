@@ -9,7 +9,12 @@ export default class Sunrise extends Component {
     visible: PropTypes.bool,
     children: PropTypes.node,
     percent: PropTypes.number,
+    start: PropTypes.bool,
   };
+
+  static defaultProps = {
+    start: true,
+  }
 
   constructor(props) {
     super(props);
@@ -28,10 +33,10 @@ export default class Sunrise extends Component {
   }
 
   render() {
-    const { children, percent } = this.props;
+    const { children, percent, start } = this.props;
     const { visible } = this.state;
 
-    const classes = cx(css.root, visible ? css.visible : null);
+    const classes = cx(css.root, visible && start ? css.visible : null);
 
     return (
       <OnVisible percent={ percent } onChange={ this.handleChange }>

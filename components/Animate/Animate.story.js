@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { Component } from 'react';
 import { storiesOf, linkTo } from '@kadira/storybook';
 
 import Circle from './Circle';
@@ -9,6 +9,42 @@ import EdgeFade from './EdgeFade';
 import m from '../../globals/modifiers.css';
 
 const sunrisePanels = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20];
+
+class TestSunriseComponent extends Component {
+  constructor(props) {
+    super(props);
+
+    this.startSunrise = this.startSunrise.bind(this);
+
+    this.state = { start: false };
+  }
+
+  startSunrise() {
+    this.setState({ start: true });
+  }
+
+  render() {
+    const { start } = this.state;
+
+    return (
+      <div>
+        <button onClick={ this.startSunrise }>Start</button>
+        <Sunrise percent={ 50 } start={ start }>
+          <div
+            className={ m.bgPrimary }
+            style={ {
+              width: '300px',
+              height: '400px',
+              marginRight: '2%',
+              marginTop: '2rem',
+            } }
+          />
+        </Sunrise>
+      </div>
+    );
+  }
+}
+
 
 storiesOf('Animation', module)
   .add('Sunrise', () => (
@@ -27,6 +63,9 @@ storiesOf('Animation', module)
         </Sunrise>
       )) }
     </div>
+  ))
+  .add('Sunrise with start', () => (
+    <TestSunriseComponent />
   ))
   .add('Swap', () => (
     <div>
