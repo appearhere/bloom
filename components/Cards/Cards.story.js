@@ -19,9 +19,19 @@ storiesOf('Card', module)
   .add('SpaceCard', () => (
     <SpaceCard
       name="Rue De Chazelles"
-      image="https://unsplash.it/600/600"
-      price="£46/day"
+      image="https://source.unsplash.com/random/600x600"
+      price="£46 / day"
       location="London"
       href="#"
+    />
+  ))
+  .add('SpaceCard: square', () => (
+    <SpaceCard
+      name="Rue De Chazelles"
+      image="https://source.unsplash.com/random/600x600"
+      price="£46 / day"
+      location="London"
+      href="#"
+      square
     />
   ));
