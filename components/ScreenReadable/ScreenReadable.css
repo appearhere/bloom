@@ -12,4 +12,9 @@
   padding: 0;
   position: absolute;
   width: 1px;
+  /*
+   * Ensures whitespace isn't ignored:
+   * https://medium.com/@jessebeach/beware-smushed-off-screen-accessible-text-5952a4c2cbfe#.e3i0smk0t
+   */
+  white-space: nowrap;
 }
