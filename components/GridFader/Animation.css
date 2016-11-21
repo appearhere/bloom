@@ -3,14 +3,16 @@
 }
 .leaveActive {
   opacity: 0;
-  transition: opacity 1s ease-in;
+  transition: opacity 1000ms ease-in;
 }
 
 .enter {
   opacity: 0;
   position: absolute;
 }
+
 .enterActive {
   opacity: 1;
-  transition: opacity 1s ease-in;
+  transition: opacity 1000ms ease-in;
+  transition-delay: 1000ms;
 }

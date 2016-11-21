@@ -1,9 +1,10 @@
 import React, { PropTypes, Component } from 'react';
+import TransitionGroup from 'react-addons-css-transition-group';
 import cx from 'classnames';
 
 import getRandomInt from '../../utils/getRandomInt';
-import Swap from '../Animate/Swap';
 import css from './GridFader.css';
+import transitions from './Animation.css';
 
 export default class GridFader extends Component {
   static propTypes = {
@@ -102,12 +103,16 @@ export default class GridFader extends Component {
                 causing an additional element to render for a short period
                 of time, causing the grid to break
               */ }
-            <Swap animationTimeout={ swapInterval - 100 }>
+            <TransitionGroup
+              transitionName={ transitions }
+              transitionEnterTimeout={ swapInterval - 100 }
+              transitionLeaveTimeout={ swapInterval - 100 }
+            >
               <GridItemComponent
                 { ...item }
                 key={ `logo-${item.key}` }
               />
-            </Swap>
+            </TransitionGroup>
           </div>
         )) }
       </div>
