@@ -51,9 +51,16 @@ export default class BackgroundColorSwitcher extends Component {
     const viewportHeight = window.innerHeight;
     /* eslint-enable no-undef */
 
+    const {
+      top: bodyTop,
+    } = document.documentElement.getBoundingClientRect();
+
+    const slidesTop = this.wrapper.getBoundingClientRect().top;
+    const offset = slidesTop - bodyTop;
+
     for (let i = 0; i < children.length; i += 1) {
       const { top } = this.sections[i].getBoundingClientRect();
-      const actualThreshold = viewportHeight * (threshold / 100);
+      const actualThreshold = (viewportHeight * (threshold / 100)) + offset;
 
       if ((top * -1) < actualThreshold) {
         this.setState({
