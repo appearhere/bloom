@@ -22,3 +22,18 @@
   left: 0;
   top: 0;
 }
+
+.video {
+  position: relative;
+  padding-bottom: 177.7777778%; /* 9:16; */
+  height: 0;
+  background-color: #000;
+}
+
+.video video {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+}
