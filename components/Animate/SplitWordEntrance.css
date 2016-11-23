@@ -1,0 +1,15 @@
+.animation {
+  opacity: 0;
+  display: inline-block;
+  transform: translateY(1rem) translateZ(0);
+  animation-name: fadeIn;
+  animation-fill-mode: forwards;
+  animation-iteration-count: 1;
+}
+
+@keyframes fadeIn {
+  to {
+    opacity: 1;
+    transform: translateY(0) translateZ(0px);
+  }
+}
