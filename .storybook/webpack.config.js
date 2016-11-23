@@ -55,7 +55,17 @@ module.exports = {
       {
         test: /\.md$/,
         loader: 'raw'
-      }
+      },
+      // "url" loader works just like "file" loader but it also embeds
+      // assets smaller than specified size as data URLs to avoid requests.
+      {
+        test: /\.(mp4|webm)(\?.*)?$/,
+        loader: 'url',
+        query: {
+          limit: 10000,
+          name: 'static/media/[name].[hash:8].[ext]'
+        }
+      },
     ]
   },
   // We use PostCSS for autoprefixing only.
