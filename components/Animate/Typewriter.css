@@ -1,0 +1,14 @@
+.animation {
+  opacity: 0;
+  display: inline-block;
+  animation-name: fadeIn;
+  animation-fill-mode: forwards;
+  animation-iteration-count: 1;
+  white-space: pre;
+}
+
+@keyframes fadeIn {
+  to {
+    opacity: 1;
+  }
+}

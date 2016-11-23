@@ -7,6 +7,7 @@ import Counter from './Counter';
 import GraphOrnament from './GraphOrnament';
 import EdgeFade from './EdgeFade';
 import SplitWordEntrance from './SplitWordEntrance';
+import Typewriter from './Typewriter';
 import m from '../../globals/modifiers.css';
 
 const sunrisePanels = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20];
@@ -118,4 +119,9 @@ storiesOf('Animation', module)
     <SplitWordEntrance className={ m.fontLgIii }>
       Introducing Landlord Dashboards
     </SplitWordEntrance>
+  ))
+  .add('<Typewriter />', () => (
+    <Typewriter className={ m.fontLgIii }>
+      Introducing Landlord Dashboards
+    </Typewriter>
   ));
