@@ -10,10 +10,12 @@ export default class Sunrise extends Component {
     children: PropTypes.node,
     percent: PropTypes.number,
     start: PropTypes.bool,
+    transitionDelay: PropTypes.number,
   };
 
   static defaultProps = {
     start: true,
+    transitionDelay: 0,
   }
 
   constructor(props) {
@@ -33,14 +35,19 @@ export default class Sunrise extends Component {
   }
 
   render() {
-    const { children, percent, start } = this.props;
+    const { children, percent, start, transitionDelay } = this.props;
     const { visible } = this.state;
 
     const classes = cx(css.root, visible && start ? css.visible : null);
 
     return (
       <OnVisible percent={ percent } onChange={ this.handleChange }>
-        <div className={ classes }>
+        <div
+          className={ classes }
+          style={ {
+            transitionDelay: `${transitionDelay}ms`,
+          } }
+        >
           { children }
         </div>
       </OnVisible>
