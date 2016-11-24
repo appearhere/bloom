@@ -12,3 +12,6 @@ require('whatwg-fetch');
 // Object.assign() is commonly used with React.
 // It will use the native implementation if it's present and isn't buggy.
 Object.assign = require('object-assign');
+
+// Array.from() is required to destructure strings
+if (!Array.from) Array.from = require('array-from');
