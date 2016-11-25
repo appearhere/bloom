@@ -6,8 +6,8 @@
   border-style: solid;
   border-color: var(--color-black);
   text-transform: uppercase;
+  composes: fontSmallI from '../../globals/typography.css';
   line-height: 1.4;
-  font: var(--font-small-i);
   font-weight: var(--fontweight-demi);
   cursor: pointer;
   transition: background-color 300ms, color 300ms;

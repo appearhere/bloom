@@ -2,7 +2,7 @@ import React, { PropTypes } from 'react';
 import cx from 'classnames';
 
 import LeftRight from '../LeftRight/LeftRight';
-import StepIcon from '../StepIcon/StepIcon';
+import Circle from '../Animate/Circle';
 import Icon from '../Icon/Icon';
 import m from '../../globals/modifiers.css';
 import defaultCss from './ProgressSteps.css';
@@ -67,13 +67,13 @@ const Step = (props) => {
           name={ icon }
         />
       ) : (
-        <StepIcon
+        <Circle
           circleClassName={ css.stepIconCircle }
           className={ stepIconClassName }
           completed={ completed }
         >
           { step }
-        </StepIcon>
+        </Circle>
       ) }
       rightChildren={
         <div>

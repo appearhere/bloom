@@ -1,11 +1,11 @@
 .statement {
-  font: var(--font-large-vi);
+  composes: fontLargeVi from '../../../globals/typography.css';
   letter-spacing: 0.3125rem;
   text-transform: uppercase;
 }
 
 .number {
-  font: var(--font-large-ii);
+  composes: fontLargeIi from '../../../globals/typography.css';
   font-weight: var(--fontweight-bold);
   display: block;
   margin-top: var(--size-large);
