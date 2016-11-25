@@ -1,9 +1,24 @@
 .root {
   color: currentColor;
   text-decoration: none;
-  background-image: linear-gradient(0deg,rgba(192,31,46,0) 0%, var(--color-gold) 0, var(--color-gold) 5%, rgba(192,31,46,0) 0);
+  text-transform: uppercase;
+  composes: fontSmallI from '../../globals/typography.css';
+  font-weight: var(--fontweight-demi);
+  letter-spacing: var(--letterspacing-wide);
+  color: var(--color-gold);
 }
 
-.root:hover {
-  color: var(--color-gold);
+.root:hover .icon {
+  transform: translateX(0.5em) rotate(90deg) translateZ(0);
+}
+
+.icon {
+  display: inline-block;
+  transform: rotate(90deg) translateZ(0);
+  font-size: 0.7em;
+  vertical-align: text-top;
+  line-height: 1.4375;
+  margin-top: 0.15em;
+  margin-left: 0.5em;
+  transition: transform 150ms;
 }
