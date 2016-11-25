@@ -1,5 +1,5 @@
 import React from 'react';
-import { storiesOf, action } from '@kadira/storybook';
+import { storiesOf } from '@kadira/storybook';
 import Link from '../Link/Link';
 import linkcss from '../Link/Link.css';
 
@@ -11,13 +11,5 @@ storiesOf('Link', module)
       className={ linkcss.root }
     >
       Random Wikipedia article
-    </Link>
-  ))
-  .add('Naughty link hijacking', () => (
-    <Link
-      href="#"
-      onClick={action('naughty click')}
-    >
-      Storybook action example
     </Link>
   ));
