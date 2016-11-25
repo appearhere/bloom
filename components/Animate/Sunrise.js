@@ -23,22 +23,34 @@ export default class Sunrise extends Component {
 
     this.state = {
       visible: props.visible,
+      hasPlayed: false,
     };
-
-    this.handleChange = this.handleChange.bind(this);
   }
 
-  handleChange(visible) {
+  handleChange = (visible) => {
+    const { start } = this.props;
+
     this.setState({
       visible,
     });
+
+    if (visible && start) {
+      this.hasPlayed();
+    }
+  }
+
+  hasPlayed = () => {
+    const { hasPlayed } = this.state;
+    if (hasPlayed) return;
+
+    this.setState({ hasPlayed: true });
   }
 
   render() {
     const { children, percent, start, transitionDelay } = this.props;
-    const { visible } = this.state;
+    const { visible, hasPlayed } = this.state;
 
-    const classes = cx(css.root, visible && start ? css.visible : null);
+    const classes = cx(css.root, visible && (start || hasPlayed) ? css.visible : null);
 
     return (
       <OnVisible percent={ percent } onChange={ this.handleChange }>
