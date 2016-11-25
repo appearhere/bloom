@@ -10,7 +10,7 @@
 .title {
   margin-top: 0;
   margin-bottom: 0;
-  font: var(--font-large-ii);
+  composes: fontLargeIi from '../../../globals/typography.css';
   text-transform: uppercase;
   font-weight: var(--fontweight-bold);
 }
@@ -18,5 +18,5 @@
 .body {
   margin-top: var(--size-medium);
   margin-bottom: 0;
-  font: var(--font-regular);
+  composes: fontRegular from '../../../globals/typography.css';
 }

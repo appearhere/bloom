@@ -24,7 +24,7 @@
   margin-top: calc(var(--size-medium) + (var(--size-small) / 2));
   margin-bottom: var(--size-medium);
   padding-left: var(--size-large);
-  font: var(--font-regular);
+  composes: fontRegular from '../../globals/typography.css';
   vertical-align: top;
 }
 
@@ -49,7 +49,7 @@
 }
 
 .stepTitle {
-  font: var(--font-regular);
+  composes: fontRegular from '../../globals/typography.css';
   font-weight: var(--fontweight-bold);
   text-transform: uppercase;
   color: var(--color-greyDarker);

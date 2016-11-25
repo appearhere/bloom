@@ -150,41 +150,32 @@
 .ma200.ma200 { margin: var(--space-200); }
 
 /* Full font styles */
-.fontLgVi.fontLgVi {
-  font: var(--font-large-vi);
-  letter-spacing: var(--letter-spacing-large-vi);
+.fontLgVi {
+  composes: fontLargeVi from './typography.css';
 }
-.fontLgV.fontLgV {
-  font: var(--font-large-v);
-  letter-spacing: var(--letter-spacing-large-v);
+.fontLgV {
+  composes: fontLargeV from './typography.css';
 }
-.fontLgIv.fontLgIv {
-  font: var(--font-large-iv);
-  letter-spacing: var(--letter-spacing-large-iv);
+.fontLgIv {
+  composes: fontLargeIv from './typography.css';
 }
-.fontLgIii.fontLgIii {
-  font: var(--font-large-iii);
-  letter-spacing: var(--letter-spacing-large-iii);
+.fontLgIii {
+  composes: fontLargeIii from './typography.css';
 }
-.fontLgIi.fontLgIi {
-  font: var(--font-large-ii);
-  letter-spacing: var(--letter-spacing-large-ii);
+.fontLgIi {
+  composes: fontLargeIi from './typography.css';
 }
-.fontLgI.fontLgI {
-  font: var(--font-large-i);
-  letter-spacing: var(--letter-spacing-large-i);
+.fontLgI {
+  composes: fontLargeI from './typography.css';
 }
-.fontRegular.fontRegular {
-  font: var(--font-regular);
-  letter-spacing: var(--letter-spacing-regular);
+.fontRegular {
+  composes: fontRegular from './typography.css';
 }
-.fontSmI.fontSmI {
-  font: var(--font-small-i);
-  letter-spacing: var(--letter-spacing-small-i);
+.fontSmI {
+  composes: fontSmallI from './typography.css';
 }
-.fontSmIi.fontSmIi {
-  font: var(--font-small-ii);
-  letter-spacing: var(--letter-spacing-small-ii);
+.fontSmIi {
+  composes: fontSmallI from './typography.css';
 }
 
 /* Font sizes */

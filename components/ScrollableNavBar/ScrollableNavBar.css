@@ -55,13 +55,12 @@
 
   .link {
     display: block;
+    composes: fontSmallI from '../../globals/typography.css';
     font-weight: var(--fontweight-demi);
-    font-size: var(--fontsize-small-i);
     text-transform: uppercase;
     color: var(--color-greyLight);
     text-decoration: none;
     padding: var(--size-medium) var(--size-small);
-    letter-spacing: var(--letter-spacing-regular);
   }
 
   .link:hover {
