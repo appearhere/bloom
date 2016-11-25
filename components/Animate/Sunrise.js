@@ -27,6 +27,11 @@ export default class Sunrise extends Component {
     };
   }
 
+  componentWillReceiveProps({ start }) {
+    const { visible } = this.state;
+    if (start && visible) this.hasPlayed();
+  }
+
   handleChange = (visible) => {
     const { start } = this.props;
 
@@ -34,10 +39,9 @@ export default class Sunrise extends Component {
       visible,
     });
 
-    if (visible && start) {
-      this.hasPlayed();
-    }
+    if (visible && start) this.hasPlayed();
   }
+
 
   hasPlayed = () => {
     const { hasPlayed } = this.state;
