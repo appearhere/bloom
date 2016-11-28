@@ -1,3 +1,16 @@
+.left {
+  text-align: left;
+}
+
+.center {
+  text-align: center;
+}
+
+.right {
+  text-align: right;
+}
+
+
 .base {
   color: currentColor;
 }
@@ -7,32 +20,47 @@
   margin-bottom: 0;
   position: relative;
   display: block;
-}
-
-.quoteBody:before,
-.quoteBody:after {
-  font-family: serif;
-  font-size: var(--fontsize-large-iv);
-  color: var(--color-greyLight);
-  position: relative;
-  top: var(--size-micro);
+  composes: fontLargeIii from '../../../globals/typography.css';
+  font-weight: var(--fontweight-regular);
 }
 
 .quoteBody:before {
   content: "\201C";
-  margin-right: var(--size-small) ;
-  margin-left: calc(-1 * var(--size-large));
 }
 
 .quoteBody:after {
   content: "\201D";
-  margin-left: var(--size-small);
-  margin-right: calc(-1 * var(--size-large));
 }
 
 .cite {
   margin-top: var(--size-medium);
   margin-bottom: 0;
   font-style: normal;
+  display: inline-block;
+  position: relative;
+  max-width: 50%;
+  color: var(--color-grey);
+  composes: fontRegular from '../../../globals/typography.css';
+  font-weight: var(--fontweight-demi);
+  text-transform: uppercase;
+}
+
+.cite:before {
+  content: '';
+  width: calc(100% - var(--size-large));
+  max-width: 3rem;
+  height: 2px;
+  background-color: currentColor;
+  position: absolute;
   display: block;
+  top: 50%;
+  transform: translateY(-2px);
+}
+
+.left .cite {
+  left: 5rem;
+}
+
+.cite:before {
+  left: -5rem;
 }
