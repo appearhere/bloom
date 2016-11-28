@@ -1,28 +1,31 @@
 import React, { PropTypes } from 'react';
 import cx from 'classnames';
 
-import m from '../../../globals/modifiers.css';
 import css from './Quote.css';
 
-const bodyClasses = cx(
-  css.base,
-  css.quoteBody,
-  m.fontLgIii,
-  m.uppercase,
-);
+const Quote = (props) => {
+  const {
+    children,
+    citation,
+    className,
+    citeClassName,
+    textAlign,
+    ...rest,
+  } = props;
 
-const Quote = ({ children, citation, className, citeClassName, ...rest }) => {
+  const bodyClasses = cx(
+    css.base,
+    css.quoteBody,
+  );
+
   const citeClasses = cx(
     citeClassName,
     css.base,
     css.cite,
-    m.fontRegular,
-    m.demi,
-    m.uppercase,
   );
 
   return (
-    <blockquote className={ className } { ...rest }>
+    <blockquote className={ cx(css[textAlign], className) } { ...rest }>
       <div className={ bodyClasses }>{ children }</div>
       <cite className={ citeClasses }>{ citation }</cite>
     </blockquote>
@@ -34,6 +37,11 @@ Quote.propTypes = {
   citation: PropTypes.node,
   className: PropTypes.string,
   citeClassName: PropTypes.string,
+  textAlign: PropTypes.oneOf(['left', 'center', 'right']),
+};
+
+Quote.defaultProps = {
+  textAlign: 'center',
 };
 
 export default Quote;
