@@ -11,7 +11,7 @@
 }
 
 .title {
-  composes: fontLargeIv from '../../globals/typography.css';
+  composes: fontLargeIii from '../../globals/typography.css';
   margin-top: 0;
   margin-bottom: 0;
 }
