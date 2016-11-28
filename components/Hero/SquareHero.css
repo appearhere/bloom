@@ -1,0 +1,94 @@
+z.root {
+  width: 100%;
+  box-sizing: border-box;
+  position: relative;
+  lost-utility: clearfix;
+  max-width: 80rem;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.root * {
+  box-sizing: border-box;
+}
+
+.square {
+  background-color: var(--color-black);
+  width: 80%;
+  max-width: 18.75rem;
+  position: relative;
+  float: right;
+  z-index: 1;
+  margin-top: calc(var(--space-96) * -1);
+}
+
+.square:before {
+  content: '';
+  display: block;
+  padding-top: 100%;
+  width: 100%;
+}
+
+.title {
+  composes: fontLargeI from '../../globals/typography.css';
+  color: var(--color-white);
+  position: absolute;
+  vertical-align: middle;
+  padding: var(--size-large);
+  top: 50%;
+  width: 100%;
+  transform: translateY(-50%);
+  text-transform: uppercase;
+  margin-top: 0;
+  margin-bottom: 0;
+}
+
+.image {
+  width: 100%;
+}
+
+@media(--squareHero-lg-i) {
+  .title {
+    font-size: var(--fontsize-large-iii);
+    font-weight: var(--fontweight-bold);
+    letter-spacing: var(--letter-spacing-large-iii);
+    line-height: var(--lineheight-large-iii);
+    padding: var(--space-48);
+  }
+}
+
+@media(--squareHero-lg-ii) {
+  .root {
+    padding-left: var(--space-48);
+    padding-right: var(--space-48);
+    margin-top: var(--space-48);
+    margin-bottom: var(--space-48);
+  }
+
+  .imageContainer {
+    width: 75%;
+    float: right;
+  }
+
+  .square {
+    float: none;
+    position: absolute;
+    left: var(--space-48);
+    top: 50%;
+    transform: translateY(-50%);
+    margin-top: 0;
+  }
+}
+
+@media(--squareHero-lg-iii) {
+  .square {
+    max-width: 25rem;
+    transform: translateY(-50%);
+  }
+
+  .title {
+    font-size: var(--fontsize-large-iv);
+    letter-spacing: var(--letter-spacing-large-iv);
+    line-height: var(--lineheight-large-iv);
+  }
+}

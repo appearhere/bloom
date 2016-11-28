@@ -1,8 +1,9 @@
 import React from 'react';
-import { storiesOf, action } from '@kadira/storybook';
+import { storiesOf } from '@kadira/storybook';
 import classnames from 'classnames';
 
 import Hero from './Hero';
+import SquareHero from './SquareHero';
 import m from '../../globals/modifiers.css';
 
 storiesOf('Hero', module)
@@ -31,7 +32,8 @@ storiesOf('Hero', module)
         </p>
       </Hero>
     );
-  }).add('Animated', () => {
+  })
+  .add('Animated', () => {
     const headingClasses = classnames(
       m.fontLgIv,
       m.fgWhite,
@@ -57,4 +59,12 @@ storiesOf('Hero', module)
         </p>
       </Hero>
     );
-  });
+  })
+  .add('<SquareHero />', () => (
+    <SquareHero
+      image="https://source.unsplash.com/random/1200x800"
+      alt=""
+    >
+      Curators, makers, rule breakers. Questioners & forward thinkers
+    </SquareHero>
+  ));

@@ -8,4 +8,7 @@
   @custom-media --hero-height-lg-ii (min-height: 64rem);
   @custom-media --wrapper-large (min-width: 62.25rem);
   @custom-media --signpost-full (min-width: 31.25rem);
+  @custom-media --squareHero-lg-i (min-width: 25rem);
+  @custom-media --squareHero-lg-ii (min-width: 46.875rem);
+  @custom-media --squareHero-lg-iii (min-width: 62.5rem);
 }
