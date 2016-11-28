@@ -6,6 +6,7 @@ import css from './IconCore.css';
 export default (iconSet, theme) => class Icon extends Component {
   static propTypes = {
     name: PropTypes.string.isRequired,
+    fallback: PropTypes.string,
     className: PropTypes.string,
   };
 
@@ -13,7 +14,7 @@ export default (iconSet, theme) => class Icon extends Component {
     super(props);
 
     invariant(
-      iconSet[props.name],
+      props.fallback || iconSet[props.name],
       `Icon(): No icon exists for ${props.name}`
     );
 
@@ -21,20 +22,20 @@ export default (iconSet, theme) => class Icon extends Component {
   }
 
   createMarkup() {
-    const { name } = this.props;
+    const { name, fallback } = this.props;
 
-    return {
-      __html: iconSet[name],
-    };
+    return { __html: iconSet[name] || fallback };
   }
 
   render() {
-    const { className, name, ...rest } = this.props;
+    const { className, name, fallback, ...rest } = this.props;
+    const fallingBack = !iconSet[name] && fallback;
 
     const classes = classnames(
       css.root,
       theme ? theme.root : null,
       theme ? theme[name] : css[name],
+      theme && fallingBack ? theme.fallback : null,
       className,
     );
 
