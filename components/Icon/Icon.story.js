@@ -24,4 +24,9 @@ story.add('Large icon', () => (
     <div className={ m.fgPrimary }>
       <Icon name="bogroll" /> Flush
     </div>
+  ))
+  .add('Missing Fallback', () => (
+    <div className={ m.fgPrimary }>
+      <Icon name="missing" fallback="Bogroll" />
+    </div>
   ));
