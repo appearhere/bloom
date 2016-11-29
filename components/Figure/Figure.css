@@ -1,9 +1,18 @@
 .root {
   margin: 0;
+  position: relative;
 }
 
 .caption {
+  position: absolute;
   padding-top: var(--size-small);
-  color: var(--color-greyDark);
+  color: var(--color-white);
   composes: fontSmallI from '../../globals/typography.css';
+  padding-bottom: var(--size-medium);
+  padding-left: var(--size-medium);
+  padding-top: 3rem;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  background: linear-gradient(to top,  rgba(0,0,0,0.75) 0%,rgba(255,255,255,0) 100%);
 }
