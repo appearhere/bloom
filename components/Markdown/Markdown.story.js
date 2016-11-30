@@ -7,5 +7,5 @@ import guide from './markdown-guide.md';
 
 storiesOf('Markdown', module)
   .add('<Markdown />', () => (
-    <Markdown highlightSyntax>{ guide }</Markdown>
+    <Markdown>{ guide }</Markdown>
   ));
