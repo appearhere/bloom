@@ -11,11 +11,15 @@ const SquareHero = (props) => {
     css,
     className,
     level,
+    headingSide,
     ...rest,
   } = props;
 
   return (
-    <div { ...rest } className={ cx(defaultCss.root, className) }>
+    <div
+      { ...rest }
+      className={ cx(defaultCss.root, defaultCss[headingSide], className) }
+    >
       <div className={ cx(defaultCss.imageContainer, css.image) }>
         <img className={ defaultCss.image } src={ image } alt={ alt } />
       </div>
@@ -40,6 +44,7 @@ SquareHero.propTypes = {
     image: PropTypes.string,
   }),
   level: PropTypes.number,
+  headingSide: PropTypes.oneOf(['left', 'right']),
 };
 
 SquareHero.defaultProps = {
@@ -48,6 +53,7 @@ SquareHero.defaultProps = {
     image: '',
   },
   level: 1,
+  headingSide: 'left',
 };
 
 export default SquareHero;
