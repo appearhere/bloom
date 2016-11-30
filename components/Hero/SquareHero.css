@@ -22,6 +22,10 @@
   margin-top: calc(var(--space-96) * -1);
 }
 
+.right .square {
+  float: left;
+}
+
 .square:before {
   content: '';
   display: block;
@@ -77,6 +81,15 @@
     top: 50%;
     transform: translateY(-50%);
     margin-top: 0;
+  }
+
+  .right .imageContainer {
+    float: left;
+  }
+
+  .right .square {
+    left: auto;
+    right: var(--space-48);
   }
 }
 
