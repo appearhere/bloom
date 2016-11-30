@@ -2,6 +2,11 @@
  * Allow figures to break the grid, so their contents (images) can be bigger
  * and therefore have a greater impact
  */
+
+.root {
+  color: var(--color-greyDarker);
+}
+
 .root > *:not(figure) {
   margin-left: auto;
   margin-right: auto;
@@ -17,7 +22,7 @@
 .root ol,
 .root ul,
 .root blockquote {
-  color: var(--color-greyDarker);
+  color: currentColor;
   font-family: var(--font-avenir);
   font-size: var(--fontsize-regular);
   line-height: var(--lineheight-regular);
