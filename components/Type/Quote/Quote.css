@@ -38,7 +38,7 @@
   font-style: normal;
   display: inline-block;
   position: relative;
-  max-width: 50%;
+  max-width: 75%;
   color: var(--color-grey);
   composes: fontRegular from '../../../globals/typography.css';
   font-weight: var(--fontweight-demi);
