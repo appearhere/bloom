@@ -8,6 +8,10 @@
   color: var(--color-gold);
 }
 
+.root:hover {
+  color: var(--color-gold--light);
+}
+
 .root:hover .icon {
   transform: translateX(0.5em) rotate(90deg) translateZ(0);
 }
