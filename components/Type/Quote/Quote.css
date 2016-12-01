@@ -20,7 +20,7 @@
   margin-bottom: 0;
   position: relative;
   display: block;
-  composes: fontLargeIii from '../../../globals/typography.css';
+  composes: fontLargeIi from '../../../globals/typography.css';
   font-weight: var(--fontweight-regular);
 }
 
@@ -47,8 +47,7 @@
 
 .cite:before {
   content: '';
-  width: calc(100% - var(--size-large));
-  max-width: 3rem;
+  width: 3rem;
   height: 2px;
   background-color: currentColor;
   position: absolute;
