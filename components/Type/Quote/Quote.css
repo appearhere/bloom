@@ -45,21 +45,6 @@
   text-transform: uppercase;
 }
 
-.cite:before {
-  content: '';
-  width: 3rem;
-  height: 2px;
-  background-color: currentColor;
-  position: absolute;
-  display: block;
-  top: 50%;
-  transform: translateY(-2px);
-}
-
 .left .cite {
   left: 5rem;
-}
-
-.cite:before {
-  left: -5rem;
 }
