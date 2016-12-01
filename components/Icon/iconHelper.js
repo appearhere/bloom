@@ -1,6 +1,6 @@
 import React, { Component, PropTypes } from 'react';
 import classnames from 'classnames';
-import invariant from 'invariant';
+import warning from 'warning';
 import css from './IconCore.css';
 
 export default (iconSet, theme) => class Icon extends Component {
@@ -13,7 +13,7 @@ export default (iconSet, theme) => class Icon extends Component {
   constructor(props) {
     super(props);
 
-    invariant(
+    warning(
       props.fallback || iconSet[props.name],
       `Icon(): No icon exists for ${props.name}`
     );
