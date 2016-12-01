@@ -1,5 +1,5 @@
 import React, { PropTypes } from 'react';
-import invariant from 'invariant';
+import warning from 'warning';
 
 import Indicator from './Indicator';
 
@@ -14,7 +14,7 @@ const IndicatorGroup = (props) => {
   return (
     <div { ...parentProps }>
       { children && children(({ i, ...childProps }) => {
-        invariant(!isNaN(i), 'IndicatorGroup(): children must be passed an index prop, `i`');
+        warning(!isNaN(i), 'IndicatorGroup(): children must be passed an index prop, `i`');
         const active = activeIndicator === i;
         return <Component { ...childProps } active={ active } />;
       }) }

@@ -106,7 +106,8 @@
     "react-motion": "^0.4.5",
     "react-on-visible": "^1.0.3",
     "react-stickynode": "^1.2.1",
-    "subscribe-ui-event": "^1.0.14"
+    "subscribe-ui-event": "^1.0.14",
+    "warning": "^3.0.0"
   },
   "scripts": {
     "start": "node scripts/start.js",

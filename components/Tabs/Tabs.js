@@ -4,11 +4,8 @@ import React, {
   Children,
   cloneElement,
 } from 'react';
-
 import uniqueId from 'lodash/fp/uniqueId';
-
 import cx from 'classnames';
-import invariant from 'invariant';
 
 import ScreenReadable from '../ScreenReadable/ScreenReadable';
 import keyboardHandler from './tabKeyboardHandler';
