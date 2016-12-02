@@ -2,7 +2,7 @@
   width: 100%;
   box-sizing: border-box;
   position: relative;
-  max-width: 80rem;
+  max-width: 66.75rem;
   margin-left: auto;
   margin-right: auto;
   lost-utility: clearfix;
@@ -95,7 +95,7 @@
 
 @media(--squareHero-lg-iii) {
   .square {
-    max-width: 25rem;
+    max-width: 22.5rem;
     transform: translateY(-50%);
   }
 
