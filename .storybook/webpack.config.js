@@ -22,7 +22,8 @@ module.exports = {
           query: {
             autoprefixercss: false,
             modules: true,
-            localIdentName: '[name]__[local]___[hash:base64:5]'
+            localIdentName: '[name]__[local]___[hash:base64:5]',
+            importLoaders: 1,
           },
         }, {
           loader: 'postcss'
