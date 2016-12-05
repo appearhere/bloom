@@ -130,6 +130,7 @@ module.exports = {
               // enable css modules: https://github.com/css-modules/css-modules
               modules: true,
               localIdentName: '[name]__[local]___[hash:base64:5]',
+              importLoaders: 1,
             },
           }, {
             loader: 'postcss',
