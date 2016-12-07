@@ -2,7 +2,7 @@
   width: 100%;
   box-sizing: border-box;
   position: relative;
-  max-width: 66.75rem;
+  max-width: 75.75rem;
   margin-left: auto;
   margin-right: auto;
   lost-utility: clearfix;
@@ -69,7 +69,12 @@
     margin-bottom: var(--space-48);
   }
 
-  .imageContainer {
+  .image {
+    object-fit: cover;
+    height: 28rem;
+  }
+
+  .mediaContainer {
     width: 75%;
     float: right;
   }
@@ -83,7 +88,7 @@
     margin-top: 0;
   }
 
-  .right .imageContainer {
+  .right .mediaContainer {
     float: left;
   }
 
@@ -103,5 +108,9 @@
     font-size: var(--fontsize-large-iv);
     letter-spacing: var(--letter-spacing-large-iv);
     line-height: var(--lineheight-large-iv);
+  }
+
+  .image {
+    height: 34.0625rem;
   }
 }
