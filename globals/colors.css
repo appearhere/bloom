@@ -17,6 +17,7 @@
   --color-gold--light: rgb(219, 189, 154);
 
   /* Application colors */
+  --color-blue: rgb(25, 103, 158);
   --color-red: rgb(213, 84, 68);
   --color-green: rgb(72, 213, 108);
   --color-focusRing: rgb(91, 157, 217);
@@ -34,6 +35,7 @@
 
   /* Aliases */
   --color-primary: var(--color-gold);
+  --color-action: var(--color-blue);
   --color-success: var(--color-green);
   --color-danger: var(--color-red);
   --color-text: var(--color-black);

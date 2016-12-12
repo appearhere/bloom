@@ -3,6 +3,7 @@ import CSSTransitionGroup from 'react-addons-css-transition-group';
 import uniqueId from 'lodash/fp/uniqueId';
 import cx from 'classnames';
 
+import noop from '../../../utils/noop';
 import Radio from './Radio';
 import css from '../Input/FormInput.css';
 
@@ -12,7 +13,7 @@ export default class RadioGroup extends Component {
     children: PropTypes.func.isRequired,
     onChange: PropTypes.func,
     label: PropTypes.string,
-    checkedValue: PropTypes.oneOfType([
+    value: PropTypes.oneOfType([
       PropTypes.string,
       PropTypes.number,
     ]),
@@ -29,9 +30,9 @@ export default class RadioGroup extends Component {
   };
 
   static defaultProps = {
-    onChange: () => {},
-    onFocus: () => {},
-    onBlur: () => {},
+    onChange: noop,
+    onFocus: noop,
+    onBlur: noop,
     InputComponent: Radio,
     error: '',
   };
@@ -77,7 +78,7 @@ export default class RadioGroup extends Component {
       children,
       onChange,
       label,
-      checkedValue,
+      value,
       InputComponent,
       description,
       error,
@@ -87,7 +88,7 @@ export default class RadioGroup extends Component {
 
     const labelClasses = cx(
       css.label,
-      hasFocus || checkedValue ? css.labelFocused : null,
+      hasFocus || value ? css.labelFocused : null,
       error ? css.labelErrored : null,
     );
 
@@ -124,7 +125,7 @@ export default class RadioGroup extends Component {
           ) }
         </span>
         { children && children((childProps) => {
-          const checked = childProps.value === checkedValue;
+          const checked = childProps.value === value;
 
           return (
             <InputComponent
@@ -155,7 +156,7 @@ export default class RadioGroup extends Component {
             transitionAppearTimeout={ 500 }
             transitionAppear
           >
-            { error.length > 0 && (
+            { error && error.length > 0 && (
               <div
                 className={ css.error }
               >

@@ -1,6 +1,7 @@
 import React, { PropTypes, Component } from 'react';
 import uniqueId from 'lodash/fp/uniqueId';
 
+import noop from '../../../utils/noop';
 import ScreenReadable from '../../ScreenReadable/ScreenReadable';
 
 /**
@@ -22,9 +23,9 @@ export default class Radio extends Component {
   };
 
   static defaultProps = {
-    onChange: () => {},
-    onFocus: () => {},
-    onBlur: () => {},
+    onChange: noop,
+    onFocus: noop,
+    onBlur: noop,
   };
 
   constructor(props) {
