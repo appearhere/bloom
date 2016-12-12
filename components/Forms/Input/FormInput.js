@@ -1,46 +1,40 @@
 import React, { Component, PropTypes } from 'react';
-import { findDOMNode } from 'react-dom';
 import CSSTransitionGroup from 'react-addons-css-transition-group';
-import cx from 'classnames';
 import uniqueId from 'lodash/fp/uniqueId';
+import cx from 'classnames';
 
-import m from '../../globals/modifiers.css';
+import noop from '../../../utils/noop';
+import css from './FormInput.css';
 
-import css from './Input.css';
+import Input from './Input';
 
-export default class Input extends Component {
+export default class FormInput extends Component {
   static propTypes = {
-    label: PropTypes.node.isRequired,
-    optionalLabel: PropTypes.string,
+    name: PropTypes.string.isRequired,
     onChange: PropTypes.func,
+    label: PropTypes.string,
+    InputComponent: PropTypes.oneOfType([
+      PropTypes.func,
+      PropTypes.string,
+    ]),
+    error: PropTypes.string,
+    optional: PropTypes.bool,
     onFocus: PropTypes.func,
     onBlur: PropTypes.func,
-    optional: PropTypes.bool,
-    error: PropTypes.string,
+    optionalLabel: PropTypes.string,
+    description: PropTypes.node,
+    className: PropTypes.string,
     placeholder: PropTypes.string,
-    name: PropTypes.string,
-    /**
-     * Subset of the HTML5 spec, as other types will most likely have their
-     * own, bespoke component
-     */
-    type: PropTypes.oneOf([
-      'text',
-      'email',
-      'password',
-      'search',
-      'url',
-    ]),
+    value: PropTypes.string,
   };
 
   static defaultProps = {
-    onChange: () => {},
-    onFocus: () => {},
-    onBlur: () => {},
-    optional: false,
-    optionalLabel: 'optional',
-    type: 'text',
-    error: '',
+    onChange: noop,
+    onFocus: noop,
+    onBlur: noop,
+    InputComponent: Input,
     value: '',
+    error: '',
   };
 
   constructor(props) {
@@ -54,12 +48,12 @@ export default class Input extends Component {
   };
 
   focus = () => {
-    findDOMNode(this.input).focus();
+    this.input.focus();
     this.handleFocus();
   };
 
   blur = () => {
-    findDOMNode(this.input).blur();
+    this.input.blur();
     this.handleBlur();
   };
 
@@ -77,11 +71,6 @@ export default class Input extends Component {
     }, onBlur);
   };
 
-  handleChange = (e) => {
-    const { onChange } = this.props;
-    onChange(e, e.target.value);
-  };
-
   render() {
     const { hasFocus } = this.state;
     const {
@@ -93,14 +82,15 @@ export default class Input extends Component {
       error,
       placeholder,
       name,
-      type,
       className,
+      InputComponent,
+      onChange,
       ...rest,
     } = this.props;
 
     const labelClasses = cx(
       css.label,
-      hasFocus || value.length > 0 ? css.labelFocused : null,
+      hasFocus || (value && value.length) > 0 ? css.labelFocused : null,
       error ? css.labelErrored : null,
     );
 
@@ -112,7 +102,7 @@ export default class Input extends Component {
 
     const descriptionClasses = cx(
       css.description,
-      hasFocus || value.length > 0 ? css.descriptionFocused : null,
+      hasFocus || (value && value.length) > 0 ? css.descriptionFocused : null,
     );
 
     const describedBy = `${this.id}-description`;
@@ -126,21 +116,23 @@ export default class Input extends Component {
             </span>
           ) }
         </label>
-        <input
-          { ...rest }
-          id={ this.id }
-          ref={ (c) => { this.input = c; } }
-          className={ inputClasses }
-          onFocus={ this.handleFocus }
-          onBlur={ this.handleBlur }
-          onChange={ this.handleChange }
-          value={ value }
-          aria-describedby={ describedBy }
-          placeholder={ placeholder }
-          required={ !optional }
-          name={ name }
-          type={ type }
-        />
+        <div className={ css.inputContainer }>
+          <InputComponent
+            { ...rest }
+            id={ this.id }
+            ref={ (c) => { this.input = c; } }
+            className={ inputClasses }
+            onFocus={ this.handleFocus }
+            onBlur={ this.handleBlur }
+            onChange={ onChange }
+            value={ value }
+            aria-describedby={ describedBy }
+            required={ !optional }
+            name={ name }
+            hasError={ !!error }
+            placeholder={ placeholder }
+          />
+        </div>
         <div id={ describedBy } className={ css.helperContainer }>
           { description && (
             <div
@@ -155,9 +147,9 @@ export default class Input extends Component {
             transitionEnterTimeout={ 500 }
             transitionLeaveTimeout={ 300 }
             transitionAppearTimeout={ 500 }
-            transitionAppear={ true }
+            transitionAppear
           >
-            { error.length > 0 && (
+            { error && error.length > 0 && (
               <div
                 className={ css.error }
               >
