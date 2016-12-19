@@ -1,5 +1,6 @@
 import React, { PropTypes } from 'react';
 
+import noop from '../../../utils/noop';
 import ScreenReadable from '../../ScreenReadable/ScreenReadable';
 import BtnContainer from '../../BtnContainer/BtnContainer';
 import Icon from '../../Icon/Icon';
@@ -32,8 +33,8 @@ PlayBtn.propTypes = {
 };
 
 PlayBtn.propTypes = {
-  play: () => {},
-  pause: () => {},
+  play: noop,
+  pause: noop,
 };
 
 export default PlayBtn;
