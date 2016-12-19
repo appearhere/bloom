@@ -260,3 +260,9 @@
 /* Floats */
 .fr.fr { float: right; }
 .fl.fl { float: left; }
+
+/* SVG */
+
+.nonscalingstroke.nonscalingstroke * {
+  vector-effect: non-scaling-stroke;
+}

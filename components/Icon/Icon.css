@@ -40,10 +40,6 @@
   stroke-width: 1px;
 }
 
-.root * {
-  vector-effect: non-scaling-stroke;
-}
-
 /* Fills */
 
 .chevron svg {
