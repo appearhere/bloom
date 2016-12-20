@@ -14,6 +14,7 @@ import chatting from './icons/icon-chatting.svg';
 import clock from './icons/icon-clock.svg';
 import chevron from './icons/icon-chevron.svg';
 import comment from './icons/icon-comment.svg';
+import cross from './icons/icon-cross.svg';
 import dollar from './icons/icon-dollar.svg';
 import download from './icons/icon-download.svg';
 import globe from './icons/icon-globe.svg';
@@ -30,6 +31,7 @@ import star from './icons/icon-star.svg';
 import store from './icons/icon-store.svg';
 import teamwork from './icons/icon-teamwork.svg';
 import tick from './icons/icon-tick.svg';
+import tickC from './icons/icon-tick-c.svg';
 import ticket from './icons/icon-ticket.svg';
 import tickStarred from './icons/icon-tick-starred.svg';
 import travelIdea from './icons/icon-travel-idea.svg';
@@ -41,6 +43,7 @@ export default {
   'calendar-insight': svgClean(calendarInsight),
   'chart-arrow': svgClean(chartArrow),
   'play-c': svgClean(playC),
+  'tick-c': svgClean(tickC),
   'tick-starred': svgClean(tickStarred),
   'travel-idea': svgClean(travelIdea),
   'vip-entrance': svgClean(vipEntrance),
@@ -54,6 +57,7 @@ export default {
   chevron: svgClean(chevron),
   clock: svgClean(clock),
   comment: svgClean(comment),
+  cross: svgClean(cross),
   dollar: svgClean(dollar),
   download: svgClean(download),
   globe: svgClean(globe),

@@ -2,6 +2,7 @@ import React from 'react';
 import ReactDOM from 'react-dom';
 import { findRenderedDOMComponentWithTag, Simulate } from 'react-addons-test-utils';
 
+import noop from '../../../utils/noop';
 import Scrubber from './Scrubber';
 
 it('renders without crashing', () => {
@@ -10,7 +11,7 @@ it('renders without crashing', () => {
     <Scrubber
       currentTime={ 0 }
       duration={ 0 }
-      seek={ () => {} }
+      seek={ noop }
     />,
     div
   );
@@ -25,7 +26,7 @@ it('calculates the progress correctly', () => {
       ref={ (c) => { component = c; } }
       currentTime={ 5 }
       duration={ 10 }
-      seek={ () => {} }
+      seek={ noop }
     />,
     div
   );
@@ -37,7 +38,7 @@ it('calculates the progress correctly', () => {
       ref={ (c) => { component = c; } }
       currentTime={ 2 }
       duration={ 8 }
-      seek={ () => {} }
+      seek={ noop }
     />,
     div
   );
@@ -54,7 +55,7 @@ it('handles internal focus', () => {
       ref={ (c) => { component = c; } }
       currentTime={ 5 }
       duration={ 10 }
-      seek={ () => {} }
+      seek={ noop }
     />,
     div
   );

@@ -1,46 +1,48 @@
 /* Strokes */
-.root.account svg,
-.root.automatic-payments svg,
-.root.bogroll svg,
-.root.bogroll svg,
-.root.book svg,
-.root.calendar svg,
-.root.calendar-insight svg,
-.root.camera svg,
-.root.chart-arrow svg,
-.root.chatting svg,
-.root.comment svg,
-.root.clock svg,
-.root.dollar svg,
-.root.download svg,
-.root.globe svg,
-.root.location svg,
-.root.manage svg,
-.root.notification svg,
-.root.percentage svg,
-.root.play svg,
-.root.play svg,
-.root.play-c svg,
-.root.search svg,
-.root.shield svg,
-.root.signature svg,
-.root.star svg,
-.root.store svg,
-.root.tick svg,
-.root.tick-starred svg,
-.root.ticket svg,
-.root.travel-idea svg,
-.root.teamwork svg,
-.root.vip-entrance svg {
+.account svg,
+.automatic-payments svg,
+.bogroll svg,
+.bogroll svg,
+.book svg,
+.calendar svg,
+.calendar-insight svg,
+.camera svg,
+.chart-arrow svg,
+.chatting svg,
+.comment svg,
+.clock svg,
+.cross svg,
+.dollar svg,
+.download svg,
+.globe svg,
+.location svg,
+.manage svg,
+.notification svg,
+.percentage svg,
+.play svg,
+.play svg,
+.play-c svg,
+.search svg,
+.shield svg,
+.signature svg,
+.star svg,
+.store svg,
+.tick svg,
+.tick-c svg,
+.tick-starred svg,
+.ticket svg,
+.travel-idea svg,
+.teamwork svg,
+.vip-entrance svg {
   stroke: currentColor;
   fill: transparent;
   stroke-linecap: round;
+  stroke-width: 1px;
 }
-
 
 /* Fills */
 
-.root.chevron svg {
+.chevron svg {
   stroke: transparent;
   fill: currentColor;
   stroke-linecap: round;
@@ -48,7 +50,7 @@
 
 /* Specials */
 
-.root.appearhere svg {
+.appearhere svg {
   /* Should only ever appear black or white */
   fill: currentColor;
   stroke: transparent;
@@ -59,7 +61,7 @@
   min-width: 5.75rem;
 }
 
-.root.appearherebrackets svg {
+.appearherebrackets svg {
   /* Should only ever appear black or white */
   fill: currentColor;
   stroke: transparent;

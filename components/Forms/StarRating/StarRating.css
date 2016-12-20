@@ -1,0 +1,10 @@
+.starContainer {
+  composes: fontLargeIi from '../../../globals/typography.css';
+  line-height: 1em;
+  vertical-align: top;
+  display: inline-block;
+}
+
+.starContainer + .starContainer {
+  margin-left: -1px;
+}

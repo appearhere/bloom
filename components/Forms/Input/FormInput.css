@@ -6,33 +6,14 @@
   box-sizing: border-box;
 }
 
-.input {
-  border: 1px solid var(--color-greyLighter);
-  padding: var(--size-small);
-  composes: fontRegular from '../../globals/typography.css';
-  letter-spacing: 0.2px;
-  color: var(--color-greyDarker);
-  transition: border 300ms var(--animation-sharp), color 300ms var(--animation-sharp);
-  width: 100%;
-}
-
-.inputFocused {
-  border-color: var(--color-greyDarker);
-  color: var(--color-greyDarker);
-  outline: none;
-}
-
-.inputErrored {
-  border-color: var(--color-danger);
-  color: var(--color-danger);
-}
-
 .label {
-  composes: fontSmallI from '../../globals/typography.css';
+  composes: fontLargeI from '../../../globals/typography.css';
+  font-weight: normal;
   margin-bottom: var(--size-small);
   border: 1px solid transparent;
   display: block;
   transition: color 300ms var(--animation-sharp);
+  color: currentColor;
 }
 
 .labelErrored {
@@ -50,6 +31,10 @@
   z-index: -1;
 }
 
+.inputContainer {
+  margin-top: var(--size-medium);
+}
+
 .description {
   position: relative;
   width: 100%;
@@ -57,7 +42,7 @@
   padding-bottom: var(--size-small);
   background-color: transparent;
   color: var(--color-grey);
-  composes: fontSmallIi from '../../globals/typography.css';
+  composes: fontSmallIi from '../../../globals/typography.css';
   transform: translateY(-100%);
   opacity: 0;
   transition: transform 300ms var(--animation-sharp), opacity 500ms var(--animation-sharp);
@@ -75,8 +60,9 @@
   padding: var(--size-small);
   background-color: var(--color-danger);
   color: var(--color-white);
-  composes: fontSmallIi from '../../globals/typography.css';
+  composes: fontSmallIi from '../../../globals/typography.css';
   transition: transform 300ms var(--animation-sharp), opacity 300ms var(--animation-sharp);
+  z-index: 1;
 }
 
 /* Error transitions */

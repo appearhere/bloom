@@ -1,0 +1,33 @@
+.root {
+  display: table;
+  text-align: center;
+  max-width: 37.375rem;
+  margin-left: auto;
+  margin-right: auto;
+  padding-top: var(--space-96);
+}
+
+.inner {
+  display: table-cell;
+  vertical-align: middle;
+}
+
+.icon {
+  font-size: 10rem;
+  color: var(--color-primary);
+}
+
+.icon * {
+  vector-effect: non-scaling-stroke;
+}
+
+.title {
+  composes: fontLargeIv from '../../globals/typography.css';
+  color: currentColor;
+  margin-top: var(--size-large);
+}
+
+.body {
+  margin-top: var(--size-large);
+  composes: fontRegular from '../../globals/typography.css';
+}

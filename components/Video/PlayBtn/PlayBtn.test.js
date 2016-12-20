@@ -1,6 +1,7 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 
+import noop from '../../../utils/noop';
 import PlayBtn from './PlayBtn';
 
 /**
@@ -17,8 +18,8 @@ it('renders without crashing', () => {
   const div = document.createElement('div');
   ReactDOM.render(
     <PlayBtn
-      play={ () => {} }
-      pause={ () => {} }
+      play={ noop }
+      pause={ noop }
       paused
     />,
     div
