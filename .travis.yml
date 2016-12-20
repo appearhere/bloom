@@ -5,6 +5,9 @@ cache:
   directories:
   - "node_modules"
   - "yarn"
+env:
+  global:
+  - CODECLIMATE_REPO_TOKEN=dada3cbee91c5dbdf41beffcbc06dbf04d3b578de0fe61fa1bb42b1cc05cf9e3
 
 before_install:
   - nvm install node
@@ -20,7 +23,3 @@ notifications:
   slack:
     rooms:
     - appearhere:7NDfKdoIg75HRj18QRW0uy4c#developer
-
-after_success:
-  - yarn add codeclimate-test-reporter
-  - CODECLIMATE_REPO_TOKEN=dada3cbee91c5dbdf41beffcbc06dbf04d3b578de0fe61fa1bb42b1cc05cf9e3 codeclimate-test-reporter < ./coverage/lcov.info
