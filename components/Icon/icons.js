@@ -1,4 +1,4 @@
-import svgClean from '../../utils/svg-clean';
+import svgClean from '../../utils/svgClean/svgClean';
 
 import account from './icons/icon-account.svg';
 import appearhere from './icons/icon-appearhere.svg';

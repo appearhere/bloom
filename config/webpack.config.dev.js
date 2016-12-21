@@ -103,7 +103,7 @@ module.exports = {
       // Process JS with Babel.
       {
         test: /\.(js|jsx)$/,
-        include: [paths.appSrc, paths.componentSrc],
+        include: [paths.appSrc, paths.componentSrc, paths.utilsSrc],
         loader: 'babel',
         query: require('./babel.dev')
       },
