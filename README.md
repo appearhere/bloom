@@ -1,5 +1,5 @@
 # Bloom
-[![Build Status](https://travis-ci.com/appearhere/bloom.svg?token=Dby1wcjAJdzRsf4NN8um&branch=master)](https://travis-ci.com/appearhere/bloom)
+[![Build Status](https://travis-ci.com/appearhere/bloom.svg?token=Dby1wcjAJdzRsf4NN8um&branch=master)](https://travis-ci.com/appearhere/bloom) [![Code Climate](https://codeclimate.com/repos/57e1313c43c7cd2f8000052d/badges/30326003c5cf0664a755/gpa.svg)](https://codeclimate.com/repos/57e1313c43c7cd2f8000052d/feed) [![Test Coverage](https://codeclimate.com/repos/57e1313c43c7cd2f8000052d/badges/30326003c5cf0664a755/coverage.svg)](https://codeclimate.com/repos/57e1313c43c7cd2f8000052d/coverage) [![Issue Count](https://codeclimate.com/repos/57e1313c43c7cd2f8000052d/badges/30326003c5cf0664a755/issue_count.svg)](https://codeclimate.com/repos/57e1313c43c7cd2f8000052d/feed)
 
 ![Bloom v0.0.1 Icon](https://dl.dropboxusercontent.com/u/15027214/bloom-icon.png)
 
