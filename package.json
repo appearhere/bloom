@@ -115,6 +115,7 @@
     "build": "node scripts/build.js",
     "test": "jest --env=jsdom",
     "test:watch": "jest --watch --env=jsdom",
+    "test:travis": "jest --env=jsdom --coverage && (codeclimate-test-reporter < ./coverage/lcov.info || true)",
     "storybook": "start-storybook -p 9009",
     "build-storybook": "build-storybook",
     "deploy-storybook": "storybook-to-ghpages",
@@ -145,6 +146,7 @@
     ],
     "testEnvironment": "node",
     "testRegex": "(/__tests__/.*|\\.(test|spec))\\.(js|jsx)$",
-    "setupTestFrameworkScriptFile": "<rootDir>/config/jest/setupTestFramework.js"
+    "setupTestFrameworkScriptFile": "<rootDir>/config/jest/setupTestFramework.js",
+    "coverageDirectory": "<rootDir>/coverage"
   }
 }

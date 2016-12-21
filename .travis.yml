@@ -5,6 +5,9 @@ cache:
   directories:
   - "node_modules"
   - "yarn"
+env:
+  global:
+  - CODECLIMATE_REPO_TOKEN=dada3cbee91c5dbdf41beffcbc06dbf04d3b578de0fe61fa1bb42b1cc05cf9e3
 
 before_install:
   - nvm install node
@@ -14,7 +17,7 @@ install:
   - yarn install
 
 script:
-  - yarn run test
+  - yarn run test:travis
 
 notifications:
   slack:
