@@ -29,7 +29,7 @@ const Banner = ({ children, className, context, onClose, ...rest }) => (
     </div>
     { onClose && (
       <BtnContainer className={ css.dismissContainer } onClick={ onClose }>
-        <Icon name="cross" />
+        <Icon className={ css.icon } name="cross" />
       </BtnContainer>
     ) }
   </div>

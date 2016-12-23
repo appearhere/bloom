@@ -24,6 +24,10 @@
   vertical-align: top;
 }
 
+.icon {
+  display: block;
+}
+
 .success {
   background-color: var(--color-success);
 }
