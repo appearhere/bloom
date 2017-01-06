@@ -1,0 +1,27 @@
+.meta {
+  composes: fontSmallI from '../../../globals/typography.css';
+  color: var(--color-greyDark);
+  font-weight: var(--fontweight-demi);
+  display: block;
+  margin-top: var(--size-small);
+}
+
+.description {
+  margin-bottom: 0;
+}
+
+.hideDescription .description {
+  display: none;
+}
+
+.link {
+  display: block;
+  margin-top: var(--size-medium);
+}
+
+.ctaBottom .link {
+  position: absolute;
+  z-index: 1;
+  bottom: var(--size-medium);
+}
+

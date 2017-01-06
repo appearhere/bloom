@@ -1,0 +1,27 @@
+.description {
+  margin-bottom: 0;
+}
+
+.hideDescription .description {
+  display: none;
+}
+
+.singleLineDescription .description {
+  width: 100%;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  display: block;
+}
+
+.link {
+  display: block;
+  margin-top: var(--size-medium);
+}
+
+.downloadBottom .link {
+  position: absolute;
+  z-index: 1;
+  bottom: var(--size-medium);
+}
+
