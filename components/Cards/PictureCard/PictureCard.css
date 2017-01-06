@@ -1,0 +1,41 @@
+.root {
+  background-position: center center;
+  background-size: cover;
+  color: var(--color-white);
+  position: relative;
+  display: block;
+}
+
+.inner {
+  vertical-align: middle;
+  width: 100%;
+  z-index: 1;
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 100%;
+}
+
+.overlay {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  background-color: var(--overlay-default);
+  transition: all 200ms;
+  opacity: 1;
+  position: absolute;
+  top: 0;
+  left: 0;
+}
+
+.link:hover .overlay {
+  opacity: 0.6;
+}
+
+.center .inner {
+  position: absolute;
+  top: 50%;
+  left: 0;
+  transform: translateY(-50%);
+  height: auto;
+}
