@@ -65,5 +65,12 @@ module.exports = {
     // rule until theres a release of
     // https://github.com/eslint/eslint/pull/7120
     'class-methods-use-this': 0,
+
+    'no-unused-vars': [2, {
+      vars: 'all',
+      args: 'after-used',
+      varsIgnorePattern: '^_',
+      argsIgnorePattern: '^_',
+    }],
   },
 };
