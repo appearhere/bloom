@@ -1,15 +1,20 @@
 .root {
-  position: relative;
-  display: inline-block;
   width: 100%;
   height: 100%;
+  position: relative;
+}
+
+.root * {
+  box-sizing: border-box;
+}
+
+.link {
   vertical-align: bottom;
-  color: var(--color-white);
   text-decoration: none;
   cursor: pointer;
 }
 
-.root:after {
+.link:after {
   content: '';
   position: absolute;
   z-index: 0;
@@ -22,18 +27,18 @@
   transition: opacity 200ms ease-in-out;
 }
 
-.root:hover:after {
+.link:hover:after {
   opacity: 1;
 }
 
-.root > * {
+.link > * {
   vertical-align: bottom;
 }
 
-.root .overlay {
+.link .overlay {
   transition: all 200ms;
 }
 
-.root:hover .overlay {
+.link:hover .overlay {
   box-shadow: inset 0 0 0 10000px rgba(20, 20, 21, 0.3);
 }
