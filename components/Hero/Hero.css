@@ -40,7 +40,6 @@
   width: 100%;
 }
 
-
 .backgroundImage .overlay {
   background-color: rgba(0, 0, 0, 0.5);
 }
@@ -77,6 +76,13 @@
 
 .caption {
   display: none;
+}
+
+@media (--wrapper-large) {
+  .inner {
+    padding-left: var(--space-48);
+    padding-right: var(--space-48);
+  }
 }
 
 @media(--hero-width-lg-i) {
