@@ -57,9 +57,19 @@
 .inner {
   display: table-cell;
   width: 100%;
-  padding: var(--space-96) var(--size-large);
+  padding-top: var(--space-96);
+  padding-bottom: var(--space-96);
   vertical-align: middle;
   text-align: center;
+}
+
+.content {
+  max-width: 80rem;
+  margin-left: auto;
+  margin-right: auto;
+  width: 100%;
+  padding-left: var(--size-large);
+  padding-right: var(--size-large);
 }
 
 .animate .inner {
@@ -79,7 +89,7 @@
 }
 
 @media (--wrapper-large) {
-  .inner {
+  .content {
     padding-left: var(--space-48);
     padding-right: var(--space-48);
   }

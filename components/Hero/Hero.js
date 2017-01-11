@@ -52,7 +52,9 @@ const Hero = (props) => {
 
       <div className={ overlayCl }>
         <div className={ innerCl }>
-          { children }
+          <div className={ css.content }>
+            { children }
+          </div>
         </div>
 
         { caption && backgroundImage && (
