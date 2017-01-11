@@ -1,0 +1,13 @@
+.root {
+  list-style: none;
+  overflow: hidden;
+  margin-left: auto;
+  margin-bottom: auto;
+  text-align: center;
+}
+
+.page {
+  display: inline-block;
+  list-style: none;
+  margin-left: 0;
+}
