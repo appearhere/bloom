@@ -90,6 +90,7 @@
     "whatwg-fetch": "1.0.0"
   },
   "dependencies": {
+    "@appearhere/eslint-config-appearhere": "^1.1.0",
     "array-from": "^2.1.1",
     "classnames": "^2.2.5",
     "commonmark": "^0.26.0",
