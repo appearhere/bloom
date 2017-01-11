@@ -1,6 +1,7 @@
 import svgClean from '../../utils/svg-clean';
 
 import account from './icons/icon-account.svg';
+import arrow from './icons/icon-arrow.svg';
 import appearhere from './icons/icon-appearhere.svg';
 import appearhereBrackets from './icons/icon-appearhere-brackets.svg';
 import automaticPayments from './icons/icon-automatic-payments.svg';
@@ -48,6 +49,7 @@ export default {
   'travel-idea': svgClean(travelIdea),
   'vip-entrance': svgClean(vipEntrance),
   account: svgClean(account),
+  arrow: svgClean(arrow),
   appearhere: svgClean(appearhere),
   bogroll: svgClean(bogroll),
   book: svgClean(book),

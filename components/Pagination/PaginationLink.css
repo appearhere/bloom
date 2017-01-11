@@ -1,0 +1,27 @@
+.root {
+  text-decoration: none;
+  composes: fontSmallI from '../../globals/typography.css';
+  font-weight: var(--fontweight-regular);
+  letter-spacing: var(--letterspacing-wide);
+  color: var(--color-grey);
+  padding-left: var(--size-medium);
+  padding-right: var(--size-medium);
+  display: inline-block;
+}
+
+.root:hover {
+  color: var(--color-greyDark);
+}
+
+.disabled:hover {
+  color: var(--color-grey);
+}
+
+.active {
+  font-weight: var(--fontweight-demi);
+  color: var(--color-greyDark);
+}
+
+.prevArrow svg {
+  transform: rotate(180deg);
+}
