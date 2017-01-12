@@ -67,7 +67,7 @@ class EventCard extends Component {
           <p className={ css.description }>{ description }</p>
           <span
             className={ cx(css.link, linkcss.root) }
-            onClick={ this.handleBtnCliock }
+            onClick={ this.handleBtnClick }
             tabIndex="0"
             role="button"
           >

@@ -1,5 +1,7 @@
 .description {
   margin-bottom: 0;
+  font-size: inherit;
+  margin-top: var(--size-medium);
 }
 
 .hideDescription .description {
