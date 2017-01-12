@@ -1,26 +1,25 @@
 language: bash
-
 sudo: false
 cache:
   directories:
-  - "node_modules"
-  - "yarn"
-
+  - node_modules
+  - yarn
 before_install:
-  - nvm install node
-  - source travis/install_yarn
-
+- npm config set //registry.npmjs.org/:_authToken $NPM_TOKEN
+- nvm install node
+- source travis/install_yarn
 install:
-  - yarn install
-
+- yarn install
 script:
-  - yarn run test:travis
-
+- yarn run test:travis
 notifications:
   slack:
     rooms:
     - appearhere:7NDfKdoIg75HRj18QRW0uy4c#developer
-
 after_success:
-  - yarn add codeclimate-test-reporter
-  - CODECLIMATE_REPO_TOKEN=dada3cbee91c5dbdf41beffcbc06dbf04d3b578de0fe61fa1bb42b1cc05cf9e3 codeclimate-test-reporter < ./coverage/lcov.info
+- yarn add codeclimate-test-reporter
+- CODECLIMATE_REPO_TOKEN=dada3cbee91c5dbdf41beffcbc06dbf04d3b578de0fe61fa1bb42b1cc05cf9e3
+  codeclimate-test-reporter < ./coverage/lcov.info
+env:
+  global:
+    secure: NDsld65vKY6uq8qO8RTEfpor9knAMzTunuX/D2QTKw7a0dChDyVWw9FJXenAaeYBH/zErMhHAUXHnBGN+Q7qVTf8EyjwGGYH4DcXXscPC0rCcUX5qNMg9/odt5VU+H2nmhn++01Nxp3EtVFDy4l0v9Qj33UsyBXVWRLEAZCtlP0zpn+AbKv3Hl28dvAQXL1PEmh7XewWSQ1cRU1fvOZ/SbyIV6AqyV/q9lIRDA8svHOpCpK1STVAy6EWZliUGsEzM3KIX2cgbQaf9EsPWF8oeuzvhA2nUFdP5GPbRbUsHnsHNm/5S0JrJJvOK1hGtDkqo2cvjDvOE47XIImD9/unN4lWfR4aug5m7rU+gWGrQ7TrD/zAnz0cecaPIEtdji1WsqKmjp1EzK0htastxmB5LMlFtABXpABv+VuzcOV1VDWXlcgNhjPjpXwR7Xv9h3MAe55z0OnuiIwJU+/TI1WqQ592FcwNMN59m9EchpMmZ8rr7n9jvJgyXShWfnPk4u0ZJKZ3etgQ+AQl5C+Hskrd3ZkngABlKr3En6CONnicr+zY1N1LYpf5WBhqbD42j8i+oUXP/3HZKiYjELgHdZaEIJmf40KN0qsuVashCMxNPSi6ou04MfP6W0nr2+VR+ZWRxUHnzCfGDzQF6E5njnJYfZ4UTImTfVjfPspsfTRBWtc=
