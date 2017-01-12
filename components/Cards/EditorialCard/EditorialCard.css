@@ -54,10 +54,3 @@
   letter-spacing: var(--letter-spacing-large-i);
   font-weight: var(--fontweight-demi);
 }
-
-.large .body {
-  font: var(--font-regular);
-  font-size: var(--fontsize-regular);
-  line-height: var(--lineheight-regular);
-  letter-spacing: var(--letter-spacing-regular);
-}
