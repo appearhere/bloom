@@ -2,7 +2,6 @@ import React, { Component, PropTypes } from 'react';
 import cx from 'classnames';
 import { applyContainerQuery } from 'react-container-query';
 
-import noop from '../../../utils/noop';
 import EditorialCard from './EditorialCard';
 
 import linkcss from '../../Link/Link.css';
@@ -34,7 +33,6 @@ class EventCard extends Component {
   };
 
   static defaultProps = {
-    ctaCallback: noop,
     ctaLabel: 'Get tickets',
   };
 
@@ -53,7 +51,7 @@ class EventCard extends Component {
       ctaLabel,
       containerQuery,
       className,
-      ctaCallback: _ctaCallback,
+      ctaCallback,
       ...rest,
     } = this.props;
 
@@ -65,14 +63,16 @@ class EventCard extends Component {
         <EditorialCard { ...rest } className={ classes } tabIndex="0">
           <span className={ css.meta }>{ date } · { location }</span>
           <p className={ css.description }>{ description }</p>
-          <span
-            className={ cx(css.link, linkcss.root) }
-            onClick={ this.handleBtnClick }
-            tabIndex="0"
-            role="button"
-          >
-            { ctaLabel }
-          </span>
+          { ctaCallback && (
+            <span
+              className={ cx(css.link, linkcss.root) }
+              onClick={ this.handleBtnClick }
+              tabIndex="0"
+              role="button"
+            >
+              { ctaLabel }
+            </span>
+          ) }
         </EditorialCard>
       </div>
     );
