@@ -50,21 +50,21 @@ storiesOf('Btn', module)
     </Btn>
   ))
   .add('Whiteout button', () => (
-    <div className={[m.pal, m.bgBlack].join(' ')}>
+    <div className={ [m.pal, m.bgBlack].join(' ') }>
       <Btn context="whiteout" onClick={ action('Button clicked') }>
         Like
       </Btn>
     </div>
   ))
   .add('Whiteout hollow button', () => (
-    <div className={[m.pal, m.bgBlack].join(' ')}>
+    <div className={ [m.pal, m.bgBlack].join(' ') }>
       <Btn context="whiteout" variant="hollow" onClick={ action('Button clicked') }>
         Like
       </Btn>
     </div>
   ))
   .add('Whiteout subtle button', () => (
-    <div className={[m.pal, m.bgBlack].join(' ')}>
+    <div className={ [m.pal, m.bgBlack].join(' ') }>
       <Btn context="whiteout" variant="subtle" onClick={ action('Button clicked') }>
         Like
       </Btn>

@@ -16,7 +16,7 @@ const SquareHero = (props) => {
     className,
     level,
     headingSide,
-    ...rest,
+    ...rest
   } = props;
 
   const rootClass = cx(

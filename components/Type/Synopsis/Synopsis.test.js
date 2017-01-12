@@ -1,8 +1,8 @@
 import React from 'react';
-import ReactDOM from 'react-dom';
+import { render } from 'react-dom';
 import Synopsis from './Synopsis';
 
 it('renders without crashing', () => {
   const div = document.createElement('div');
-  ReactDOM.render(<Synopsis title=""> </Synopsis>, div);
+  render(<Synopsis title="">hello, world</Synopsis>, div);
 });

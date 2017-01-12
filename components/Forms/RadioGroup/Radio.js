@@ -69,7 +69,7 @@ export default class Radio extends Component {
       checked,
       name,
       className,
-      ...rest,
+      ...rest
     } = this.props;
 
     return (

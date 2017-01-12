@@ -8,7 +8,7 @@ const IndicatorGroup = (props) => {
     children,
     activeIndicator,
     Component,
-    ...parentProps,
+    ...parentProps
   } = props;
 
   return (

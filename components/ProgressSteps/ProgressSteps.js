@@ -23,7 +23,7 @@ export default class ProgressSteps extends Component {
       className,
       containerQuery,
       stepCss,
-      ...rest,
+      ...rest
     } = this.props;
 
     const stepStyles = {};

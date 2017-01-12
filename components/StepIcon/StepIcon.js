@@ -9,7 +9,7 @@ const StepIcon = (props) => {
     className,
     circleClassName,
     completed,
-    ...rest,
+    ...rest
   } = props;
 
   const circleClasses = cx(

@@ -12,7 +12,7 @@ const PictureCard = (props) => {
     className,
     center,
     style,
-    ...rest,
+    ...rest
   } = props;
 
   return (

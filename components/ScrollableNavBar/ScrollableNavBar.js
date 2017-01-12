@@ -117,7 +117,7 @@ export default class ScrollableNavBar extends Component {
               href,
               label,
               active,
-              ...rest,
+              ...rest
             }) => {
               const itemClasses = cx(css.item, childClassName, {
                 [css.active]: active,

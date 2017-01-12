@@ -1,4 +1,4 @@
-import React, { PropTypes, Children } from 'react';
+import React, { PropTypes } from 'react';
 import cx from 'classnames';
 
 import m from '../../globals/modifiers.css';
@@ -11,12 +11,12 @@ const RandomSix = ({ children, className }) => {
     2: three,
     3: four,
     4: five,
-    5: six
+    5: six,
   } = children;
 
   return (
     <div className={ cx(css.root, className) }>
-      <div className={css.row}>
+      <div className={ css.row }>
         <div className={ cx(css.imageContainer, css.imageContainerLeft) }>
           { one.src && (
             <img className={ css.image } src={ one.src } alt={ one.alt } />
@@ -33,7 +33,7 @@ const RandomSix = ({ children, className }) => {
           ) }
         </div>
       </div>
-      <div className={css.row}>
+      <div className={ css.row }>
         <div className={ cx(css.imageContainer, css.imageContainerLeft, m.valignt) }>
           { four.src && (
             <img className={ css.image } src={ four.src } alt={ four.alt } />

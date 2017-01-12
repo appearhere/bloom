@@ -1,11 +1,10 @@
 import React, { PropTypes } from 'react';
-import cx from 'classnames';
 
 import css from './IconLabel.css';
 import Icon from '../../Icon/Icon';
 import LeftRight from '../../LeftRight/LeftRight';
 
-const IconLabel = ({ iconName, children, className, ...rest }) => (
+const IconLabel = ({ iconName, children, className }) => (
   <LeftRight
     className={ className }
     leftClassName={ css.icon }
