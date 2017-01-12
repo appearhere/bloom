@@ -38,6 +38,13 @@ class EventCard extends Component {
     ctaLabel: 'Get tickets',
   };
 
+  handleBtnClick = (e) => {
+    e.stopPropagation();
+    e.preventDefault();
+
+    this.props.ctaCallback(e);
+  };
+
   render() {
     const {
       description,
@@ -46,7 +53,7 @@ class EventCard extends Component {
       ctaLabel,
       containerQuery,
       className,
-      ctaCallback,
+      ctaCallback: _ctaCallback,
       ...rest,
     } = this.props;
 
@@ -60,7 +67,7 @@ class EventCard extends Component {
           <p className={ css.description }>{ description }</p>
           <span
             className={ cx(css.link, linkcss.root) }
-            onClick={ ctaCallback }
+            onClick={ this.handleBtnCliock }
             tabIndex="0"
             role="button"
           >

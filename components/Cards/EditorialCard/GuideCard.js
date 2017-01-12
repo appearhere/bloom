@@ -65,6 +65,7 @@ class GuideCard extends Component {
       containerQuery,
       className,
       unlockCallback: _unlockCallback,
+      downloadCallback: _downloadCallback,
       ...rest,
     } = this.props;
 
