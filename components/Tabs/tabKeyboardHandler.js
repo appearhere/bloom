@@ -1,7 +1,7 @@
 import getValidIndex from '../../utils/getValidIndex/getValidIndex';
 
 const tabKeyboardHandler = (keyCode, currentIndex, tabsLength) => {
-  switch(keyCode) {
+  switch (keyCode) {
     // Left/Up
     case 37:
     case 38:
@@ -20,7 +20,9 @@ const tabKeyboardHandler = (keyCode, currentIndex, tabsLength) => {
     case 13:
     case 32:
       return currentIndex;
+    default:
+      return true;
   }
-}
+};
 
 export default tabKeyboardHandler;

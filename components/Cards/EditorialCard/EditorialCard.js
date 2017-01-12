@@ -43,7 +43,7 @@ class EditorialCard extends Component {
       containerQuery,
       allowHorizontal,
       forceHorizontal,
-      ...rest,
+      ...rest
     } = this.props;
 
     const renderHorizontal = (allowHorizontal && containerQuery[css.horizontal]) ||

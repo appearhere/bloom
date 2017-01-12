@@ -10,7 +10,7 @@ const Quote = (props) => {
     className,
     citeClassName,
     textAlign,
-    ...rest,
+    ...rest
   } = props;
 
   const bodyClasses = cx(

@@ -49,7 +49,7 @@ class Video extends Component {
       children: source,
       className,
       controls,
-      ...rest,
+      ...rest
     } = this.props;
 
     const { hasPlayed, isPlaying } = this.state;

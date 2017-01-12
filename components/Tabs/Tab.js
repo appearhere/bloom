@@ -11,7 +11,7 @@ export default class Tab extends Component {
     children: PropTypes.node,
     onClick: PropTypes.func,
     onFocus: PropTypes.func,
-    onBlur: PropTypes.func
+    onBlur: PropTypes.func,
   }
 
   handleClick = (e) => {
@@ -43,7 +43,7 @@ export default class Tab extends Component {
       selected,
       className,
       children,
-      ...rest,
+      ...rest
     } = this.props;
 
     const classes = cx(
@@ -53,7 +53,7 @@ export default class Tab extends Component {
     );
 
     return (
-      <button
+      <a
         { ...rest }
         ref={ (c) => {
           this.component = c;
@@ -62,12 +62,12 @@ export default class Tab extends Component {
         onBlur={ this.handleBlur }
         onClick={ this.handleClick }
         className={ classes }
-        aria-selected= { selected }
+        aria-selected={ selected }
         value={ value }
         tabIndex={ selected ? 0 : -1 }
       >
         { children }
-      </button>
+      </a>
     );
   }
 }

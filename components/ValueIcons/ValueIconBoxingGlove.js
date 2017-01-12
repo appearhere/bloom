@@ -7,7 +7,7 @@ import css from './ValueIconBoxingGlove.css';
 const ValueIconBoxingGlove = (props) => {
   const {
     className,
-    ...rest,
+    ...rest
   } = props;
 
   return (

@@ -16,8 +16,8 @@ it('calculates the width of slides correctly ', () => {
 
   shallowRenderer.render(
     <Carousel
-      items={items}
-      itemsPerColumn={1}
+      items={ items }
+      itemsPerColumn={ 1 }
     />
   );
 
@@ -26,8 +26,8 @@ it('calculates the width of slides correctly ', () => {
 
   shallowRenderer.render(
     <Carousel
-      items={items}
-      itemsPerColumn={2}
+      items={ items }
+      itemsPerColumn={ 2 }
     />
   );
 
@@ -36,8 +36,8 @@ it('calculates the width of slides correctly ', () => {
 
   shallowRenderer.render(
     <Carousel
-      items={items}
-      itemsPerColumn={3}
+      items={ items }
+      itemsPerColumn={ 3 }
     />
   );
 

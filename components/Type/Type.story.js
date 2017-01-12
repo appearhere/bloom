@@ -42,7 +42,8 @@ storiesOf('Type', module)
       className={ [m.pa48].join(' ') }
       title="Thousands of spaces, for any idea and budget."
     >
-      Find a space that matches your price, location, and audience, or browse our destination guides for inspiration.
+      Find a space that matches your price, location, and audience, or browse our destination
+      { ' ' }guides for inspiration.
     </Synopsis>
   ))
   .add('<Synopsis /> centered', () => (
@@ -67,15 +68,18 @@ storiesOf('Type', module)
       We’ve organised legals & deposits simply so you can focus on the one thing
       { ' ' }that really matters - making your idea happen.
     </Synopsis>
-  )).add('<Quote /> default', () => (
+  ))
+  .add('<Quote /> default', () => (
     <Quote citation="Rhett Butler">
       Frankly my dear, I don’t give a damn
     </Quote>
-  )).add('<Quote /> left', () => (
+  ))
+  .add('<Quote /> left', () => (
     <Quote citation="Rhett Butler" textAlign="left">
       Frankly my dear, I don’t give a damn
     </Quote>
-  )).add('<Quote /> right', () => (
+  ))
+  .add('<Quote /> right', () => (
     <Quote citation="Rhett Butler" textAlign="right">
       Frankly my dear, I don’t give a damn
     </Quote>

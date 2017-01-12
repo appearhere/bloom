@@ -25,6 +25,7 @@ class SpaceFeatureCard extends Component {
       [css.full]: PropTypes.bool,
     }),
     className: PropTypes.string,
+    children: PropTypes.any,
   };
 
   render() {
@@ -35,7 +36,7 @@ class SpaceFeatureCard extends Component {
       containerQuery,
       className,
       children: _children,
-      ...rest,
+      ...rest
     } = this.props;
 
     const classes = cx(

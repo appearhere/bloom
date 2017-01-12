@@ -6,7 +6,7 @@ import css from './Circle.css';
 
 const Circle = ({ percent }) => (
   <svg className={ css.root } viewBox="0 0 34 34">
-    <circle className={ cx(css.circle, css.circleTrack) } cx="17" cy="17" r="15.9154943092"/>
+    <circle className={ cx(css.circle, css.circleTrack) } cx="17" cy="17" r="15.9154943092" />
     <Motion
       defaultStyle={ {
         x: 0,
@@ -16,15 +16,14 @@ const Circle = ({ percent }) => (
       } }
     >
       { ({ x }) => (
-          <circle
-            className={ cx(css.circle, css.circleFilled) }
-            cx="17"
-            cy="17"
-            r="15.9154943092"
-            strokeDasharray={`${x}, 100`}
-          />
-        )
-      }
+        <circle
+          className={ cx(css.circle, css.circleFilled) }
+          cx="17"
+          cy="17"
+          r="15.9154943092"
+          strokeDasharray={ `${x}, 100` }
+        />
+      )}
 
     </Motion>
   </svg>
@@ -40,5 +39,3 @@ Circle.defaultProps = {
 };
 
 export default Circle;
-
-

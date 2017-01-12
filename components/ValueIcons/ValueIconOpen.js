@@ -7,7 +7,7 @@ import css from './ValueIconOpen.css';
 const ValueIconOpen = (props) => {
   const {
     className,
-    ...rest,
+    ...rest
   } = props;
 
   return (

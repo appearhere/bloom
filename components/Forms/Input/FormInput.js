@@ -85,7 +85,7 @@ export default class FormInput extends Component {
       className,
       InputComponent,
       onChange,
-      ...rest,
+      ...rest
     } = this.props;
 
     const labelClasses = cx(

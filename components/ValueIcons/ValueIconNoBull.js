@@ -7,7 +7,7 @@ import css from './ValueIconNoBull.css';
 const ValueIconNoBull = (props) => {
   const {
     className,
-    ...rest,
+    ...rest
   } = props;
 
   return (

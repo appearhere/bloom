@@ -11,4 +11,4 @@ it('renders without crashing', () => {
     </IconLabel>,
     div
   );
-})
+});

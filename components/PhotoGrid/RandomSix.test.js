@@ -26,7 +26,7 @@ it('renders without crashing', () => {
 
   const div = document.createElement('div');
   render(
-    <RandomSix children={children} />,
+    <RandomSix children={ children } />,
     div
   );
 });

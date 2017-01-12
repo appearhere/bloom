@@ -13,7 +13,7 @@ const Hero = (props) => {
     children,
     caption,
     animate,
-    ...rest,
+    ...rest
   } = props;
 
   const cl = cx(

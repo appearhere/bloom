@@ -79,7 +79,7 @@ export default class Input extends Component {
       hasError,
       type,
       className,
-      ...rest,
+      ...rest
     } = this.props;
 
     const classes = cx(

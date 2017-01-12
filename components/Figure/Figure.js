@@ -8,7 +8,7 @@ const Figure = (props) => {
     className,
     caption,
     children,
-    ...rest,
+    ...rest
   } = props;
 
   const classes = cx(css.root, className);

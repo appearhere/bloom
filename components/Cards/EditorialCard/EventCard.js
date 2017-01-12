@@ -54,7 +54,7 @@ class EventCard extends Component {
       containerQuery,
       className,
       ctaCallback: _ctaCallback,
-      ...rest,
+      ...rest
     } = this.props;
 
     const classes = cx(containerQuery, className);

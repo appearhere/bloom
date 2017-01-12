@@ -7,7 +7,7 @@ import css from './ValueIconThumbsUp.css';
 const ValueIconThumbsUp = (props) => {
   const {
     className,
-    ...rest,
+    ...rest
   } = props;
 
   return (

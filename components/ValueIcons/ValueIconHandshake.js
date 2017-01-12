@@ -7,7 +7,7 @@ import css from './ValueIconHandshake.css';
 const ValueIconHandshake = (props) => {
   const {
     className,
-    ...rest,
+    ...rest
   } = props;
 
   return (

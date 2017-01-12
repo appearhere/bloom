@@ -11,7 +11,7 @@ const SectionHeader = (props) => {
     className,
     level,
     css,
-    ...rest,
+    ...rest
   } = props;
 
   const titleClasses = classnames(

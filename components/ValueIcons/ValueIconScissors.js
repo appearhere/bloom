@@ -7,7 +7,7 @@ import css from './ValueIconScissors.css';
 const ValueIconScissors = (props) => {
   const {
     className,
-    ...rest,
+    ...rest
   } = props;
 
   return (

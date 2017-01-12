@@ -15,7 +15,7 @@ const Step = (props) => {
     children,
     css,
     icon,
-    ...rest,
+    ...rest
   } = props;
 
   const leftClassName = cx(
