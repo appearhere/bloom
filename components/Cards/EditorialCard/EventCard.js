@@ -61,7 +61,9 @@ class EventCard extends Component {
     return (
       <div>
         <EditorialCard { ...rest } className={ classes } tabIndex="0">
-          <span className={ css.meta }>{ date } · { location }</span>
+          <span className={ css.meta }>
+            { date }{ date && location && ' · ' }{ location }
+          </span>
           <p className={ css.description }>{ description }</p>
           { ctaCallback && (
             <span
