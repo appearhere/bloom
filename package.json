@@ -64,6 +64,7 @@
     "html-loader": "0.4.3",
     "html-webpack-plugin": "2.22.0",
     "http-proxy-middleware": "0.17.1",
+    "http-server": "^0.9.0",
     "jest": "^16.0.0",
     "json-loader": "0.5.4",
     "object-assign": "4.1.0",
@@ -111,18 +112,20 @@
     "warning": "^3.0.0"
   },
   "scripts": {
-    "start": "node scripts/start.js",
     "build": "node scripts/build.js",
-    "test": "jest --env=jsdom",
-    "test:watch": "jest --watch --env=jsdom",
-    "test:travis": "jest --env=jsdom --coverage",
-    "storybook": "start-storybook -p 9009",
     "build-storybook": "build-storybook",
     "deploy-storybook": "storybook-to-ghpages",
-    "prepublish": "yarn test",
-    "postpublish": "yarn run deploy-storybook",
+    "heroku-postbuild": "build-storybook",
     "lint": "esw -c ./config/eslint.js ./components",
-    "lint:watch": "esw -w -c ./config/eslint.js ./components"
+    "lint:watch": "esw -w -c ./config/eslint.js ./components",
+    "postpublish": "yarn run deploy-storybook",
+    "prepublish": "yarn test",
+    "serve-storybook": "http-server ./storybook-static -p $PORT",
+    "start": "node scripts/start.js",
+    "storybook": "start-storybook -p 9009",
+    "test": "jest --env=jsdom",
+    "test:travis": "jest --env=jsdom --coverage",
+    "test:watch": "jest --watch --env=jsdom"
   },
   "eslintConfig": {
     "extends": "./config/eslint.js"
