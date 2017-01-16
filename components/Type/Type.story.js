@@ -67,16 +67,16 @@ storiesOf('Type', module)
       We’ve organised legals & deposits simply so you can focus on the one thing
       { ' ' }that really matters - making your idea happen.
     </Synopsis>
-  )).add('<Quote /> default', () => (
-    <Quote citation="Rhett Butler">
+  )).add('<Quote /> centered', () => (
+    <Quote citation="Rhett Butler" className={ m.center }>
       Frankly my dear, I don’t give a damn
     </Quote>
   )).add('<Quote /> left', () => (
-    <Quote citation="Rhett Butler" textAlign="left">
+    <Quote citation="Rhett Butler" className={ m.left }>
       Frankly my dear, I don’t give a damn
     </Quote>
   )).add('<Quote /> right', () => (
-    <Quote citation="Rhett Butler" textAlign="right">
+    <Quote citation="Rhett Butler" className={ m.right }>
       Frankly my dear, I don’t give a damn
     </Quote>
   ))
