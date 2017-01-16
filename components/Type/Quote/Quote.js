@@ -9,7 +9,6 @@ const Quote = (props) => {
     citation,
     className,
     citeClassName,
-    textAlign,
     ...rest,
   } = props;
 
@@ -25,7 +24,7 @@ const Quote = (props) => {
   );
 
   return (
-    <blockquote className={ cx(css[textAlign], className) } { ...rest }>
+    <blockquote className={ className } { ...rest }>
       <div className={ bodyClasses }>{ children }</div>
       <cite className={ citeClasses }>{ citation }</cite>
     </blockquote>
@@ -37,11 +36,6 @@ Quote.propTypes = {
   citation: PropTypes.node,
   className: PropTypes.string,
   citeClassName: PropTypes.string,
-  textAlign: PropTypes.oneOf(['left', 'center', 'right']),
-};
-
-Quote.defaultProps = {
-  textAlign: 'center',
 };
 
 export default Quote;

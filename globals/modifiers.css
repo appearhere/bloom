@@ -266,3 +266,21 @@
 .nonscalingstroke.nonscalingstroke * {
   vector-effect: non-scaling-stroke;
 }
+
+/* Borders */
+
+.brdrt1greyLighter {
+  border-top: 1px solid var(--color-greyLighter);
+}
+
+.brdrl1greyLighter {
+  border-left: 1px solid var(--color-greyLighter);
+}
+
+.brdrr1greyLighter {
+  border-right: 1px solid var(--color-greyLighter);
+}
+
+.brdrb1greyLighter {
+  border-bottom: 1px solid var(--color-greyLighter);
+}
