@@ -20,7 +20,10 @@ export default class FormSelect extends Component {
     optionalLabel: PropTypes.string,
     description: PropTypes.node,
     className: PropTypes.string,
-    value: PropTypes.string,
+    value: PropTypes.oneOfType([
+      PropTypes.string,
+      PropTypes.array,
+    ]),
     children: PropTypes.node.isRequired,
   };
 
