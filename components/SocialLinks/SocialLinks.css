@@ -1,0 +1,32 @@
+.root {
+  margin-left: inherit;
+  list-style-type: none;
+  margin-bottom: 0;
+}
+
+.linkItem {
+  display: inline-block;
+  margin-right: var(--size-small);
+}
+
+.linkItem svg {
+  vertical-align: text-top;
+}
+
+.link {
+  display: block;
+  border: 1px solid var(--color-greyLighter);
+  padding: var(--size-small);
+  color: var(--color-greyDarker);
+  line-height: 1;
+  background-color: var(--color-white);
+}
+
+.link:hover {
+  background-color: var(--color-greyLightest);
+  color: var(--color-black);
+}
+
+.linkItem:last-child {
+  margin-right: 0;
+}

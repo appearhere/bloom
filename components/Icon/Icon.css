@@ -43,7 +43,10 @@
 
 /* Fills */
 
-.chevron svg {
+.chevron svg,
+.facebook svg,
+.twitter svg,
+.pintrest svg {
   stroke: transparent;
   fill: currentColor;
   stroke-linecap: round;
