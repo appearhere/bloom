@@ -47,4 +47,10 @@
   /* Overlays */
   --overlay-default: rgba(20, 20, 21, 0.5);
   --overlay-dark: rgba(20, 20, 21, 0.6);
+
+  /* 3rd Party */
+
+  --facebook-blue: rgb(59, 89, 152);
+  --twitter-blue: rgb(29, 161, 242);
+  --pintrest-red: rgb(190, 9, 28);
 }
