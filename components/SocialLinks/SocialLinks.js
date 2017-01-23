@@ -1,4 +1,5 @@
 import React, { PropTypes } from 'react';
+import cx from 'classnames';
 
 import templateHelper from '../../utils/templateHelper/templateHelper';
 import Icon from '../Icon/Icon';
@@ -25,6 +26,7 @@ const SocialLinks = (props) => {
     twitterVia,
     accessibilityLabel,
     platforms,
+    className,
   } = props;
 
   const encodedUri = encodeURI(uri);
@@ -32,7 +34,7 @@ const SocialLinks = (props) => {
   const encodedVia = encodeURI(twitterVia);
 
   return (
-    <div className={ css.root }>
+    <div className={ cx(css.root, className) }>
       { platforms
           .map(platform => (
             <div
@@ -68,6 +70,7 @@ SocialLinks.propTypes = {
     name: PropTypes.string,
     shareUrl: PropTypes.func,
   })),
+  className: PropTypes.string,
 };
 
 SocialLinks.defaultProps = {
