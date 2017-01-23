@@ -9,10 +9,23 @@
   color: var(--color-greyDark);
 }
 
+.body {
+  margin-top: var(--size-medium);
+}
+
 .imageContainer,
 .content {
   display: inline-block;
   vertical-align: top;
+}
+
+.imageContainer {
+  width: 40%;
+}
+
+.content {
+  width: 60%;
+  padding: var(--size-medium);
 }
 
 .image {
@@ -20,10 +33,6 @@
   width: 100%;
   height: auto;
   display: block;
-}
-
-.content {
-  padding: var(--size-medium);
 }
 
 .title {
@@ -36,15 +45,6 @@
   composes: fontSmallI from '../../../globals/typography.css';
   color: var(--color-grey);
   display: block;
-  margin-top: var(--size-medium);
-}
-
-.horizontal .imageContainer {
-  width: 40%
-}
-
-.horizontal  .content {
-  width: 60%;
 }
 
 .large .title {

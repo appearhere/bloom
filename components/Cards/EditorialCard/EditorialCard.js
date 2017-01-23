@@ -8,9 +8,6 @@ import Card from '../Card/Card';
 import css from './EditorialCard.css';
 
 const query = {
-  [css.horizontal]: {
-    minWidth: 320,
-  },
   [css.large]: {
     minWidth: 400,
   },
