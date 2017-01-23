@@ -20,11 +20,11 @@
 }
 
 .imageContainer {
-  width: 40%;
+  width: 44%;
 }
 
 .content {
-  width: 60%;
+  width: 56%;
   padding: var(--size-medium);
 }
 
@@ -45,6 +45,15 @@
   composes: fontSmallI from '../../../globals/typography.css';
   color: var(--color-grey);
   display: block;
+}
+
+.large .imageContainer {
+  width: 40%;
+}
+
+.large .content {
+  width: 60%;
+  padding: var(--size-medium);
 }
 
 .large .title {
