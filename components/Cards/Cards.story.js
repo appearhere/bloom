@@ -61,10 +61,11 @@ storiesOf('Cards', module)
   ))
   .add('GuideCard locked', () => (
     <GuideCard
-      title="Mulberry Street"
+      title="How to PR your Pop Up Shop"
       href="#"
       src="https://source.unsplash.com/random/500x500"
-      description="Nam erat urna, tincidunt eleifend libero ut, posuere dictum augue."
+      description={ 'Inside, you’ll find everything you need to know to launch a shop share, ' +
+        ' from choosing the right location to setting up the space.' }
       unlockCallback={ (e) => {
         e.stopPropagation();
         action('Unlocking')(e);
@@ -73,10 +74,11 @@ storiesOf('Cards', module)
   ))
   .add('GuideCard unlocked', () => (
     <GuideCard
-      title="Mulberry Street"
+      title="How to PR your Pop Up Shop"
       href="#"
       src="https://source.unsplash.com/random/500x500"
-      description="Nam erat urna, tincidunt eleifend libero ut, posuere dictum augue."
+      description={ 'Inside, you’ll find everything you need to know to launch a shop share, ' +
+        ' from choosing the right location to setting up the space.' }
       downloadCallback={ (e) => {
         e.stopPropagation();
         action('Downloading')(e);
@@ -85,7 +87,7 @@ storiesOf('Cards', module)
   ))
   .add('EventCard', () => (
     <EventCard
-      title="The Editors"
+      title="Underground Session: The Editors"
       href="#"
       src="https://source.unsplash.com/random/500x500"
       description="Nam erat urna, tincidunt eleifend libero ut, posuere dictum augue."

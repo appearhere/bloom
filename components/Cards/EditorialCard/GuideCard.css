@@ -1,11 +1,31 @@
+.meta,
+.description,
+.link {
+  display: none;
+  opacity: 0;
+  animation-iteration-count: 1;
+  animation-fill-mode: forwards;
+  animation-duration: 200ms;
+  animation-timing-function: ease-in-out;
+}
+
+.showMeta .meta,
+.showDescription .description,
+.showLink .link {
+  display: block;
+  animation-name: show;
+}
+
+@keyframes show {
+  to {
+    opacity: 1;
+  }
+}
+
 .description {
   margin-bottom: 0;
   font-size: inherit;
   margin-top: var(--size-medium);
-}
-
-.hideDescription .description {
-  display: none;
 }
 
 .singleLineDescription .description {
@@ -17,13 +37,8 @@
 }
 
 .link {
-  display: block;
   margin-top: var(--size-medium);
-}
-
-.downloadBottom .link {
   position: absolute;
   z-index: 1;
   bottom: var(--size-medium);
 }
-

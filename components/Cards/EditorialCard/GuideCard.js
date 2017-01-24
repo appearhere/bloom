@@ -9,16 +9,15 @@ import linkcss from '../../Link/Link.css';
 import css from './GuideCard.css';
 
 const query = {
-  [css.hideDescription]: {
-    minWidth: 320,
-    maxWidth: 420,
+  [css.showDescription]: {
+    minWidth: 340,
   },
   [css.singleLineDescription]: {
-    minWidth: 420,
-    maxWidth: 500,
+    minWidth: 340,
+    maxWidth: 460,
   },
-  [css.downloadBottom]: {
-    minWidth: 320,
+  [css.showLink]: {
+    minWidth: 480,
   },
 };
 
@@ -32,9 +31,9 @@ class GuideCard extends Component {
     href: PropTypes.string,
     className: PropTypes.string,
     containerQuery: PropTypes.shape({
-      [css.hideDescription]: PropTypes.bool,
+      [css.showDescription]: PropTypes.bool,
       [css.singleLineDescription]: PropTypes.bool,
-      [css.downloadBottom]: PropTypes.bool,
+      [css.showLink]: PropTypes.bool,
     }),
   };
 
