@@ -1,0 +1,58 @@
+:root {
+  --inputRange-track-height: 0.3rem;
+}
+
+.root {
+  position: relative;
+  composes: fontSmallI from '../../../globals/typography.css';
+}
+
+.input {
+  width: 100%;
+  height: calc(2 * var(--size-large));
+  transform: translateY(calc(var(--size-large) - var(--inputRange-track-height)));
+  position: relative;
+}
+
+.slider {
+  appearance: none;
+  border-radius: 100%;
+  height: var(--size-large);
+  width: var(--size-large);
+  display: block;
+  background-color: var(--color-white);
+  border: 1px solid var(--color-greyLighter);
+  box-shadow: 0 2px 4px 0 rgba(0, 0, 0, 0.2);
+  left: calc(-0.5 * var(--size-large));
+  top: calc((var(--size-large) - var(--inputRange-track-height)) * -0.5);
+  position: absolute;
+}
+
+.slider:active {
+  transform: scale(1.1);
+  box-shadow: 0 2px 6px 0 rgba(0, 0, 0, 0.2);
+  background-color: var(--color-greyLightest);
+}
+
+.slider:focus {
+  transform: scale(1.1);
+}
+
+.trackContainer,
+.trackActive {
+  cursor: pointer;
+  display: block;
+  height: var(--inputRange-track-height);
+  border-radius: calc(var(--inputRange-track-height) / 2);
+  position: absolute;
+  width: 100%;
+  left: 0;
+}
+
+.trackContainer {
+  background: var(--color-greyLightest);
+}
+
+.trackActive {
+  background-color: var(--color-black);
+}
