@@ -243,9 +243,7 @@ git --no-pager log [PREVIOUS_VERSION_TAG]..[NEW_VERSION_TAG] --pretty=format:'- 
 
 ### Post release
 
-As part of the release process, Bloom will automatically be published to [GitHub pages](https://appearhere.github.io/bloom/). This happens via yarn's `postpublish` script, and **requires** the publisher to have the Appear Here remote set up as `origin`, as per [storybook-deployer#8](https://github.com/kadirahq/storybook-deployer/issues/8).
-
-This is a stop gap solution until we have time to set up auto deploying via GitHub or similar.
+As part of the release process, Bloom will automatically be published to [Heroku](https://bloom-storybook.herokuapp.com/).
 
 ## Why "Bloom"?
 
