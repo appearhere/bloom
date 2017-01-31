@@ -28,7 +28,6 @@
   },
   "devDependencies": {
     "@kadira/storybook": "^2.14.0",
-    "@kadira/storybook-deployer": "^1.2.0",
     "autoprefixer": "6.4.0",
     "babel-core": "6.14.0",
     "babel-eslint": "6.1.2",
@@ -114,18 +113,16 @@
   "scripts": {
     "build": "node scripts/build.js",
     "build-storybook": "build-storybook",
-    "deploy-storybook": "storybook-to-ghpages",
     "heroku-postbuild": "build-storybook",
     "lint": "esw -c ./config/eslint.js ./components",
     "lint:watch": "esw -w -c ./config/eslint.js ./components",
-    "postpublish": "yarn run deploy-storybook",
-    "prepublish": "yarn test",
     "serve-storybook": "http-server ./storybook-static -p $PORT",
     "start": "node scripts/start.js",
     "storybook": "start-storybook -p 9009",
     "test": "jest --env=jsdom",
     "test:travis": "jest --env=jsdom --coverage",
-    "test:watch": "jest --watch --env=jsdom"
+    "test:watch": "jest --watch --env=jsdom",
+    "heroku-prebuild": "npm config set //registry.npmjs.org/:_authToken $NPM_TOKEN;"
   },
   "eslintConfig": {
     "extends": "./config/eslint.js"
