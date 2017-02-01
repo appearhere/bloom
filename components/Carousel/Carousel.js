@@ -1,5 +1,6 @@
 import React, { PropTypes, Component, Children } from 'react';
 import cx from 'classnames';
+import noop from '../../utils/noop';
 
 import NukaCarousel from '@appearhere/nuka-carousel';
 
@@ -13,14 +14,17 @@ export default class Carousel extends Component {
     ]).isRequired,
     className: PropTypes.string,
     lowestVisibleItemIndex: PropTypes.number,
+    onChange: PropTypes.func,
     peaking: PropTypes.bool,
     speed: PropTypes.number,
+
   };
 
   static defaultProps = {
     lowestVisibleItemIndex: 0,
     peaking: false,
     speed: 300,
+    onChange: noop,
   };
 
   constructor(props) {
@@ -35,18 +39,23 @@ export default class Carousel extends Component {
     if (nextIndex !== lowestVisibleItemIndex) {
       this.setState({ lowestVisibleItemIndex: nextIndex }, () => {
         const childLength = Children.count(nextProps.children);
-        const wrappingPrev = lowestVisibleItemIndex === 0 && nextIndex === childLength - 1;
-        const wrappingNext = lowestVisibleItemIndex === childLength - 1 && nextIndex === 0;
+        const willWrapToEnd = lowestVisibleItemIndex === 0 && nextIndex === childLength - 1;
+        const willWrapToStart = lowestVisibleItemIndex === childLength - 1 && nextIndex === 0;
 
-        if (wrappingPrev) {
+        if (willWrapToEnd) {
           this.carousel.previousSlide();
-        } else if (wrappingNext) {
+        } else if (willWrapToStart) {
           this.carousel.nextSlide();
         } else {
           this.carousel.goToSlide(nextIndex);
         }
       });
     }
+  }
+
+  handleChange = (lowestVisibleItemIndex) => {
+    const { onChange } = this.props;
+    this.setState({ lowestVisibleItemIndex }, () => { onChange(lowestVisibleItemIndex); });
   }
 
   render() {
@@ -60,6 +69,7 @@ export default class Carousel extends Component {
           decorators={ [] }
           frameOverflow={ frameOverflow }
           peaking={ peaking }
+          afterSlide={ this.handleChange }
           { ...rest }
         >
           { children }
