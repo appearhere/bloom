@@ -2,6 +2,7 @@ import React from 'react';
 import { storiesOf, action } from '@kadira/storybook';
 import InputRange from './InputRange';
 import transformStepValues from './transformStepValues';
+import InputRangeWithHistogram from './InputRangeWithHistogram';
 
 const bucket = [
   0,
@@ -67,4 +68,15 @@ storiesOf('InputRange', module)
         onChangeComplete={ action('Change complete...') }
       />
     );
-  });
+  })
+  .add('With histogram', () => (
+    <InputRangeWithHistogram
+      minValue={ bucket[0] }
+      maxValue={ bucket[6] }
+      value={ {
+        min: bucket[0],
+        max: bucket[5],
+      } }
+      data={ [10, 35, 20, 3, 5, 37, 24] }
+    />
+  ));

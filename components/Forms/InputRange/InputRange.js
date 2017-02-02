@@ -14,6 +14,7 @@ export const defaultClassNames = {
   sliderContainer: css.sliderContainer,
   trackActive: css.trackActive,
   trackContainer: css.trackContainer,
+  valueLabel: css.valueLabel,
   disabled: css.disabled,
 };
 
