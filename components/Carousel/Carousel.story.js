@@ -1,73 +1,60 @@
-import React, { PropTypes, Component } from 'react';
-import { storiesOf } from '@kadira/storybook';
+import React, { PropTypes } from 'react';
+import { storiesOf, action } from '@kadira/storybook';
+
+import PictureCard from '../Cards/PictureCard/PictureCard';
 import Carousel from './Carousel';
+import ControlledCarousel from './ControlledCarousel';
 
-import getValidIndex from '../../utils/getValidIndex/getValidIndex';
-
-const Slide = ({ i }) => (
-  <div
-    style={ {
-      width: '100%',
-      height: '300px',
-    } }
-  >
-    <div
+const StorySlide = ({ number }) => (
+  <div key={ `slide-${number}` } style={ { paddingLeft: '2%', paddingRight: '2%' } }>
+    <PictureCard
+      src={ `http://placekitten.com/g/287/4${(number * 2) + 10}` }
       style={ {
-        width: '100%',
         height: '300px',
-        backgroundColor: 'red',
+        verticalAlign: 'middle',
+        textAlign: 'center',
+        fontSize: '5rem',
       } }
+      center
+      href="#"
     >
-      slide { i }
-    </div>
+      { number }
+    </PictureCard>
   </div>
 );
-
-Slide.propTypes = {
-  i: PropTypes.number,
-};
-
-const slides = [<Slide i={ 0 } />, <Slide i={ 1 } />, <Slide i={ 2 } />, <Slide i={ 3 } />, <Slide i={ 4 } />, <Slide i={ 5 } />, <Slide i={ 6 } />, <Slide i={ 7 } />];
-
-class TestComponent extends Component {
-  constructor(props) {
-    super(props);
-
-    this.state = {
-      lowestVisibleItemIndex: 0,
-      itemsPerColumn: 1,
-    }
-  }
-
-  goToIndex = (i) => {
-    const { itemsPerColumn } = this.state;
-
-    if (i < 0 || i >= slides.length) return;
-    const lowestVisibleItemIndex = getValidIndex(i, slides.length, itemsPerColumn);
-    this.setState({ lowestVisibleItemIndex });
-  }
-
-  render() {
-    const { lowestVisibleItemIndex, itemsPerColumn } = this.state;
-
-    return (
-      <div style={ { width: '80vW', overflowX: 'visible', margin: '0 auto' } }>
-        <Carousel
-          lowestVisibleItemIndex={ lowestVisibleItemIndex }
-          items={ slides }
-          itemsPerColumn={ itemsPerColumn }
-        />
-        <button onClick={this.goToIndex.bind(this, 0)}>Go to 0</button>
-        <button onClick={this.goToIndex.bind(this, 1)}>Go to 1</button>
-        <button onClick={this.goToIndex.bind(this, 2)}>Go to 2</button>
-        <button onClick={this.goToIndex.bind(this, 3)}>Go to 3</button>
-        <button onClick={this.goToIndex.bind(this, 4)}>Go to 4</button>
-      </div>
-    );
-  }
-}
+StorySlide.propTypes = { number: PropTypes.number };
+const slides = [...Array(10).keys()].map(i => <StorySlide number={ i } key={ i } />);
 
 storiesOf('Carousel', module)
   .add('Default', () => (
-    <TestComponent />
+    <Carousel onChange={ action('Slide changed') }>
+      { slides }
+    </Carousel>
+  ));
+
+storiesOf('Controlled Carousel', module)
+  .add('Default', () => (
+    <ControlledCarousel>
+      { slides }
+    </ControlledCarousel>
+  ))
+  .add('Muliple in view 💯', () => (
+    <ControlledCarousel slidesToShow={ 3 }>
+      { slides }
+    </ControlledCarousel>
+  ))
+  .add('Infinite ∞', () => (
+    <ControlledCarousel wrapAround>
+      { slides }
+    </ControlledCarousel>
+  ))
+  .add('Peaking 🐦', () => (
+    <ControlledCarousel peaking>
+      { slides }
+    </ControlledCarousel>
+  ))
+  .add('🐦 + ∞ + 💯', () => (
+    <ControlledCarousel peaking wrapAround slidesToShow={ 3 }>
+      { slides }
+    </ControlledCarousel>
   ));
