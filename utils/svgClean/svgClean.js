@@ -12,20 +12,20 @@ const cleanups = {
   height: / +height="\d+(\.\d+)?(px)?"/gi,
 
   // remove fill
-  fill: / +fill=\"(none|#[0-9a-f]+)\"/gi,
+  fill: / +fill="(none|#[0-9a-f]+)"/gi,
 
   // remove stroke
-  stroke: / +stroke=\"(none|#[0-9a-f]+)\"/gi,
+  stroke: / +stroke="(none|#[0-9a-f]+)"/gi,
 
   // Sketch.app shit
-  sketchMSShapeGroup: / +sketch:type=\"MSShapeGroup\"/gi,
-  sketchMSPage: / +sketch:type=\"MSPage\"/gi,
-  sketchMSLayerGroup: / +sketch:type=\"MSLayerGroup\"/gi,
+  sketchMSShapeGroup: / +sketch:type="MSShapeGroup"/gi,
+  sketchMSPage: / +sketch:type="MSPage"/gi,
+  sketchMSLayerGroup: / +sketch:type="MSLayerGroup"/gi,
 };
 
 // https://github.com/PactCoffee/loggins/blob/master/components/Icon/icons.js#L16-L22
-export default function cleanupSvg(svg) {
-  return Object.keys(cleanups)
-    .reduce((acc, key) => acc.replace(cleanups[key], ''), svg)
-    .trim();
-}
+const svgClean = (svg) => Object.keys(cleanups)
+  .reduce((acc, key) => acc.replace(cleanups[key], ''), svg)
+  .trim();
+
+export default svgClean;

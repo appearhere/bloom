@@ -1,1 +1,1 @@
-web: yarn run serve-storybook
+web: yarn run serve

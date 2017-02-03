@@ -1,13 +1,27 @@
 import React from 'react';
+import { BrowserRouter, Match, Miss, Link } from 'react-router';
 
-import Link from 'components/Link/Link';
-import css from './Styleguide.css';
+import Introduction from './Introduction';
+import Example from './Example';
+import FourOhFour from './404';
 
-const Styleguide = () => (
-  <div className={ css.root }>
-    <h1>Welcome to Bloom</h1>
-    <Link href="https://en.wikipedia.org/wiki/Special:Random">Surprise me!</Link>
-  </div>
+export default () => (
+  <BrowserRouter>
+    <div>
+      <nav>
+        <ul>
+          <li><Link to="/">Home</Link></li>
+          <li><Link to="/example">Example</Link></li>
+        </ul>
+      </nav>
+      <div>
+        <h1>Bloom</h1>
+        <p>v{ `${process.env.npm_package_version}` }</p>
+        <Match exactly pattern="/" component={ Introduction } />
+        <Match pattern="/example" component={ Example } />
+
+        <Miss component={ FourOhFour } />
+      </div>
+    </div>
+  </BrowserRouter>
 );
-
-export default Styleguide;

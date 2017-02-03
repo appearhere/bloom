@@ -9,7 +9,7 @@
     "react",
     "components"
   ],
-  "homepage": "https://github.com/appearhere/bloom",
+  "homepage": "",
   "repository": {
     "type": "git",
     "url": "https://github.com/appearhere/bloom.git"
@@ -63,7 +63,6 @@
     "html-loader": "0.4.3",
     "html-webpack-plugin": "2.22.0",
     "http-proxy-middleware": "0.17.1",
-    "http-server": "^0.9.0",
     "jest": "^16.0.0",
     "json-loader": "0.5.4",
     "object-assign": "4.1.0",
@@ -93,10 +92,12 @@
     "@appearhere/nuka-carousel": "^2.1.6",
     "@appearhere/react-input-range": "^1.0.0",
     "array-from": "^2.1.1",
+    "babel-polyfill": "^6.22.0",
     "classnames": "^2.2.5",
     "commonmark": "^0.26.0",
     "commonmark-react-renderer": "^4.3.1",
     "exenv": "^1.2.1",
+    "express": "^4.14.1",
     "invariant": "^2.2.1",
     "lodash": "^4.16.3",
     "lost": "^7.1.0",
@@ -109,6 +110,7 @@
     "react-html5video": "^1.2.12",
     "react-motion": "^0.4.5",
     "react-on-visible": "^1.0.3",
+    "react-router": "next",
     "react-stickynode": "^1.2.1",
     "subscribe-ui-event": "^1.0.14",
     "warning": "^3.0.0"
@@ -116,16 +118,16 @@
   "scripts": {
     "build": "node scripts/build.js",
     "build-storybook": "build-storybook",
-    "heroku-postbuild": "build-storybook",
+    "heroku-postbuild": "yarn build && yarn run build-storybook;",
+    "heroku-prebuild": "npm config set //registry.npmjs.org/:_authToken $NPM_TOKEN;",
     "lint": "esw -c ./config/eslint.js ./components",
     "lint:watch": "esw -w -c ./config/eslint.js ./components",
-    "serve-storybook": "http-server ./storybook-static -p $PORT",
+    "serve": "node ./server",
     "start": "node scripts/start.js",
     "storybook": "start-storybook -p 9009",
     "test": "jest --env=jsdom",
     "test:travis": "jest --env=jsdom --coverage",
-    "test:watch": "jest --watch --env=jsdom",
-    "heroku-prebuild": "npm config set //registry.npmjs.org/:_authToken $NPM_TOKEN;"
+    "test:watch": "jest --watch --env=jsdom"
   },
   "eslintConfig": {
     "extends": "./config/eslint.js"
