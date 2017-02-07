@@ -56,3 +56,41 @@
 .trackActive {
   background-color: var(--color-black);
 }
+
+.labelValue {
+  composes: root from '../../ScreenReadable/ScreenReadable.css';
+}
+
+.container {
+  position: relative;
+}
+
+.histogram {
+  height: var(--size-large);
+  width: 100%;
+}
+
+.histogram * {
+  box-sizing: border-box;
+}
+
+.barContainer {
+  display: inline-block;
+  padding-left: 1px;
+  padding-right: 1px;
+  vertical-align: bottom;
+}
+
+.bar {
+  width: 100%;
+  height: 100%;
+  background-color: var(--color-greyLighter);
+  border-top-left-radius: 3px;
+  border-top-right-radius: 3px;
+}
+
+.inputRange {
+  position: absolute;
+  width: 100%;
+  bottom: calc((-1 * var(--size-large) + calc(-1 * var(--inputRange-track-height))))
+}
