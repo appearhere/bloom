@@ -4,6 +4,7 @@ import { storiesOf, action } from '@kadira/storybook';
 import Card from './Card/Card';
 import PictureCard from './PictureCard/PictureCard';
 import SpaceFeatureCard from './SpaceFeatureCard/SpaceFeatureCard';
+import SpaceListingCard from './SpaceListingCard/SpaceListingCard';
 import EditorialCard from './EditorialCard/EditorialCard';
 import GuideCard from './EditorialCard/GuideCard';
 import EventCard from './EditorialCard/EventCard';
@@ -48,6 +49,26 @@ storiesOf('Cards', module)
       location="New York"
       href="#"
       src="https://source.unsplash.com/random"
+    />
+  ))
+  .add('SpaceListingCard', () => (
+    <SpaceListingCard
+      images={
+        [{
+          src: 'https://source.unsplash.com/random/500x500',
+          alt: 'hello',
+        }, {
+          src: 'https://source.unsplash.com/random/500x503',
+          alt: 'hello2',
+        }, {
+          src: 'https://source.unsplash.com/random/500x502',
+          alt: 'hello',
+        }, {
+          src: 'https://source.unsplash.com/random/500x501',
+          alt: 'hello2',
+        }]
+      }
+      href="#"
     />
   ))
   .add('EditorialCard', () => (
