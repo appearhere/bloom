@@ -58,6 +58,7 @@ export default class Tab extends Component {
         ref={ (c) => {
           this.component = c;
         } }
+        type="button"
         onFocus={ this.handleFocus }
         onBlur={ this.handleBlur }
         onClick={ this.handleClick }
