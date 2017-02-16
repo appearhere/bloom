@@ -1,8 +1,12 @@
 import React, { PropTypes } from 'react';
-import { storiesOf } from '@kadira/storybook';
+import { storiesOf, action } from '@kadira/storybook';
+import moment from 'moment';
 import momentPropTypes from 'react-moment-proptypes';
 import CalendarMonth from './CalendarMonth';
 import CalendarItem from './CalendarItem';
+import InteractionHandler from './InteractionHandler';
+
+const nextMonth = moment({ month: 2 });
 
 const ExampleCalendarItem = (props) => {
   const { day, modifiers, ...rest } = props;
@@ -39,4 +43,10 @@ storiesOf('CalendarMonth', module)
         format: 'dddd',
       } }
     />
+  ))
+  .add('interactive', () => (
+    <InteractionHandler onInteraction={ action('Interaction...') }>
+      <CalendarMonth />
+      <CalendarMonth month={ nextMonth } />
+    </InteractionHandler>
   ));

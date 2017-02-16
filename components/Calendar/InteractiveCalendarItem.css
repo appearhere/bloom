@@ -1,0 +1,29 @@
+.interactive::selection {
+  background-color: transparent;
+}
+
+.interactive.withDate:hover {
+  background-color: var(--color-greyLightest);
+  cursor: pointer;
+}
+
+.interactive:focus {
+  outline-color: var(--color-focusRing);
+  outline-style: auto;
+  outline-width: 5px;
+}
+
+.highlighted,
+.interactive.withDate.highlighted:hover {
+  background-color: var(--color-action--light);
+}
+
+.disabled {
+  opacity: 0.3;
+  cursor: not-allowed;
+}
+
+.interactive.selected:hover,
+.highlighted {
+  background-color: var(--color-action--light);
+}
