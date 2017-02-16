@@ -1,0 +1,6 @@
+.root {
+  padding: var(--size-medium);
+  background-color: var(--color-white);
+  border: 1px solid var(--color-greyLighter);
+  box-shadow: 0 2px 4px 0 var(--color-greyLightest);
+}
