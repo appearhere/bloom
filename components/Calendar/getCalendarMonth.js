@@ -1,19 +1,18 @@
-import moment from 'moment';
 import {
   generateArray,
   generateNumberFilledArray,
-  reshapeArray
+  reshapeArray,
 } from '../../utils/array/array';
 
 export const CALENDAR_MONTH_LENGTH = 42;
 export const DAYS_PER_WEEK = 7;
 export const CALENDAR_ROWS = CALENDAR_MONTH_LENGTH / DAYS_PER_WEEK;
 
-export const getPreDayCount = (date) => date.weekday() - 1;
+export const getPreDayCount = date => date.weekday() - 1;
 export const getPostDayCount = (date) => {
   const preDayCount = getPreDayCount(date);
   return CALENDAR_MONTH_LENGTH - date.daysInMonth() - preDayCount;
-}
+};
 
 const getCalendarMonth = (date, preDayCount, postDayCount) => {
   const month = date.clone().startOf('month');
@@ -22,7 +21,7 @@ const getCalendarMonth = (date, preDayCount, postDayCount) => {
     .fill('')
     .map((_, i, { length }) => {
       const offset = length - i;
-      return month.clone().subtract(offset, 'days')
+      return month.clone().subtract(offset, 'days');
     });
 
   const postDays = generateArray(postDayCount)
