@@ -32,6 +32,7 @@
 
   /* Application tints */
   --color-red--light: rgb(236, 94, 77);
+  --color-blue--light: rgb(151, 186, 211);
 
   /* Aliases */
   --color-primary: var(--color-gold);
@@ -43,6 +44,7 @@
   /* Tint Aliases */
   --color-primary--light: var(--color-gold--light);
   --color-danger--light: var(--color-red--light);
+  --color-action--light: var(--color-blue--light);
 
   /* Overlays */
   --overlay-default: rgba(20, 20, 21, 0.5);
