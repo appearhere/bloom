@@ -25,6 +25,7 @@ const CalendarDay = (props) => {
     format,
     classNames,
     modifiers,
+    dayClassName,
     ...rest,
   } = props;
 
@@ -36,14 +37,15 @@ const CalendarDay = (props) => {
       .map(modifier => classNames[modifier]),
   );
 
-  return day
-    ? (
-      <div { ...rest } className={ classes }>{ day.format(format) }</div>
-    ) : (
-      <div className={ classes }>
-        { '\u00a0' }
-      </div>
-    );
+  return day ? (
+    <div { ...rest } className={ classes }>
+      <span className={ dayClassName }>{ day.format(format) }</span>
+    </div>
+  ) : (
+    <div className={ classes }>
+      { '\u00a0' }
+    </div>
+  );
 };
 
 CalendarDay.propTypes = {
@@ -51,6 +53,7 @@ CalendarDay.propTypes = {
   format: PropTypes.string,
   classNames: PropTypes.object,
   modifiers: PropTypes.object,
+  dayClassName: PropTypes.string,
 };
 
 CalendarDay.defaultProps = {
@@ -58,6 +61,7 @@ CalendarDay.defaultProps = {
   format: 'D',
   classNames: defaultClassNames,
   modifiers: defaultModifiers,
+  dayClassName: '',
 };
 
 export default CalendarDay;
