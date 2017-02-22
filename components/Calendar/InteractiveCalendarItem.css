@@ -1,5 +1,5 @@
-.interactive::selection {
-  background-color: transparent;
+.interactive {
+  user-select: none;
 }
 
 .interactive.withDate:hover {
@@ -16,6 +16,7 @@
 .highlighted,
 .interactive.withDate.highlighted:hover {
   background-color: var(--color-action--light);
+  color: var(--color-white);
 }
 
 .disabled {
@@ -26,4 +27,5 @@
 .interactive.selected:hover,
 .highlighted {
   background-color: var(--color-action--light);
+  color: var(--color-white);
 }

@@ -5,14 +5,9 @@ import React, {
   cloneElement,
 } from 'react';
 
-import { getChildComponentValidator } from '../../utils/propTypes/propTypes';
-import { getInclusiveMomentRange } from '../../utils/moment/moment';
-import CalendarMonth from './CalendarMonth';
 import InteractiveCalendarItem from './InteractiveCalendarItem';
 import moment from '../../utils/moment/moment';
 import noop from '../../utils/noop';
-
-const validateChildComponents = getChildComponentValidator(CalendarMonth);
 
 export const getDates = (startDate, endDate) => {
   if (!endDate) return [startDate];
@@ -24,10 +19,7 @@ export const getDates = (startDate, endDate) => {
 
 export default class InteractionHandler extends Component {
   static propTypes = {
-    children: PropTypes.oneOfType([
-      PropTypes.arrayOf(validateChildComponents),
-      validateChildComponents,
-    ]).isRequired,
+    children: PropTypes.node.isRequired,
     onInteraction: PropTypes.func,
     DayComponent: PropTypes.func,
   };

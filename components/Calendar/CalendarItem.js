@@ -37,8 +37,13 @@ const CalendarDay = (props) => {
   );
 
   return day
-    ? <div { ...rest } className={ classes }>{ day.format(format) }</div>
-    : <div className={ classes }>{ '\u00a0' }</div>;
+    ? (
+      <div { ...rest } className={ classes }>{ day.format(format) }</div>
+    ) : (
+      <div className={ classes }>
+        { '\u00a0' }
+      </div>
+    );
 };
 
 CalendarDay.propTypes = {
