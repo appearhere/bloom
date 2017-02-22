@@ -80,25 +80,8 @@ describe('Tether target component', () => {
 
     expect('horizontalAttachment' in target.props).toBe(true);
     expect('verticalAttachment' in target.props).toBe(true);
-    expect('active' in target.props).toBe(true);
-  });
-
-  it('receives attachment props from Tether', () => {
-    let target;
-
-    const div = document.createElement('div');
-    render(
-      <Tether
-        target={ <TestTarget ref={ (c) => { target = c; } } /> }
-        active
-      >
-        <TestChild />
-      </Tether>,
-      div
-    );
-
-    expect('horizontalAttachment' in target.props).toBe(true);
-    expect('verticalAttachment' in target.props).toBe(true);
+    expect('flushHorizontal' in target.props).toBe(true);
+    expect('flushVertical' in target.props).toBe(true);
   });
 
   it('receives active prop from Tether', () => {
@@ -136,6 +119,8 @@ describe('Tether child component', () => {
 
     expect('horizontalAttachment' in child.props).toBe(true);
     expect('verticalAttachment' in child.props).toBe(true);
+    expect('flushHorizontal' in child.props).toBe(true);
+    expect('flushVertical' in child.props).toBe(true);
   });
 
   it('receives active prop from Tether', () => {
