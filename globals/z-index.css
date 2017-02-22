@@ -22,4 +22,5 @@
 
   /* Aliases */
   --z-stickyNode: var(--z-5);
+  --z-tooltip: var(--z-3);
 }
