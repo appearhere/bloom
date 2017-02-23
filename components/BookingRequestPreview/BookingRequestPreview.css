@@ -1,0 +1,45 @@
+.requestList + .requestList {
+  margin-top: var(--size-medium);
+  padding-top: var(--size-medium);
+  border-top: 1px solid var(--color-greyLightest);
+}
+
+.state {
+  composes: fontRegular from '../../globals/typography.css';
+  font-weight: var(--fontweight-demi);
+  color: var(--color-black);
+}
+
+.request {
+  margin-top: var(--size-medium);
+}
+
+.image {
+  height: 100%;
+  /*width: 100%;*/
+  width: 3.333333333rem;
+  max-height: 3.333333333rem;
+  object-fit: cover;
+}
+
+.requestDetail {
+  margin-left: var(--size-medium);
+}
+
+.ideaName {
+  composes: fontSmallI from '../../globals/typography.css';
+  color: var(--color-greyDarkest);
+}
+
+.dates {
+  composes: fontSmallI from '../../globals/typography.css';
+  color: var(--color-grey);
+  margin-top: var(--size-small);
+  vertical-align: middle;
+}
+
+.untilIcon {
+  margin-left: var(--size-small);
+  margin-right: var(--size-small);
+  font-size: 1rem;
+}
