@@ -1,0 +1,15 @@
+.root {
+  display: block;
+  height: 1em;
+  margin-top: 0.265em;
+  margin-bottom: 0.425em;
+  width: 100%;
+}
+
+.light.root {
+  background-color: var(--color-greyLighter);
+}
+
+.dark.root {
+  background-color: var(--color-greyDarker);
+}
