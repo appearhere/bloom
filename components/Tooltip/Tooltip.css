@@ -1,0 +1,384 @@
+.target {
+  position: relative;
+}
+
+.active.target:before {
+  content: '';
+  border: 9px solid;
+  width: 0;
+  height: 0;
+  position: absolute;
+  z-index: var(--z-tooltip);
+}
+.dark.target:before {
+  border-color: var(--color-black);
+}
+.light.target:before {
+  border-color: var(--color-greyLightest);
+}
+
+.active.target:after {
+  content: '';
+  border: 8px solid;
+  width: 0;
+  height: 0;
+  position: absolute;
+  z-index: var(--z-tooltip);
+}
+.dark.target:after {
+  border-color: var(--color-black);
+}
+
+.light.target:after {
+  border-color: var(--color-white);
+}
+
+.tooltip {
+  padding: var(--size-medium);
+  border-radius: 4px;
+  box-shadow: 0 2px 4px 0 var(--color-greyLightest);
+  z-index: var(--z-tooltip);
+}
+.dark.tooltip {
+  background-color: var(--color-black);
+  color: var(--color-white);
+  border: 1px solid var(--color-black);
+}
+.light.tooltip {
+  background-color: var(--color-white);
+  color: var(--color-greyDarker);
+  border: 1px solid var(--color-greyLightest);
+}
+
+.targetBottom.targetHorizontalCenter:after {
+  border-left-color: transparent;
+  border-right-color: transparent;
+  border-top-color: transparent;
+  left: 50%;
+  transform: translateX(-50%);
+  bottom: -9px;
+}
+.targetBottom.targetHorizontalCenter:before {
+  border-left-color: transparent;
+  border-right-color: transparent;
+  border-top-color: transparent;
+  left: 50%;
+  transform: translateX(-50%);
+  bottom: -9px;
+}
+.tooltipBottom.tooltipHorizontalCenter {
+  transform: translateY(8px);
+}
+
+.targetBottom.targetRight:before {
+  border-right-color: transparent;
+  border-top-color: transparent;
+  right: -18px;
+  bottom: -16px;
+}
+.targetBottom.targetRight:after {
+  border-right-color: transparent;
+  border-top-color: transparent;
+  right: -17px;
+  bottom: -16px;
+}
+.tooltipBottom.tooltipRight {
+  transform: translateY(15px);
+  border-top-left-radius: 0;
+}
+
+.targetVerticalCenter.targetRight:before {
+  top: 50%;
+  transform: translateY(-50%);
+  right: -9px;
+  border-left-color: transparent;
+  border-bottom-color: transparent;
+  border-top-color: transparent;
+}
+.targetVerticalCenter.targetRight:after {
+  top: 50%;
+  transform: translateY(-50%);
+  right: -9px;
+  border-left-color: transparent;
+  border-bottom-color: transparent;
+  border-top-color: transparent;
+}
+.tooltipVerticalCenter.tooltipRight {
+  margin-left: 8px;
+}
+
+.targetTop.targetRight:before {
+  border-right-color: transparent;
+  border-bottom-color: transparent;
+  right: -18px;
+  top: -16px;
+}
+.targetTop.targetRight:after {
+  border-right-color: transparent;
+  border-bottom-color: transparent;
+  right: -17px;
+  top: -16px;
+}
+.tooltipTop.tooltipRight {
+  transform: translateY(-15px);
+  border-bottom-left-radius: 0;
+}
+
+.targetTop.targetHorizontalCenter:before {
+  border-left-color: transparent;
+  border-right-color: transparent;
+  border-bottom-color: transparent;
+  left: 50%;
+  transform: translateX(-50%);
+  top: -9px;
+}
+.targetTop.targetHorizontalCenter:after {
+  border-left-color: transparent;
+  border-right-color: transparent;
+  border-bottom-color: transparent;
+  left: 50%;
+  transform: translateX(-50%);
+  top: -9px;
+}
+.tooltipTop.tooltipHorizontalCenter {
+  transform: translateY(-8px);
+}
+
+.targetTop.targetLeft:before {
+  border-left-color: transparent;
+  border-bottom-color: transparent;
+  left: -18px;
+  top: -16px;
+}
+.targetTop.targetLeft:after {
+  border-left-color: transparent;
+  border-bottom-color: transparent;
+  left: -17px;
+  top: -16px;
+}
+.tooltipTop.tooltipLeft {
+  transform: translateY(-15px);
+  border-bottom-right-radius: 0;
+}
+
+.targetVerticalCenter.targetLeft:before {
+  top: 50%;
+  transform: translateY(-50%);
+  left: -9px;
+  border-right-color: transparent;
+  border-bottom-color: transparent;
+  border-top-color: transparent;
+}
+.targetVerticalCenter.targetLeft:after {
+  top: 50%;
+  transform: translateY(-50%);
+  left: -9px;
+  border-right-color: transparent;
+  border-bottom-color: transparent;
+  border-top-color: transparent;
+}
+.tooltipVerticalCenter.tooltipLeft {
+  margin-left: -8px;
+}
+
+.targetBottom.targetLeft:before {
+  border-left-color: transparent;
+  border-top-color: transparent;
+  left: -18px;
+  bottom: -16px;
+}
+.targetBottom.targetLeft:after {
+  border-left-color: transparent;
+  border-top-color: transparent;
+  left: -17px;
+  bottom: -16px;
+}
+.tooltipBottom.tooltipLeft {
+  transform: translateY(15px);
+  border-top-right-radius: 0;
+}
+
+.targetFlushVertical.targetBottom.targetRight:before {
+  top: 50%;
+  transform: translateY(-50%);
+  right: -9px;
+  border-left-color: transparent;
+  border-bottom-color: transparent;
+  border-top-color: transparent;
+}
+.targetFlushVertical.targetBottom.targetRight:after {
+  top: 50%;
+  transform: translateY(-50%);
+  right: -9px;
+  border-left-color: transparent;
+  border-bottom-color: transparent;
+  border-top-color: transparent;
+}
+.dark.targetFlushVertical.targetBottom.targetRight:before {
+  border-right-color: var(--color-black);
+}
+.dark.targetFlushVertical.targetBottom.targetRight:after {
+  border-right-color: var(--color-black);
+}
+.light.targetFlushVertical.targetBottom.targetRight:before {
+  border-right-color: var(--color-greyLightest);
+}
+.light.targetFlushVertical.targetBottom.targetRight:after {
+  border-right-color: var(--color-white);
+}
+.tooltipFlushVertical.tooltipBottom.tooltipRight {
+  transform: translateY(0);
+  margin-left: 8px;
+  border-top-right-radius: 2px;
+}
+
+.targetFlushVertical.targetTop.targetRight:before {
+  top: 50%;
+  transform: translateY(-50%);
+  right: -9px;
+  border-left-color: transparent;
+  border-bottom-color: transparent;
+  border-top-color: transparent;
+}
+.targetFlushVertical.targetTop.targetRight:after {
+  top: 50%;
+  transform: translateY(-50%);
+  right: -9px;
+  border-left-color: transparent;
+  border-bottom-color: transparent;
+  border-top-color: transparent;
+}
+.dark.targetFlushVertical.targetTop.targetRight:before {
+  border-right-color: var(--color-black);
+}
+.dark.targetFlushVertical.targetTop.targetRight:after {
+  border-right-color: var(--color-black);
+}
+.light.targetFlushVertical.targetTop.targetRight:before {
+  border-right-color: var(--color-greyLightest);
+}
+.light.targetFlushVertical.targetTop.targetRight:after {
+  border-right-color: var(--color-white);
+}
+.tooltipFlushVertical.tooltipTop.tooltipRight {
+  transform: translateY(0);
+  margin-left: 8px;
+}
+
+.targetFlushVertical.targetTop.targetLeft:before {
+  top: 50%;
+  transform: translateY(-50%);
+  left: -9px;
+  border-right-color: transparent;
+  border-bottom-color: transparent;
+  border-top-color: transparent;
+}
+.targetFlushVertical.targetTop.targetLeft:after {
+  top: 50%;
+  transform: translateY(-50%);
+  left: -9px;
+  border-right-color: transparent;
+  border-bottom-color: transparent;
+  border-top-color: transparent;
+}
+.dark.targetFlushVertical.targetTop.targetLeft:before {
+  border-left-color: var(--color-black);
+}
+.dark.targetFlushVertical.targetTop.targetLeft:after {
+  border-left-color: var(--color-black);
+}
+.light.targetFlushVertical.targetTop.targetLeft:before {
+  border-left-color: var(--color-greyLightest);
+}
+.light.targetFlushVertical.targetTop.targetLeft:after {
+  border-left-color: var(--color-white);
+}
+.tooltipFlushVertical.tooltipTop.tooltipLeft {
+  transform: translateY(0);
+  margin-left: -8px;
+}
+
+.targetFlushVertical.targetBottom.targetLeft:before {
+  top: 50%;
+  transform: translateY(-50%);
+  left: -9px;
+  border-right-color: transparent;
+  border-bottom-color: transparent;
+  border-top-color: transparent;
+}
+.targetFlushVertical.targetBottom.targetLeft:after {
+  top: 50%;
+  transform: translateY(-50%);
+  left: -9px;
+  border-right-color: transparent;
+  border-bottom-color: transparent;
+  border-top-color: transparent;
+}
+.dark.targetFlushVertical.targetBottom.targetLeft:before {
+  border-left-color: var(--color-black);
+}
+.dark.targetFlushVertical.targetBottom.targetLeft:after {
+  border-left-color: var(--color-black);
+}
+.light.targetFlushVertical.targetBottom.targetLeft:before {
+  border-left-color: var(--color-greyLightest);
+}
+.light.targetFlushVertical.targetBottom.targetLeft:after {
+  border-left-color: var(--color-white);
+}
+.tooltipFlushVertical.tooltipBottom.tooltipLeft {
+  transform: translateY(0);
+  margin-left: -8px;
+}
+
+.targetFlushHorizontal.targetBottom.targetRight:before,
+.targetFlushHorizontal.targetBottom.targetLeft:before {
+  border-right-color: transparent;
+  border-left-color: transparent;
+  border-top-color: transparent;
+  right: auto;
+  left: 50%;
+  transform: translateX(-50%);
+  bottom: -9px;
+}
+.targetFlushHorizontal.targetBottom.targetRight:after,
+.targetFlushHorizontal.targetBottom.targetLeft:after {
+  border-right-color: transparent;
+  border-left-color: transparent;
+  border-top-color: transparent;
+  right: auto;
+  left: 50%;
+  transform: translateX(-50%);
+  bottom: -9px;
+}
+.tooltipFlushHorizontal.tooltipBottom.tooltipRight,
+.tooltipFlushHorizontal.tooltipBottom.tooltipLeft {
+  border-radius: 4px;
+  transform: translateY(8px);
+}
+
+.targetFlushHorizontal.targetTop.targetRight:before,
+.targetFlushHorizontal.targetTop.targetLeft:before {
+  border-right-color: transparent;
+  border-left-color: transparent;
+  border-bottom-color: transparent;
+  right: auto;
+  left: 50%;
+  transform: translateX(-50%);
+  top: -9px;
+}
+.targetFlushHorizontal.targetTop.targetRight:after,
+.targetFlushHorizontal.targetTop.targetLeft:after {
+  border-right-color: transparent;
+  border-left-color: transparent;
+  border-bottom-color: transparent;
+  right: auto;
+  left: 50%;
+  transform: translateX(-50%);
+  top: -9px;
+}
+.tooltipFlushHorizontal.tooltipTop.tooltipRight,
+.tooltipFlushHorizontal.tooltipTop.tooltipLeft {
+  border-radius: 4px;
+  transform: translateY(-8px);
+}
