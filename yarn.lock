@@ -2174,7 +2174,7 @@ es6-shim@^0.35.1:
   version "0.35.1"
   resolved "https://registry.yarnpkg.com/es6-shim/-/es6-shim-0.35.1.tgz#a23524009005b031ab4a352ac196dfdfd1144ab7"
 
-es6-symbol@3, es6-symbol@~3.1, es6-symbol@~3.1.0:
+es6-symbol@3, es6-symbol@^3.1.0, es6-symbol@~3.1, es6-symbol@~3.1.0:
   version "3.1.0"
   resolved "https://registry.yarnpkg.com/es6-symbol/-/es6-symbol-3.1.0.tgz#94481c655e7a7cad82eba832d97d5433496d7ffa"
   dependencies:
@@ -4176,6 +4176,12 @@ minimist@^1.1.0, minimist@^1.1.1, minimist@^1.2.0, "minimist@~ 1.2.0":
 mobx@^2.3.4:
   version "2.6.0"
   resolved "https://registry.yarnpkg.com/mobx/-/mobx-2.6.0.tgz#0ae83a20488b92d10d4ca326e18fe78a5ab7cb36"
+
+moment-range@^3.0.2:
+  version "3.0.2"
+  resolved "https://registry.yarnpkg.com/moment-range/-/moment-range-3.0.2.tgz#fc5c7db5e8ea15e455c46c1455c3023b2daf9767"
+  dependencies:
+    es6-symbol "^3.1.0"
 
 moment@>=1.6.0, moment@^2.17.1:
   version "2.17.1"

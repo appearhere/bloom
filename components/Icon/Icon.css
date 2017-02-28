@@ -65,7 +65,7 @@
   min-width: 5.75rem;
 }
 
-.appearherebrackets svg {
+.appearhere-brackets svg {
   /* Should only ever appear black or white */
   fill: currentColor;
   stroke: transparent;

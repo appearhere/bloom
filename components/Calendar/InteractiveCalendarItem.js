@@ -67,7 +67,7 @@ export default class InteractiveCalendarItem extends Component {
     const modifiers = {
       interactive: isInteractive,
       withDate: !!day,
-      highlighted: day && highlightedDates.some(date => day.isSame(date)),
+      highlighted: day && highlightedDates.some(date => day.isSame(date, 'day')),
       disabled,
       ...modifiersProp,
     };

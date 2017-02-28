@@ -1,6 +1,4 @@
-import { generateNumberFilledArray } from '../array/array';
+import moment from 'moment';
+import { extendMoment } from 'moment-range';
 
-export const getInclusiveMomentRange = (start, end) => {
-  const range = end.diff(start, 'days') + 1;
-  return generateNumberFilledArray(range).map(n => start.clone().add(n, 'days'));
-};
+export default extendMoment(moment);
