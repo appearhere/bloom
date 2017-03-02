@@ -5,9 +5,11 @@ import getValidIndex from '../../../utils/getValidIndex/getValidIndex';
 import Carousel from '../../Carousel/Carousel';
 import BtnContainer from '../../BtnContainer/BtnContainer';
 import Icon from '../../Icon/Icon';
+import Link from '../../Link/Link';
 import ScreenReadable from '../../ScreenReadable/ScreenReadable';
 import FittedImage from '../../FittedImage/FittedImage';
 import css from './SpaceListingCard.css';
+import Blokk from '../../Blokk/Blokk';
 
 export default class SpaceListingCard extends Component {
   static propTypes = {
@@ -18,6 +20,15 @@ export default class SpaceListingCard extends Component {
         alt: PropTypes.string,
       })
     ),
+    price: PropTypes.node,
+    priceUnit: PropTypes.node,
+    name: PropTypes.node,
+    location: PropTypes.node,
+    size: PropTypes.node,
+    className: PropTypes.string,
+    bodyClassName: PropTypes.string,
+    placeLabel: PropTypes.string,
+    placeHref: PropTypes.string,
     accessibilityNextLabel: PropTypes.string,
     accessibilityPrevLabel: PropTypes.string,
   };
@@ -25,6 +36,8 @@ export default class SpaceListingCard extends Component {
   static defaultProps = {
     accessibilityNextLabel: 'Show next slide',
     accessibilityPrevLabel: 'Show previous slide',
+    href: '#',
+    images: [],
   };
 
   state = {
@@ -58,33 +71,64 @@ export default class SpaceListingCard extends Component {
       images,
       accessibilityPrevLabel,
       accessibilityNextLabel,
+      price,
+      priceUnit,
+      name,
+      location,
+      size,
+      className,
+      placeHref,
+      placeLabel,
+      bodyClassName,
     } = this.props;
 
+    const shouldRenderEmptyState = !(
+      (images.length > 0) &&
+      (price && priceUnit) &&
+      name &&
+      location && size
+    );
+
     return (
-      <div className={ css.root }>
+      <div className={ cx(css.root, className) }>
         <div className={ css.carousel }>
-          <div className={ css.carouselControls }>
-            <BtnContainer
-              onClick={ this.handlePrevImage }
-              className={ cx(css.control, css.prev) }
+          { placeLabel && placeHref && (
+            <Link
+              href={ placeHref }
+              className={ css.placeLink }
+              iconClassName={ css.placeLinkIcon }
             >
-              <Icon name="chevron" />
-              <ScreenReadable>{ accessibilityPrevLabel }</ScreenReadable>
-            </BtnContainer>
-            <BtnContainer
-              onClick={ this.handleNextImage }
-              className={ cx(css.control, css.next) }
-            >
-              <Icon name="chevron" />
-              <ScreenReadable>{ accessibilityNextLabel }</ScreenReadable>
-            </BtnContainer>
-          </div>
-          <a
+              { placeLabel }
+            </Link>
+          ) }
+          { !shouldRenderEmptyState && (
+            <div className={ css.carouselControls }>
+              <BtnContainer
+                onClick={ this.handlePrevImage }
+                className={ cx(css.control, css.prev) }
+              >
+                <Icon name="chevron" />
+                <ScreenReadable>{ accessibilityPrevLabel }</ScreenReadable>
+              </BtnContainer>
+              <BtnContainer
+                onClick={ this.handleNextImage }
+                className={ cx(css.control, css.next) }
+              >
+                <Icon name="chevron" />
+                <ScreenReadable>{ accessibilityNextLabel }</ScreenReadable>
+              </BtnContainer>
+            </div>
+          ) }
+          <div
             href={ href }
             className={ css.inner }
           >
-            <Carousel lowestVisibleItemIndex={ visibleImageIndex } wrapAround>
-              { images.map(({ src, alt }) => (
+            <Carousel
+              lowestVisibleItemIndex={ visibleImageIndex }
+              wrapAround
+              dragging
+            >
+              { !shouldRenderEmptyState ? images.map(({ src, alt }) => (
                 <div key={ src }>
                   <FittedImage
                     className={ css.image }
@@ -92,16 +136,38 @@ export default class SpaceListingCard extends Component {
                     alt={ alt }
                   />
                 </div>
-              )) }
+              )) : (
+                <div>
+                  <div className={ css.image } />
+                </div>
+              ) }
             </Carousel>
-          </a>
+          </div>
         </div>
-        <a
-          href={ href }
-          className={ css.spaceDetail }
-        >
-          { /* TODO: Add space details e.g., name and price here */}
-        </a>
+        { !shouldRenderEmptyState ? (
+          <a
+            href={ href }
+            className={ cx(css.body, bodyClassName) }
+          >
+            <div>
+              <span className={ css.price }>{ price }</span>
+              { '\u00a0' }
+              <span className={ css.priceUnit }>{ priceUnit }</span>
+            </div>
+            <div className={ css.name }>{ name }</div>
+            <div className={ css.additionalInfo }>
+              <span className={ css.location }>{ location }</span>
+              <span className={ css.spacer }>•</span>
+              <span className={ css.size }>{ size }</span>
+            </div>
+          </a>
+        ) : (
+          <div className={ cx(css.body, bodyClassName) }>
+            <Blokk length={ 4 } />
+            <Blokk length={ 12 } />
+            <Blokk length={ 7 } />
+          </div>
+        ) }
       </div>
     );
   }

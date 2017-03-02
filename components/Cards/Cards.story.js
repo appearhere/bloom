@@ -51,8 +51,45 @@ storiesOf('Cards', module)
       src="https://source.unsplash.com/random"
     />
   ))
+  .add('SpaceListingCard empty state', () => (
+    <SpaceListingCard />
+  ))
   .add('SpaceListingCard', () => (
     <SpaceListingCard
+      price="$10,000,000"
+      priceUnit="/day"
+      location="Shoreditch"
+      city="London"
+      size="1000 sqft"
+      name="Bold Street Shop"
+      images={
+        [{
+          src: 'https://source.unsplash.com/random/500x500',
+          alt: 'hello',
+        }, {
+          src: 'https://source.unsplash.com/random/500x503',
+          alt: 'hello2',
+        }, {
+          src: 'https://source.unsplash.com/random/500x502',
+          alt: 'hello',
+        }, {
+          src: 'https://source.unsplash.com/random/500x501',
+          alt: 'hello2',
+        }]
+      }
+      href="#"
+    />
+  ))
+  .add('SpaceListingCard as part of a place', () => (
+    <SpaceListingCard
+      price="$10,000,000"
+      priceUnit="/day"
+      location="Shoreditch"
+      city="London"
+      size="1000 sqft"
+      name="Bold Street Shop"
+      placeLabel="Part of Boxpark"
+      placeHref="#"
       images={
         [{
           src: 'https://source.unsplash.com/random/500x500',
