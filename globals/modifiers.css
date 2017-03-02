@@ -175,7 +175,7 @@
   composes: fontSmallI from './typography.css';
 }
 .fontSmIi {
-  composes: fontSmallI from './typography.css';
+  composes: fontSmallIi from './typography.css';
 }
 
 /* Font sizes */
