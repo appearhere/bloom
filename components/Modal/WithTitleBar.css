@@ -1,0 +1,20 @@
+.header {
+  position: absolute;
+  top: 0;
+}
+
+.banner {
+  border-top: 0;
+  border-left: 0;
+  border-right: 0;
+}
+
+.body {
+  padding-top: var(--space-96);
+}
+
+@media(--modal-lg) {
+  .body {
+    padding-bottom: var(--space-96);
+  }
+}

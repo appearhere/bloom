@@ -11,4 +11,5 @@
   @custom-media --squareHero-lg-i (min-width: 25rem);
   @custom-media --squareHero-lg-ii (min-width: 46.875rem);
   @custom-media --squareHero-lg-iii (min-width: 62.5rem);
+  @custom-media --modal-lg (min-width: 37.5rem);
 }

@@ -1,0 +1,9 @@
+.dismissContainer {
+  float: right;
+  margin-bottom: var(--size-medium);
+  color: currentColor;
+}
+
+.inner {
+  clear: both;
+}

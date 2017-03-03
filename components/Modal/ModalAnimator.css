@@ -1,0 +1,65 @@
+.documentBody {
+  overflow: hidden;
+}
+
+.root {
+  position: absolute;
+  height: 100%;
+  width: 100%;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+}
+
+.root * {
+  box-sizing: border-box;
+}
+
+.overlay {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  background-color: var(--overlay-default);
+  transition: all 200ms;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  will-change: opacity;
+  backface-visibility: hidden;
+}
+
+.wrapper {
+  position: absolute;
+  height: 100%;
+  width: 100%;
+  will-change: transform;
+  backface-visibility: hidden;
+}
+
+.window {
+  position: absolute;
+  left: 50%;
+  bottom: 0;
+  width: 100%;
+  transform: translate3d(-50%, 0, 0);
+  background-color: var(--color-white);
+  overflow: hidden;
+  max-height: 100vh;
+  border-top-right-radius: 4px;
+  border-top-left-radius: 4px;
+}
+
+@media(--modal-lg) {
+  .window {
+    width: 94vw;
+    max-height: 94vh;
+    max-width: 37.5rem;
+    left: 50%;
+    top: 50%;
+    bottom: auto;
+    transform: translate3d(-50%, -50%, 0);
+    border-radius: 4px;
+  }
+}

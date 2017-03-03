@@ -1,0 +1,19 @@
+.light {
+  background-color: var(--color-white);
+  color: var(--color-greyDark);
+}
+
+.dark {
+  background-color: var(--color-black);
+  color: var(--color-white);
+}
+
+.body {
+  padding: var(--size-medium);
+  border-top-right-radius: 4px;
+  border-top-left-radius: 4px;
+  overflow-y: scroll;
+  max-height: 100vh;
+  padding: var(--size-medium);
+  clear: both;
+}
