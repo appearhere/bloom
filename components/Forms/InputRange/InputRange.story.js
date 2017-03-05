@@ -1,8 +1,13 @@
 import React from 'react';
 import { storiesOf, action } from '@kadira/storybook';
+import { withKnobs, number } from '@kadira/storybook-addon-knobs';
 import InputRange from './InputRange';
 import transformStepValues from './transformStepValues';
 import InputRangeWithHistogram from './InputRangeWithHistogram';
+
+const stories = storiesOf('InputRange', module);
+
+stories.addDecorator(withKnobs);
 
 const bucket = [
   0,
@@ -14,12 +19,12 @@ const bucket = [
   64,
 ];
 
-storiesOf('InputRange', module)
+stories
   .add('Default InputRange', () => (
     <InputRange
       minValue={ 0 }
       maxValue={ 10 }
-      value={ 4 }
+      value={ number('value', 4) }
       name="Simple range input"
       onChange={ action('Change...') }
       onChangeComplete={ action('Change complete...') }
@@ -30,8 +35,8 @@ storiesOf('InputRange', module)
       minValue={ 0 }
       maxValue={ 10 }
       value={ {
-        min: 0,
-        max: 10,
+        min: number('min', 0),
+        max: number('max', 10),
       } }
       name="Simple range input"
       onChange={ action('Change...') }
@@ -45,7 +50,7 @@ storiesOf('InputRange', module)
       <NonLinearRangeInput
         minValue={ bucket[0] }
         maxValue={ bucket[6] }
-        value={ bucket[3] }
+        value={ bucket[number('value', 1)] }
         name="Simple range input"
         onChange={ action('Change...') }
         onChangeComplete={ action('Change complete...') }
@@ -60,8 +65,8 @@ storiesOf('InputRange', module)
         minValue={ bucket[0] }
         maxValue={ bucket[6] }
         value={ {
-          min: bucket[1],
-          max: bucket[5],
+          min: bucket[number('min', 1)],
+          max: bucket[number('max', 5)],
         } }
         name="Simple range input"
         onChange={ action('Change...') }
@@ -74,9 +79,10 @@ storiesOf('InputRange', module)
       minValue={ bucket[0] }
       maxValue={ bucket[6] }
       value={ {
-        min: bucket[0],
-        max: bucket[5],
+        min: bucket[number('min', 1)],
+        max: bucket[number('max', 5)],
       } }
+      name="Range input with histogram"
       data={ [10, 35, 20, 3, 5, 37, 24] }
     />
   ));
