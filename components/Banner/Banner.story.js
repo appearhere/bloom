@@ -8,6 +8,11 @@ storiesOf('Banner', module)
       Important information that you should look at right now
     </Banner>
   ))
+  .add('Dark', () => (
+    <Banner variant="dark">
+      Important information that you should look at right now
+    </Banner>
+  ))
   .add('Success', () => (
     <Banner context="success">
       You did something right! 👏
