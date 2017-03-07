@@ -18,12 +18,13 @@
 
 .dismissContainer {
   display: table-cell;
-  width: 1%;
+  min-width: 1%;
   vertical-align: top;
 }
 
 .icon {
   display: block;
+  margin-left: var(--size-medium);
 }
 
 .light {
