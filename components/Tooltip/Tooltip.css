@@ -14,7 +14,7 @@
   border-color: var(--color-black);
 }
 .light.target:before {
-  border-color: var(--color-greyLightest);
+  border-color: var(--color-greyLighter);
 }
 
 .active.target:after {
@@ -36,7 +36,7 @@
 .tooltip {
   padding: var(--size-medium);
   border-radius: 4px;
-  box-shadow: 0 2px 4px 0 var(--color-greyLightest);
+  box-shadow: 0 2px 4px 0 var(--color-greyLighter);
   z-index: var(--z-tooltip);
 }
 .dark.tooltip {
@@ -47,7 +47,7 @@
 .light.tooltip {
   background-color: var(--color-white);
   color: var(--color-greyDarker);
-  border: 1px solid var(--color-greyLightest);
+  border: 1px solid var(--color-greyLighter);
 }
 
 .targetBottom.targetHorizontalCenter:after {
@@ -73,17 +73,19 @@
 .targetBottom.targetRight:before {
   border-right-color: transparent;
   border-top-color: transparent;
-  right: -18px;
-  bottom: -16px;
+  right: -10px;
+  bottom: -9px;
+  border-width: 5px;
 }
 .targetBottom.targetRight:after {
   border-right-color: transparent;
   border-top-color: transparent;
-  right: -17px;
-  bottom: -16px;
+  right: -9px;
+  bottom: -9px;
+  border-width: 4px;
 }
 .tooltipBottom.tooltipRight {
-  transform: translateY(15px);
+  transform: translateY(8px);
   border-top-left-radius: 0;
 }
 
@@ -110,17 +112,19 @@
 .targetTop.targetRight:before {
   border-right-color: transparent;
   border-bottom-color: transparent;
-  right: -18px;
-  top: -16px;
+  right: -10px;
+  top: -9px;
+  border-width: 5px;
 }
 .targetTop.targetRight:after {
   border-right-color: transparent;
   border-bottom-color: transparent;
-  right: -17px;
-  top: -16px;
+  right: -9px;
+  top: -9px;
+  border-width: 4px;
 }
 .tooltipTop.tooltipRight {
-  transform: translateY(-15px);
+  transform: translateY(-8px);
   border-bottom-left-radius: 0;
 }
 
@@ -147,17 +151,19 @@
 .targetTop.targetLeft:before {
   border-left-color: transparent;
   border-bottom-color: transparent;
-  left: -18px;
-  top: -16px;
+  left: -10px;
+  top: -9px;
+  border-width: 5px;
 }
 .targetTop.targetLeft:after {
   border-left-color: transparent;
   border-bottom-color: transparent;
-  left: -17px;
-  top: -16px;
+  left: -9px;
+  top: -9px;
+  border-width: 4px;
 }
 .tooltipTop.tooltipLeft {
-  transform: translateY(-15px);
+  transform: translateY(-8px);
   border-bottom-right-radius: 0;
 }
 
@@ -184,17 +190,19 @@
 .targetBottom.targetLeft:before {
   border-left-color: transparent;
   border-top-color: transparent;
-  left: -18px;
-  bottom: -16px;
+  left: -10px;
+  bottom: -9px;
+  border-width: 5px;
 }
 .targetBottom.targetLeft:after {
   border-left-color: transparent;
   border-top-color: transparent;
-  left: -17px;
-  bottom: -16px;
+  left: -9px;
+  bottom: -9px;
+  border-width: 4px;
 }
 .tooltipBottom.tooltipLeft {
-  transform: translateY(15px);
+  transform: translateY(8px);
   border-top-right-radius: 0;
 }
 
@@ -205,6 +213,7 @@
   border-left-color: transparent;
   border-bottom-color: transparent;
   border-top-color: transparent;
+  border-width: 9px;
 }
 .targetFlushVertical.targetBottom.targetRight:after {
   top: 50%;
@@ -213,6 +222,7 @@
   border-left-color: transparent;
   border-bottom-color: transparent;
   border-top-color: transparent;
+  border-width: 8px;
 }
 .dark.targetFlushVertical.targetBottom.targetRight:before {
   border-right-color: var(--color-black);
@@ -221,7 +231,7 @@
   border-right-color: var(--color-black);
 }
 .light.targetFlushVertical.targetBottom.targetRight:before {
-  border-right-color: var(--color-greyLightest);
+  border-right-color: var(--color-greyLighter);
 }
 .light.targetFlushVertical.targetBottom.targetRight:after {
   border-right-color: var(--color-white);
@@ -239,6 +249,7 @@
   border-left-color: transparent;
   border-bottom-color: transparent;
   border-top-color: transparent;
+  border-width: 9px;
 }
 .targetFlushVertical.targetTop.targetRight:after {
   top: 50%;
@@ -247,6 +258,7 @@
   border-left-color: transparent;
   border-bottom-color: transparent;
   border-top-color: transparent;
+  border-width: 8px;
 }
 .dark.targetFlushVertical.targetTop.targetRight:before {
   border-right-color: var(--color-black);
@@ -255,7 +267,7 @@
   border-right-color: var(--color-black);
 }
 .light.targetFlushVertical.targetTop.targetRight:before {
-  border-right-color: var(--color-greyLightest);
+  border-right-color: var(--color-greyLighter);
 }
 .light.targetFlushVertical.targetTop.targetRight:after {
   border-right-color: var(--color-white);
@@ -272,6 +284,7 @@
   border-right-color: transparent;
   border-bottom-color: transparent;
   border-top-color: transparent;
+  border-width: 9px;
 }
 .targetFlushVertical.targetTop.targetLeft:after {
   top: 50%;
@@ -280,6 +293,7 @@
   border-right-color: transparent;
   border-bottom-color: transparent;
   border-top-color: transparent;
+  border-width: 8px;
 }
 .dark.targetFlushVertical.targetTop.targetLeft:before {
   border-left-color: var(--color-black);
@@ -288,7 +302,7 @@
   border-left-color: var(--color-black);
 }
 .light.targetFlushVertical.targetTop.targetLeft:before {
-  border-left-color: var(--color-greyLightest);
+  border-left-color: var(--color-greyLighter);
 }
 .light.targetFlushVertical.targetTop.targetLeft:after {
   border-left-color: var(--color-white);
@@ -305,6 +319,7 @@
   border-right-color: transparent;
   border-bottom-color: transparent;
   border-top-color: transparent;
+  border-width: 9px;
 }
 .targetFlushVertical.targetBottom.targetLeft:after {
   top: 50%;
@@ -313,6 +328,7 @@
   border-right-color: transparent;
   border-bottom-color: transparent;
   border-top-color: transparent;
+  border-width: 8px;
 }
 .dark.targetFlushVertical.targetBottom.targetLeft:before {
   border-left-color: var(--color-black);
@@ -321,7 +337,7 @@
   border-left-color: var(--color-black);
 }
 .light.targetFlushVertical.targetBottom.targetLeft:before {
-  border-left-color: var(--color-greyLightest);
+  border-left-color: var(--color-greyLighter);
 }
 .light.targetFlushVertical.targetBottom.targetLeft:after {
   border-left-color: var(--color-white);
@@ -340,6 +356,7 @@
   left: 50%;
   transform: translateX(-50%);
   bottom: -9px;
+  border-width: 9px;
 }
 .targetFlushHorizontal.targetBottom.targetRight:after,
 .targetFlushHorizontal.targetBottom.targetLeft:after {
@@ -350,6 +367,7 @@
   left: 50%;
   transform: translateX(-50%);
   bottom: -9px;
+  border-width: 8px;
 }
 .tooltipFlushHorizontal.tooltipBottom.tooltipRight,
 .tooltipFlushHorizontal.tooltipBottom.tooltipLeft {
@@ -366,6 +384,7 @@
   left: 50%;
   transform: translateX(-50%);
   top: -9px;
+  border-width: 9px;
 }
 .targetFlushHorizontal.targetTop.targetRight:after,
 .targetFlushHorizontal.targetTop.targetLeft:after {
@@ -376,6 +395,7 @@
   left: 50%;
   transform: translateX(-50%);
   top: -9px;
+  border-width: 8px;
 }
 .tooltipFlushHorizontal.tooltipTop.tooltipRight,
 .tooltipFlushHorizontal.tooltipTop.tooltipLeft {
