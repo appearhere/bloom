@@ -1,0 +1,47 @@
+.spinner {
+  width: 1em;
+  display: inline;
+  vertical-align: top;
+  width: 1em;
+  height: 1em;
+  line-height: inherit;
+  stroke: inherit;
+  fill: inherit;
+  vertical-align: middle;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  transform: translate3d(0,0,0);
+}
+
+.circle {
+  width: 0.3em;
+  height: 0.3em;
+  background-color: currentColor;
+  border-radius: 100%;
+  display: inline-block;
+  animation: bouncedelay 1.4s infinite ease-in-out both;
+  will-change: transform;
+  backface-visibility: hidden;
+  stroke: transparent;
+  fill: currentColor;
+  stroke-linecap: round;
+  transform-origin: center center;
+}
+
+.circle:nth-child(1) {
+  animation-delay: -0.32s;
+}
+
+.circle:nth-child(2) {
+  animation-delay: -0.16s;
+}
+
+@keyframes bouncedelay {
+  0%, 80%, 100% {
+    -webkit-transform: scale(0);
+    transform: scale(0);
+  } 40% {
+    -webkit-transform: scale(1.0);
+    transform: scale(1.0);
+  }
+}
