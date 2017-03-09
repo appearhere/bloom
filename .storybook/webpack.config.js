@@ -11,6 +11,7 @@ var cssMap = webpackPostcssTools.makeVarMap(path.join(paths.globalsSrc, 'index.c
 
 module.exports = {
   module: {
+    noParse: /node_modules\/mapbox-gl\/dist\/mapbox-gl.js/,
     loaders: [
       {
         test: /\.css$/,
