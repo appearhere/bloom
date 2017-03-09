@@ -46,7 +46,7 @@ Btn.propTypes = {
   type: PropTypes.oneOf(['submit', 'reset', 'button', 'menu']),
   disabled: PropTypes.bool,
 
-  context: PropTypes.oneOf(['primary', 'danger', 'whiteout']),
+  context: PropTypes.oneOf(['primary', 'danger', 'action', 'whiteout']),
   variant: PropTypes.oneOf(['hollow', 'subtle']),
 };
 
