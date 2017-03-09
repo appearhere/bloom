@@ -18,6 +18,7 @@ export default class BaseMap extends Component {
     mapClassName: PropTypes.string,
     zoom: PropTypes.number,
     onClick: PropTypes.func,
+    onMoveEnd: PropTypes.func,
   };
 
   static defaultProps = {
@@ -26,6 +27,7 @@ export default class BaseMap extends Component {
     mapboxStyle: 'mapbox://styles/mapbox/streets-v9?optimize=true',
     zoom: 11,
     onClick: noop,
+    onMoveEnd: noop,
   };
 
   componentDidMount() {
@@ -40,6 +42,7 @@ export default class BaseMap extends Component {
     });
 
     this.map.on('click', onClick);
+    this.map.on('moveend', this.handleMoveEnd);
   }
 
   componentWillReceiveProps(nextProps) {
@@ -54,12 +57,33 @@ export default class BaseMap extends Component {
     const { onClick } = this.props;
 
     this.map.off('click', onClick);
+    this.map.off('moveend', this.handleMoveEnd);
     this.map.remove();
   }
 
   getMaboxGL() {
     return this.map;
   }
+
+  easeTo(options) {
+    this.map.easeTo(options, { user: false });
+  }
+
+  fitBounds(bounds, options) {
+    this.map.fitBounds(bounds, options, { user: false });
+  }
+
+  handleMoveEnd = (data) => {
+    const { onMoveEnd } = this.props;
+    const { user, ...rest } = data;
+
+    const userAction = user !== false;
+    onMoveEnd(
+      userAction,
+      { bounds: this.map.getBounds().toArray(), zoom: this.map.getZoom() },
+      rest,
+    );
+  };
 
   mapboxgl = {};
 

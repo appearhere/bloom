@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import { storiesOf } from '@kadira/storybook';
+import actionWithComplexArgs from '../../.storybook/utils/actionWithComplexArgs';
 import MarkableMap from './MarkableMap';
 import BaseMap from './BaseMap';
 import Marker from './SpaceMarker';
@@ -73,7 +74,12 @@ class TestMap extends Component {
 
 storiesOf('Map', module)
   .add('Default', () => (
-    <div style={ { height: '96vh' } }><BaseMap /></div>
+    <div style={ { height: '96vh' } }>
+      <BaseMap
+        onClick={ actionWithComplexArgs('map clicked') }
+        onMoveEnd={ actionWithComplexArgs('map moved') }
+      />
+    </div>
   ))
   .add('MarkableMap', () => (
     <TestMap />

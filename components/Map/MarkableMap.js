@@ -77,7 +77,7 @@ export default class MarkableMap extends Component {
     const nextLat = markerLngLat.lat + (80 / Math.pow(2, zoom));
     const nextCenter = new mapboxgl.LngLat(markerLngLat.lng, nextLat).wrap();
 
-    this.getMaboxGL().easeTo({ center: nextCenter });
+    this.map.easeTo({ center: nextCenter });
     this.setState({ activeMarkerId: id });
   }
 
@@ -102,7 +102,7 @@ export default class MarkableMap extends Component {
 
     const destucturedMarkers = markers.map(marker => marker.getLngLat().toArray());
 
-    this.getMaboxGL().fitBounds(
+    this.map.fitBounds(
       minLngLatBounds(destucturedMarkers),
       { padding: 20, offset: [0, 20], maxZoom: 16 },
     );
