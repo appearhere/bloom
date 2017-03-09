@@ -1,0 +1,21 @@
+.footer {
+  position: absolute;
+  bottom: 0;
+  width: 100%;
+}
+
+.banner {
+  border-bottom: 0;
+  border-left: 0;
+  border-right: 0;
+}
+
+.body {
+  padding-bottom: var(--space-96);
+}
+
+@media(--modal-lg) {
+  .body {
+    padding-bottom: var(--space-144);
+  }
+}

@@ -10,30 +10,42 @@ const contexts = {
   SUCCESS: 'success',
 };
 
-const Banner = ({ children, className, context, onClose, ...rest }) => (
-  <div
-    { ...rest }
-    className={ cx(
-      css.root,
-      css[context],
-      onClose ? css.dismissable : null,
-      className,
-    ) }
-  >
+const Banner = (props) => {
+  const {
+    children,
+    className,
+    context,
+    variant,
+    onClose,
+    ...rest,
+  } = props;
+
+  return (
     <div
+      { ...rest }
       className={ cx(
-        css.inner,
+        css.root,
+        css[context],
+        css[variant],
+        onClose ? css.dismissable : null,
+        className,
       ) }
     >
-      { children }
+      <div
+        className={ cx(
+          css.inner,
+        ) }
+      >
+        { children }
+      </div>
+      { onClose && (
+        <BtnContainer className={ css.dismissContainer } onClick={ onClose }>
+          <Icon className={ css.icon } name="cross" />
+        </BtnContainer>
+      ) }
     </div>
-    { onClose && (
-      <BtnContainer className={ css.dismissContainer } onClick={ onClose }>
-        <Icon className={ css.icon } name="cross" />
-      </BtnContainer>
-    ) }
-  </div>
-);
+  );
+};
 
 Banner.propTypes = {
   className: PropTypes.string,
@@ -41,8 +53,13 @@ Banner.propTypes = {
     contexts.ERROR,
     contexts.SUCCESS,
   ]),
+  variant: PropTypes.oneOf(['light', 'dark']),
   children: PropTypes.node,
   onClose: PropTypes.func,
+};
+
+Banner.defaultProps = {
+  variant: 'light',
 };
 
 export default Banner;
