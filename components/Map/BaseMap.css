@@ -1,0 +1,33 @@
+.root, .map {
+  height: 100%;
+}
+
+.map {
+  overflow: hidden;
+  position: relative;
+  -webkit-tap-highlight-color: rgba(0,0,0,0);
+  composes: fontSmallIi from '../../globals/typography.css';
+}
+
+.map :global(.mapboxgl-ctrl-bottom-right) { position:absolute; pointer-events:none; z-index:2; }
+.map :global(.mapboxgl-ctrl-bottom-right) { right:0; bottom:0; }
+
+.map :global(.mapboxgl-ctrl) { clear:both; pointer-events:auto }
+.map :global(.mapboxgl-ctrl-bottom-right .mapboxgl-ctrl) { margin:0 10px 10px 0; float:right; }
+
+.map :global(.mapboxgl-ctrl.mapboxgl-ctrl-attrib) {
+  padding: 0 5px;
+  background-color: rgba(255, 255, 255, .5);
+  margin: 0;
+}
+.map :global(.mapboxgl-ctrl-attrib a) {
+  color: rgba(0,0,0,0.75);
+  text-decoration: none;
+}
+.map :global(.mapboxgl-ctrl-attrib a):hover {
+    color: inherit;
+}
+.map :global(.mapboxgl-ctrl-attrib .mapbox-improve-map) {
+  font-weight: bold;
+  margin-left: 2px;
+}
