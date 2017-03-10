@@ -83,6 +83,7 @@ module.exports = {
     moduleTemplates: ['*-loader']
   },
   module: {
+    noParse: /node_modules\/mapbox-gl\/dist\/mapbox-gl.js/,
     // First, run the linter.
     // It's important to do this before Babel processes the JS.
     preLoaders: [

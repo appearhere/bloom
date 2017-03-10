@@ -1,0 +1,46 @@
+.root {
+  background-color: var(--color-black);
+  color: var(--color-white);
+  border: 1px solid var(--color-black);
+  padding: 0.3rem 0.6rem;
+  border-radius: 4px;
+  position: relative;
+  margin-bottom: 6px;
+  composes: fontSmallI from '../../globals/typography.css';
+}
+
+.root:before {
+  content: '';
+  border: 6px solid;
+  width: 0;
+  height: 0;
+  position: absolute;
+  z-index: var(--z-tooltip);
+  border-color: var(--color-black);
+  border-left-color: transparent;
+  border-right-color: transparent;
+  border-bottom-color: transparent;
+  left: 50%;
+  transform: translateX(-50%);
+  bottom: -12px;
+}
+
+.active:before {
+  border-color: var(--color-white);
+  border-left-color: transparent;
+  border-right-color: transparent;
+  border-bottom-color: transparent;
+}
+
+.body {
+  border: none;
+}
+
+.active {
+  width: 15rem;
+  background-color: var(--color-white);
+  color: var(--color-greyDarker);
+  border: none;
+  padding: 0;
+  box-shadow: 0 2px 14px 0 rgba(0, 0, 0, 0.4);
+}
