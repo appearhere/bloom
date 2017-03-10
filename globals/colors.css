@@ -34,10 +34,13 @@
 
   /* Transparent colors */
   --color-transparent-black-i: rgba(25, 25, 25, 0.8);
+  --color-transparent-black-ii: rgba(25, 25, 25, 0.6);
+  --color-transparent-black-iii: rgba(25, 25, 25, 0.4);
+  --color-transparent-black-iv: rgba(25, 25, 25, 0.2);
 
   /* Application tints */
   --color-red--light: rgb(236, 94, 77);
-  --color-blue--light: rgb(151, 186, 211);
+  --color-blue--light: rgb(41, 125, 184);
 
   /* Aliases */
   --color-primary: var(--color-gold);

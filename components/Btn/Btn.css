@@ -1,25 +1,31 @@
 .root {
-  padding: var(--size-medium) var(--size-large);
-  background-color: var(--color-black);
-  color: var(--color-white);
-  border-width: 1px;
+  background-color: var(--color-greyDarker);
+  border-color: var(--color-greyDarker);
+  border-radius: 0;
+  border-radius: 2px;
   border-style: solid;
-  border-color: var(--color-black);
-  text-transform: uppercase;
-  composes: fontSmallI from '../../globals/typography.css';
-  line-height: 1.4;
+  border-width: 1px;
+  color: var(--color-white);
+  composes: fontRegular from '../../globals/typography.css';
   font-weight: var(--fontweight-demi);
   cursor: pointer;
-  transition: background-color 300ms, color 300ms;
-  transition-timing-function: cubic-bezier(0,1,.75,1);
-  border-radius: 0;
-  text-decoration: none;
   display: inline-block;
+  line-height: 1;
+  padding: var(--size-small) var(--size-medium);
+  text-decoration: none;
+  transition-timing-function: cubic-bezier(0,1,.75,1);
+  transition: background-color 300ms, color 300ms, border-color 300ms;
+  -webkit-font-smoothing: antialiased;
+}
+
+.root svg {
+  vertical-align: top;
 }
 
 .root:focus,
 .root:hover {
-  background-color: var(--color-black--light);
+  background-color: var(--color-greyDark);
+  border-color: var(--color-greyDark);
   color: var(--color-white);
 }
 
@@ -32,19 +38,19 @@
 }
 
 .root.hollow {
-  color: var(--color-black);
+  color: var(--color-grey);
   background-color: transparent;
-  border-color: currentColor;
+  border-color: var(--color-greyLighter);
 }
 
 .root.hollow:focus,
 .root.hollow:hover {
-  background-color: var(--color-black);
-  color: var(--color-white);
+  border-color: var(--color-greyDark);
+  color: var(--color-greyDark);
 }
 
 .root.subtle {
-  color: var(--color-black);
+  color: var(--color-greyDarker);
   background-color: transparent;
   border-color: transparent;
   text-decoration: underline;
@@ -53,7 +59,7 @@
 
 .root.subtle:focus,
 .root.subtle:hover {
-  color: var(--color-primary--light);
+  color: var(--color-grey);
 }
 
 .primary {
@@ -76,8 +82,8 @@
 
 .primary.hollow:focus,
 .primary.hollow:hover {
-  background-color: var(--color-primary);
-  color: var(--color-white);
+  border-color: var(--color-primary--light);
+  color: var(--color-primary);
 }
 
 .primary.subtle {
@@ -85,7 +91,7 @@
   background-color: transparent;
   border-color: transparent;
   text-decoration: underline;
-  text-decoration-color: var(--color-black);
+  text-decoration-color: var(--color-greyLighter);
 }
 
 .primary.subtle:focus,
@@ -94,7 +100,49 @@
   background-color: transparent;
   border-color: transparent;
   text-decoration: underline;
-  text-decoration-color: var(--color-black);
+  text-decoration-color: var(--color-greyLighter);
+}
+
+.action {
+  background-color: var(--color-action);
+  color: var(--color-white);
+  border-color: var(--color-action);
+}
+
+.action:focus,
+.action:hover {
+  background-color: var(--color-action--light);
+  color: var(--color-white);
+  border-color: var(--color-action--light);
+}
+
+.action.hollow {
+  color: var(--color-action);
+  background-color: transparent;
+  border-color: var(--color-action);
+}
+
+.action.hollow:focus,
+.action.hollow:hover {
+  border-color: var(--color-action--light);
+  color: var(--color-action--light);
+}
+
+.action.subtle {
+  color: var(--color-action);
+  background-color: transparent;
+  border-color: transparent;
+  text-decoration: underline;
+  text-decoration-color: var(--color-greyLighter);
+}
+
+.action.subtle:focus,
+.action.subtle:hover {
+  color: var(--color-action--light);
+  background-color: transparent;
+  border-color: transparent;
+  text-decoration: underline;
+  text-decoration-color: var(--color-greyLighter);
 }
 
 .danger {
@@ -117,8 +165,8 @@
 
 .danger.hollow:focus,
 .danger.hollow:hover {
-  background-color: var(--color-danger);
-  color: var(--color-white);
+  border-color: var(--color-danger--light);
+  color: var(--color-danger--light);
 }
 
 .danger.subtle {
@@ -126,7 +174,7 @@
   background-color: transparent;
   border-color: transparent;
   text-decoration: underline;
-  text-decoration-color: var(--color-black);
+  text-decoration-color: var(--color-greyLighter);
 }
 
 .danger.subtle:focus,
@@ -135,42 +183,45 @@
   background-color: transparent;
   border-color: transparent;
   text-decoration: underline;
-  text-decoration-color: var(--color-black);
+  text-decoration-color: var(--color-greyLighter);
 }
 
 .whiteout {
-  color: var(--color-black);
-  background-color: var(--color-white);
-  border-color: var(--color-white);
+  background-color: var(--color-greyLightest);
+  border-color: var(--color-greyLightest);
+  color: var(--color-greyDarker);
 }
 
 .whiteout:focus,
 .whiteout:hover {
-  background-color: var(--color-black--light);
-  border-color: var(--color-black--light);
-  color: var(--color-white);
+  background-color: var(--color-white);
+  border-color: var(--color-white);
+  color: var(--color-greyDarkest);
 }
 
 .whiteout.hollow {
-  color: var(--color-white);
+  color: var(--color-greyLighter);
   background-color: transparent;
-  border-color: var(--color-white);
+  border-color: var(--color-greyLighter);
 }
 
 .whiteout.hollow:focus,
 .whiteout.hollow:hover {
-  background-color: var(--color-white);
-  color: var(--color-black);
+  background-color: transparent;
+  border-color: var(--color-white);
+  color: var(--color-white);
 }
 
 .whiteout.subtle {
-  color: var(--color-white);
+  color: var(--color-greyLighter);
   background-color: transparent;
   border-color: transparent;
-  text-decoration: none;
+  text-decoration: underline;
+  text-decoration-color: var(--color-greyLighter);
 }
 
 .whiteout.subtle:focus,
 .whiteout.subtle:hover {
-  color: var(--color-primary);
+  color: var(--color-white);
+  text-decoration-color: var(--color-white);
 }
