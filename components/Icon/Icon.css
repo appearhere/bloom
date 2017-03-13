@@ -45,7 +45,8 @@
 .chevron svg,
 .facebook svg,
 .twitter svg,
-.pintrest svg {
+.pintrest svg,
+.filter svg {
   stroke: transparent;
   fill: currentColor;
   stroke-linecap: round;

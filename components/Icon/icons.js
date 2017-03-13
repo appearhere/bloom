@@ -19,6 +19,7 @@ import cross from './icons/icon-cross.svg';
 import dollar from './icons/icon-dollar.svg';
 import download from './icons/icon-download.svg';
 import facebook from './icons/icon-facebook.svg';
+import filter from './icons/icon-filter.svg';
 import globe from './icons/icon-globe.svg';
 import location from './icons/icon-location.svg';
 import manage from './icons/icon-manage.svg';
@@ -66,6 +67,7 @@ export default {
   dollar: svgClean(dollar),
   download: svgClean(download),
   facebook: svgClean(facebook),
+  filter: svgClean(filter),
   globe: svgClean(globe),
   location: svgClean(location),
   manage: svgClean(manage),
