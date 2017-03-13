@@ -284,3 +284,19 @@
 .brdrb1greyLighter {
   border-bottom: 1px solid var(--color-greyLighter);
 }
+
+.brdrt1greyDarker {
+  border-top: 1px solid var(--color-greyDarker);
+}
+
+.brdrl1greyDarker {
+  border-left: 1px solid var(--color-greyDarker);
+}
+
+.brdrr1greyDarker {
+  border-right: 1px solid var(--color-greyDarker);
+}
+
+.brdrb1greyDarker {
+  border-bottom: 1px solid var(--color-greyDarker);
+}

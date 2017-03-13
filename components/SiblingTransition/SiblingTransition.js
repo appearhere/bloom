@@ -3,8 +3,7 @@ import { TransitionMotion, spring } from 'react-motion';
 
 import noop from '../../utils/noop';
 import css from './SiblingTransition.css';
-
-const DEFAULT_SPRING_CONFIG = { stiffness: 178, damping: 25 };
+import { SIBLING_TRANSITION as DEFAULT_SPRING_CONFIG } from '../../constants/springs';
 
 export default class SiblingTransition extends Component {
   static propTypes = {
