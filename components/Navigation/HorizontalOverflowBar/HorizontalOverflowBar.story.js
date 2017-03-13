@@ -2,11 +2,11 @@ import React from 'react';
 import { storiesOf } from '@kadira/storybook';
 import { applyContainerQuery } from 'react-container-query';
 
-import ScrollableNavBar from './ScrollableNavBar';
-import navcss from './ScrollableNavBar.css';
+import HorizontalOverflowBar from './HorizontalOverflowBar';
+import navcss from './HorizontalOverflowBar.css';
 
 
-const CenteredProgressSteps = applyContainerQuery(ScrollableNavBar, {
+const CenteredProgressSteps = applyContainerQuery(HorizontalOverflowBar, {
   [navcss.centered]: {
     minWidth: 750,
   },
@@ -31,19 +31,19 @@ const links = [{
   active: false,
 }];
 
-storiesOf('ScrollableNavBar', module)
-  .add('ScrollableNavBar', () => (
+storiesOf('HorizontalOverflowBar', module)
+  .add('HorizontalOverflowBar', () => (
     <div>
-      <ScrollableNavBar>
+      <HorizontalOverflowBar>
         { linkComponent => links.map(link =>
           linkComponent({
             key: link.href,
             ...link,
           })
         ) }
-      </ScrollableNavBar>
+      </HorizontalOverflowBar>
     </div>
-  )).add('CenteredScrollableNavBar', () => (
+  )).add('CenteredHorizontalOverflowBar', () => (
     <div>
       <CenteredProgressSteps>
         { linkComponent => links.map(link =>

@@ -3,10 +3,10 @@ import cx from 'classnames';
 import throttle from 'lodash/fp/throttle';
 import { canUseDOM } from 'exenv';
 
-import m from '../../globals/modifiers.css';
-import css from './ScrollableNavBar.css';
+import m from '../../../globals/modifiers.css';
+import css from './HorizontalOverflowBar.css';
 
-export default class ScrollableNavBar extends Component {
+export default class HorizontalOverflowBar extends Component {
   static propTypes = {
     children: PropTypes.func.isRequired,
     threshold: PropTypes.number,
