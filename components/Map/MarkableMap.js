@@ -10,7 +10,7 @@ import uniqueId from 'lodash/fp/uniqueId';
 import differenceBy from 'lodash/fp/differenceBy';
 import cx from 'classnames';
 
-import minLngLatBounds from '../../utils/minLngLatBounds/minLngLatBounds';
+import minLngLatBounds from '../../utils/geoUtils/minLngLatBounds';
 import mapboxgl from '../../utils/mapboxgl/mapboxgl';
 import InteractiveMarker from './InteractiveMarker';
 import BaseMap from './BaseMap';

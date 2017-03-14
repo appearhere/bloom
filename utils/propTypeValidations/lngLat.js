@@ -5,6 +5,8 @@ export const isLngLat = val => isArray(val) && filterNaNs(val).length === 2;
 
 export default (props, propName, componentName) => {
   const val = props[propName];
+  if (typeof val === 'undefined') return null;
+
   const msg = `${propName} in ${componentName} should be array containing a longitude and latitude`;
 
   if (!isLngLat(val)) throw new Error(msg);

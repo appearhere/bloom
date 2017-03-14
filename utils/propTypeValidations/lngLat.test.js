@@ -7,6 +7,10 @@ it('accepts valid lngLat', () => {
   expect(call(lngLat, ['-10', '3.22'])).toEqual(null);
 });
 
+it('allows undefined values', () => {
+  expect(call(lngLat, undefined)).toEqual(null);
+});
+
 it('raises given something that is not an array', () => {
   expect(() => call(lngLat, 'a')).toThrow();
   expect(() => call(lngLat, '[0, 0]')).toThrow();
