@@ -80,7 +80,11 @@ export default class BaseMap extends Component {
     const userAction = user !== false;
     onMoveEnd(
       userAction,
-      { bounds: this.map.getBounds().toArray(), zoom: this.map.getZoom() },
+      {
+        bounds: this.map.getBounds().toArray(),
+        center: this.map.getCenter().toArray(),
+        zoom: this.map.getZoom(),
+      },
       rest,
     );
   };
