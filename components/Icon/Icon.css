@@ -21,7 +21,6 @@
 .notification svg,
 .percentage svg,
 .play svg,
-.play svg,
 .play-c svg,
 .search svg,
 .shield svg,
@@ -46,7 +45,8 @@
 .chevron svg,
 .facebook svg,
 .twitter svg,
-.pintrest svg {
+.pintrest svg,
+.filter svg {
   stroke: transparent;
   fill: currentColor;
   stroke-linecap: round;

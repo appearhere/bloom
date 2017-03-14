@@ -1,0 +1,91 @@
+.root {
+  border-radius: 100%;
+  width: 2.875rem;
+  height: 2.875rem;
+  text-decoration: none;
+  transition-timing-function: cubic-bezier(0,1,.75,1);
+  transition: background-color 300ms, color 300ms, border-color 300ms;
+  -webkit-font-smoothing: antialiased;
+  background-color: var(--color-greyDarker);
+  border-color: var(--color-greyDarker);
+  border-style: solid;
+  border-width: 1px;
+  color: var(--color-white);
+  composes: fontRegular from '../../globals/typography.css';
+  font-weight: var(--fontweight-demi);
+  cursor: pointer;
+  display: inline-block;
+  line-height: 1;
+  box-shadow: 0 1px 5px 0 var(--color-transparent-black-iv);
+  padding: 0;
+}
+
+.root svg {
+  transition-timing-function: cubic-bezier(0,1,.75,1);
+  transition: transform 300ms;
+}
+
+.root:hover svg {
+  transform: scale(1.15)
+}
+
+.root:focus,
+.root:hover {
+  background-color: var(--color-greyDark);
+  border-color: var(--color-greyDark);
+  color: var(--color-white);
+}
+
+.root:active {
+  box-shadow: 0 1px 5px 0 var(--color-transparent-black-iv), inset 0 0 2px var(--color-transparent-black-iv);
+}
+
+.primary {
+  background-color: var(--color-primary);
+  color: var(--color-white);
+  border-color: var(--color-primary);
+}
+
+.primary:focus,
+.primary:hover {
+  background-color: var(--color-primary--light);
+  border-color: var(--color-primary--light);
+}
+
+.action {
+  background-color: var(--color-action);
+  color: var(--color-white);
+  border-color: var(--color-action);
+}
+
+.action:focus,
+.action:hover {
+  background-color: var(--color-action--light);
+  color: var(--color-white);
+  border-color: var(--color-action--light);
+}
+
+.danger {
+  background-color: var(--color-danger);
+  color: var(--color-white);
+  border-color: var(--color-danger);
+}
+
+.danger:focus,
+.danger:hover {
+  background-color: var(--color-danger--light);
+  border-color: var(--color-danger--light);
+}
+
+.whiteout {
+  background-color: var(--color-white);
+  border-color: var(--color-greyLighter);
+  color: var(--color-greyDarker);
+}
+
+.whiteout:focus,
+.whiteout:hover {
+  background-color: var(--color-white);
+  border-color: var(--color-greyLight);
+  color: var(--color-greyDarkest);
+}
