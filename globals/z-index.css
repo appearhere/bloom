@@ -24,4 +24,7 @@
   --z-floatingActionBtn: var(--z-6);
   --z-stickyNode: var(--z-5);
   --z-tooltip: var(--z-3);
+  --z-mapCanvas: var(--z-1);
+  --z-mapMarker: var(--z-2);
+  --z-mapControls: var(--z-3);
 }

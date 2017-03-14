@@ -3,18 +3,42 @@
 }
 
 .map {
+  composes: fontSmallIi from '../../globals/typography.css';
   overflow: hidden;
   position: relative;
-  -webkit-tap-highlight-color: rgba(0,0,0,0);
-  composes: fontSmallIi from '../../globals/typography.css';
+  -webkit-tap-highlight-color: rgba(0, 0, 0 , 0);
 }
 
-.map :global(.mapboxgl-ctrl-bottom-right) { position:absolute; pointer-events:none; z-index:2; }
-.map :global(.mapboxgl-ctrl-bottom-right) { right:0; bottom:0; }
+.map :global(.mapboxgl-canvas-container) {
+  z-index: var(--z-mapCanvas);
+  position: absolute;
+}
 
-.map :global(.mapboxgl-ctrl) { clear:both; pointer-events:auto }
-.map :global(.mapboxgl-ctrl-bottom-right .mapboxgl-ctrl) { margin:0 10px 10px 0; float:right; }
+.map :global(.mapboxgl-marker-container) {
+  z-index: var(--z-mapMarker);
+  position: absolute;
+}
 
+/* controls */
+.map :global(.mapboxgl-ctrl-bottom-right) {
+  position: absolute;
+  pointer-events: none;
+  z-index: var(--z-mapControls);
+}
+.map :global(.mapboxgl-ctrl-bottom-right) {
+  right: 0;
+  bottom: 0;
+}
+.map :global(.mapboxgl-ctrl) {
+  clear: both;
+  pointer-events: auto
+}
+.map :global(.mapboxgl-ctrl-bottom-right .mapboxgl-ctrl) {
+  margin: 0 10px 10px 0;
+  float: right;
+}
+
+/* attribution */
 .map :global(.mapboxgl-ctrl.mapboxgl-ctrl-attrib) {
   padding: 0 5px;
   background-color: rgba(255, 255, 255, .5);
@@ -25,7 +49,7 @@
   text-decoration: none;
 }
 .map :global(.mapboxgl-ctrl-attrib a):hover {
-    color: inherit;
+  color: inherit;
 }
 .map :global(.mapboxgl-ctrl-attrib .mapbox-improve-map) {
   font-weight: bold;
