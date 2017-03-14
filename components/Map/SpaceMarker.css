@@ -9,6 +9,11 @@
   composes: fontSmallI from '../../globals/typography.css';
 }
 
+.root:hover,
+.root:focus {
+  background-color: var(--color-black);
+}
+
 .root:before {
   content: '';
   border: 6px solid;
