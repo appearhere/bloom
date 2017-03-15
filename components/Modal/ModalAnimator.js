@@ -3,26 +3,14 @@ import cx from 'classnames';
 import { TransitionMotion, spring } from 'react-motion';
 import uniqueId from 'lodash/fp/uniqueId';
 import Portal from 'react-portal';
-import { canUseDOM } from 'exenv';
 import { ESC } from '../../constants/keycodes';
 import noop from '../../utils/noop';
+import BodyClassNameConductor from '../../utils/BodyClassNameConductor/BodyClassNameConductor';
 
 import css from './ModalAnimator.css';
 
 const DEFAULT_WINDOW_SPRING_CONFIG = { stiffness: 200, damping: 22 };
 const DEFAULT_OVERLAY_SPRING_CONFIG = { stiffness: 500, damping: 18 };
-
-const toggleBodyClass = (add, className) => {
-  if (!canUseDOM) return;
-
-  const body = document.querySelector('body');
-
-  if (add && !body.classList.contains(className)) {
-    body.classList.add(className);
-  } else if (!add && body.classList.contains(className)) {
-    body.classList.remove(className);
-  }
-};
 
 export default class ModalAnimator extends Component {
   static propTypes = {
@@ -56,11 +44,12 @@ export default class ModalAnimator extends Component {
   constructor(props) {
     super(props);
     this.id = props.id || uniqueId('modal');
+    this.bodyClassName = new BodyClassNameConductor(this.id);
   }
 
   componentDidMount() {
     const { active } = this.props;
-    toggleBodyClass(active, css.documentBody);
+    if (active) this.bodyClassName.add('noScroll');
     this.keyupEvent = window.addEventListener('keyup', this.handleKeyUp);
   }
 
@@ -69,12 +58,12 @@ export default class ModalAnimator extends Component {
     const { active: oldActive } = this.props;
 
     if (newActive !== oldActive) {
-      toggleBodyClass(newActive, css.documentBody);
+      this.bodyClassName.toggle('noScroll');
     }
   }
 
   componentWillUnmount() {
-    toggleBodyClass(false, css.documentBody);
+    this.bodyClassName.remove('noScroll');
     window.removeEventListener('keyup', this.keyupEvent);
   }
 
