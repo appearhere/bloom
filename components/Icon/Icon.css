@@ -42,11 +42,13 @@
 
 /* Fills */
 
+.card-list svg,
 .chevron svg,
 .facebook svg,
-.twitter svg,
+.filter svg,
+.map svg,
 .pintrest svg,
-.filter svg {
+.twitter svg {
   stroke: transparent;
   fill: currentColor;
   stroke-linecap: round;

@@ -9,6 +9,7 @@ import bogroll from './icons/icon-bogroll.svg';
 import book from './icons/icon-book.svg';
 import calendar from './icons/icon-calendar.svg';
 import calendarInsight from './icons/icon-calendar-insight.svg';
+import cardList from './icons/icon-card-list.svg';
 import camera from './icons/icon-camera.svg';
 import chartArrow from './icons/icon-chart-arrow.svg';
 import chatting from './icons/icon-chatting.svg';
@@ -23,6 +24,7 @@ import filter from './icons/icon-filter.svg';
 import globe from './icons/icon-globe.svg';
 import location from './icons/icon-location.svg';
 import manage from './icons/icon-manage.svg';
+import map from './icons/icon-map.svg';
 import notification from './icons/icon-notification.svg';
 import percentage from './icons/icon-percentage.svg';
 import pintrest from './icons/icon-pintrest.svg';
@@ -52,6 +54,7 @@ export default {
   'tick-starred': svgClean(tickStarred),
   'travel-idea': svgClean(travelIdea),
   'vip-entrance': svgClean(vipEntrance),
+  'card-list': svgClean(cardList),
   account: svgClean(account),
   appearhere: svgClean(appearhere),
   arrow: svgClean(arrow),
@@ -71,6 +74,7 @@ export default {
   globe: svgClean(globe),
   location: svgClean(location),
   manage: svgClean(manage),
+  map: svgClean(map),
   notification: svgClean(notification),
   percentage: svgClean(percentage),
   pintrest: svgClean(pintrest),
