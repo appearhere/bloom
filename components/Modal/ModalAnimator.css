@@ -3,7 +3,7 @@
 }
 
 .root {
-  position: absolute;
+  position: fixed;
   height: 100%;
   width: 100%;
   top: 0;
@@ -17,7 +17,7 @@
 }
 
 .overlay {
-  position: absolute;
+  position: fixed;
   width: 100%;
   height: 100%;
   background-color: var(--overlay-default);
@@ -31,7 +31,7 @@
 }
 
 .wrapper {
-  position: absolute;
+  position: fixed;
   height: 100%;
   width: 100%;
   will-change: transform;
@@ -39,7 +39,7 @@
 }
 
 .window {
-  position: absolute;
+  position: fixed;
   left: 50%;
   bottom: 0;
   width: 100%;
