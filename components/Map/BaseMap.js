@@ -9,29 +9,43 @@ import { LONDON } from '../../constants/coordinates';
 
 import css from './BaseMap.css';
 
+import mapStyle from './mapStyle.json';
+
 export default class BaseMap extends Component {
   static propTypes = {
     allowWrap: PropTypes.bool,
     center: lngLat,
     className: PropTypes.string,
-    mapboxStyle: PropTypes.string,
+    mapboxStyle: React.PropTypes.oneOfType([
+      PropTypes.string,
+      PropTypes.object,
+    ]),
     mapClassName: PropTypes.string,
     zoom: PropTypes.number,
     onClick: PropTypes.func,
+    onMapLoad: PropTypes.func,
     onMoveEnd: PropTypes.func,
   };
 
   static defaultProps = {
-    allowWrap: false,
+    allowWrap: true,
     center: LONDON,
-    mapboxStyle: 'mapbox://styles/mapbox/streets-v9?optimize=true',
+    mapboxStyle: mapStyle,
     zoom: 11,
     onClick: noop,
+    onMapLoad: noop,
     onMoveEnd: noop,
   };
 
   componentDidMount() {
-    const { allowWrap, center, mapboxStyle, zoom, onClick } = this.props;
+    const {
+      allowWrap,
+      center,
+      mapboxStyle,
+      zoom,
+      onClick,
+      onMapLoad,
+    } = this.props;
 
     this.map = new mapboxgl.Map({
       container: this.mapContainer,
@@ -43,6 +57,7 @@ export default class BaseMap extends Component {
 
     this.map.on('click', onClick);
     this.map.on('moveend', this.handleMoveEnd);
+    this.map.on('load', (event) => { onMapLoad(event.target); });
   }
 
   componentWillReceiveProps(nextProps) {
