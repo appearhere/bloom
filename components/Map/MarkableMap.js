@@ -83,14 +83,23 @@ export default class MarkableMap extends Component {
         features: [],
       },
       cluster: true,
-      clusterRadius: 10,
+      clusterRadius: 60,
+      clusterMaxZoom: 13,
     });
+    this.mapboxMarkerSource = mapbox.getSource('markers');
+
     mapbox.addLayer({
       id: 'markers',
       type: 'symbol',
       source: 'markers',
-      filter: ['!=', 'active', true],
+      filter: [
+        'all',
+        ['!=', 'active', true],
+        ['!has', 'point_count'],
+      ],
       layout: {
+        'icon-allow-overlap': true,
+        'text-allow-overlap': true,
         'icon-image': 'pin-{labellen}',
         'text-field': '{label}',
         'text-font': ['Open Sans Semibold', 'Arial Unicode MS Bold'],
@@ -103,7 +112,21 @@ export default class MarkableMap extends Component {
         'text-color': '#FFFFFF',
       },
     });
-    this.mapboxMarkerSource = mapbox.getSource('markers');
+    mapbox.addLayer({
+      id: 'marker-cluster',
+      type: 'symbol',
+      source: 'markers',
+      filter: ['has', 'point_count'],
+      layout: {
+        'icon-image': 'pin-cluster',
+        'text-field': '{point_count}',
+        'text-font': ['Open Sans Semibold', 'Arial Unicode MS Bold'],
+        'text-size': 14,
+      },
+      paint: {
+        'text-color': '#FFFFFF',
+      },
+    });
 
     // When hovering on a marker change the cursor to a pointer
     mapbox.on('mousemove', (e) => {
