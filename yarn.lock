@@ -10,9 +10,9 @@
     kw-react-tween-state "^0.1.5"
     object-assign "^4.1.0"
 
-"@appearhere/react-input-range@^1.0.0":
-  version "1.0.0"
-  resolved "https://registry.yarnpkg.com/@appearhere/react-input-range/-/react-input-range-1.0.0.tgz#c4cf748211de55e9602053e414e63744315b612c"
+"@appearhere/react-input-range@^1.1.0":
+  version "1.1.0"
+  resolved "https://registry.yarnpkg.com/@appearhere/react-input-range/-/react-input-range-1.1.0.tgz#251ec7589742cd238ce645fd48ffd116a6306774"
 
 "@kadira/react-split-pane@^1.4.0":
   version "1.4.7"
