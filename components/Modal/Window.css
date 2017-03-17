@@ -14,6 +14,6 @@
   border-top-left-radius: 4px;
   overflow-y: scroll;
   max-height: 100vh;
-  padding: var(--size-medium);
+  padding: var(--size-large);
   clear: both;
 }
