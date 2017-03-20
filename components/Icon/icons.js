@@ -30,6 +30,7 @@ import percentage from './icons/icon-percentage.svg';
 import pintrest from './icons/icon-pintrest.svg';
 import play from './icons/icon-play.svg';
 import playC from './icons/icon-play-c.svg';
+import radio from './icons/icon-radio.svg';
 import search from './icons/icon-search.svg';
 import shield from './icons/icon-shield.svg';
 import signature from './icons/icon-signature.svg';
@@ -79,6 +80,7 @@ export default {
   percentage: svgClean(percentage),
   pintrest: svgClean(pintrest),
   play: svgClean(play),
+  radio: svgClean(radio),
   search: svgClean(search),
   shield: svgClean(shield),
   signature: svgClean(signature),

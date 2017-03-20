@@ -1,0 +1,14 @@
+.root + .root {
+  border-top: 0;
+  padding-top: 0;
+}
+
+.label {
+  display: block;
+  font-family: var(--font-avenir);
+  font-size: var(--fontsize-regular);
+  line-height: var(--lineheight-regular);
+  letter-spacing: var(--letter-spacing-regular);
+  font-weight: var(--fontweight-demi);
+  text-transform: none;
+}
