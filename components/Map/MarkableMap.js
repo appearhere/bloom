@@ -39,9 +39,9 @@ export default class MarkableMap extends Component {
   };
 
   componentDidMount() {
-    const { autoFit } = this.props;
+    const { autoFit, markers } = this.props;
     this.updateMapboxMarkerSource();
-    if (autoFit) this.fitMarkers();
+    if (autoFit) this.fitMarkers(markers);
   }
 
   componentDidUpdate(prevProps) {
@@ -63,7 +63,7 @@ export default class MarkableMap extends Component {
         return !prevMarker || !isEqual(prevMarker.lngLat, marker.lngLat);
       });
       const markerChange = prevMarkers.length !== markers.length || markersMoved;
-      if (markerChange) this.fitMarkers();
+      if (markerChange) this.fitMarkers(markers);
     }
   }
 
@@ -130,7 +130,9 @@ export default class MarkableMap extends Component {
 
     // When hovering on a marker change the cursor to a pointer
     mapbox.on('mousemove', (e) => {
-      const features = mapbox.queryRenderedFeatures(e.point, { layers: ['markers'] });
+      const features = mapbox.queryRenderedFeatures(e.point, {
+        layers: ['markers', 'marker-cluster'],
+      });
       mapbox.getCanvas().style.cursor = features.length ? 'pointer' : '';
     });
 
@@ -162,19 +164,28 @@ export default class MarkableMap extends Component {
   handleMapClick = (e) => {
     const { originalEvent, point } = e;
     if (originalEvent.target !== this.getMaboxGL().getCanvas()) return;
-    const markers = this.getMaboxGL().queryRenderedFeatures(point, { layers: ['markers'] });
+    const features = this.getMaboxGL().queryRenderedFeatures(point, { layers: ['markers'] });
 
-    if (markers.length) {
-      const marker = markers[0];
+    if (features.length > 0) {
+      const marker = features[0];
       this.moveToMarker(marker);
       this.setState({ activeMarkerId: marker.properties.id });
     } else {
+      const clusters = this.getMaboxGL().queryRenderedFeatures(point, {
+        layers: ['marker-cluster'],
+      });
       this.setState({ activeMarkerId: null });
+
+      if (clusters.length > 0) {
+        const { markers } = this.props;
+        const clusterMarkerIds = JSON.parse(clusters[0].properties.markerids);
+        const clusterMarkers = markers.filter(marker => clusterMarkerIds.indexOf(marker.id) !== -1);
+        this.fitMarkers(clusterMarkers);
+      }
     }
   };
 
-  fitMarkers = () => {
-    const { markers } = this.props;
+  fitMarkers = (markers) => {
     if (!markers.length) return;
 
     this.map.fitBounds(
