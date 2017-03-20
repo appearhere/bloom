@@ -190,7 +190,7 @@ export default class MarkableMap extends Component {
 
     this.map.fitBounds(
       minLngLatBounds(markers.map(marker => marker.lngLat)),
-      { padding: 20, offset: [0, 20], maxZoom: 16 },
+      { padding: { top: 20, bottom: 20, left: 50, right: 50 }, offset: [0, 20], maxZoom: 16 },
     );
   };
 
