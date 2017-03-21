@@ -21,6 +21,7 @@
   --z-9: 90;
 
   /* Aliases */
+  --z-modal: var(--z-9);
   --z-floatingActionBtn: var(--z-6);
   --z-stickyNode: var(--z-5);
   --z-tooltip: var(--z-3);
