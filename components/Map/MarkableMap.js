@@ -9,17 +9,36 @@ import isEqual from 'lodash/fp/isEqual';
 import uniqueId from 'lodash/fp/uniqueId';
 import cx from 'classnames';
 
+import lngLat from '../../utils/propTypeValidations/lngLat';
 import minLngLatBounds from '../../utils/geoUtils/minLngLatBounds';
 import mapboxgl from '../../utils/mapboxgl/mapboxgl';
 import MarkerContainer from './MarkerContainer';
 import BaseMap from './BaseMap';
 
+import {
+  CLUSTER_RADIUS,
+  CLUSTER_MAX_ZOOM,
+  MARKER_SOURCE,
+  MARKER_LAYER,
+  CLUSTER_LAYER,
+  MOVE_TO_MARKER_MAX_LAT_OFFSET,
+} from '../../constants/mapbox';
+
 import css from './MarkableMap.css';
 
 export default class MarkableMap extends Component {
   static propTypes = {
-    // TODO: shapeOf prop type
-    markers: PropTypes.array,
+    markers: PropTypes.arrayOf(
+      PropTypes.shape({
+        id: React.PropTypes.oneOfType([
+          PropTypes.string,
+          PropTypes.number,
+        ]).isRequired,
+        lngLat: lngLat.isRequired,
+        label: PropTypes.string.isRequired,
+        props: PropTypes.object,
+      })
+    ),
     MarkerComponent: PropTypes.func.isRequired,
     autoFit: PropTypes.bool,
   };
@@ -39,9 +58,9 @@ export default class MarkableMap extends Component {
   };
 
   componentDidMount() {
-    const { autoFit } = this.props;
+    const { autoFit, markers } = this.props;
     this.updateMapboxMarkerSource();
-    if (autoFit) this.fitMarkers();
+    if (autoFit) this.fitMarkers(markers);
   }
 
   componentDidUpdate(prevProps) {
@@ -63,7 +82,7 @@ export default class MarkableMap extends Component {
         return !prevMarker || !isEqual(prevMarker.lngLat, marker.lngLat);
       });
       const markerChange = prevMarkers.length !== markers.length || markersMoved;
-      if (markerChange) this.fitMarkers();
+      if (markerChange) this.fitMarkers(markers);
     }
   }
 
@@ -76,21 +95,30 @@ export default class MarkableMap extends Component {
   handleMapLoad = () => {
     const mapbox = this.getMaboxGL();
 
-    mapbox.addSource('markers', {
+    mapbox.addSource(MARKER_SOURCE, {
       type: 'geojson',
       data: {
         type: 'FeatureCollection',
         features: [],
       },
       cluster: true,
-      clusterRadius: 10,
+      clusterRadius: CLUSTER_RADIUS,
+      clusterMaxZoom: CLUSTER_MAX_ZOOM,
     });
+    this.mapboxMarkerSource = mapbox.getSource(MARKER_SOURCE);
+
     mapbox.addLayer({
-      id: 'markers',
+      id: MARKER_LAYER,
       type: 'symbol',
-      source: 'markers',
-      filter: ['!=', 'active', true],
+      source: MARKER_SOURCE,
+      filter: [
+        'all',
+        ['!=', 'active', true],
+        ['!has', 'point_count'],
+      ],
       layout: {
+        'icon-allow-overlap': true,
+        'text-allow-overlap': true,
         'icon-image': 'pin-{labellen}',
         'text-field': '{label}',
         'text-font': ['Open Sans Semibold', 'Arial Unicode MS Bold'],
@@ -103,11 +131,27 @@ export default class MarkableMap extends Component {
         'text-color': '#FFFFFF',
       },
     });
-    this.mapboxMarkerSource = mapbox.getSource('markers');
+    mapbox.addLayer({
+      id: CLUSTER_LAYER,
+      type: 'symbol',
+      source: MARKER_SOURCE,
+      filter: ['has', 'point_count'],
+      layout: {
+        'icon-image': 'pin-cluster',
+        'text-field': '{point_count}',
+        'text-font': ['Open Sans Semibold', 'Arial Unicode MS Bold'],
+        'text-size': 14,
+      },
+      paint: {
+        'text-color': '#FFFFFF',
+      },
+    });
 
     // When hovering on a marker change the cursor to a pointer
     mapbox.on('mousemove', (e) => {
-      const features = mapbox.queryRenderedFeatures(e.point, { layers: ['markers'] });
+      const features = mapbox.queryRenderedFeatures(e.point, {
+        layers: [MARKER_LAYER, CLUSTER_LAYER],
+      });
       mapbox.getCanvas().style.cursor = features.length ? 'pointer' : '';
     });
 
@@ -139,24 +183,33 @@ export default class MarkableMap extends Component {
   handleMapClick = (e) => {
     const { originalEvent, point } = e;
     if (originalEvent.target !== this.getMaboxGL().getCanvas()) return;
-    const markers = this.getMaboxGL().queryRenderedFeatures(point, { layers: ['markers'] });
+    const features = this.getMaboxGL().queryRenderedFeatures(point, { layers: [MARKER_LAYER] });
 
-    if (markers.length) {
-      const marker = markers[0];
+    if (features.length > 0) {
+      const marker = features[0];
       this.moveToMarker(marker);
       this.setState({ activeMarkerId: marker.properties.id });
     } else {
+      const clusters = this.getMaboxGL().queryRenderedFeatures(point, {
+        layers: [CLUSTER_LAYER],
+      });
       this.setState({ activeMarkerId: null });
+
+      if (clusters.length > 0) {
+        const { markers } = this.props;
+        const clusterMarkerIds = JSON.parse(clusters[0].properties.markerids);
+        const clusterMarkers = markers.filter(marker => clusterMarkerIds.indexOf(marker.id) !== -1);
+        this.fitMarkers(clusterMarkers);
+      }
     }
   };
 
-  fitMarkers = () => {
-    const { markers } = this.props;
+  fitMarkers = (markers) => {
     if (!markers.length) return;
 
     this.map.fitBounds(
       minLngLatBounds(markers.map(marker => marker.lngLat)),
-      { padding: 20, offset: [0, 20], maxZoom: 16 },
+      { padding: { top: 20, bottom: 20, left: 50, right: 50 }, offset: [0, 20], maxZoom: 16 },
     );
   };
 
@@ -165,7 +218,7 @@ export default class MarkableMap extends Component {
     const [markerLng, markerLat] = geometry.coordinates;
     const zoom = this.getMaboxGL().getZoom();
 
-    const nextLat = markerLat + (80 / Math.pow(2, zoom));
+    const nextLat = markerLat + ((MOVE_TO_MARKER_MAX_LAT_OFFSET * 2) / Math.pow(2, zoom));
     const nextCenter = new mapboxgl.LngLat(markerLng, nextLat).wrap();
 
     this.map.easeTo({ center: nextCenter });
