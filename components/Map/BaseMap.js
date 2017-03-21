@@ -6,10 +6,9 @@ import mapboxgl from '../../utils/mapboxgl/mapboxgl';
 import lngLat from '../../utils/propTypeValidations/lngLat';
 import noop from '../../utils/noop';
 
-import { LONDON } from '../../constants/coordinates';
+import { DEFAULT_CENTER, DEFAULT_ZOOM } from '../../constants/mapbox';
 
 import css from './BaseMap.css';
-
 
 export default class BaseMap extends Component {
   static propTypes = {
@@ -29,9 +28,9 @@ export default class BaseMap extends Component {
 
   static defaultProps = {
     allowWrap: true,
-    center: LONDON,
+    center: DEFAULT_CENTER,
     mapboxStyle: mapStyle,
-    zoom: 11,
+    zoom: DEFAULT_ZOOM,
     onClick: noop,
     onMapLoad: noop,
     onMoveEnd: noop,
