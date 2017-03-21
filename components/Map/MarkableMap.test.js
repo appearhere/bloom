@@ -30,7 +30,7 @@ it('it renders the active marker correctly', () => {
     <MarkableMap
       ref={ (c) => { component = c; } }
       MarkerComponent={ SpaceMarker }
-      markers={ [{ id: 1, lngLat: [1, 0] }] }
+      markers={ [{ id: 1, lngLat: [1, 0], label: 'test' }] }
     />,
     div
   );
@@ -54,7 +54,7 @@ it('it autosizes the map correctly', () => {
   ReactDOM.render(
     <MarkableMap
       MarkerComponent={ SpaceMarker }
-      markers={ [{ id: 1, lngLat: [1, 0] }] }
+      markers={ [{ id: 1, lngLat: [1, 0], label: 'test' }] }
       autoFit
     />,
     div
@@ -68,8 +68,8 @@ it('it autosizes the map correctly', () => {
     <MarkableMap
       MarkerComponent={ SpaceMarker }
       markers={ [
-        { id: 1, lngLat: [0, 0] },
-        { id: 2, lngLat: [1, 1] },
+        { id: 1, lngLat: [0, 0], label: 'test' },
+        { id: 2, lngLat: [1, 1], label: 'test' },
       ] }
       autoFit
     />,
@@ -87,8 +87,8 @@ it('it autosizes the map correctly', () => {
     <MarkableMap
       MarkerComponent={ SpaceMarker }
       markers={ [
-        { id: 1, lngLat: [0, 0] },
-        { id: 2, lngLat: [1, 1] },
+        { id: 1, lngLat: [0, 0], label: 'test' },
+        { id: 2, lngLat: [1, 1], label: 'test' },
       ] }
       autoFit
     />,
@@ -106,7 +106,7 @@ it('unmounts without crashing', () => {
   ReactDOM.render(
     <MarkableMap
       MarkerComponent={ SpaceMarker }
-      markers={ [{ id: 1, lngLat: [1, 0] }] }
+      markers={ [{ id: 1, lngLat: [1, 0], label: 'test' }] }
     />,
     div
   );

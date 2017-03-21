@@ -9,6 +9,7 @@ import isEqual from 'lodash/fp/isEqual';
 import uniqueId from 'lodash/fp/uniqueId';
 import cx from 'classnames';
 
+import lngLat from '../../utils/propTypeValidations/lngLat';
 import minLngLatBounds from '../../utils/geoUtils/minLngLatBounds';
 import mapboxgl from '../../utils/mapboxgl/mapboxgl';
 import MarkerContainer from './MarkerContainer';
@@ -27,8 +28,17 @@ import css from './MarkableMap.css';
 
 export default class MarkableMap extends Component {
   static propTypes = {
-    // TODO: shapeOf prop type
-    markers: PropTypes.array,
+    markers: PropTypes.arrayOf(
+      PropTypes.shape({
+        id: React.PropTypes.oneOfType([
+          PropTypes.string,
+          PropTypes.number,
+        ]).isRequired,
+        lngLat: lngLat.isRequired,
+        label: PropTypes.string.isRequired,
+        props: PropTypes.object,
+      })
+    ),
     MarkerComponent: PropTypes.func.isRequired,
     autoFit: PropTypes.bool,
   };
