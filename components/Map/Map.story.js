@@ -5,6 +5,10 @@ import MarkableMap from './MarkableMap';
 import BaseMap from './BaseMap';
 import Marker from './SpaceMarker';
 
+const prices = ['£1', '£33', '£420', '£1,000', '£20,000', '£999,999', '1 €', '20 €', '440 €',
+  '4.040 €', '40.040 €', '120.040 €'];
+
+
 const generateMarkers = (number = 1) => {
   const markers = [];
 
@@ -12,11 +16,14 @@ const generateMarkers = (number = 1) => {
     const lng = -0.09 + ((Math.random() - Math.random()) * Math.random());
     const lat = 51.505 + ((Math.random() - Math.random()) * Math.random());
 
+    const price = prices[Math.floor(Math.random() * prices.length)];
+
     markers.push({
       id: i,
       lngLat: [lng, lat],
+      label: price,
       props: {
-        price: '£322',
+        price,
         priceUnit: '/day',
         location: 'Shoreditch',
         city: 'London',

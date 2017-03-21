@@ -21,24 +21,31 @@ it('renders without crashing', () => {
   ReactDOM.render(<MarkableMap MarkerComponent={ SpaceMarker } />, div);
 });
 
-it('it renders markers correctly', () => {
+it('it renders the active marker correctly', () => {
+  let component;
   markerSpy.calls.reset();
 
   const div = document.createElement('div');
   ReactDOM.render(
-    <MarkableMap MarkerComponent={ SpaceMarker } markers={ [{ id: 1, lngLat: [1, 0] }] } />,
+    <MarkableMap
+      ref={ (c) => { component = c; } }
+      MarkerComponent={ SpaceMarker }
+      markers={ [{ id: 1, lngLat: [1, 0] }] }
+    />,
     div
   );
 
-  const constructorCalls = labeledCalls(markerSpy, 'constructor');
-  expect(constructorCalls.length).toEqual(1);
+  component.setState({ activeMarkerId: 1 }, () => {
+    const constructorCalls = labeledCalls(markerSpy, 'constructor');
+    expect(constructorCalls.length).toEqual(1);
 
-  const setLngLatCalls = labeledCalls(markerSpy, 'setLngLat');
-  expect(setLngLatCalls.length).toEqual(1);
-  expect(setLngLatCalls[0].args[1]).toEqual([1, 0]);
+    const setLngLatCalls = labeledCalls(markerSpy, 'setLngLat');
+    expect(setLngLatCalls.length).toEqual(1);
+    expect(setLngLatCalls[0].args[1]).toEqual([1, 0]);
 
-  const addToCalls = labeledCalls(markerSpy, 'addTo');
-  expect(addToCalls.length).toEqual(1);
+    const addToCalls = labeledCalls(markerSpy, 'addTo');
+    expect(addToCalls.length).toEqual(1);
+  });
 });
 
 it('it autosizes the map correctly', () => {
@@ -90,30 +97,6 @@ it('it autosizes the map correctly', () => {
 
   fitBoundsCalls = labeledCalls(mapSpy, 'fitBounds');
   expect(fitBoundsCalls.length).toEqual(0);
-});
-
-it('it correctly removes markers', () => {
-  markerSpy.calls.reset();
-
-  const div = document.createElement('div');
-  ReactDOM.render(
-    <MarkableMap
-      MarkerComponent={ SpaceMarker }
-      markers={ [{ id: 1, lngLat: [1, 0] }] }
-    />,
-    div
-  );
-
-  ReactDOM.render(
-    <MarkableMap
-      MarkerComponent={ SpaceMarker }
-      markers={ [] }
-    />,
-    div
-  );
-
-  const removeCalls = labeledCalls(markerSpy, 'remove');
-  expect(removeCalls.length).toEqual(1);
 });
 
 it('unmounts without crashing', () => {

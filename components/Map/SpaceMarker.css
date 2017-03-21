@@ -1,17 +1,14 @@
 .root {
-  background-color: var(--color-black);
-  color: var(--color-white);
-  border: 1px solid var(--color-black);
-  padding: 0.3rem 0.6rem;
+  width: 15rem;
+  background-color: var(--color-white);
+  color: var(--color-greyDarker);
+  border: none;
+  padding: 0;
   border-radius: 4px;
   position: relative;
   margin-bottom: 6px;
+  box-shadow: 0 2px 14px 0 rgba(0, 0, 0, 0.4);
   composes: fontSmallI from '../../globals/typography.css';
-}
-
-.root:hover,
-.root:focus {
-  background-color: var(--color-black);
 }
 
 .root:before {
@@ -21,31 +18,11 @@
   height: 0;
   position: absolute;
   z-index: var(--z-tooltip);
-  border-color: var(--color-black);
+  border-color: var(--color-white);
   border-left-color: transparent;
   border-right-color: transparent;
   border-bottom-color: transparent;
   left: 50%;
   transform: translateX(-50%);
-  bottom: -12px;
-}
-
-.active:before {
-  border-color: var(--color-white);
-  border-left-color: transparent;
-  border-right-color: transparent;
-  border-bottom-color: transparent;
-}
-
-.body {
-  border: none;
-}
-
-.active {
-  width: 15rem;
-  background-color: var(--color-white);
-  color: var(--color-greyDarker);
-  border: none;
-  padding: 0;
-  box-shadow: 0 2px 14px 0 rgba(0, 0, 0, 0.4);
+  bottom: -11px;
 }
