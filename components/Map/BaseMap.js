@@ -1,6 +1,7 @@
 import React, { Component, PropTypes } from 'react';
 import cx from 'classnames';
 
+import mapStyle from '!!file!./mapStyle.json';
 import mapboxgl from '../../utils/mapboxgl/mapboxgl';
 import lngLat from '../../utils/propTypeValidations/lngLat';
 import noop from '../../utils/noop';
@@ -9,7 +10,6 @@ import { LONDON } from '../../constants/coordinates';
 
 import css from './BaseMap.css';
 
-import mapStyle from './mapStyle.json';
 
 export default class BaseMap extends Component {
   static propTypes = {
