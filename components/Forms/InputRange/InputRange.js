@@ -11,6 +11,7 @@ export const defaultClassNames = {
   labelMin: css.labelMin,
   labelValue: css.labelValue,
   slider: css.slider,
+  sliderActive: css.sliderActive,
   sliderContainer: css.sliderContainer,
   trackActive: css.trackActive,
   trackContainer: css.trackContainer,
