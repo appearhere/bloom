@@ -1,0 +1,94 @@
+.wrapper {
+  display: block;
+  position: relative;
+}
+
+.wrapper:before {
+  content: '';
+  height: 5px;
+  width: 98%;
+  top: calc(100% - 5px);
+  box-shadow: 0 2px 4px 0 var(--color-greyLightest);
+  position: absolute;
+  left: 1%;
+  z-index: -1;
+  pointer-events: none;
+}
+
+.select {
+  -webkit-appearance: none;
+  border: 1px solid var(--color-greyLighter);
+  padding: var(--size-small);
+  composes: fontRegular from '../../../globals/typography.css';
+  letter-spacing: 0.2px;
+  color: var(--color-greyDarker);
+  background-color: var(--color-white);
+  transition: border 300ms var(--animation-sharp), color 300ms var(--animation-sharp);
+  width: 100%;
+  box-sizing: border-box;
+  vertical-align: top;
+  border-radius: 2px;
+}
+
+.arrow {
+  position: absolute;
+  right: 1rem;
+  color: var(--color-greyDark);
+  transform: translateY(-50%) rotate(180deg);
+  top: 50%;
+  pointer-events: none;
+}
+
+.focus {
+  border-color: var(--color-greyDarker);
+  color: var(--color-greyDarker);
+}
+
+.error {
+  border-color: var(--color-danger);
+  color: var(--color-danger);
+  border-bottom-right-radius: 0;
+  border-bottom-left-radius: 0;
+}
+
+.post {
+  position: relative;
+  display: block;
+  width: 100%;
+}
+
+.errorMsg {
+  position: absolute;
+  top: 0;
+  width: 100%;
+  padding: var(--size-small);
+  background-color: var(--color-danger);
+  color: var(--color-white);
+  composes: fontSmallIi from '../../../globals/typography.css';
+  transition: transform 300ms var(--animation-sharp), opacity 300ms var(--animation-sharp);
+  z-index: -1;
+  border-bottom-right-radius: 2px;
+  border-bottom-left-radius: 2px;
+}
+
+.enter,
+.appear {
+  transform: translateY(-100%);
+  opacity: 0;
+}
+
+.enterActive,
+.appearActive {
+  transform: translateY(0);
+  opacity: 1;
+}
+
+.leave {
+  transform: translateY(0);
+  opacity: 1;
+}
+
+.leaveActive {
+  transform: translateY(-100%);
+  opacity: 0;
+}
