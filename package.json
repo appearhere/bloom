@@ -1,6 +1,6 @@
 {
   "name": "@appearhere/bloom",
-  "version": "0.27.0-5",
+  "version": "0.27.0-6",
   "description": "Appear Here's pattern library and styleguide",
   "keywords": [
     "Pattern library",
@@ -146,7 +146,7 @@
       "json"
     ],
     "moduleNameMapper": {
-      "^[.\/a-zA-Z0-9$_!-]+\\.(jpg|png|gif|eot|otf|webp|svg|ttf|woff|woff2|mp4|webm|json)$": "<rootDir>/config/jest/FileStub.js",
+      "^[./a-zA-Z0-9$_!-]+\\.(jpg|png|gif|eot|otf|webp|svg|ttf|woff|woff2|mp4|webm|json)$": "<rootDir>/config/jest/FileStub.js",
       "^[./a-zA-Z0-9$_\\-\\!]+\\.css": "<rootDir>/config/jest/CSSStub.js"
     },
     "transform": {
