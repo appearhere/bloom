@@ -9,11 +9,11 @@
 }
 
 .body {
-  padding: var(--size-medium);
+  max-height: calc(100vh - 66px);
   border-top-right-radius: 4px;
   border-top-left-radius: 4px;
   overflow-y: scroll;
-  max-height: 100vh;
+  -webkit-overflow-scrolling: touch;
   padding: var(--size-large);
   clear: both;
 }

@@ -152,7 +152,6 @@ export default class ModalAnimator extends Component {
                     aria-describedby={ describedBy }
                   >
                     <div
-                      className={ css.window }
                       className={ cx(css.window, windowClassName) }
                       ref={ (c) => { this.modalWindow = c; } }
                     >

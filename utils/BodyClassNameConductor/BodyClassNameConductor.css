@@ -1,3 +1,8 @@
 .noScroll {
   overflow: hidden;
+  position: fixed;
+  height: 0;
+  width: 100%;
+  top: 0;
+  -webkit-overflow-scrolling: auto;
 }
