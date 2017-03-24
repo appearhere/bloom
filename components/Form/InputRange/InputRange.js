@@ -77,18 +77,20 @@ export default class InputRange extends Component {
     const defaultValue = typeof value === 'object' ? { minValue, maxValue } : maxValue;
 
     return (
-      <ReactInputRange
-        { ...rest }
-        classNames={ classNames }
-        id={ id }
-        value={ value }
-        defaultValue={ defaultValue }
-        onChange={ this.handleChange }
-        onChangeComplete={ this.handleChangeComplete }
-        minValue={ minValue }
-        maxValue={ maxValue }
-        showLabel={ false }
-      />
+      <div className={ css.container }>
+        <ReactInputRange
+          { ...rest }
+          classNames={ classNames }
+          id={ id }
+          value={ value }
+          defaultValue={ defaultValue }
+          onChange={ this.handleChange }
+          onChangeComplete={ this.handleChangeComplete }
+          minValue={ minValue }
+          maxValue={ maxValue }
+          showLabel={ false }
+        />
+      </div>
     );
   }
 }
