@@ -26,8 +26,8 @@ export default class InputField extends Component {
     label: PropTypes.node,
     description: PropTypes.node,
     children: PropTypes.element.isRequired,
-    error: PropTypes.string,
-    valueReplay: PropTypes.string,
+    error: PropTypes.node,
+    valueReplay: PropTypes.node,
     required: PropTypes.bool,
     optionalLabel: PropTypes.string,
   };
