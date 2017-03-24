@@ -1,0 +1,24 @@
+.placeLink {
+  composes: fontSmallIi from '../../../globals/typography.css';
+  padding: var(--size-small);
+  background-color: var(--color-black);
+  background-color: var(--color-transparent-black-i);
+  color: var(--color-white);
+  border-radius: 2px;
+  font-weight: normal;
+  position: absolute;
+  top: var(--size-small);
+  right: var(--size-small);
+  z-index: 1;
+  line-height: 1;
+  transition: background-color 100ms;
+}
+
+.placeLink:hover {
+  color: white;
+  background-color: var(--color-black);
+}
+
+.placeLinkIcon {
+  line-height: 1;
+}

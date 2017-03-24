@@ -18,8 +18,9 @@
 .carousel {
   position: relative;
   width: 100%;
-  height: 100%;
+  height: 220px;
   border-radius: 4px 4px 0 0 ;
+  background-color: var(--color-greyLighter);
 }
 
 .carouselControls {
@@ -89,17 +90,6 @@
   overflow: hidden;
 }
 
-.price {
-  composes: fontRegular from '../../../globals/typography.css';
-  font-weight: var(--fontweight-demi);
-  color: var(--color-greyDarker);
-}
-
-.priceUnit {
-  composes: fontSmallI from '../../../globals/typography.css';
-  color: var(--color-grey);
-}
-
 .name {
   composes: fontSmallI from '../../../globals/typography.css';
   font-weight: var(--fontweight-demi);
@@ -118,27 +108,19 @@
   margin-top: var(--size-small);
 }
 
-.placeLink {
-  composes: fontSmallIi from '../../../globals/typography.css';
-  padding: var(--size-small);
-  background-color: var(--color-black);
-  background-color: var(--color-transparent-black-i);
-  color: var(--color-white);
-  border-radius: 2px;
-  font-weight: normal;
-  position: absolute;
-  top: var(--size-small);
-  right: var(--size-small);
-  z-index: 1;
-  line-height: 1;
-  transition: background-color 100ms;
+.priceFromLabel {
+  composes: fontSmallI from '../../../globals/typography.css';
+  color: var(--color-grey);
+  margin-right: 0.3rem;
 }
 
-.placeLink:hover {
-  color: white;
-  background-color: var(--color-black);
+.price {
+  composes: fontRegular from '../../../globals/typography.css';
+  font-weight: var(--fontweight-demi);
+  color: var(--color-greyDarker);
 }
 
-.placeLinkIcon {
-  line-height: 1;
+.priceUnit {
+  composes: fontSmallI from '../../../globals/typography.css';
+  color: var(--color-grey);
 }

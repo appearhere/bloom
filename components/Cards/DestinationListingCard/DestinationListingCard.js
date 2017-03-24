@@ -5,13 +5,11 @@ import getValidIndex from '../../../utils/getValidIndex/getValidIndex';
 import Carousel from '../../Carousel/Carousel';
 import BtnContainer from '../../BtnContainer/BtnContainer';
 import Icon from '../../Icon/Icon';
-import Link from '../../Link/Link';
 import ScreenReadable from '../../ScreenReadable/ScreenReadable';
 import FittedImage from '../../FittedImage/FittedImage';
-import css from './SpaceListingCard.css';
-import Blokk from '../../Blokk/Blokk';
+import css from './DestinationListingCard.css';
 
-export default class SpaceListingCard extends Component {
+export default class DestinationListingCard extends Component {
   static propTypes = {
     href: PropTypes.string,
     images: PropTypes.arrayOf(
@@ -20,17 +18,17 @@ export default class SpaceListingCard extends Component {
         alt: PropTypes.string,
       })
     ),
+    priceFromLabel: PropTypes.node,
     price: PropTypes.node,
     priceUnit: PropTypes.node,
     name: PropTypes.node,
-    location: PropTypes.node,
-    size: PropTypes.node,
     className: PropTypes.string,
     bodyClassName: PropTypes.string,
-    placeLabel: PropTypes.string,
-    placeHref: PropTypes.string,
+    carouselClassName: PropTypes.string,
     accessibilityNextLabel: PropTypes.string,
     accessibilityPrevLabel: PropTypes.string,
+    carouselOverlay: PropTypes.node,
+    information: PropTypes.array,
   };
 
   static defaultProps = {
@@ -38,6 +36,7 @@ export default class SpaceListingCard extends Component {
     accessibilityPrevLabel: 'Show previous slide',
     href: '#',
     images: [],
+    information: [],
   };
 
   state = {
@@ -71,54 +70,37 @@ export default class SpaceListingCard extends Component {
       images,
       accessibilityPrevLabel,
       accessibilityNextLabel,
+      priceFromLabel,
       price,
       priceUnit,
       name,
-      location,
-      size,
       className,
-      placeHref,
-      placeLabel,
       bodyClassName,
+      carouselClassName,
+      carouselOverlay,
+      information,
     } = this.props;
-
-    const shouldRenderEmptyState = !(
-      (images.length > 0) &&
-      (price && priceUnit) &&
-      name &&
-      location && size
-    );
 
     return (
       <div className={ cx(css.root, className) }>
-        <div className={ css.carousel }>
-          { placeLabel && placeHref && (
-            <Link
-              href={ placeHref }
-              className={ css.placeLink }
-              iconClassName={ css.placeLinkIcon }
+        <div className={ cx(css.carousel, carouselClassName) }>
+          { carouselOverlay }
+          <div className={ css.carouselControls }>
+            <BtnContainer
+              onClick={ this.handlePrevImage }
+              className={ cx(css.control, css.prev) }
             >
-              { placeLabel }
-            </Link>
-          ) }
-          { !shouldRenderEmptyState && (
-            <div className={ css.carouselControls }>
-              <BtnContainer
-                onClick={ this.handlePrevImage }
-                className={ cx(css.control, css.prev) }
-              >
-                <Icon name="chevron" />
-                <ScreenReadable>{ accessibilityPrevLabel }</ScreenReadable>
-              </BtnContainer>
-              <BtnContainer
-                onClick={ this.handleNextImage }
-                className={ cx(css.control, css.next) }
-              >
-                <Icon name="chevron" />
-                <ScreenReadable>{ accessibilityNextLabel }</ScreenReadable>
-              </BtnContainer>
-            </div>
-          ) }
+              <Icon name="chevron" />
+              <ScreenReadable>{ accessibilityPrevLabel }</ScreenReadable>
+            </BtnContainer>
+            <BtnContainer
+              onClick={ this.handleNextImage }
+              className={ cx(css.control, css.next) }
+            >
+              <Icon name="chevron" />
+              <ScreenReadable>{ accessibilityNextLabel }</ScreenReadable>
+            </BtnContainer>
+          </div>
           <div
             href={ href }
             className={ css.inner }
@@ -128,7 +110,7 @@ export default class SpaceListingCard extends Component {
               wrapAround
               dragging
             >
-              { !shouldRenderEmptyState ? images.map(({ src, alt }) => (
+              { images.map(({ src, alt }) => (
                 <div key={ src }>
                   <FittedImage
                     className={ css.image }
@@ -136,38 +118,36 @@ export default class SpaceListingCard extends Component {
                     alt={ alt }
                   />
                 </div>
-              )) : (
-                <div>
-                  <div className={ css.image } />
-                </div>
-              ) }
+              )) }
             </Carousel>
           </div>
         </div>
-        { !shouldRenderEmptyState ? (
-          <a
-            href={ href }
-            className={ cx(css.body, bodyClassName) }
-          >
-            <div>
-              <span className={ css.price }>{ price }</span>
-              { '\u00a0' }
-              <span className={ css.priceUnit }>{ priceUnit }</span>
-            </div>
-            <div className={ css.name }>{ name }</div>
-            <div className={ css.additionalInfo }>
-              <span className={ css.location }>{ location }</span>
-              <span className={ css.spacer }>•</span>
-              <span className={ css.size }>{ size }</span>
-            </div>
-          </a>
-        ) : (
-          <div className={ cx(css.body, bodyClassName) }>
-            <Blokk length={ 4 } />
-            <Blokk length={ 12 } />
-            <Blokk length={ 7 } />
+        <a
+          href={ href }
+          className={ cx(css.body, bodyClassName) }
+        >
+          <div className={ css.name }>
+            { priceFromLabel && <span className={ css.priceFromLabel }>{ priceFromLabel }</span> }
+            <span className={ css.price }>{ price }</span>
+            { '\u00a0' }
+            <span className={ css.priceUnit }>{ priceUnit }</span>
           </div>
-        ) }
+          <div className={ css.name }>{ name }</div>
+          <div className={ css.additionalInfo }>
+            {
+              information
+                .filter(info => info)
+                .map(info => <span>{ info }</span>)
+                .reduce((accu, elem) => (
+                    accu === null
+                      ? [elem]
+                      : [...accu, <span className={ css.spacer }>•</span>, elem]
+                  ),
+                  null
+                )
+            }
+          </div>
+        </a>
       </div>
     );
   }
