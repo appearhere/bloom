@@ -101,10 +101,7 @@ export default class DestinationListingCard extends Component {
               <ScreenReadable>{ accessibilityNextLabel }</ScreenReadable>
             </BtnContainer>
           </div>
-          <div
-            href={ href }
-            className={ css.inner }
-          >
+          <div className={ css.inner }>
             <Carousel
               lowestVisibleItemIndex={ visibleImageIndex }
               wrapAround
@@ -112,21 +109,18 @@ export default class DestinationListingCard extends Component {
               dragging={ false }
             >
               { images.map(({ src, alt }) => (
-                <div key={ src }>
+                <a href={ href } key={ src }>
                   <FittedImage
                     className={ css.image }
                     src={ src }
                     alt={ alt }
                   />
-                </div>
+                </a>
               )) }
             </Carousel>
           </div>
         </div>
-        <a
-          href={ href }
-          className={ cx(css.body, bodyClassName) }
-        >
+        <a href={ href } className={ cx(css.body, bodyClassName) }>
           <div className={ css.name }>
             { priceFromLabel && <span className={ css.priceFromLabel }>{ priceFromLabel }</span> }
             <span className={ css.price }>{ price }</span>
