@@ -108,7 +108,8 @@ export default class DestinationListingCard extends Component {
             <Carousel
               lowestVisibleItemIndex={ visibleImageIndex }
               wrapAround
-              dragging
+              swiping={ false }
+              dragging={ false }
             >
               { images.map(({ src, alt }) => (
                 <div key={ src }>
