@@ -5,6 +5,8 @@ import Card from './Card/Card';
 import PictureCard from './PictureCard/PictureCard';
 import SpaceFeatureCard from './SpaceFeatureCard/SpaceFeatureCard';
 import SpaceListingCard from './SpaceListingCard/SpaceListingCard';
+import PlaceListingCard from './PlaceListingCard/PlaceListingCard';
+import EmptyListingCard from './EmptyListingCard/EmptyListingCard';
 import EditorialCard from './EditorialCard/EditorialCard';
 import GuideCard from './EditorialCard/GuideCard';
 import EventCard from './EditorialCard/EventCard';
@@ -51,15 +53,14 @@ storiesOf('Cards', module)
       src="https://source.unsplash.com/random"
     />
   ))
-  .add('SpaceListingCard empty state', () => (
-    <SpaceListingCard />
+  .add('EmptyListingCard', () => (
+    <EmptyListingCard />
   ))
   .add('SpaceListingCard', () => (
     <SpaceListingCard
       price="$10,000,000"
       priceUnit="/day"
-      location="Shoreditch"
-      city="London"
+      location="Shoreditch, London"
       size="1000 sqft"
       name="Bold Street Shop"
       images={
@@ -84,8 +85,7 @@ storiesOf('Cards', module)
     <SpaceListingCard
       price="$10,000,000"
       priceUnit="/day"
-      location="Shoreditch"
-      city="London"
+      location="Shoreditch, London"
       size="1000 sqft"
       name="Bold Street Shop"
       placeLabel="Part of Boxpark"
@@ -105,6 +105,33 @@ storiesOf('Cards', module)
           alt: 'hello2',
         }]
       }
+      href="#"
+    />
+  ))
+  .add('PlaceListingCard', () => (
+    <PlaceListingCard
+      price="$10,000,000"
+      priceUnit="/day"
+      priceFromLabel="from"
+      location="Shoreditch, London"
+      size="1000 sqft"
+      name="BOXPARK"
+      images={
+        [{
+          src: 'https://source.unsplash.com/random/500x500',
+          alt: 'hello',
+        }, {
+          src: 'https://source.unsplash.com/random/500x503',
+          alt: 'hello2',
+        }, {
+          src: 'https://source.unsplash.com/random/500x502',
+          alt: 'hello',
+        }, {
+          src: 'https://source.unsplash.com/random/500x501',
+          alt: 'hello2',
+        }]
+      }
+      spaceDetail="2 available spaces"
       href="#"
     />
   ))
