@@ -26,7 +26,10 @@ const AreaUnits = ({ value, unit, className, ...rest }) => {
 };
 
 AreaUnits.propTypes = {
-  value: PropTypes.number.isRequired,
+  value: PropTypes.oneOfType([
+    PropTypes.number,
+    PropTypes.string,
+  ]).isRequired,
   unit: PropTypes.string.isRequired,
   className: PropTypes.string,
 };
