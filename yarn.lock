@@ -1200,11 +1200,11 @@ babel-types@^6.18.0, babel-types@^6.22.0:
     lodash "^4.2.0"
     to-fast-properties "^1.0.1"
 
-babylon@^6.0.18, babylon@^6.11.0, babylon@^6.8.1, babylon@^6.9.0:
+babylon@^6.0.18, babylon@^6.11.0, babylon@^6.9.0:
   version "6.12.0"
   resolved "https://registry.yarnpkg.com/babylon/-/babylon-6.12.0.tgz#953e6202e58062f7f5041fc8037e4bd4e17140a9"
 
-babylon@^6.13.0, babylon@^6.15.0:
+babylon@^6.13.0, babylon@^6.15.0, babylon@^6.8.1:
   version "6.15.0"
   resolved "https://registry.yarnpkg.com/babylon/-/babylon-6.15.0.tgz#ba65cfa1a80e1759b0e89fb562e27dccae70348e"
 
@@ -5275,16 +5275,16 @@ react-addons-test-utils@^15.4.2:
     fbjs "^0.8.4"
     object-assign "^4.1.0"
 
-react-autosuggest@^8.0.0:
-  version "8.0.0"
-  resolved "https://registry.yarnpkg.com/react-autosuggest/-/react-autosuggest-8.0.0.tgz#dca8211f07d0f6956f41b7904eef18bf3437c725"
+react-autosuggest@^v9.0.0:
+  version "9.0.0"
+  resolved "https://registry.yarnpkg.com/react-autosuggest/-/react-autosuggest-9.0.0.tgz#976b02e20d05615d05c328c8f1384daf98587821"
   dependencies:
-    react-autowhatever "^7.0.0"
+    react-autowhatever "^9.1.0"
     shallow-equal "^1.0.0"
 
-react-autowhatever@^7.0.0:
-  version "7.0.0"
-  resolved "https://registry.yarnpkg.com/react-autowhatever/-/react-autowhatever-7.0.0.tgz#7ea19f8024183acf1568fc8e4b76c0d0cc250d00"
+react-autowhatever@^9.1.0:
+  version "9.1.0"
+  resolved "https://registry.yarnpkg.com/react-autowhatever/-/react-autowhatever-9.1.0.tgz#cc19ea05e0541ec04bb07fd53792215dc802bf75"
   dependencies:
     react-themeable "^1.1.0"
     section-iterator "^2.0.0"
@@ -5497,7 +5497,7 @@ readable-stream@^1.0.27-1, readable-stream@^1.1.13, readable-stream@~1.1.9:
     isarray "0.0.1"
     string_decoder "~0.10.x"
 
-"readable-stream@^2.0.0 || ^1.1.13", readable-stream@^2.1.5, readable-stream@~2.1.4:
+"readable-stream@^2.0.0 || ^1.1.13", readable-stream@^2.0.1, readable-stream@^2.0.2, readable-stream@^2.1.5, readable-stream@~2.1.4:
   version "2.1.5"
   resolved "https://registry.yarnpkg.com/readable-stream/-/readable-stream-2.1.5.tgz#66fa8b720e1438b364681f2ad1a63c618448c9d0"
   dependencies:
@@ -5509,7 +5509,7 @@ readable-stream@^1.0.27-1, readable-stream@^1.1.13, readable-stream@~1.1.9:
     string_decoder "~0.10.x"
     util-deprecate "~1.0.1"
 
-readable-stream@^2.0.1, readable-stream@^2.0.2, readable-stream@~2.0.0:
+readable-stream@~2.0.0:
   version "2.0.6"
   resolved "https://registry.yarnpkg.com/readable-stream/-/readable-stream-2.0.6.tgz#8f90341e68a53ccc928788dacfcd11b36eb9b78e"
   dependencies:
@@ -5731,11 +5731,11 @@ resolve-protobuf-schema@^2.0.0:
   dependencies:
     protocol-buffers-schema "^2.0.2"
 
-resolve@1.1.7, resolve@^1.1.6:
+resolve@1.1.7, resolve@^1.1.5, resolve@^1.1.6:
   version "1.1.7"
   resolved "https://registry.yarnpkg.com/resolve/-/resolve-1.1.7.tgz#203114d82ad2c5ed9e8e0411b3932875e889e97b"
 
-resolve@^1.1.5, resolve@^1.2.0:
+resolve@^1.2.0:
   version "1.2.0"
   resolved "https://registry.yarnpkg.com/resolve/-/resolve-1.2.0.tgz#9589c3f2f6149d1417a40becc1663db6ec6bc26c"
 
