@@ -50,9 +50,7 @@ export default class InputRangeWithHistogram extends Component {
             </div>
           )) }
         </div>
-        <div className={ css.inputRange }>
-          <InputRange name={ name } { ...rest } />
-        </div>
+        <InputRange name={ name } { ...rest } />
       </div>
     );
   }

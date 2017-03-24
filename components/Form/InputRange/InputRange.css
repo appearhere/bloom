@@ -84,7 +84,7 @@
   background-color: var(--color-greyLight);
 }
 
-.inputRange {
+.input {
   position: absolute;
   width: 100%;
   bottom: calc((-1 * var(--size-large) + calc(-1 * var(--inputRange-track-height))))
