@@ -19,26 +19,43 @@
   box-sizing: border-box;
 }
 
-.input {
+input.input[type='text'],
+input.input[type='email'],
+input.input[type='password'],
+input.input[type='search'],
+input.input[type='url'],
+textarea.input {
   border: 1px solid var(--color-greyLighter);
   padding: var(--size-small);
-  composes: fontRegular from '../../../globals/typography.css';
+  font-family: var(--font-avenir);
+  font-size: var(--fontsize-regular);
+  line-height: var(--lineheight-regular);
+  font-weight: var(--fontweight-regular);
   letter-spacing: 0.2px;
   color: var(--color-greyDarker);
-  transition: border 300ms var(--animation-sharp), color 300ms var(--animation-sharp);
+  transition: color 150ms var(--animation-sharp);
   width: 100%;
   box-sizing: border-box;
   vertical-align: top;
   border-radius: 2px;
+  background-color: var(--color-white);
+  margin: 0;
+  height: auto;
 }
 
 textarea.input {
   min-height: 5rem;
 }
 
-.focus {
-  border-color: var(--color-greyDark);
-  color: var(--color-greyDark);
+input.input[type='text']:focus,
+input.input[type='email']:focus,
+input.input[type='password']:focus,
+input.input[type='search']:focus,
+input.input[type='url']:focus,
+textarea.input:focus {
+  border-color: var(--color-grey);
+  background-color: var(--color-white);
+  color: var(--color-greyDarker);
 }
 
 .error {
