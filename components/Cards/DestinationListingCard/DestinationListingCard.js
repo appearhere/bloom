@@ -133,11 +133,16 @@ export default class DestinationListingCard extends Component {
               information
                 .filter(info => info)
                 .map(info => <span>{ info }</span>)
-                .reduce((accu, elem) => (
-                    accu === null
-                      ? [elem]
-                      : [...accu, <span className={ css.spacer }>•</span>, elem]
-                  ),
+                .reduce((accu, elem, i) => {
+                  const wrappedEl = <span key={ `info-${i}` }>{ elem }</span>;
+                  const spacer = (
+                    <span key={ `info-spacer-${i}` } className={ css.spacer }>•</span>
+                  );
+
+                  return accu === null
+                    ? [wrappedEl]
+                    : [...accu, spacer, wrappedEl];
+                },
                   null
                 )
             }
