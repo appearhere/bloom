@@ -34,7 +34,7 @@
   position: absolute;
   right: 1rem;
   color: var(--color-greyDark);
-  transform: translateY(-50%) rotate(180deg);
+  transform: translateY(-35%) rotate(180deg);
   top: 50%;
   pointer-events: none;
 }
