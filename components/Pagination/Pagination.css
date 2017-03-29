@@ -1,5 +1,4 @@
 .root {
-  list-style: none;
   overflow: hidden;
   margin-left: auto;
   margin-bottom: auto;
@@ -10,4 +9,9 @@
   display: inline-block;
   list-style: none;
   margin-left: 0;
+}
+
+.track {
+  list-style: none;
+  display: inline-block;
 }

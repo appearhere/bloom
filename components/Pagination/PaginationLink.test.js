@@ -2,40 +2,28 @@ import React from 'react';
 import { render } from 'react-dom';
 
 import {
+  NextLink,
+  PreviousLink,
   PaginationLink,
-  PaginationFiller,
-  PaginationPrevNext,
 } from './PaginationLink';
 
 describe('PaginationLink', () => {
   it('renders without crashing', () => {
     const div = document.createElement('div');
-    render(
-      <PaginationLink
-        page={ 0 }
-      />,
-      div
-    );
+    render(<PaginationLink page={ 0 }>0</PaginationLink>, div);
   });
 });
 
-describe('PaginationFiller', () => {
+describe('NextLink', () => {
   it('renders without crashing', () => {
     const div = document.createElement('div');
-    render(<PaginationFiller />, div);
+    render(<NextLink page={ 0 } />, div);
   });
 });
 
-describe('PaginationPrevNext', () => {
+describe('PreviousLink', () => {
   it('renders without crashing', () => {
     const div = document.createElement('div');
-    render(
-      <PaginationPrevNext
-        page={ 0 }
-        currentPage={ 0 }
-        totalPages={ 0 }
-      />,
-      div
-    );
+    render(<PreviousLink page={ 0 } />, div);
   });
 });
