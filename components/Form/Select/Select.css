@@ -15,11 +15,14 @@
   pointer-events: none;
 }
 
-.select {
+select.select {
   -webkit-appearance: none;
   border: 1px solid var(--color-greyLighter);
   padding: var(--size-small);
-  composes: fontRegular from '../../../globals/typography.css';
+  font-family: var(--font-avenir);
+  font-size: var(--fontsize-regular);
+  line-height: var(--lineheight-regular);
+  font-weight: var(--fontweight-regular);
   letter-spacing: 0.2px;
   color: var(--color-greyDarker);
   background-color: var(--color-white);
@@ -28,19 +31,23 @@
   box-sizing: border-box;
   vertical-align: top;
   border-radius: 2px;
+  margin: 0;
+  height: auto;
 }
 
 .arrow {
   position: absolute;
   right: 1rem;
   color: var(--color-greyDark);
-  transform: translateY(-50%) rotate(180deg);
+  transform: translateY(-35%) rotate(180deg);
   top: 50%;
   pointer-events: none;
 }
 
-.focus {
-  border-color: var(--color-greyDarker);
+select:focus,
+select.focus {
+  border-color: var(--color-grey);
+  background-color: var(--color-white);
   color: var(--color-greyDarker);
 }
 
