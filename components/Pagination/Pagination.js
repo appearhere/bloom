@@ -13,12 +13,14 @@ export default class Pagination extends Component {
     NextComponent: PropTypes.func,
     className: PropTypes.string,
     showPrevNext: PropTypes.bool,
+    arrowProps: PropTypes.object,
   };
 
   static defaultProps = {
     NextComponent: NextLink,
     PreviousComponent: PreviousLink,
     showPrevNext: true,
+    arrowProps: {},
   };
 
   render() {
@@ -30,6 +32,7 @@ export default class Pagination extends Component {
       PreviousComponent,
       showPrevNext,
       children,
+      arrowProps,
     } = this.props;
 
     return (
@@ -37,6 +40,7 @@ export default class Pagination extends Component {
         { showPrevNext && (
           <span className={ css.page }>
             <PreviousComponent
+              { ...arrowProps }
               page={ currentPage - 1 }
               disabled={ currentPage === 1 }
             />
@@ -46,6 +50,7 @@ export default class Pagination extends Component {
         { showPrevNext && (
           <span className={ css.page }>
             <NextComponent
+              { ...arrowProps }
               page={ currentPage + 1 }
               disabled={ currentPage === totalPages }
             />

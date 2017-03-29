@@ -20,6 +20,7 @@ const PaginationTrack = (props) => {
     currentPage,
     totalPages,
     displayRange,
+    linkProps,
   } = props;
 
   const trackPartial = getPaginationTrack(currentPage, totalPages, displayRange);
@@ -55,7 +56,11 @@ const PaginationTrack = (props) => {
             { page === FILLER ? (
               <FillerComponent />
             ) : (
-              <LinkComponent page={ page } active={ page === currentPage }>
+              <LinkComponent
+                { ...linkProps }
+                page={ page }
+                active={ page === currentPage }
+              >
                 { page }
               </LinkComponent>
             ) }
@@ -72,12 +77,14 @@ PaginationTrack.propTypes = {
   displayRange: PropTypes.number,
   LinkComponent: PropTypes.func,
   FillerComponent: PropTypes.func,
+  linkProps: PropTypes.object,
 };
 
 PaginationTrack.defaultProps = {
   displayRange: 9,
   LinkComponent: PaginationLink,
   FillerComponent: PaginationFiller,
+  linkProps: {},
 };
 
 export default PaginationTrack;
