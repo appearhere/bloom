@@ -24,6 +24,7 @@ export default class BaseMap extends Component {
     onClick: PropTypes.func,
     onMapLoad: PropTypes.func,
     onMoveEnd: PropTypes.func,
+    dragRotate: PropTypes.bool,
   };
 
   static defaultProps = {
@@ -34,6 +35,7 @@ export default class BaseMap extends Component {
     onClick: noop,
     onMapLoad: noop,
     onMoveEnd: noop,
+    dragRotate: false,
   };
 
   componentDidMount() {
@@ -44,6 +46,7 @@ export default class BaseMap extends Component {
       zoom,
       onClick,
       onMapLoad,
+      dragRotate,
     } = this.props;
 
     this.map = new mapboxgl.Map({
@@ -52,6 +55,7 @@ export default class BaseMap extends Component {
       renderWorldCopies: allowWrap,
       center,
       zoom,
+      dragRotate,
     });
 
     this.map.on('click', onClick);
