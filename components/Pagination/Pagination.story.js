@@ -1,26 +1,67 @@
-import React from 'react';
-import { storiesOf } from '@kadira/storybook';
-import Pagination from './Pagination';
+import React, { PropTypes } from 'react';
+import { storiesOf, action } from '@kadira/storybook';
+import { withKnobs, number } from '@kadira/storybook-addon-knobs';
 
-storiesOf('Pagination', module)
-  .add('Start of pagination', () => (
-    <Pagination currentPage={ 1 } totalPages={ 10 } displayRange={ 3 } />
-  ))
-  .add('Middle of pagination', () => (
-    <Pagination currentPage={ 5 } totalPages={ 10 } displayRange={ 3 } />
-  ))
-  .add('End of pagination', () => (
-    <Pagination currentPage={ 10 } totalPages={ 10 } displayRange={ 3 } />
-  ))
-  .add('Close to start', () => (
-    <Pagination currentPage={ 4 } totalPages={ 10 } displayRange={ 3 } />
-  ))
-  .add('Close to end', () => (
-    <Pagination currentPage={ 7 } totalPages={ 10 } displayRange={ 3 } />
-  ))
-  .add('Short track', () => (
-    <Pagination currentPage={ 3 } totalPages={ 3 } displayRange={ 3 } />
-  ))
-  .add('Large display range', () => (
-    <Pagination currentPage={ 3 } totalPages={ 3 } displayRange={ 10 } />
-  ));
+import Pagination from './Pagination';
+import PaginationTrack from './PaginationTrack';
+
+const SimplePagination = props => (
+  <Pagination { ...props }>
+    <PaginationTrack { ...props } />
+  </Pagination>
+);
+
+const PageButton = ({ onClick, page }) => (
+  <button onClick={ (e) => { onClick(e, page); } } >
+    { page }
+  </button>
+);
+PageButton.propTypes = { onClick: PropTypes.func, page: PropTypes.any };
+
+const NextButton = ({ onClick, page }) => (
+  <button onClick={ (e) => { onClick(e, page); } } >
+    Next
+  </button>
+);
+NextButton.propTypes = { onClick: PropTypes.func, page: PropTypes.any };
+
+const PreviousButton = ({ onClick, page }) => (
+  <button onClick={ (e) => { onClick(e, page); } } >
+    Previous
+  </button>
+);
+PreviousButton.propTypes = { onClick: PropTypes.func, page: PropTypes.any };
+
+const EventedPagination = props => (
+  <Pagination
+    NextComponent={ NextButton }
+    PreviousComponent={ PreviousButton }
+    arrowProps={ { onClick: action('click arrow') } }
+    { ...props }
+  >
+    <PaginationTrack
+      LinkComponent={ PageButton }
+      linkProps={ { onClick: action('click page') } }
+      { ...props }
+    />
+  </Pagination>
+);
+
+
+const stories = storiesOf('Pagination', module);
+stories.addDecorator(withKnobs);
+
+stories.add('With track', () => (
+  <SimplePagination
+    currentPage={ number('current page', 1) }
+    totalPages={ number('total pages', 10) }
+    displayRange={ number('track range', 3) }
+  />
+))
+.add('Evented pagination', () => (
+  <EventedPagination
+    currentPage={ number('current page', 1) }
+    totalPages={ number('total pages', 10) }
+    displayRange={ number('track range', 3) }
+  />
+));
