@@ -1,7 +1,7 @@
 .root {
   border-radius: 100%;
-  width: 2.875rem;
-  height: 2.875rem;
+  width: 3.75rem;
+  height: 3.75rem;
   text-decoration: none;
   transition-timing-function: cubic-bezier(0,1,.75,1);
   transition: background-color 300ms, color 300ms, border-color 300ms;
