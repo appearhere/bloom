@@ -10,6 +10,7 @@
   border-color: var(--color-greyDarker);
   border-style: solid;
   border-width: 1px;
+  font-size: var(--fontsize-large-ii);
   color: var(--color-white);
   composes: fontRegular from '../../globals/typography.css';
   font-weight: var(--fontweight-demi);
