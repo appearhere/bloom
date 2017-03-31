@@ -135,6 +135,33 @@ storiesOf('Cards', module)
       href="#"
     />
   ))
+  .add('PlaceListingCard with onClick', () => (
+    <PlaceListingCard
+      price="$10,000,000"
+      priceUnit="/day"
+      priceFromLabel="from"
+      location="Shoreditch, London"
+      size="1000 sqft"
+      name="BOXPARK"
+      images={
+        [{
+          src: 'https://source.unsplash.com/random/500x500',
+          alt: 'hello',
+        }, {
+          src: 'https://source.unsplash.com/random/500x503',
+          alt: 'hello2',
+        }, {
+          src: 'https://source.unsplash.com/random/500x502',
+          alt: 'hello',
+        }, {
+          src: 'https://source.unsplash.com/random/500x501',
+          alt: 'hello2',
+        }]
+      }
+      spaceDetail="2 available spaces"
+      onClick={ action('place click') }
+    />
+  ))
   .add('EditorialCard', () => (
     <EditorialCard
       title="Mulberry Street"

@@ -29,6 +29,7 @@ export default class DestinationListingCard extends Component {
     accessibilityPrevLabel: PropTypes.string,
     carouselOverlay: PropTypes.node,
     information: PropTypes.array,
+    onClick: PropTypes.func,
   };
 
   static defaultProps = {
@@ -79,6 +80,7 @@ export default class DestinationListingCard extends Component {
       carouselClassName,
       carouselOverlay,
       information,
+      onClick,
     } = this.props;
 
     return (
@@ -109,7 +111,7 @@ export default class DestinationListingCard extends Component {
               dragging={ false }
             >
               { images.map(({ src, alt }) => (
-                <a href={ href } key={ src }>
+                <a href={ href } key={ src } onClick={ onClick }>
                   <FittedImage
                     className={ css.image }
                     src={ src }
@@ -120,7 +122,7 @@ export default class DestinationListingCard extends Component {
             </Carousel>
           </div>
         </div>
-        <a href={ href } className={ cx(css.body, bodyClassName) }>
+        <a href={ href } className={ cx(css.body, bodyClassName) } onClick={ onClick }>
           <div className={ css.name }>
             { priceFromLabel && <span className={ css.priceFromLabel }>{ priceFromLabel }</span> }
             <span className={ css.price }>{ price }</span>
