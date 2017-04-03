@@ -10,6 +10,7 @@ const PlaceListingCard = (props) => {
     name,
     location,
     spaceDetail,
+    placeBadgeText,
     ...rest,
   } = props;
 
@@ -17,7 +18,7 @@ const PlaceListingCard = (props) => {
     <DestinationListingCard
       name={
         <span>
-          <Badge className={ css.badge } context="primary" hollow>Place</Badge>
+          <Badge className={ css.badge } context="primary" hollow>{ placeBadgeText }</Badge>
           { name }
         </span>
       }
@@ -31,9 +32,14 @@ PlaceListingCard.propTypes = {
   name: PropTypes.node,
   location: PropTypes.node,
   spaceDetail: PropTypes.node,
+  placeBadgeText: PropTypes.string,
   price: PropTypes.node,
   priceUnit: PropTypes.node,
   priceFromLabel: PropTypes.node,
+};
+
+PlaceListingCard.defaultProps = {
+  placeBadgeText: 'Place',
 };
 
 export default PlaceListingCard;
