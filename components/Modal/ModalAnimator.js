@@ -1,6 +1,5 @@
 import React, { Component, PropTypes } from 'react';
 import cx from 'classnames';
-import { TransitionMotion, spring } from 'react-motion';
 import uniqueId from 'lodash/fp/uniqueId';
 import Portal from 'react-portal';
 import { ESC } from '../../constants/keycodes';
@@ -9,21 +8,10 @@ import BodyClassNameConductor from '../../utils/BodyClassNameConductor/BodyClass
 
 import css from './ModalAnimator.css';
 
-const DEFAULT_WINDOW_SPRING_CONFIG = { stiffness: 200, damping: 22 };
-const DEFAULT_OVERLAY_SPRING_CONFIG = { stiffness: 500, damping: 18 };
-
 export default class ModalAnimator extends Component {
   static propTypes = {
     id: PropTypes.string,
     onClose: PropTypes.func,
-    windowSpringConfig: PropTypes.shape({
-      stiffness: PropTypes.number,
-      damping: PropTypes.number,
-    }),
-    overlaySpringConfig: PropTypes.shape({
-      stiffness: PropTypes.number,
-      damping: PropTypes.number,
-    }),
     active: PropTypes.bool,
     children: PropTypes.node,
     'aria-labelledby': PropTypes.string,
@@ -34,8 +22,6 @@ export default class ModalAnimator extends Component {
   };
 
   static defaultProps = {
-    windowSpringConfig: DEFAULT_WINDOW_SPRING_CONFIG,
-    overlaySpringConfig: DEFAULT_OVERLAY_SPRING_CONFIG,
     onClose: noop,
     closeOnEsc: true,
     closeOnOutsideClick: true,
@@ -57,8 +43,12 @@ export default class ModalAnimator extends Component {
     const { active: newActive } = nextProps;
     const { active: oldActive } = this.props;
 
-    if (newActive !== oldActive) {
-      this.bodyClassName.toggle('noScroll');
+    if (newActive && newActive !== oldActive) {
+      this.bodyClassName.add('noScroll');
+      this.keyupEvent = window.addEventListener('keyup', this.handleKeyUp);
+    } else if (!newActive) {
+      this.bodyClassName.remove('noScroll');
+      if (this.keyupEvent) window.removeEventListener('keyup', this.keyupEvent);
     }
   }
 
@@ -66,29 +56,6 @@ export default class ModalAnimator extends Component {
     this.bodyClassName.remove('noScroll');
     window.removeEventListener('keyup', this.keyupEvent);
   }
-
-  getStyles = () => {
-    const { windowSpringConfig, overlaySpringConfig } = this.props;
-
-    return {
-      y: spring(0, windowSpringConfig),
-      opacity: spring(1, overlaySpringConfig),
-    };
-  };
-
-  willEnter = () => ({
-    y: 100,
-    opacity: 0,
-  });
-
-  willLeave = () => {
-    const { windowSpringConfig, overlaySpringConfig } = this.props;
-
-    return {
-      y: spring(100, windowSpringConfig),
-      opacity: spring(0, overlaySpringConfig),
-    };
-  };
 
   handleKeyUp = (e) => {
     const { closeOnEsc, onClose } = this.props;
@@ -113,56 +80,31 @@ export default class ModalAnimator extends Component {
   render() {
     const {
       active,
-      children: child,
+      children,
       'aria-labelledby': labelledBy,
       'aria-describedby': describedBy,
       windowClassName,
     } = this.props;
 
     return (
-      <Portal isOpened>
-        <TransitionMotion
-          styles={ active ? [{
-            key: this.id,
-            style: this.getStyles(),
-            data: child,
-          }] : [] }
-          willEnter={ this.willEnter }
-          willLeave={ this.willLeave }
-        >
-          { interpolated => (
-            <div ref={ (c) => { this.modal = c; } } onClick={ this.handleClick }>
-              { interpolated.map(({ key, data, style }) => (
-                <div
-                  className={ css.root }
-                  key={ key }
-                >
-                  <div
-                    className={ css.overlay }
-                    style={ {
-                      opacity: style.opacity,
-                    } }
-                  />
-                  <div
-                    className={ css.wrapper }
-                    style={ {
-                      transform: `translate3d(0, ${style.y}%, 0)`,
-                    } }
-                    aria-labelledby={ labelledBy }
-                    aria-describedby={ describedBy }
-                  >
-                    <div
-                      className={ cx(css.window, windowClassName) }
-                      ref={ (c) => { this.modalWindow = c; } }
-                    >
-                      { data }
-                    </div>
-                  </div>
-                </div>
-              )) }
+      <Portal isOpened={ active }>
+        <div ref={ (c) => { this.modal = c; } } onClick={ this.handleClick }>
+          <div className={ css.root }>
+            <div className={ css.overlay } />
+            <div
+              className={ css.wrapper }
+              aria-labelledby={ labelledBy }
+              aria-describedby={ describedBy }
+            >
+              <div
+                className={ cx(css.window, windowClassName) }
+                ref={ (c) => { this.modalWindow = c; } }
+              >
+                { children }
+              </div>
             </div>
-          ) }
-        </TransitionMotion>
+          </div>
+        </div>
       </Portal>
     );
   }
