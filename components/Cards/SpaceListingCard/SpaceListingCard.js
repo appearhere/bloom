@@ -11,6 +11,7 @@ const SpaceListingCard = (props) => {
     placeHref,
     location,
     size,
+    onPlaceLabelClick,
     ...rest,
   } = props;
 
@@ -18,6 +19,7 @@ const SpaceListingCard = (props) => {
     <DestinationListingCard
       carouselOverlay={ placeLabel && placeHref && (
         <Link
+          onPlaceLabelClick={ onPlaceLabelClick }
           href={ placeHref }
           className={ css.placeLink }
           iconClassName={ css.placeLinkIcon }
@@ -38,6 +40,7 @@ SpaceListingCard.propTypes = {
   size: PropTypes.node,
   price: PropTypes.node,
   priceUnit: PropTypes.node,
+  onPlaceLabelClick: PropTypes.func,
 };
 
 export default SpaceListingCard;
