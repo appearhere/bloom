@@ -26,6 +26,7 @@ export default class Window extends Component {
       body: '',
       footer: '',
     },
+    variant: 'light',
   };
 
   render() {
@@ -40,7 +41,7 @@ export default class Window extends Component {
     } = this.props;
 
     return (
-      <div className={ cx(css[variant], className) } { ...rest }>
+      <div className={ cx(css.root, css[variant], className) } { ...rest }>
         { header && (
           <div className={ cx(css.header, classNames.header) }>
             { header }

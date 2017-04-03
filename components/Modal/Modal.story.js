@@ -1,6 +1,6 @@
 import React from 'react';
 import { storiesOf, action } from '@kadira/storybook';
-import { withKnobs, boolean, number } from '@kadira/storybook-addon-knobs';
+import { withKnobs, boolean } from '@kadira/storybook-addon-knobs';
 import ModalAnimator from './ModalAnimator';
 import Window from './Window';
 import WithTitleBar from './WithTitleBar';
@@ -260,47 +260,5 @@ stories
           }
         </p>
       </WithActionBar>
-    </ModalAnimator>
-  ))
-  .add('Configurable springs', () => (
-    <ModalAnimator
-      active={ boolean('active', false) }
-      windowSpringConfig={ {
-        stiffness: number('Window spring', 300),
-        damping: number('Window damping', 30),
-      } }
-      overlaySpringConfig={ {
-        stiffness: number('overlay spring', 300),
-        damping: number('overlay damping', 15),
-      } }
-    >
-      <Window onClose={ action('Closing') }>
-        <p className={ [m.fontRegular, m.fgGreyDarker, m.mt0, m.mbm].join(' ') }>
-          {
-            'Aliquam consequat consequat pharetra. Proin sagittis quis ipsum maximus laoreet.' +
-            ' Maecenas condimentum nisl vel lectus vehicula dapibus. Nunc suscipit suscipit leo,' +
-            ' at molestie nibh ultrices quis. Integer mattis enim est, eget interdum magna' +
-            ' facilisis sed. Pellentesque vehicula eget ligula in dapibus. In vel neque sed' +
-            ' lacus sollicitudin viverra. Vestibulum lacinia quam dictum finibus tristique.' +
-            ' Cras vel eros id dolor posuere tempor nec id lectus. Pellentesque eleifend neque' +
-            ' diam, eget luctus diam volutpat nec. In arcu nisl, semper sed pellentesque ut,' +
-            ' vulputate vel ante. Nulla iaculis ligula sit amet nulla sollicitudin, in iaculis' +
-            ' libero sodales.'
-          }
-        </p>
-        <p className={ [m.fontRegular, m.fgGreyDarker, m.mt0, m.mbm].join(' ') }>
-          {
-            'Aliquam consequat consequat pharetra. Proin sagittis quis ipsum maximus laoreet.' +
-            ' Maecenas condimentum nisl vel lectus vehicula dapibus. Nunc suscipit suscipit leo,' +
-            ' at molestie nibh ultrices quis. Integer mattis enim est, eget interdum magna' +
-            ' facilisis sed. Pellentesque vehicula eget ligula in dapibus. In vel neque sed' +
-            ' lacus sollicitudin viverra. Vestibulum lacinia quam dictum finibus tristique.' +
-            ' Cras vel eros id dolor posuere tempor nec id lectus. Pellentesque eleifend neque' +
-            ' diam, eget luctus diam volutpat nec. In arcu nisl, semper sed pellentesque ut,' +
-            ' vulputate vel ante. Nulla iaculis ligula sit amet nulla sollicitudin, in iaculis' +
-            ' libero sodales.'
-          }
-        </p>
-      </Window>
     </ModalAnimator>
   ));

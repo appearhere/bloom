@@ -17,45 +17,33 @@
 .overlay {
   position: fixed;
   background-color: var(--overlay-default);
-  transition: all 200ms;
   top: 0;
   left: 0;
   right: 0;
   bottom: 0;
-  will-change: opacity;
-  backface-visibility: hidden;
+  animation-name: fadeIn;
+  animation-iteration-count: 1;
+  animation-fill-mode: forwards;
+  animation-duration: 300ms;
+  animation-timing-function: var(--animation-sharp);
 }
 
 .wrapper {
   position: fixed;
   height: 100%;
   width: 100%;
-  will-change: transform;
-  backface-visibility: hidden;
+  animation-name: fadeIn;
+  animation-iteration-count: 1;
+  animation-fill-mode: forwards;
+  animation-duration: 350ms;
+  animation-timing-function: var(--animation-sharp);
 }
 
-.window {
-  position: fixed;
-  left: 50%;
-  bottom: 0;
-  width: 100%;
-  transform: translate3d(-50%, 0, 0);
-  background-color: var(--color-white);
-  overflow: hidden;
-  max-height: 100vh;
-  border-top-right-radius: 4px;
-  border-top-left-radius: 4px;
-}
-
-@media(--modal-lg) {
-  .window {
-    width: 94vw;
-    max-height: 94vh;
-    max-width: 37.5rem;
-    left: 50%;
-    top: 50%;
-    bottom: auto;
-    transform: translate3d(-50%, -50%, 0);
-    border-radius: 4px;
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
   }
 }

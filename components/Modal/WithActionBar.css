@@ -13,9 +13,3 @@
 .body {
   padding-bottom: var(--space-96);
 }
-
-@media(--modal-lg) {
-  .body {
-    padding-bottom: var(--space-144);
-  }
-}
