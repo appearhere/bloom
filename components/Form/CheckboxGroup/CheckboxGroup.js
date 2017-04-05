@@ -49,7 +49,6 @@ export default class CheckboxGroup extends Component {
     const {
       children,
       Input,
-      onChange,
       optional,
       value,
       name,
@@ -79,7 +78,7 @@ export default class CheckboxGroup extends Component {
             <Input
               id={ id }
               name={ name }
-              onChange={ onChange }
+              onChange={ this.handleChange }
               checked={ checked }
               required={ !optional }
               ref={ setInputRef }
