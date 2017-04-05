@@ -22,7 +22,6 @@
 .percentage svg,
 .play svg,
 .play-c svg,
-.search svg,
 .shield svg,
 .signature svg,
 .star svg,
@@ -48,6 +47,7 @@
 .map svg,
 .pintrest svg,
 .radio svg,
+.search svg,
 .tick svg,
 .twitter svg {
   stroke: transparent;
