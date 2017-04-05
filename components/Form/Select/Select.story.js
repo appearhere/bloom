@@ -27,4 +27,23 @@ stories.add('Select', () => (
       ))
     }
   </Select>
+))
+.add('Select w/high priority', () => (
+  <Select
+    name="icon"
+    onChange={ action('onChange') }
+    onFocus={ action('onFocus') }
+    onBlur={ action('onBlur') }
+    error={ boolean('Errored', false) ? 'Something went wrong' : '' }
+    multiple={ boolean('Multiple', false) }
+    priority="high"
+  >
+    {
+      Object
+        .keys(icons)
+        .map(option => (
+          <Option key={ option } value={ option }>{ option }</Option>
+      ))
+    }
+  </Select>
 ));

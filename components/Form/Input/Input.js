@@ -29,6 +29,7 @@ export default class Input extends Component {
       'url',
       'textarea',
     ]),
+    priority: PropTypes.oneOf(['high']),
   };
 
   static defaultProps = {
@@ -80,6 +81,7 @@ export default class Input extends Component {
       error,
       type,
       className,
+      priority,
       ...rest,
     } = this.props;
 
@@ -88,6 +90,7 @@ export default class Input extends Component {
       className,
       hasFocus ? css.focus : null,
       error ? css.error : null,
+      css[priority],
     );
 
     const InputComponent = type === 'textarea' ? 'textarea' : 'input';

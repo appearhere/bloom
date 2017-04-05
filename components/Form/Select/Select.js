@@ -23,6 +23,7 @@ export default class Select extends Component {
       PropTypes.array,
     ]),
     error: PropTypes.string,
+    priority: PropTypes.oneOf(['high']),
   };
 
   static defaultProps = {
@@ -76,6 +77,7 @@ export default class Select extends Component {
       multiple,
       value,
       children,
+      priority,
       ...rest,
     } = this.props;
 
@@ -83,6 +85,7 @@ export default class Select extends Component {
       css.select,
       hasFocus ? css.focus : null,
       error ? css.error : null,
+      css[priority],
     );
 
     return (

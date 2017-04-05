@@ -23,6 +23,11 @@ storiesOf('Btn', module)
       Cancel
     </Btn>
   ))
+  .add('High priority', () => (
+    <Btn priority="high" onClick={ action('Button clicked') }>
+      Submit
+    </Btn>
+  ))
   .add('Primary context', () => (
     <Btn context="primary" onClick={ action('Button clicked') }>
       Submit
