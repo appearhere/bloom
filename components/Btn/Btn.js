@@ -12,6 +12,7 @@ const Btn = (props) => {
     disabled,
     context,
     variant,
+    priority,
     ...rest,
   } = props;
 
@@ -24,6 +25,7 @@ const Btn = (props) => {
     className,
     css[context],
     css[variant],
+    css[priority],
   );
 
   return (
@@ -48,6 +50,7 @@ Btn.propTypes = {
 
   context: PropTypes.oneOf(['primary', 'danger', 'action', 'whiteout']),
   variant: PropTypes.oneOf(['hollow', 'subtle']),
+  priority: PropTypes.oneOf(['high']),
 };
 
 Btn.defaultProps = {
