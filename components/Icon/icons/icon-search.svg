@@ -1,1 +1,12 @@
-<svg id="Layer_1" data-name="Layer 1" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16"><defs><style>.cls-1{fill:none;stroke:#000;stroke-linecap:round;stroke-linejoin:round;}</style></defs><title>icon</title><path id="search" class="cls-1" d="M9.94,0.5A5.56,5.56,0,1,1,4.39,6.06,5.56,5.56,0,0,1,9.94.5Zm-4,9.56L0.5,15.5"/></svg>
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<svg width="16px" height="16px" viewBox="0 0 16 16" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <!-- Generator: Sketch 42 (36781) - http://www.bohemiancoding.com/sketch -->
+    <title>Icon Search</title>
+    <desc>Created with Sketch.</desc>
+    <defs></defs>
+    <g id="Page-1" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g id="Icon-Search" fill="#191919">
+            <path d="M15.8542611,15.1535049 L11.7655867,11.0647737 C12.777995,9.89086069 13.3928933,8.364685 13.3928933,6.69653949 C13.3928933,3.00354925 10.3884984,0 6.69644664,0 C3.0043949,0 0,3.00443656 0,6.69653949 C0,10.3886424 3.0043949,13.393079 6.69644664,13.393079 C8.36456904,13.393079 9.89072356,12.7781721 11.0646203,11.7657498 L15.1532948,15.8544809 C15.2500104,15.9511979 15.3768942,16 15.503778,16 C15.6306617,16 15.7575455,15.9511979 15.8542611,15.8544809 C16.0485796,15.661047 16.0485796,15.3469388 15.8542611,15.1535049 Z M6.69644664,12.4010648 C3.55097118,12.4010648 0.992000444,9.84205856 0.992000444,6.69653949 C0.992000444,3.55102041 3.55097118,0.992014197 6.69644664,0.992014197 C9.84192211,0.992014197 12.4008928,3.55102041 12.4008928,6.69653949 C12.4008928,9.84205856 9.84192211,12.4010648 6.69644664,12.4010648 Z" id="Shape-Copy-3"></path>
+        </g>
+    </g>
+</svg>
