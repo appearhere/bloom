@@ -26,3 +26,13 @@
   transform: translateX(-50%);
   bottom: -11px;
 }
+
+.scrollContainer {
+  max-height: 350px;
+  overflow-y: auto;
+  overflow-x: hidden;
+}
+
+.scrollContainer a + a {
+  border-top: 1px solid var(--color-greyLighter);
+}

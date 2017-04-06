@@ -7,11 +7,14 @@ import {
 /* eslint-enable camelcase */
 import isEqual from 'lodash/fp/isEqual';
 import uniqueId from 'lodash/fp/uniqueId';
+import flattenDeep from 'lodash/fp/flattenDeep';
 import cx from 'classnames';
 
-import lngLat from '../../utils/propTypeValidations/lngLat';
+import lngLatType from '../../utils/propTypeValidations/lngLat';
 import minLngLatBounds from '../../utils/geoUtils/minLngLatBounds';
 import mapboxgl from '../../utils/mapboxgl/mapboxgl';
+import isSingleLevelArray from '../../utils/isSingleLevelArray/isSingleLevelArray';
+import nestedArrayDepth from '../../utils/nestedArrayDepth/nestedArrayDepth';
 import MarkerContainer from './MarkerContainer';
 import BaseMap from './BaseMap';
 
@@ -34,12 +37,13 @@ export default class MarkableMap extends Component {
           PropTypes.string,
           PropTypes.number,
         ]).isRequired,
-        lngLat: lngLat.isRequired,
+        lngLat: lngLatType.isRequired,
         label: PropTypes.string.isRequired,
         props: PropTypes.object,
       })
     ),
     MarkerComponent: PropTypes.func.isRequired,
+    GroupMarkerComponent: PropTypes.func.isRequired,
     autoFit: PropTypes.bool,
   };
 
@@ -54,7 +58,7 @@ export default class MarkableMap extends Component {
   }
 
   state = {
-    activeMarkerId: null,
+    activeFeature: null,
   };
 
   componentDidMount() {
@@ -63,17 +67,18 @@ export default class MarkableMap extends Component {
     if (autoFit) this.fitMarkers(markers);
   }
 
-  componentDidUpdate(prevProps) {
+  componentDidUpdate(prevProps, prevState) {
     const { markers: prevMarkers } = prevProps;
+    const { activeFeature: prevActiveFeature } = prevState;
     const { markers, autoFit } = this.props;
-    const { activeMarkerId } = this.state;
+    const { activeFeature } = this.state;
 
     this.updateMapboxMarkerSource();
 
-    if (activeMarkerId !== null) {
-      this.renderActiveMarker(activeMarkerId);
-    } else {
+    if (!activeFeature) {
       this.unmountActiveMarker();
+    } else if (!isEqual(activeFeature, prevActiveFeature)) {
+      this.renderMarkerPopup(activeFeature);
     }
 
     if (autoFit) {
@@ -131,6 +136,7 @@ export default class MarkableMap extends Component {
         'text-color': '#FFFFFF',
       },
     });
+
     mapbox.addLayer({
       id: CLUSTER_LAYER,
       type: 'symbol',
@@ -160,7 +166,7 @@ export default class MarkableMap extends Component {
 
   updateMapboxMarkerSource = () => {
     if (!this.mapboxMarkerSource) return;
-    const { activeMarkerId } = this.state;
+    const { activeFeature } = this.state;
     const { markers } = this.props;
 
     const features = markers.map(marker => ({
@@ -171,7 +177,7 @@ export default class MarkableMap extends Component {
       },
       properties: {
         id: marker.id,
-        active: activeMarkerId === marker.id,
+        active: activeFeature && marker.id === activeFeature.properties.id,
         label: marker.label,
         labellen: marker.label.length,
       },
@@ -183,24 +189,46 @@ export default class MarkableMap extends Component {
   handleMapClick = (e) => {
     const { originalEvent, point } = e;
     if (originalEvent.target !== this.getMaboxGL().getCanvas()) return;
-    const features = this.getMaboxGL().queryRenderedFeatures(point, { layers: [MARKER_LAYER] });
 
-    if (features.length > 0) {
-      const marker = features[0];
-      this.moveToMarker(marker);
-      this.setState({ activeMarkerId: marker.properties.id });
+    const markers = this.getMaboxGL().queryRenderedFeatures(point, { layers: [MARKER_LAYER] });
+    const clusters = this.getMaboxGL().queryRenderedFeatures(point, { layers: [CLUSTER_LAYER] });
+
+    if (markers.length > 0) {
+      this.handleMarkerClick(markers[0]);
+    } else if (clusters.length > 0) {
+      this.handleClusterClick(clusters[0]);
     } else {
-      const clusters = this.getMaboxGL().queryRenderedFeatures(point, {
-        layers: [CLUSTER_LAYER],
-      });
-      this.setState({ activeMarkerId: null });
+      this.setState({ activeFeature: null });
+    }
+  };
 
-      if (clusters.length > 0) {
-        const { markers } = this.props;
-        const clusterMarkerIds = JSON.parse(clusters[0].properties.markerids);
-        const clusterMarkers = markers.filter(marker => clusterMarkerIds.indexOf(marker.id) !== -1);
-        this.fitMarkers(clusterMarkers);
-      }
+  handleMarkerClick = (marker) => {
+    this.setState({ activeFeature: marker });
+  };
+
+  handleClusterClick = (cluster) => {
+    const { markers } = this.props;
+    const clusterSet = JSON.parse(cluster.properties.markerids);
+
+    const unbreakableCluster = () => {
+      // all markers are clustered at the same zoom level
+      const singleZoomCluster = isSingleLevelArray(clusterSet);
+      if (!singleZoomCluster) return false;
+
+      const zoom = this.getMaboxGL().getZoom();
+      const clusterZoomLevel = nestedArrayDepth(clusterSet) + Math.ceil(zoom);
+
+      // the cluster cannot uncluster even at max zoom
+      return clusterZoomLevel >= CLUSTER_MAX_ZOOM;
+    };
+
+    if (unbreakableCluster()) {
+      this.setState({ activeFeature: cluster });
+    } else {
+      const clusterMarkerIds = flattenDeep(clusterSet);
+      const clusteredMarkers = markers.filter(marker => clusterMarkerIds.indexOf(marker.id) !== -1);
+
+      this.fitMarkers(clusteredMarkers);
     }
   };
 
@@ -209,17 +237,16 @@ export default class MarkableMap extends Component {
 
     this.map.fitBounds(
       minLngLatBounds(markers.map(marker => marker.lngLat)),
-      { padding: { top: 20, bottom: 20, left: 50, right: 50 }, offset: [0, 20], maxZoom: 16 },
+      { padding: { top: 20, bottom: 20, left: 50, right: 50 }, offset: [0, 20] },
     );
   };
 
-  moveToMarker = (marker) => {
-    const { geometry } = marker;
-    const [markerLng, markerLat] = geometry.coordinates;
+  easeTo = (lngLat) => {
+    const [lng, lat] = lngLat;
     const zoom = this.getMaboxGL().getZoom();
 
-    const nextLat = markerLat + ((MOVE_TO_MARKER_MAX_LAT_OFFSET * 2) / Math.pow(2, zoom));
-    const nextCenter = new mapboxgl.LngLat(markerLng, nextLat).wrap();
+    const nextLat = lat + ((MOVE_TO_MARKER_MAX_LAT_OFFSET * 2) / Math.pow(2, zoom));
+    const nextCenter = [lng, nextLat];
 
     this.map.easeTo({ center: nextCenter });
   };
@@ -233,28 +260,52 @@ export default class MarkableMap extends Component {
     this.activeMarker = null;
   };
 
-  renderActiveMarker = (activeMarkerId) => {
-    const { MarkerComponent, markers } = this.props;
-    const marker = markers.find(m => m.id === activeMarkerId);
-
+  markerPopupElement = (lngLat) => {
     if (!this.activeMarker) {
-      this.activeMarker = new mapboxgl.Marker().setLngLat(marker.lngLat).addTo(this.getMaboxGL());
+      this.activeMarker = new mapboxgl.Marker().setLngLat(lngLat).addTo(this.getMaboxGL());
     } else {
-      this.activeMarker.setLngLat(marker.lngLat);
+      this.activeMarker.setLngLat(lngLat);
     }
 
     const element = this.activeMarker.getElement();
     element.className = cx(css.marker, css.markerActive);
+    return element;
+  };
 
-    renderSubtreeIntoContainer(
-      this,
-      <MarkerContainer
-        key={ `${this.id}-activeMarker` }
-        MarkerComponent={ MarkerComponent }
-        props={ marker.props }
-      />,
-      element
-    );
+  renderMarkerPopup = (activeFeature) => {
+    const { MarkerComponent, GroupMarkerComponent, markers } = this.props;
+    const lngLat = activeFeature.geometry.coordinates;
+
+    this.easeTo(lngLat);
+    const element = this.markerPopupElement(lngLat);
+
+    if (activeFeature.properties.cluster) {
+      const clusterSet = JSON.parse(activeFeature.properties.markerids);
+      const clusterMarkerIds = flattenDeep(clusterSet);
+      const clusteredMarkers = markers.filter(marker => clusterMarkerIds.indexOf(marker.id) !== -1);
+
+      renderSubtreeIntoContainer(
+        this,
+        <MarkerContainer
+          key={ `${this.id}-activeMarker` }
+          MarkerComponent={ GroupMarkerComponent }
+          props={ { group: clusteredMarkers.map(marker => marker.props) } }
+        />,
+        element
+      );
+    } else {
+      const marker = markers.find(m => m.id === activeFeature.properties.id);
+
+      renderSubtreeIntoContainer(
+        this,
+        <MarkerContainer
+          key={ `${this.id}-activeMarker` }
+          MarkerComponent={ MarkerComponent }
+          props={ marker.props }
+        />,
+        element
+      );
+    }
   };
 
   render() {
