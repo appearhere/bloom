@@ -5,6 +5,7 @@ import Card from './Card/Card';
 import PictureCard from './PictureCard/PictureCard';
 import SpaceFeatureCard from './SpaceFeatureCard/SpaceFeatureCard';
 import SpaceListingCard from './SpaceListingCard/SpaceListingCard';
+import CondensedSpaceCard from './CondensedSpaceCard/CondensedSpaceCard';
 import PlaceListingCard from './PlaceListingCard/PlaceListingCard';
 import EmptyListingCard from './EmptyListingCard/EmptyListingCard';
 import EditorialCard from './EditorialCard/EditorialCard';
@@ -103,6 +104,22 @@ storiesOf('Cards', module)
         }, {
           src: 'https://source.unsplash.com/random/500x501',
           alt: 'hello2',
+        }]
+      }
+      href="#"
+    />
+  ))
+  .add('CondensedSpaceCard', () => (
+    <CondensedSpaceCard
+      price="$10,000,000"
+      priceUnit="/day"
+      name="Bold Street Shop"
+      placeLabel="Part of Boxpark"
+      placeHref="#"
+      images={
+        [{
+          src: 'https://source.unsplash.com/random/500x500',
+          alt: 'hello',
         }]
       }
       href="#"
