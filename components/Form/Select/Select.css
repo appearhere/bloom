@@ -32,6 +32,7 @@ select.select {
   vertical-align: top;
   border-radius: 2px;
   margin: 0;
+  height: auto;
 }
 
 select.high {
