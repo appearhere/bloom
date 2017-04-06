@@ -6,7 +6,7 @@ import mapboxgl from '../../utils/mapboxgl/mapboxgl';
 import lngLat from '../../utils/propTypeValidations/lngLat';
 import noop from '../../utils/noop';
 
-import { DEFAULT_CENTER, DEFAULT_ZOOM } from '../../constants/mapbox';
+import { DEFAULT_CENTER, DEFAULT_MAX_ZOOM, DEFAULT_ZOOM } from '../../constants/mapbox';
 
 import css from './BaseMap.css';
 
@@ -15,47 +15,51 @@ export default class BaseMap extends Component {
     allowWrap: PropTypes.bool,
     center: lngLat,
     className: PropTypes.string,
+    dragRotate: PropTypes.bool,
+    mapClassName: PropTypes.string,
     mapboxStyle: React.PropTypes.oneOfType([
       PropTypes.string,
       PropTypes.object,
     ]),
-    mapClassName: PropTypes.string,
-    zoom: PropTypes.number,
+    maxZoom: PropTypes.number,
     onClick: PropTypes.func,
     onMapLoad: PropTypes.func,
     onMoveEnd: PropTypes.func,
-    dragRotate: PropTypes.bool,
+    zoom: PropTypes.number,
   };
 
   static defaultProps = {
     allowWrap: true,
     center: DEFAULT_CENTER,
+    dragRotate: false,
     mapboxStyle: mapStyle,
-    zoom: DEFAULT_ZOOM,
+    maxZoom: DEFAULT_MAX_ZOOM,
     onClick: noop,
     onMapLoad: noop,
     onMoveEnd: noop,
-    dragRotate: false,
+    zoom: DEFAULT_ZOOM,
   };
 
   componentDidMount() {
     const {
       allowWrap,
       center,
+      dragRotate,
       mapboxStyle,
-      zoom,
+      maxZoom,
       onClick,
       onMapLoad,
-      dragRotate,
+      zoom,
     } = this.props;
 
     this.map = new mapboxgl.Map({
       container: this.mapContainer,
-      style: mapboxStyle,
       renderWorldCopies: allowWrap,
+      style: mapboxStyle,
       center,
-      zoom,
       dragRotate,
+      maxZoom,
+      zoom,
     });
 
     this.map.on('click', onClick);
