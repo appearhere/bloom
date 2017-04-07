@@ -22,6 +22,7 @@ const SpaceListingCard = (props) => {
           onClick={ onPlaceLabelClick }
           href={ placeHref }
           className={ css.placeLink }
+          bodyClassName={ css.placeLinkBody }
           iconClassName={ css.placeLinkIcon }
         >
           { placeLabel }

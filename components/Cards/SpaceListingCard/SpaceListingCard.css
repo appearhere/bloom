@@ -12,6 +12,8 @@
   z-index: 1;
   line-height: 1;
   transition: background-color 100ms;
+  max-width: 80%;
+  text-transform: initial;
 }
 
 .placeLink:hover {
@@ -19,6 +21,20 @@
   background-color: var(--color-black);
 }
 
+.placeLinkBody {
+  overflow: hidden;
+  word-wrap: break-word;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  width: 100%;
+  padding-right: 1rem;
+  display: inline-block;
+  vertical-align: bottom;
+  box-sizing: border-box;
+}
+
 .placeLinkIcon {
-  line-height: 1;
+  position: absolute;
+  top: 0.4rem;
+  right: 0.5rem;
 }

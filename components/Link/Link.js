@@ -4,15 +4,17 @@ import cx from 'classnames';
 import css from './Link.css';
 import Icon from '../Icon/Icon';
 
-const Link = ({ href, className, iconClassName, children, ...rest }) => (
+const Link = ({ href, className, bodyClassName, iconClassName, children, ...rest }) => (
   <a { ...rest } href={ href } className={ cx(css.root, className) }>
-    { children } <Icon className={ cx(css.icon, iconClassName) } name="chevron" />
+    <span className={ cx(css.body, bodyClassName) }>{ children }</span>
+    <Icon className={ cx(css.icon, iconClassName) } name="chevron-right" />
   </a>
 );
 
 Link.propTypes = {
   href: PropTypes.string,
   className: PropTypes.string,
+  bodyClassName: PropTypes.string,
   iconClassName: PropTypes.string,
   children: PropTypes.node,
 };
