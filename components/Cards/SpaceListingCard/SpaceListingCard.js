@@ -17,9 +17,9 @@ const SpaceListingCard = (props) => {
 
   return (
     <DestinationListingCard
-      carouselOverlay={ placeLabel && placeHref && (
+      carouselOverlay={ placeLabel && (
         <Link
-          onPlaceLabelClick={ onPlaceLabelClick }
+          onClick={ onPlaceLabelClick }
           href={ placeHref }
           className={ css.placeLink }
           iconClassName={ css.placeLinkIcon }
