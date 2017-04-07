@@ -1,3 +1,7 @@
+.overflowHidden {
+  overflow: hidden;
+}
+
 .noScroll {
   overflow: hidden;
   position: fixed;
