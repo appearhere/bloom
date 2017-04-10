@@ -4,6 +4,7 @@ import React from 'react';
 import ReactDOM from 'react-dom';
 import MarkableMap from './MarkableMap';
 import SpaceMarker from './SpaceMarker';
+import SpaceGroupMarker from './SpaceGroupMarker';
 import mapboxgl from '../../utils/mapboxgl/mapboxgl';
 
 jest.mock('../../utils/mapboxgl/mapboxgl');
@@ -18,7 +19,11 @@ const labeledCalls = (spy, label) => spy.calls.all().filter(call => call.args[0]
 
 it('renders without crashing', () => {
   const div = document.createElement('div');
-  ReactDOM.render(<MarkableMap MarkerComponent={ SpaceMarker } />, div);
+  ReactDOM.render(
+    <MarkableMap
+      MarkerComponent={ SpaceMarker }
+      GroupMarkerComponent={ SpaceGroupMarker }
+    />, div);
 });
 
 it('it renders the active marker correctly', () => {
@@ -30,12 +35,15 @@ it('it renders the active marker correctly', () => {
     <MarkableMap
       ref={ (c) => { component = c; } }
       MarkerComponent={ SpaceMarker }
+      GroupMarkerComponent={ SpaceGroupMarker }
       markers={ [{ id: 1, lngLat: [1, 0], label: 'test' }] }
     />,
     div
   );
 
-  component.setState({ activeMarkerId: 1 }, () => {
+  const geoJSONFeature = { geometry: { coordinates: [1, 0] }, properties: { id: 1 } };
+
+  component.setState({ activeFeature: geoJSONFeature }, () => {
     const constructorCalls = labeledCalls(markerSpy, 'constructor');
     expect(constructorCalls.length).toEqual(1);
 
@@ -54,6 +62,7 @@ it('it autosizes the map correctly', () => {
   ReactDOM.render(
     <MarkableMap
       MarkerComponent={ SpaceMarker }
+      GroupMarkerComponent={ SpaceGroupMarker }
       markers={ [{ id: 1, lngLat: [1, 0], label: 'test' }] }
       autoFit
     />,
@@ -67,6 +76,7 @@ it('it autosizes the map correctly', () => {
   ReactDOM.render(
     <MarkableMap
       MarkerComponent={ SpaceMarker }
+      GroupMarkerComponent={ SpaceGroupMarker }
       markers={ [
         { id: 1, lngLat: [0, 0], label: 'test' },
         { id: 2, lngLat: [1, 1], label: 'test' },
@@ -86,6 +96,7 @@ it('it autosizes the map correctly', () => {
   ReactDOM.render(
     <MarkableMap
       MarkerComponent={ SpaceMarker }
+      GroupMarkerComponent={ SpaceGroupMarker }
       markers={ [
         { id: 1, lngLat: [0, 0], label: 'test' },
         { id: 2, lngLat: [1, 1], label: 'test' },
@@ -106,6 +117,7 @@ it('unmounts without crashing', () => {
   ReactDOM.render(
     <MarkableMap
       MarkerComponent={ SpaceMarker }
+      GroupMarkerComponent={ SpaceGroupMarker }
       markers={ [{ id: 1, lngLat: [1, 0], label: 'test' }] }
     />,
     div

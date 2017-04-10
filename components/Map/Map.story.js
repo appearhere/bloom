@@ -4,26 +4,28 @@ import actionWithComplexArgs from '../../.storybook/utils/actionWithComplexArgs'
 import MarkableMap from './MarkableMap';
 import BaseMap from './BaseMap';
 import Marker from './SpaceMarker';
+import GroupMarker from './SpaceGroupMarker';
 
 const prices = ['£1', '£33', '£420', '£1,000', '£20,000', '£999,999', '1 €', '20 €', '440 €',
   '4.040 €', '40.040 €', '120.040 €'];
 
 
-const generateMarkers = (number = 1) => {
+const generateMarkers = (number = 1, lng, lat) => {
   const markers = [];
 
   for (let i = 0; i < number; i += 1) {
-    const lng = -0.09 + ((Math.random() - Math.random()) * Math.random());
-    const lat = 51.505 + ((Math.random() - Math.random()) * Math.random());
+    const markerLng = lng || (-0.09 + ((Math.random() - Math.random()) * Math.random()));
+    const markerLat = lat || (51.505 + ((Math.random() - Math.random()) * Math.random()));
 
     const price = prices[Math.floor(Math.random() * prices.length)];
 
     markers.push({
       id: i,
-      lngLat: [lng, lat],
+      lngLat: [markerLng, markerLat],
       label: price,
       props: {
         price,
+        id: i,
         priceUnit: '/day',
         location: 'Shoreditch',
         city: 'London',
@@ -70,6 +72,7 @@ class TestMap extends Component {
         <MarkableMap
           markers={ markers }
           MarkerComponent={ Marker }
+          GroupMarkerComponent={ GroupMarker }
           onClick={ actionWithComplexArgs('map clicked') }
           onMoveEnd={ actionWithComplexArgs('map moved') }
           autoFit
@@ -90,4 +93,16 @@ storiesOf('Map', module)
   ))
   .add('MarkableMap', () => (
     <TestMap />
+  ))
+  .add('Grouped Space Marker', () => (
+    <div style={ { height: '96vh' } }>
+      <MarkableMap
+        markers={ generateMarkers(7, -0.09, 51.505) }
+        MarkerComponent={ Marker }
+        GroupMarkerComponent={ GroupMarker }
+        onClick={ actionWithComplexArgs('map clicked') }
+        onMoveEnd={ actionWithComplexArgs('map moved') }
+        autoFit
+      />
+    </div>
   ));

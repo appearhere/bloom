@@ -10,12 +10,17 @@ class Map {
     mapSpy('constructor', options);
   }
 
+  easeTo = mapSpy.bind(null, 'easeTo');
   fitBounds = mapSpy.bind(null, 'fitBounds');
   off = mapSpy.bind(null, 'off');
   on = mapSpy.bind(null, 'on');
   remove = mapSpy.bind(null, 'remove');
   setCenter = mapSpy.bind(null, 'setCenter');
   setZoom = mapSpy.bind(null, 'setZoom');
+  getZoom = () => {
+    mapSpy('getZoom');
+    return 10;
+  }
 }
 
 class Marker {

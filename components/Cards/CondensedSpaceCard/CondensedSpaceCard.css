@@ -1,0 +1,45 @@
+.root {
+  display: block;
+  text-decoration: none;
+}
+
+.image {
+  display: block;
+  width: 4.5rem;
+  height: 4.5rem;
+  object-fit: cover;
+  background-color: var(--color-greyLighter);
+}
+
+.body {
+  color: var(--color-greyDarker);
+  padding: var(--size-small);
+  width: 180px;
+}
+
+.name {
+  composes: fontSmallI from '../../../globals/typography.css';
+  font-weight: var(--fontweight-demi);
+  color: var(--color-greyDarker);
+  margin-top: var(--size-micro);
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  overflow: hidden;
+}
+
+.priceFromLabel {
+  composes: fontSmallI from '../../../globals/typography.css';
+  color: var(--color-grey);
+  margin-right: 0.3rem;
+}
+
+.price {
+  composes: fontRegular from '../../../globals/typography.css';
+  font-weight: var(--fontweight-demi);
+  color: var(--color-greyDarker);
+}
+
+.priceUnit {
+  composes: fontSmallI from '../../../globals/typography.css';
+  color: var(--color-grey);
+}
