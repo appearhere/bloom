@@ -13,16 +13,13 @@
 }
 
 .root:hover .icon {
-  transform: translateX(0.5em) rotate(90deg) translateZ(0);
+  transform: translateX(0.5em) translateZ(0);
 }
 
 .icon {
+  line-height: 1;
   display: inline-block;
-  transform: rotate(90deg) translateZ(0);
-  font-size: 0.7em;
+  transform: translateZ(0);
   vertical-align: text-top;
-  line-height: 1.4375;
-  margin-top: 0.15em;
-  margin-left: 0.5em;
   transition: transform 150ms;
 }

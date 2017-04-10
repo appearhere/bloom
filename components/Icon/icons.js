@@ -14,6 +14,7 @@ import camera from './icons/icon-camera.svg';
 import chartArrow from './icons/icon-chart-arrow.svg';
 import chatting from './icons/icon-chatting.svg';
 import chevron from './icons/icon-chevron.svg';
+import chevronRight from './icons/icon-chevron-right.svg';
 import clock from './icons/icon-clock.svg';
 import comment from './icons/icon-comment.svg';
 import cross from './icons/icon-cross.svg';
@@ -51,6 +52,7 @@ export default {
   'calendar-insight': svgClean(calendarInsight),
   'chart-arrow': svgClean(chartArrow),
   'play-c': svgClean(playC),
+  'chevron-right': svgClean(chevronRight),
   'tick-c': svgClean(tickC),
   'tick-starred': svgClean(tickStarred),
   'travel-idea': svgClean(travelIdea),
