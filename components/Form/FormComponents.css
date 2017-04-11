@@ -30,10 +30,11 @@
 
 .label {
   display: block;
-  composes: fontSmallIi from '../../globals/typography.css';
+  composes: fontSmallI from '../../globals/typography.css';
   color: var(--color-greyDark);
   font-weight: var(--fontweight-demi);
   text-transform: uppercase;
+  margin-bottom: var(--size-small);
 }
 
 .optional {
@@ -63,5 +64,5 @@
 * + .headline,
 * + .label,
 * + .value {
-  margin-top: var(--size-small);
+  margin-bottom: var(--size-small);
 }
