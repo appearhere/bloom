@@ -34,7 +34,7 @@
 .control {
   position: absolute;
   color: var(--color-white);
-  font-size: 1rem;
+  font-size: var(--size-lg-i);
   background-color: transparent;
   border: 0;
   opacity: 0.75;
