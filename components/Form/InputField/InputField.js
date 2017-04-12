@@ -6,6 +6,7 @@ import {
   Label,
   Value,
   Description,
+  InputWrapper,
 } from '../FormComponents';
 
 export default class InputField extends Component {
@@ -91,15 +92,20 @@ export default class InputField extends Component {
             { description }
           </Description>
         ) }
-        { cloneElement(children, {
-          ...rest,
-          ...sharedProps,
-          ref: (c) => { this.input = c; },
-          name: id,
-          id,
-          required,
-          'aria-describedby': descriptionId,
-        }) }
+        <InputWrapper
+          { ...sharedProps }
+          classNames={ classNames.inputWrapper }
+        >
+          { cloneElement(children, {
+            ...rest,
+            ...sharedProps,
+            ref: (c) => { this.input = c; },
+            name: id,
+            id,
+            required,
+            'aria-describedby': descriptionId,
+          }) }
+        </InputWrapper>
       </Element>
     );
   }
