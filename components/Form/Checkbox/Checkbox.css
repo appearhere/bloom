@@ -19,10 +19,15 @@
   display: inline-block;
 }
 
+.labelContainer {
+  vertical-align: bottom;
+}
+
 .label {
   composes: fontRegular from '../../../globals/typography.css';
   color: currentColor;
-  margin-left: var(--size-small);
+  margin-left: var(--size-regular);
+  display: block;
 }
 
 .root input:focus + label .checkbox {

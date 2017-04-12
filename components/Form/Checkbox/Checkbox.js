@@ -106,6 +106,7 @@ export default class Checkbox extends Component {
                   <span className={ css.label }>{ label }</span>
                 ) }
                 primarySide="right"
+                rightClassName={ css.labelContainer }
               />
             </div>
           ) }
