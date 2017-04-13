@@ -53,6 +53,12 @@ export const Value = ({ className, children }) => (
   </span>
 );
 
+export const InputWrapper = ({ className, children }) => (
+  <div className={ cx(css.inputWrapper, className) }>
+    { children }
+  </div>
+);
+
 const sharedPropTypes = {
   className: PropTypes.string,
   children: PropTypes.node,
@@ -68,4 +74,5 @@ Label.propTypes = {
   optionalLabel: PropTypes.string,
 };
 Value.propTypes = sharedPropTypes;
+InputWrapper.propTypes = sharedPropTypes;
 /* eslint-enable react/no-multi-comp */

@@ -1,10 +1,10 @@
 .field {
-  padding-bottom: var(--size-large);
+  padding-bottom: var(--size-lg-ii);
 }
 
 .field + .field {
   border-top: 1px solid var(--color-greyLighter);
-  padding-top: var(--size-large);
+  padding-top: var(--size-lg-ii);
 }
 
 .meta {
@@ -34,7 +34,6 @@
   color: var(--color-greyDark);
   font-weight: var(--fontweight-demi);
   text-transform: uppercase;
-  margin-bottom: var(--size-small);
 }
 
 .optional {
@@ -63,6 +62,19 @@
 * + .description,
 * + .headline,
 * + .label,
-* + .value {
-  margin-bottom: var(--size-small);
+* + .value,
+* + .inputWrapper {
+  margin-top: var(--size-sm-ii);
 }
+
+.label + .meta,
+.label + .description,
+.label + .value,
+.label + .inputWrapper,
+.headline + .meta,
+.headline + .description,
+.headline + .value,
+.headline + .inputWrapper {
+  margin-top: var(--size-sm-i);
+}
+

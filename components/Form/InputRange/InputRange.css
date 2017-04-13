@@ -9,22 +9,22 @@
 
 .input {
   width: 100%;
-  height: calc(2 * var(--size-large));
-  transform: translateY(calc(var(--size-large) - var(--inputRange-track-height)));
+  height: calc(2 * var(--size-lg-ii));
+  transform: translateY(calc(var(--size-lg-ii) - var(--inputRange-track-height)));
   position: relative;
 }
 
 .slider {
   appearance: none;
   border-radius: 100%;
-  height: var(--size-large);
-  width: var(--size-large);
+  height: var(--size-lg-i);
+  width: var(--size-lg-i);
   display: block;
   background-color: var(--color-white);
   border: 1px solid var(--color-greyLighter);
   box-shadow: 0 2px 4px 0 rgba(0, 0, 0, 0.2);
-  left: calc(-0.5 * var(--size-large));
-  top: calc((var(--size-large) - var(--inputRange-track-height)) * -0.5);
+  left: calc(-0.5 * var(--size-lg-i));
+  top: calc((var(--size-lg-i) - var(--inputRange-track-height)) * -0.5);
   position: absolute;
 }
 
@@ -64,7 +64,7 @@
 }
 
 .histogram {
-  height: var(--size-large);
+  height: var(--size-lg-ii);
   width: 100%;
 }
 
@@ -87,5 +87,5 @@
 .input {
   position: absolute;
   width: 100%;
-  bottom: calc((-1 * var(--size-large) + calc(-1 * var(--inputRange-track-height))))
+  bottom: calc((-1 * var(--size-lg-ii) + calc(-1 * var(--inputRange-track-height))))
 }
