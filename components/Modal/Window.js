@@ -3,13 +3,17 @@ import cx from 'classnames';
 
 import css from './Window.css';
 
+export const WINDOW_VARIANT = {
+  LIGHT: 'light',
+  DARK: 'dark',
+};
+
 /**
  * TODO: Figure out react-motion compatible focus trap
  */
 export default class Window extends Component {
   static propTypes = {
     children: PropTypes.node,
-    variant: PropTypes.oneOf(['light', 'dark']),
     header: PropTypes.node,
     footer: PropTypes.node,
     className: PropTypes.string,
@@ -18,6 +22,10 @@ export default class Window extends Component {
       body: PropTypes.string,
       footer: PropTypes.string,
     }),
+    variant: PropTypes.oneOf([
+      WINDOW_VARIANT.LIGHT,
+      WINDOW_VARIANT.DARK,
+    ]),
   };
 
   static defaultProps = {
@@ -26,7 +34,7 @@ export default class Window extends Component {
       body: '',
       footer: '',
     },
-    variant: 'light',
+    variant: WINDOW_VARIANT.LIGHT,
   };
 
   render() {
@@ -41,7 +49,7 @@ export default class Window extends Component {
     } = this.props;
 
     return (
-      <div className={ cx(css.root, css[variant], className) } { ...rest }>
+      <div { ...rest } className={ cx(css.root, css[variant], className) }>
         { header && (
           <div className={ cx(css.header, classNames.header) }>
             { header }
