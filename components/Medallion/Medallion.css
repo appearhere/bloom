@@ -1,0 +1,21 @@
+.root {
+  border-radius: 4px;
+  display: inline-block;
+  box-sizing: border-box;
+  min-height: var(--size-regular);
+  line-height: var(--size-regular);
+  font-family: var(--font-avenir);
+  font-size: var(--size-sm-i);
+  text-align: center;
+  padding: var(--size-sm-iv) var(--size-sm-iii);
+}
+
+.light {
+  color: currentColor;
+  background-color: rgba(255, 255, 255, 0.2);
+}
+
+.dark {
+  color: currentColor;
+  background-color: rgba(0, 0, 0, 0.1);
+}
