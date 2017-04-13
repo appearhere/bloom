@@ -1,0 +1,42 @@
+.btn {
+  border-radius: 0;
+}
+
+.btn:first-child {
+  border-top-left-radius: 2px;
+  border-bottom-left-radius: 2px;
+}
+
+.btn:last-child {
+  border-top-right-radius: 2px;
+  border-bottom-right-radius: 2px;
+}
+
+.btn + .btn {
+  border-left-color: var(--color-greyDark);
+};
+
+/**
+ * The CSS loader won't generate classnames for the `.[context] .btn + .btn`
+ * rules without this declaration 😭
+ */
+.primary,
+.danger,
+.action,
+.whiteout {}
+
+.primary .btn + .btn {
+  border-left-color: var(--color-primary--light);
+}
+
+.danger .btn + .btn {
+  border-left-color: var(--color-danger--light);
+}
+
+.action .btn + .btn {
+  border-left-color: var(--color-action--light);
+}
+
+.whiteout .btn + .btn {
+  border-left-color: var(--color-greyLighter);
+}

@@ -1,5 +1,6 @@
 import React, { PropTypes } from 'react';
 import classnames from 'classnames';
+import noop from '../../utils/noop';
 
 import css from './Btn.css';
 
@@ -16,10 +17,6 @@ const Btn = (props) => {
     ...rest,
   } = props;
 
-  const handleClick = (e) => {
-    onClick(e);
-  };
-
   const classes = classnames(
     css.root,
     className,
@@ -32,7 +29,7 @@ const Btn = (props) => {
     <button
       className={ classes }
       type={ type }
-      onClick={ handleClick }
+      onClick={ onClick }
       disabled={ disabled }
       { ...rest }
     >
@@ -48,13 +45,17 @@ Btn.propTypes = {
   type: PropTypes.oneOf(['submit', 'reset', 'button', 'menu']),
   disabled: PropTypes.bool,
 
-  context: PropTypes.oneOf(['primary', 'danger', 'action', 'whiteout']),
-  variant: PropTypes.oneOf(['hollow', 'subtle']),
-  priority: PropTypes.oneOf(['high']),
+  context: PropTypes.oneOf(['default', 'primary', 'danger', 'action', 'whiteout']),
+  variant: PropTypes.oneOf(['default', 'hollow', 'subtle']),
+  priority: PropTypes.oneOf(['high', 'normal']),
 };
 
 Btn.defaultProps = {
   type: 'button',
+  onClick: noop,
+  context: 'default',
+  variant: 'default',
+  priority: 'normal',
 };
 
 export default Btn;
