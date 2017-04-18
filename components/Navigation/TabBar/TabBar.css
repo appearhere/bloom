@@ -1,7 +1,3 @@
-.root {
-  height: var(--tabBar-height);
-}
-
 .root * {
   box-sizing: border-box;
 }
