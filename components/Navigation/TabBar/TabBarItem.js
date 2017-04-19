@@ -1,7 +1,6 @@
 import React, { PropTypes } from 'react';
 import cx from 'classnames';
 
-import Icon from '../../Icon/Icon';
 import css from './TabBarItem.css';
 
 const TabBarItem = (props) => {
@@ -10,7 +9,6 @@ const TabBarItem = (props) => {
     className,
     active: _active,
     children,
-    icon,
     ...rest,
   } = props;
 
@@ -22,10 +20,7 @@ const TabBarItem = (props) => {
         className
       ) }
     >
-      <Icon className={ css.icon } name={ icon } />
-      <span className={ css.label }>
-        { children }
-      </span>
+      { children }
     </Component>
   );
 };
@@ -38,7 +33,6 @@ TabBarItem.propTypes = {
   ]),
   children: PropTypes.node,
   active: PropTypes.bool,
-  icon: PropTypes.string,
 };
 
 TabBarItem.defaultProps = {

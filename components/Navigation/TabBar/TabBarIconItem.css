@@ -1,0 +1,17 @@
+.root {
+  padding: var(--size-sm-ii);
+}
+
+.icon {
+  display: block;
+  composes: fontRegular from '../../../globals/typography.css';
+}
+
+.label {
+  composes: fontSmallIi from '../../../globals/typography.css';
+  color: currentColor;
+  font-weight: var(--fontweight-demi);
+  -webkit-font-smoothing: antialiased;
+  margin-top: var(--size-small);
+  display: block;
+}
