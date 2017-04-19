@@ -1,32 +1,26 @@
 import React, { PropTypes } from 'react';
 import cx from 'classnames';
 
+import Panel, { PANEL_CONTEXT } from '../Panel/Panel';
 import BtnContainer from '../BtnContainer/BtnContainer';
 import Icon from '../Icon/Icon';
-import css from './Banner.css';
+import css from './DismissablePanel.css';
 
-const contexts = {
-  ERROR: 'error',
-  SUCCESS: 'success',
-};
-
-const Banner = (props) => {
+const DismissablePanel = (props) => {
   const {
     children,
     className,
     context,
-    variant,
     onClose,
     ...rest,
   } = props;
 
   return (
-    <div
+    <Panel
       { ...rest }
+      context={ context }
       className={ cx(
         css.root,
-        css[context],
-        css[variant],
         onClose ? css.dismissable : null,
         className,
       ) }
@@ -43,23 +37,24 @@ const Banner = (props) => {
           <Icon className={ css.icon } name="cross" />
         </BtnContainer>
       ) }
-    </div>
+    </Panel>
   );
 };
 
-Banner.propTypes = {
+DismissablePanel.propTypes = {
   className: PropTypes.string,
   context: PropTypes.oneOf([
-    contexts.ERROR,
-    contexts.SUCCESS,
+    PANEL_CONTEXT.DEFAULT,
+    PANEL_CONTEXT.DARK,
+    PANEL_CONTEXT.ERROR,
+    PANEL_CONTEXT.SUCCESS,
   ]),
-  variant: PropTypes.oneOf(['light', 'dark']),
   children: PropTypes.node,
   onClose: PropTypes.func,
 };
 
-Banner.defaultProps = {
-  variant: 'light',
+DismissablePanel.defaultProps = {
+  context: PANEL_CONTEXT.DEFAULT,
 };
 
-export default Banner;
+export default DismissablePanel;

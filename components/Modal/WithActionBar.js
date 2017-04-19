@@ -1,9 +1,13 @@
 import React, { Component, PropTypes } from 'react';
 
-import Window from './Window';
+import Window, { WINDOW_VARIANT } from './Window';
+import Panel, { PANEL_CONTEXT } from '../Panel/Panel';
 import css from './WithActionBar.css';
-import Banner from '../Banner/Banner';
 
+const WINDOW_VARIANT_TO_PANEL_CONTEXT = {
+  [WINDOW_VARIANT.LIGHT]: PANEL_CONTEXT.DEFAULT,
+  [WINDOW_VARIANT.DARK]: PANEL_CONTEXT.BLACKOUT,
+};
 
 /**
  * TODO: Figure out react-motion compatible focus trap
@@ -12,11 +16,14 @@ class WindowWithActionBar extends Component {
   static propTypes = {
     children: PropTypes.node,
     actions: PropTypes.node,
-    variant: PropTypes.oneOf(['light', 'dark']),
+    variant: PropTypes.oneOf([
+      WINDOW_VARIANT.LIGHT,
+      WINDOW_VARIANT.DARK,
+    ]),
   };
 
   static defaultProps = {
-    variant: 'light',
+    variant: WINDOW_VARIANT.LIGHT,
   };
 
   render() {
@@ -38,12 +45,12 @@ class WindowWithActionBar extends Component {
         classNames={ classNames }
         variant={ variant }
         footer={ (
-          <Banner
-            variant={ variant }
+          <Panel
+            context={ WINDOW_VARIANT_TO_PANEL_CONTEXT[variant] }
             className={ css.banner }
           >
             { actions }
-          </Banner>
+          </Panel>
         ) }
       >
         { children }

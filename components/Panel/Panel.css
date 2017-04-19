@@ -1,33 +1,16 @@
 .root {
-  display: table;
+  display: block;
   composes: fontRegular from '../../globals/typography.css';
-  padding: var(--size-large);
+  padding: var(--size-sm-i) var(--size-lg-i);
   width: 100%;
+}
+
+.root,
+.root * {
   box-sizing: border-box;
 }
 
-.inner {
-  display: table-cell;
-  width: 100%;
-  vertical-align: middle;
-}
-
-.dismissable .inner {
-  width: 99%;
-}
-
-.dismissContainer {
-  display: table-cell;
-  min-width: 1%;
-  vertical-align: top;
-}
-
-.icon {
-  display: block;
-  margin-left: var(--size-medium);
-}
-
-.light {
+.default {
   background-color: var(--color-white);
   color: var(--color-greyDark);
   border: 1px solid var(--color-greyLighter);

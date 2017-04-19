@@ -1,9 +1,9 @@
 import React from 'react';
 import { render } from 'react-dom';
 
-import Banner from './Banner';
+import DismissablePanel from './DismissablePanel';
 
 it('renders without crashing', () => {
   const div = document.createElement('div');
-  render(<Banner />, div);
+  render(<DismissablePanel />, div);
 });
