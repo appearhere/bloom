@@ -23,7 +23,7 @@ const BtnGroup = (props) => {
       ) }
     >
       { Children.map(children, child => cloneElement(child, {
-        className: css.btn,
+        className: cx(css.btn, child.props.className),
         variant: 'default',
         context,
         priority,
