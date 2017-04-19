@@ -1,11 +1,28 @@
 import React, { Component, PropTypes } from 'react';
 import cx from 'classnames';
 
+import Panel, { PANEL_CONTEXT } from '../Panel/Panel';
 import css from './Window.css';
 
 export const WINDOW_VARIANT = {
   LIGHT: 'light',
   DARK: 'dark',
+};
+
+export const WINDOW_VARIANT_TO_PANEL_CONTEXT = {
+  [WINDOW_VARIANT.LIGHT]: PANEL_CONTEXT.DEFAULT,
+  [WINDOW_VARIANT.DARK]: PANEL_CONTEXT.BLACKOUT,
+};
+
+export const WindowTitle = ({ className, children, ...rest }) => (
+  <span { ...rest } className={ cx(css.title, className) }>
+    { children }
+  </span>
+);
+
+WindowTitle.propTypes = {
+  className: PropTypes.string,
+  children: PropTypes.node,
 };
 
 /**
@@ -49,11 +66,23 @@ export default class Window extends Component {
     } = this.props;
 
     return (
-      <div { ...rest } className={ cx(css.root, css[variant], className) }>
+      <div
+        { ...rest }
+        className={ cx(
+          css.root,
+          css[variant],
+          header ? css.hasHeader : null,
+          footer ? css.hasFooter : null,
+          className
+        ) }
+      >
         { header && (
-          <div className={ cx(css.header, classNames.header) }>
+          <Panel
+            context={ WINDOW_VARIANT_TO_PANEL_CONTEXT[variant] }
+            className={ cx(css.header, classNames.header) }
+          >
             { header }
-          </div>
+          </Panel>
         ) }
         { body && (
           <div className={ cx(css.body, classNames.body) }>
@@ -61,9 +90,12 @@ export default class Window extends Component {
           </div>
         ) }
         { footer && (
-          <div className={ cx(css.footer, classNames.footer) }>
+          <Panel
+            context={ WINDOW_VARIANT_TO_PANEL_CONTEXT[variant] }
+            className={ cx(css.footer, classNames.footer) }
+          >
             { footer }
-          </div>
+          </Panel>
         ) }
       </div>
     );
