@@ -45,7 +45,7 @@ DismissablePanel.propTypes = {
   className: PropTypes.string,
   context: PropTypes.oneOf([
     PANEL_CONTEXT.DEFAULT,
-    PANEL_CONTEXT.DARK,
+    PANEL_CONTEXT.BLACKOUT,
     PANEL_CONTEXT.ERROR,
     PANEL_CONTEXT.SUCCESS,
   ]),

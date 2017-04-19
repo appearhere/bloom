@@ -8,8 +8,8 @@ storiesOf('Panel', module)
       Important information that you should look at right now
     </Panel>
   ))
-  .add('Dark context', () => (
-    <Panel context="dark">
+  .add('Blackout context', () => (
+    <Panel context="blackout">
       Important information that you should look at right now
     </Panel>
   ))

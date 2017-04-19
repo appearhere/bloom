@@ -16,7 +16,7 @@
   border: 1px solid var(--color-greyLighter);
 }
 
-.dark {
+.blackout {
   color: var(--color-white);
   background-color: var(--color-black);
 }
