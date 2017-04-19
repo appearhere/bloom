@@ -1,9 +1,11 @@
 import React from 'react';
 import { render } from 'react-dom';
 
-import TabBarItem from './TabBarItem';
+import TabBarIconItem from './TabBarIconItem';
+
+jest.mock('../../Icon/Icon');
 
 it('renders without crashing', () => {
   const div = document.createElement('div');
-  render(<TabBarItem />, div);
+  render(<TabBarIconItem icon="star" />, div);
 });

@@ -2,23 +2,13 @@
   display: block;
   width: 100%;
   text-decoration: none;
+  composes: fontSmallI from '../../../globals/typography.css';
   color: currentColor;
-  padding: var(--size-small);
+  padding: var(--size-sm-i);
   transition: color 200ms;
   border-radius: 0;
   border: 0;
   margin: 0;
-}
-
-.icon {
-  display: block;
-}
-
-.label {
-  composes: fontSmallIi from '../../../globals/typography.css';
-  color: currentColor;
   font-weight: var(--fontweight-demi);
   -webkit-font-smoothing: antialiased;
-  margin-top: var(--size-small);
-  display: block;
 }
