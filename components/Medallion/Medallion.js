@@ -18,7 +18,7 @@ const Medallion = ({ className, variant, children, ...rest }) => (
 
 Medallion.propTypes = {
   className: PropTypes.string,
-  children: PropTypes.string,
+  children: PropTypes.node,
   variant: PropTypes.oneOf(['light', 'dark']),
 };
 
