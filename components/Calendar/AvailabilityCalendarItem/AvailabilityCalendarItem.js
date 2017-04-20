@@ -4,13 +4,13 @@ import cx from 'classnames';
 import momentPropTypes from 'react-moment-proptypes';
 import debounce from 'lodash/fp/debounce';
 
-import BookingRequestPreview from '../BookingRequestPreview/BookingRequestPreview';
-import Tooltip, { HORIZONTAL_ATTACHMENTS, VERTICAL_ATTACHMENTS } from '../Tooltip/Tooltip';
-import InteractiveCalendarItem from './InteractiveCalendarItem';
-import { SERVER_DATE } from '../../constants/formats';
+import BookingRequestPreview from '../../BookingRequestPreview/BookingRequestPreview';
+import Tooltip, { HORIZONTAL_ATTACHMENTS, VERTICAL_ATTACHMENTS } from '../../Tooltip/Tooltip';
+import InteractiveCalendarItem from '../InteractiveCalendarItem/InteractiveCalendarItem';
+import { SERVER_DATE } from '../../../constants/formats';
 import css from './AvailabilityCalendarItem.css';
-import moment from '../../utils/moment/moment';
-import Icon from '../Icon/Icon';
+import moment from '../../../utils/moment/moment';
+import Icon from '../../Icon/Icon';
 
 export const AVAILABILITY_STATES = {
   AVAILABLE: 'available',

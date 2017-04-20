@@ -5,8 +5,8 @@ import momentPropTypes from 'react-moment-proptypes';
 import CalendarItem, {
   defaultClassNames,
   defaultModifiers,
-} from './CalendarItem';
-import { ENTER } from '../../constants/keycodes';
+} from '../CalendarItem/CalendarItem';
+import { ENTER } from '../../../constants/keycodes';
 import css from './InteractiveCalendarItem.css';
 
 const emptyArr = [];

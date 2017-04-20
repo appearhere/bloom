@@ -2,7 +2,7 @@ import React from 'react';
 import { storiesOf } from '@kadira/storybook';
 import moment from 'moment';
 import AvailabilityCalendarItem, { AVAILABILITY_STATES } from './AvailabilityCalendarItem';
-import { SERVER_DATE } from '../../constants/formats';
+import { SERVER_DATE } from '../../../constants/formats';
 
 const today = moment();
 const formattedToday = today.format(SERVER_DATE);

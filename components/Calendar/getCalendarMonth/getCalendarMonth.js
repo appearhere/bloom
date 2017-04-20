@@ -2,7 +2,7 @@ import {
   generateArray,
   generateNumberFilledArray,
   reshapeArray,
-} from '../../utils/array/array';
+} from '../../../utils/array/array';
 
 export const CALENDAR_MONTH_LENGTH = 42;
 export const DAYS_PER_WEEK = 7;

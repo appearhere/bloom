@@ -3,13 +3,13 @@ import momentPropTypes from 'react-moment-proptypes';
 import moment from 'moment';
 
 import css from './CalendarMonth.css';
-import CalendarItem from './CalendarItem';
-import { generateNumberFilledArray } from '../../utils/array/array';
+import CalendarItem from '../CalendarItem/CalendarItem';
+import { generateNumberFilledArray } from '../../../utils/array/array';
 import getCalendarMonth, {
   getPreDayCount,
   getPostDayCount,
   DAYS_PER_WEEK,
-} from './getCalendarMonth';
+} from '../getCalendarMonth/getCalendarMonth';
 
 const today = moment();
 

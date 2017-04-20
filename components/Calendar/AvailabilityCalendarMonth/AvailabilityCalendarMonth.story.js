@@ -1,8 +1,8 @@
 import React from 'react';
 import { storiesOf, action } from '@kadira/storybook';
 import AvailabilityCalendarMonth from './AvailabilityCalendarMonth';
-import AvailabilityCalendarItem from './AvailabilityCalendarItem';
-import InteractionHandler from './InteractionHandler';
+import AvailabilityCalendarItem from '../AvailabilityCalendarItem/AvailabilityCalendarItem';
+import InteractionHandler from '../InteractionHandler/InteractionHandler';
 
 const availabilitiesCalendar = {
   calendar_dates: [{

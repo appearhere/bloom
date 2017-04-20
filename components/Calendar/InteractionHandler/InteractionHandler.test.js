@@ -4,9 +4,9 @@ import { render } from 'react-dom';
 import moment from 'moment';
 
 import InteractionHandler, { getDates } from './InteractionHandler';
-import CalendarMonth from './CalendarMonth';
+import CalendarMonth from '../CalendarMonth/CalendarMonth';
 
-jest.mock('./CalendarMonth');
+jest.mock('../CalendarMonth/CalendarMonth');
 
 describe('getDates', () => {
   const dayOne = moment().startOf('day');

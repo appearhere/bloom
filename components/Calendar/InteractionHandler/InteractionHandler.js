@@ -5,9 +5,9 @@ import React, {
   cloneElement,
 } from 'react';
 
-import InteractiveCalendarItem from './InteractiveCalendarItem';
-import moment from '../../utils/moment/moment';
-import noop from '../../utils/noop';
+import InteractiveCalendarItem from '../InteractiveCalendarItem/InteractiveCalendarItem';
+import moment from '../../../utils/moment/moment';
+import noop from '../../../utils/noop';
 
 export const getDates = (startDate, endDate) => {
   if (!endDate) return [startDate];

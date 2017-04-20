@@ -1,8 +1,9 @@
 import React, { Component, PropTypes } from 'react';
-import moment from '../../utils/moment/moment';
-import { SERVER_DATE } from '../../constants/formats';
-import CalendarMonth from './CalendarMonth';
-import AvailabilityCalendarItem from './AvailabilityCalendarItem';
+
+import moment from '../../../utils/moment/moment';
+import { SERVER_DATE } from '../../../constants/formats';
+import CalendarMonth from '../CalendarMonth/CalendarMonth';
+import AvailabilityCalendarItem from '../AvailabilityCalendarItem/AvailabilityCalendarItem';
 
 export const reduceAvailabilityToHash = calendar => calendar.reduce((obj, entry) =>
   Object.assign(obj, {
