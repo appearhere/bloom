@@ -5,36 +5,31 @@ import moment from 'moment';
 
 import css from './CalendarItem.css';
 
+const defaultDate = moment();
+
 export const defaultClassNames = {
-  selected: css.selected,
+  root: css.root,
   today: css.today,
   outOfRange: css.outOfRange,
 };
-
-export const defaultModifiers = {
-  selected: false,
-  today: false,
-  outOfRange: false,
-};
-
-const today = moment();
 
 const CalendarDay = (props) => {
   const {
     day,
     format,
-    classNames,
-    modifiers,
+    className,
     dayClassName,
+    classNames,
+    today,
+    outOfRange,
     ...rest,
   } = props;
 
   const classes = cx(
-    css.root,
-    Object
-      .keys(modifiers)
-      .filter(key => modifiers[key])
-      .map(modifier => classNames[modifier]),
+    classNames.root,
+    today ? classNames.today : null,
+    outOfRange ? classNames.outOfRange : null,
+    className,
   );
 
   return day ? (
@@ -51,17 +46,18 @@ const CalendarDay = (props) => {
 CalendarDay.propTypes = {
   day: momentPropTypes.momentObj,
   format: PropTypes.string,
-  classNames: PropTypes.object,
-  modifiers: PropTypes.object,
   dayClassName: PropTypes.string,
+  className: PropTypes.string,
+  classNames: PropTypes.object,
+  today: PropTypes.bool,
+  outOfRange: PropTypes.bool,
 };
 
 CalendarDay.defaultProps = {
-  day: today,
+  day: defaultDate,
   format: 'D',
-  classNames: defaultClassNames,
-  modifiers: defaultModifiers,
   dayClassName: '',
+  classNames: defaultClassNames,
 };
 
 export default CalendarDay;

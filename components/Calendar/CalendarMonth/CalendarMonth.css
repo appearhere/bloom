@@ -9,25 +9,8 @@
   box-sizing: border-box;
 }
 
-.body {
-  border: 1px solid var(--color-greyLighter);
-}
-
 .cell {
   width: auto;
-  border: 1px solid var(--color-greyLighter);
   padding: 0;
   border-bottom: 0;
-}
-
-.row:first-child .cell {
-  border-top: 0;
-}
-
-.row .cell:first-child {
-  border-left: 0;
-}
-
-.row .cell:last-child {
-  border-right: 0;
 }

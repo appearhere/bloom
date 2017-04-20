@@ -107,11 +107,8 @@ export default class CalendarMonth extends Component {
                   >
                     <DayComponent
                       { ...dayProps }
-                      modifiers={ {
-                        outOfRange: showOutOfRange && !isCurrentMonth,
-                        today: date.isSame(today, 'day'),
-                        ...dayProps.modifiers,
-                      } }
+                      today={ date.isSame(today, 'day') }
+                      outOfRange={ !isCurrentMonth }
                       day={ day }
                     />
                   </td>
