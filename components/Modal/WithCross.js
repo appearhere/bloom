@@ -32,15 +32,9 @@ class WindowWithCross extends Component {
       ...rest,
     } = this.props;
 
-    const classNames = {
-      header: css.header,
-      body: css.body,
-    };
-
     return (
       <Window
         { ...rest }
-        classNames={ classNames }
         variant={ variant }
       >
         <BtnContainer className={ css.dismissContainer } onClick={ onClose }>
