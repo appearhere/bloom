@@ -10,7 +10,7 @@ stories.addDecorator(withKnobs);
 
 stories
   .add('Default', () => (
-    <TabBar>
+    <TabBar activeMarkerOffset={ number('activeMarkerOffset', -1) }>
       <TabBarItem
         href="#search"
         active={ number('Active tab', 0) === 0 }

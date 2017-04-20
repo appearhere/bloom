@@ -6,7 +6,7 @@ import { Motion, spring } from 'react-motion';
 import { SIBLING_TRANSITION as SPRING_CONFIG } from '../../../constants/springs';
 import css from './TabBar.css';
 
-const TabBar = ({ children, variant, className }) => {
+const TabBar = ({ children, variant, activeMarkerOffset, className }) => {
   const tabWidth = 100 / children.length;
   const activeTabs = children
     .map((child, i) => {
@@ -49,7 +49,7 @@ const TabBar = ({ children, variant, className }) => {
             className={ css.underline }
             style={ {
               width: `${tabWidth}%`,
-              transform: `translate3d(${x}%, -1px,0)`,
+              transform: `translate3d(${x}%, ${activeMarkerOffset}px, 0)`,
             } }
           />
         ) }
@@ -62,10 +62,12 @@ TabBar.propTypes = {
   children: PropTypes.array.isRequired,
   variant: PropTypes.oneOf(['light', 'dark']),
   className: PropTypes.string,
+  activeMarkerOffset: PropTypes.number,
 };
 
 TabBar.defaultProps = {
   variant: 'light',
+  activeMarkerOffset: -1,
 };
 
 export default TabBar;
