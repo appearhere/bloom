@@ -8,7 +8,11 @@ export const CALENDAR_MONTH_LENGTH = 42;
 export const DAYS_PER_WEEK = 7;
 export const CALENDAR_ROWS = CALENDAR_MONTH_LENGTH / DAYS_PER_WEEK;
 
-export const getPreDayCount = date => date.weekday() - 1;
+export const getPreDayCount = (date) => {
+  const weekday = date.weekday();
+  return weekday > 0 ? weekday - 1 : 0;
+};
+
 export const getPostDayCount = (date) => {
   const preDayCount = getPreDayCount(date);
   return CALENDAR_MONTH_LENGTH - date.daysInMonth() - preDayCount;
