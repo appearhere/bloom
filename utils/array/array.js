@@ -1,4 +1,7 @@
-export const generateArray = n => new Array(n);
+export const generateArray = (n) => {
+  if (n > 0) return new Array(n);
+  return [];
+};
 export const generateNumberFilledArray = (n, modifier = 0) =>
   generateArray(n).fill('').map((_, i) => i + modifier);
 

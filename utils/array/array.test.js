@@ -11,6 +11,11 @@ describe('generateArray', () => {
   it('returns a new array of length 10', () => {
     expect(generateArray(n).length).toEqual(n);
   });
+
+  it('handles an array length of 0 or less', () => {
+    expect(generateArray(0)).toEqual([]);
+    expect(generateArray(-1)).toEqual([]);
+  });
 });
 
 describe('generateNumberFilledArray', () => {
