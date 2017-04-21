@@ -1,5 +1,5 @@
 .placeLink {
-  composes: fontSmallIi from '../../../globals/typography.css';
+  composes: fontSmallI from '../../../globals/typography.css';
   padding: var(--size-small);
   background-color: var(--color-black);
   background-color: var(--color-transparent-black-i);
