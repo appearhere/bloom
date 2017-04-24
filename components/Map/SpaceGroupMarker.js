@@ -2,7 +2,7 @@ import React, { PropTypes } from 'react';
 
 import CondensedSpaceCard from '../Cards/CondensedSpaceCard/CondensedSpaceCard';
 
-import css from './SpaceMarker.css';
+import css from './Marker.css';
 
 const SpaceGroupMarker = ({ group }) => (
   <div className={ css.root }>
