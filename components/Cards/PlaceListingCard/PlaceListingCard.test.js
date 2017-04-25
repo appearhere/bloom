@@ -5,5 +5,5 @@ import PlaceListingCard from './PlaceListingCard';
 
 it('renders without crashing', () => {
   const div = document.createElement('div');
-  render(<PlaceListingCard images={ [] } />, div);
+  render(<PlaceListingCard imageSrc="" />, div);
 });

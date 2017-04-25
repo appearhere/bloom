@@ -12,6 +12,7 @@ const PictureCard = (props) => {
     className,
     center,
     style,
+    overlayClassName,
     ...rest,
   } = props;
 
@@ -30,7 +31,7 @@ const PictureCard = (props) => {
         backgroundImage: `url(${src})`,
       } }
     >
-      <div className={ css.overlay } />
+      <div className={ cx(css.overlay, overlayClassName) } />
       <div className={ css.inner }>
         { children }
       </div>
@@ -46,6 +47,7 @@ PictureCard.propTypes = {
   innerClassName: PropTypes.string,
   center: PropTypes.bool,
   style: PropTypes.object,
+  overlayClassName: PropTypes.string,
 };
 
 export default PictureCard;

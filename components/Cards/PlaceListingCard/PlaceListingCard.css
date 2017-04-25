@@ -1,3 +1,49 @@
-.badge {
-  margin-right: var(--size-small);
+.root {
+  height: var(--destination-listing-image-height);
+  color: var(--color-white);
+  position: relative;
+  border-radius: var(--size-sm-iii);
+}
+
+.body {
+  position: absolute;
+  bottom: 0;
+  padding: var(--size-regular);
+}
+
+.overlay {
+  background: linear-gradient(to bottom, rgba(20, 20, 21, 0) 50%, rgba(20, 20, 21, 0.5) 75%);
+  background-color: transparent;
+  border-bottom-left-radius: var(--size-sm-iii);
+  border-bottom-right-radius: var(--size-sm-iii);
+}
+
+.name {
+  composes: fontSmallI from '../../../globals/typography.css';
+  font-weight: var(--fontweight-demi);
+  margin-top: var(--size-sm-ii);
+}
+
+.spacer {
+  padding-left: var(--size-sm-ii);
+  padding-right: var(--size-sm-ii);
+}
+
+.additionalInfo {
+  composes: fontSmallI from '../../../globals/typography.css';
+  margin-top: var(--size-sm-ii);
+}
+
+.priceFromLabel {
+  composes: fontSmallI from '../../../globals/typography.css';
+  margin-right: var(--size-sm-iii);
+}
+
+.price {
+  composes: fontRegular from '../../../globals/typography.css';
+  font-weight: var(--fontweight-demi);
+}
+
+.priceUnit {
+  composes: fontSmallI from '../../../globals/typography.css';
 }
