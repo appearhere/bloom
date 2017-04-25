@@ -9,6 +9,7 @@ import noop from '../../utils/noop';
 import { DEFAULT_CENTER, DEFAULT_MAX_ZOOM, DEFAULT_ZOOM } from '../../constants/mapbox';
 
 import css from './BaseMap.css';
+import tile from './images/tile.jpg';
 
 export default class BaseMap extends Component {
   static propTypes = {
@@ -117,7 +118,12 @@ export default class BaseMap extends Component {
     const { className, mapClassName } = this.props;
 
     return (
-      <div className={ cx(css.root, className) }>
+      <div
+        className={ cx(css.root, className) }
+        style={ {
+          backgroundImage: `url(${tile})`,
+        } }
+      >
         <div ref={ (c) => { this.mapContainer = c; } } className={ cx(css.map, mapClassName) } />
       </div>
     );

@@ -3,9 +3,11 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 import MarkableMap from './MarkableMap';
-import SpaceMarker from './SpaceMarker';
-import SpaceGroupMarker from './SpaceGroupMarker';
+import Marker from './Markers/Marker';
+import SpaceGroupMarker from './Markers/SpaceGroupMarker';
 import mapboxgl from '../../utils/mapboxgl/mapboxgl';
+
+const SpaceMarker = () => <Marker>test</Marker>;
 
 jest.mock('../../utils/mapboxgl/mapboxgl');
 
