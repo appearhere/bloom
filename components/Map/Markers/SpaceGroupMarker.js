@@ -1,17 +1,20 @@
 import React, { PropTypes } from 'react';
 
-import CondensedSpaceCard from '../Cards/CondensedSpaceCard/CondensedSpaceCard';
+import CondensedSpaceCard from '../../Cards/CondensedSpaceCard/CondensedSpaceCard';
+import Marker from './Marker';
 
-import css from './SpaceMarker.css';
+import css from './SpaceGroupMarker.css';
 
-const SpaceGroupMarker = ({ group }) => (
-  <div className={ css.root }>
-    <div className={ css.scrollContainer }>
-      { group.map(space => (
-        <CondensedSpaceCard { ...space } key={ space.id } />
-      )) }
-    </div>
-  </div>
+const SpaceGroupMarker = ({ group, ...rest }) => (
+  <Marker { ...rest }>
+    { group.map(space => (
+      <CondensedSpaceCard
+        className={ css.card }
+        key={ space.id }
+        { ...space }
+      />
+    )) }
+  </Marker>
 );
 
 SpaceGroupMarker.propTypes = {

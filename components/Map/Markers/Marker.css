@@ -8,7 +8,7 @@
   position: relative;
   margin-bottom: 6px;
   box-shadow: 0 2px 14px 0 rgba(0, 0, 0, 0.4);
-  composes: fontSmallI from '../../globals/typography.css';
+  composes: fontSmallI from '../../../globals/typography.css';
 }
 
 .root:before {
@@ -31,8 +31,4 @@
   max-height: 350px;
   overflow-y: auto;
   overflow-x: hidden;
-}
-
-.scrollContainer a + a {
-  border-top: 1px solid var(--color-greyLighter);
 }

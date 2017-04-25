@@ -3,8 +3,11 @@ import { storiesOf } from '@kadira/storybook';
 import actionWithComplexArgs from '../../.storybook/utils/actionWithComplexArgs';
 import MarkableMap from './MarkableMap';
 import BaseMap from './BaseMap';
-import Marker from './Markers/SpaceMarker';
+import Marker from './Markers/Marker';
 import GroupMarker from './Markers/SpaceGroupMarker';
+import SpaceListingCard from '../Cards/SpaceListingCard/SpaceListingCard';
+
+const SpaceMarker = props => <Marker><SpaceListingCard { ...props } /></Marker>;
 
 const prices = ['£1', '£33', '£420', '£1,000', '£20,000', '£999,999', '1 €', '20 €', '440 €',
   '4.040 €', '40.040 €', '120.040 €'];
@@ -71,7 +74,7 @@ class TestMap extends Component {
         <button onClick={ this.toggleMarkers }>Randomise</button>
         <MarkableMap
           markers={ markers }
-          MarkerComponent={ Marker }
+          MarkerComponent={ SpaceMarker }
           GroupMarkerComponent={ GroupMarker }
           onClick={ actionWithComplexArgs('map clicked') }
           onMoveEnd={ actionWithComplexArgs('map moved') }
@@ -98,7 +101,7 @@ storiesOf('Map', module)
     <div style={ { height: '96vh' } }>
       <MarkableMap
         markers={ generateMarkers(7, -0.09, 51.505) }
-        MarkerComponent={ Marker }
+        MarkerComponent={ SpaceMarker }
         GroupMarkerComponent={ GroupMarker }
         onClick={ actionWithComplexArgs('map clicked') }
         onMoveEnd={ actionWithComplexArgs('map moved') }

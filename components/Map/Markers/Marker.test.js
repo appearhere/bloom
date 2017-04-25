@@ -1,8 +1,8 @@
 import React from 'react';
 import { render } from 'react-dom';
-import SpaceMarker from './SpaceMarker';
+import Marker from './Marker';
 
 it('renders without crashing', () => {
   const div = document.createElement('div');
-  render(<SpaceMarker />, div);
+  render(<Marker>test</Marker>, div);
 });
