@@ -3,8 +3,8 @@ import { storiesOf } from '@kadira/storybook';
 import actionWithComplexArgs from '../../.storybook/utils/actionWithComplexArgs';
 import MarkableMap from './MarkableMap';
 import BaseMap from './BaseMap';
-import Marker from './SpaceMarker';
-import GroupMarker from './SpaceGroupMarker';
+import Marker from './Markers/SpaceMarker';
+import GroupMarker from './Markers/SpaceGroupMarker';
 
 const prices = ['£1', '£33', '£420', '£1,000', '£20,000', '£999,999', '1 €', '20 €', '440 €',
   '4.040 €', '40.040 €', '120.040 €'];

@@ -15,7 +15,7 @@ import minLngLatBounds from '../../utils/geoUtils/minLngLatBounds';
 import mapboxgl from '../../utils/mapboxgl/mapboxgl';
 import isSingleLevelArray from '../../utils/isSingleLevelArray/isSingleLevelArray';
 import nestedArrayDepth from '../../utils/nestedArrayDepth/nestedArrayDepth';
-import MarkerContainer from './MarkerContainer';
+import MarkerContainer from './Markers/MarkerContainer';
 import BaseMap from './BaseMap';
 
 import {
