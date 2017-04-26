@@ -5,6 +5,10 @@
   border-radius: var(--size-sm-iii);
 }
 
+.root:hover {
+  color: var(--color-white);
+}
+
 .body {
   position: absolute;
   bottom: 0;
