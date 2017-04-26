@@ -18,7 +18,7 @@
 .carousel {
   position: relative;
   width: 100%;
-  height: 220px;
+  height: var(--destination-listing-image-height);
   border-radius: 4px 4px 0 0 ;
   background-color: var(--color-greyLighter);
 }
@@ -70,7 +70,7 @@
 
 .image {
   width: 100%;
-  height: 13.75rem;
+  height: var(--destination-listing-image-height);
   object-fit: cover;
   border-radius: 4px 4px 0 0;
   display: block;

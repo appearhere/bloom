@@ -1,45 +1,62 @@
 import React, { PropTypes } from 'react';
 
-import DestinationListingCard from '../DestinationListingCard/DestinationListingCard';
-import Badge from '../../Badge/Badge';
+import PictureCard from '../PictureCard/PictureCard';
 
 import css from './PlaceListingCard.css';
 
 const PlaceListingCard = (props) => {
   const {
+    imageSrc,
+    href,
+    priceFromLabel,
+    price,
+    priceUnit,
     name,
     location,
     spaceDetail,
-    placeBadgeText,
-    ...rest,
+    onClick,
   } = props;
 
   return (
-    <DestinationListingCard
-      name={
-        <span>
-          <Badge className={ css.badge } context="primary" hollow>{ placeBadgeText }</Badge>
-          { name }
-        </span>
-      }
-      information={ [location, spaceDetail] }
-      { ...rest }
-    />
+    <PictureCard
+      href={ href }
+      onClick={ onClick }
+      className={ css.root }
+      src={ imageSrc }
+      overlayClassName={ css.overlay }
+    >
+      <div className={ css.body }>
+        <div className={ css.name }>
+          { priceFromLabel && <span className={ css.priceFromLabel }>{ priceFromLabel }</span> }
+          <span className={ css.price }>{ price }</span>
+          { '\u00a0' }
+          <span className={ css.priceUnit }>{ priceUnit }</span>
+        </div>
+        <div className={ css.name }>{ name }</div>
+        <div className={ css.additionalInfo }>
+          { location }
+          { location && spaceDetail ? <span className={ css.spacer }>•</span> : null }
+          { spaceDetail }
+        </div>
+      </div>
+    </PictureCard>
   );
 };
 
 PlaceListingCard.propTypes = {
+  imageSrc: PropTypes.string.isRequired,
+  href: PropTypes.string,
+  priceFromLabel: PropTypes.string,
+  price: PropTypes.node,
+  priceUnit: PropTypes.node,
   name: PropTypes.node,
   location: PropTypes.node,
   spaceDetail: PropTypes.node,
-  placeBadgeText: PropTypes.string,
-  price: PropTypes.node,
-  priceUnit: PropTypes.node,
-  priceFromLabel: PropTypes.node,
+  onClick: PropTypes.func,
 };
 
 PlaceListingCard.defaultProps = {
-  placeBadgeText: 'Place',
+  priceFromLabel: 'from',
 };
 
 export default PlaceListingCard;
