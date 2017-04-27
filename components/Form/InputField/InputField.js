@@ -26,7 +26,7 @@ export default class InputField extends Component {
     meta: PropTypes.node,
     label: PropTypes.node,
     description: PropTypes.node,
-    children: PropTypes.element.isRequired,
+    children: PropTypes.element,
     error: PropTypes.node,
     valueReplay: PropTypes.node,
     required: PropTypes.bool,
@@ -92,20 +92,22 @@ export default class InputField extends Component {
             { description }
           </Description>
         ) }
-        <InputWrapper
-          { ...sharedProps }
-          classNames={ classNames.inputWrapper }
-        >
-          { cloneElement(children, {
-            ...rest,
-            ...sharedProps,
-            ref: (c) => { this.input = c; },
-            name: id,
-            id,
-            required,
-            'aria-describedby': descriptionId,
-          }) }
-        </InputWrapper>
+        { children && (
+          <InputWrapper
+            { ...sharedProps }
+            classNames={ classNames.inputWrapper }
+          >
+            { cloneElement(children, {
+              ...rest,
+              ...sharedProps,
+              ref: (c) => { this.input = c; },
+              name: id,
+              id,
+              required,
+              'aria-describedby': descriptionId,
+            }) }
+          </InputWrapper>
+        ) }
       </Element>
     );
   }

@@ -46,6 +46,13 @@ const WrappedSelect = () => (
 );
 
 stories
+  .add('Simple', () => (
+    <InputField
+      id="0"
+      label="Appearing date"
+      valueReplay="31 Mar"
+    />
+  ))
   .add('CheckboxGroup', () => {
     const value = array('Value(s)', ['1'], ',');
 
