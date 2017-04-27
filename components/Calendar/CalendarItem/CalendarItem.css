@@ -1,14 +1,9 @@
 .root {
-  composes: fontRegular from '../../globals/typography.css';
+  composes: fontRegular from '../../../globals/typography.css';
   display: block;
   width: 100%;
   padding: var(--size-small);
   text-align: center;
-}
-
-.selected {
-  background-color: var(--color-action);
-  color: var(--color-white);
 }
 
 .today {

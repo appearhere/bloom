@@ -3,13 +3,13 @@ import momentPropTypes from 'react-moment-proptypes';
 import moment from 'moment';
 
 import css from './CalendarMonth.css';
-import CalendarItem from './CalendarItem';
-import { generateNumberFilledArray } from '../../utils/array/array';
+import CalendarItem from '../CalendarItem/CalendarItem';
+import { generateNumberFilledArray } from '../../../utils/array/array';
 import getCalendarMonth, {
   getPreDayCount,
   getPostDayCount,
   DAYS_PER_WEEK,
-} from './getCalendarMonth';
+} from '../getCalendarMonth/getCalendarMonth';
 
 const today = moment();
 
@@ -107,11 +107,8 @@ export default class CalendarMonth extends Component {
                   >
                     <DayComponent
                       { ...dayProps }
-                      modifiers={ {
-                        outOfRange: showOutOfRange && !isCurrentMonth,
-                        today: date.isSame(today, 'day'),
-                        ...dayProps.modifiers,
-                      } }
+                      today={ date.isSame(today, 'day') }
+                      outOfRange={ !isCurrentMonth }
                       day={ day }
                     />
                   </td>

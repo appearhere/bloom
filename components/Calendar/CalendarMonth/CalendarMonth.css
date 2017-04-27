@@ -1,0 +1,16 @@
+.root {
+  width: 100%;
+  border-collapse: collapse;
+  margin-bottom: 0;
+  table-layout: fixed;
+}
+
+.root * {
+  box-sizing: border-box;
+}
+
+.cell {
+  width: auto;
+  padding: 0;
+  border-bottom: 0;
+}

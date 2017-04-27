@@ -1,0 +1,57 @@
+.root {
+  position: relative;
+  width: 100%;
+  height: 100%;
+}
+
+.header {
+  width: 100%;
+  padding-top: var(--size-sm-ii);
+  padding-bottom: var(--size-sm-ii);
+  display: table;
+  vertical-align: middle;
+}
+
+.month {
+  composes: fontRegular from '../../../globals/typography.css';
+  color: currentColor;
+  text-align: center;
+  display: table-cell;
+  width: 71.428571428%;
+}
+
+.columnHeader {
+  composes: fontSmallI from '../../../globals/typography.css';
+  color: var(--color-greyDarker);
+}
+
+.control {
+  border: 0;
+  font-size: var(--fontsize-regular);
+  display: table-cell;
+  width: 14.285714286%;
+  vertical-align: bottom;
+  text-align: center;
+}
+
+.control:hover,
+.control:focus,
+.control:active {
+  color: var(--color-greyDarker);
+}
+
+.control:disabled,
+.control:hover:disabled,
+.control:active:disabled,
+.control:focus:disabled {
+  border: 0;
+}
+
+.prevIcon {
+  transform: rotate(270deg);
+  display: block;
+}
+.nextIcon {
+  transform: rotate(90deg);
+  display: block;
+}

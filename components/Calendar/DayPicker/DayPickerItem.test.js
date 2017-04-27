@@ -3,14 +3,14 @@ import React from 'react';
 import moment from 'moment';
 import { render, findDOMNode } from 'react-dom';
 import { Simulate } from 'react-addons-test-utils';
-import { ENTER } from '../../constants/keycodes';
+import { ENTER } from '../../../constants/keycodes';
 
-import InteractiveCalendarItem from './InteractiveCalendarItem';
+import DayPickerItem from './DayPickerItem';
 
-describe('InteractiveCalendarItem', () => {
+describe('DayPickerItem', () => {
   it('renders with a date without crashing', () => {
     const div = document.createElement('div');
-    render(<InteractiveCalendarItem />, div);
+    render(<DayPickerItem />, div);
   });
 
   describe('.handleInteraction', () => {
@@ -21,7 +21,7 @@ describe('InteractiveCalendarItem', () => {
       const now = moment();
 
       render(
-        <InteractiveCalendarItem
+        <DayPickerItem
           ref={ (c) => { component = c; } }
           day={ now }
           onInteraction={ spy }
@@ -41,7 +41,7 @@ describe('InteractiveCalendarItem', () => {
       const now = moment();
 
       render(
-        <InteractiveCalendarItem
+        <DayPickerItem
           ref={ (c) => { component = c; } }
           day={ now }
           onInteraction={ spy }
@@ -49,7 +49,7 @@ describe('InteractiveCalendarItem', () => {
         div
       );
 
-      Simulate.touchStart(findDOMNode(component));
+      Simulate.touchEnd(findDOMNode(component));
       expect(spy.calls.count()).toEqual(1);
       expect(spy.calls.mostRecent().args[1].isSame(now)).toBe(true);
     });
@@ -61,7 +61,7 @@ describe('InteractiveCalendarItem', () => {
       const now = moment();
 
       render(
-        <InteractiveCalendarItem
+        <DayPickerItem
           ref={ (c) => { component = c; } }
           day={ now }
           onInteraction={ spy }
@@ -82,11 +82,10 @@ describe('InteractiveCalendarItem', () => {
         const now = moment();
 
         render(
-          <InteractiveCalendarItem
+          <DayPickerItem
             ref={ (c) => { component = c; } }
             day={ now }
             onInteraction={ spy }
-            disabled
           />,
           div
         );
@@ -103,11 +102,11 @@ describe('InteractiveCalendarItem', () => {
       const now = moment();
 
       render(
-        <InteractiveCalendarItem
+        <DayPickerItem
           ref={ (c) => { component = c; } }
           day={ now }
           onInteraction={ spy }
-          disabled
+          disabledDates={ [now] }
         />,
         div
       );
@@ -117,18 +116,18 @@ describe('InteractiveCalendarItem', () => {
     });
   });
 
-  describe('.handleMouseOver', () => {
-    it('fires the `onMouseOver` callback when the mouse passes over', () => {
+  describe('.handleHighlight', () => {
+    it('fires the `onHighlight` callback when the mouse passes over', () => {
       let component;
       const div = document.createElement('div');
       const spy = jasmine.createSpy();
       const now = moment();
 
       render(
-        <InteractiveCalendarItem
+        <DayPickerItem
           ref={ (c) => { component = c; } }
           day={ now }
-          onMouseOver={ spy }
+          onHighlight={ spy }
         />,
         div
       );
@@ -138,18 +137,38 @@ describe('InteractiveCalendarItem', () => {
       expect(spy.calls.mostRecent().args[1].isSame(now)).toBe(true);
     });
 
-    it('doesn\'t fire the `onMouseOver` callback when interacted with whilst disabled', () => {
+    it('fires the `onHighlight` callback when it is given focus', () => {
       let component;
       const div = document.createElement('div');
       const spy = jasmine.createSpy();
       const now = moment();
 
       render(
-        <InteractiveCalendarItem
+        <DayPickerItem
           ref={ (c) => { component = c; } }
           day={ now }
-          onMouseOver={ spy }
-          disabled
+          onHighlight={ spy }
+        />,
+        div
+      );
+
+      Simulate.focus(findDOMNode(component));
+      expect(spy.calls.count()).toEqual(1);
+      expect(spy.calls.mostRecent().args[1].isSame(now)).toBe(true);
+    });
+
+    it('doesn\'t fire the `onHighlight` callback when interacted with whilst disabled', () => {
+      let component;
+      const div = document.createElement('div');
+      const spy = jasmine.createSpy();
+      const now = moment();
+
+      render(
+        <DayPickerItem
+          ref={ (c) => { component = c; } }
+          day={ now }
+          onHighlight={ spy }
+          disabledDates={ [now] }
         />,
         div
       );
