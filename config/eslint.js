@@ -6,12 +6,13 @@ module.exports = {
     jsx: true,
   },
   env: {
-    jest: true,
+    'jest/globals': true,
   },
   plugins: [
     'flowtype',
     'jsx-a11y',
     'react',
+    'jest',
   ],
   parserOptions: {
     ecmaFeatures: {
@@ -72,5 +73,9 @@ module.exports = {
       varsIgnorePattern: '^_',
       argsIgnorePattern: '^_',
     }],
+
+    'jest/no-disabled-tests': 'error',
+    'jest/no-focused-tests': 'error',
+    'jest/no-identical-title': 'error',
   },
 };

@@ -98,6 +98,7 @@
     "classnames": "^2.2.5",
     "commonmark": "^0.26.0",
     "commonmark-react-renderer": "^4.3.1",
+    "eslint-plugin-jest": "^19.0.0",
     "exenv": "^1.2.1",
     "express": "^4.14.1",
     "invariant": "^2.2.1",
