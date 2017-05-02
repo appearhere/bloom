@@ -2,7 +2,7 @@
 import React from 'react';
 import { render } from 'react-dom';
 
-import DayRangePicker, { SELECT_DATE } from './DayRangePicker';
+import DayRangePicker, { SELECT_DATE, dayInRange } from './DayRangePicker';
 import moment from '../../../utils/moment/moment';
 
 describe('DayRangePicker', () => {
@@ -205,5 +205,30 @@ describe('DayRangePicker', () => {
       expect(spy.calls.mostRecent().args[1].isSame(selected)).toBe(true);
       expect(spy.calls.mostRecent().args[2]).toBe(null);
     });
+  });
+});
+
+describe('dayInRange', () => {
+  it('returns false when not given a day', () => {
+    expect(dayInRange()).toBe(false);
+  });
+
+  it('returns true when the date the same as the start date', () => {
+    const today = moment();
+    const startDate = moment();
+    expect(dayInRange(today, startDate, undefined)).toBe(true);
+  });
+
+  it('returns true when the date the same as the end date', () => {
+    const today = moment();
+    const endDate = moment();
+    expect(dayInRange(today, undefined, endDate)).toBe(true);
+  });
+
+  it('returns true when the date between the start and end date', () => {
+    const today = moment();
+    const startDate = moment().add(-1, 'day');
+    const endDate = moment().add(1, 'day');
+    expect(dayInRange(today, startDate, endDate)).toBe(true);
   });
 });

@@ -106,7 +106,9 @@ describe('DayPickerItem', () => {
           ref={ (c) => { component = c; } }
           day={ now }
           onInteraction={ spy }
-          disabledDates={ [now] }
+          getDayState={ () => ({
+            isDisabled: true,
+          }) }
         />,
         div
       );
@@ -168,7 +170,9 @@ describe('DayPickerItem', () => {
           ref={ (c) => { component = c; } }
           day={ now }
           onHighlight={ spy }
-          disabledDates={ [now] }
+          getDayState={ () => ({
+            isDisabled: true,
+          }) }
         />,
         div
       );
