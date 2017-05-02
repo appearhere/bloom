@@ -1,64 +1,45 @@
 import React, { Component, PropTypes } from 'react';
 import cx from 'classnames';
 import momentPropTypes from 'react-moment-proptypes';
-import difference from 'lodash/fp/difference';
 
 import css from './DayPickerItem.css';
 import noop from '../../../utils/noop';
 import { ENTER } from '../../../constants/keycodes';
 import CalendarItem from '../CalendarItem/CalendarItem';
 
-const isDisabledState = (day, disabledDates) => day
-  && disabledDates.length > 0
-  && disabledDates.some(date => day.isSame(date, 'day'));
+export const defaultDayState = {
+  isDisabled: false,
+  isSelected: false,
+  isFirstSelected: false,
+  isLastSelected: false,
+  isHighlighted: false,
+  isFirstHighlighted: false,
+  isLastHighlighted: false,
+};
+
+const defaultGetDateState = () => defaultDayState;
 
 export default class DayPickerItem extends Component {
   static propTypes = {
     day: momentPropTypes.momentObj,
-    selectedDates: PropTypes.arrayOf(momentPropTypes.momentObj),
-    highlightedDates: PropTypes.arrayOf(momentPropTypes.momentObj),
-    disabledDates: PropTypes.arrayOf(momentPropTypes.momentObj),
+    getDayState: PropTypes.func,
     onInteraction: PropTypes.func,
     onHighlight: PropTypes.func,
   };
 
   static defaultProps = {
-    selectedDates: [],
-    highlightedDates: [],
-    disabledDates: [],
+    getDayState: defaultGetDateState,
     onInteraction: noop,
     onMouseOver: noop,
   };
 
-  constructor(props) {
-    super(props);
-
-    this.state = {
-      disabled: isDisabledState(props.day, props.disabledDates),
-    };
-  }
-
-  componentWillReceiveProps(nextProps) {
-    const { day: currentDay, disabledDates: currentDisabled } = this.props;
-    const { day: nextDay, disabledDates: nextDisabled } = nextProps;
-
-    if (
-      (currentDay && nextDay && !currentDay.isSame(nextDay)) ||
-      difference(currentDisabled, nextDisabled).length > 0
-    ) {
-      this.setState({
-        disabled: isDisabledState(nextDay, nextDisabled),
-      });
-    }
-  }
-
   handleInteraction = (e) => {
     const { type, keyCode } = e;
-    const { disabled } = this.state;
-    const { day, onInteraction } = this.props;
+    const { day, onInteraction, getDayState } = this.props;
+    const { isDisabled } = getDayState(day);
     let handled = false;
 
-    if (!disabled && onInteraction) {
+    if (!isDisabled && onInteraction) {
       e.persist();
       e.preventDefault();
 
@@ -77,9 +58,10 @@ export default class DayPickerItem extends Component {
   }
 
   handleHighlight = (e) => {
-    const { disabled } = this.state;
-    const { day, onHighlight } = this.props;
-    if (!disabled && onHighlight) onHighlight(e, day);
+    const { day, onHighlight, getDayState } = this.props;
+    const { isDisabled } = getDayState(day);
+
+    if (!isDisabled && onHighlight) onHighlight(e, day);
   }
 
   handleMouseOver = this.handleHighlight;
@@ -88,42 +70,24 @@ export default class DayPickerItem extends Component {
   render() {
     const {
       day,
-      selectedDates,
-      highlightedDates,
-      disabledDates: _disabledDates,
       onHighlight: _onHighlight,
       onInteraction: _onInteraction,
+      getDayState,
       ...rest,
     } = this.props;
 
-    const { disabled } = this.state;
+    const state = getDayState(day);
 
-    let className = cx(
+    const className = cx(
       css.root,
-      disabled ? css.disabled : null,
+      state.isDisabled ? css.disabled : null,
+      state.isHighlighted ? css.highlighted : null,
+      state.isSelected ? css.selected : null,
+      state.isFirstSelected ? css.firstSelected : null,
+      state.isLastSelected ? css.lastSelected : null,
+      state.isFirstHighlighted ? css.firstHighlighted : null,
+      state.isLastHighlighted ? css.lastHighlighted : null,
     );
-
-    if (day) {
-      if (highlightedDates.length > 0) {
-        className = cx(
-          className,
-          highlightedDates.some(date => day.isSame(date, 'day')) ? css.highlighted : null,
-          day.isSame(highlightedDates[0], 'day') ? css.firstHighlighted : null,
-          day.isSame(highlightedDates[highlightedDates.length - 1], 'day')
-            ? css.lastHighlighted
-            : null,
-        );
-      }
-
-      if (selectedDates.length > 0) {
-        className = cx(
-          className,
-          selectedDates.some(date => day.isSame(date, 'day')) ? css.selected : null,
-          day.isSame(selectedDates[0], 'day') ? css.firstSelected : null,
-          day.isSame(selectedDates[selectedDates.length - 1], 'day') ? css.lastSelected : null,
-        );
-      }
-    }
 
     return (
       <CalendarItem

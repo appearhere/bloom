@@ -63,9 +63,9 @@ export default class CalendarMonth extends Component {
     const startOfMonth = month.clone().startOf('month');
     const endOfMonth = month.clone().endOf('month');
     const calendarMonth = getCalendarMonth(
-      month,
-      getPreDayCount(month),
-      getPostDayCount(month),
+      startOfMonth,
+      getPreDayCount(startOfMonth),
+      getPostDayCount(startOfMonth),
     );
 
     return (
@@ -73,7 +73,7 @@ export default class CalendarMonth extends Component {
         <thead className={ classNames.head }>
           <tr className={ classNames.row }>
             { head.map((offset) => {
-              const day = moment().clone().day(offset);
+              const day = startOfMonth.clone().weekday(offset);
               return (
                 <td key={ `${month.format('MM')}-${day.format('dd')}` }>
                   <ColumnHeadingComponent

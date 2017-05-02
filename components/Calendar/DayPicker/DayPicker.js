@@ -32,11 +32,7 @@ export default class DayPicker extends Component {
   static propTypes = {
     month: momentPropTypes.momentObj,
     onInteraction: PropTypes.func,
-    onHighlight: PropTypes.func,
     onMonthChange: PropTypes.func,
-    selectedDates: PropTypes.arrayOf(momentPropTypes.momentObj),
-    highlightedDates: PropTypes.arrayOf(momentPropTypes.momentObj),
-    disabledDates: PropTypes.arrayOf(momentPropTypes.momentObj),
     dayProps: PropTypes.object,
     accessibilityNextLabel: PropTypes.string,
     accessibilityPrevLabel: PropTypes.string,
@@ -47,9 +43,6 @@ export default class DayPicker extends Component {
     onInteraction: noop,
     onHighlight: noop,
     onMonthChange: noop,
-    selectedDates: [],
-    highlightedDates: [],
-    disabledDates: [],
     dayProps: {},
     accessibilityNextLabel: 'Go to next month',
     accessibilityPrevLabel: 'Go to previous month',
@@ -70,14 +63,10 @@ export default class DayPicker extends Component {
   render() {
     const {
       month,
-      selectedDates,
-      highlightedDates,
-      disabledDates,
+      dayProps,
+      onInteraction,
       accessibilityNextLabel,
       accessibilityPrevLabel,
-      onInteraction,
-      onHighlight,
-      dayProps,
     } = this.props;
 
     return (
@@ -108,10 +97,6 @@ export default class DayPicker extends Component {
           dayProps={ {
             ...dayProps,
             onInteraction,
-            onHighlight,
-            selectedDates,
-            disabledDates,
-            highlightedDates,
           } }
           DayComponent={ DayPickerItem }
         />

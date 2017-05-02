@@ -18,7 +18,7 @@
 
 .disabled {
   pointer-events: none;
-  color: var(--color-grey);
+  color: var(--color-greyLight);
 }
 
 .firstSelected.lastSelected {
