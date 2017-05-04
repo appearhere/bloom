@@ -26,11 +26,13 @@ import globe from './icons/icon-globe.svg';
 import location from './icons/icon-location.svg';
 import manage from './icons/icon-manage.svg';
 import map from './icons/icon-map.svg';
+import minus from './icons/icon-minus.svg';
 import notification from './icons/icon-notification.svg';
 import percentage from './icons/icon-percentage.svg';
 import pintrest from './icons/icon-pintrest.svg';
 import play from './icons/icon-play.svg';
 import playC from './icons/icon-play-c.svg';
+import plus from './icons/icon-plus.svg';
 import radio from './icons/icon-radio.svg';
 import search from './icons/icon-search.svg';
 import shield from './icons/icon-shield.svg';
@@ -78,10 +80,12 @@ export default {
   location: svgClean(location),
   manage: svgClean(manage),
   map: svgClean(map),
+  minus: svgClean(minus),
   notification: svgClean(notification),
   percentage: svgClean(percentage),
   pintrest: svgClean(pintrest),
   play: svgClean(play),
+  plus: svgClean(plus),
   radio: svgClean(radio),
   search: svgClean(search),
   shield: svgClean(shield),
