@@ -1,0 +1,6 @@
+.minus svg,
+.plus svg {
+  stroke: transparent;
+  fill: currentColor;
+  stroke-linecap: round;
+}
