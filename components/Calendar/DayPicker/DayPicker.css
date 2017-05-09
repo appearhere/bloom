@@ -14,6 +14,7 @@
 
 .month {
   composes: fontRegular from '../../../globals/typography.css';
+  font-weight: var(--fontweight-demi);
   color: currentColor;
   text-align: center;
   display: table-cell;
@@ -22,7 +23,12 @@
 
 .columnHeader {
   composes: fontSmallI from '../../../globals/typography.css';
-  color: var(--color-greyDarker);
+  color: var(--color-greyDark);
+  font-weight: var(--fontweight-bold);
+}
+
+.head {
+  border-bottom: 1px solid var(--color-greyLighter);
 }
 
 .control {
@@ -54,4 +60,8 @@
 .nextIcon {
   transform: rotate(90deg);
   display: block;
+}
+
+.cell {
+  padding-top: var(--size-sm-iii);
 }
