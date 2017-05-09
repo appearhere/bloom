@@ -84,7 +84,7 @@ export default class DayPicker extends Component {
             </BtnContainer>
           </div>
           <div className={ css.month }>
-            { month.format('MMMM') }
+            { month.format('MMMM YYYY') }
           </div>
           <div className={ cx(css.control, css.nextControl) }>
             <BtnContainer onClick={ this.handleNextMonth }>
