@@ -22,7 +22,12 @@
 
 .columnHeader {
   composes: fontSmallI from '../../../globals/typography.css';
-  color: var(--color-greyDarker);
+  color: var(--color-greyDark);
+  font-weight: var(--fontweight-bold);
+}
+
+.head {
+  border-bottom: 1px solid var(--color-greyLighter);
 }
 
 .control {

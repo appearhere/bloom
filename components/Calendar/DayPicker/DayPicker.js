@@ -13,7 +13,7 @@ import ScreenReadable from '../../ScreenReadable/ScreenReadable';
 import CalendarMonth, { defaultClassNames } from '../CalendarMonth/CalendarMonth';
 
 const classNames = Object.assign({}, defaultClassNames, {
-  row: cx(defaultClassNames.row, css.row),
+  head: cx(defaultClassNames.head, css.head),
   cell: cx(defaultClassNames.cell, css.cell),
 });
 
