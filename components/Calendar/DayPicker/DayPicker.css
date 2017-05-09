@@ -55,3 +55,7 @@
   transform: rotate(90deg);
   display: block;
 }
+
+.cell {
+  padding-top: var(--size-sm-iii);
+}

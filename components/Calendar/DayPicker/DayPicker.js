@@ -9,8 +9,13 @@ import noop from '../../../utils/noop';
 import DayPickerItem from './DayPickerItem';
 import moment from '../../../utils/moment/moment';
 import BtnContainer from '../../BtnContainer/BtnContainer';
-import CalendarMonth from '../CalendarMonth/CalendarMonth';
 import ScreenReadable from '../../ScreenReadable/ScreenReadable';
+import CalendarMonth, { defaultClassNames } from '../CalendarMonth/CalendarMonth';
+
+const classNames = Object.assign({}, defaultClassNames, {
+  row: cx(defaultClassNames.row, css.row),
+  cell: cx(defaultClassNames.cell, css.cell),
+});
 
 export const SELECT_DATE = keyMirror({
   START: null,
@@ -90,6 +95,7 @@ export default class DayPicker extends Component {
         </div>
         <CalendarMonth
           { ...this.props }
+          classNames={ classNames }
           month={ month }
           columnHeadingProps={ {
             className: css.columnHeader,

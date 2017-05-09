@@ -12,7 +12,7 @@
 }
 
 .selected {
-  background-color: var(--color-greyDark);
+  background-color: var(--color-black);
   color: var(--color-white);
 }
 
@@ -23,12 +23,6 @@
 
 .firstSelected.lastSelected {
   border-radius: 4px;
-}
-
-.firstSelected,
-.lastSelected {
-  background-color: var(--color-black);
-  color: var(--color-white);
 }
 
 .firstSelected,
