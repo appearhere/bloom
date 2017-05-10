@@ -3,7 +3,6 @@ import cx from 'classnames';
 import momentPropTypes from 'react-moment-proptypes';
 import keyMirror from 'key-mirror';
 
-import css from './DayPicker.css';
 import Icon from '../../Icon/Icon';
 import noop from '../../../utils/noop';
 import DayPickerItem from './DayPickerItem';
@@ -11,6 +10,7 @@ import moment from '../../../utils/moment/moment';
 import BtnContainer from '../../BtnContainer/BtnContainer';
 import ScreenReadable from '../../ScreenReadable/ScreenReadable';
 import CalendarMonth, { defaultClassNames } from '../CalendarMonth/CalendarMonth';
+import css from './DayPicker.css';
 
 const classNames = Object.assign({}, defaultClassNames, {
   head: cx(defaultClassNames.head, css.head),
