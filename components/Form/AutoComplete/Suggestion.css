@@ -1,0 +1,5 @@
+.root {
+  composes: fontSmallI from '../../../globals/typography.css';
+  color: var(--color-greyDarker);
+  font-weight: var(--fontweight-demi);
+}
