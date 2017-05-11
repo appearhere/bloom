@@ -1,0 +1,56 @@
+.root {
+  position: relative;
+  display: inline-block;
+}
+
+.wrapper {
+  width: 100%;
+}
+
+.icon {
+  position: absolute;
+  line-height: normal;
+  color: var(--color-grey);
+  /* line-height + `<Input />`'s padding */
+  top: 50%;
+  transform: translateY(-50%);
+  z-index: 1;
+}
+
+input.input[type="text"],
+input.input[type="email"],
+input.input[type="password"],
+input.input[type="search"],
+input.input[type="url"],
+textarea.input {
+  margin-bottom: 0;
+  width: 100%;
+}
+
+.left .icon {
+  right: auto;
+  left: var(--size-regular);
+}
+
+.left input.input[type="text"],
+.left input.input[type="email"],
+.left input.input[type="password"],
+.left input.input[type="search"],
+.left input.input[type="url"],
+.left textarea.input {
+  padding-left: var(--size-lg-ii);
+}
+
+.right .icon {
+  left: auto;
+  right: var(--size-regular);
+}
+
+.right input.input[type="text"],
+.right input.input[type="email"],
+.right input.input[type="password"],
+.right input.input[type="search"],
+.right input.input[type="url"],
+.right textarea.input {
+  padding-right: var(--size-lg-ii);
+}
