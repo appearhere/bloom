@@ -2,6 +2,7 @@ import React, { Component, PropTypes } from 'react';
 import CSSTransitionGroup from 'react-addons-css-transition-group';
 import cx from 'classnames';
 
+import mergeObjectStrings from '../../../utils/mergeObjectStrings/mergeObjectStrings';
 import noop from '../../../utils/noop';
 import css from './Input.css';
 
@@ -15,7 +16,20 @@ export default class Input extends Component {
     value: PropTypes.string,
     required: PropTypes.bool,
     placeholder: PropTypes.string,
-    className: PropTypes.string,
+    classNames: PropTypes.shape({
+      wrapper: PropTypes.string,
+      input: PropTypes.string,
+      high: PropTypes.string,
+      error: PropTypes.string,
+      post: PropTypes.string,
+      errorMsg: PropTypes.string,
+      enter: PropTypes.string,
+      enterActive: PropTypes.string,
+      appear: PropTypes.string,
+      appearActive: PropTypes.string,
+      leave: PropTypes.string,
+      leaveActive: PropTypes.string,
+    }),
     error: PropTypes.string,
     /**
      * Subset of the HTML5 spec, as other types will most likely have their
@@ -38,6 +52,7 @@ export default class Input extends Component {
     onBlur: noop,
     type: 'text',
     value: '',
+    classNames: {},
   };
 
   state = {
@@ -80,23 +95,24 @@ export default class Input extends Component {
       placeholder,
       error,
       type,
-      className,
+      classNames,
       priority,
       ...rest,
     } = this.props;
 
+    const mergedClassNames = mergeObjectStrings(css, classNames);
+
     const classes = cx(
-      css.input,
-      className,
-      hasFocus ? css.focus : null,
-      error ? css.error : null,
-      css[priority],
+      mergedClassNames.input,
+      hasFocus ? mergedClassNames.focus : null,
+      error ? mergedClassNames.error : null,
+      mergedClassNames[priority],
     );
 
     const InputComponent = type === 'textarea' ? 'textarea' : 'input';
 
     return (
-      <div className={ css.wrapper }>
+      <div className={ mergedClassNames.wrapper }>
         <InputComponent
           { ...rest }
           ref={ (c) => { this.input = c; } }
@@ -112,7 +128,7 @@ export default class Input extends Component {
           onChange={ this.handleChange }
         />
         <CSSTransitionGroup
-          className={ css.post }
+          className={ mergedClassNames.post }
           transitionName={ css }
           transitionEnterTimeout={ 500 }
           transitionLeaveTimeout={ 300 }
@@ -121,7 +137,7 @@ export default class Input extends Component {
         >
           { error && error.length > 0 && (
             <div
-              className={ css.errorMsg }
+              className={ mergedClassNames.errorMsg }
             >
               { error }
             </div>
