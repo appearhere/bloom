@@ -21,6 +21,12 @@ class Map {
     mapSpy('getZoom');
     return 10;
   }
+  getCenter = () => {
+    mapSpy('getCenter');
+    return {
+      toArray: () => [],
+    };
+  }
 }
 
 class Marker {
