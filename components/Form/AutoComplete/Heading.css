@@ -1,0 +1,6 @@
+.root {
+  composes: fontSmallIi from '../../../globals/typography.css';
+  color: var(--color-grey);
+  text-transform: uppercase;
+  font-weight: var(--fontweight-demi);
+}

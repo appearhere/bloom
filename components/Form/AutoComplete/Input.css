@@ -1,0 +1,38 @@
+.root {
+  position: relative;
+  width: 100%;
+}
+
+.wrapper {
+  width: 100%;
+}
+
+input.input[type="text"] {
+  outline: 0;
+}
+
+.activeMarker {
+  content: '';
+  position: absolute;
+  height: 2px;
+  bottom: 0;
+  width: 100%;
+  background-color: var(--color-grey);
+  left: 0;
+  opacity: 0;
+  transition: opacity 150ms var(--animation-sharp);
+}
+
+input.input[type="text"]:focus {
+  outline: 0;
+  border-color: var(--color-greyLighter);
+}
+
+.focus input.input[type="text"] {
+  border-bottom-left-radius: 0;
+  border-bottom-right-radius: 0;
+}
+
+.focus .activeMarker {
+  opacity: 1;
+}

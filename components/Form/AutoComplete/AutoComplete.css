@@ -1,0 +1,60 @@
+:root {
+  --suggestion-height: 2.75rem; /* 44px */
+  --suggestions-to-render: 5.25;
+}
+
+.container {
+  position: relative;
+}
+
+.container * {
+  box-sizing: border-box;
+}
+
+.suggestionsContainerOpen {
+  position: absolute;
+  background-color: var(--color-white);
+  z-index: 10;
+  width: 100%;
+  left: 0;
+  right: 0;
+  width: 100%;
+  max-height: calc(var(--suggestions-to-render) * var(--suggestion-height));
+  overflow-y: scroll;
+  box-shadow: 0 2px 4px 0 var(--color-greyLightest);
+  border: 1px solid var(--color-greyLighter);
+  border-top: 0;
+  border-bottom-left-radius: 2px;
+  border-bottom-right-radius: 2px;
+}
+
+.suggestionsList {
+  list-style-type: none;
+  margin: 0;
+}
+
+.suggestion {
+  color: var(--color-greyDark);
+  padding-left: calc(var(--size-small) + var(--size-large));
+  padding-right: calc(var(--size-small) + var(--size-large));
+  min-height: var(--suggestion-height);
+  line-height: var(--suggestion-height);
+}
+
+.suggestionHighlighted {
+  background-color: var(--color-greyLightest);
+}
+
+.sectionContainer {
+  margin: 0;
+  padding: 0;
+}
+
+.sectionContainerFirst {
+  margin: 0;
+  padding: 0;
+}
+
+.sectionTitle {
+  padding: var(--size-small) calc(var(--size-small) + var(--size-large));
+}
