@@ -72,8 +72,10 @@ export default class BaseMap extends Component {
     const { center, zoom } = this.props;
     const { center: nextCenter, zoom: nextZoom } = nextProps;
 
-    if (center[0] !== nextCenter[0] || center[1] !== nextCenter[1]) this.map.setCenter(nextCenter);
-    if (zoom !== nextZoom) this.map.setZoom(nextZoom);
+    if (center[0] !== nextCenter[0] || center[1] !== nextCenter[1]) {
+      this.map.setCenter(nextCenter, { user: false });
+    }
+    if (zoom !== nextZoom) this.map.setZoom(nextZoom, { user: false });
   }
 
   componentWillUnmount() {
