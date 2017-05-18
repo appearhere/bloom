@@ -16,13 +16,17 @@ export const dayInRange = (day, startDate, endDate) => {
 
   const isEqualToStart = day.isSame(startDate, 'day');
   const isEqualToEnd = day.isSame(endDate, 'day');
+
   const isAfterStart = day.isAfter(startDate, 'day');
   const isBeforeEnd = day.isBefore(endDate, 'day');
 
   const isEqualToOrAfterStart = isEqualToStart || isAfterStart;
-  const isEqualToOrAfterEnd = isEqualToEnd || isBeforeEnd;
+  const isEqualToOrBeforeEnd = isEqualToEnd || isBeforeEnd;
 
-  return isEqualToOrAfterStart && isEqualToOrAfterEnd;
+  if (!startDate && isEqualToEnd) return true;
+  if (!endDate && isEqualToStart) return true;
+
+  return isEqualToOrAfterStart && isEqualToOrBeforeEnd;
 };
 
 const defaultIsDisabledDay = () => false;
@@ -59,8 +63,12 @@ export default class DayRangePicker extends Component {
     return {
       isDisabled: isDisabled(day),
       isSelected: dayInRange(day, startDate, endDate),
-      isFirstSelected: day.isSame(startDate, 'day'),
-      isLastSelected: day.isSame(endDate, 'day'),
+      isFirstSelected: day.isSame(startDate, 'day') ||
+        (startDate && !endDate) ||
+        (!startDate && endDate),
+      isLastSelected: day.isSame(endDate, 'day') ||
+        (startDate && !endDate) ||
+        (!startDate && endDate),
       isHighlighted: dayInRange(day, startDate, endHighlight),
       isFirstHighlighted: day.isSame(startDate, 'day'),
       isLastHighlighted: day.isSame(endHighlight, 'day'),
@@ -71,7 +79,11 @@ export default class DayRangePicker extends Component {
     const { startDate, endDate, selectDate, onInteraction } = this.props;
 
     if (selectDate === SELECT_DATE.START) {
-      onInteraction(e, date, endDate);
+      if (date.isAfter(endDate, 'day')) {
+        onInteraction(e, date, null);
+      } else {
+        onInteraction(e, date, endDate);
+      }
     } else if (selectDate === SELECT_DATE.END) {
       if (
         (startDate && endDate && date.isSame(endDate, 'day')) ||
