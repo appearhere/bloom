@@ -72,7 +72,7 @@ export default class CalendarMonth extends Component {
       <table className={ classNames.root }>
         <thead className={ classNames.head }>
           <tr className={ classNames.row }>
-            { head.map((offset) => {
+            { head.map((_, offset) => {
               const day = startOfMonth.clone().weekday(offset);
               return (
                 <td key={ `${month.format('MM')}-${day.format('dd')}` }>

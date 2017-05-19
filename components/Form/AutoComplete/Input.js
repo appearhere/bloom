@@ -3,11 +3,14 @@ import cx from 'classnames';
 
 import Input from '../Input/Input';
 import noop from '../../../utils/noop';
+import mergeObjectStrings from '../../../utils/mergeObjectStrings/mergeObjectStrings';
 import css from './Input.css';
 
 class AutoCompleteInput extends Component {
   static propTypes = {
     InputComponent: PropTypes.any,
+    inputClassNames: PropTypes.object,
+    className: PropTypes.string,
     onFocus: noop,
     onBlur: noop,
   };
@@ -41,7 +44,7 @@ class AutoCompleteInput extends Component {
   };
 
   render() {
-    const { InputComponent, ...rest } = this.props;
+    const { InputComponent, className, inputClassNames, ...rest } = this.props;
     const { hasFocus } = this.state;
 
     return (
@@ -49,16 +52,17 @@ class AutoCompleteInput extends Component {
         className={ cx(
           css.root,
           hasFocus ? css.focus : null,
+          className,
         ) }
       >
         <InputComponent
           { ...rest }
           ref={ (c) => { this.input = c; } }
-          classNames={ {
+          classNames={ mergeObjectStrings(inputClassNames, {
             root: css.root,
             wrapper: css.wrapper,
             input: css.input,
-          } }
+          }) }
           onFocus={ this.handleFocus }
           onBlur={ this.handleBlur }
         />
