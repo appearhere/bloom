@@ -42,10 +42,11 @@ select.high {
 .arrow {
   position: absolute;
   right: 1rem;
-  color: var(--color-greyDark);
+  color: var(--color-grey);
   transform: translateY(-35%) rotate(180deg);
   top: 50%;
   pointer-events: none;
+  font-size: 0.75em;
 }
 
 select:focus,
