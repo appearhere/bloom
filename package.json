@@ -134,7 +134,7 @@
     "storybook": "start-storybook -p 9009",
     "test": "jest --env=jsdom",
     "test:travis": "jest --env=jsdom --coverage",
-    "test:watch": "jest --watch --env=jsdom"
+    "test:watch": "jest --watch --notify --env=jsdom"
   },
   "eslintConfig": {
     "extends": "./config/eslint.js"
