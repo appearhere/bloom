@@ -2,6 +2,7 @@ import React, { Component, PropTypes } from 'react';
 import CSSTransitionGroup from 'react-addons-css-transition-group';
 import cx from 'classnames';
 
+import mergeObjectStrings from '../../../utils/mergeObjectStrings/mergeObjectStrings';
 import Icon from '../../Icon/Icon';
 import noop from '../../../utils/noop';
 import css from './Select.css';
@@ -14,7 +15,20 @@ export default class Select extends Component {
     name: PropTypes.string,
     id: PropTypes.string,
     required: PropTypes.bool,
-    className: PropTypes.string,
+    classNames: PropTypes.shape({
+      wrapper: PropTypes.string,
+      select: PropTypes.string,
+      high: PropTypes.string,
+      error: PropTypes.string,
+      post: PropTypes.string,
+      errorMsg: PropTypes.string,
+      enter: PropTypes.string,
+      enterActive: PropTypes.string,
+      appear: PropTypes.string,
+      appearActive: PropTypes.string,
+      leave: PropTypes.string,
+      leaveActive: PropTypes.string,
+    }),
     hasError: PropTypes.bool,
     multiple: PropTypes.bool,
     children: PropTypes.node.isRequired,
@@ -73,7 +87,7 @@ export default class Select extends Component {
       id,
       required,
       error,
-      className,
+      classNames,
       multiple,
       value,
       children,
@@ -81,15 +95,17 @@ export default class Select extends Component {
       ...rest,
     } = this.props;
 
+    const mergedClassNames = mergeObjectStrings(css, classNames);
+
     const classes = cx(
-      css.select,
-      hasFocus ? css.focus : null,
+      mergedClassNames.select,
+      hasFocus ? mergedClassNames.focus : null,
       error ? css.error : null,
       css[priority],
     );
 
     return (
-      <div className={ cx(css.wrapper, className) }>
+      <div className={ mergedClassNames.wrapper }>
         <select
           { ...rest }
           ref={ (c) => { this.select = c; } }
@@ -105,9 +121,9 @@ export default class Select extends Component {
         >
           { children }
         </select>
-        { !multiple && <Icon name="chevron" className={ css.arrow } /> }
+        { !multiple && <Icon name="chevron" className={ mergedClassNames.arrow } /> }
         <CSSTransitionGroup
-          className={ css.post }
+          className={ mergedClassNames.post }
           transitionName={ css }
           transitionEnterTimeout={ 500 }
           transitionLeaveTimeout={ 300 }
@@ -116,7 +132,7 @@ export default class Select extends Component {
         >
           { error && error.length > 0 && (
             <div
-              className={ css.errorMsg }
+              className={ mergedClassNames.errorMsg }
             >
               { error }
             </div>
