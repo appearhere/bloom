@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import { storiesOf } from '@kadira/storybook';
+import uniqueId from 'lodash/fp/uniqueId';
 import actionWithComplexArgs from '../../.storybook/utils/actionWithComplexArgs';
 import MarkableMap from './MarkableMap';
 import BaseMap from './BaseMap';
@@ -21,14 +22,15 @@ const generateMarkers = (number = 1, lng, lat) => {
     const markerLat = lat || (51.505 + ((Math.random() - Math.random()) * Math.random()));
 
     const price = prices[Math.floor(Math.random() * prices.length)];
+    const id = uniqueId();
 
     markers.push({
-      id: i,
+      id,
       lngLat: [markerLng, markerLat],
       label: price,
       props: {
         price,
-        id: i,
+        id,
         priceUnit: '/day',
         location: 'Shoreditch',
         city: 'London',

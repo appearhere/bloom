@@ -8,6 +8,7 @@ import {
 import isEqual from 'lodash/fp/isEqual';
 import uniqueId from 'lodash/fp/uniqueId';
 import flattenDeep from 'lodash/fp/flattenDeep';
+import find from 'lodash/fp/find';
 import cx from 'classnames';
 
 import lngLatType from '../../utils/propTypeValidations/lngLat';
@@ -75,7 +76,7 @@ export default class MarkableMap extends Component {
 
     this.updateMapboxMarkerSource();
 
-    if (!activeFeature) {
+    if (!activeFeature || !this.getActiveFeaturedMarker()) {
       this.unmountActiveMarker();
     } else if (!isEqual(activeFeature, prevActiveFeature)) {
       this.renderMarkerPopup(activeFeature);
@@ -96,6 +97,17 @@ export default class MarkableMap extends Component {
   }
 
   getMaboxGL = () => this.map.getMaboxGL();
+
+  getActiveFeaturedMarker = () => {
+    const { markers } = this.props;
+    const { activeFeature } = this.state;
+
+    if (activeFeature) {
+      return find({ id: activeFeature.properties.id }, markers);
+    }
+
+    return undefined;
+  };
 
   handleMapLoad = () => {
     const mapbox = this.getMaboxGL();
