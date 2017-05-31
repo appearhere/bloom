@@ -28,7 +28,8 @@
   left: 0;
 }
 
-.link:hover .overlay {
+.link:hover .overlay,
+.link:focus .overlay {
   opacity: 0.6;
 }
 

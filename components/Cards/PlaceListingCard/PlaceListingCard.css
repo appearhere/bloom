@@ -5,7 +5,8 @@
   border-radius: var(--size-sm-iii);
 }
 
-.root:hover {
+.root:hover,
+.root:focus {
   color: var(--color-white);
 }
 
