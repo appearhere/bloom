@@ -23,4 +23,8 @@ BtnContainer.propTypes = {
   type: PropTypes.oneOf(['submit', 'button', 'reset', 'menu']),
 };
 
+BtnContainer.defaultProps = {
+  type: 'button',
+};
+
 export default BtnContainer;
