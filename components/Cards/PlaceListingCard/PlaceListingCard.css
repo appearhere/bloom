@@ -1,8 +1,9 @@
 .root {
-  height: var(--destination-listing-image-height);
   color: var(--color-white);
   position: relative;
   border-radius: var(--size-sm-iii);
+  height: 0;
+  padding-bottom: calc(56.25% + var(--destination-listing-content-height));
 }
 
 .root:hover,
@@ -14,10 +15,12 @@
   position: absolute;
   bottom: 0;
   padding: var(--size-regular);
+  overflow: hidden;
+  width: 100%;
 }
 
 .overlay {
-  background: linear-gradient(to bottom, rgba(20, 20, 21, 0) 10%, rgba(20, 20, 21, 0.9) 75%);
+  background: linear-gradient(to bottom, rgba(20, 20, 21, 0) 10%, rgba(20, 20, 21, 0.65) 85%);
   background-color: transparent;
   border-bottom-left-radius: var(--size-sm-iii);
   border-bottom-right-radius: var(--size-sm-iii);
@@ -27,16 +30,29 @@
   composes: fontSmallI from '../../../globals/typography.css';
   font-weight: var(--fontweight-demi);
   margin-top: var(--size-sm-ii);
+  white-space: nowrap;
+  overflow: hidden;
+  width: 98%;
+  text-overflow: ellipsis;
+  display: inline-block;
 }
 
 .spacer {
   padding-left: var(--size-sm-ii);
   padding-right: var(--size-sm-ii);
+  vertical-align: top;
 }
 
-.additionalInfo {
+.additionalInformationBlock {
   composes: fontSmallI from '../../../globals/typography.css';
   margin-top: var(--size-sm-ii);
+}
+
+.additionalInformationItem {
+  display: inline-block;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
 }
 
 .priceFromLabel {

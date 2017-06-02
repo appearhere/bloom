@@ -87,22 +87,20 @@ export default class DestinationListingCard extends Component {
       <div className={ cx(css.root, className) }>
         <div className={ cx(css.carousel, carouselClassName) }>
           { carouselOverlay }
-          <div className={ css.carouselControls }>
-            <BtnContainer
-              onClick={ this.handlePrevImage }
-              className={ cx(css.control, css.prev) }
-            >
-              <Icon name="chevron" />
-              <ScreenReadable>{ accessibilityPrevLabel }</ScreenReadable>
-            </BtnContainer>
-            <BtnContainer
-              onClick={ this.handleNextImage }
-              className={ cx(css.control, css.next) }
-            >
-              <Icon name="chevron" />
-              <ScreenReadable>{ accessibilityNextLabel }</ScreenReadable>
-            </BtnContainer>
-          </div>
+          <BtnContainer
+            onClick={ this.handlePrevImage }
+            className={ cx(css.control, css.prev) }
+          >
+            <Icon className={ cx(css.icon, css.prevIcon) } name="chevron" />
+            <ScreenReadable>{ accessibilityPrevLabel }</ScreenReadable>
+          </BtnContainer>
+          <BtnContainer
+            onClick={ this.handleNextImage }
+            className={ cx(css.control, css.next) }
+          >
+            <Icon className={ cx(css.icon, css.nextIcon) } name="chevron" />
+            <ScreenReadable>{ accessibilityNextLabel }</ScreenReadable>
+          </BtnContainer>
           <div className={ css.inner }>
             <Carousel
               lowestVisibleItemIndex={ visibleImageIndex }
@@ -112,11 +110,13 @@ export default class DestinationListingCard extends Component {
             >
               { images.map(({ src, alt }) => (
                 <a href={ href } key={ src } onClick={ onClick }>
-                  <FittedImage
-                    className={ css.image }
-                    src={ src }
-                    alt={ alt }
-                  />
+                  <div className={ css.imageContainer }>
+                    <FittedImage
+                      className={ css.image }
+                      src={ src }
+                      alt={ alt }
+                    />
+                  </div>
                 </a>
               )) }
             </Carousel>
@@ -130,13 +130,23 @@ export default class DestinationListingCard extends Component {
             <span className={ css.priceUnit }>{ priceUnit }</span>
           </div>
           <div className={ css.name }>{ name }</div>
-          <div className={ css.additionalInfo }>
+          <div className={ css.additionalInformationBlock }>
             {
               information
                 .filter(info => info)
                 .map(info => <span>{ info }</span>)
-                .reduce((accu, elem, i) => {
-                  const wrappedEl = <span key={ `info-${i}` }>{ elem }</span>;
+                .reduce((accu, elem, i, arr) => {
+                  const wrappedEl = (
+                    <span
+                      key={ `info-${i}` }
+                      className={ css.additionalInformationItem }
+                      style={ {
+                        maxWidth: `calc(${100 / arr.length}% - 1rem)`,
+                      } }
+                    >
+                      { elem }
+                    </span>
+                  );
                   const spacer = (
                     <span key={ `info-spacer-${i}` } className={ css.spacer }>•</span>
                   );

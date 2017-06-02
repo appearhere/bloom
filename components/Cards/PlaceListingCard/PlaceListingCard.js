@@ -17,6 +17,8 @@ const PlaceListingCard = (props) => {
     onClick,
   } = props;
 
+  const hasCompleteInfo = location && spaceDetail;
+
   return (
     <PictureCard
       href={ href }
@@ -33,10 +35,24 @@ const PlaceListingCard = (props) => {
           <span className={ css.priceUnit }>{ priceUnit }</span>
         </div>
         <div className={ css.name }>{ name }</div>
-        <div className={ css.additionalInfo }>
-          { location }
-          { location && spaceDetail ? <span className={ css.spacer }>•</span> : null }
-          { spaceDetail }
+        <div className={ css.additionalInformationBlock }>
+          <span
+            className={ css.additionalInformationItem }
+            style={ {
+              maxWidth: hasCompleteInfo ? 'calc(50% - 1rem)' : '100%',
+            } }
+          >
+            { location }
+          </span>
+          { hasCompleteInfo ? <span className={ css.spacer }>•</span> : null }
+          <span
+            className={ css.additionalInformationItem }
+            style={ {
+              maxWidth: hasCompleteInfo ? 'calc(50% - 1rem)' : '100%',
+            } }
+          >
+            { spaceDetail }
+          </span>
         </div>
       </div>
     </PictureCard>
