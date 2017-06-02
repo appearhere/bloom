@@ -24,14 +24,6 @@
   padding-bottom: 56.25%;
 }
 
-.carouselControls {
-  position: absolute;
-  top: 50%;
-  transform: translateY(-50%);
-  width: 100%;
-  z-index: 1;
-}
-
 .control {
   position: absolute;
   color: var(--color-white);
@@ -39,6 +31,8 @@
   background-color: transparent;
   border: 0;
   opacity: 0.75;
+  z-index: 1;
+  height: 100%;
 }
 
 .control:hover,
@@ -60,13 +54,37 @@
 
 .prev {
   right: auto;
-  left: var(--size-medium);
-  transform: translateY(-50%) rotate(270deg);
+  left: 0;
+  vertical-align: middle;
 }
+
 .next {
-  right: var(--size-medium);
+  right: 0;
   left: auto;
-  transform: translateY(-50%) rotate(90deg);
+  vertical-align: middle;
+}
+
+.prevIcon,
+.nextIcon {
+  display: inline-block;
+}
+
+.prevIcon {
+  padding-left: var(--size-medium);
+  padding-right: var(--size-medium);
+}
+
+.nextIcon {
+  padding-right: var(--size-medium);
+  padding-left: var(--size-medium);
+}
+
+.prevIcon svg {
+  transform: rotate(270deg);
+}
+
+.nextIcon svg {
+  transform: rotate(90deg);
 }
 
 .imageContainer {

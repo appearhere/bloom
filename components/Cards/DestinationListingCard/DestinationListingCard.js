@@ -87,22 +87,20 @@ export default class DestinationListingCard extends Component {
       <div className={ cx(css.root, className) }>
         <div className={ cx(css.carousel, carouselClassName) }>
           { carouselOverlay }
-          <div className={ css.carouselControls }>
-            <BtnContainer
-              onClick={ this.handlePrevImage }
-              className={ cx(css.control, css.prev) }
-            >
-              <Icon name="chevron" />
-              <ScreenReadable>{ accessibilityPrevLabel }</ScreenReadable>
-            </BtnContainer>
-            <BtnContainer
-              onClick={ this.handleNextImage }
-              className={ cx(css.control, css.next) }
-            >
-              <Icon name="chevron" />
-              <ScreenReadable>{ accessibilityNextLabel }</ScreenReadable>
-            </BtnContainer>
-          </div>
+          <BtnContainer
+            onClick={ this.handlePrevImage }
+            className={ cx(css.control, css.prev) }
+          >
+            <Icon className={ cx(css.icon, css.prevIcon) } name="chevron" />
+            <ScreenReadable>{ accessibilityPrevLabel }</ScreenReadable>
+          </BtnContainer>
+          <BtnContainer
+            onClick={ this.handleNextImage }
+            className={ cx(css.control, css.next) }
+          >
+            <Icon className={ cx(css.icon, css.nextIcon) } name="chevron" />
+            <ScreenReadable>{ accessibilityNextLabel }</ScreenReadable>
+          </BtnContainer>
           <div className={ css.inner }>
             <Carousel
               lowestVisibleItemIndex={ visibleImageIndex }
