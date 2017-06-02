@@ -112,11 +112,13 @@ export default class DestinationListingCard extends Component {
             >
               { images.map(({ src, alt }) => (
                 <a href={ href } key={ src } onClick={ onClick }>
-                  <FittedImage
-                    className={ css.image }
-                    src={ src }
-                    alt={ alt }
-                  />
+                  <div className={ css.imageContainer }>
+                    <FittedImage
+                      className={ css.image }
+                      src={ src }
+                      alt={ alt }
+                    />
+                  </div>
                 </a>
               )) }
             </Carousel>

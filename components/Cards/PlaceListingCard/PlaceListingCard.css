@@ -1,8 +1,9 @@
 .root {
-  height: var(--destination-listing-image-height);
   color: var(--color-white);
   position: relative;
   border-radius: var(--size-sm-iii);
+  height: 0;
+  padding-bottom: calc(56.25% + var(--destination-listing-content-height));
 }
 
 .root:hover,
@@ -14,6 +15,8 @@
   position: absolute;
   bottom: 0;
   padding: var(--size-regular);
+  overflow: hidden;
+  width: 100%;
 }
 
 .overlay {

@@ -18,9 +18,10 @@
 .carousel {
   position: relative;
   width: 100%;
-  height: var(--destination-listing-image-height);
   border-radius: 4px 4px 0 0 ;
   background-color: var(--color-greyLighter);
+  height: 0;
+  padding-bottom: 56.25%;
 }
 
 .carouselControls {
@@ -68,9 +69,20 @@
   transform: translateY(-50%) rotate(90deg);
 }
 
-.image {
+.imageContainer {
+  position: relative;
   width: 100%;
-  height: var(--destination-listing-image-height);
+  height: 0;
+  padding-bottom: 56.25%;
+  overflow: hidden;
+}
+
+.image {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
   object-fit: cover;
   border-radius: 4px 4px 0 0;
   display: block;
