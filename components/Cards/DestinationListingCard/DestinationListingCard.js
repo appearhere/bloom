@@ -130,13 +130,23 @@ export default class DestinationListingCard extends Component {
             <span className={ css.priceUnit }>{ priceUnit }</span>
           </div>
           <div className={ css.name }>{ name }</div>
-          <div className={ css.additionalInfo }>
+          <div className={ css.additionalInformationBlock }>
             {
               information
                 .filter(info => info)
                 .map(info => <span>{ info }</span>)
-                .reduce((accu, elem, i) => {
-                  const wrappedEl = <span key={ `info-${i}` }>{ elem }</span>;
+                .reduce((accu, elem, i, arr) => {
+                  const wrappedEl = (
+                    <span
+                      key={ `info-${i}` }
+                      className={ css.additionalInformationItem }
+                      style={ {
+                        maxWidth: `calc(${100 / arr.length}% - 1rem)`,
+                      } }
+                    >
+                      { elem }
+                    </span>
+                  );
                   const spacer = (
                     <span key={ `info-spacer-${i}` } className={ css.spacer }>•</span>
                   );

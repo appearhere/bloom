@@ -27,16 +27,29 @@
   composes: fontSmallI from '../../../globals/typography.css';
   font-weight: var(--fontweight-demi);
   margin-top: var(--size-sm-ii);
+  white-space: nowrap;
+  overflow: hidden;
+  width: 98%;
+  text-overflow: ellipsis;
+  display: inline-block;
 }
 
 .spacer {
   padding-left: var(--size-sm-ii);
   padding-right: var(--size-sm-ii);
+  vertical-align: top;
 }
 
-.additionalInfo {
+.additionalInformationBlock {
   composes: fontSmallI from '../../../globals/typography.css';
   margin-top: var(--size-sm-ii);
+}
+
+.additionalInformationItem {
+  display: inline-block;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
 }
 
 .priceFromLabel {

@@ -95,17 +95,29 @@
   font-weight: var(--fontweight-demi);
   color: var(--color-greyDarker);
   margin-top: var(--size-small);
+  white-space: nowrap;
+  overflow: hidden;
+  width: 98%;
+  text-overflow: ellipsis;
 }
 
 .spacer {
   padding-left: var(--size-small);
   padding-right: var(--size-small);
+  vertical-align: top;
 }
 
-.additionalInfo {
+.additionalInformationBlock {
   composes: fontSmallI from '../../../globals/typography.css';
   color: var(--color-grey);
   margin-top: var(--size-small);
+}
+
+.additionalInformationItem {
+  display: inline-block;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
 }
 
 .priceFromLabel {

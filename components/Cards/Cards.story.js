@@ -61,9 +61,9 @@ storiesOf('Cards', module)
     <SpaceListingCard
       price="$10,000,000"
       priceUnit="/day"
-      location="Shoreditch, London"
+      location="Shoreditch, London in the Greater London Area"
       size="1000 sqft"
-      name="Bold Street Shop"
+      name="A really long Bold Street Shop, maybe the biggest shop you've ever seen"
       images={
         [{
           src: 'https://source.unsplash.com/random/500x500',
@@ -143,9 +143,9 @@ storiesOf('Cards', module)
       price="$10,000,000"
       priceUnit="/day"
       priceFromLabel="from"
-      location="Shoreditch, London"
+      location="Shoreditch, London in the Greater London Area"
       size="1000 sqft"
-      name="BOXPARK"
+      name="A really long Bold Street Shop, maybe the biggest shop you've ever seen"
       imageSrc="https://source.unsplash.com/random/500x500"
       spaceDetail="2 available spaces"
       href="#"
