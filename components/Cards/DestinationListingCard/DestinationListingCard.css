@@ -120,33 +120,14 @@
   overflow: hidden;
 }
 
-.name {
+.priceContainer {
   composes: fontSmallI from '../../../globals/typography.css';
   font-weight: var(--fontweight-demi);
   color: var(--color-greyDarker);
-  margin-top: var(--size-small);
+  margin-top: var(--size-sm-ii);
   white-space: nowrap;
   overflow: hidden;
   width: 98%;
-  text-overflow: ellipsis;
-}
-
-.spacer {
-  padding-left: var(--size-small);
-  padding-right: var(--size-small);
-  vertical-align: top;
-}
-
-.additionalInformationBlock {
-  composes: fontSmallI from '../../../globals/typography.css';
-  color: var(--color-grey);
-  margin-top: var(--size-small);
-}
-
-.additionalInformationItem {
-  display: inline-block;
-  white-space: nowrap;
-  overflow: hidden;
   text-overflow: ellipsis;
 }
 
@@ -165,4 +146,35 @@
 .priceUnit {
   composes: fontSmallI from '../../../globals/typography.css';
   color: var(--color-grey);
+}
+
+.name {
+  composes: fontSmallI from '../../../globals/typography.css';
+  font-weight: var(--fontweight-demi);
+  color: var(--color-greyDarker);
+  margin-top: var(--size-sm-ii);
+  white-space: nowrap;
+  overflow: hidden;
+  width: 98%;
+  text-overflow: ellipsis;
+}
+
+.spacer {
+  padding-left: var(--size-sm-ii);
+  padding-right: var(--size-sm-ii);
+  vertical-align: top;
+}
+
+.additionalInformationBlock {
+  composes: fontSmallI from '../../../globals/typography.css';
+  color: var(--color-grey);
+  margin-top: var(--size-sm-ii);
+  display: block;
+}
+
+.additionalInformationItem {
+  display: inline-block;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
 }

@@ -123,7 +123,7 @@ export default class DestinationListingCard extends Component {
           </div>
         </div>
         <a href={ href } className={ cx(css.body, bodyClassName) } onClick={ onClick }>
-          <div className={ css.name }>
+          <div className={ css.priceContainer }>
             { priceFromLabel && <span className={ css.priceFromLabel }>{ priceFromLabel }</span> }
             <span className={ css.price }>{ price }</span>
             { '\u00a0' }
