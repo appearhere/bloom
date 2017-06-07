@@ -1,0 +1,15 @@
+.root svg {
+  width: 2.5em;
+  height: 2.5em;
+}
+
+.concessions svg,
+.events svg,
+.fandb svg,
+.markets svg,
+.shops svg,
+.unique svg {
+  stroke: transparent;
+  fill: currentColor;
+  stroke-linecap: round;
+}
