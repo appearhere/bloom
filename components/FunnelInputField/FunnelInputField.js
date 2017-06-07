@@ -21,6 +21,7 @@ FunnelInputField.propTypes = {
     meta: PropTypes.string,
     label: PropTypes.string,
     valueReplay: PropTypes.string,
+    placeholder: PropTypes.string,
     description: PropTypes.string,
   }),
   valueReplay: PropTypes.any,

@@ -7,6 +7,7 @@ import {
   Description,
   Label,
   Value,
+  Placeholder,
 } from './FormComponents';
 
 const stories = storiesOf('FormComponents', module);
@@ -35,4 +36,7 @@ stories.add('Field', () => (
 ))
 .add('Value', () => (
   <Value>900sq ft - 1500 sq ft</Value>
+))
+.add('Placeholder', () => (
+  <Placeholder>Any size</Placeholder>
 ));

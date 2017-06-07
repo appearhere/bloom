@@ -54,6 +54,16 @@
   width: auto;
 }
 
+
+.placeholder {
+  display: block;
+  composes: fontRegular from '../../globals/typography.css';
+  color: var(--color-greyLight);
+  text-align: center;
+  display: inline-block;
+  width: auto;
+}
+
 .error {
   color: var(--color-danger);
 }
@@ -63,6 +73,7 @@
 * + .headline,
 * + .label,
 * + .value,
+* + .placeholder,
 * + .inputWrapper {
   margin-top: var(--size-sm-ii);
 }
@@ -74,6 +85,7 @@
 .headline + .meta,
 .headline + .description,
 .headline + .value,
+.headline + .placeholder,
 .headline + .inputWrapper {
   margin-top: var(--size-sm-i);
 }
