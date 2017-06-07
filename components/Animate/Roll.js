@@ -1,30 +1,45 @@
 import React, { Component, PropTypes } from 'react';
 import { spring, TransitionMotion } from 'react-motion';
 
+const DEFAULT_SPRINT_CONFIG = { stiffness: 250, damping: 25 };
+
 export default class Roll extends Component {
   static propTypes = {
     children: PropTypes.any,
     width: PropTypes.string,
+    springConfig: PropTypes.shape({
+      stiffness: PropTypes.number,
+      damping: PropTypes.number,
+    })
   };
 
   static defaultProps = {
     width: 'auto',
+    springConfig: DEFAULT_SPRINT_CONFIG,
   };
 
-  getStyles = () => ({
-    y: spring(0),
-    opacity: spring(1),
-  });
+  getStyles = () => {
+    const { springConfig } = this.props;
+
+    return {
+      y: spring(0, springConfig),
+      opacity: spring(1, springConfig),
+    };
+  };
 
   willEnter = () => ({
-    y: 100,
+    y: 50,
     opacity: 0,
   });
 
-  willLeave = () => ({
-    y: spring(-100),
-    opacity: spring(0),
-  });
+  willLeave = () => {
+    const { springConfig } = this.props;
+
+    return {
+      y: spring(-50, springConfig),
+      opacity: spring(0, springConfig),
+    };
+  };
 
   render() {
     const { children: child, width } = this.props;
@@ -56,6 +71,8 @@ export default class Roll extends Component {
                   opacity: style.opacity,
                   transform: `translate3d(0, ${style.y}%, 0)`,
                   width,
+                  willChange: 'transform, opacity',
+                  backfaceVisibility: 'hidden',
                 } }
               >
                 { data }
