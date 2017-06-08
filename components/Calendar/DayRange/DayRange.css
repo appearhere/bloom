@@ -1,0 +1,22 @@
+.root:after {
+  content: '';
+  position: absolute;
+  display: block;
+  width: calc(100% + 0.25rem);
+  height: 2px;
+  background-color: var(--color-grey);
+  bottom: calc((var(--size-sm-ii) * -1) - 2px);
+  left: -0.125rem;
+  opacity: 0;
+  transition: opacity 150ms var(--animation-sharp);
+}
+
+.active {
+  position: relative;
+  color: var(--color-greyDark);
+  z-index: calc(var(--z-stickyNode) + 1);
+}
+
+.active:after {
+  opacity: 1;
+}
