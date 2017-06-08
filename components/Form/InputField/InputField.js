@@ -5,6 +5,7 @@ import {
   Meta,
   Label,
   Value,
+  Placeholder,
   Description,
   InputWrapper,
 } from '../FormComponents';
@@ -29,6 +30,7 @@ export default class InputField extends Component {
     children: PropTypes.element,
     error: PropTypes.node,
     valueReplay: PropTypes.node,
+    placeholder: PropTypes.node,
     required: PropTypes.bool,
     optionalLabel: PropTypes.string,
   };
@@ -49,6 +51,7 @@ export default class InputField extends Component {
       classNames,
       error,
       valueReplay,
+      placeholder,
       required,
       optionalLabel,
       ...rest,
@@ -75,7 +78,14 @@ export default class InputField extends Component {
         >
           { label }
         </Label>
-        { valueReplay && (
+        { !valueReplay && placeholder ? (
+          <Placeholder
+            { ...sharedProps }
+            className={ classNames.valueReplay }
+          >
+            { placeholder }
+          </Placeholder>
+        ) : (
           <Value
             { ...sharedProps }
             className={ classNames.valueReplay }

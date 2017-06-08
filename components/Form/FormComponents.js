@@ -53,6 +53,12 @@ export const Value = ({ className, children }) => (
   </span>
 );
 
+export const Placeholder = ({ className, children }) => (
+  <span className={ cx(css.placeholder, className) }>
+    { children }
+  </span>
+);
+
 export const InputWrapper = ({ className, children }) => (
   <div className={ cx(css.inputWrapper, className) }>
     { children }
