@@ -30,7 +30,7 @@
 
 .label {
   display: block;
-  composes: fontSmallI from '../../globals/typography.css';
+  composes: fontSmallIi from '../../globals/typography.css';
   color: var(--color-greyDark);
   font-weight: var(--fontweight-demi);
   text-transform: uppercase;
@@ -78,10 +78,6 @@
   margin-top: var(--size-sm-ii);
 }
 
-.label + .meta,
-.label + .description,
-.label + .value,
-.label + .inputWrapper,
 .headline + .meta,
 .headline + .description,
 .headline + .value,
