@@ -1,12 +1,11 @@
 import React, { Component, PropTypes } from 'react';
 import cx from 'classnames';
 
-import m from '../../../globals/modifiers.css';
+import { SELECT_DATE } from '../DayRangePicker/DayRangePicker';
 import noop from '../../../utils/noop';
-import mergeObjectStrings from '../../../utils/mergeObjectStrings/mergeObjectStrings';
 import Icon from '../../Icon/Icon';
 import BtnContainer from '../../BtnContainer/BtnContainer';
-import InputField from '../../Form/InputField/InputField';
+import { Value, Placeholder } from '../../Form/FormComponents';
 
 import css from './DayRange.css';
 
@@ -17,72 +16,70 @@ export default class DayRange extends Component {
     endLabel: PropTypes.string,
     startDate: PropTypes.string,
     endDate: PropTypes.string,
+    startDatePlaceholder: PropTypes.string,
+    endDatePlaceholder: PropTypes.string,
     children: PropTypes.node,
     className: PropTypes.string,
-    onClick: PropTypes.func,
+    onStartDateClick: PropTypes.func,
+    onEndDateClick: PropTypes.func,
     inputClassNames: PropTypes.object,
-    active: PropTypes.bool,
+    selectDate: PropTypes.oneOf([SELECT_DATE.START, SELECT_DATE.END, '']),
   };
 
   static defaultProps = {
-    onClick: noop,
+    onStartDateClick: noop,
+    onEndDateClick: noop,
+    selectDate: null,
+    startDatePlaceholder: 'Start date',
+    endDatePlaceholder: 'End date',
   };
 
   render() {
     const {
       className,
-      inputClassNames,
-      onClick,
+      onStartDateClick,
+      onEndDateClick,
       startDate,
       endDate,
-      active,
+      startDatePlaceholder,
+      endDatePlaceholder,
+      selectDate,
       ...rest
     } = this.props;
 
     return (
-      <span>
-        <Icon name="calendar" />
-
-        <BtnContainer
-          { ...rest }
-          onClick={ onClick }
-          type="button"
-          className={ cx(
-            css.root,
-            active ? css.active : null,
-            className,
-          ) }
-        >
-
-          <InputField
-            classNames={ mergeObjectStrings(inputClassNames, {
-              root: m.pb0,
-            }) }
-            id="1"
-            valueReplay={ startDate || 'Appear' }
-          />
-        </BtnContainer>
-
-        <Icon name="arrow" />
-
-        <BtnContainer
-          className={ cx(
-            css.root,
-            active ? css.active : null,
-            className,
-          ) }
-          type="button"
-        >
-
-          <InputField
-            classNames={ mergeObjectStrings(inputClassNames, {
-              root: m.pb0,
-            }) }
-            id="2"
-            valueReplay={ endDate || 'Disappear' }
-          />
-        </BtnContainer>
-      </span>
+      <div className={ cx(css.root, className) }>
+        <div className={ css.container }>
+          <BtnContainer
+            { ...rest }
+            onClick={ onStartDateClick }
+            type="button"
+            className={ cx(
+              css.btn,
+              selectDate === SELECT_DATE.START ? css.btnActive : null,
+            ) }
+          >
+            { startDate
+                ? <Value className={ css.value }>{ startDate }</Value>
+                : <Placeholder className={ css.placeholder }>{ startDatePlaceholder }</Placeholder>
+            }
+          </BtnContainer>
+          <Icon className={ css.arrow } name="arrow" />
+          <BtnContainer
+            onClick={ onEndDateClick }
+            className={ cx(
+              css.btn,
+              selectDate === SELECT_DATE.END ? css.btnActive : null,
+            ) }
+            type="button"
+          >
+            { endDate
+                ? <Value className={ css.value }>{ endDate }</Value>
+                : <Placeholder className={ css.placeholder }>{ endDatePlaceholder }</Placeholder>
+            }
+          </BtnContainer>
+        </div>
+      </div>
     );
   }
 }

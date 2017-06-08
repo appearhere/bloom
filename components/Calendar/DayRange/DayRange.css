@@ -1,22 +1,60 @@
-.root:after {
+.container {
+  display: block;
+  vertical-align: middle;
+  width: 100%;
+  height: 100%;
+}
+
+.btn,
+.arrow {
+  display: inline-block;
+  vertical-align: middle;
+}
+
+.arrow {
+  padding-left: var(--size-regular);
+  padding-right: var(--size-regular);
+  text-align: center;
+  color: var(--color-grey);
+}
+
+.btn {
+  position: relative;
+  height: 100%;
+  vertical-align: middle;
+}
+
+.value {
+  color: var(--color-grey);
+}
+
+.placeholder {
+  color: var(--color-greyLight);
+}
+
+.btn:after {
   content: '';
   position: absolute;
   display: block;
   width: calc(100% + 0.25rem);
   height: 2px;
-  background-color: var(--color-grey);
-  bottom: calc((var(--size-sm-ii) * -1) - 2px);
+  background-color: var(--color-greyDarker);
+  bottom: -2px;
   left: -0.125rem;
   opacity: 0;
   transition: opacity 150ms var(--animation-sharp);
 }
 
-.active {
+.btnActive {
   position: relative;
-  color: var(--color-greyDark);
   z-index: calc(var(--z-stickyNode) + 1);
 }
 
-.active:after {
+.btnActive .value,
+.btnActive .placeholder {
+  color: var(--color-greyDarker);
+}
+
+.btnActive:after {
   opacity: 1;
 }
