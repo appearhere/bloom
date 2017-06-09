@@ -9,6 +9,7 @@
 
 input.input[type="text"] {
   outline: 0;
+  padding: var(--size-regular) var(--size-lg-i);
 }
 
 .activeMarker {
