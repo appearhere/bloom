@@ -34,7 +34,6 @@
   overflow: hidden;
   width: 98%;
   text-overflow: ellipsis;
-  display: inline-block;
 }
 
 .spacer {
@@ -46,6 +45,7 @@
 .additionalInformationBlock {
   composes: fontSmallI from '../../../globals/typography.css';
   margin-top: var(--size-sm-ii);
+  display: block;
 }
 
 .additionalInformationItem {
