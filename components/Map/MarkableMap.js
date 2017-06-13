@@ -24,8 +24,10 @@ import {
   CLUSTER_MAX_ZOOM,
   MARKER_SOURCE,
   MARKER_LAYER,
+  HIGHLIGHTED_MARKER_LAYER,
   CLUSTER_LAYER,
   MOVE_TO_MARKER_MAX_LAT_OFFSET,
+  DEFAULT_MARKER_CONFIG,
 } from '../../constants/mapbox';
 
 import css from './MarkableMap.css';
@@ -46,6 +48,7 @@ export default class MarkableMap extends Component {
     MarkerComponent: PropTypes.func.isRequired,
     GroupMarkerComponent: PropTypes.func.isRequired,
     autoFit: PropTypes.bool,
+    highlightedId: PropTypes.oneOfType([PropTypes.string, PropTypes.number]),
   };
 
   static defaultProps = {
@@ -127,31 +130,27 @@ export default class MarkableMap extends Component {
       clusterRadius: CLUSTER_RADIUS,
       clusterMaxZoom: CLUSTER_MAX_ZOOM,
     });
+
     this.mapboxMarkerSource = mapbox.getSource(MARKER_SOURCE);
 
     mapbox.addLayer({
       id: MARKER_LAYER,
       type: 'symbol',
       source: MARKER_SOURCE,
-      filter: [
-        'all',
-        ['!=', 'active', true],
-        ['!has', 'point_count'],
-      ],
-      layout: {
-        'icon-allow-overlap': true,
-        'text-allow-overlap': true,
-        'icon-image': 'pin-{labellen}',
-        'text-field': '{label}',
-        'text-font': ['Open Sans Semibold', 'Arial Unicode MS Bold'],
-        'icon-offset': [0, -15],
-        'text-offset': [0, -1.9],
-        'text-anchor': 'top',
-        'text-size': 14,
-      },
-      paint: {
-        'text-color': '#FFFFFF',
-      },
+      filter: DEFAULT_MARKER_CONFIG.filter.concat([['!=', 'highlighted', true]]),
+      layout: DEFAULT_MARKER_CONFIG.layout,
+      paint: DEFAULT_MARKER_CONFIG.paint,
+    });
+
+    mapbox.addLayer({
+      id: HIGHLIGHTED_MARKER_LAYER,
+      type: 'symbol',
+      source: MARKER_SOURCE,
+      filter: DEFAULT_MARKER_CONFIG.filter.concat([['==', 'highlighted', true]]),
+      layout: Object.assign({}, DEFAULT_MARKER_CONFIG.layout, {
+        'icon-image': 'pin-{labellen}-highlight',
+      }),
+      paint: DEFAULT_MARKER_CONFIG.paint,
     });
 
     mapbox.addLayer({
@@ -184,7 +183,7 @@ export default class MarkableMap extends Component {
   updateMapboxMarkerSource = () => {
     if (!this.mapboxMarkerSource) return;
     const { activeFeature } = this.state;
-    const { markers } = this.props;
+    const { markers, highlightedId } = this.props;
 
     const features = markers.map(marker => ({
       type: 'Feature',
@@ -197,6 +196,7 @@ export default class MarkableMap extends Component {
         active: activeFeature && marker.id === activeFeature.properties.id,
         label: marker.label,
         labellen: marker.label.length,
+        highlighted: marker.id === highlightedId,
       },
     }));
 
