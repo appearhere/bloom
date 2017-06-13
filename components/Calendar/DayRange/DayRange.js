@@ -3,6 +3,7 @@ import cx from 'classnames';
 
 import { SELECT_DATE } from '../DayRangePicker/DayRangePicker';
 import noop from '../../../utils/noop';
+import mergeObjectStrings from '../../../utils/mergeObjectStrings/mergeObjectStrings';
 import Icon from '../../Icon/Icon';
 import BtnContainer from '../../BtnContainer/BtnContainer';
 import { Value, Placeholder } from '../../Form/FormComponents';
@@ -19,7 +20,14 @@ export default class DayRange extends Component {
     startDatePlaceholder: PropTypes.string,
     endDatePlaceholder: PropTypes.string,
     children: PropTypes.node,
-    className: PropTypes.string,
+    classNames: PropTypes.shape({
+      root: PropTypes.string,
+      container: PropTypes.string,
+      btn: PropTypes.string,
+      value: PropTypes.string,
+      placeholder: PropTypes.string,
+      arrow: PropTypes.string,
+    }),
     onStartDateClick: PropTypes.func,
     onEndDateClick: PropTypes.func,
     inputClassNames: PropTypes.object,
@@ -36,7 +44,7 @@ export default class DayRange extends Component {
 
   render() {
     const {
-      className,
+      classNames,
       onStartDateClick,
       onEndDateClick,
       startDate,
@@ -47,36 +55,44 @@ export default class DayRange extends Component {
       ...rest
     } = this.props;
 
+    const mergedClassNames = mergeObjectStrings(css, classNames);
+
     return (
-      <div className={ cx(css.root, className) }>
+      <div className={ mergedClassNames.root }>
         <div className={ css.container }>
           <BtnContainer
             { ...rest }
             onClick={ onStartDateClick }
             type="button"
             className={ cx(
-              css.btn,
-              selectDate === SELECT_DATE.START ? css.btnActive : null,
+              mergedClassNames.btn,
+              selectDate === SELECT_DATE.START ? mergedClassNames.btnActive : null,
             ) }
           >
-            { startDate
-                ? <Value className={ css.value }>{ startDate }</Value>
-                : <Placeholder className={ css.placeholder }>{ startDatePlaceholder }</Placeholder>
-            }
+            { startDate ? (
+              <Value className={ mergedClassNames.value }>{ startDate }</Value>
+            ) : (
+              <Placeholder className={ mergedClassNames.placeholder }>
+                { startDatePlaceholder }
+              </Placeholder>
+            ) }
           </BtnContainer>
-          <Icon className={ css.arrow } name="arrow" />
+          <Icon className={ mergedClassNames.arrow } name="arrow" />
           <BtnContainer
             onClick={ onEndDateClick }
             className={ cx(
-              css.btn,
-              selectDate === SELECT_DATE.END ? css.btnActive : null,
+              mergedClassNames.btn,
+              selectDate === SELECT_DATE.END ? mergedClassNames.btnActive : null,
             ) }
             type="button"
           >
-            { endDate
-                ? <Value className={ css.value }>{ endDate }</Value>
-                : <Placeholder className={ css.placeholder }>{ endDatePlaceholder }</Placeholder>
-            }
+            { endDate ? (
+              <Value className={ mergedClassNames.value }>{ endDate }</Value>
+            ) : (
+              <Placeholder className={ mergedClassNames.placeholder }>
+                { endDatePlaceholder }
+              </Placeholder>
+            ) }
           </BtnContainer>
         </div>
       </div>
