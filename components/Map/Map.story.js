@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import { storiesOf } from '@kadira/storybook';
 import uniqueId from 'lodash/fp/uniqueId';
+import random from 'lodash/fp/random';
 import actionWithComplexArgs from '../../.storybook/utils/actionWithComplexArgs';
 import MarkableMap from './MarkableMap';
 import BaseMap from './BaseMap';
@@ -80,6 +81,7 @@ class TestMap extends Component {
           GroupMarkerComponent={ GroupMarker }
           onClick={ actionWithComplexArgs('map clicked') }
           onMoveEnd={ actionWithComplexArgs('map moved') }
+          highlightedId={ markers[random(0, 10)].id }
           autoFit
         />
       </div>

@@ -81,10 +81,11 @@ export default class DestinationListingCard extends Component {
       carouselOverlay,
       information,
       onClick,
+      ...rest,
     } = this.props;
 
     return (
-      <div className={ cx(css.root, className) }>
+      <div { ...rest } className={ cx(css.root, className) }>
         <div className={ cx(css.carousel, carouselClassName) }>
           { carouselOverlay }
           <BtnContainer

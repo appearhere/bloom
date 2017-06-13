@@ -9,6 +9,7 @@ export const CLUSTER_MAX_ZOOM = 18;
 
 export const MARKER_SOURCE = 'markers';
 export const MARKER_LAYER = 'marker-layer';
+export const HIGHLIGHTED_MARKER_LAYER = 'highlighted-marker-layer';
 export const CLUSTER_LAYER = 'cluster-layer';
 
 /**
@@ -18,3 +19,25 @@ export const CLUSTER_LAYER = 'cluster-layer';
  * The value is the maximum offset applied when the zoom level is 0 i.e. the furthest possible zoom
  */
 export const MOVE_TO_MARKER_MAX_LAT_OFFSET = 40;
+
+export const DEFAULT_MARKER_CONFIG = {
+  filter: [
+    'all',
+    ['!=', 'active', true],
+    ['!has', 'point_count'],
+  ],
+  layout: {
+    'icon-allow-overlap': true,
+    'text-allow-overlap': true,
+    'icon-image': 'pin-{labellen}',
+    'text-field': '{label}',
+    'text-font': ['Open Sans Semibold', 'Arial Unicode MS Bold'],
+    'icon-offset': [0, -15],
+    'text-offset': [0, -1.9],
+    'text-anchor': 'top',
+    'text-size': 14,
+  },
+  paint: {
+    'text-color': '#FFFFFF',
+  },
+};
