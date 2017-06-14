@@ -15,12 +15,14 @@ const PlaceListingCard = (props) => {
     location,
     spaceDetail,
     onClick,
+    ...rest,
   } = props;
 
   const hasCompleteInfo = location && spaceDetail;
 
   return (
     <PictureCard
+      { ...rest }
       href={ href }
       onClick={ onClick }
       className={ css.root }
