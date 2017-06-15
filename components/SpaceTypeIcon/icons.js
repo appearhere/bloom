@@ -1,17 +1,17 @@
 import svgClean from '../../utils/svgClean/svgClean';
 
-import concession from './icons/icon-concession.svg';
+import shopShare from './icons/icon-shop-share.svg';
 import event from './icons/icon-event.svg';
-import fandb from './icons/icon-fandb.svg';
+import barRestaurant from './icons/icon-bar-restaurant.svg';
 import market from './icons/icon-market.svg';
-import shop from './icons/icon-shop.svg';
+import retail from './icons/icon-retail.svg';
 import unique from './icons/icon-unique.svg';
 
 export default {
-  concession: svgClean(concession),
+  shopShare: svgClean(shopShare),
   event: svgClean(event),
-  fandb: svgClean(fandb),
+  barRestaurant: svgClean(barRestaurant),
   market: svgClean(market),
-  shop: svgClean(shop),
+  retail: svgClean(retail),
   unique: svgClean(unique),
 };
