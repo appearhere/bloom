@@ -22,6 +22,8 @@
   position: relative;
   height: 100%;
   vertical-align: middle;
+  padding-top: var(--size-sm-i);
+  padding-bottom: var(--size-sm-i);
 }
 
 .value {
