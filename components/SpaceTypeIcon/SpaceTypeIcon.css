@@ -3,11 +3,11 @@
   height: 2.5em;
 }
 
-.concession svg,
+.barRestaurant svg,
 .event svg,
-.fandb svg,
 .market svg,
-.shop svg,
+.retail svg,
+.shopShare svg,
 .unique svg {
   stroke: transparent;
   fill: currentColor;
