@@ -30,6 +30,7 @@ export default class DestinationListingCard extends Component {
     carouselOverlay: PropTypes.node,
     information: PropTypes.array,
     onClick: PropTypes.func,
+    fixedHeight: PropTypes.bool,
   };
 
   static defaultProps = {
@@ -38,6 +39,7 @@ export default class DestinationListingCard extends Component {
     href: '#',
     images: [],
     information: [],
+    fixedHeight: false,
   };
 
   state = {
@@ -81,11 +83,19 @@ export default class DestinationListingCard extends Component {
       carouselOverlay,
       information,
       onClick,
+      fixedHeight,
       ...rest,
     } = this.props;
 
     return (
-      <div { ...rest } className={ cx(css.root, className) }>
+      <div
+        { ...rest }
+        className={ cx(
+          css.root,
+          className,
+          fixedHeight ? css.fixedHeight : null
+        ) }
+      >
         <div className={ cx(css.carousel, carouselClassName) }>
           { carouselOverlay }
           <BtnContainer
