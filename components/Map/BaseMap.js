@@ -25,6 +25,7 @@ export default class BaseMap extends Component {
     maxZoom: PropTypes.number,
     onClick: PropTypes.func,
     onMapLoad: PropTypes.func,
+    onMoveStart: PropTypes.func,
     onMoveEnd: PropTypes.func,
     zoom: PropTypes.number,
   };
@@ -37,6 +38,7 @@ export default class BaseMap extends Component {
     maxZoom: DEFAULT_MAX_ZOOM,
     onClick: noop,
     onMapLoad: noop,
+    onMoveStart: noop,
     onMoveEnd: noop,
     zoom: DEFAULT_ZOOM,
   };
@@ -64,6 +66,7 @@ export default class BaseMap extends Component {
     });
 
     this.map.on('click', onClick);
+    this.map.on('movestart', this.handleMoveStart);
     this.map.on('moveend', this.handleMoveEnd);
     this.map.on('load', (event) => { onMapLoad(event.target); });
   }
@@ -83,6 +86,7 @@ export default class BaseMap extends Component {
     const { onClick } = this.props;
 
     this.map.off('click', onClick);
+    this.map.off('movestart', this.handleMoveStart);
     this.map.off('moveend', this.handleMoveEnd);
     this.map.remove();
   }
@@ -114,6 +118,12 @@ export default class BaseMap extends Component {
       rest,
     );
   };
+
+  handleMoveStart = (e) => {
+    const { onMoveStart } = this.props;
+
+    onMoveStart(e);
+  }
 
   mapboxgl = {};
 
