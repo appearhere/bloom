@@ -95,6 +95,11 @@
   overflow: hidden;
 }
 
+.fixedHeight .imageContainer {
+  height: var(--destination-listing-image-height);
+  padding-bottom: 0;
+}
+
 .image {
   position: absolute;
   top: 0;
