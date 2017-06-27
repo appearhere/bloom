@@ -27,6 +27,8 @@ const SocialLinks = (props) => {
     accessibilityLabel,
     platforms,
     className,
+    variant,
+    linkClassName,
   } = props;
 
   const encodedUri = encodeURI(uri);
@@ -34,7 +36,7 @@ const SocialLinks = (props) => {
   const encodedVia = encodeURI(twitterVia);
 
   return (
-    <div className={ cx(css.root, className) }>
+    <div className={ cx(css.root, css[variant], className) }>
       { platforms
           .map(platform => (
             <div
@@ -42,7 +44,7 @@ const SocialLinks = (props) => {
               key={ `${platform.name}-${encodedUri}` }
             >
               <a
-                className={ css.link }
+                className={ cx(css.link, linkClassName) }
                 href={ platform.shareUrl({
                   uri: encodedUri,
                   twitterTweet: encodedTwitterTweet,
@@ -71,12 +73,15 @@ SocialLinks.propTypes = {
     shareUrl: PropTypes.func,
   })),
   className: PropTypes.string,
+  variant: PropTypes.oneOf(['light', 'dark']),
+  linkClassName: PropTypes.string,
 };
 
 SocialLinks.defaultProps = {
   excludes: emptyArr,
   accessibilityLabel: 'Share on',
   platforms: defaultPlatforms,
+  variant: 'light',
 };
 
 export default SocialLinks;
