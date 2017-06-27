@@ -30,3 +30,9 @@
 .linkItem:last-child {
   margin-right: 0;
 }
+
+.dark .link {
+  border-color: var(--color-white);
+  color: var(--color-white);
+  background-color: var(--color-black);
+}
