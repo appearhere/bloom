@@ -91,7 +91,7 @@ export default class BaseMap extends Component {
     this.map.remove();
   }
 
-  getMaboxGL() {
+  getMapboxGL() {
     return this.map;
   }
 
