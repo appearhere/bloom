@@ -19,12 +19,14 @@ export default class ModalAnimator extends Component {
     closeOnEsc: PropTypes.bool,
     closeOnOutsideClick: PropTypes.bool,
     windowClassName: PropTypes.string,
+    preventScroll: PropTypes.bool,
   };
 
   static defaultProps = {
     onClose: noop,
     closeOnEsc: true,
     closeOnOutsideClick: true,
+    preventScroll: true,
   };
 
   constructor(props) {
@@ -34,20 +36,20 @@ export default class ModalAnimator extends Component {
   }
 
   componentDidMount() {
-    const { active } = this.props;
-    if (active) this.bodyClassName.add('noScroll');
+    const { active, preventScroll } = this.props;
+    if (active && preventScroll) this.bodyClassName.add('noScroll');
     this.keyupEvent = window.addEventListener('keyup', this.handleKeyUp);
   }
 
   componentWillReceiveProps(nextProps) {
-    const { active: newActive } = nextProps;
+    const { active: newActive, preventScroll } = nextProps;
     const { active: oldActive } = this.props;
 
     if (newActive && newActive !== oldActive) {
-      this.bodyClassName.add('noScroll');
+      if (preventScroll) this.bodyClassName.add('noScroll');
       this.keyupEvent = window.addEventListener('keyup', this.handleKeyUp);
     } else if (!newActive) {
-      this.bodyClassName.remove('noScroll');
+      if (preventScroll) this.bodyClassName.remove('noScroll');
       if (this.keyupEvent) window.removeEventListener('keyup', this.keyupEvent);
     }
   }
