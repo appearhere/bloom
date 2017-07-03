@@ -106,8 +106,10 @@ export default class MarkableMap extends Component {
     const { activeFeature } = this.state;
 
     if (activeFeature.properties.cluster) {
-      const markerIds = JSON.parse(activeFeature.properties.markerids);
-      return find(marker => markerIds.indexOf(marker.id) > -1, markers);
+      const clusterSet = JSON.parse(activeFeature.properties.markerids);
+      const clusterMarkerIds = flattenDeep(clusterSet);
+
+      return find(marker => clusterMarkerIds.indexOf(marker.id) > -1, markers);
     }
 
     if (activeFeature) {
