@@ -26,6 +26,7 @@ import {
   MARKER_LAYER,
   HIGHLIGHTED_MARKER_LAYER,
   CLUSTER_LAYER,
+  HIGHLIGHTED_CLUSTER_LAYER,
   MOVE_TO_MARKER_MAX_LAT_OFFSET,
   DEFAULT_MARKER_CONFIG,
 } from '../../constants/mapbox';
@@ -137,38 +138,86 @@ export default class MarkableMap extends Component {
 
     mapbox.addLayer({
       id: MARKER_LAYER,
-      type: 'symbol',
+      type: DEFAULT_MARKER_CONFIG.type,
       source: MARKER_SOURCE,
-      filter: DEFAULT_MARKER_CONFIG.filter.concat([['!=', 'highlighted', true]]),
-      layout: DEFAULT_MARKER_CONFIG.layout,
+      filter: [
+        'all',
+        ['!=', 'active', true],
+        ['!has', 'point_count'],
+        ['!=', 'highlighted', true],
+      ],
+      layout: {
+        'icon-allow-overlap': true,
+        'text-allow-overlap': true,
+        'icon-image': 'pin-{labellen}',
+        'text-field': '{label}',
+        'text-font': DEFAULT_MARKER_CONFIG.layout.textFont,
+        'text-size': DEFAULT_MARKER_CONFIG.layout.textSize,
+        'icon-offset': [0, -15],
+        'text-offset': [0, -1.9],
+        'text-anchor': 'top',
+      },
       paint: DEFAULT_MARKER_CONFIG.paint,
     });
 
     mapbox.addLayer({
       id: HIGHLIGHTED_MARKER_LAYER,
-      type: 'symbol',
+      type: DEFAULT_MARKER_CONFIG.type,
       source: MARKER_SOURCE,
-      filter: DEFAULT_MARKER_CONFIG.filter.concat([['==', 'highlighted', true]]),
-      layout: Object.assign({}, DEFAULT_MARKER_CONFIG.layout, {
+      filter: [
+        'all',
+        ['!=', 'active', true],
+        ['!has', 'point_count'],
+        ['==', 'highlighted', true],
+      ],
+      layout: {
+        'icon-allow-overlap': true,
+        'text-allow-overlap': true,
         'icon-image': 'pin-{labellen}-highlight',
-      }),
+        'text-field': '{label}',
+        'text-font': DEFAULT_MARKER_CONFIG.layout.textFont,
+        'text-size': DEFAULT_MARKER_CONFIG.layout.textSize,
+        'icon-offset': [0, -15],
+        'text-offset': [0, -1.9],
+        'text-anchor': 'top',
+      },
       paint: DEFAULT_MARKER_CONFIG.paint,
     });
 
     mapbox.addLayer({
       id: CLUSTER_LAYER,
-      type: 'symbol',
+      type: DEFAULT_MARKER_CONFIG.type,
       source: MARKER_SOURCE,
-      filter: ['has', 'point_count'],
+      filter: [
+        'all',
+        ['has', 'point_count'],
+        ['!=', 'highlighted', true],
+      ],
       layout: {
         'icon-image': 'pin-cluster',
         'text-field': '{point_count}',
-        'text-font': ['Open Sans Semibold', 'Arial Unicode MS Bold'],
-        'text-size': 14,
+        'text-font': DEFAULT_MARKER_CONFIG.layout.textFont,
+        'text-size': DEFAULT_MARKER_CONFIG.layout.textSize,
       },
-      paint: {
-        'text-color': '#FFFFFF',
+      paint: DEFAULT_MARKER_CONFIG.paint,
+    });
+
+    mapbox.addLayer({
+      id: HIGHLIGHTED_CLUSTER_LAYER,
+      type: DEFAULT_MARKER_CONFIG.type,
+      source: MARKER_SOURCE,
+      filter: [
+        'all',
+        ['has', 'point_count'],
+        ['==', 'highlighted', true],
+      ],
+      layout: {
+        'icon-image': 'pin-cluster-highlight',
+        'text-field': '{point_count}',
+        'text-font': DEFAULT_MARKER_CONFIG.layout.textFont,
+        'text-size': DEFAULT_MARKER_CONFIG.layout.textSize,
       },
+      paint: DEFAULT_MARKER_CONFIG.paint,
     });
 
     // When hovering on a marker change the cursor to a pointer
