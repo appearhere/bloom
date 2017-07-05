@@ -99,15 +99,17 @@ export default class MarkableMap extends Component {
     this.unmountActiveMarker();
   }
 
-  getMaboxGL = () => this.map.getMaboxGL();
+  getMapboxGL = () => this.map.getMapboxGL();
 
   getActiveFeaturedMarker = () => {
     const { markers } = this.props;
     const { activeFeature } = this.state;
 
     if (activeFeature.properties.cluster) {
-      const markerIds = JSON.parse(activeFeature.properties.markerids);
-      return find(marker => markerIds.indexOf(marker.id) > -1, markers);
+      const clusterSet = JSON.parse(activeFeature.properties.markerids);
+      const clusterMarkerIds = flattenDeep(clusterSet);
+
+      return find(marker => clusterMarkerIds.indexOf(marker.id) > -1, markers);
     }
 
     if (activeFeature) {
@@ -118,7 +120,7 @@ export default class MarkableMap extends Component {
   };
 
   handleMapLoad = () => {
-    const mapbox = this.getMaboxGL();
+    const mapbox = this.getMapboxGL();
 
     mapbox.addSource(MARKER_SOURCE, {
       type: 'geojson',
@@ -205,10 +207,10 @@ export default class MarkableMap extends Component {
 
   handleMapClick = (e) => {
     const { originalEvent, point } = e;
-    if (originalEvent.target !== this.getMaboxGL().getCanvas()) return;
+    if (originalEvent.target !== this.getMapboxGL().getCanvas()) return;
 
-    const markers = this.getMaboxGL().queryRenderedFeatures(point, { layers: [MARKER_LAYER] });
-    const clusters = this.getMaboxGL().queryRenderedFeatures(point, { layers: [CLUSTER_LAYER] });
+    const markers = this.getMapboxGL().queryRenderedFeatures(point, { layers: [MARKER_LAYER] });
+    const clusters = this.getMapboxGL().queryRenderedFeatures(point, { layers: [CLUSTER_LAYER] });
 
     if (markers.length > 0) {
       this.handleMarkerClick(markers[0]);
@@ -232,7 +234,7 @@ export default class MarkableMap extends Component {
       const singleZoomCluster = isSingleLevelArray(clusterSet);
       if (!singleZoomCluster) return false;
 
-      const zoom = this.getMaboxGL().getZoom();
+      const zoom = this.getMapboxGL().getZoom();
       const clusterZoomLevel = nestedArrayDepth(clusterSet) + Math.ceil(zoom);
 
       // the cluster cannot uncluster even at max zoom
@@ -260,7 +262,7 @@ export default class MarkableMap extends Component {
 
   easeTo = (lngLat) => {
     const [lng, lat] = lngLat;
-    const zoom = this.getMaboxGL().getZoom();
+    const zoom = this.getMapboxGL().getZoom();
 
     const nextLat = lat + ((MOVE_TO_MARKER_MAX_LAT_OFFSET * 2) / Math.pow(2, zoom));
     const nextCenter = [lng, nextLat];
@@ -279,7 +281,7 @@ export default class MarkableMap extends Component {
 
   markerPopupElement = (lngLat) => {
     if (!this.activeMarker) {
-      this.activeMarker = new mapboxgl.Marker().setLngLat(lngLat).addTo(this.getMaboxGL());
+      this.activeMarker = new mapboxgl.Marker().setLngLat(lngLat).addTo(this.getMapboxGL());
     } else {
       this.activeMarker.setLngLat(lngLat);
     }
