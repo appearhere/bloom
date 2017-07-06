@@ -32,7 +32,7 @@ const SocialLinks = (props) => {
   } = props;
 
   const encodedUri = encodeURI(uri);
-  const encodedTwitterTweet = encodeURI(twitterTweet);
+  const encodedTwitterTweet = encodeURI(twitterTweet).replace('#', '%23');
   const encodedVia = encodeURI(twitterVia);
 
   return (
