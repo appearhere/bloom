@@ -114,6 +114,7 @@ export default class DestinationListingCard extends Component {
           </BtnContainer>
           <div className={ css.inner }>
             <Carousel
+              className={ css.carouselWrapper }
               lowestVisibleItemIndex={ visibleImageIndex }
               wrapAround
               swiping={ false }
