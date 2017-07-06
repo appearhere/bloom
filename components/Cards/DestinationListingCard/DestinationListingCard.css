@@ -4,24 +4,29 @@
   background-color: var(--color-white);
   border-radius: 4px;
   z-index: 1;
+  padding: var(--size-regular);
 }
 
 .root:after {
   border-radius: 4px;
+  box-shadow: 0 2px 7px 0 rgba(0, 0, 0, 0.1);
 }
 
 .inner {
   display: block;
-  border-radius: 4px 4px 0 0 ;
 }
 
 .carousel {
   position: relative;
   width: 100%;
-  border-radius: 4px 4px 0 0 ;
+  border-radius: 4px;
   background-color: var(--color-greyLighter);
   height: 0;
   padding-bottom: 56.25%;
+}
+
+.carouselWrapper {
+  border-radius: 4px;
 }
 
 .control {
@@ -70,13 +75,13 @@
 }
 
 .prevIcon {
-  padding-left: var(--size-medium);
-  padding-right: var(--size-medium);
+  padding-left: var(--size-regular);
+  padding-right: var(--size-regular);
 }
 
 .nextIcon {
-  padding-right: var(--size-medium);
-  padding-left: var(--size-medium);
+  padding-right: var(--size-regular);
+  padding-left: var(--size-regular);
 }
 
 .prevIcon svg {
@@ -107,20 +112,17 @@
   left: 0;
   right: 0;
   object-fit: cover;
-  border-radius: 4px 4px 0 0;
   display: block;
   background-color: var(--color-greyLighter);
 }
 
 .body {
-  padding: var(--size-medium);
+  padding-top: var(--size-regular);
   display: block;
   background-color: var(--color-white);
   color: var(--color-greyDarker);
   text-decoration: none;
   border-radius: 0 0 4px 4px;
-  border: 1px solid var(--color-greyLighter);
-  border-top: 0;
   vertical-align: top;
   overflow: hidden;
 }
