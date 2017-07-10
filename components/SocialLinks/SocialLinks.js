@@ -2,6 +2,7 @@ import React, { PropTypes } from 'react';
 import cx from 'classnames';
 
 import templateHelper from '../../utils/templateHelper/templateHelper';
+import noop from '../../utils/noop';
 import Icon from '../Icon/Icon';
 import ScreenReadable from '../ScreenReadable/ScreenReadable';
 import css from './SocialLinks.css';
@@ -29,6 +30,7 @@ const SocialLinks = (props) => {
     className,
     variant,
     linkClassName,
+    onClick,
   } = props;
 
   const encodedUri = encodeURI(uri);
@@ -50,6 +52,7 @@ const SocialLinks = (props) => {
                   twitterTweet: encodedTwitterTweet,
                   twitterVia: encodedVia,
                 }) }
+                onClick={ (e) => { onClick(e, { platform, encodedUri }); } }
                 target="_blank"
                 rel="noopener noreferrer"
               >
@@ -75,6 +78,7 @@ SocialLinks.propTypes = {
   className: PropTypes.string,
   variant: PropTypes.oneOf(['light', 'dark']),
   linkClassName: PropTypes.string,
+  onClick: PropTypes.func,
 };
 
 SocialLinks.defaultProps = {
@@ -82,6 +86,7 @@ SocialLinks.defaultProps = {
   accessibilityLabel: 'Share on',
   platforms: defaultPlatforms,
   variant: 'light',
+  onClick: noop,
 };
 
 export default SocialLinks;
