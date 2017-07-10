@@ -6,6 +6,10 @@
   padding-bottom: calc(56.25% + var(--destination-listing-content-height));
 }
 
+.root:after {
+  box-shadow: 0 2px 7px 0 rgba(0, 0, 0, 0.1);
+}
+
 .root:hover,
 .root:focus {
   color: var(--color-white);
