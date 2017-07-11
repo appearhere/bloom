@@ -37,7 +37,7 @@ export default class ModalAnimator extends Component {
 
   componentDidMount() {
     const { active, preventScroll } = this.props;
-    if (active && preventScroll) this.bodyClassName.add('noScroll');
+    if (active && preventScroll) this.bodyClassName.add('overflowHidden');
     this.keyupEvent = window.addEventListener('keyup', this.handleKeyUp);
   }
 
@@ -46,16 +46,16 @@ export default class ModalAnimator extends Component {
     const { active: oldActive } = this.props;
 
     if (newActive && newActive !== oldActive) {
-      if (preventScroll) this.bodyClassName.add('noScroll');
+      if (preventScroll) this.bodyClassName.add('overflowHidden');
       this.keyupEvent = window.addEventListener('keyup', this.handleKeyUp);
     } else if (!newActive) {
-      if (preventScroll) this.bodyClassName.remove('noScroll');
+      if (preventScroll) this.bodyClassName.remove('overflowHidden');
       if (this.keyupEvent) window.removeEventListener('keyup', this.keyupEvent);
     }
   }
 
   componentWillUnmount() {
-    this.bodyClassName.remove('noScroll');
+    this.bodyClassName.remove('overflowHidden');
     window.removeEventListener('keyup', this.keyupEvent);
   }
 
