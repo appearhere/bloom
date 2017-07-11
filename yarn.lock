@@ -2,9 +2,9 @@
 # yarn lockfile v1
 
 
-"@appearhere/mapbox-gl@^1.4.0":
-  version "1.4.0"
-  resolved "https://registry.yarnpkg.com/@appearhere/mapbox-gl/-/mapbox-gl-1.4.0.tgz#3eebb7cf49843bf3bd6fa1d326a4f9c10d19770c"
+"@appearhere/mapbox-gl@^1.5.0":
+  version "1.5.0"
+  resolved "https://registry.yarnpkg.com/@appearhere/mapbox-gl/-/mapbox-gl-1.5.0.tgz#290ba384e92f0a36e9ad1facbcc19d83d8fc790f"
   dependencies:
     "@mapbox/gl-matrix" "^0.0.1"
     "@mapbox/shelf-pack" "^3.0.0"
