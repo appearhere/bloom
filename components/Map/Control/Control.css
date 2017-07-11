@@ -13,7 +13,6 @@
   line-height: 1;
   padding: var(--size-sm-ii);
   text-decoration: none;
-  text-transform: uppercase;
 }
 
 .root[disabled] {
