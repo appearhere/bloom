@@ -134,7 +134,7 @@
   margin-top: var(--size-sm-ii);
   white-space: nowrap;
   overflow: hidden;
-  width: 98%;
+  width: 100%;
   text-overflow: ellipsis;
 }
 
@@ -153,6 +153,10 @@
 .priceUnit {
   composes: fontSmallI from '../../../globals/typography.css';
   color: var(--color-grey);
+}
+
+.badge {
+  float: right;
 }
 
 .name {
