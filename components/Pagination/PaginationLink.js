@@ -9,7 +9,7 @@ import css from './PaginationLink.css';
 
 export const NextLink = props => (
   <PaginationLink { ...props }>
-    <Icon name="arrow" />
+    <Icon name="arrow" className={ css.nextArrow } />
   </PaginationLink>
 );
 

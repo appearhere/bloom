@@ -8,10 +8,14 @@
 .page {
   display: inline-block;
   list-style: none;
-  margin-left: 0;
+  vertical-align: middle;
+  margin-left: var(--size-sm-ii);
+  margin-right: var(--size-sm-ii);
 }
 
 .track {
   list-style: none;
   display: inline-block;
+  margin: 0;
+  vertical-align: middle;
 }
