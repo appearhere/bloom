@@ -9,11 +9,13 @@
   display: inline-block;
 }
 
-.root:hover {
+.root:hover,
+.root:focus {
   color: var(--color-greyDark);
 }
 
-.disabled:hover {
+.disabled:hover,
+.disabled:focus {
   color: var(--color-grey);
 }
 

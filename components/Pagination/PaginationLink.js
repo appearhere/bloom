@@ -1,6 +1,7 @@
-import React, { PropTypes } from 'react';
+import React, { Component, PropTypes } from 'react';
 import cx from 'classnames';
 
+import noop from '../../utils/noop';
 import Icon from '../Icon/Icon';
 import ScreenReadable from '../ScreenReadable/ScreenReadable';
 
@@ -18,28 +19,42 @@ export const PreviousLink = props => (
   </PaginationLink>
 );
 
-export const PaginationLink = ({ accessibilityLabel, page, active, children, disabled }) => (
-  <a
-    href={ !disabled ? `?page=${page}` : null }
-    className={ cx(
-      css.root,
-      active ? css.active : null,
-      disabled ? css.disabled : null,
-    ) }
-  >
-    { children }
-    <ScreenReadable>{ accessibilityLabel } { page }</ScreenReadable>
-  </a>
-);
+export class PaginationLink extends Component {
+  static propTypes = {
+    page: PropTypes.number.isRequired,
+    children: PropTypes.node.isRequired,
+    accessibilityLabel: PropTypes.string,
+    active: PropTypes.bool,
+    disabled: PropTypes.bool,
+    onClick: PropTypes.func,
+  };
 
-PaginationLink.propTypes = {
-  page: PropTypes.number.isRequired,
-  children: PropTypes.node.isRequired,
-  accessibilityLabel: PropTypes.string,
-  active: PropTypes.bool,
-  disabled: PropTypes.bool,
-};
+  static defaultProps = {
+    accessibilityLabel: 'go to page',
+    onClick: noop,
+  };
 
-PaginationLink.defaultProps = {
-  accessibilityLabel: 'go to page',
-};
+  handleClick = (e) => {
+    const { page, onClick } = this.props;
+    onClick(e, page);
+  };
+
+  render() {
+    const { accessibilityLabel, page, active, children, disabled } = this.props;
+
+    return (
+      <a
+        href={ !disabled ? `?page=${page}` : null }
+        className={ cx(
+          css.root,
+          active ? css.active : null,
+          disabled ? css.disabled : null,
+        ) }
+        onClick={ this.handleClick }
+      >
+        { children }
+        <ScreenReadable>{ accessibilityLabel } { page }</ScreenReadable>
+      </a>
+    );
+  }
+}
