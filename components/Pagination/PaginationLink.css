@@ -1,25 +1,55 @@
 .root {
-  text-decoration: none;
+  border-radius: 4px;
+  box-sizing: border-box;
+  color: var(--color-greyDark);
   composes: fontSmallI from '../../globals/typography.css';
-  font-weight: var(--fontweight-regular);
-  letter-spacing: var(--letterspacing-wide);
-  color: var(--color-grey);
-  padding-left: var(--size-medium);
-  padding-right: var(--size-medium);
   display: inline-block;
+  font-family: var(--font-avenir);
+  font-weight: var(--fontweight-regular);
+  line-height: normal;
+  min-height: var(--size-regular);
+  padding-top: var(--size-sm-ii);
+  padding-left: var(--size-sm-ii);
+  padding-right: var(--size-sm-ii);
+  padding-bottom: var(--size-sm-ii);
+  text-align: center;
+  text-decoration: none;
+  border: 1px solid transparent;
+  position: relative;
+  overflow: visible;
 }
 
-.root:hover {
+.disabled {
+  color: var(--color-greyLighter);
+}
+
+.root:hover,
+.root:focus {
+  border: 1px solid var(--color-greyLighter);
   color: var(--color-greyDark);
 }
 
-.disabled:hover {
-  color: var(--color-grey);
+.disabled:hover,
+.disabled:focus {
+  color: var(--color-greyLighter);
+  background-color: transparent;
+  border-color: transparent;
 }
 
-.active {
-  font-weight: var(--fontweight-demi);
-  color: var(--color-greyDark);
+.active,
+.active:hover {
+  color: var(--color-white);
+  background-color: var(--color-grey);
+  border: 1px solid var(--color-grey);
+}
+
+.active:hover {
+  background-color: var(--color-grey);
+}
+
+.nextArrow,
+.prevArrow {
+  line-height: var(--size-regular);
 }
 
 .prevArrow svg {
