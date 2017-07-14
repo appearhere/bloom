@@ -1,6 +1,7 @@
 import React from 'react';
 import { storiesOf, action } from '@kadira/storybook';
 
+import Badge from '../Badge/Badge';
 import Card from './Card/Card';
 import PictureCard from './PictureCard/PictureCard';
 import SpaceFeatureCard from './SpaceFeatureCard/SpaceFeatureCard';
@@ -86,8 +87,7 @@ storiesOf('Cards', module)
     <SpaceListingCard
       price="$10,000,00000000000000000000000"
       priceUnit="/day"
-      badgeLabel="New"
-      badgeContext="primary"
+      badge={ <Badge context="primary" hollow={ false }>New</Badge> }
       location="Shoreditch, London in the Greater London Area"
       size="1000 sqft"
       name="A really long Bold Street Shop, maybe the biggest shop you've ever seen"

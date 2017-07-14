@@ -4,21 +4,10 @@ import cx from 'classnames';
 import getValidIndex from '../../../utils/getValidIndex/getValidIndex';
 import Carousel from '../../Carousel/Carousel';
 import BtnContainer from '../../BtnContainer/BtnContainer';
-import Badge from '../../Badge/Badge';
 import Icon from '../../Icon/Icon';
 import ScreenReadable from '../../ScreenReadable/ScreenReadable';
 import FittedImage from '../../FittedImage/FittedImage';
 import css from './DestinationListingCard.css';
-
-const badgeContextPropType = (props) => {
-  if (props.badgeLabel && !props.badgeContext) {
-    throw new Error(
-      'the prop badgeContext must be present when the prop badgeLabel has been provided.',
-    );
-  }
-
-  return null;
-};
 
 export default class DestinationListingCard extends Component {
   static propTypes = {
@@ -27,13 +16,12 @@ export default class DestinationListingCard extends Component {
       PropTypes.shape({
         src: PropTypes.string,
         alt: PropTypes.string,
-      }),
+      })
     ),
     priceFromLabel: PropTypes.node,
     price: PropTypes.node,
     priceUnit: PropTypes.node,
-    badgeLabel: PropTypes.string,
-    badgeContext: badgeContextPropType,
+    badge: PropTypes.node,
     name: PropTypes.node,
     className: PropTypes.string,
     bodyClassName: PropTypes.string,
@@ -67,7 +55,7 @@ export default class DestinationListingCard extends Component {
         visibleImageIndex: newIndex,
       };
     });
-  };
+  }
 
   handlePrevImage = () => {
     this.setState(({ visibleImageIndex }, { images }) => {
@@ -77,7 +65,7 @@ export default class DestinationListingCard extends Component {
         visibleImageIndex: newIndex,
       };
     });
-  };
+  }
 
   render() {
     const { visibleImageIndex } = this.state;
@@ -89,8 +77,7 @@ export default class DestinationListingCard extends Component {
       priceFromLabel,
       price,
       priceUnit,
-      badgeLabel,
-      badgeContext,
+      badge,
       name,
       className,
       bodyClassName,
@@ -103,20 +90,29 @@ export default class DestinationListingCard extends Component {
     } = this.props;
 
     return (
-      <div { ...rest } className={ cx(css.root, className, fixedHeight ? css.fixedHeight : null) }>
+      <div
+        { ...rest }
+        className={ cx(
+          css.root,
+          className,
+          fixedHeight ? css.fixedHeight : null,
+        ) }
+      >
         <div className={ cx(css.carousel, carouselClassName) }>
           { carouselOverlay }
-          <BtnContainer onClick={ this.handlePrevImage } className={ cx(css.control, css.prev) }>
+          <BtnContainer
+            onClick={ this.handlePrevImage }
+            className={ cx(css.control, css.prev) }
+          >
             <Icon className={ cx(css.icon, css.prevIcon) } name="chevron" />
-            <ScreenReadable>
-              { accessibilityPrevLabel }
-            </ScreenReadable>
+            <ScreenReadable>{ accessibilityPrevLabel }</ScreenReadable>
           </BtnContainer>
-          <BtnContainer onClick={ this.handleNextImage } className={ cx(css.control, css.next) }>
+          <BtnContainer
+            onClick={ this.handleNextImage }
+            className={ cx(css.control, css.next) }
+          >
             <Icon className={ cx(css.icon, css.nextIcon) } name="chevron" />
-            <ScreenReadable>
-              { accessibilityNextLabel }
-            </ScreenReadable>
+            <ScreenReadable>{ accessibilityNextLabel }</ScreenReadable>
           </BtnContainer>
           <div className={ css.inner }>
             <Carousel
@@ -125,64 +121,66 @@ export default class DestinationListingCard extends Component {
               swiping={ false }
               dragging={ false }
             >
-              { images.map(({ src, alt }) =>
-                (<a href={ href } key={ src } onClick={ onClick }>
+              { images.map(({ src, alt }) => (
+                <a href={ href } key={ src } onClick={ onClick }>
                   <div className={ css.imageContainer }>
-                    <FittedImage className={ css.image } src={ src } alt={ alt } />
+                    <FittedImage
+                      className={ css.image }
+                      src={ src }
+                      alt={ alt }
+                    />
                   </div>
-                </a>)) }
+                </a>
+              )) }
             </Carousel>
           </div>
         </div>
         <a href={ href } className={ cx(css.body, bodyClassName) } onClick={ onClick }>
-          <div className={ css.priceContainer }>
-            { priceFromLabel &&
-              <span className={ css.priceFromLabel }>
-                { priceFromLabel }
-              </span> }
-            <span className={ css.price }>
-              { price }
-            </span>
-            { '\u00a0' }
-            <span className={ css.priceUnit }>
-              { priceUnit }
-            </span>
-            { (badgeLabel && badgeContext) && (
-              <Badge className={ css.badge } context={ badgeContext }>
-                { badgeLabel }
-              </Badge>
-            ) }
+          <div className={ css.title }>
+            <div className={ css.priceContainer }>
+              { priceFromLabel &&
+                <span className={ css.priceFromLabel }>
+                  { priceFromLabel }
+                </span> }
+              <span className={ css.price }>
+                { price }
+              </span>
+              { '\u00a0' }
+              <span className={ css.priceUnit }>
+                { priceUnit }
+              </span>
+            </div>
+            { badge }
           </div>
-          <div className={ css.name }>
-            { name }
-          </div>
+          <div className={ css.name }>{ name }</div>
           <div className={ css.additionalInformationBlock }>
-            { information
-              .filter(info => info)
-              .map(info => (<span>
-                { info }
-              </span>))
-              .reduce((accu, elem, i, arr) => {
-                const wrappedEl = (
-                  <span
-                    key={ `info-${i}` }
-                    className={ css.additionalInformationItem }
-                    style={ {
-                      maxWidth: `calc(${100 / arr.length}% - 1rem)`,
-                    } }
-                  >
-                    { elem }
-                  </span>
-                );
-                const spacer = (
-                  <span key={ `info-spacer-${i}` } className={ css.spacer }>
-    : null;
-                    •
-                  </span>
-                );
+            {
+              information
+                .filter(info => info)
+                .map(info => <span>{ info }</span>)
+                .reduce((accu, elem, i, arr) => {
+                  const wrappedEl = (
+                    <span
+                      key={ `info-${i}` }
+                      className={ css.additionalInformationItem }
+                      style={ {
+                        maxWidth: `calc(${100 / arr.length}% - 1rem)`,
+                      } }
+                    >
+                      { elem }
+                    </span>
+                  );
+                  const spacer = (
+                    <span key={ `info-spacer-${i}` } className={ css.spacer }>•</span>
+                  );
 
-                return accu === null ? [wrappedEl] : [...accu, spacer, wrappedEl];
-              }, null) }
+                  return accu === null
+                    ? [wrappedEl]
+                    : [...accu, spacer, wrappedEl];
+                },
+                  null,
+                )
+            }
           </div>
         </a>
       </div>

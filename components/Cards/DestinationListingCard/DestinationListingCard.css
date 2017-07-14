@@ -127,6 +127,13 @@
   overflow: hidden;
 }
 
+.title {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
+}
+
 .priceContainer {
   composes: fontSmallI from '../../../globals/typography.css';
   font-weight: var(--fontweight-demi);
@@ -134,7 +141,6 @@
   margin-top: var(--size-sm-ii);
   white-space: nowrap;
   overflow: hidden;
-  width: 100%;
   text-overflow: ellipsis;
 }
 
@@ -153,10 +159,6 @@
 .priceUnit {
   composes: fontSmallI from '../../../globals/typography.css';
   color: var(--color-grey);
-}
-
-.badge {
-  float: right;
 }
 
 .name {
