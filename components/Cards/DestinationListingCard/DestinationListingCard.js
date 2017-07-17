@@ -21,6 +21,7 @@ export default class DestinationListingCard extends Component {
     priceFromLabel: PropTypes.node,
     price: PropTypes.node,
     priceUnit: PropTypes.node,
+    badge: PropTypes.node,
     name: PropTypes.node,
     className: PropTypes.string,
     bodyClassName: PropTypes.string,
@@ -76,6 +77,7 @@ export default class DestinationListingCard extends Component {
       priceFromLabel,
       price,
       priceUnit,
+      badge,
       name,
       className,
       bodyClassName,
@@ -93,7 +95,7 @@ export default class DestinationListingCard extends Component {
         className={ cx(
           css.root,
           className,
-          fixedHeight ? css.fixedHeight : null
+          fixedHeight ? css.fixedHeight : null,
         ) }
       >
         <div className={ cx(css.carousel, carouselClassName) }>
@@ -134,11 +136,21 @@ export default class DestinationListingCard extends Component {
           </div>
         </div>
         <a href={ href } className={ cx(css.body, bodyClassName) } onClick={ onClick }>
-          <div className={ css.priceContainer }>
-            { priceFromLabel && <span className={ css.priceFromLabel }>{ priceFromLabel }</span> }
-            <span className={ css.price }>{ price }</span>
-            { '\u00a0' }
-            <span className={ css.priceUnit }>{ priceUnit }</span>
+          <div className={ css.title }>
+            <div className={ css.priceContainer }>
+              { priceFromLabel &&
+                <span className={ css.priceFromLabel }>
+                  { priceFromLabel }
+                </span> }
+              <span className={ css.price }>
+                { price }
+              </span>
+              { '\u00a0' }
+              <span className={ css.priceUnit }>
+                { priceUnit }
+              </span>
+            </div>
+            { badge }
           </div>
           <div className={ css.name }>{ name }</div>
           <div className={ css.additionalInformationBlock }>
@@ -166,7 +178,7 @@ export default class DestinationListingCard extends Component {
                     ? [wrappedEl]
                     : [...accu, spacer, wrappedEl];
                 },
-                  null
+                  null,
                 )
             }
           </div>
