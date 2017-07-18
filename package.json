@@ -21,7 +21,8 @@
     "Nique Woodhouse <nique@appearhere.co.uk>"
   ],
   "engines": {
-    "node": "8.1.4"
+    "node": "8.1.4",
+    "yarn": "0.27.5"
   },
   "publishConfig": {
     "access": "restricted"
