@@ -15,3 +15,5 @@ export const reshapeArray = (source, dimensions) => {
   while (array.length) reshaped.push(array.splice(0, secondDimensionLength));
   return reshaped;
 };
+
+export const splitArray = (list, index) => [list.slice(0, index), list.slice(index)];

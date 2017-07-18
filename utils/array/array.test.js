@@ -3,6 +3,7 @@ import {
   generateNumberFilledArray,
   cloneArray,
   reshapeArray,
+  splitArray,
 } from './array';
 
 describe('generateArray', () => {
@@ -64,6 +65,17 @@ describe('reshapeArray', () => {
       [7],
       [8],
       [9],
+    ]);
+  });
+});
+
+describe('splitArray', () => {
+  const arr = [1, 2, 3, 4, 5, 6];
+
+  it('splits the array at the desired index', () => {
+    expect(splitArray(arr, 3)).toEqual([
+      [1, 2, 3],
+      [4, 5, 6],
     ]);
   });
 });
