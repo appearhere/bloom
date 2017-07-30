@@ -129,7 +129,7 @@
   margin-top: var(--size-micro);
 }
 
-.root ol ol, ul ul {
+.root ol ol, ul ul, ol ul, ul ol, ol ol ul {
   margin-left: var(--size-large);
   margin-bottom: var(--size-micro);
 }
