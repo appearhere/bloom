@@ -132,8 +132,7 @@
 .root ol ol,
 .root ul ul,
 .root ol ul,
-.root ul ol,
-.root ol ol ul {
+.root ul ol {
   margin-left: var(--size-large);
   margin-bottom: var(--size-micro);
 }
