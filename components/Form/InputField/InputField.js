@@ -30,7 +30,7 @@ export default class InputField extends Component {
     children: PropTypes.element,
     error: PropTypes.node,
     valueReplay: PropTypes.node,
-    placeholder: PropTypes.node,
+    placeholderValue: PropTypes.node,
     required: PropTypes.bool,
     optionalLabel: PropTypes.string,
   };
@@ -51,7 +51,7 @@ export default class InputField extends Component {
       classNames,
       error,
       valueReplay,
-      placeholder,
+      placeholderValue,
       required,
       optionalLabel,
       ...rest,
@@ -78,14 +78,15 @@ export default class InputField extends Component {
         >
           { label }
         </Label>
-        { !valueReplay && placeholder ? (
+        { !valueReplay && placeholderValue && (
           <Placeholder
             { ...sharedProps }
             className={ classNames.valueReplay }
           >
-            { placeholder }
+            { placeholderValue }
           </Placeholder>
-        ) : (
+        ) }
+        { valueReplay && (
           <Value
             { ...sharedProps }
             className={ classNames.valueReplay }
