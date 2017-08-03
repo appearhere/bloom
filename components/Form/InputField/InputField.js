@@ -38,6 +38,7 @@ export default class InputField extends Component {
   static defaultProps = {
     classNames: {},
     Element: Field,
+    error: '',
   };
 
   render() {
@@ -61,7 +62,7 @@ export default class InputField extends Component {
     const sharedProps = { error };
 
     return (
-      <Element className={ classNames.root }>
+      <Element { ...sharedProps } className={ classNames.root }>
         { meta && (
           <Meta
             { ...sharedProps }

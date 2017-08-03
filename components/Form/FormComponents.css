@@ -1,10 +1,14 @@
 .field {
-  padding-bottom: var(--size-lg-ii);
+  padding-bottom: var(--size-lg-i);
 }
 
 .field + .field {
   border-top: 1px solid var(--color-greyLighter);
-  padding-top: var(--size-lg-ii);
+  padding-top: var(--size-lg-i);
+}
+
+.errorField {
+  padding-bottom: var(--size-lg-ii);
 }
 
 .meta {
