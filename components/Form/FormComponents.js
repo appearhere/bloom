@@ -4,8 +4,14 @@ import cx from 'classnames';
 
 import css from './FormComponents.css';
 
-export const Field = ({ className, children }) => (
-  <div className={ cx(css.field, className) }>
+export const Field = ({ className, children, error }) => (
+  <div
+    className={ cx(
+      css.field,
+      error ? css.errorField : null,
+      className
+    ) }
+  >
     { children }
   </div>
 );
@@ -68,6 +74,7 @@ export const InputWrapper = ({ className, children }) => (
 const sharedPropTypes = {
   className: PropTypes.string,
   children: PropTypes.node,
+  error: PropTypes.string,
 };
 
 Field.propTypes = sharedPropTypes;
@@ -76,9 +83,9 @@ Description.propTypes = sharedPropTypes;
 Label.propTypes = {
   ...sharedPropTypes,
   htmlFor: PropTypes.string,
-  error: PropTypes.string,
   optionalLabel: PropTypes.string,
 };
 Value.propTypes = sharedPropTypes;
+Placeholder.propTypes = sharedPropTypes;
 InputWrapper.propTypes = sharedPropTypes;
 /* eslint-enable react/no-multi-comp */
