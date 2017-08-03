@@ -22,7 +22,6 @@ module.exports = {
     document: true,
   },
   rules: {
-    'eol-last': 0,
     'react/jsx-curly-spacing': ['error', 'always'],
     'react/jsx-filename-extension': 0,
     'react/forbid-prop-types': 0,
