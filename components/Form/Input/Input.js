@@ -52,6 +52,7 @@ export default class Input extends Component {
     onBlur: noop,
     type: 'text',
     value: '',
+    error: '',
     classNames: {},
   };
 
@@ -135,7 +136,7 @@ export default class Input extends Component {
           transitionAppearTimeout={ 500 }
           transitionAppear
         >
-          { error && error.length > 0 && (
+          { error && (
             <div
               className={ mergedClassNames.errorMsg }
             >
