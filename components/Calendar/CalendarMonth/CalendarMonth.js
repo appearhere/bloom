@@ -59,7 +59,7 @@ export default class CalendarMonth extends Component {
       classNames,
     } = this.props;
 
-    const head = generateNumberFilledArray(DAYS_PER_WEEK, 1);
+    const head = generateNumberFilledArray(DAYS_PER_WEEK);
     const startOfMonth = month.clone().startOf('month');
     const endOfMonth = month.clone().endOf('month');
     const calendarMonth = getCalendarMonth(
@@ -72,7 +72,7 @@ export default class CalendarMonth extends Component {
       <table className={ classNames.root }>
         <thead className={ classNames.head }>
           <tr className={ classNames.row }>
-            { head.map((_, offset) => {
+            { head.map((offset) => {
               const day = startOfMonth.clone().weekday(offset);
               return (
                 <td key={ `${month.format('MM')}-${day.format('dd')}` }>
