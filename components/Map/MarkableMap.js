@@ -10,10 +10,12 @@ import uniqueId from 'lodash/fp/uniqueId';
 import flattenDeep from 'lodash/fp/flattenDeep';
 import find from 'lodash/fp/find';
 import cx from 'classnames';
+import HexgridHeatmap from 'hexgrid-heatmap';
 
 import lngLatType from '../../utils/propTypeValidations/lngLat';
 import minLngLatBounds from '../../utils/geoUtils/minLngLatBounds';
 import mapboxgl from '../../utils/mapboxgl/mapboxgl';
+import initializeHeatmap from '../../utils/mapboxgl/heatmap';
 import isSingleLevelArray from '../../utils/isSingleLevelArray/isSingleLevelArray';
 import nestedArrayDepth from '../../utils/nestedArrayDepth/nestedArrayDepth';
 import MarkerContainer from './Markers/MarkerContainer';
@@ -27,13 +29,17 @@ import {
   HIGHLIGHTED_MARKER_LAYER,
   CLUSTER_LAYER,
   HIGHLIGHTED_CLUSTER_LAYER,
+  HEATMAP_LAYER,
   MOVE_TO_MARKER_MAX_LAT_OFFSET,
   DEFAULT_MARKER_CONFIG,
+  DEFAULT_HEATMAP_COLOR_STOPS,
+  DEFAULT_HEATMAP_INTENSITY,
+  DEFAULT_HEATMAP_SPREAD,
 } from '../../constants/mapbox';
 
 import css from './MarkableMap.css';
 
-export default class MarkableMap extends Component {
+export default class Heatmap extends Component {
   static propTypes = {
     markers: PropTypes.arrayOf(
       PropTypes.shape({
@@ -46,6 +52,18 @@ export default class MarkableMap extends Component {
         props: PropTypes.object,
       })
     ),
+    heatmapMarkers: PropTypes.arrayOf(
+      PropTypes.shape({
+        id: React.PropTypes.oneOfType([
+          PropTypes.string,
+          PropTypes.number,
+        ]).isRequired,
+        lngLat: lngLatType.isRequired,
+      })
+    ),
+    colorStops: PropTypes.arrayOf(PropTypes.array),
+    intensity: PropTypes.number,
+    spread: PropTypes.number,
     MarkerComponent: PropTypes.func.isRequired,
     GroupMarkerComponent: PropTypes.func.isRequired,
     autoFit: PropTypes.bool,
@@ -54,6 +72,10 @@ export default class MarkableMap extends Component {
 
   static defaultProps = {
     markers: [],
+    heatmapMarkers: [],
+    colorStops: DEFAULT_HEATMAP_COLOR_STOPS,
+    intensity: DEFAULT_HEATMAP_INTENSITY,
+    spread: DEFAULT_HEATMAP_SPREAD,
     autoFit: false,
   };
 
@@ -122,6 +144,13 @@ export default class MarkableMap extends Component {
 
   handleMapLoad = () => {
     const mapbox = this.getMapboxGL();
+    const { colorStops, intensity, spread } = this.props;
+
+    const heatmapSettings = {
+      colorStops,
+      intensity,
+      spread,
+    };
 
     mapbox.addSource(MARKER_SOURCE, {
       type: 'geojson',
@@ -159,6 +188,7 @@ export default class MarkableMap extends Component {
       },
       paint: DEFAULT_MARKER_CONFIG.paint,
     });
+
 
     mapbox.addLayer({
       id: HIGHLIGHTED_MARKER_LAYER,
@@ -228,13 +258,14 @@ export default class MarkableMap extends Component {
       mapbox.getCanvas().style.cursor = features.length ? 'pointer' : '';
     });
 
+    this.heatmap = initializeHeatmap(mapbox, heatmapSettings);
     this.updateMapboxMarkerSource();
   };
 
   updateMapboxMarkerSource = () => {
     if (!this.mapboxMarkerSource) return;
     const { activeFeature } = this.state;
-    const { markers, highlightedId } = this.props;
+    const { markers, heatmapMarkers, highlightedId } = this.props;
 
     const features = markers.map(marker => ({
       type: 'Feature',
@@ -251,7 +282,27 @@ export default class MarkableMap extends Component {
       },
     }));
 
-    this.mapboxMarkerSource.setData({ type: 'FeatureCollection', features });
+    const heatmapFeatures = heatmapMarkers.map(heatmapMarker => ({
+      type: 'Feature',
+      geometry: {
+        type: 'Point',
+        coordinates: heatmapMarker.lngLat,
+      },
+      properties: {
+        id: heatmapMarker.id,
+      },
+    }));
+
+    this.mapboxMarkerSource.setData({
+      type: 'FeatureCollection',
+      features,
+    });
+
+    this.heatmap.setData({
+      type: 'FeatureCollection',
+      features: heatmapFeatures,
+    });
+    this.heatmap.update();
   };
 
   handleMapClick = (e) => {

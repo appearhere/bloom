@@ -1,7 +1,6 @@
 import React, { Component } from 'react';
 import { storiesOf } from '@kadira/storybook';
 import uniqueId from 'lodash/fp/uniqueId';
-import random from 'lodash/fp/random';
 import actionWithComplexArgs from '../../.storybook/utils/actionWithComplexArgs';
 import MarkableMap from './MarkableMap';
 import BaseMap from './BaseMap';
@@ -63,25 +62,35 @@ class TestMap extends Component {
 
     this.state = {
       markers: generateMarkers(10),
+      heatmapMarkers: [],
     };
   }
 
   toggleMarkers = () => {
-    this.setState({ markers: generateMarkers(Math.floor(Math.random() * 20)) });
-  }
+    this.setState({
+      markers: generateMarkers(Math.floor(Math.random() * 20)),
+    });
+  };
+
+  toggleHeatmapMarkers = () => {
+    this.setState({
+      heatmapMarkers: generateMarkers(Math.floor(Math.random() * 200)),
+    });
+  };
 
   render() {
-    const { markers } = this.state;
+    const { markers, heatmapMarkers } = this.state;
     return (
       <div style={ { height: '93vh' } }>
         <button onClick={ this.toggleMarkers }>Randomise</button>
+        <button onClick={ this.toggleHeatmapMarkers }>Toggle Heatmap</button>
         <MarkableMap
           markers={ markers }
+          heatmapMarkers={ heatmapMarkers }
           MarkerComponent={ SpaceMarker }
           GroupMarkerComponent={ GroupMarker }
           onClick={ actionWithComplexArgs('map clicked') }
           onMoveEnd={ actionWithComplexArgs('map moved') }
-          highlightedId={ markers[random(0, 10)].id }
           autoFit
         />
       </div>
