@@ -34,7 +34,7 @@ const ControlLayer = (props) => {
 ControlLayer.propTypes = {
   className: PropTypes.string,
   controlGroupClassName: PropTypes.string,
-  children: PropTypes.element.isRequired,
+  children: PropTypes.node.isRequired,
   onZoomIn: PropTypes.func.isRequired,
   onZoomOut: PropTypes.func.isRequired,
 };
