@@ -91,6 +91,7 @@
     "whatwg-fetch": "1.0.0"
   },
   "dependencies": {
+    "@appearhere/hexgrid-heatmap": "^1.0.0",
     "@appearhere/mapbox-gl": "^1.5.0",
     "@appearhere/nuka-carousel": "^2.1.8",
     "@appearhere/react-input-range": "^1.1.0",
@@ -101,7 +102,6 @@
     "commonmark-react-renderer": "^4.3.1",
     "exenv": "^1.2.1",
     "express": "^4.14.1",
-    "hexgrid-heatmap": "^0.1.2",
     "invariant": "^2.2.1",
     "key-mirror": "^1.0.1",
     "lodash": "^4.16.3",

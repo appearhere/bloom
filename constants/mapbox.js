@@ -34,11 +34,12 @@ export const DEFAULT_MARKER_CONFIG = {
 };
 
 export const DEFAULT_HEATMAP_COLOR_STOPS = [
-  [0, 'rgba(216, 237, 197, 0.1)'],
-  [5, 'rgba(0, 169, 207, 0.5)'],
-  [10, 'rgba(23, 133, 187, 0.6)'],
-  [20, 'rgba(29, 33, 121, 0.6)'],
+  [0, 'rgba(216, 237, 197, 0.4)'],
+  [35, 'rgba(0, 169, 207, 0.5)'],
+  [70, 'rgba(23, 133, 187, 0.6)'],
+  [140, 'rgba(29, 33, 121, 0.7)'],
 ];
 
-export const DEFAULT_HEATMAP_INTENSITY = 15;
-export const DEFAULT_HEATMAP_SPREAD = 0.3;
+export const DEFAULT_HEATMAP_INTENSITY = 6;
+export const DEFAULT_HEATMAP_SPREAD = 0.15;
+export const DEFAULT_HEATMAP_CELL_DENSITY = 2;

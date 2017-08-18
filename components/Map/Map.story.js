@@ -8,6 +8,11 @@ import Marker from './Markers/Marker';
 import GroupMarker from './Markers/SpaceGroupMarker';
 import SpaceListingCard from '../Cards/SpaceListingCard/SpaceListingCard';
 
+import testGeoJson from './testGeoJson';
+
+const SMALL_TEST_GEO_JSON = 'small';
+const LARGE_TEST_GEO_JSON = 'large';
+
 const SpaceMarker = props => <Marker><SpaceListingCard { ...props } /></Marker>;
 
 const prices = ['£1', '£33', '£420', '£1,000', '£20,000', '£999,999', '1 €', '20 €', '440 €',
@@ -59,10 +64,11 @@ const generateMarkers = (number = 1, lng, lat) => {
 class TestMap extends Component {
   constructor(props) {
     super(props);
-
     this.state = {
+      center: [-1.5253180650545346, 52.879078603224315],
+      zoom: 11,
       markers: generateMarkers(10),
-      heatmapMarkers: [],
+      heatmapGeoJsonKey: SMALL_TEST_GEO_JSON,
     };
   }
 
@@ -72,25 +78,43 @@ class TestMap extends Component {
     });
   };
 
-  toggleHeatmapMarkers = () => {
+  handleMoveEnd = (mapboxUserAction, view) => {
+    const { center, zoom } = view;
     this.setState({
-      heatmapMarkers: generateMarkers(Math.floor(Math.random() * 200)),
+      center,
+      zoom,
     });
   };
 
+  updateGeoJson = () => {
+    const { heatmapGeoJsonKey } = this.state;
+
+    if (heatmapGeoJsonKey === SMALL_TEST_GEO_JSON) {
+      this.setState({
+        heatmapGeoJsonKey: LARGE_TEST_GEO_JSON,
+      });
+    } else {
+      this.setState({
+        heatmapGeoJsonKey: SMALL_TEST_GEO_JSON,
+      });
+    }
+  };
+
   render() {
-    const { markers, heatmapMarkers } = this.state;
+    const { markers, heatmapGeoJsonKey, center, zoom } = this.state;
     return (
       <div style={ { height: '93vh' } }>
         <button onClick={ this.toggleMarkers }>Randomise</button>
-        <button onClick={ this.toggleHeatmapMarkers }>Toggle Heatmap</button>
+        <button onClick={ this.updateGeoJson }>Update heatmap</button>
         <MarkableMap
           markers={ markers }
-          heatmapMarkers={ heatmapMarkers }
+          heatmapGeoJson={ testGeoJson[heatmapGeoJsonKey] }
           MarkerComponent={ SpaceMarker }
           GroupMarkerComponent={ GroupMarker }
+          center={ center }
+          zoom={ zoom }
           onClick={ actionWithComplexArgs('map clicked') }
-          onMoveEnd={ actionWithComplexArgs('map moved') }
+          onMoveEnd={ this.handleMoveEnd }
           autoFit
         />
       </div>

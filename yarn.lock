@@ -2,6 +2,16 @@
 # yarn lockfile v1
 
 
+"@appearhere/hexgrid-heatmap@^1.0.0":
+  version "1.0.0"
+  resolved "https://registry.yarnpkg.com/@appearhere/hexgrid-heatmap/-/hexgrid-heatmap-1.0.0.tgz#6cd12b39f5d349f583d538c00341d0aeb9c192ba"
+  dependencies:
+    "@turf/center" "^3.10.3"
+    "@turf/destination" "^3.10.3"
+    "@turf/distance" "^3.10.3"
+    "@turf/hex-grid" "^3.10.3"
+    rbush "^2.0.1"
+
 "@appearhere/mapbox-gl@^1.5.0":
   version "1.5.0"
   resolved "https://registry.yarnpkg.com/@appearhere/mapbox-gl/-/mapbox-gl-1.5.0.tgz#290ba384e92f0a36e9ad1facbcc19d83d8fc790f"
