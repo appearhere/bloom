@@ -6,12 +6,12 @@ storiesOf('LeftRight', module)
   .add('Default view', () => (
     <LeftRight
       leftChildren={
+        <button>Let your space</button>
+      }
+      rightChildren={
         <p>
           Join 3,900 spaces around the world.
         </p>
-      }
-      rightChildren={
-        <button>Let your space</button>
       }
     />
   ))
@@ -25,6 +25,6 @@ storiesOf('LeftRight', module)
           Join 3,900 spaces around the world.
         </p>
       }
-      primaryLeft="left"
+      primarySide="right"
     />
-  ))
+  ));
