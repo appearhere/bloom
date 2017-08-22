@@ -2,6 +2,16 @@
 # yarn lockfile v1
 
 
+"@appearhere/hexgrid-heatmap@^1.0.0":
+  version "1.0.0"
+  resolved "https://registry.yarnpkg.com/@appearhere/hexgrid-heatmap/-/hexgrid-heatmap-1.0.0.tgz#6cd12b39f5d349f583d538c00341d0aeb9c192ba"
+  dependencies:
+    "@turf/center" "^3.10.3"
+    "@turf/destination" "^3.10.3"
+    "@turf/distance" "^3.10.3"
+    "@turf/hex-grid" "^3.10.3"
+    rbush "^2.0.1"
+
 "@appearhere/mapbox-gl@^1.5.0":
   version "1.5.0"
   resolved "https://registry.yarnpkg.com/@appearhere/mapbox-gl/-/mapbox-gl-1.5.0.tgz#290ba384e92f0a36e9ad1facbcc19d83d8fc790f"
@@ -164,6 +174,52 @@
 "@mapbox/whoots-js@^3.0.0":
   version "3.0.0"
   resolved "https://registry.yarnpkg.com/@mapbox/whoots-js/-/whoots-js-3.0.0.tgz#c1de4293081424da3ac30c23afa850af1019bb54"
+
+"@turf/bbox@^3.14.0":
+  version "3.14.0"
+  resolved "https://registry.yarnpkg.com/@turf/bbox/-/bbox-3.14.0.tgz#cee5f396dde78aca9cede05e1122db18bc504635"
+  dependencies:
+    "@turf/meta" "^3.14.0"
+
+"@turf/center@^3.10.3":
+  version "3.14.0"
+  resolved "https://registry.yarnpkg.com/@turf/center/-/center-3.14.0.tgz#1083aca4f137d3c4988955740c7d440c45cc9ecc"
+  dependencies:
+    "@turf/bbox" "^3.14.0"
+    "@turf/helpers" "^3.13.0"
+
+"@turf/destination@^3.10.3":
+  version "3.14.0"
+  resolved "https://registry.yarnpkg.com/@turf/destination/-/destination-3.14.0.tgz#ec9e65c419d99733bcaeb03f39b48f42d54ac36c"
+  dependencies:
+    "@turf/helpers" "^3.13.0"
+    "@turf/invariant" "^3.13.0"
+
+"@turf/distance@^3.10.3", "@turf/distance@^3.14.0":
+  version "3.14.0"
+  resolved "https://registry.yarnpkg.com/@turf/distance/-/distance-3.14.0.tgz#71b0c6f265d23bb3004198e6da32f82964f42f8b"
+  dependencies:
+    "@turf/helpers" "^3.13.0"
+    "@turf/invariant" "^3.13.0"
+
+"@turf/helpers@^3.13.0":
+  version "3.13.0"
+  resolved "https://registry.yarnpkg.com/@turf/helpers/-/helpers-3.13.0.tgz#d06078a1464cf56cdb7ea624ea1e13a71b88b806"
+
+"@turf/hex-grid@^3.10.3":
+  version "3.14.0"
+  resolved "https://registry.yarnpkg.com/@turf/hex-grid/-/hex-grid-3.14.0.tgz#9e8036f1271e5164bf6a8f017de9c0f4902d9a9f"
+  dependencies:
+    "@turf/distance" "^3.14.0"
+    "@turf/helpers" "^3.13.0"
+
+"@turf/invariant@^3.13.0":
+  version "3.13.0"
+  resolved "https://registry.yarnpkg.com/@turf/invariant/-/invariant-3.13.0.tgz#89243308cd563206e81e5c6162e0d22f61822f90"
+
+"@turf/meta@^3.14.0":
+  version "3.14.0"
+  resolved "https://registry.yarnpkg.com/@turf/meta/-/meta-3.14.0.tgz#8d3050c1a0f44bf406a633b6bd28c510f7bcee27"
 
 "@types/lodash@4.14.36":
   version "4.14.36"
@@ -3042,6 +3098,16 @@ header-case@^1.0.0:
     no-case "^2.2.0"
     upper-case "^1.1.3"
 
+hexgrid-heatmap@^0.1.2:
+  version "0.1.2"
+  resolved "https://registry.yarnpkg.com/hexgrid-heatmap/-/hexgrid-heatmap-0.1.2.tgz#e4f373d5f7b77be7bd211cdd40d0739e7bd06f44"
+  dependencies:
+    "@turf/center" "^3.10.3"
+    "@turf/destination" "^3.10.3"
+    "@turf/distance" "^3.10.3"
+    "@turf/hex-grid" "^3.10.3"
+    rbush "^2.0.1"
+
 history@^4.3.0:
   version "4.5.0"
   resolved "https://registry.yarnpkg.com/history/-/history-4.5.0.tgz#7313388109333bf5796fff7407cee1850e8c5061"
@@ -5250,6 +5316,12 @@ range-parser@^1.0.3, range-parser@~1.2.0:
 raw-loader@^0.5.1:
   version "0.5.1"
   resolved "https://registry.yarnpkg.com/raw-loader/-/raw-loader-0.5.1.tgz#0c3d0beaed8a01c966d9787bf778281252a979aa"
+
+rbush@^2.0.1:
+  version "2.0.1"
+  resolved "https://registry.yarnpkg.com/rbush/-/rbush-2.0.1.tgz#4cfaca28c3064bc0ee75431a1b79990e875eefa9"
+  dependencies:
+    quickselect "^1.0.0"
 
 rc@~1.1.0:
   version "1.1.6"
