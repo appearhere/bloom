@@ -71,17 +71,6 @@ export default class BaseMap extends Component {
     this.map.on('load', (event) => { onMapLoad(event.target); });
   }
 
-  componentWillReceiveProps(nextProps) {
-    const center = this.map.getCenter().toArray();
-    const zoom = this.map.getZoom();
-    const { center: nextCenter, zoom: nextZoom } = nextProps;
-
-    if (center[0] !== nextCenter[0] || center[1] !== nextCenter[1]) {
-      this.map.setCenter(nextCenter, { user: false });
-    }
-    if (zoom !== nextZoom) this.map.setZoom(nextZoom, { user: false });
-  }
-
   componentWillUnmount() {
     const { onClick } = this.props;
 

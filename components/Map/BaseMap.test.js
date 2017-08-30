@@ -41,20 +41,6 @@ it('correctly assigns event listeners', () => {
   expect(call.args[2]).toEqual(onClick);
 });
 
-it('correctly updates the maps position on prop change', () => {
-  spy.calls.reset();
-
-  const div = document.createElement('div');
-  ReactDOM.render(<BaseMap />, div);
-  ReactDOM.render(<BaseMap zoom={ 20 } center={ [1, 1] } />, div);
-
-  expect(spy.labeledCalls('setCenter').length).toEqual(1);
-  expect(spy.labeledCalls('setZoom').length).toEqual(1);
-  expect(spy.labeledCalls('setCenter')[0].args[1]).toEqual([1, 1]);
-  expect(spy.labeledCalls('setZoom')[0].args[1]).toEqual(20);
-});
-
-
 it('removes the map on unmount', () => {
   spy.calls.reset();
 

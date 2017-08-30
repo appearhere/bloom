@@ -143,6 +143,10 @@ export default class MarkableMap extends Component {
     return undefined;
   };
 
+  setCenter = (center) => {
+    this.map.setCenter(center);
+  };
+
   handleMapLoad = () => {
     const mapbox = this.getMapboxGL();
     const { colorStops, intensity, spread, cellDensity, heatmapGeoJson } = this.props;
@@ -385,9 +389,6 @@ export default class MarkableMap extends Component {
     this.map.zoomOut();
   };
 
-  updateCenter = (center) => {
-    this.map.setCenter(center);
-  };
 
   renderMarkerPopup = (activeFeature) => {
     const { MarkerComponent, GroupMarkerComponent, markers } = this.props;
