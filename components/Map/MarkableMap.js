@@ -91,15 +91,15 @@ export default class MarkableMap extends Component {
   }
 
   componentDidUpdate(prevProps, prevState) {
-    const { markers: prevMarkers } = prevProps;
+    const { markers: prevMarkers, heatmapGeoJson: prevHeatmapGeoJson } = prevProps;
     const { activeFeature: prevActiveFeature } = prevState;
-    const { markers, autoFit } = this.props;
+    const { markers, autoFit, heatmapGeoJson } = this.props;
     const { activeFeature } = this.state;
 
     this.updateMapboxMarkerSource();
 
-    if (this.heatmap) {
-      this.heatmap.setData(this.props.heatmapGeoJson);
+    if (prevHeatmapGeoJson !== heatmapGeoJson) {
+      this.heatmap.setData(heatmapGeoJson);
       this.heatmap.update();
     }
 
@@ -375,6 +375,18 @@ export default class MarkableMap extends Component {
     const element = this.activeMarker.getElement();
     element.className = cx(css.marker, css.markerActive);
     return element;
+  };
+
+  zoomIn = () => {
+    this.map.zoomIn();
+  };
+
+  zoomOut = () => {
+    this.map.zoomOut();
+  };
+
+  updateCenter = (center) => {
+    this.map.setCenter(center);
   };
 
   renderMarkerPopup = (activeFeature) => {

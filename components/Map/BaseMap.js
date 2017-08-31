@@ -95,6 +95,10 @@ export default class BaseMap extends Component {
     return this.map;
   }
 
+  setCenter = (center) => {
+    this.map.setCenter(center, { user: false });
+  };
+
   easeTo(options) {
     this.map.easeTo(options, { user: false });
   }
@@ -124,6 +128,14 @@ export default class BaseMap extends Component {
 
     onMoveStart(e);
   }
+
+  zoomIn = () => {
+    this.map.zoomIn();
+  };
+
+  zoomOut = () => {
+    this.map.zoomOut();
+  };
 
   mapboxgl = {};
 
