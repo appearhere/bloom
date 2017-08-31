@@ -107,7 +107,7 @@ export default class InputField extends Component {
         { children && (
           <InputWrapper
             { ...sharedProps }
-            classNames={ classNames.inputWrapper }
+            className={ classNames.inputWrapper }
           >
             { cloneElement(children, {
               ...rest,

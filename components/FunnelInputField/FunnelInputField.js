@@ -4,7 +4,7 @@ import mergeObjectStrings from '../../utils/mergeObjectStrings/mergeObjectString
 import InputField from '../Form/InputField/InputField';
 import css from './FunnelInputField.css';
 
-const FunnelInputField = ({ classNames, valueReplay: _val, ...rest }) => {
+const FunnelInputField = ({ classNames, ...rest }) => {
   const classes = mergeObjectStrings(css, classNames);
 
   return (
@@ -24,7 +24,6 @@ FunnelInputField.propTypes = {
     placeholder: PropTypes.string,
     description: PropTypes.string,
   }),
-  valueReplay: PropTypes.any,
 };
 
 FunnelInputField.defaultProps = {
