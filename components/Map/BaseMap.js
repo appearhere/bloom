@@ -71,17 +71,6 @@ export default class BaseMap extends Component {
     this.map.on('load', (event) => { onMapLoad(event.target); });
   }
 
-  componentWillReceiveProps(nextProps) {
-    const center = this.map.getCenter().toArray();
-    const zoom = this.map.getZoom();
-    const { center: nextCenter, zoom: nextZoom } = nextProps;
-
-    if (center[0] !== nextCenter[0] || center[1] !== nextCenter[1]) {
-      this.map.setCenter(nextCenter, { user: false });
-    }
-    if (zoom !== nextZoom) this.map.setZoom(nextZoom, { user: false });
-  }
-
   componentWillUnmount() {
     const { onClick } = this.props;
 
@@ -94,6 +83,10 @@ export default class BaseMap extends Component {
   getMapboxGL() {
     return this.map;
   }
+
+  setCenter = (center) => {
+    this.map.setCenter(center, { user: false });
+  };
 
   easeTo(options) {
     this.map.easeTo(options, { user: false });
@@ -124,6 +117,14 @@ export default class BaseMap extends Component {
 
     onMoveStart(e);
   }
+
+  zoomIn = () => {
+    this.map.zoomIn();
+  };
+
+  zoomOut = () => {
+    this.map.zoomOut();
+  };
 
   mapboxgl = {};
 
