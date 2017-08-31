@@ -92,10 +92,10 @@ export default class Checkbox extends Component {
         />
         <label htmlFor={ this.id }>
           { children ? (
-            <div><ScreenReadable>{ value }></ScreenReadable>{ children }</div>
+            <div><ScreenReadable>{ value }</ScreenReadable>{ children }</div>
           ) : (
             <div>
-              <ScreenReadable>{ value }></ScreenReadable>
+              <ScreenReadable>{ value }</ScreenReadable>
               <LeftRight
                 leftChildren={ (
                   <span className={ css.checkbox }>
