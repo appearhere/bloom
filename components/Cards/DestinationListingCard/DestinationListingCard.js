@@ -1,12 +1,14 @@
 import React, { Component, PropTypes } from 'react';
 import cx from 'classnames';
 
-import getValidIndex from '../../../utils/getValidIndex/getValidIndex';
-import Carousel from '../../Carousel/Carousel';
+import noop from '../../../utils/noop';
 import BtnContainer from '../../BtnContainer/BtnContainer';
+import Carousel from '../../Carousel/Carousel';
+import FittedImage from '../../FittedImage/FittedImage';
+import getValidIndex from '../../../utils/getValidIndex/getValidIndex';
+import HeartBtn from '../../HeartBtn/HeartBtn';
 import Icon from '../../Icon/Icon';
 import ScreenReadable from '../../ScreenReadable/ScreenReadable';
-import FittedImage from '../../FittedImage/FittedImage';
 import css from './DestinationListingCard.css';
 
 export default class DestinationListingCard extends Component {
@@ -33,6 +35,9 @@ export default class DestinationListingCard extends Component {
     onClick: PropTypes.func,
     fixedHeight: PropTypes.bool,
     children: PropTypes.node,
+    onFavouriteClick: PropTypes.func,
+    favourite: PropTypes.bool,
+    favouriteable: PropTypes.bool,
   };
 
   static defaultProps = {
@@ -42,10 +47,13 @@ export default class DestinationListingCard extends Component {
     images: [],
     information: [],
     fixedHeight: false,
+    onClick: noop,
+    onFavouriteClick: noop,
   };
 
   state = {
     visibleImageIndex: 0,
+    fav: false,
   };
 
   handleNextImage = () => {
@@ -56,7 +64,7 @@ export default class DestinationListingCard extends Component {
         visibleImageIndex: newIndex,
       };
     });
-  }
+  };
 
   handlePrevImage = () => {
     this.setState(({ visibleImageIndex }, { images }) => {
@@ -66,7 +74,7 @@ export default class DestinationListingCard extends Component {
         visibleImageIndex: newIndex,
       };
     });
-  }
+  };
 
   render() {
     const { visibleImageIndex } = this.state;
@@ -88,6 +96,9 @@ export default class DestinationListingCard extends Component {
       onClick,
       fixedHeight,
       children,
+      onFavouriteClick,
+      favourite,
+      favouriteable,
       ...rest,
     } = this.props;
 
@@ -100,6 +111,13 @@ export default class DestinationListingCard extends Component {
           fixedHeight ? css.fixedHeight : null,
         ) }
       >
+        { favouriteable && (
+          <HeartBtn
+            className={ css.heart }
+            onClick={ onFavouriteClick }
+            active={ favourite }
+          />
+        ) }
         <div className={ cx(css.carousel, carouselClassName) }>
           { carouselOverlay }
           <BtnContainer

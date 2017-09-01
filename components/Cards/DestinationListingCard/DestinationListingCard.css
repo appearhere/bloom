@@ -12,6 +12,15 @@
   box-shadow: 0 2px 7px 0 rgba(0, 0, 0, 0.1);
 }
 
+.heart {
+  position: absolute;
+  top: var(--size-regular);
+  left: var(--size-regular);
+  z-index: 2;
+  font-size: 1.8rem;
+  line-height: 0;
+}
+
 .inner {
   display: block;
   border-radius: 4px 4px 0 0;
