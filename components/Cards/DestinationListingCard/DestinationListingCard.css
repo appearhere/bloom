@@ -115,7 +115,7 @@
 }
 
 .body {
-  padding: var(--size-medium);
+  padding: var(--size-regular);
   display: block;
   background-color: var(--color-white);
   color: var(--color-greyDarker);
@@ -125,6 +125,15 @@
   border-top: 0;
   vertical-align: top;
   overflow: hidden;
+}
+
+.footer {
+  margin-top: var(--size-regular);
+}
+
+.bodyLink {
+  text-decoration: none;
+  color: var(--color-greyDarker);
 }
 
 .title {

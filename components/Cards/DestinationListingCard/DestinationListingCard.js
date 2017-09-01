@@ -32,6 +32,7 @@ export default class DestinationListingCard extends Component {
     information: PropTypes.array,
     onClick: PropTypes.func,
     fixedHeight: PropTypes.bool,
+    children: PropTypes.node,
   };
 
   static defaultProps = {
@@ -86,6 +87,7 @@ export default class DestinationListingCard extends Component {
       information,
       onClick,
       fixedHeight,
+      children,
       ...rest,
     } = this.props;
 
@@ -135,54 +137,61 @@ export default class DestinationListingCard extends Component {
             </Carousel>
           </div>
         </div>
-        <a href={ href } className={ cx(css.body, bodyClassName) } onClick={ onClick }>
-          <div className={ css.title }>
-            <div className={ css.priceContainer }>
-              { priceFromLabel &&
-                <span className={ css.priceFromLabel }>
-                  { priceFromLabel }
-                </span> }
-              <span className={ css.price }>
-                { price }
-              </span>
-              { '\u00a0' }
-              <span className={ css.priceUnit }>
-                { priceUnit }
-              </span>
+        <div className={ cx(css.body, bodyClassName) }>
+          <a href={ href } onClick={ onClick } className={ css.bodyLink }>
+            <div className={ css.title }>
+              <div className={ css.priceContainer }>
+                { priceFromLabel &&
+                  <span className={ css.priceFromLabel }>
+                    { priceFromLabel }
+                  </span> }
+                <span className={ css.price }>
+                  { price }
+                </span>
+                { '\u00a0' }
+                <span className={ css.priceUnit }>
+                  { priceUnit }
+                </span>
+              </div>
+              { badge }
             </div>
-            { badge }
-          </div>
-          <div className={ css.name }>{ name }</div>
-          <div className={ css.additionalInformationBlock }>
-            {
-              information
-                .filter(info => info)
-                .map(info => <span>{ info }</span>)
-                .reduce((accu, elem, i, arr) => {
-                  const wrappedEl = (
-                    <span
-                      key={ `info-${i}` }
-                      className={ css.additionalInformationItem }
-                      style={ {
-                        maxWidth: `calc(${100 / arr.length}% - 1rem)`,
-                      } }
-                    >
-                      { elem }
-                    </span>
-                  );
-                  const spacer = (
-                    <span key={ `info-spacer-${i}` } className={ css.spacer }>•</span>
-                  );
+            <div className={ css.name }>{ name }</div>
+            <div className={ css.additionalInformationBlock }>
+              {
+                information
+                  .filter(info => info)
+                  .map(info => <span>{ info }</span>)
+                  .reduce((accu, elem, i, arr) => {
+                    const wrappedEl = (
+                      <span
+                        key={ `info-${i}` }
+                        className={ css.additionalInformationItem }
+                        style={ {
+                          maxWidth: `calc(${100 / arr.length}% - 1rem)`,
+                        } }
+                      >
+                        { elem }
+                      </span>
+                    );
+                    const spacer = (
+                      <span key={ `info-spacer-${i}` } className={ css.spacer }>•</span>
+                    );
 
-                  return accu === null
-                    ? [wrappedEl]
-                    : [...accu, spacer, wrappedEl];
-                },
-                  null,
-                )
-            }
-          </div>
-        </a>
+                    return accu === null
+                      ? [wrappedEl]
+                      : [...accu, spacer, wrappedEl];
+                  },
+                    null,
+                  )
+              }
+            </div>
+          </a>
+          { children && (
+            <div className={ css.footer }>
+              { children }
+            </div>
+          ) }
+        </div>
       </div>
     );
   }
