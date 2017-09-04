@@ -136,6 +136,86 @@ storiesOf('Cards', module)
       href="#"
     />
   ))
+  .add('SpaceListingCard with additional actions', () => (
+    <SpaceListingCard
+      price="$10,000,000"
+      priceUnit="/day"
+      location="Shoreditch, London"
+      size="1000 sqft"
+      name="Bold Street Shop"
+      images={
+        [{
+          src: 'https://source.unsplash.com/random/500x500',
+          alt: 'hello',
+        }, {
+          src: 'https://source.unsplash.com/random/500x503',
+          alt: 'hello2',
+        }, {
+          src: 'https://source.unsplash.com/random/500x502',
+          alt: 'hello',
+        }, {
+          src: 'https://source.unsplash.com/random/500x501',
+          alt: 'hello2',
+        }]
+      }
+      href="#"
+    >
+      <button>Save space</button>
+    </SpaceListingCard>
+  ))
+  .add('Favouritable SpaceListingCard', () => (
+    <SpaceListingCard
+      price="$10,000,000"
+      priceUnit="/day"
+      location="Shoreditch, London"
+      size="1000 sqft"
+      name="Bold Street Shop"
+      images={
+        [{
+          src: 'https://source.unsplash.com/random/500x500',
+          alt: 'hello',
+        }, {
+          src: 'https://source.unsplash.com/random/500x503',
+          alt: 'hello2',
+        }, {
+          src: 'https://source.unsplash.com/random/500x502',
+          alt: 'hello',
+        }, {
+          src: 'https://source.unsplash.com/random/500x501',
+          alt: 'hello2',
+        }]
+      }
+      href="#"
+      favouriteable
+    />
+  ))
+  .add('Favouritable SpaceListingCard as a favourite', () => (
+    <SpaceListingCard
+      price="$10,000,000"
+      priceUnit="/day"
+      location="Shoreditch, London"
+      size="1000 sqft"
+      name="Bold Street Shop"
+      images={
+        [{
+          src: 'https://source.unsplash.com/random/500x500',
+          alt: 'hello',
+        }, {
+          src: 'https://source.unsplash.com/random/500x503',
+          alt: 'hello2',
+        }, {
+          src: 'https://source.unsplash.com/random/500x502',
+          alt: 'hello',
+        }, {
+          src: 'https://source.unsplash.com/random/500x501',
+          alt: 'hello2',
+        }]
+      }
+      href="#"
+      favourite
+      favouriteable
+    />
+  ))
   .add('CondensedSpaceCard', () => (
     <CondensedSpaceCard
       price="$10,000,000"

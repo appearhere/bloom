@@ -23,6 +23,7 @@ import download from './icons/icon-download.svg';
 import facebook from './icons/icon-facebook.svg';
 import filter from './icons/icon-filter.svg';
 import globe from './icons/icon-globe.svg';
+import heart from './icons/icon-heart.svg';
 import location from './icons/icon-location.svg';
 import manage from './icons/icon-manage.svg';
 import map from './icons/icon-map.svg';
@@ -77,6 +78,7 @@ export default {
   facebook: svgClean(facebook),
   filter: svgClean(filter),
   globe: svgClean(globe),
+  heart: svgClean(heart),
   location: svgClean(location),
   manage: svgClean(manage),
   map: svgClean(map),
