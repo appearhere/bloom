@@ -52,6 +52,15 @@ textarea.high {
   padding: var(--size-regular) var(--size-lg-i);
 }
 
+input.low[type='text'],
+input.low[type='email'],
+input.low[type='password'],
+input.low[type='search'],
+input.low[type='url'],
+textarea.low {
+  padding: var(--size-sm-ii) var(--size-sm-i);
+}
+
 textarea.input {
   min-height: 5rem;
 }
