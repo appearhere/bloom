@@ -43,7 +43,7 @@ export default class Input extends Component {
       'url',
       'textarea',
     ]),
-    priority: PropTypes.oneOf(['high']),
+    priority: PropTypes.oneOf(['high', 'low']),
   };
 
   static defaultProps = {

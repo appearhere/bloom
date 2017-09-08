@@ -37,4 +37,16 @@ stories.add('Input', () => (
     error={ boolean('Errored', false) ? 'Something went wrong' : '' }
     priority="high"
   />
+))
+.add('Input w/low priority', () => (
+  <Input
+    id="1"
+    type={ select('Type', inputTypes, inputTypes[0]) }
+    value="100"
+    onFocus={ action('Focus') }
+    onBlur={ action('Blur') }
+    onChange={ action('Change') }
+    error={ boolean('Errored', false) ? 'Something went wrong' : '' }
+    priority="low"
+  />
 ));
