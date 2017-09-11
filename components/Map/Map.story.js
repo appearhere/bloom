@@ -1,6 +1,8 @@
-import React, { Component } from 'react';
+import React, { Component, PropTypes } from 'react';
 import { storiesOf } from '@kadira/storybook';
+import { withKnobs, boolean } from '@kadira/storybook-addon-knobs';
 import uniqueId from 'lodash/fp/uniqueId';
+
 import actionWithComplexArgs from '../../.storybook/utils/actionWithComplexArgs';
 import MarkableMap from './MarkableMap';
 import BaseMap from './BaseMap';
@@ -8,16 +10,15 @@ import Marker from './Markers/Marker';
 import GroupMarker from './Markers/SpaceGroupMarker';
 import SpaceListingCard from '../Cards/SpaceListingCard/SpaceListingCard';
 
-import testGeoJson from './testGeoJson';
+import { metaMarkersA, metaMarkersB, metaMarkersC } from './testMetaMarkers';
 
-const SMALL_TEST_GEO_JSON = 'small';
-const LARGE_TEST_GEO_JSON = 'large';
+const stories = storiesOf('Map', module);
+stories.addDecorator(withKnobs);
 
 const SpaceMarker = props => <Marker><SpaceListingCard { ...props } /></Marker>;
 
 const prices = ['£1', '£33', '£420', '£1,000', '£20,000', '£999,999', '1 €', '20 €', '440 €',
   '4.040 €', '40.040 €', '120.040 €'];
-
 
 const generateMarkers = (number = 1, lng, lat) => {
   const markers = [];
@@ -62,13 +63,18 @@ const generateMarkers = (number = 1, lng, lat) => {
 };
 
 class TestMap extends Component {
+  static propTypes = {
+    metaMarkers: PropTypes.array,
+  };
+
+  static defaultProps = {
+    metaMarkers: [],
+  };
+
   constructor(props) {
     super(props);
     this.state = {
-      center: [-1.5253180650545346, 52.879078603224315],
-      zoom: 11,
       markers: generateMarkers(10),
-      heatmapGeoJsonKey: SMALL_TEST_GEO_JSON,
     };
   }
 
@@ -78,43 +84,19 @@ class TestMap extends Component {
     });
   };
 
-  handleMoveEnd = (mapboxUserAction, view) => {
-    const { center, zoom } = view;
-    this.setState({
-      center,
-      zoom,
-    });
-  };
-
-  updateGeoJson = () => {
-    const { heatmapGeoJsonKey } = this.state;
-
-    if (heatmapGeoJsonKey === SMALL_TEST_GEO_JSON) {
-      this.setState({
-        heatmapGeoJsonKey: LARGE_TEST_GEO_JSON,
-      });
-    } else {
-      this.setState({
-        heatmapGeoJsonKey: SMALL_TEST_GEO_JSON,
-      });
-    }
-  };
-
   render() {
-    const { markers, heatmapGeoJsonKey, center, zoom } = this.state;
+    const { markers } = this.state;
+    const { metaMarkers } = this.props;
+
     return (
       <div style={ { height: '93vh' } }>
         <button onClick={ this.toggleMarkers }>Randomise</button>
-        <button onClick={ this.updateGeoJson }>Update heatmap</button>
         <MarkableMap
           markers={ markers }
-          heatmapGeoJson={ testGeoJson[heatmapGeoJsonKey] }
+          metaMarkers={ metaMarkers }
           MarkerComponent={ SpaceMarker }
           GroupMarkerComponent={ GroupMarker }
-          center={ center }
-          zoom={ zoom }
           onClick={ actionWithComplexArgs('map clicked') }
-          onMoveEnd={ this.handleMoveEnd }
           autoFit
         />
       </div>
@@ -122,7 +104,7 @@ class TestMap extends Component {
   }
 }
 
-storiesOf('Map', module)
+stories
   .add('Default', () => (
     <div style={ { height: '96vh' } }>
       <BaseMap
@@ -131,9 +113,16 @@ storiesOf('Map', module)
       />
     </div>
   ))
-  .add('MarkableMap', () => (
-    <TestMap />
-  ))
+  .add('MarkableMap', () => <TestMap />)
+  .add('MarkableMap w/Meta markers', () => {
+    const metaMarkers = [
+      (boolean('Meta Markers A', true) && metaMarkersA),
+      (boolean('Meta Markers B', true) && metaMarkersB),
+      (boolean('Meta Markers C', true) && metaMarkersC),
+    ].filter(metaMarker => metaMarker);
+
+    return <TestMap metaMarkers={ metaMarkers } />;
+  })
   .add('Grouped Space Marker', () => (
     <div style={ { height: '96vh' } }>
       <MarkableMap
