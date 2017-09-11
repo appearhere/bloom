@@ -1,0 +1,33 @@
+.overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  opacity: 0;
+  background-color: var(--overlay-default);
+}
+
+.menu {
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 100%;
+  z-index: 1;
+  overflow-y: scroll;
+  width: 100%;
+  max-width: 20rem;
+  background-color: var(--color-white);
+}
+
+.closeBtn {
+  position: absolute;
+  top: 0;
+  right: 0;
+  padding: var(--size-regular);
+  color: var(--color-greyDarker);
+}
+
+.closeIcon {
+  line-height: 0;
+}

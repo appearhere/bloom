@@ -97,7 +97,7 @@ module.exports = {
       // Process JS with Babel.
       {
         test: /\.(js|jsx)$/,
-        include: [paths.appSrc, paths.componentSrc, paths.utilsSrc],
+        include: [paths.appSrc, paths.componentSrc, paths.utilsSrc, paths.constantsSrc],
         loader: 'babel',
         query: require('./babel.prod')
       },
@@ -268,6 +268,6 @@ module.exports = {
       }
     }),
     // Note: this won't work without ExtractTextPlugin.extract(..) in `loaders`.
-    new ExtractTextPlugin('/static/css/[name].[contenthash:8].css')
+    new ExtractTextPlugin('static/css/[name].[contenthash:8].css')
   ]
 };

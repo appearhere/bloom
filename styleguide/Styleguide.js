@@ -1,27 +1,82 @@
-import React from 'react';
-import { BrowserRouter, Match, Miss, Link } from 'react-router';
+import React, { Component } from 'react';
+import { BrowserRouter, Switch, Route } from 'react-router-dom';
 
-import Introduction from './Introduction';
-import Example from './Example';
+import SiteHeader from './components/SiteHeader/SiteHeader';
+import Navigation from './components/Navigation/Navigation';
+import OffCanvasPanel from './components/OffCanvasPanel/OffCanvasPanel';
+
+import BtnContainer from '../components/BtnContainer/BtnContainer';
+import Icon from '../components/Icon/Icon';
+import ScreenReadable from '../components/ScreenReadable/ScreenReadable';
+
+/* Pages */
+import Introduction from './screens/Overview/Introduction';
+import Goals from './screens/Overview/Goals';
+import Faq from './screens/Overview/Faq';
+
 import FourOhFour from './404';
 
-export default () => (
-  <BrowserRouter>
-    <div>
-      <nav>
-        <ul>
-          <li><Link to="/">Home</Link></li>
-          <li><Link to="/example">Example</Link></li>
-        </ul>
-      </nav>
-      <div>
-        <h1>Bloom</h1>
-        <p>v{ `${process.env.npm_package_version}` }</p>
-        <Match exactly pattern="/" component={ Introduction } />
-        <Match pattern="/example" component={ Example } />
+import css from './Styleguide.css';
 
-        <Miss component={ FourOhFour } />
-      </div>
-    </div>
-  </BrowserRouter>
-);
+export default class Styleguide extends Component {
+  state = {
+    showNavigation: true,
+  };
+
+  toggleNavigation = () => {
+    this.setState(({ showNavigation }) => ({
+      showNavigation: !showNavigation,
+    }));
+  };
+
+  openNavigation = () => {
+    this.setState({ showNavigation: true });
+  };
+
+  closeNavigation = () => {
+    this.setState({ showNavigation: false });
+  };
+
+  render() {
+    const { showNavigation } = this.state;
+
+    return (
+      <BrowserRouter>
+        <div className={ css.root }>
+          <BtnContainer className={ css.menuBtn } onClick={ this.openNavigation }>
+            <Icon className={ css.menuIcon } name="menu" />
+            <ScreenReadable>Open menu</ScreenReadable>
+          </BtnContainer>
+          <OffCanvasPanel
+            className={ css.navigationSm }
+            activeClassName={ css.navigationActive }
+            active={ showNavigation }
+            onClose={ this.closeNavigation }
+          >
+            <SiteHeader
+              version={ process.env.npm_package_version }
+              onLinkClick={ this.closeMenu }
+            />
+            <Navigation onLinkClick={ this.closeNavigation } />
+          </OffCanvasPanel>
+          <div className={ css.navigationLg }>
+            <SiteHeader
+              version={ process.env.npm_package_version }
+              onLinkClick={ this.closeMenu }
+            />
+            <Navigation onLinkClick={ this.closeNavigation } />
+          </div>
+          <div className={ css.body }>
+            <Switch>
+              <Route exact path="/" component={ Introduction } />
+              <Route path="/goals" component={ Goals } />
+              <Route path="/faq" component={ Faq } />
+
+              <Route component={ FourOhFour } />
+            </Switch>
+          </div>
+        </div>
+      </BrowserRouter>
+    );
+  }
+}

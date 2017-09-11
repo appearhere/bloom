@@ -1,0 +1,20 @@
+.root {
+  padding: var(--size-lg-i);
+  display: flex;
+  align-items: center;
+}
+
+.link {
+  text-decoration: none;
+  color: var(--color-black);
+
+}
+
+.logo {
+  font-size: 3rem;
+  line-height: 0;
+}
+
+.version {
+  margin-left: var(--size-regular);
+}
