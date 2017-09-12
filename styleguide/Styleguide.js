@@ -20,7 +20,7 @@ import css from './Styleguide.css';
 
 export default class Styleguide extends Component {
   state = {
-    showNavigation: true,
+    showNavigation: false,
   };
 
   toggleNavigation = () => {
