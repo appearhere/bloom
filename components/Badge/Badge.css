@@ -4,9 +4,9 @@
   padding-bottom: var(--size-micro);
   padding-left: var(--size-small);
   padding-right: var(--size-small);
-  background-color: var(--color-greyLighter);
+  background-color: var(--color-greyLightest);
   color: var(--color-grey);
-  border: 1px solid var(--color-greyLighter);
+  border: 1px solid var(--color-greyLightest);
   composes: fontSmallIi from '../../globals/typography.css';
   text-transform: uppercase;
   font-weight: var(--fontweight-demi);

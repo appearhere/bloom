@@ -119,7 +119,7 @@
     "react-motion": "^0.4.7",
     "react-on-visible": "^1.0.3",
     "react-portal": "^3.0.0",
-    "react-router": "next",
+    "react-router-dom": "^4.2.2",
     "react-stickynode": "^1.2.1",
     "subscribe-ui-event": "^1.0.14",
     "warning": "^3.0.0"

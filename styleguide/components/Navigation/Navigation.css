@@ -1,0 +1,42 @@
+.section + .section {
+  margin-top: var(--size-lg-ii);
+}
+
+.title {
+  composes: fontLargeI from '../../../globals/typography.css';
+  color: var(--color-greyDarkest);
+  padding-left: var(--size-lg-i);
+  padding-right: var(--size-lg-i);
+}
+
+.linkList {
+  list-style-type: none;
+  margin-top: var(--size-sm-i);
+  margin-left: 0;
+  margin-left: 0;
+  margin-bottom: 0;
+  padding: 0;
+}
+
+.link {
+  display: block;
+  composes: fontRegular from '../../../globals/typography.css';
+  color: var(--color-greyDark);
+  padding-top: var(--size-sm-iii);
+  padding-bottom: var(--size-sm-iii);
+  padding-left: var(--size-lg-ii);
+  padding-right: var(--size-lg-ii);
+  text-decoration: none;
+}
+
+.link:hover {
+  color: var(--color-grey);
+}
+
+.linkActive {
+  font-weight: var(--fontweight-demi);
+}
+
+.linkListItem + .linkListItem .link {
+  margin-top: var(--size-sm-ii);
+}

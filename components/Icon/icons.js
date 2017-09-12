@@ -27,6 +27,7 @@ import heart from './icons/icon-heart.svg';
 import location from './icons/icon-location.svg';
 import manage from './icons/icon-manage.svg';
 import map from './icons/icon-map.svg';
+import menu from './icons/icon-menu.svg';
 import minus from './icons/icon-minus.svg';
 import notification from './icons/icon-notification.svg';
 import percentage from './icons/icon-percentage.svg';
@@ -82,6 +83,7 @@ export default {
   location: svgClean(location),
   manage: svgClean(manage),
   map: svgClean(map),
+  menu,
   minus: svgClean(minus),
   notification: svgClean(notification),
   percentage: svgClean(percentage),
