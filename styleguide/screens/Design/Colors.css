@@ -1,0 +1,22 @@
+@lost gutter 1rem;
+
+.colorGroup {
+  lost-utility: clearfix;
+}
+
+.color {
+  display: inline-block;
+  lost-column: 1/2;
+}
+
+@media(--colors-3up) {
+  .color {
+    lost-column: 1/3;
+  }
+}
+
+@media(--colors-4up) {
+  .color {
+    lost-column: 1/4;
+  }
+}

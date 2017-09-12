@@ -3,8 +3,6 @@
 }
 
 .title {
-  composes: fontLargeI from '../../../globals/typography.css';
-  color: var(--color-greyDarkest);
   padding-left: var(--size-lg-i);
   padding-right: var(--size-lg-i);
 }

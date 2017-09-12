@@ -11,9 +11,6 @@
   --color-white: rgb(255, 255, 255);
   --color-black: rgb(25, 25, 25);
   --color-gold: rgb(186, 160, 130);
-
-  /* Brand tints */
-  --color-black--light: rgb(52, 52, 52);
   --color-gold--light: rgb(219, 189, 154);
 
   /* Application colors */
@@ -23,6 +20,8 @@
   --color-orange: rgb(234, 155, 82);
   --color-yellow: rgb(236, 180, 74);
   --color-focusRing: rgb(91, 157, 217);
+  --color-red--light: rgb(236, 94, 77);
+  --color-blue--light: rgb(41, 125, 184);
 
   --color-greyLightest: rgb(245, 245, 245);
   --color-greyLighter: rgb(221, 221, 221);
@@ -37,30 +36,25 @@
   --color-transparent-black-ii: rgba(25, 25, 25, 0.6);
   --color-transparent-black-iii: rgba(25, 25, 25, 0.4);
   --color-transparent-black-iv: rgba(25, 25, 25, 0.2);
-
-  /* Application tints */
-  --color-red--light: rgb(236, 94, 77);
-  --color-blue--light: rgb(41, 125, 184);
+  --overlay-default: rgba(20, 20, 21, 0.5);
 
   /* Aliases */
   --color-primary: var(--color-gold);
   --color-action: var(--color-blue);
   --color-success: var(--color-green);
   --color-danger: var(--color-red);
-  --color-text: var(--color-black);
+  --color-primary--light: var(--color-gold--light);
+  --color-danger--light: var(--color-red--light);
+  --color-action--light: var(--color-blue--light);
+
+  /**
+   * TODO: Move into relevant application
+   */
   --color-available: var(--color-green);
   --color-unavailable: var(--color-red);
   --color-underOffer: var(--color-orange);
   --color-internal: var(--color-black);
   --color-void: var(--color-yellow);
-
-  /* Tint Aliases */
-  --color-primary--light: var(--color-gold--light);
-  --color-danger--light: var(--color-red--light);
-  --color-action--light: var(--color-blue--light);
-
-  /* Overlays */
-  --overlay-default: rgba(20, 20, 21, 0.5);
 
   /* 3rd Party */
   --facebook-blue: rgb(59, 89, 152);

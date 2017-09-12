@@ -103,7 +103,6 @@
 }
 
 .fontLargeIii {
-  font: var(--font-regular);
   font-family: var(--font-avenir);
   font-size: var(--fontsize-large-iii);
   line-height: var(--lineheight-large-iii);

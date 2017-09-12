@@ -3,7 +3,7 @@ import cx from 'classnames';
 
 import css from './Swatch.css';
 
-const Color = ({ name, hex, rgb, variable }) => (
+const Swatch = ({ name, hex, rgb, variable }) => (
   <div className={ css.root }>
     <div className={ css.colorContainer }>
       <div
@@ -50,11 +50,11 @@ const Color = ({ name, hex, rgb, variable }) => (
   </div>
 );
 
-Color.propTypes = {
+Swatch.propTypes = {
   name: PropTypes.string,
   hex: PropTypes.string,
   rgb: PropTypes.string,
   variable: PropTypes.string,
 };
 
-export default Color;
+export default Swatch;
