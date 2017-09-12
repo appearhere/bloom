@@ -1,0 +1,46 @@
+.root {
+  width: 100%;
+  text-align: center;
+}
+
+.container {
+  width: 100%;
+  height: 0;
+  padding-bottom: 100%;
+  background-color: #f8f8f8;
+  position: relative;
+}
+
+.container svg {
+  font-size: var(--size-lg-i);
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+.brand svg {
+  font-size: var(--size-lg-iii);
+}
+
+.attributes {
+  text-align: left;
+  margin-left: 0;
+  padding: 0;
+  margin-top: var(--size-regular);
+  list-style-type: none;
+}
+
+.attribute {
+  composes: fontRegular from '../../../globals/typography.css';
+  color: var(--color-grey);
+}
+
+.attribute + .attribute {
+  margin-top: var(--size-sm-iii);
+}
+
+.name {
+  font-weight: var(--fontweight-demi);
+  color: var(--color-black);
+}
