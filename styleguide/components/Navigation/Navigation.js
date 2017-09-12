@@ -4,12 +4,13 @@ import cx from 'classnames';
 
 import noop from '../../../utils/noop';
 
+import type from '../../typography.css';
 import css from './Navigation.css';
 
 const Navigation = ({ className, onLinkClick }) => (
   <div className={ cx(css.root, className) }>
     <div className={ css.section }>
-      <span className={ css.title }>Overview</span>
+      <span className={ cx(type.h2, css.title) }>Overview</span>
       <ul className={ css.linkList }>
         <li className={ css.linkListItem }>
           <NavLink
@@ -40,6 +41,22 @@ const Navigation = ({ className, onLinkClick }) => (
             onClick={ onLinkClick }
           >
             FAQs
+          </NavLink>
+        </li>
+      </ul>
+    </div>
+    <div className={ css.section }>
+      <span className={ cx(type.h2, css.title) }>Design</span>
+      <ul className={ css.linkList }>
+        <li className={ css.linkListItem }>
+          <NavLink
+            exact
+            activeClassName={ css.linkActive }
+            className={ css.link }
+            to="/design/colors"
+            onClick={ onLinkClick }
+          >
+            Colors
           </NavLink>
         </li>
       </ul>

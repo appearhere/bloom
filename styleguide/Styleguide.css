@@ -13,8 +13,6 @@
 
 .body {
   padding-top: calc(3 * var(--size-regular));
-  padding-left: var(--size-regular);
-  padding-right: var(--size-regular);
   width: 100%;
 }
 

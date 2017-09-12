@@ -1,0 +1,14 @@
+.h1 {
+  composes: fontLargeIv from '../globals/typography.css';
+  color: var(--color-black);
+}
+
+.h2 {
+  composes: fontLargeIi from '../globals/typography.css';
+  color: var(--color-greyDarkest);
+}
+
+.p {
+  composes: fontRegular from '../globals/typography.css';
+  color: var(--color-greyDarker);
+}

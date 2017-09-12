@@ -8,19 +8,20 @@ import OffCanvasPanel from './components/OffCanvasPanel/OffCanvasPanel';
 import BtnContainer from '../components/BtnContainer/BtnContainer';
 import Icon from '../components/Icon/Icon';
 import ScreenReadable from '../components/ScreenReadable/ScreenReadable';
+import Wrapper from '../components/Wrapper/Wrapper';
 
 /* Pages */
 import Introduction from './screens/Overview/Introduction';
 import Goals from './screens/Overview/Goals';
 import Faq from './screens/Overview/Faq';
-
+import Colors from './screens/Design/Colors';
 import FourOhFour from './404';
 
 import css from './Styleguide.css';
 
 export default class Styleguide extends Component {
   state = {
-    showNavigation: true,
+    showNavigation: false,
   };
 
   toggleNavigation = () => {
@@ -67,13 +68,17 @@ export default class Styleguide extends Component {
             <Navigation onLinkClick={ this.closeNavigation } />
           </div>
           <div className={ css.body }>
-            <Switch>
-              <Route exact path="/" component={ Introduction } />
-              <Route path="/goals" component={ Goals } />
-              <Route path="/faq" component={ Faq } />
+            <Wrapper>
+              <Switch>
+                <Route exact path="/" component={ Introduction } />
+                <Route path="/goals" component={ Goals } />
+                <Route path="/faq" component={ Faq } />
 
-              <Route component={ FourOhFour } />
-            </Switch>
+                <Route path="/design/colors" component={ Colors } />
+
+                <Route component={ FourOhFour } />
+              </Switch>
+            </Wrapper>
           </div>
         </div>
       </BrowserRouter>
