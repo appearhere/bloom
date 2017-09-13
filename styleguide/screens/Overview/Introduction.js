@@ -1,9 +1,15 @@
 import React from 'react';
 
+import Markdown from '../../../components/Markdown/Markdown';
+import introduction from './introduction.md';
+
+import { markdown } from '../../typography.css';
+
 const Introduction = () => (
   <div>
-    <h1>Introduction</h1>
-    <p>Welcome Bloom, Appear Here’s style guide and pattern library.</p>
+    <Markdown className={ markdown } overrideClassname>
+      { introduction }
+    </Markdown>
   </div>
 );
 
