@@ -38,6 +38,19 @@ const Navigation = ({ className, onLinkClick }) => (
           >
             Colors
           </NavLink>
+        </li>
+        <li className={ css.linkListItem }>
+          <NavLink
+            exact
+            activeClassName={ css.linkActive }
+            className={ css.link }
+            to="/design/typography"
+            onClick={ onLinkClick }
+          >
+            Typography
+          </NavLink>
+        </li>
+        <li className={ css.linkListItem }>
           <NavLink
             exact
             activeClassName={ css.linkActive }
