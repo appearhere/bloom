@@ -23,26 +23,6 @@ const Navigation = ({ className, onLinkClick }) => (
             Introduction
           </NavLink>
         </li>
-        <li className={ css.linkListItem }>
-          <NavLink
-            activeClassName={ css.linkActive }
-            className={ css.link }
-            to="/goals"
-            onClick={ onLinkClick }
-          >
-            Goals
-          </NavLink>
-        </li>
-        <li className={ css.linkListItem }>
-          <NavLink
-            activeClassName={ css.linkActive }
-            className={ css.link }
-            to="/faq"
-            onClick={ onLinkClick }
-          >
-            FAQs
-          </NavLink>
-        </li>
       </ul>
     </div>
     <div className={ css.section }>

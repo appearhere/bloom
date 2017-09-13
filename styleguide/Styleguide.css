@@ -1,3 +1,9 @@
+:global(html),
+:global(body),
+:global(#root) {
+  height: 100%;
+}
+
 .root {
   position: relative;
 }
@@ -27,6 +33,7 @@
 @media(min-width: 56.25rem) {
   .root {
     display: flex;
+    min-height: 100%;
   }
 
   .menuBtn {
@@ -44,12 +51,18 @@
     padding-right: var(--size-lg-i);
     transform: translate3d(0, 0, 0);
     flex-basis: 30%;
+    max-width: 25rem;
     position: relative;
+    border-right: 1px solid var(--color-greyLighter);
   }
 
   .body {
-    flex-basis: 70%;
     margin-top: 0;
     padding: var(--size-lg-ii);
+    min-height: 100%;
+  }
+
+  .wrapper {
+    max-width: 50rem;
   }
 }

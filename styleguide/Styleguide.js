@@ -68,7 +68,7 @@ export default class Styleguide extends Component {
             <Navigation onLinkClick={ this.closeNavigation } />
           </div>
           <div className={ css.body }>
-            <Wrapper>
+            <Wrapper className={ css.wrapper }>
               <Switch>
                 <Route exact path="/" component={ Introduction } />
                 <Route path="/goals" component={ Goals } />
