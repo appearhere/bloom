@@ -17,8 +17,8 @@
 }
 
 .color {
-  width: 90px;
-  height: 90px;
+  width: var(--size-lg-iii);
+  height: var(--size-lg-iii);
   border-radius: 100%;
   position: absolute;
   top: 50%;
