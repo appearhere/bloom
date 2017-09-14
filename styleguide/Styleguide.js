@@ -8,6 +8,7 @@ import BtnContainer from '../components/BtnContainer/BtnContainer';
 import Icon from '../components/Icon/Icon';
 import ScreenReadable from '../components/ScreenReadable/ScreenReadable';
 import Wrapper from '../components/Wrapper/Wrapper';
+import BodyClassNameConductor from '../utils/BodyClassNameConductor/BodyClassNameConductor';
 
 /* Pages */
 import Introduction from './screens/Overview/Introduction';
@@ -20,6 +21,11 @@ import FourOhFour from './404';
 import css from './Styleguide.css';
 
 export default class Styleguide extends Component {
+  constructor(props) {
+    super(props);
+    this.bodyClassName = new BodyClassNameConductor(this.id);
+  }
+
   state = {
     showNavigation: false,
   };
@@ -32,10 +38,12 @@ export default class Styleguide extends Component {
 
   openNavigation = () => {
     this.setState({ showNavigation: true });
+    this.bodyClassName.add('overflowHidden');
   };
 
   closeNavigation = () => {
     this.setState({ showNavigation: false });
+    this.bodyClassName.remove('overflowHidden');
   };
 
   render() {
