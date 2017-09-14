@@ -3,6 +3,7 @@
   background-color: var(--color-white);
   border: 1px solid var(--color-greyLighter);
   border-radius: 4px;
+  height: 100%;
 }
 
 .attributes {
