@@ -14,6 +14,7 @@
   @custom-media --modal-lg (min-width: 37.5rem);
 
   /* style-guide */
+  @custom-media --colors-2up (min-width: 25rem);
   @custom-media --colors-3up (min-width: 50rem);
   @custom-media --iconography-3up (min-width: 31.875rem);
   @custom-media --iconography-4up (min-width: 50rem);

@@ -9,8 +9,14 @@
 }
 
 .color {
-  lost-column: 1/2;
+  lost-column: 1/1;
   margin-top: var(--size-lg-i);
+}
+
+@media(--colors-2up) {
+  .color {
+    lost-column: 1/2;
+  }
 }
 
 @media(--colors-3up) {
