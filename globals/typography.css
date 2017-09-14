@@ -18,9 +18,7 @@
   --fontweight-bold: 800;
   --fontweight-demi: 700;
   --fontweight-regular: 400;
-  --fontweight-light: 300;
 
-  --fontsize-large-vi: 5.125rem;
   --fontsize-large-v: 2.75rem;
   --fontsize-large-iv: 2rem;
   --fontsize-large-iii: 1.75rem;
@@ -30,7 +28,6 @@
   --fontsize-small-i: 0.875rem;
   --fontsize-small-ii: 0.6875rem;
 
-  --font-large-vi: var(--fontweight-bold) var(--fontsize-large-vi)/var(--lineheight-large-vi) var(--font-avenir);
   --font-large-v: var(--fontweight-bold) var(--fontsize-large-v)/var(--lineheight-large-v) var(--font-avenir);
   --font-large-iv: var(--fontweight-demi) var(--fontsize-large-iv)/var(--lineheight-large-iv) var(--font-avenir);
   --font-large-iii: var(--fontweight-demi) var(--fontsize-large-iii)/var(--lineheight-large-iii) var(--font-avenir);
@@ -40,7 +37,6 @@
   --font-small-i: var(--fontweight-regular) var(--fontsize-small-i)/var(--lineheight-small-i) var(--font-avenir);
   --font-small-ii: var(--fontweight-regular) var(--fontsize-small-ii)/var(--lineheight-small-ii) var(--font-avenir);
 
-  --lineheight-large-vi: 0.9024;
   --lineheight-large-v: 0.8148;
   --lineheight-large-iv: 1.34375;
   --lineheight-large-iii: 1.28571;
@@ -50,7 +46,6 @@
   --lineheight-small-i: 1.285;
   --lineheight-small-ii: 1.363;
 
-  --letter-spacing-large-vi: 0.3125rem;
   --letter-spacing-large-v: 0.32rem;
   --letter-spacing-large-iv: 0.01875rem;
   --letter-spacing-large-iii: 0.01875rem;
@@ -77,16 +72,7 @@
  * doesn't support `rem` units:
  * http://stackoverflow.com/questions/16157342/css-rem-unit-not-working-with-font-declarations
  */
-.fontLargeVi {
-  font-family: var(--font-avenir);
-  font-size: var(--fontsize-large-vi);
-  line-height: var(--lineheight-large-vi);
-  letter-spacing: var(--letter-spacing-large-vi);
-  font-weight: var(--fontweight-bold);
-}
-
 .fontLargeV {
-  font: var(--font-regular);
   font-family: var(--font-avenir);
   font-size: var(--fontsize-large-v);
   line-height: var(--lineheight-large-v);

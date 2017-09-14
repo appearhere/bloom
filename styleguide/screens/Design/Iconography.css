@@ -1,12 +1,15 @@
 @lost gutter 1rem;
+@lost flexbox flex;
 
 .iconGroup {
-  lost-utility: clearfix;
+  margin-top: 0;
+  display: flex;
+  flex-wrap: wrap;
 }
 
 .icon {
-  display: inline-block;
   lost-column: 1/2;
+  margin-top: var(--size-lg-i);
 }
 
 @media(--iconography-3up) {
@@ -18,11 +21,5 @@
 @media(--iconography-4up) {
   .icon {
     lost-column: 1/4;
-  }
-}
-
-@media(--iconography-5up) {
-  .icon {
-    lost-column: 1/5;
   }
 }

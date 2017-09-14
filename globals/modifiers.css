@@ -335,15 +335,14 @@
 }
 
 /* Font sizes */
-.largeVi.largeVi { font-size: var(--fontsize-large-vi); }
 .largeV.largeV { font-size: var(--fontsize-large-v); }
-.largeIV.largeIV { font-size: var(--fontsize-large-iv); }
-.largeIII.largeIII { font-size: var(--fontsize-large-iii); }
-.largeII.largeII { font-size: var(--fontsize-large-ii); }
+.largeIv.largeIv { font-size: var(--fontsize-large-iv); }
+.largeIii.largeIii { font-size: var(--fontsize-large-iii); }
+.largeIi.largeIi { font-size: var(--fontsize-large-ii); }
 .largeI.largeI { font-size: var(--fontsize-large-i); }
 .regular.regular { font-size: var(--fontsize-regular); }
 .smallI.smallI { font-size: var(--fontsize-small-i); }
-.smallII.smallII { font-size: var(--fontsize-small-ii); }
+.smallIi.smallIi { font-size: var(--fontsize-small-ii); }
 
 /*
   Old-style font sizes
@@ -360,7 +359,6 @@
 /* Font modifiers */
 .bold.bold { font-weight: var(--fontweight-bold); }
 .demi.demi { font-weight: var(--fontweight-demi); }
-.light.light { font-weight: var(--fontweight-light); }
 .italic.italic { font-style: italic; }
 .strike.strike { text-decoration: line-through; }
 .code.code { font-family: monospace; }

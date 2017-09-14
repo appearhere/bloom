@@ -19,6 +19,7 @@
 
 .body {
   padding-top: calc(3 * var(--size-regular));
+  padding-bottom: var(--size-lg-ii);
   width: 100%;
 }
 

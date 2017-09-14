@@ -26,6 +26,9 @@ module.exports = {
     'react/jsx-filename-extension': 0,
     'react/forbid-prop-types': 0,
 
+    // https://github.com/yannickcr/eslint-plugin-react/issues/621
+    'react/prop-types': 1,
+
     // https://github.com/benmosher/eslint-plugin-import/blob/master/docs/rules/
 
     // TODO: import rules are temporarily disabled because they don't play well

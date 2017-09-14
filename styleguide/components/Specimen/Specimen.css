@@ -1,0 +1,31 @@
+.root {
+  position: relative;
+  background-color: var(--color-white);
+  border: 1px solid var(--color-greyLighter);
+  border-radius: 4px;
+  height: 100%;
+}
+
+.attributes {
+  border-top: 1px solid var(--color-greyLighter);
+  text-align: left;
+  margin: 0;
+  padding: var(--size-lg-i);
+  list-style-type: none;
+}
+
+.attribute {
+  composes: fontRegular from '../../../globals/typography.css';
+  font-family: 'Fira Mono', monospace;
+  color: var(--color-grey);
+}
+
+.attribute + .attribute {
+  margin-top: var(--size-sm-iii);
+}
+
+.attribute:first-of-type {
+  font-family: var(--font-avenir);
+  font-weight: var(--fontweight-demi);
+  color: var(--color-black);
+}
