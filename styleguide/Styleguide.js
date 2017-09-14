@@ -39,11 +39,13 @@ export default class Styleguide extends Component {
   openNavigation = () => {
     this.setState({ showNavigation: true });
     this.bodyClassName.add('overflowHidden');
+    this.bodyClassName.add('positionFixed');
   };
 
   closeNavigation = () => {
     this.setState({ showNavigation: false });
     this.bodyClassName.remove('overflowHidden');
+    this.bodyClassName.remove('positionFixed');
   };
 
   render() {
