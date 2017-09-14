@@ -4,7 +4,6 @@ import { BrowserRouter, Switch, Route } from 'react-router-dom';
 import SiteHeader from './components/SiteHeader/SiteHeader';
 import Navigation from './components/Navigation/Navigation';
 import OffCanvasPanel from './components/OffCanvasPanel/OffCanvasPanel';
-
 import BtnContainer from '../components/BtnContainer/BtnContainer';
 import Icon from '../components/Icon/Icon';
 import ScreenReadable from '../components/ScreenReadable/ScreenReadable';
@@ -15,6 +14,7 @@ import Introduction from './screens/Overview/Introduction';
 import Goals from './screens/Overview/Goals';
 import Faq from './screens/Overview/Faq';
 import Colors from './screens/Design/Colors';
+import Iconography from './screens/Design/Iconography';
 import FourOhFour from './404';
 
 import css from './Styleguide.css';
@@ -75,6 +75,7 @@ export default class Styleguide extends Component {
                 <Route path="/faq" component={ Faq } />
 
                 <Route path="/design/colors" component={ Colors } />
+                <Route path="/design/iconography" component={ Iconography } />
 
                 <Route component={ FourOhFour } />
               </Switch>
