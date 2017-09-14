@@ -19,7 +19,7 @@
 .link {
   display: block;
   composes: fontRegular from '../../../globals/typography.css';
-  color: var(--color-greyDark);
+  color: var(--color-grey);
   padding-top: var(--size-sm-iii);
   padding-bottom: var(--size-sm-iii);
   padding-left: var(--size-lg-ii);
@@ -28,11 +28,12 @@
 }
 
 .link:hover {
-  color: var(--color-grey);
+  color: var(--color-greyDarkest);
 }
 
 .linkActive {
   font-weight: var(--fontweight-demi);
+  color: var(--color-greyDarkest);
 }
 
 .linkListItem + .linkListItem .link {
