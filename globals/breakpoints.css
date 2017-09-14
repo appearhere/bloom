@@ -15,7 +15,6 @@
 
   /* style-guide */
   @custom-media --colors-3up (min-width: 50rem);
-  @custom-media --colors-4up (min-width: 64rem);
   @custom-media --iconography-3up (min-width: 25rem);
   @custom-media --iconography-4up (min-width: 50rem);
   @custom-media --iconography-5up (min-width: 64rem);
