@@ -146,6 +146,14 @@ export const uiIcons = [{
 }];
 
 export const brandIcons = [{
+  name: 'Appear Here',
+  value: 'appearhere',
+}, {
+  name: 'Appear Here Brackets',
+  value: 'appearhere-brackets',
+}];
+
+export const valueIcons = [{
   name: 'No Bullshit',
   value: 'NoBull',
   valueIcon: ValueIconNoBull,
