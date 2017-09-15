@@ -63,6 +63,31 @@ const Navigation = ({ className, onLinkClick }) => (
         </li>
       </ul>
     </div>
+    <div className={ css.section }>
+      <span className={ cx(type.h2, css.title) }>Patterns</span>
+      <ul className={ css.linkList }>
+        <li className={ css.linkListItem }>
+          <NavLink
+            exact
+            activeClassName={ css.linkActive }
+            className={ css.link }
+            to="/patterns/badges"
+            onClick={ onLinkClick }
+          >
+            Badges
+          </NavLink>
+          <NavLink
+            exact
+            activeClassName={ css.linkActive }
+            className={ css.link }
+            to="/patterns/buttons"
+            onClick={ onLinkClick }
+          >
+            Buttons
+          </NavLink>
+        </li>
+      </ul>
+    </div>
   </div>
 );
 

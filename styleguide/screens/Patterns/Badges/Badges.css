@@ -1,0 +1,12 @@
+.specimenRoot + .specimenRoot {
+  margin-top: var(--size-regular);
+}
+
+.specimenContainer {
+  padding: var(--size-sm-ii);
+}
+
+.badge{
+  margin: var(--size-sm-ii);
+  vertical-align: middle;
+}
