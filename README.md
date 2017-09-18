@@ -1,13 +1,9 @@
 # Bloom
-[![Build Status](https://travis-ci.com/appearhere/bloom.svg?token=Dby1wcjAJdzRsf4NN8um&branch=master)](https://travis-ci.com/appearhere/bloom) [![Code Climate](https://codeclimate.com/repos/57e1313c43c7cd2f8000052d/badges/30326003c5cf0664a755/gpa.svg)](https://codeclimate.com/repos/57e1313c43c7cd2f8000052d/feed) [![Test Coverage](https://codeclimate.com/repos/57e1313c43c7cd2f8000052d/badges/30326003c5cf0664a755/coverage.svg)](https://codeclimate.com/repos/57e1313c43c7cd2f8000052d/coverage) [![Issue Count](https://codeclimate.com/repos/57e1313c43c7cd2f8000052d/badges/30326003c5cf0664a755/issue_count.svg)](https://codeclimate.com/repos/57e1313c43c7cd2f8000052d/feed)
-
-![Bloom v0.0.1 Icon](https://dl.dropboxusercontent.com/u/15027214/bloom-icon.png)
+[![Build Status](https://travis-ci.com/appearhere/bloom.svg?token=Dby1wcjAJdzRsf4NN8um&branch=master)](https://travis-ci.com/appearhere/bloom) [![Code Climate](https://codeclimate.com/github/appearhere/bloom/badges/gpa.svg)](https://codeclimate.com/github/appearhere/bloom) [![Test Coverage](https://codeclimate.com/github/appearhere/bloom/badges/coverage.svg)](https://codeclimate.com/github/appearhere/bloom/coverage) [![Issue Count](https://codeclimate.com/github/appearhere/bloom/badges/issue_count.svg)](https://codeclimate.com/github/appearhere/bloom)
 
 Bloom acts as a central repository for reuseable React components and common styles to promote consistency across various projects at Appear Here. It also acts as a style guide to demonstrate how components should be used on their own and in combination with each other.
 
 It's been bootstrapped with [create-react-app](https://github.com/facebookincubator/create-react-app), and has a number of additional features to make development easier.
-
-Find the [development roadmap on Trello](https://trello.com/b/GEtat29h/bloom-development).
 
 ## Use Bloom in your project
 
