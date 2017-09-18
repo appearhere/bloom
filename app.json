@@ -5,7 +5,6 @@
   "env": {
     "NODE_ENV": "development",
     "NPM_CONFIG_PRODUCTION": "false",
-    "NPM_TOKEN": "f35874ef-4f3a-4979-a513-dafeeeb2cef9"
   },
   "formation": {
   },
