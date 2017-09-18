@@ -1,23 +1,11 @@
-.h1,
-.h2,
-.h3,
-.p,
-.li
-.ul,
-.ol,
-.markdown * {
+:global(*) {
   margin-top: 0;
   margin-bottom: 0;
+  font-family: var(--font-avenir);
 }
 
-.markdown * + *,
-.h1 + *,
-.h2 + *,
-.h3 + *,
-.p + *,
-.ul + *,
-.ol + * {
-  margin-top: var(--size-lg-i);
+:global(* + *) {
+  margin-top: var(--size-regular);
 }
 
 .markdown * + h2,

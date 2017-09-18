@@ -17,6 +17,7 @@ import Faq from './screens/Overview/Faq';
 import Colors from './screens/Design/Colors';
 import Typography from './screens/Design/Typography';
 import Iconography from './screens/Design/Iconography';
+import Patterns from './screens/Patterns/Patterns';
 import FourOhFour from './404';
 
 import css from './Styleguide.css';
@@ -88,6 +89,8 @@ export default class Styleguide extends Component {
                 <Route path="/design/colors" component={ Colors } />
                 <Route path="/design/typography" component={ Typography } />
                 <Route path="/design/iconography" component={ Iconography } />
+
+                <Patterns />
 
                 <Route component={ FourOhFour } />
               </Switch>

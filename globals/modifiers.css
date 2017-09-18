@@ -454,3 +454,12 @@
 .brdrb1greyDarker {
   border-bottom: 1px solid var(--color-greyDarker);
 }
+
+/* Widths */
+.widthFull.widthFull {
+  width: 100%;
+}
+
+.widthAuto.widthAuto {
+  width: auto;
+}
