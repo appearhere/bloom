@@ -2,181 +2,187 @@ import React from 'react';
 import cx from 'classnames';
 
 import Specimen from '../../components/Specimen/Specimen';
+import { H, D } from '../../components/Scaffold/Scaffold';
 
-import type from '../../typography.css';
 import css from './Typography.css';
 
 const Typography = () => (
   <div>
-    <h1 className={ type.h1 }>Typography</h1>
-    <h2 className={ type.h2 }>Font family</h2>
-    <Specimen
-      classNames={ {
-        root: css.specimenRoot,
-        specimenContainer: css.specimenContainer,
-        specimen: cx(css.specimen, css.fontLargeI),
-      } }
-      attributes={ ['Avenir Next'] }
-    >
-      <div>A B C D E F G H I J K L M N O P Q R S T U V W X Y Z</div>
-      <div>a b c d e f g h i j k l m n o p q r s t u v w x y z</div>
-      <div>0 1 2 3 4 5 6 7 8 9 0</div>
-    </Specimen>
-    <h2 className={ type.h2 }>Font sizes</h2>
-    <Specimen
-      classNames={ {
-        root: css.specimenRoot,
-        specimenContainer: css.specimenContainer,
-        specimen: cx(css.specimen, css.fontLargeV),
-      } }
-      attributes={ [
-        'Large V',
-        '2.75rem / 44px',
-        '--fontsize-large-v',
-      ] }
-    >
-      We started with a little store for the Queen
-    </Specimen>
-    <Specimen
-      classNames={ {
-        root: css.specimenRoot,
-        specimenContainer: css.specimenContainer,
-        specimen: cx(css.specimen, css.fontLargeIv),
-      } }
-      attributes={ [
-        'Large Iv',
-        '2rem / 32px',
-        '--fontsize-large-iv',
-      ] }
-    >
-      We started with a little store for the Queen
-    </Specimen>
-    <Specimen
-      classNames={ {
-        root: css.specimenRoot,
-        specimenContainer: css.specimenContainer,
-        specimen: cx(css.specimen, css.fontLargeIii),
-      } }
-      attributes={ [
-        'Large Iii',
-        '1.75rem / 28px',
-        '--fontsize-large-iii',
-      ] }
-    >
-      We started with a little store for the Queen
-    </Specimen>
-    <Specimen
-      classNames={ {
-        root: css.specimenRoot,
-        specimenContainer: css.specimenContainer,
-        specimen: cx(css.specimen, css.fontLargeIi),
-      } }
-      attributes={ [
-        'Large Ii',
-        '1.5rem / 24px',
-        '--fontsize-large-ii',
-      ] }
-    >
-      We started with a little store for the Queen
-    </Specimen>
-    <Specimen
-      classNames={ {
-        root: css.specimenRoot,
-        specimenContainer: css.specimenContainer,
-        specimen: cx(css.specimen, css.fontLargeI),
-      } }
-      attributes={ [
-        'Large I',
-        '1.1875rem / 19px',
-        '--fontsize-large-i',
-      ] }
-    >
-      We started with a little store for the Queen
-    </Specimen>
-    <Specimen
-      classNames={ {
-        root: css.specimenRoot,
-        specimenContainer: css.specimenContainer,
-        specimen: cx(css.specimen, css.fontRegular),
-      } }
-      attributes={ [
-        'Regular',
-        '1rem / 16px',
-        '--fontsize-regular',
-      ] }
-    >
-      We started with a little store for the Queen
-    </Specimen>
-    <Specimen
-      classNames={ {
-        root: css.specimenRoot,
-        specimenContainer: css.specimenContainer,
-        specimen: cx(css.specimen, css.fontSmallI),
-      } }
-      attributes={ [
-        'Small',
-        '0.875rem / 14px',
-        '--fontsize-small-i',
-      ] }
-    >
-      We started with a little store for the Queen
-    </Specimen>
-    <Specimen
-      classNames={ {
-        root: css.specimenRoot,
-        specimenContainer: css.specimenContainer,
-        specimen: cx(css.specimen, css.fontSmallIi),
-      } }
-      attributes={ [
-        'Small Ii',
-        '0.6875rem / 11px',
-        '--fontsize-small-ii',
-      ] }
-    >
-      We started with a little store for the Queen
-    </Specimen>
-    <h2 className={ type.h2 }>Font weights</h2>
-    <div className={ css.weightGroup }>
+    <H level={ 1 }>Typography</H>
+    <D>
+      <H level={ 2 }>Font Family</H>
       <Specimen
         classNames={ {
-          root: cx(css.specimenRoot, css.weight),
+          root: css.specimenRoot,
           specimenContainer: css.specimenContainer,
-          specimen: cx(css.specimen, css.fontLargeV, css.regular),
+          specimen: cx(css.specimen, css.fontLargeI),
+        } }
+        attributes={ ['Avenir Next'] }
+      >
+        <div>A B C D E F G H I J K L M N O P Q R S T U V W X Y Z</div>
+        <div>a b c d e f g h i j k l m n o p q r s t u v w x y z</div>
+        <div>0 1 2 3 4 5 6 7 8 9 0</div>
+      </Specimen>
+    </D>
+    <D>
+      <H level={ 2 }>Font sizes</H>
+      <Specimen
+        classNames={ {
+          root: css.specimenRoot,
+          specimenContainer: css.specimenContainer,
+          specimen: cx(css.specimen, css.fontLargeV),
+        } }
+        attributes={ [
+          'Large V',
+          '2.75rem / 44px',
+          '--fontsize-large-v',
+        ] }
+      >
+        We started with a little store for the Queen
+      </Specimen>
+      <Specimen
+        classNames={ {
+          root: css.specimenRoot,
+          specimenContainer: css.specimenContainer,
+          specimen: cx(css.specimen, css.fontLargeIv),
+        } }
+        attributes={ [
+          'Large Iv',
+          '2rem / 32px',
+          '--fontsize-large-iv',
+        ] }
+      >
+        We started with a little store for the Queen
+      </Specimen>
+      <Specimen
+        classNames={ {
+          root: css.specimenRoot,
+          specimenContainer: css.specimenContainer,
+          specimen: cx(css.specimen, css.fontLargeIii),
+        } }
+        attributes={ [
+          'Large Iii',
+          '1.75rem / 28px',
+          '--fontsize-large-iii',
+        ] }
+      >
+        We started with a little store for the Queen
+      </Specimen>
+      <Specimen
+        classNames={ {
+          root: css.specimenRoot,
+          specimenContainer: css.specimenContainer,
+          specimen: cx(css.specimen, css.fontLargeIi),
+        } }
+        attributes={ [
+          'Large Ii',
+          '1.5rem / 24px',
+          '--fontsize-large-ii',
+        ] }
+      >
+        We started with a little store for the Queen
+      </Specimen>
+      <Specimen
+        classNames={ {
+          root: css.specimenRoot,
+          specimenContainer: css.specimenContainer,
+          specimen: cx(css.specimen, css.fontLargeI),
+        } }
+        attributes={ [
+          'Large I',
+          '1.1875rem / 19px',
+          '--fontsize-large-i',
+        ] }
+      >
+        We started with a little store for the Queen
+      </Specimen>
+      <Specimen
+        classNames={ {
+          root: css.specimenRoot,
+          specimenContainer: css.specimenContainer,
+          specimen: cx(css.specimen, css.fontRegular),
         } }
         attributes={ [
           'Regular',
-          '--fontweight-regular',
+          '1rem / 16px',
+          '--fontsize-regular',
         ] }
       >
-        Aa
+        We started with a little store for the Queen
       </Specimen>
       <Specimen
         classNames={ {
-          root: cx(css.specimenRoot, css.weight),
+          root: css.specimenRoot,
           specimenContainer: css.specimenContainer,
-          specimen: cx(css.specimen, css.fontLargeV, css.demi),
+          specimen: cx(css.specimen, css.fontSmallI),
         } }
         attributes={ [
-          'Demi',
-          '--fontweight-demi',
+          'Small',
+          '0.875rem / 14px',
+          '--fontsize-small-i',
         ] }
       >
-        Aa
+        We started with a little store for the Queen
       </Specimen>
       <Specimen
         classNames={ {
-          root: cx(css.specimenRoot, css.weight),
+          root: css.specimenRoot,
           specimenContainer: css.specimenContainer,
-          specimen: cx(css.specimen, css.fontLargeV, css.bold),
+          specimen: cx(css.specimen, css.fontSmallIi),
         } }
         attributes={ [
-          'Bold',
-          '--fontweight-bold',
+          'Small Ii',
+          '0.6875rem / 11px',
+          '--fontsize-small-ii',
         ] }
       >
-        Aa
+        We started with a little store for the Queen
       </Specimen>
-    </div>
+    </D>
+    <D>
+      <H level={ 2 }>Font weights</H>
+      <div className={ css.weightGroup }>
+        <Specimen
+          classNames={ {
+            root: cx(css.specimenRoot, css.weight),
+            specimenContainer: css.specimenContainer,
+            specimen: cx(css.specimen, css.fontLargeV, css.regular),
+          } }
+          attributes={ [
+            'Regular',
+            '--fontweight-regular',
+          ] }
+        >
+          Aa
+        </Specimen>
+        <Specimen
+          classNames={ {
+            root: cx(css.specimenRoot, css.weight),
+            specimenContainer: css.specimenContainer,
+            specimen: cx(css.specimen, css.fontLargeV, css.demi),
+          } }
+          attributes={ [
+            'Demi',
+            '--fontweight-demi',
+          ] }
+        >
+          Aa
+        </Specimen>
+        <Specimen
+          classNames={ {
+            root: cx(css.specimenRoot, css.weight),
+            specimenContainer: css.specimenContainer,
+            specimen: cx(css.specimen, css.fontLargeV, css.bold),
+          } }
+          attributes={ [
+            'Bold',
+            '--fontweight-bold',
+          ] }
+        >
+          Aa
+        </Specimen>
+      </div>
+    </D>
   </div>
 );
 

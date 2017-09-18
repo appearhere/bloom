@@ -14,6 +14,7 @@
  */
 :root {
   --font-avenir: 'Avenir Next W01', 'Helvetica Neue', 'Helvetica', 'sans-serif';
+  --font-fira-code: 'Fira Mono', monospace;
 
   --fontweight-bold: 800;
   --fontweight-demi: 700;
@@ -133,5 +134,13 @@
   font-size: var(--fontsize-small-ii);
   line-height: var(--lineheight-small-ii);
   letter-spacing: var(--letter-spacing-small-ii);
+  font-weight: var(--fontweight-regular);
+}
+
+.fontCode {
+  font-family: var(--font-fira-code);
+  font-size: var(--fontsize-regular);
+  line-height: var(--lineheight-regular);
+  letter-spacing: var(--letter-spacing-regular);
   font-weight: var(--fontweight-regular);
 }

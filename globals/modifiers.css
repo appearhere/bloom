@@ -37,7 +37,6 @@
 .fgPrimary.fgPrimary { color: var(--color-primary); }
 .fgSuccess.fgSuccess { color: var(--color-success); }
 .fgDanger.fgDanger { color: var(--color-danger); }
-.fgText.fgText { color: var(--color-text); }
 .fgGreyLightest.fgGreyLightest { color: var(--color-greyLightest); }
 .fgGreyLighter.fgGreyLighter { color: var(--color-greyLighter); }
 .fgGreyLight.fgGreyLight { color: var(--color-greyLight); }
@@ -55,7 +54,6 @@
 .bgPrimary.bgPrimary { background-color: var(--color-primary); }
 .bgSuccess.bgSuccess { background-color: var(--color-success); }
 .bgDanger.bgDanger { background-color: var(--color-danger); }
-.bgText.bgText { background-color: var(--color-text); }
 .bgGreyLightest.bgGreyLightest { background-color: var(--color-greyLightest); }
 .bgGreyLighter.bgGreyLighter { background-color: var(--color-greyLighter); }
 .bgGreyLight.bgGreyLight { background-color: var(--color-greyLight); }
@@ -79,6 +77,7 @@
 .ptLgIii.ptLgIii { padding-top: var(--size-lg-iii); }
 .ptLgIi.ptLgIi { padding-top: var(--size-lg-ii); }
 .ptLgI.ptLgI { padding-top: var(--size-lg-i); }
+.ptr.ptr,
 .ptRegular.ptRegular { padding-top: var(--size-regular); }
 .ptSmI.ptSmI { padding-top: var(--size-sm-i); }
 .ptSmIi.ptSmIi { padding-top: var(--size-sm-ii); }
@@ -92,6 +91,7 @@
 .plLgIii.plLgIii { padding-left: var(--size-lg-iii); }
 .plLgIi.plLgIi { padding-left: var(--size-lg-ii); }
 .plLgI.plLgI { padding-left: var(--size-lg-i); }
+.plr.plr,
 .plRegular.plRegular { padding-left: var(--size-regular); }
 .plSmI.plSmI { padding-left: var(--size-sm-i); }
 .plSmIi.plSmIi { padding-left: var(--size-sm-ii); }
@@ -105,6 +105,7 @@
 .pbLgIii.pbLgIii { padding-bottom: var(--size-lg-iii); }
 .pbLgIi.pbLgIi { padding-bottom: var(--size-lg-ii); }
 .pbLgI.pbLgI { padding-bottom: var(--size-lg-i); }
+.pbr.pbr,
 .pbRegular.pbRegular { padding-bottom: var(--size-regular); }
 .pbSmI.pbSmI { padding-bottom: var(--size-sm-i); }
 .pbSmIi.pbSmIi { padding-bottom: var(--size-sm-ii); }
@@ -118,6 +119,7 @@
 .prLgIii.prLgIii { padding-right: var(--size-lg-iii); }
 .prLgIi.prLgIi { padding-right: var(--size-lg-ii); }
 .prLgI.prLgI { padding-right: var(--size-lg-i); }
+.prr.prr,
 .prRegular.prRegular { padding-right: var(--size-regular); }
 .prSmI.prSmI { padding-right: 1rem; }
 .prSmIi.prSmIi { padding-right: var(--size-sm-ii); }
@@ -131,6 +133,7 @@
 .paLgIii.paLgIii { padding: var(--size-lg-iii); }
 .paLgIi.paLgIi { padding: var(--size-lg-ii); }
 .paLgI.paLgI { padding: var(--size-lg-i); }
+.par.par,
 .paRegular.paRegular { padding: var(--size-regular); }
 .paSmI.paSmI { padding: var(--size-sm-i); }
 .paSmIi.paSmIi { padding: var(--size-sm-ii); }
@@ -146,6 +149,7 @@
 .mtLgIii.mtLgIii { margin-top: var(--size-lg-iii); }
 .mtLgIi.mtLgIi { margin-top: var(--size-lg-ii); }
 .mtLgI.mtLgI { margin-top: var(--size-lg-i); }
+.mtr.mtr,
 .mtRegular.mtRegular { margin-top: var(--size-regular); }
 .mtSmI.mtSmI { margin-top: var(--size-sm-i); }
 .mtSmIi.mtSmIi { margin-top: var(--size-sm-ii); }
@@ -159,6 +163,7 @@
 .mlLgIii.mlLgIii { margin-left: var(--size-lg-iii); }
 .mlLgIi.mlLgIi { margin-left: var(--size-lg-ii); }
 .mlLgI.mlLgI { margin-left: var(--size-lg-i); }
+.mlr.mlr,
 .mlRegular.mlRegular { margin-left: var(--size-regular); }
 .mlSmI.mlSmI { margin-left: var(--size-sm-i); }
 .mlSmIi.mlSmIi { margin-left: var(--size-sm-ii); }
@@ -172,6 +177,7 @@
 .mbLgIii.mbLgIii { margin-bottom: var(--size-lg-iii); }
 .mbLgIi.mbLgIi { margin-bottom: var(--size-lg-ii); }
 .mbLgI.mbLgI { margin-bottom: var(--size-lg-i); }
+.mbr.mbr,
 .mbRegular.mbRegular { margin-bottom: var(--size-regular); }
 .mbSmI.mbSmI { margin-bottom: var(--size-sm-i); }
 .mbSmIi.mbSmIi { margin-bottom: var(--size-sm-ii); }
@@ -185,6 +191,7 @@
 .mrLgIii.mrLgIii { margin-right: var(--size-lg-iii); }
 .mrLgIi.mrLgIi { margin-right: var(--size-lg-ii); }
 .mrLgI.mrLgI { margin-right: var(--size-lg-i); }
+.mrr.mrr,
 .mrRegular.mrRegular { margin-right: var(--size-regular); }
 .mrSmI.mrSmI { margin-right: var(--size-sm-i); }
 .mrSmIi.mrSmIi { margin-right: var(--size-sm-ii); }
@@ -198,6 +205,7 @@
 .maLgIii.maLgIii { margin: var(--size-lg-iii); }
 .maLgIi.maLgIi { margin: var(--size-lg-ii); }
 .maLgI.maLgI { margin: var(--size-lg-i); }
+.mar.mar,
 .maRegular.maRegular { margin: var(--size-regular); }
 .maSmI.maSmI { margin: var(--size-sm-i); }
 .maSmIi.maSmIi { margin: var(--size-sm-ii); }
@@ -332,6 +340,9 @@
 }
 .fontSmIi {
   composes: fontSmallIi from './typography.css';
+}
+.fontCode {
+  composes: fontCode from './typography.css';
 }
 
 /* Font sizes */
