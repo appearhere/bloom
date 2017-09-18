@@ -12,8 +12,6 @@ import BodyClassNameConductor from '../utils/BodyClassNameConductor/BodyClassNam
 
 /* Pages */
 import Introduction from './screens/Overview/Introduction';
-import Goals from './screens/Overview/Goals';
-import Faq from './screens/Overview/Faq';
 import Colors from './screens/Design/Colors';
 import Typography from './screens/Design/Typography';
 import Iconography from './screens/Design/Iconography';
@@ -82,9 +80,6 @@ export default class Styleguide extends Component {
             <Wrapper className={ css.wrapper }>
               <Switch>
                 <Route exact path="/" component={ Introduction } />
-                <Route path="/goals" component={ Goals } />
-                <Route path="/faq" component={ Faq } />
-
                 <Route path="/design/colors" component={ Colors } />
                 <Route path="/design/typography" component={ Typography } />
                 <Route path="/design/iconography" component={ Iconography } />
