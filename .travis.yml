@@ -4,8 +4,6 @@ cache:
   directories:
   - node_modules
   - yarn
-before_install:
-- npm config set //registry.npmjs.org/:_authToken $NPM_TOKEN
 install:
 - nvm install node
 - source travis/install_yarn
@@ -19,6 +17,3 @@ after_success:
 - yarn add codeclimate-test-reporter
 - CODECLIMATE_REPO_TOKEN=dada3cbee91c5dbdf41beffcbc06dbf04d3b578de0fe61fa1bb42b1cc05cf9e3
   codeclimate-test-reporter < ./coverage/lcov.info
-env:
-  global:
-  - NPM_TOKEN=f35874ef-4f3a-4979-a513-dafeeeb2cef9
