@@ -1,6 +1,7 @@
 :global(*) {
   margin-top: 0;
   margin-bottom: 0;
+  font-family: var(--font-avenir);
 }
 
 :global(* + *) {

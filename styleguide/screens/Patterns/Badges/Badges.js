@@ -12,9 +12,6 @@ const Badges = () => (
     <p className={ type.p }>
       Badges are used for items which require categorisation using a keyword.
     </p>
-    <p className={ type.p }>
-      This is your standard badge. They are a subtle yet effective way of grouping components.
-    </p>
     <Specimen
       attributes={ [
         'Contexts',
@@ -31,9 +28,6 @@ const Badges = () => (
       <Badge context="primary" className={ css.badge }>Primary</Badge>
       <Badge context="special" className={ css.badge }>Special</Badge>
     </Specimen>
-    <p className={ type.p }>
-      Hollow bages are used when...
-    </p>
     <Specimen
       attributes={ [
         'Hollow Variant',

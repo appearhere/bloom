@@ -7,6 +7,7 @@ import Icon from '../../../../components/Icon/Icon';
 import Loader from '../../../../components/Loader/Loader';
 
 import Specimen from '../../../components/Specimen/Specimen';
+import { h1 } from '../PatternsStyles';
 import type from '../../../typography.css';
 import css from './Buttons.css';
 
@@ -23,12 +24,12 @@ import css from './Buttons.css';
  */
 const Buttons = () => (
   <div>
-    <h1 className={ type.h1 }>Buttons</h1>
-    <p className={ type.p }>
+    <h1 className={ h1 }>Buttons</h1>
+    <p>
       Buttons are components which signify that an action will occur when a user interacts with them.
     </p>
-    <h2 className={ type.h2 }>Btn</h2>
-    <p className={ type.p }>
+    <h2>Btn</h2>
+    <p>
       This is your standard button. They typically trigger one action when interacted with, providing the basis for creating an interactive page. You should add additional context to them, based on the action they will perform. E.g., use the primary context where it is the main action we want the user to perform. Use the danger context for when the action is <strong>destructive</strong>.
     </p>
     <Specimen
@@ -74,7 +75,7 @@ const Buttons = () => (
       <Btn variant="hollow" context="danger" className={ css.btn }>Danger</Btn>
       <Btn variant="hollow" context="whiteout" className={ css.btn }>Whiteout</Btn>
     </Specimen>
-    <p className={ type.p }>
+    <p>
       These are our subtle buttons. Use them for when the action is not overly important and should blend into its surroundings
     </p>
     <Specimen
@@ -97,7 +98,7 @@ const Buttons = () => (
       <Btn variant="subtle" context="danger" className={ css.btn }>Danger</Btn>
       <Btn variant="subtle" context="whiteout" className={ css.btn }>Whiteout</Btn>
     </Specimen>
-    <p className={ type.p }>
+    <p>
       Adding an icon is as simple as using the {'<Icon />'} component within the button's label. Icons should <strong>always</strong> placed on the left, and have a margin of `1rem` applied to their right
     </p>
     <Specimen
@@ -111,7 +112,7 @@ const Buttons = () => (
         Default
       </Btn>
     </Specimen>
-    <p className={ type.p }>
+    <p>
       When adding a loader, apply the same rules as a regular icon.
     </p>
     <Specimen
@@ -120,7 +121,7 @@ const Buttons = () => (
         specimenContainer: css.specimenContainer,
       } }
     >
-      <Btn className={ css.btn }>
+      <Btn>
         <Loader />
         Default
       </Btn>
