@@ -26,9 +26,6 @@
     "node": "8.1.4",
     "yarn": "0.27.5"
   },
-  "publishConfig": {
-    "access": "restricted"
-  },
   "devDependencies": {
     "@kadira/storybook": "^2.14.0",
     "@kadira/storybook-addon-knobs": "^1.7.1",
@@ -93,7 +90,6 @@
     "whatwg-fetch": "1.0.0"
   },
   "dependencies": {
-    "@appearhere/hexgrid-heatmap": "^1.0.1",
     "@appearhere/mapbox-gl": "^1.5.0",
     "@appearhere/nuka-carousel": "^2.1.8",
     "@appearhere/react-input-range": "^1.1.0",
@@ -130,7 +126,6 @@
     "build": "node scripts/build.js",
     "build-storybook": "build-storybook",
     "heroku-postbuild": "yarn build && yarn run build-storybook;",
-    "heroku-prebuild": "npm config set //registry.npmjs.org/:_authToken $NPM_TOKEN;",
     "lint": "esw -c ./config/eslint.js ./components",
     "lint:watch": "esw -w -c ./config/eslint.js ./components",
     "serve": "node ./server",
