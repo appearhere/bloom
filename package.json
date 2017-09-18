@@ -90,7 +90,6 @@
     "whatwg-fetch": "1.0.0"
   },
   "dependencies": {
-    "@appearhere/hexgrid-heatmap": "^1.0.1",
     "@appearhere/mapbox-gl": "^1.5.0",
     "@appearhere/nuka-carousel": "^2.1.8",
     "@appearhere/react-input-range": "^1.1.0",
