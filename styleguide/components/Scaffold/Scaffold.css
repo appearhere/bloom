@@ -1,0 +1,38 @@
+.h1 {
+  composes: fontLargeIv from '../../../globals/typography.css';
+  color: var(--color-greyDarkest);
+}
+
+.h2 {
+  composes: fontLargeIii from '../../../globals/typography.css';
+  color: var(--color-greyDarkest);
+}
+
+.h3 {
+  composes: fontLargeIi from '../../../globals/typography.css';
+  color: var(--color-greyDarkest);
+}
+
+.h4 {
+  composes: fontLargeI from '../../../globals/typography.css';
+  color: var(--color-greyDarkest);
+}
+
+.body {
+  composes: fontRegular from '../../../globals/typography.css';
+  color: var(--color-greyDarkest);
+}
+
+.code {
+  composes: fontCode from '../../../globals/typography.css';
+  font-size: var(--fontsize-small-i);
+  background-color: var(--color-greyLightest);
+  color: var(--color-greyDark);
+  border-radius: 2px;
+  padding: var(--size-sm-iii);
+  border: 1px solid var(--color-greyLighter);
+  display: inline-block;
+  margin-left: var(--size-sm-iii);
+  margin-right: var(--size-sm-iii);
+  line-height: 1;
+}

@@ -3,14 +3,14 @@ import { NavLink } from 'react-router-dom';
 import cx from 'classnames';
 
 import noop from '../../../utils/noop';
+import * as scaffold from '../../components/Scaffold/Scaffold';
 
-import type from '../../typography.css';
 import css from './Navigation.css';
 
 const Navigation = ({ className, onLinkClick }) => (
   <div className={ cx(css.root, className) }>
     <div className={ css.section }>
-      <span className={ cx(type.h2, css.title) }>Overview</span>
+      <span className={ cx(scaffold.h2, css.title) }>Overview</span>
       <ul className={ css.linkList }>
         <li className={ css.linkListItem }>
           <NavLink
@@ -26,7 +26,7 @@ const Navigation = ({ className, onLinkClick }) => (
       </ul>
     </div>
     <div className={ css.section }>
-      <span className={ cx(type.h2, css.title) }>Design</span>
+      <span className={ cx(scaffold.h2, css.title) }>Design</span>
       <ul className={ css.linkList }>
         <li className={ css.linkListItem }>
           <NavLink

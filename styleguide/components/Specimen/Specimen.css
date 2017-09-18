@@ -15,7 +15,7 @@
 
 .attribute {
   composes: fontSmallI from '../../../globals/typography.css';
-  font-family: 'Fira Mono', monospace;
+  font-family: var(--font-fira-code);
   color: var(--color-grey);
 }
 

@@ -1,22 +1,9 @@
-.h1,
-.h2,
-.h3,
-.p,
-.li
-.ul,
-.ol,
 .markdown * {
   margin-top: 0;
   margin-bottom: 0;
 }
 
-.markdown * + *,
-.h1 + *,
-.h2 + *,
-.h3 + *,
-.p + *,
-.ul + *,
-.ol + * {
+.markdown * + * {
   margin-top: var(--size-lg-i);
 }
 
@@ -25,8 +12,7 @@
   margin-top: var(--size-lg-iii);
 }
 
-.markdown h1,
-.h1 {
+.markdown h1 {
   font-family: var(--font-avenir);
   font-size: var(--fontsize-large-iv);
   line-height: var(--lineheight-large-iv);
@@ -35,8 +21,7 @@
   color: var(--color-greyDarkest);
 }
 
-.markdown h2,
-.h2 {
+.markdown h2 {
   font-family: var(--font-avenir);
   font-size: var(--fontsize-large-iii);
   line-height: var(--lineheight-large-iii);
@@ -45,8 +30,7 @@
   color: var(--color-greyDarkest);
 }
 
-.markdown h3,
-.h3 {
+.markdown h3 {
   font-family: var(--font-avenir);
   font-size: var(--fontsize-large-ii);
   line-height: var(--lineheight-large-ii);
@@ -56,17 +40,13 @@
 }
 
 .markdown ul,
-.markdown ol,
-.ul,
-.ol {
+.markdown ol {
   list-style-position: outside;
   padding-left: 0;
 }
 
 .markdown p,
-.markdown li,
-.p,
-.li {
+.markdown li {
   font-family: var(--font-avenir);
   font-size: var(--fontsize-regular);
   line-height: var(--lineheight-regular);
@@ -75,13 +55,11 @@
   color: var(--color-greyDarkest);
 }
 
-.markdown li + li,
-.li + .li {
+.markdown li + li {
   margin-top: var(--size-sm-iii);
 }
 
-.markdown p:first-of-type,
-.p:first-of-type {
+.markdown p:first-of-type {
   font-family: var(--font-avenir);
   font-size: var(--fontsize-large-i);
   line-height: var(--lineheight-large-i);
@@ -90,13 +68,11 @@
   color: var(--color-greyDarkest);
 }
 
-.markdown a,
-.a {
+.markdown a {
   color: var(--color-primary);
   text-decoration: underline;
 }
 
-.markdown a:hover,
-.a {
+.markdown a:hover {
   color: var(--color-primary--light);
 }
