@@ -4,13 +4,10 @@
   },
   "env": {
     "NODE_ENV": "development",
-    "NPM_CONFIG_PRODUCTION": "false",
+    "NPM_CONFIG_PRODUCTION": "false"
   },
-  "formation": {
-  },
-  "addons": [
-
-  ],
+  "formation": {},
+  "addons": [],
   "buildpacks": [
     {
       "url": "heroku/nodejs"
