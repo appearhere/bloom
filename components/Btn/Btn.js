@@ -51,7 +51,7 @@ export default class Btn extends Component {
       className,
       css[context],
       css[variant],
-      css[priority],
+      css[priority]
     );
 
     return (

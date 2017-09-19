@@ -29,11 +29,16 @@
   vertical-align: top;
 }
 
-.root:focus,
-.root:hover {
+.root:enabled:focus,
+.root:enabled:hover {
   background-color: var(--color-greyDark);
   border-color: var(--color-greyDark);
   color: var(--color-white);
+}
+
+.root:disabled {
+  cursor: not-allowed;
+  opacity: 0.7;
 }
 
 .root:active {
@@ -50,9 +55,10 @@
   border-color: var(--color-greyLighter);
 }
 
-.root.hollow:focus,
-.root.hollow:hover {
+.root.hollow:enabled:focus,
+.root.hollow:enabled:hover {
   border-color: var(--color-greyDark);
+  background-color: transparent;
   color: var(--color-greyDark);
 }
 
@@ -64,9 +70,15 @@
   text-decoration-color: var(--color-primary);
 }
 
-.root.subtle:focus,
-.root.subtle:hover {
+.root.subtle:enabled:focus,
+.root.subtle:enabled:hover {
   color: var(--color-grey);
+  background-color: transparent;
+  border-color: transparent;
+}
+
+.root.subtle:disabled {
+  text-decoration: none;
 }
 
 .primary {
@@ -75,8 +87,8 @@
   border-color: var(--color-primary);
 }
 
-.primary:focus,
-.primary:hover {
+.primary:enabled:focus,
+.primary:enabled:hover {
   background-color: var(--color-primary--light);
   border-color: var(--color-primary--light);
 }
@@ -87,8 +99,8 @@
   border-color: var(--color-primary);
 }
 
-.primary.hollow:focus,
-.primary.hollow:hover {
+.primary.hollow:enabled:focus,
+.primary.hollow:enabled:hover {
   border-color: var(--color-primary--light);
   color: var(--color-primary);
 }
@@ -101,8 +113,8 @@
   text-decoration-color: var(--color-greyLighter);
 }
 
-.primary.subtle:focus,
-.primary.subtle:hover {
+.primary.subtle:enabled:focus,
+.primary.subtle:enabled:hover {
   color: var(--color-primary--light);
   background-color: transparent;
   border-color: transparent;
@@ -116,8 +128,8 @@
   border-color: var(--color-action);
 }
 
-.action:focus,
-.action:hover {
+.action:enabled:focus,
+.action:enabled:hover {
   background-color: var(--color-action--light);
   color: var(--color-white);
   border-color: var(--color-action--light);
@@ -129,12 +141,11 @@
   border-color: var(--color-action);
 }
 
-.action.hollow:focus,
-.action.hollow:hover {
+.action.hollow:enabled:focus,
+.action.hollow:enabled:hover {
   border-color: var(--color-action--light);
   color: var(--color-action--light);
 }
-
 .action.subtle {
   color: var(--color-action);
   background-color: transparent;
@@ -143,23 +154,22 @@
   text-decoration-color: var(--color-greyLighter);
 }
 
-.action.subtle:focus,
-.action.subtle:hover {
+.action.subtle:enabled:focus,
+.action.subtle:enabled:hover {
   color: var(--color-action--light);
   background-color: transparent;
   border-color: transparent;
   text-decoration: underline;
   text-decoration-color: var(--color-greyLighter);
 }
-
 .danger {
   background-color: var(--color-danger);
   color: var(--color-white);
   border-color: var(--color-danger);
 }
 
-.danger:focus,
-.danger:hover {
+.danger:enabled:focus,
+.danger:enabled:hover {
   background-color: var(--color-danger--light);
   border-color: var(--color-danger--light);
 }
@@ -170,8 +180,8 @@
   border-color: currentColor;
 }
 
-.danger.hollow:focus,
-.danger.hollow:hover {
+.danger.hollow:enabled:focus,
+.danger.hollow:enabled:hover {
   border-color: var(--color-danger--light);
   color: var(--color-danger--light);
 }
@@ -184,8 +194,8 @@
   text-decoration-color: var(--color-greyLighter);
 }
 
-.danger.subtle:focus,
-.danger.subtle:hover {
+.danger.subtle:enabled:focus,
+.danger.subtle:enabled:hover {
   color: var(--color-danger--light);
   background-color: transparent;
   border-color: transparent;
@@ -199,8 +209,8 @@
   color: var(--color-greyDarker);
 }
 
-.whiteout:focus,
-.whiteout:hover {
+.whiteout:enabled:focus,
+.whiteout:enabled:hover {
   background-color: var(--color-white);
   border-color: var(--color-white);
   color: var(--color-greyDarkest);
@@ -212,8 +222,8 @@
   border-color: var(--color-greyLighter);
 }
 
-.whiteout.hollow:focus,
-.whiteout.hollow:hover {
+.whiteout.hollow:enabled:focus,
+.whiteout.hollow:enabled:hover {
   background-color: transparent;
   border-color: var(--color-white);
   color: var(--color-white);
@@ -227,8 +237,8 @@
   text-decoration-color: var(--color-greyLighter);
 }
 
-.whiteout.subtle:focus,
-.whiteout.subtle:hover {
+.whiteout.subtle:enabled:focus,
+.whiteout.subtle:enabled:hover {
   color: var(--color-white);
   text-decoration-color: var(--color-white);
 }
