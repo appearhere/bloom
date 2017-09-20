@@ -36,3 +36,13 @@
   margin-right: var(--size-sm-iii);
   line-height: 1;
 }
+
+.link {
+  composes: fontRegular from '../../../globals/typography.css';
+  color: var(--color-primary);
+  text-decoration: underline;
+}
+
+.link:hover {
+  color: var(--color-primary--light);
+}
