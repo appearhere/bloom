@@ -22,6 +22,7 @@ const Buttons = () => (
     </T>
     <D>
       <H level={ 2 }>Btn</H>
+      <H level={ 3 } className={ m.mtLgIi }>Standard Buttons</H>
       <T elm="p" className={ m.mtr }>
         This is your standard button. They typically trigger one action when
         interacted with, providing the basis for creating an interactive page.
@@ -47,6 +48,7 @@ const Buttons = () => (
         <Btn context="danger" className={ css.btn }>Danger</Btn>
         <Btn context="whiteout" className={ css.btn }>Whiteout</Btn>
       </Specimen>
+      <H level={ 3 } className={ m.mtLgIi }>Hollow Buttons</H>
       <T elm="p" className={ m.mtr }>
         These are our hollow buttons. Use them for secondary actions.
         Most of the time, this will be when used alongside a standard
@@ -72,6 +74,7 @@ const Buttons = () => (
         <Btn variant="hollow" context="danger" className={ css.btn }>Danger</Btn>
         <Btn variant="hollow" context="whiteout" className={ css.btn }>Whiteout</Btn>
       </Specimen>
+      <H level={ 3 } className={ m.mtLgIi }>Subtle Buttons</H>
       <T elm="p" className={ m.mtr }>
         These are our subtle buttons. Use them for when the action is not
         overly important and should blend into its surroundings.
@@ -96,6 +99,7 @@ const Buttons = () => (
         <Btn variant="subtle" context="danger" className={ css.btn }>Danger</Btn>
         <Btn variant="subtle" context="whiteout" className={ css.btn }>Whiteout</Btn>
       </Specimen>
+      <H level={ 3 } className={ m.mtLgIi }>Icon button</H>
       <T elm="p" className={ m.mtr }>
         Adding an icon is as simple as using the icon component within the
         button’s label. Icons should always placed on the left, and have a
@@ -116,6 +120,7 @@ const Buttons = () => (
           Default
         </Btn>
       </Specimen>
+      <H level={ 3 } className={ m.mtLgIi }>Loading button</H>
       <T elm="p" className={ m.mtr }>
         When adding a loader, apply the same rules as a regular icon.
       </T>
@@ -134,6 +139,7 @@ const Buttons = () => (
           Default
         </Btn>
       </Specimen>
+      <H level={ 3 } className={ m.mtLgIi }>Medalion button</H>
       <T elm="p" className={ m.mtr }>
         Similarly to icons and loaders, medallions can also be added to buttons.
         These must be placed on the right hand side of the label, and have a
@@ -154,6 +160,7 @@ const Buttons = () => (
           <Medallion className={ m.mlr }>1</Medallion>
         </Btn>
       </Specimen>
+      <H level={ 3 } className={ m.mtLgIi }>Wide button</H>
       <T elm="p" className={ m.mtr }>
         When using one button, there are times you may want it to be full width.
         Use the className prop to achieve this.
@@ -170,6 +177,7 @@ const Buttons = () => (
       >
         <Btn className={ m.widthFull }>Default</Btn>
       </Specimen>
+      <H level={ 3 } className={ m.mtLgIi }>Disabled Button</H>
       <T elm="p" className={ m.mtr }>
         Disable the button like you would any supported HTML element.
       </T>
