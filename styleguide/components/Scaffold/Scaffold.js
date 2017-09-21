@@ -16,6 +16,7 @@ export const h4 = css.h4;
 export const body = css.body;
 export const section = m.mtLgIii;
 export const code = css.code;
+export const link = css.link;
 
 export const H = ({ level, className, children }) => createElement(
   `h${level}`,
@@ -49,6 +50,10 @@ export const C = ({ className, children }) => (
   <code className={ cx(code, className) }>{ children }</code>
 );
 
+export const A = ({ className, children, ...rest }) => (
+  <a { ...rest } className={ cx(link, className) }>{ children }</a>
+);
+
 H.propTypes = {
   ...propTypes,
   level: PropTypes.number,
@@ -60,6 +65,8 @@ T.propTypes = {
 };
 
 C.propTypes = propTypes;
+
+A.propTypes = propTypes;
 
 D.propTypes = propTypes;
 
