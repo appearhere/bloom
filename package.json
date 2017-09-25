@@ -98,6 +98,7 @@
     "classnames": "^2.2.5",
     "commonmark": "^0.26.0",
     "commonmark-react-renderer": "^4.3.1",
+    "dedent": "^0.7.0",
     "exenv": "^1.2.1",
     "express": "^4.14.1",
     "invariant": "^2.2.1",
@@ -119,6 +120,8 @@
     "react-portal": "^3.0.0",
     "react-router-dom": "^4.2.2",
     "react-stickynode": "^1.2.1",
+    "refractor": "^1.1.0",
+    "rehype": "^5.0.0",
     "subscribe-ui-event": "^1.0.14",
     "warning": "^3.0.0"
   },

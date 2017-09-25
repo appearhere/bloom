@@ -1,44 +1,91 @@
-import React, { PropTypes } from 'react';
+import React, { Component, PropTypes } from 'react';
+import refractor from 'refractor/core.js';
+import jsxLang from 'refractor/lang/jsx';
+import rehype from 'rehype';
 
 import mergeObjectStrings from '../../../utils/mergeObjectStrings/mergeObjectStrings';
 import css from './Specimen.css';
 
-const Specimen = ({ classNames, children, attributes }) => {
-  const classes = mergeObjectStrings(css, classNames);
+refractor.register(jsxLang);
 
-  return (
-    <div className={ classes.root }>
-      <div className={ classes.specimenContainer }>
-        <span className={ classes.specimen }>
-          { children }
-        </span>
+export default class Specimen extends Component {
+  static propTypes = {
+    classNames: PropTypes.shape({
+      root: PropTypes.string,
+      specimenContainer: PropTypes.string,
+      specimen: PropTypes.string,
+      body: PropTypes.string,
+      name: PropTypes.string,
+      attributes: PropTypes.string,
+      attribute: PropTypes.string,
+    }),
+    name: PropTypes.string,
+    attributes: PropTypes.array,
+    children: PropTypes.node,
+    code: PropTypes.node,
+  };
+
+  static defaultProps = {
+    attributes: [],
+    language: 'javascript',
+  };
+
+  createMarkup() {
+    const { code } = this.props;
+
+    if (code) {
+      const nodes = refractor.highlight(code, 'jsx');
+      const highlightedCode = rehype()
+        .stringify({ type: 'root', children: nodes })
+        .toString();
+
+      return { __html: highlightedCode };
+    }
+
+    return null;
+  }
+
+  render() {
+    const {
+      classNames,
+      children,
+      name,
+      attributes,
+      code,
+    } = this.props;
+
+    const classes = mergeObjectStrings(css, classNames);
+
+    /* eslint-disable react/no-danger */
+    return (
+      <div className={ classes.root }>
+        <div className={ classes.specimenContainer }>
+          <span className={ classes.specimen }>
+            { children }
+          </span>
+        </div>
+        <div className={ classes.body }>
+          <div className={ classes.name }>{ name }</div>
+          { attributes.length > 0 && (
+            <ul className={ classes.attributes }>
+              { attributes.map((attribute, i) => (
+                <li key={ i } className={ classes.attribute }>
+                  { attribute }
+                </li>
+              )) }
+            </ul>
+          ) }
+          { code && (
+            <pre className={ css.pre }>
+              <code
+                className={ css.code }
+                dangerouslySetInnerHTML={ this.createMarkup() }
+              />
+            </pre>
+          ) }
+        </div>
       </div>
-      { attributes.length > 0 && (
-        <ul className={ classes.attributes }>
-          { attributes.map((attribute, i) => (
-            <li key={ i } className={ classes.attribute }>
-              { attribute }
-            </li>
-          )) }
-        </ul>
-      ) }
-    </div>
-  );
-};
-
-Specimen.propTypes = {
-  classNames: PropTypes.shape({
-    root: PropTypes.string,
-    specimenContainer: PropTypes.string,
-    specimen: PropTypes.string,
-    attribute: PropTypes.string,
-  }),
-  attributes: PropTypes.array,
-  children: PropTypes.node,
-};
-
-Specimen.defaultProps = {
-  attributes: [],
-};
-
-export default Specimen;
+    );
+    /* eslint-enable react/no-danger */
+  }
+}

@@ -1,5 +1,6 @@
 import React from 'react';
 import cx from 'classnames';
+import dedent from 'dedent';
 
 import Btn from '../../../../components/Btn/Btn';
 import BtnGroup from '../../../../components/BtnGroup/BtnGroup';
@@ -33,14 +34,13 @@ const Buttons = () => (
           root: css.specimenRoot,
           specimenContainer: css.specimenContainer,
         } }
-        attributes={ [
-          'Context',
-          '<Btn />',
-          '<Btn context="primary" />',
-          '<Btn context="action" />',
-          '<Btn context="danger" />',
-          '<Btn context="whiteout" />',
-        ] }
+        code={ dedent`
+          <Btn>Default</Btn>
+          <Btn context="primary">Primary</Btn>
+          <Btn context="action">Action</Btn>
+          <Btn context="danger">Danger</Btn>
+          <Btn context="whiteout">Whiteout</Btn>
+        ` }
       >
         <Btn className={ css.btn }>Default</Btn>
         <Btn context="primary" className={ css.btn }>Primary</Btn>
@@ -59,14 +59,13 @@ const Buttons = () => (
           root: css.specimenRoot,
           specimenContainer: css.specimenContainer,
         } }
-        attributes={ [
-          'Hollow variant',
-          '<Btn variant="hollow" />',
-          '<Btn variant="hollow" context="primary" />',
-          '<Btn variant="hollow" context="action" />',
-          '<Btn variant="hollow" context="danger" />',
-          '<Btn variant="hollow" context="whiteout" />',
-        ] }
+        code={ dedent`
+          <Btn variant="hollow" />
+          <Btn variant="hollow" context="primary" />
+          <Btn variant="hollow" context="action" />
+          <Btn variant="hollow" context="danger" />
+          <Btn variant="hollow" context="whiteout" />
+        ` }
       >
         <Btn variant="hollow" className={ css.btn }>Default</Btn>
         <Btn variant="hollow" context="primary" className={ css.btn }>Primary</Btn>
@@ -84,14 +83,13 @@ const Buttons = () => (
           root: css.specimenRoot,
           specimenContainer: css.specimenContainer,
         } }
-        attributes={ [
-          'Subtle variant',
-          '<Btn variant="subtle" />',
-          '<Btn variant="subtle" context="primary" />',
-          '<Btn variant="subtle" context="action" />',
-          '<Btn variant="subtle" context="danger" />',
-          '<Btn variant="subtle" context="whiteout" />',
-        ] }
+        code={ dedent`
+          <Btn variant="subtle" />
+          <Btn variant="subtle" context="primary" />
+          <Btn variant="subtle" context="action" />
+          <Btn variant="subtle" context="danger" />
+          <Btn variant="subtle" context="whiteout" />
+        ` }
       >
         <Btn variant="subtle" className={ css.btn }>Default</Btn>
         <Btn variant="subtle" context="primary" className={ css.btn }>Primary</Btn>
@@ -110,10 +108,9 @@ const Buttons = () => (
           root: css.specimenRoot,
           specimenContainer: css.specimenContainer,
         } }
-        attributes={ [
-          'With an icon',
-          '<Btn><Icon name="bogroll" className={ m.mrr } />Default</Btn>',
-        ] }
+        code={ dedent`
+          <Btn><Icon name="bogroll" className={ m.mrr } />Default</Btn>
+        ` }
       >
         <Btn className={ css.btn }>
           <Icon name="bogroll" className={ m.mrr } />
@@ -129,10 +126,7 @@ const Buttons = () => (
           root: css.specimenRoot,
           specimenContainer: css.specimenContainer,
         } }
-        attributes={ [
-          'With a loader',
-          '<Btn><Loader className={ m.mrr } />Default</Btn>',
-        ] }
+        code="<Btn><Loader className={ m.mrr } />Default</Btn>"
       >
         <Btn className={ css.btn }>
           <Loader className={ m.mrr } />
@@ -150,10 +144,7 @@ const Buttons = () => (
           root: css.specimenRoot,
           specimenContainer: css.specimenContainer,
         } }
-        attributes={ [
-          'With a medallion',
-          '<Btn>Default<Medallion className={ m.mlr }>1</Medallion></Btn>',
-        ] }
+        code="<Btn>Default<Medallion className={ m.mlr }>1</Medallion></Btn>"
       >
         <Btn className={ css.btn }>
           Default
@@ -170,10 +161,8 @@ const Buttons = () => (
           root: css.specimenRoot,
           specimenContainer: cx(css.specimenContainer, m.par),
         } }
-        attributes={ [
-          'Full width',
-          '<Btn className={ m.widthFull }>Default</Btn>',
-        ] }
+        name="Full width"
+        code="<Btn className={ m.widthFull }>Default</Btn>"
       >
         <Btn className={ m.widthFull }>Default</Btn>
       </Specimen>
@@ -186,12 +175,11 @@ const Buttons = () => (
           root: css.specimenRoot,
           specimenContainer: css.specimenContainer,
         } }
-        attributes={ [
-          'Disabled',
-          '<Btn disabled>Default</Btn>',
-          '<Btn disabled variant="hollow" context="primary">Primary</Btn>',
-          '<Btn disabled variant="subtle" context="action">Action</Btn>',
-        ] }
+        code={ dedent`
+          <Btn disabled>Disabled</Btn>
+          <Btn disabled variant="hollow" context="primary">Primary</Btn>
+          <Btn disabled variant="subtle" context="action">Action</Btn>
+        ` }
       >
         <Btn disabled className={ css.btn }>Default</Btn>
         <Btn disabled variant="hollow" context="primary" className={ css.btn }>Primary</Btn>
@@ -210,14 +198,13 @@ const Buttons = () => (
           root: css.specimenRoot,
           specimenContainer: css.specimenContainer,
         } }
-        attributes={ [
-          'Context',
-          '<BtnGroup><Btn>Default</Btn><Btn>Default</Btn></BtnGroup>',
-          '<BtnGroup context="primary">...</BtnGroup>',
-          '<BtnGroup context="action">...</BtnGroup>',
-          '<BtnGroup context="danger">...</BtnGroup>',
-          '<BtnGroup context="whiteout">...</BtnGroup>',
-        ] }
+        code={ dedent`
+          <BtnGroup><Btn>Default</Btn><Btn>Default</Btn></BtnGroup>
+          <BtnGroup context="primary">...</BtnGroup>
+          <BtnGroup context="action">...</BtnGroup>
+          <BtnGroup context="danger">...</BtnGroup>
+          <BtnGroup context="whiteout">...</BtnGroup>
+        ` }
       >
         <BtnGroup className={ css.btn }>
           <Btn>Default</Btn><Btn>Default</Btn>
@@ -248,10 +235,7 @@ const Buttons = () => (
           root: css.specimenRoot,
           specimenContainer: css.specimenContainer,
         } }
-        attributes={ [
-          'Context',
-          '<BtnContainer>a clickable div</BtnContainer>',
-        ] }
+        code="<BtnContainer>a clickable div</BtnContainer>"
       >
         <BtnContainer className={ css.btn }>a clickable div</BtnContainer>
       </Specimen>

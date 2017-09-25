@@ -8,8 +8,8 @@ const Swatch = ({ className, name, hex, rgb, variable }) => (
     classNames={ {
       root: className,
     } }
+    name={ name }
     attributes={ [
-      name,
       hex,
       rgb,
       variable,

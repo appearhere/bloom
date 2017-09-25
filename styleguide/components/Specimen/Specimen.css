@@ -5,11 +5,24 @@
   border-radius: 4px;
 }
 
-.attributes {
+.body {
   border-top: 1px solid var(--color-greyLighter);
   text-align: left;
-  margin: 0;
   padding: var(--size-regular);
+}
+
+.name {
+  font-family: var(--font-avenir);
+  font-size: var(--fontsize-regular);
+  line-height: var(--lineheight-regular);
+  letter-spacing: var(--letter-spacing-regular);
+  font-weight: var(--fontweight-demi);
+  color: var(--color-black);
+}
+
+.attributes {
+  margin: 0;
+  margin-top: var(--size-sm-iii);
   list-style-type: none;
 }
 
@@ -23,11 +36,12 @@
   margin-top: var(--size-sm-iii);
 }
 
-.attribute:first-of-type {
-  font-family: var(--font-avenir);
-  font-size: var(--fontsize-regular);
-  line-height: var(--lineheight-regular);
-  letter-spacing: var(--letter-spacing-regular);
-  font-weight: var(--fontweight-demi);
-  color: var(--color-black);
+.name + .pre,
+.attributes + .pre {
+  margin-top: var(--size-sm-iii);
+}
+
+.code {
+  composes: fontSmallIi from '../../../globals/typography.css';
+  font-family: var(--font-fira-code);
 }
