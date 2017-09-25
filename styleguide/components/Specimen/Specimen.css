@@ -5,6 +5,11 @@
   border-radius: 4px;
 }
 
+.specimenContainer {
+  position: relative;
+  z-index: 1;
+}
+
 .body {
   border-top: 1px solid var(--color-greyLighter);
   text-align: left;
@@ -36,8 +41,13 @@
   margin-top: var(--size-sm-iii);
 }
 
-.name + .pre,
-.attributes + .pre {
+.codeBlock {
+  overflow-x: scroll;
+  -webkit-overflow-scroll: smooth;
+}
+
+.name + .codeBlock,
+.attributes + .codeBlock {
   margin-top: var(--size-sm-iii);
 }
 

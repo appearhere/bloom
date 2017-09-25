@@ -76,12 +76,14 @@ export default class Specimen extends Component {
             </ul>
           ) }
           { code && (
-            <pre className={ css.pre }>
-              <code
-                className={ css.code }
-                dangerouslySetInnerHTML={ this.createMarkup() }
-              />
-            </pre>
+            <div className={ css.codeBlock }>
+              <pre className={ css.pre }>
+                <code
+                  className={ css.code }
+                  dangerouslySetInnerHTML={ this.createMarkup() }
+                />
+              </pre>
+            </div>
           ) }
         </div>
       </div>
