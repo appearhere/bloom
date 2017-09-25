@@ -14,10 +14,8 @@ const IconShowcase = ({ className, name, value, brandIcon }) => (
         brandIcon ? css.brand : css.icon,
       ),
     } }
-    attributes={ [
-      name,
-      value,
-    ] }
+    name={ name }
+    attributes={ [value] }
   >
     { !brandIcon ? <Icon name={ value } /> : brandIcon }
   </Specimen>

@@ -57,10 +57,7 @@ const Accessibility = () => (
           root: m.mtr,
           specimenContainer: m.par,
         } }
-        attributes={ [
-          'ScreenReadable',
-          '<Btn><Icon name="bogroll" /><ScreenReadable>Open menu</ScreenReadable></Btn>',
-        ] }
+        code={ '<Btn><Icon name="bogroll" /><ScreenReadable>Open menu</ScreenReadable></Btn>' }
       >
         <Btn><Icon name="bogroll" /><ScreenReadable>Open menu</ScreenReadable></Btn>
       </Specimen>
