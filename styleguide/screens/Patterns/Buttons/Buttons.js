@@ -11,6 +11,7 @@ import Medallion from '../../../../components/Medallion/Medallion';
 import Specimen from '../../../components/Specimen/Specimen';
 import { H, T, C, D } from '../../../components/Scaffold/Scaffold';
 import css from './Buttons.css';
+import shared from '../../../../styleguide/shared.css';
 import m from '../../../../globals/modifiers.css';
 
 const Buttons = () => (
@@ -138,7 +139,7 @@ const Buttons = () => (
           Default
         </Btn>
       </Specimen>
-      <H level={ 3 } className={ m.mtLgIi }>Medalion</H>
+      <H level={ 3 } className={ m.mtLgIi }>Medallion</H>
       <T elm="p" className={ m.mtr }>
         Similarly to icons and loaders, medallions can also be added to buttons.
         These must be placed on the right hand side of the label, and have a
@@ -159,7 +160,7 @@ const Buttons = () => (
           <Medallion className={ m.mlr }>1</Medallion>
         </Btn>
       </Specimen>
-      <H level={ 3 } className={ m.mtLgIi }>Wide</H>
+      <H level={ 3 } className={ m.mtLgIi }>Full width</H>
       <T elm="p" className={ m.mtr }>
         When using one button, there are times you may want it to be full width.
         Use the className prop to achieve this.
@@ -198,7 +199,7 @@ const Buttons = () => (
       </Specimen>
     </D>
     <D>
-      <H level={ 2 } className={ css.componentTitle }>BtnGroup</H>
+      <H level={ 2 } className={ shared.componentTitle }>BtnGroup</H>
       <T elm="p" className={ m.mtr }>
         Use button groups when adding a set of actions with a common theme to
         a page. They are only designed to work with buttons with no variant
@@ -236,7 +237,7 @@ const Buttons = () => (
       </Specimen>
     </D>
     <D>
-      <H level={ 2 } className={ css.componentTitle }>BtnContainer</H>
+      <H level={ 2 } className={ shared.componentTitle }>BtnContainer</H>
       <T elm="p" className={ m.mtr }>
         The button container is for the moments when you really want to use a div.
         Use it as a way of correctly marking up parts of the application that
