@@ -4,8 +4,7 @@ export const brand = [{
   hex: '#BAA082',
   rgb: 'rgb(186, 160, 130)',
   variable: '--color-gold',
-}, 
-{
+}, {
   id: 'brand-black',
   name: 'Black',
   hex: '#191919',
