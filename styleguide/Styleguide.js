@@ -9,6 +9,7 @@ import Icon from '../components/Icon/Icon';
 import ScreenReadable from '../components/ScreenReadable/ScreenReadable';
 import Wrapper from '../components/Wrapper/Wrapper';
 import BodyClassNameConductor from '../utils/BodyClassNameConductor/BodyClassNameConductor';
+import ScrollToTop from './components/ScrollToTop/ScrollToTop';
 
 /* Pages */
 import Introduction from './screens/Overview/Introduction';
@@ -53,45 +54,47 @@ export default class Styleguide extends Component {
 
     return (
       <BrowserRouter>
-        <div className={ css.root }>
-          <BtnContainer className={ css.menuBtn } onClick={ this.openNavigation }>
-            <Icon className={ css.menuIcon } name="menu" />
-            <ScreenReadable>Open menu</ScreenReadable>
-          </BtnContainer>
-          <OffCanvasPanel
-            className={ css.navigationSm }
-            activeClassName={ css.navigationActive }
-            active={ showNavigation }
-            onClose={ this.closeNavigation }
-          >
-            <SiteHeader
-              version={ process.env.npm_package_version }
-              onLinkClick={ this.closeMenu }
-            />
-            <Navigation onLinkClick={ this.closeNavigation } />
-          </OffCanvasPanel>
-          <div className={ css.navigationLg }>
-            <SiteHeader
-              version={ process.env.npm_package_version }
-              onLinkClick={ this.closeMenu }
-            />
-            <Navigation onLinkClick={ this.closeNavigation } />
-          </div>
-          <div className={ css.body }>
-            <Wrapper className={ css.wrapper }>
-              <Switch>
-                <Route exact path="/" component={ Introduction } />
-                <Route path="/design/colors" component={ Colors } />
-                <Route path="/design/typography" component={ Typography } />
-                <Route path="/design/iconography" component={ Iconography } />
+        <ScrollToTop>
+          <div className={ css.root }>
+            <BtnContainer className={ css.menuBtn } onClick={ this.openNavigation }>
+              <Icon className={ css.menuIcon } name="menu" />
+              <ScreenReadable>Open menu</ScreenReadable>
+            </BtnContainer>
+            <OffCanvasPanel
+              className={ css.navigationSm }
+              activeClassName={ css.navigationActive }
+              active={ showNavigation }
+              onClose={ this.closeNavigation }
+            >
+              <SiteHeader
+                version={ process.env.npm_package_version }
+                onLinkClick={ this.closeMenu }
+              />
+              <Navigation onLinkClick={ this.closeNavigation } />
+            </OffCanvasPanel>
+            <div className={ css.navigationLg }>
+              <SiteHeader
+                version={ process.env.npm_package_version }
+                onLinkClick={ this.closeMenu }
+              />
+              <Navigation onLinkClick={ this.closeNavigation } />
+            </div>
+            <div className={ css.body }>
+              <Wrapper className={ css.wrapper }>
+                <Switch>
+                  <Route exact path="/" component={ Introduction } />
+                  <Route path="/design/colors" component={ Colors } />
+                  <Route path="/design/typography" component={ Typography } />
+                  <Route path="/design/iconography" component={ Iconography } />
 
-                <Patterns />
+                  <Patterns />
 
-                <Route component={ FourOhFour } />
-              </Switch>
-            </Wrapper>
+                  <Route component={ FourOhFour } />
+                </Switch>
+              </Wrapper>
+            </div>
           </div>
-        </div>
+        </ScrollToTop>
       </BrowserRouter>
     );
   }
