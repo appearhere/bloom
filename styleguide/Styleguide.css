@@ -51,16 +51,22 @@
     padding-left: var(--size-lg-i);
     padding-right: var(--size-lg-i);
     transform: translate3d(0, 0, 0);
-    flex-basis: 30%;
+    width: 30%;
     max-width: 25rem;
     position: relative;
     border-right: 1px solid var(--color-greyLighter);
+    position: fixed;
+    overflow-y: scroll;
+    height: 100%;
   }
 
   .body {
     margin-top: 0;
     padding: var(--size-lg-ii);
     min-height: 100%;
+    width: 70%;
+    right: 0;
+    position: absolute;
   }
 
   .wrapper {
