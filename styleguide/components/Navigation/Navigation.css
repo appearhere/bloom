@@ -1,3 +1,7 @@
+.root {
+  padding-bottom: var(--size-regular);
+}
+
 .section + .section {
   margin-top: var(--size-lg-ii);
 }
