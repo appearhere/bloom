@@ -1,0 +1,19 @@
+.markdownExtended h1 {
+  color: var(--color-gold);
+}
+
+.markdownOverride * {
+  font-family: georgia, serif;
+}
+
+.markdownOverride * + * {
+  margin-top: var(--size-regular);
+}
+
+.markdownOverride h1 {
+  text-decoration: underline;
+}
+
+.markdownOverride p {
+  color: var(--color-grey);
+}

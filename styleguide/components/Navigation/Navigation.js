@@ -99,6 +99,17 @@ const Navigation = ({ className, onLinkClick }) => (
             LeftRight
           </NavLink>
         </li>
+        <li className={ css.linkListItem }>
+          <NavLink
+            exact
+            activeClassName={ css.linkActive }
+            className={ css.link }
+            to="/patterns/markdown"
+            onClick={ onLinkClick }
+          >
+            Markdown
+          </NavLink>
+        </li>
       </ul>
     </div>
   </div>
