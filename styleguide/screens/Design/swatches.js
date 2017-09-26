@@ -5,12 +5,6 @@ export const brand = [{
   rgb: 'rgb(186, 160, 130)',
   variable: '--color-gold',
 }, {
-  id: 'brand-gold-light',
-  name: 'Gold Light',
-  hex: '#DBBD9A',
-  rgb: 'rgb(219, 189, 154)',
-  variable: '--color-gold',
-}, {
   id: 'brand-black',
   name: 'Black',
   hex: '#191919',
