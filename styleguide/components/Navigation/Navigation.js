@@ -110,6 +110,17 @@ const Navigation = ({ className, onLinkClick }) => (
             Markdown
           </NavLink>
         </li>
+        <li className={ css.linkListItem }>
+          <NavLink
+            exact
+            activeClassName={ css.linkActive }
+            className={ css.link }
+            to="/patterns/medallion"
+            onClick={ onLinkClick }
+          >
+            Medallion
+          </NavLink>
+        </li>
       </ul>
     </div>
   </div>
