@@ -8,6 +8,18 @@
 .specimenContainer {
   position: relative;
   z-index: 1;
+  border-top-left-radius: 3px;
+  border-top-right-radius: 3px;
+}
+
+.light {
+  background-color: var(--color-white);
+  color: var(--color-black);
+}
+
+.dark {
+  background-color: var(--color-greyDarker);
+  color: var(--color-white);
 }
 
 .body {

@@ -1,4 +1,5 @@
 import React, { Component, PropTypes } from 'react';
+import cx from 'classnames';
 import refractor from 'refractor/core.js';
 import jsxLang from 'refractor/lang/jsx';
 import rehype from 'rehype';
@@ -23,11 +24,13 @@ export default class Specimen extends Component {
     attributes: PropTypes.array,
     children: PropTypes.node,
     code: PropTypes.node,
+    variant: PropTypes.oneOf(['light', 'dark']),
   };
 
   static defaultProps = {
     attributes: [],
     language: 'javascript',
+    variant: 'light',
   };
 
   createMarkup() {
@@ -52,6 +55,7 @@ export default class Specimen extends Component {
       name,
       attributes,
       code,
+      variant,
     } = this.props;
 
     const classes = mergeObjectStrings(css, classNames);
@@ -59,7 +63,12 @@ export default class Specimen extends Component {
     /* eslint-disable react/no-danger */
     return (
       <div className={ classes.root }>
-        <div className={ classes.specimenContainer }>
+        <div
+          className={ cx(
+            classes.specimenContainer,
+            classes[variant],
+          ) }
+        >
           <span className={ classes.specimen }>
             { children }
           </span>
