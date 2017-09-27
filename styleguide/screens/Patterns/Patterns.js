@@ -5,6 +5,7 @@ import Accessibility from './Accessibility/Accessibility';
 import Buttons from './Buttons/Buttons';
 import LeftRight from './LeftRight/LeftRight';
 import Markdown from './Markdown/Markdown';
+import Medallion from './Medallion/Medallion';
 
 const Patterns = () => (
   <Switch>
@@ -12,6 +13,7 @@ const Patterns = () => (
     <Route path="/patterns/buttons" component={ Buttons } />
     <Route path="/patterns/leftright" component={ LeftRight } />
     <Route path="/patterns/markdown" component={ Markdown } />
+    <Route path="/patterns/medallion" component={ Medallion } />
   </Switch>
 );
 
