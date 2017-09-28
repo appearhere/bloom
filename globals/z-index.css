@@ -28,4 +28,8 @@
   --z-mapCanvas: var(--z-1);
   --z-mapMarker: var(--z-2);
   --z-mapControls: var(--z-3);
+
+  /* Style guide aliases */
+  --z-offcanvasPanel: var(--z-7);
+  --z-overlay: var(--z-7);
 }
