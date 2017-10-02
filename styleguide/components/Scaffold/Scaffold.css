@@ -46,3 +46,34 @@
 .link:hover {
   color: var(--color-primary--light);
 }
+
+.descriptionList {
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.descriptionList dt {
+  font-weight: var(--fontweight-demi);
+  display: block;
+  flex-basis: 100%;
+  margin-top: var(--size-sm-ii);
+}
+
+.descriptionList dd {
+  display: block;
+  margin: 0;
+  padding: 0;
+  flex-basis: 100%;
+}
+
+@media(--scaffold-dl-lg-i) {
+  .descriptionList dt {
+    flex-basis: 30%;
+  }
+
+  .descriptionList dd {
+    flex-basis: 70%;
+    padding-left: var(--size-regular);
+    margin-top: var(--size-sm-ii);
+  }
+}

@@ -74,10 +74,12 @@ export const InputWrapper = ({ className, children }) => (
 const sharedPropTypes = {
   className: PropTypes.string,
   children: PropTypes.node,
-  error: PropTypes.string,
 };
 
-Field.propTypes = sharedPropTypes;
+Field.propTypes = {
+  ...sharedPropTypes,
+  error: PropTypes.string,
+};
 Meta.propTypes = sharedPropTypes;
 Description.propTypes = sharedPropTypes;
 Label.propTypes = {
