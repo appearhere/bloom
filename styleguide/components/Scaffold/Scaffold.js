@@ -1,6 +1,8 @@
 import React, { createElement, PropTypes } from 'react';
 import cx from 'classnames';
 
+import BtnContainer from '../../../components/BtnContainer/BtnContainer';
+import noop from '../../../utils/noop';
 import css from './Scaffold.css';
 import m from '../../../globals/modifiers.css';
 
@@ -61,6 +63,16 @@ export const Dl = ({ className, children, ...rest }) => (
   </dl>
 );
 
+export const Placeholder = ({ className, children, onClick, ...rest }) => (
+  <BtnContainer
+    { ...rest }
+    className={ cx(css.placeholder, className) }
+    onClick={ onClick }
+  >
+    { children }
+  </BtnContainer>
+);
+
 H.propTypes = {
   ...propTypes,
   level: PropTypes.number,
@@ -76,10 +88,19 @@ A.propTypes = propTypes;
 D.propTypes = propTypes;
 Dl.propTypes = propTypes;
 
+Placeholder.propTypes = {
+  ...propTypes,
+  onClick: PropTypes.func,
+};
+
 H.defaultProps = {
   level: 1,
 };
 
 T.defaultProps = {
   elm: 'span',
+};
+
+Placeholder.defaultProps = {
+  onClick: noop,
 };

@@ -154,6 +154,17 @@ const Navigation = ({ className, onLinkClick }) => (
             Medallion
           </NavLink>
         </li>
+        <li className={ css.linkListItem }>
+          <NavLink
+            exact
+            activeClassName={ css.linkActive }
+            className={ css.link }
+            to="/patterns/panels"
+            onClick={ onLinkClick }
+          >
+            Panels
+          </NavLink>
+        </li>
       </ul>
     </div>
   </div>
