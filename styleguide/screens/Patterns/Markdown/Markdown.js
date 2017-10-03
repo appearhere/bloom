@@ -12,7 +12,7 @@ import markdown from './example.md';
 
 const MarkdownDocumentation = () => (
   <div>
-    <H level={ 1 }>LeftRight</H>
+    <H level={ 1 }>Markdown</H>
     <T elm="p" className={ cx(m.mtr, m.largeI, m.demi) }>
       At Appear Here, we use markdown to markup content for use across our applications.
     </T>
