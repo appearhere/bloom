@@ -156,25 +156,45 @@ export const brandIcons = [{
 export const valueIcons = [{
   name: 'No Bullshit',
   value: 'NoBull',
-  valueIcon: ValueIconNoBull,
+  component: ValueIconNoBull,
 }, {
   name: 'Own it',
   value: 'Open',
-  valueIcon: ValueIconOpen,
+  component: ValueIconOpen,
 }, {
   name: 'Punch Above',
   value: 'BoxingGlove',
-  valueIcon: ValueIconBoxingGlove,
+  component: ValueIconBoxingGlove,
 }, {
   name: 'Always Commit',
   value: 'Handshake',
-  valueIcon: ValueIconHandshake,
+  component: ValueIconHandshake,
 }, {
   name: 'Think Frugal',
   value: 'Scissors',
-  valueIcon: ValueIconScissors,
+  component: ValueIconScissors,
 }, {
   name: 'Do Right',
   value: 'ThumbsUp',
-  valueIcon: ValueIconThumbsUp,
+  component: ValueIconThumbsUp,
+}];
+
+export const spaceTypeIcons = [{
+  name: 'Shop share',
+  value: 'shopShare',
+}, {
+  name: 'Event',
+  value: 'event',
+}, {
+  name: 'Bar and resturant',
+  value: 'barRestaurant',
+}, {
+  name: 'Market',
+  value: 'market',
+}, {
+  name: 'Retail',
+  value: 'retail',
+}, {
+  name: 'Unique',
+  value: 'unique',
 }];

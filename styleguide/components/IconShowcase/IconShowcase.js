@@ -6,18 +6,22 @@ import Icon from '../../../components/Icon/Icon';
 
 import css from './IconShowcase.css';
 
-const IconShowcase = ({ className, name, value, brandIcon }) => (
+const renderFn = ({ value }) => <Icon name={ value } />;
+
+renderFn.propTypes = {
+  value: PropTypes.string,
+};
+
+const IconShowcase = ({ className, name, size, value, render }) => (
   <Specimen
     classNames={ {
       root: className,
-      specimenContainer: cx(
-        brandIcon ? css.brand : css.icon,
-      ),
+      specimenContainer: cx(css.icon, css[size]),
     } }
     name={ name }
     attributes={ [value] }
   >
-    { !brandIcon ? <Icon name={ value } /> : brandIcon }
+    { render({ value }) }
   </Specimen>
 );
 
@@ -25,7 +29,13 @@ IconShowcase.propTypes = {
   className: PropTypes.string,
   name: PropTypes.string.isRequired,
   value: PropTypes.string.isRequired,
-  brandIcon: PropTypes.node,
+  render: PropTypes.func,
+  size: PropTypes.oneOf(['large', 'regular']),
+};
+
+IconShowcase.defaultProps = {
+  render: renderFn,
+  size: 'regular',
 };
 
 export default IconShowcase;
