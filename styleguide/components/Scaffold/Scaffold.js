@@ -17,6 +17,7 @@ export const body = css.body;
 export const section = m.mtLgIii;
 export const code = css.code;
 export const link = css.link;
+export const descriptionList = css.descriptionList;
 
 export const H = ({ level, className, children }) => createElement(
   `h${level}`,
@@ -54,6 +55,12 @@ export const A = ({ className, children, ...rest }) => (
   <a { ...rest } className={ cx(link, className) }>{ children }</a>
 );
 
+export const Dl = ({ className, children, ...rest }) => (
+  <dl { ...rest } className={ cx(descriptionList, className) }>
+    { children }
+  </dl>
+);
+
 H.propTypes = {
   ...propTypes,
   level: PropTypes.number,
@@ -65,10 +72,9 @@ T.propTypes = {
 };
 
 C.propTypes = propTypes;
-
 A.propTypes = propTypes;
-
 D.propTypes = propTypes;
+Dl.propTypes = propTypes;
 
 H.defaultProps = {
   level: 1,
