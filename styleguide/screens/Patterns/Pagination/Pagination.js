@@ -1,14 +1,29 @@
+/* globals
+  window: true
+*/
+
 import React from 'react';
 import cx from 'classnames';
 import dedent from 'dedent';
 
 import Specimen from '../../../components/Specimen/Specimen';
-import { D, H, T } from '../../../components/Scaffold/Scaffold';
+import { D, H, T, C } from '../../../components/Scaffold/Scaffold';
 
 import Pagination from '../../../../components/Pagination/Pagination';
 import PaginationTrack from '../../../../components/Pagination/PaginationTrack';
 
 import m from '../../../../globals/modifiers.css';
+
+/* eslint-disable */
+const PaginationButton = ({ page, disabled }) => (
+  <button
+    disabled={ disabled }
+    onClick={ () => window.alert(`Going to page ${page}`) }
+  >
+    Go to page { page }
+  </button>
+);
+/* eslint-enable */
 
 const PaginationDocumentation = () => (
   <div>
@@ -21,7 +36,14 @@ const PaginationDocumentation = () => (
     <D>
       <H level={ 2 }>Default</H>
       <T elm="p" className={ m.mtr }>
-        Default pagination will only display the previous and next arrows.
+        By default, the component will only display previous and next arrows.
+        This provides us with the flexibility to implement different styles of
+        pagination depending on the context of the page.
+      </T>
+      <T elm="p" className={ m.mtr }>
+        Both arrows in the default form are anchor tags, which automatically
+        have the page query parameter appended to the current
+        URL: <C>?page={ '{page_number}' }</C>.
       </T>
       <Specimen
         classNames={ {
@@ -31,6 +53,38 @@ const PaginationDocumentation = () => (
         code="<Pagination currentPage={ 1 } totalPages={ 5 } />"
       >
         <Pagination currentPage={ 1 } totalPages={ 5 } />
+      </Specimen>
+      <H level={ 3 } className={ m.mtLgIi }>
+        As part of a SPA
+      </H>
+      <T elm="p" className={ m.mtr }>
+        You can override the default behaviour by providing the pagination
+        component with the <C>PreviousComponent</C> and <C>NextComponent</C> props.
+        Each prop should be a react component which should transition the user
+        to the previous or next page. Each component will automatically receive
+        the page number it should take the user to, as the <C>page</C> prop, along
+        with whether or not that link should be disabled or not.
+      </T>
+      <Specimen
+        classNames={ {
+          root: m.mtr,
+          specimenContainer: m.par,
+        } }
+        code={ dedent`
+          <Pagination
+            currentPage={ 1 }
+            totalPages={ 5 }
+            NextComponent={ PaginationButton }
+            PreviousComponent={ PaginationButton }
+          />
+        ` }
+      >
+        <Pagination
+          currentPage={ 1 }
+          totalPages={ 5 }
+          NextComponent={ PaginationButton }
+          PreviousComponent={ PaginationButton }
+        />
       </Specimen>
     </D>
     <D>
