@@ -10,6 +10,7 @@ import LeftRight from './LeftRight/LeftRight';
 import Loader from './Loader/Loader';
 import Markdown from './Markdown/Markdown';
 import Medallion from './Medallion/Medallion';
+import Modals from './Modals/Modals';
 import Pagination from './Pagination/Pagination';
 import Panels from './Panels/Panels';
 
@@ -24,6 +25,7 @@ const Patterns = () => (
     <Route path="/patterns/loader" component={ Loader } />
     <Route path="/patterns/markdown" component={ Markdown } />
     <Route path="/patterns/medallion" component={ Medallion } />
+    <Route path="/patterns/modals" component={ Modals } />
     <Route path="/patterns/pagination" component={ Pagination } />
     <Route path="/patterns/panels" component={ Panels } />
   </Switch>

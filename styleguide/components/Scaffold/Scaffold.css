@@ -1,26 +1,26 @@
 .h1 {
   composes: fontLargeIv from '../../../globals/typography.css';
-  color: var(--color-greyDarkest);
+  color: currentColor;
 }
 
 .h2 {
   composes: fontLargeIii from '../../../globals/typography.css';
-  color: var(--color-greyDarkest);
+  color: currentColor;
 }
 
 .h3 {
   composes: fontLargeIi from '../../../globals/typography.css';
-  color: var(--color-greyDarkest);
+  color: currentColor;
 }
 
 .h4 {
   composes: fontLargeI from '../../../globals/typography.css';
-  color: var(--color-greyDarkest);
+  color: currentColor;
 }
 
 .body {
   composes: fontRegular from '../../../globals/typography.css';
-  color: var(--color-greyDarkest);
+  color: currentColor;
 }
 
 .code {
