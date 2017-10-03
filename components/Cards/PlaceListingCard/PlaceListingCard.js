@@ -1,4 +1,5 @@
 import React, { PropTypes } from 'react';
+import cx from 'classnames';
 
 import PictureCard from '../PictureCard/PictureCard';
 
@@ -15,6 +16,7 @@ const PlaceListingCard = (props) => {
     location,
     spaceDetail,
     onClick,
+    className,
     ...rest,
   } = props;
 
@@ -25,7 +27,7 @@ const PlaceListingCard = (props) => {
       { ...rest }
       href={ href }
       onClick={ onClick }
-      className={ css.root }
+      className={ cx(css.root, className) }
       src={ imageSrc }
       overlayClassName={ css.overlay }
     >
@@ -65,6 +67,7 @@ PlaceListingCard.propTypes = {
   imageSrc: PropTypes.string.isRequired,
   href: PropTypes.string,
   priceFromLabel: PropTypes.string,
+  className: PropTypes.string,
   price: PropTypes.node,
   priceUnit: PropTypes.node,
   name: PropTypes.node,
