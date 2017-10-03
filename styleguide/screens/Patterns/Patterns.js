@@ -9,6 +9,7 @@ import Inputs from './Inputs/Inputs';
 import LeftRight from './LeftRight/LeftRight';
 import Markdown from './Markdown/Markdown';
 import Medallion from './Medallion/Medallion';
+import Panels from './Panels/Panels';
 
 const Patterns = () => (
   <Switch>
@@ -20,6 +21,7 @@ const Patterns = () => (
     <Route path="/patterns/leftright" component={ LeftRight } />
     <Route path="/patterns/markdown" component={ Markdown } />
     <Route path="/patterns/medallion" component={ Medallion } />
+    <Route path="/patterns/panels" component={ Panels } />
   </Switch>
 );
 

@@ -77,3 +77,23 @@
     margin-top: var(--size-sm-ii);
   }
 }
+
+.placeholder {
+  composes: fontCode from '../../../globals/typography.css';
+  width: 100%;
+  display: flex;
+  padding: var(--size-regular);
+  padding-top: var(--size-lg-ii);
+  padding-bottom: var(--size-lg-ii);
+  justify-content: center;
+  align-items: center;
+  background-color: var(--color-white);
+  border-width: 0;
+  transition: all 300ms;
+  border-radius: 2px;
+  background-color: var(--color-greyLightest);
+}
+
+.placeholder:hover {
+  background-color: var(--color-white);
+}

@@ -1,0 +1,3 @@
+.panel + .panel {
+  margin-top: var(--size-regular);
+}
