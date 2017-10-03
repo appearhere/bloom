@@ -137,6 +137,17 @@ const Navigation = ({ className, onLinkClick }) => (
             exact
             activeClassName={ css.linkActive }
             className={ css.link }
+            to="/patterns/loader"
+            onClick={ onLinkClick }
+          >
+            Loader
+          </NavLink>
+        </li>
+        <li className={ css.linkListItem }>
+          <NavLink
+            exact
+            activeClassName={ css.linkActive }
+            className={ css.link }
             to="/patterns/markdown"
             onClick={ onLinkClick }
           >

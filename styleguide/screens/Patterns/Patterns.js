@@ -7,6 +7,7 @@ import Buttons from './Buttons/Buttons';
 import InputField from './InputField/InputField';
 import Inputs from './Inputs/Inputs';
 import LeftRight from './LeftRight/LeftRight';
+import Loader from './Loader/Loader';
 import Markdown from './Markdown/Markdown';
 import Medallion from './Medallion/Medallion';
 import Panels from './Panels/Panels';
@@ -19,6 +20,7 @@ const Patterns = () => (
     <Route path="/patterns/input-field" component={ InputField } />
     <Route path="/patterns/inputs" component={ Inputs } />
     <Route path="/patterns/leftright" component={ LeftRight } />
+    <Route path="/patterns/loader" component={ Loader } />
     <Route path="/patterns/markdown" component={ Markdown } />
     <Route path="/patterns/medallion" component={ Medallion } />
     <Route path="/patterns/panels" component={ Panels } />
