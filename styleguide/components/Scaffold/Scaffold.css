@@ -97,3 +97,16 @@
 .placeholder:hover {
   background-color: var(--color-white);
 }
+
+.note {
+  padding: var(--size-regular);
+  border: 2px solid var(--color-greyLightest);
+  border-radius: 2px;
+}
+
+.noteHeading {
+  composes: fontSmI from '../../../globals/typography.css';
+  text-transform: uppercase;
+  margin-bottom: var(--size-regular);
+  font-weight: var(--fontweight-demi);
+}
