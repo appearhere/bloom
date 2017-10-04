@@ -1,3 +1,4 @@
+
 import React, { createElement, PropTypes } from 'react';
 import cx from 'classnames';
 
@@ -20,6 +21,7 @@ export const section = m.mtLgIii;
 export const code = css.code;
 export const link = css.link;
 export const descriptionList = css.descriptionList;
+export const note = css.note;
 
 export const H = ({ level, className, children }) => createElement(
   `h${level}`,
@@ -63,6 +65,13 @@ export const Dl = ({ className, children, ...rest }) => (
   </dl>
 );
 
+export const Note = ({ className, children, ...rest }) => (
+  <div { ...rest } className={ cx(note, className) }>
+    <div className={ css.noteHeading }>Note</div>
+    { children }
+  </div>
+);
+
 export const Placeholder = ({ className, children, onClick, ...rest }) => (
   <BtnContainer
     { ...rest }
@@ -87,6 +96,7 @@ C.propTypes = propTypes;
 A.propTypes = propTypes;
 D.propTypes = propTypes;
 Dl.propTypes = propTypes;
+Note.propTypes = propTypes;
 
 Placeholder.propTypes = {
   ...propTypes,
