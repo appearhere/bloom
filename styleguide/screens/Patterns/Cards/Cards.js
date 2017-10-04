@@ -1,3 +1,4 @@
+/* globals window: true */
 import React, { Component } from 'react';
 import cx from 'classnames';
 import dedent from 'dedent';
@@ -28,9 +29,8 @@ export default class CardDocumentation extends Component {
   };
 
   handleFavouriteClick = () => {
-    this.setState(currentState => ({
-      ...currentState,
-      isSpaceFavourited: !currentState.isSpaceFavourited,
+    this.setState(({ isSpaceFavourited }) => ({
+      isSpaceFavourited: !isSpaceFavourited,
     }));
   };
 
@@ -65,16 +65,14 @@ export default class CardDocumentation extends Component {
             } }
             code={ dedent`
                 <Card>
-                  // Card content
+                  { /* Card content */ }
                 </Card>
             ` }
           >
             <div className={ css.cardContainer }>
               <div className={ css.cardContainer }>
                 <Card className={ css.card }>
-                  <div className={ css.defaultCardContent }>
-                    Default
-                  </div>
+                  <div className={ css.defaultCardContent } />
                 </Card>
               </div>
             </div>
@@ -91,16 +89,14 @@ export default class CardDocumentation extends Component {
             } }
             code={ dedent`
               <Card href="#">
-                // Card content
+                { /* Card content */ }
               </Card>
             ` }
           >
 
             <div className={ css.cardContainer }>
               <Card href="#" className={ css.card }>
-                <div className={ css.defaultCardContent }>
-                  With a link
-                </div>
+                <div className={ css.defaultCardContent } />
               </Card>
             </div>
           </Specimen>
@@ -121,26 +117,22 @@ export default class CardDocumentation extends Component {
             code={ dedent`
               <PictureCard
                 src="https://source.unsplash.com/random"
-              >
-                // PictureCard content
-              </PictureCard>
+              />
             ` }
           >
             <div className={ css.cardContainer }>
               <PictureCard
                 src="https://source.unsplash.com/random"
                 className={ css.pictureCard }
-              >
-                PictureCard
-              </PictureCard>
+              />
             </div>
           </Specimen>
         </D>
         <D>
-          <H level={ 2 } className={ shared.componentTitle }>Space Feature Card with Link</H>
+          <H level={ 2 } className={ shared.componentTitle }>Space Feature Card</H>
           <T elm="p" className={ m.mtr }>
             Use when you want to feature a space in a more discrete way,
-            where it&#39;s not the primary purpose of the page / section.
+            where it&#39;s not the primary purpose of the page/section.
           </T>
           <Specimen
             classNames={ {
@@ -198,11 +190,11 @@ export default class CardDocumentation extends Component {
             } }
             code={ dedent`
               <SpaceListingCard
-                price="$10,000,000"
+                price="£7,500"
                 priceUnit="/day"
-                location="Shoreditch, London in the Greater London Area"
-                size="1000 sqft"
-                name="A really long Bold Street Shop, maybe the biggest shop you've ever seen"
+                location="Chelsea, London"
+                size="70000 sqft"
+                name="Saatchi Gallery"
                 images={
                   [{
                     src: 'https://source.unsplash.com/random/500x500',
@@ -224,11 +216,11 @@ export default class CardDocumentation extends Component {
           >
             <div className={ css.cardContainer }>
               <SpaceListingCard
-                price="$10,000,000"
+                price="£7,500"
                 priceUnit="/day"
-                location="Shoreditch, London in the Greater London Area"
-                size="1000 sqft"
-                name="A really long Bold Street Shop, maybe the biggest shop you've ever seen"
+                location="Chelsea, London"
+                size="70000 sqft"
+                name="Saatchi Gallery"
                 images={
                   [{
                     src: 'https://source.unsplash.com/random/500x500',
@@ -253,7 +245,7 @@ export default class CardDocumentation extends Component {
         <D>
           <H level={ 2 } className={ shared.componentTitle }>Space Listing Card with Badge</H>
           <T elm="p" className={ m.mtr }>
-            Should be used to display additional information to a Space Listing Card (i.e NEW).
+            Should be used to display additional information to a <C>SpaceListingCard</C> e.g., new.
             Using the <C>Badge</C> component.
           </T>
           <Specimen
@@ -263,12 +255,12 @@ export default class CardDocumentation extends Component {
             } }
             code={ dedent`
               <SpaceListingCard
-                price="$10,000,00000000000000000000000"
+                price="£7,500"
                 priceUnit="/day"
                 badge={ <Badge context="primary" hollow={ false }>New</Badge> }
-                location="Shoreditch, London in the Greater London Area"
+                location="Chelsea, London"
                 size="1000 sqft"
-                name="A really long Bold Street Shop, maybe the biggest shop you've ever seen"
+                name="Saatchi Gallery"
                 images={
                   [{
                     src: 'https://source.unsplash.com/random/500x500',
@@ -290,12 +282,12 @@ export default class CardDocumentation extends Component {
           >
             <div className={ css.cardContainer }>
               <SpaceListingCard
-                price="$10,000,00000000000000000000000"
+                price="£7,500"
                 priceUnit="/day"
                 badge={ <Badge context="primary" hollow={ false }>New</Badge> }
-                location="Shoreditch, London in the Greater London Area"
+                location="Chelsea, London"
                 size="1000 sqft"
-                name="A really long Bold Street Shop, maybe the biggest shop you've ever seen"
+                name="Saatchi Gallery"
                 images={
                   [{
                     src: 'https://source.unsplash.com/random/500x500',
@@ -322,7 +314,7 @@ export default class CardDocumentation extends Component {
             Space Listing Card as a part of a place
           </H>
           <T elm="p" className={ m.mtr }>
-            Should be used as the primary way to display space within the app.
+            Should be used as the primary way to display space within our applications.
           </T>
           <Specimen
             classNames={ {
@@ -331,7 +323,7 @@ export default class CardDocumentation extends Component {
             } }
             code={ dedent`
               <SpaceListingCard
-                price="$10,000,000"
+                price="£1000"
                 priceUnit="/day"
                 location="Shoreditch, London"
                 size="1000 sqft"
@@ -359,7 +351,7 @@ export default class CardDocumentation extends Component {
           >
             <div className={ css.cardContainer }>
               <SpaceListingCard
-                price="$10,000,000"
+                price="£1000"
                 priceUnit="/day"
                 location="Shoreditch, London"
                 size="1000 sqft"
@@ -399,7 +391,7 @@ export default class CardDocumentation extends Component {
             } }
             code={ dedent`
               <SpaceListingCard
-                price="$10,000,000"
+                price="£1000"
                 priceUnit="/day"
                 location="Shoreditch, London"
                 size="1000 sqft"
@@ -428,7 +420,7 @@ export default class CardDocumentation extends Component {
           >
             <div className={ css.cardContainer }>
               <SpaceListingCard
-                price="$10,000,000"
+                price="£1000"
                 priceUnit="/day"
                 location="Shoreditch, London"
                 size="1000 sqft"
@@ -470,7 +462,7 @@ export default class CardDocumentation extends Component {
             } }
             code={ dedent`
               <CondensedSpaceCard
-                price="$10,000,000"
+                price="£1000"
                 priceUnit="/day"
                 name="Bold Street Shop"
                 placeLabel="Part of Boxpark"
@@ -487,7 +479,7 @@ export default class CardDocumentation extends Component {
           >
             <div className={ css.cardContainer }>
               <CondensedSpaceCard
-                price="$10,000,000"
+                price="£1000"
                 priceUnit="/day"
                 name="Bold Street Shop"
                 placeLabel="Part of Boxpark"
@@ -516,7 +508,7 @@ export default class CardDocumentation extends Component {
             } }
             code={ dedent`
               <PlaceListingCard
-                price="$10,000,000"
+                price="£1000"
                 priceUnit="/day"
                 priceFromLabel="from"
                 location="Shoreditch, London"
@@ -530,7 +522,7 @@ export default class CardDocumentation extends Component {
           >
             <div className={ css.cardContainer }>
               <PlaceListingCard
-                price="$10,000,000"
+                price="£1000"
                 priceUnit="/day"
                 priceFromLabel="from"
                 location="Shoreditch, London"
@@ -567,12 +559,12 @@ export default class CardDocumentation extends Component {
           >
             <div className={ css.cardContainer }>
               <EditorialCard
-                title="Mulberry Street"
+                title="An introduction to pop-up shops"
                 href="#"
                 src="https://source.unsplash.com/random/500x500"
                 className={ css.card }
               >
-                Nam erat urna, tincidunt eleifend libero ut, posuere dictum augue.
+                How can a pop-up shop benifit your business?
               </EditorialCard>
             </div>
           </Specimen>
@@ -595,7 +587,9 @@ export default class CardDocumentation extends Component {
                 title="How to PR your Pop Up Shop"
                 href="#"
                 src="https://source.unsplash.com/random/500x500"
-                description={ 'Inside, you’ll find everything you need to know to launch a shop share' }
+                description={
+                  'Inside, you’ll find everything you need to know to launch a shop share'
+                }
                 unlockLabel="Login to download"
                 unlockCallback={ this.handleLoginClick }
                 downloadCallback={ isUserLoggedin ? () => { alert('Downloading') } : null }
@@ -603,16 +597,20 @@ export default class CardDocumentation extends Component {
             ` }
           >
             <div className={ css.cardContainer }>
+              { /* eslint-disable no-alert */ }
               <GuideCard
                 title="How to PR your Pop Up Shop"
                 href="#"
                 src="https://source.unsplash.com/random/500x500"
-                description={ 'Inside, you’ll find everything you need to know to launch a shop share' }
+                description={
+                  'Inside, you’ll find everything you need to know to launch a shop share'
+                }
                 unlockLabel="Login to download"
                 unlockCallback={ this.handleLoginClick }
-                downloadCallback={ isUserLoggedin ? () => { alert('Downloading'); } : null }
+                downloadCallback={ isUserLoggedin ? () => { window.alert('Downloading'); } : null }
                 className={ css.card }
               />
+              { /* eslint-disable no-alert */ }
             </div>
           </Specimen>
         </D>
