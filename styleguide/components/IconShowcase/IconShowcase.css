@@ -7,17 +7,16 @@
 }
 
 .icon svg {
-  font-size: var(--size-lg-i);
   position: absolute;
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
 }
 
-.brand svg {
+.regular {
+  font-size: var(--size-lg-i);
+}
+
+.large svg {
   font-size: var(--size-lg-iii);
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
 }
