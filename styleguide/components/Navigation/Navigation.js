@@ -115,6 +115,17 @@ const Navigation = ({ className, onLinkClick }) => (
             exact
             activeClassName={ css.linkActive }
             className={ css.link }
+            to="/patterns/fitted-image"
+            onClick={ onLinkClick }
+          >
+            Fitted image
+          </NavLink>
+        </li>
+        <li className={ css.linkListItem }>
+          <NavLink
+            exact
+            activeClassName={ css.linkActive }
+            className={ css.link }
             to="/patterns/inputs"
             onClick={ onLinkClick }
           >
