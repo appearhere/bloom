@@ -1,0 +1,13 @@
+.cardContainer {
+  max-width: 30rem;
+}
+
+.defaultCardContent {
+  width: 30rem;
+  height: 23.4375rem;
+  background-color: var(--color-greyLighter);
+}
+
+.pictureCard {
+  min-height: 30rem;
+}

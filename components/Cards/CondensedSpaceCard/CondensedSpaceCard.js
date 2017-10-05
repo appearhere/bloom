@@ -1,4 +1,5 @@
 import React, { PropTypes } from 'react';
+import cx from 'classnames';
 
 import css from './CondensedSpaceCard.css';
 
@@ -13,13 +14,14 @@ const CondensedSpaceCard = (props) => {
     price,
     priceFromLabel,
     priceUnit,
+    className,
   } = props;
 
   /* eslint-disable react/jsx-no-target-blank */
   return (
     <a
       href={ href }
-      className={ css.root }
+      className={ cx(css.root, className) }
       title={ name }
       target="_blank"
     >
@@ -56,6 +58,7 @@ CondensedSpaceCard.propTypes = {
   images: PropTypes.array,
   name: PropTypes.string,
   price: PropTypes.string,
+  className: PropTypes.string,
   priceFromLabel: PropTypes.string,
   priceUnit: PropTypes.string,
 };

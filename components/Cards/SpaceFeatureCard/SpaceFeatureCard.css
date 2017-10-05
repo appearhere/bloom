@@ -75,7 +75,3 @@
   letter-spacing: var(--letter-spacing-small-i);
   font-weight: var(--fontweight-demi);
 }
-
-.root.full {
-  max-width: 16.25rem;
-}

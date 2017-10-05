@@ -9,9 +9,6 @@ const query = {
   [css.large]: {
     minWidth: 192,
   },
-  [css.full]: {
-    minHeight: 360,
-  },
 };
 
 /* eslint-disable react/prefer-stateless-function */
@@ -22,7 +19,6 @@ class SpaceFeatureCard extends Component {
     location: PropTypes.string,
     containerQuery: PropTypes.shape({
       [css.large]: PropTypes.bool,
-      [css.full]: PropTypes.bool,
     }),
     className: PropTypes.string,
   };
