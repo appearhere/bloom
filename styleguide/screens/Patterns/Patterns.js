@@ -12,6 +12,7 @@ import Markdown from './Markdown/Markdown';
 import Medallion from './Medallion/Medallion';
 import Pagination from './Pagination/Pagination';
 import Panels from './Panels/Panels';
+import TabBar from './TabBar/TabBar';
 
 const Patterns = () => (
   <Switch>
@@ -26,6 +27,7 @@ const Patterns = () => (
     <Route path="/patterns/medallion" component={ Medallion } />
     <Route path="/patterns/pagination" component={ Pagination } />
     <Route path="/patterns/panels" component={ Panels } />
+    <Route path="/patterns/tab-bar" component={ TabBar } />
   </Switch>
 );
 
