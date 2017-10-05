@@ -12,7 +12,7 @@ import TabBarIconItem from '../../../../components/Navigation/TabBar/TabBarIconI
 
 import m from '../../../../globals/modifiers.css';
 
-const BadgeDocumentation = () => (
+const TabBarDocumentation = () => (
   <div>
     <H level={ 1 }>Tab Bar</H>
     <T elm="p" className={ cx(m.mtr, m.largeI, m.demi) }>
@@ -66,7 +66,6 @@ const BadgeDocumentation = () => (
           </TabBarItem>
           <TabBarItem
             href="#notification"
-            active
           >
             Notifications
           </TabBarItem>
@@ -160,7 +159,6 @@ const BadgeDocumentation = () => (
           </TabBarItem>
           <TabBarItem
             href="#notification"
-            active
           >
             Notifications
           </TabBarItem>
@@ -196,7 +194,6 @@ const BadgeDocumentation = () => (
             <TabBarIconItem
               icon="notification"
               href="#notification"
-              active
             >
               Notifications
             </TabBarIconItem>
@@ -220,7 +217,6 @@ const BadgeDocumentation = () => (
           <TabBarIconItem
             icon="notification"
             href="#notification"
-            active
           >
             Notifications
           </TabBarIconItem>
@@ -230,4 +226,4 @@ const BadgeDocumentation = () => (
   </div>
 );
 
-export default BadgeDocumentation;
+export default TabBarDocumentation;
