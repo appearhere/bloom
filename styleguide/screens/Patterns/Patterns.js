@@ -2,6 +2,7 @@ import React from 'react';
 import { Switch, Route } from 'react-router-dom';
 
 import Accessibility from './Accessibility/Accessibility';
+import Animation from './Animation/Animation';
 import Badge from './Badge/Badge';
 import Buttons from './Buttons/Buttons';
 import Cards from './Cards/Cards';
@@ -23,6 +24,7 @@ import TabBar from './TabBar/TabBar';
 const Patterns = () => (
   <Switch>
     <Route path="/patterns/accessibility" component={ Accessibility } />
+    <Route path="/patterns/animation" component={ Animation } />
     <Route path="/patterns/badge" component={ Badge } />
     <Route path="/patterns/buttons" component={ Buttons } />
     <Route path="/patterns/cards" component={ Cards } />
