@@ -12,11 +12,10 @@ import m from '../../../../globals/modifiers.css';
 
 const TabsDocumentation = () => (
   <div>
-    <H level={ 1 }>Loader</H>
+    <H level={ 1 }>Tabs</H>
     <T elm="p" className={ cx(m.mtr, m.largeI, m.demi) }>
-      <C>Tabs</C> provide an easy way to navigate between views on a single page,
-      where content is related. For cases when you need page level tabs,
-      <A href="/patterns/tab-bar">TabBar</A>.
+      <C>Tabs</C> provide an easy way to navigate between views on a single page, where content
+      is related. For cases when you need page level tabs, <A href="/patterns/tab-bar"> TabBar</A>.
     </T>
     <D>
       <Specimen
