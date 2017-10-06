@@ -87,6 +87,8 @@ SocialLinks.defaultProps = {
   platforms: defaultPlatforms,
   variant: 'light',
   onClick: noop,
+  twitterTweet: '',
+  twitterVia: '',
 };
 
 export default SocialLinks;
