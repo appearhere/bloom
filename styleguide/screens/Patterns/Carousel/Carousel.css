@@ -1,0 +1,9 @@
+.slide {
+  padding-left: 2%;
+  padding-right: 2%;
+}
+
+.slideContent {
+  height: 18.75rem;
+  vertical-align: middle;
+}

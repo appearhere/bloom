@@ -6,6 +6,7 @@ import Badge from './Badge/Badge';
 import Buttons from './Buttons/Buttons';
 import Cards from './Cards/Cards';
 import FittedImage from './FittedImage/FittedImage';
+import Carousel from './Carousel/Carousel';
 import InputField from './InputField/InputField';
 import Inputs from './Inputs/Inputs';
 import LeftRight from './LeftRight/LeftRight';
@@ -24,6 +25,7 @@ const Patterns = () => (
     <Route path="/patterns/badge" component={ Badge } />
     <Route path="/patterns/buttons" component={ Buttons } />
     <Route path="/patterns/cards" component={ Cards } />
+    <Route path="/patterns/carousel" component={ Carousel } />
     <Route path="/patterns/fitted-image" component={ FittedImage } />
     <Route path="/patterns/input-field" component={ InputField } />
     <Route path="/patterns/inputs" component={ Inputs } />
