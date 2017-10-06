@@ -1,0 +1,23 @@
+.imageContainer {
+  height: 9rem;
+  width: 16rem;
+  min-height: 4.5rem;
+  min-width: 8rem;
+  resize: both;
+  overflow: scroll;
+}
+
+.image {
+  width: 100%;
+  height: 100%;
+  display: block;
+  background-color: var(--color-greyLightest);
+}
+
+.cover {
+  object-fit: cover;
+}
+
+.contain {
+  object-fit: contain;
+}
