@@ -14,6 +14,7 @@ import Medallion from './Medallion/Medallion';
 import Modals from './Modals/Modals';
 import Pagination from './Pagination/Pagination';
 import Panels from './Panels/Panels';
+import SocialLinks from './SocialLinks/SocialLinks';
 import Tabs from './Tabs/Tabs';
 import TabBar from './TabBar/TabBar';
 
@@ -32,6 +33,7 @@ const Patterns = () => (
     <Route path="/patterns/modals" component={ Modals } />
     <Route path="/patterns/pagination" component={ Pagination } />
     <Route path="/patterns/panels" component={ Panels } />
+    <Route path="/patterns/social-links" component={ SocialLinks } />
     <Route path="/patterns/tabs" component={ Tabs } />
     <Route path="/patterns/tab-bar" component={ TabBar } />
   </Switch>

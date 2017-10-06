@@ -214,6 +214,17 @@ const Navigation = ({ className, onLinkClick }) => (
             exact
             activeClassName={ css.linkActive }
             className={ css.link }
+            to="/patterns/social-links"
+            onClick={ onLinkClick }
+          >
+            Social Links
+          </NavLink>
+        </li>
+        <li className={ css.linkListItem }>
+          <NavLink
+            exact
+            activeClassName={ css.linkActive }
+            className={ css.link }
             to="/patterns/tabs"
             onClick={ onLinkClick }
           >
