@@ -115,6 +115,17 @@ const Navigation = ({ className, onLinkClick }) => (
             exact
             activeClassName={ css.linkActive }
             className={ css.link }
+            to="/patterns/carousel"
+            onClick={ onLinkClick }
+          >
+            Carousel
+          </NavLink>
+        </li>
+        <li className={ css.linkListItem }>
+          <NavLink
+            exact
+            activeClassName={ css.linkActive }
+            className={ css.link }
             to="/patterns/fitted-image"
             onClick={ onLinkClick }
           >
