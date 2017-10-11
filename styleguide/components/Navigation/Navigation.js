@@ -44,10 +44,10 @@ const Navigation = ({ className, onLinkClick }) => (
             exact
             activeClassName={ css.linkActive }
             className={ css.link }
-            to="/design/typography"
+            to="/design/responsive-design"
             onClick={ onLinkClick }
           >
-            Typography
+            Responsive design
           </NavLink>
         </li>
         <li className={ css.linkListItem }>
@@ -59,6 +59,17 @@ const Navigation = ({ className, onLinkClick }) => (
             onClick={ onLinkClick }
           >
             Iconography
+          </NavLink>
+        </li>
+        <li className={ css.linkListItem }>
+          <NavLink
+            exact
+            activeClassName={ css.linkActive }
+            className={ css.link }
+            to="/design/typography"
+            onClick={ onLinkClick }
+          >
+            Typography
           </NavLink>
         </li>
       </ul>

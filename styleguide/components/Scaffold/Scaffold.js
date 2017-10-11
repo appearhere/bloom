@@ -82,6 +82,20 @@ export const Placeholder = ({ className, children, onClick, ...rest }) => (
   </BtnContainer>
 );
 
+export const Bq = ({ className, children, citation }) => (
+  <div>
+    <blockquote
+      className={ cx(
+        css.blockquote,
+        className,
+      ) }
+    >
+      { children }
+    </blockquote>
+    <cite>{ citation }</cite>
+  </div>
+);
+
 H.propTypes = {
   ...propTypes,
   level: PropTypes.number,
@@ -90,6 +104,11 @@ H.propTypes = {
 T.propTypes = {
   ...propTypes,
   elm: PropTypes.string,
+};
+
+Bq.propTypes = {
+  ...propTypes,
+  citation: PropTypes.node,
 };
 
 C.propTypes = propTypes;
