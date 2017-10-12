@@ -14,8 +14,9 @@ import ScrollToTop from './components/ScrollToTop/ScrollToTop';
 /* Pages */
 import Introduction from './screens/Overview/Introduction';
 import Colors from './screens/Design/Colors';
-import Typography from './screens/Design/Typography';
 import Iconography from './screens/Design/Iconography';
+import ResponsiveDesign from './screens/Design/ResponsiveDesign';
+import Typography from './screens/Design/Typography';
 import Patterns from './screens/Patterns/Patterns';
 import FourOhFour from './404';
 
@@ -84,8 +85,9 @@ export default class Styleguide extends Component {
                 <Switch>
                   <Route exact path="/" component={ Introduction } />
                   <Route path="/design/colors" component={ Colors } />
-                  <Route path="/design/typography" component={ Typography } />
+                  <Route path="/design/responsive-design" component={ ResponsiveDesign } />
                   <Route path="/design/iconography" component={ Iconography } />
+                  <Route path="/design/typography" component={ Typography } />
 
                   <Patterns />
 
