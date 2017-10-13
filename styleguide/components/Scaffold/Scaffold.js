@@ -20,6 +20,7 @@ export const body = css.body;
 export const section = m.mtLgIii;
 export const code = css.code;
 export const link = css.link;
+export const orderedList = css.orderedList;
 export const descriptionList = css.descriptionList;
 export const note = css.note;
 
@@ -59,6 +60,12 @@ export const A = ({ className, children, ...rest }) => (
   <a { ...rest } className={ cx(link, className) }>{ children }</a>
 );
 
+export const Ol = ({ className, children, ...rest }) => (
+  <ol { ...rest } className={ cx(orderedList, className) }>
+    { children }
+  </ol>
+);
+
 export const Dl = ({ className, children, ...rest }) => (
   <dl { ...rest } className={ cx(descriptionList, className) }>
     { children }
@@ -82,9 +89,10 @@ export const Placeholder = ({ className, children, onClick, ...rest }) => (
   </BtnContainer>
 );
 
-export const Bq = ({ className, children, citation }) => (
+export const Bq = ({ className, children, citation, ...rest }) => (
   <div>
     <blockquote
+      { ...rest }
       className={ cx(
         css.blockquote,
         className,
@@ -114,6 +122,7 @@ Bq.propTypes = {
 C.propTypes = propTypes;
 A.propTypes = propTypes;
 D.propTypes = propTypes;
+Ol.propTypes = propTypes;
 Dl.propTypes = propTypes;
 Note.propTypes = propTypes;
 
