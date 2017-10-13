@@ -2,7 +2,7 @@ import React from 'react';
 import { Link } from 'react-router-dom';
 import dedent from 'dedent';
 
-import { H, T, D, A, Bq, Ol, Note } from '../../components/Scaffold/Scaffold';
+import { H, T, D, A, Bq, List, Note } from '../../components/Scaffold/Scaffold';
 import CodeBlock from '../../components/CodeBlock/CodeBlock';
 
 import m from '../../../globals/modifiers.css';
@@ -50,7 +50,7 @@ const ResponsiveDesign = () => (
         This means, writing your CSS to address the smallest sizes first.
         We do this for two key reasons:
       </T>
-      <Ol className={ m.mtr }>
+      <List className={ m.mtr } type="ordered">
         <T elm="li">
           Larger viewport layouts are typically more complex than their small counterparts.
           With this in mind, you’ll likely end up writing fewer CSS rules to achieve the desired
@@ -60,7 +60,7 @@ const ResponsiveDesign = () => (
           By building the page for the lowest common denominator, you’ll be taking into account
           devices that we’re unable to test on, or even those that don’t exist yet.
         </T>
-      </Ol>
+      </List>
       <T elm="p" className={ m.mtr }>
         When working “bottom up”, it should apparent become that you need to add a media query when
         the page or feature begins to look and feel rubbish. Look to increase the window size until
