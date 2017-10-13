@@ -2,7 +2,7 @@ import React from 'react';
 import { Link } from 'react-router-dom';
 import dedent from 'dedent';
 
-import { H, T, D, A, Bq } from '../../components/Scaffold/Scaffold';
+import { H, T, D, A, Bq, List, Note } from '../../components/Scaffold/Scaffold';
 import CodeBlock from '../../components/CodeBlock/CodeBlock';
 
 import m from '../../../globals/modifiers.css';
@@ -50,7 +50,7 @@ const ResponsiveDesign = () => (
         This means, writing your CSS to address the smallest sizes first.
         We do this for two key reasons:
       </T>
-      <ol className={ m.mtr }>
+      <List className={ m.mtr } type="ordered">
         <T elm="li">
           Larger viewport layouts are typically more complex than their small counterparts.
           With this in mind, you’ll likely end up writing fewer CSS rules to achieve the desired
@@ -60,7 +60,7 @@ const ResponsiveDesign = () => (
           By building the page for the lowest common denominator, you’ll be taking into account
           devices that we’re unable to test on, or even those that don’t exist yet.
         </T>
-      </ol>
+      </List>
       <T elm="p" className={ m.mtr }>
         When working “bottom up”, it should apparent become that you need to add a media query when
         the page or feature begins to look and feel rubbish. Look to increase the window size until
@@ -126,11 +126,13 @@ const ResponsiveDesign = () => (
         Rather than building for ‘devices’ we approach screen size as a whole. So if content doesn’t
         look good as your screen gets bigger, add a media query to fix it.
       </T>
-      <T elm="p" className={ m.mtr }>
-        Note: It’s important to note that "common" screen sizes don’t exist. And we can never assume
-        a user will see a piece of content based on ‘the fold’.
-        Refer to <A href="https://iamthefold.com/">iamthefold</A> for more information.
-      </T>
+      <Note className={ m.mtr }>
+        <T elm="p">
+          It’s important to note that "common" screen sizes don’t exist.
+          And we can never assume a user will see a piece of content based
+          on ‘the fold’.  Refer to <A href="https://iamthefold.com/">iamthefold</A> for more information.
+        </T>
+      </Note>
     </D>
   </div>
 );

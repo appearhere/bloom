@@ -47,6 +47,10 @@
   color: var(--color-primary--light);
 }
 
+.list {
+  padding-left: 0;
+}
+
 .descriptionList {
   display: flex;
   flex-wrap: wrap;

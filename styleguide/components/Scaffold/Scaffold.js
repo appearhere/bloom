@@ -1,4 +1,3 @@
-
 import React, { createElement, PropTypes } from 'react';
 import cx from 'classnames';
 
@@ -12,6 +11,11 @@ const propTypes = {
   children: PropTypes.node,
 };
 
+const listTypes = {
+  ordered: 'o',
+  unordered: 'u',
+};
+
 export const h1 = css.h1;
 export const h2 = css.h2;
 export const h3 = css.h3;
@@ -20,6 +24,7 @@ export const body = css.body;
 export const section = m.mtLgIii;
 export const code = css.code;
 export const link = css.link;
+export const list = css.list;
 export const descriptionList = css.descriptionList;
 export const note = css.note;
 
@@ -59,6 +64,18 @@ export const A = ({ className, children, ...rest }) => (
   <a { ...rest } className={ cx(link, className) }>{ children }</a>
 );
 
+export const List = ({ className, children, type, ...rest }) => createElement(
+  `${listTypes[type]}l`,
+  {
+    className: cx(
+      list,
+      className
+    ),
+    ...rest,
+  },
+  children,
+);
+
 export const Dl = ({ className, children, ...rest }) => (
   <dl { ...rest } className={ cx(descriptionList, className) }>
     { children }
@@ -82,9 +99,10 @@ export const Placeholder = ({ className, children, onClick, ...rest }) => (
   </BtnContainer>
 );
 
-export const Bq = ({ className, children, citation }) => (
+export const Bq = ({ className, children, citation, ...rest }) => (
   <div>
     <blockquote
+      { ...rest }
       className={ cx(
         css.blockquote,
         className,
@@ -109,6 +127,11 @@ T.propTypes = {
 Bq.propTypes = {
   ...propTypes,
   citation: PropTypes.node,
+};
+
+List.propTypes = {
+  ...propTypes,
+  type: PropTypes.oneOf(['ordered', 'unordered']).isRequired,
 };
 
 C.propTypes = propTypes;
