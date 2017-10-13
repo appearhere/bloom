@@ -54,7 +54,7 @@
 }
 
 .codeBlock {
-  overflow-x: scroll;
+  overflow-x: auto;
   -webkit-overflow-scroll: smooth;
 }
 

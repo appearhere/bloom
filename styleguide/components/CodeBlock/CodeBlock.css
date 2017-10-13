@@ -6,7 +6,7 @@
   background-color: var(--color-white);
   color: var(--color-black);
   padding: var(--size-regular);
-  overflow-x: scroll;
+  overflow-x: auto;
   -webkit-overflow-scroll: smooth;
 }
 
