@@ -10,7 +10,7 @@
   padding-bottom: var(--size-lg-ii);
   padding-left: var(--size-lg-i);
   padding-right: var(--size-lg-i);
-  overflow-x: scroll;
+  overflow-x: auto;
   -webkit-overflow-scroll: smooth;
 }
 
