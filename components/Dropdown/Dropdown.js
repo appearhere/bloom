@@ -12,6 +12,7 @@ export default class Dropdown extends Component {
     className: PropTypes.string,
     closeOnEsc: PropTypes.bool,
     closeOnOutsideClick: PropTypes.bool,
+    onClose: PropTypes.func,
   };
 
   static defaultProps = {
