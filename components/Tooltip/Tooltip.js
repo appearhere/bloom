@@ -69,7 +69,7 @@ TetherDirectionWrapper.propTypes = {
 export default class Tooltip extends Component {
   static propTypes = {
     target: PropTypes.node,
-    children: PropTypes.node,
+    children: PropTypes.element,
     variant: PropTypes.oneOf(['light', 'dark']),
     targetClassName: PropTypes.string,
     className: PropTypes.string,

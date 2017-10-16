@@ -20,6 +20,7 @@ import Panels from './Panels/Panels';
 import SocialLinks from './SocialLinks/SocialLinks';
 import Tabs from './Tabs/Tabs';
 import TabBar from './TabBar/TabBar';
+import Tooltip from './Tooltip/Tooltip';
 
 const Patterns = () => (
   <Switch>
@@ -42,6 +43,7 @@ const Patterns = () => (
     <Route path="/patterns/social-links" component={ SocialLinks } />
     <Route path="/patterns/tabs" component={ Tabs } />
     <Route path="/patterns/tab-bar" component={ TabBar } />
+    <Route path="/patterns/tooltip" component={ Tooltip } />
   </Switch>
 );
 
