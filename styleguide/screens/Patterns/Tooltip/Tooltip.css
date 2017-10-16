@@ -1,3 +1,7 @@
 .specimenContainer {
   position: static;
 }
+
+.target {
+  display: block;
+}

@@ -4,7 +4,7 @@ import cx from 'classnames';
 import dedent from 'dedent';
 
 import Specimen from '../../../components/Specimen/Specimen';
-import { D, H, T, C } from '../../../components/Scaffold/Scaffold';
+import { D, H, T, C, Placeholder } from '../../../components/Scaffold/Scaffold';
 import Tooltip from '../../../../components/Tooltip/Tooltip';
 import { HORIZONTAL_ATTACHMENTS, VERTICAL_ATTACHMENTS } from '../../../../components/Tether/Tether';
 
@@ -13,26 +13,20 @@ import css from './Tooltip.css';
 import scaffoldCss from '../../../components/Scaffold/Scaffold.css';
 
 // eslint-disable-next-line react/prop-types
-const DefaultTarget = ({ onMouseEnter, onMouseLeave }) => (
-  <button
-    onMouseEnter={ () => { onMouseEnter('showDefaultTooltip'); } }
-    onMouseLeave={ () => { onMouseLeave('showDefaultTooltip'); } }
-  >
-    Hover on me
-  </button>
+const DefaultTarget = ({ onClick, placeholderText }) => (
+  <Placeholder onClick={ () => { onClick('showDefaultTooltip'); } }>
+    { placeholderText }
+  </Placeholder>
 );
 
 // eslint-disable-next-line react/prop-types
-const LightTarget = ({ onMouseEnter, onMouseLeave }) => (
-  <button
-    onMouseEnter={ () => { onMouseEnter('showLightTooltip'); } }
-    onMouseLeave={ () => { onMouseLeave('showLightTooltip'); } }
-  >
-    Hover on me
-  </button>
+const LightTarget = ({ onClick, placeholderText }) => (
+  <Placeholder onClick={ () => { onClick('showLightTooltip'); } }>
+    { placeholderText }
+  </Placeholder>
 );
 
-const Content = () => <div>You should click this button, seriously it is great.</div>;
+const Content = () => <div>Was that not the best button you have ever clicked?</div>;
 
 export default class TooltipDocumentation extends Component {
   state = {
@@ -40,15 +34,13 @@ export default class TooltipDocumentation extends Component {
     showLightTooltip: false,
   };
 
-  handleMouseEnter = (id) => {
-    this.setState({
-      [id]: true,
-    });
-  };
+  handleClick = (id) => {
+    this.setState((state) => {
+      const currentShowState = state[id];
 
-  handleMouseLeave = (id) => {
-    this.setState({
-      [id]: false,
+      return {
+        [id]: !currentShowState,
+      };
     });
   };
 
@@ -74,14 +66,12 @@ export default class TooltipDocumentation extends Component {
           <Specimen
             classNames={ {
               root: m.mtr,
-              specimenContainer: cx(m.par, css.specimenContainer),
+              specimenContainer: css.specimenContainer,
             } }
             code={ dedent`
               <Tooltip
-                target={ <DefaultTarget /> }
-                verticalAttachment={ VERTICAL_ATTACHMENTS.TOP }
-                horizontalAttachment={ HORIZONTAL_ATTACHMENTS.CENTER }
-                active
+                target={ <Target /> }
+                active={ this.state.showTooltip }
               >
                 <Content />
               </Tooltip>
@@ -90,13 +80,14 @@ export default class TooltipDocumentation extends Component {
             <Tooltip
               target={
                 <DefaultTarget
-                  onMouseEnter={ this.handleMouseEnter }
-                  onMouseLeave={ this.handleMouseLeave }
+                  onClick={ this.handleClick }
+                  placeholderText={ !showDefaultTooltip ? 'Show tooltip' : 'Hide tooltip' }
                 />
               }
               verticalAttachment={ VERTICAL_ATTACHMENTS.TOP }
               horizontalAttachment={ HORIZONTAL_ATTACHMENTS.CENTER }
               active={ showDefaultTooltip }
+              targetClassName={ css.target }
             >
               <Content />
             </Tooltip>
@@ -110,31 +101,29 @@ export default class TooltipDocumentation extends Component {
           <Specimen
             classNames={ {
               root: m.mtr,
-              specimenContainer: cx(m.par, css.specimenContainer),
+              specimenContainer: css.specimenContainer,
             } }
             code={ dedent`
               <Tooltip
-                target={ <DefaultTarget /> }
-                verticalAttachment={ VERTICAL_ATTACHMENTS.TOP }
-                horizontalAttachment={ HORIZONTAL_ATTACHMENTS.CENTER }
-                active
+                target={ <Target /> }
+                active={ this.state.showTooltip }
               >
                 <Content />
               </Tooltip>
             ` }
-            variant="dark"
           >
             <Tooltip
               target={
                 <LightTarget
-                  onMouseEnter={ this.handleMouseEnter }
-                  onMouseLeave={ this.handleMouseLeave }
+                  onClick={ this.handleClick }
+                  placeholderText={ !showLightTooltip ? 'Show tooltip' : 'Hide tooltip' }
                 />
               }
-              verticalAttachment={ VERTICAL_ATTACHMENTS.CENTER }
-              horizontalAttachment={ HORIZONTAL_ATTACHMENTS.RIGHT }
+              verticalAttachment={ VERTICAL_ATTACHMENTS.TOP }
+              horizontalAttachment={ HORIZONTAL_ATTACHMENTS.CENTER }
               active={ showLightTooltip }
               variant="light"
+              targetClassName={ css.target }
             >
               <Content />
             </Tooltip>
@@ -145,9 +134,9 @@ export default class TooltipDocumentation extends Component {
           <T elm="p" className={ m.mtr }>
             Tooltips are based on
             the <Link className={ scaffoldCss.link } to="/patterns/tether/">Tether</Link> component
-            and therefore can be positioned in the same way. Refer
-            to <Link className={ scaffoldCss.link } to="/patterns/tether/">Tether&#39;s</Link> documentation
-            for more information.
+            and therefore can be positioned in the same way. Refer to { ' ' }
+            <Link className={ scaffoldCss.link } to="/patterns/tether/">Tether&#39;s</Link> { ' ' }
+            documentation for more information.
           </T>
         </D>
       </div>
