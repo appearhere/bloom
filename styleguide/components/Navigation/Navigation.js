@@ -297,6 +297,17 @@ const Navigation = ({ className, onLinkClick }) => (
             Tab Bar
           </NavLink>
         </li>
+        <li className={ css.linkListItem }>
+          <NavLink
+            exact
+            activeClassName={ css.linkActive }
+            className={ css.link }
+            to="/patterns/tooltip"
+            onClick={ onLinkClick }
+          >
+            Tooltip
+          </NavLink>
+        </li>
       </ul>
     </div>
   </div>
