@@ -308,6 +308,17 @@ const Navigation = ({ className, onLinkClick }) => (
             Tab Bar
           </NavLink>
         </li>
+        <li className={ css.linkListItem }>
+          <NavLink
+            exact
+            activeClassName={ css.linkActive }
+            className={ css.link }
+            to="/patterns/tether"
+            onClick={ onLinkClick }
+          >
+            Tether
+          </NavLink>
+        </li>
       </ul>
     </div>
   </div>
