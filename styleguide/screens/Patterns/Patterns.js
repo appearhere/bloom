@@ -6,9 +6,10 @@ import Animation from './Animation/Animation';
 import Badge from './Badge/Badge';
 import Buttons from './Buttons/Buttons';
 import Cards from './Cards/Cards';
+import Carousel from './Carousel/Carousel';
 import Figure from './Figure/Figure';
 import FittedImage from './FittedImage/FittedImage';
-import Carousel from './Carousel/Carousel';
+import HorizontalOverflowBar from './HorizontalOverflowBar/HorizontalOverflowBar';
 import InputField from './InputField/InputField';
 import Inputs from './Inputs/Inputs';
 import LeftRight from './LeftRight/LeftRight';
@@ -28,6 +29,7 @@ const Patterns = () => (
     <Route path="/patterns/animation" component={ Animation } />
     <Route path="/patterns/badge" component={ Badge } />
     <Route path="/patterns/buttons" component={ Buttons } />
+    <Route path="/patterns/horizontal-overflow-bar" component={ HorizontalOverflowBar } />
     <Route path="/patterns/cards" component={ Cards } />
     <Route path="/patterns/carousel" component={ Carousel } />
     <Route path="/patterns/figure" component={ Figure } />

@@ -106,7 +106,8 @@ export default class HorizontalOverflowBar extends Component {
       },
       className,
       containerQuery,
-      m.fontRegular);
+      m.fontRegular
+    );
 
     return (
       <nav className={ classes } ref={ (c) => { this.navigation = c; } }>
