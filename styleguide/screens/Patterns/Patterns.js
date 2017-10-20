@@ -22,6 +22,7 @@ import Panels from './Panels/Panels';
 import SocialLinks from './SocialLinks/SocialLinks';
 import Tabs from './Tabs/Tabs';
 import TabBar from './TabBar/TabBar';
+import Tether from './Tether/Tether';
 
 const Patterns = () => (
   <Switch>
@@ -46,6 +47,7 @@ const Patterns = () => (
     <Route path="/patterns/social-links" component={ SocialLinks } />
     <Route path="/patterns/tabs" component={ Tabs } />
     <Route path="/patterns/tab-bar" component={ TabBar } />
+    <Route path="/patterns/tether" component={ Tether } />
   </Switch>
 );
 

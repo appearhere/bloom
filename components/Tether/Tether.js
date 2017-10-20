@@ -23,7 +23,7 @@ export const HORIZONTAL_ATTACHMENTS = keyMirror({
 /* eslint-disable react/prefer-stateless-function */
 class ChildWrapper extends Component {
   static propTypes = {
-    children: PropTypes.node.isRequired,
+    children: PropTypes.element.isRequired,
     style: PropTypes.shape({
       position: PropTypes.string,
       left: PropTypes.string,
@@ -84,7 +84,18 @@ export default class Tether extends Component {
   /* eslint-enable react/no-did-mount-set-state */
 
   componentDidUpdate(prevProps) {
-    if (this.props.active && this.props.active !== prevProps.active) this.positionTethered();
+    if (
+      this.props.active &&
+      (
+        this.props.active !== prevProps.active ||
+        this.props.verticalAttachment !== prevProps.verticalAttachment ||
+        this.props.horizontalAttachment !== prevProps.horizontalAttachment ||
+        this.props.flushVertical !== prevProps.flushVertical ||
+        this.props.flushHorizontal !== prevProps.flushHorizontal
+      )
+    ) {
+      this.positionTethered();
+    }
   }
 
   componentWillUnmount() {
