@@ -1,4 +1,5 @@
-import React, { Children, cloneElement, PropTypes } from 'react';
+import PropTypes from 'prop-types';
+import React, { Children, cloneElement } from 'react';
 import cx from 'classnames';
 
 import css from './ControlGroup.css';

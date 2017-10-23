@@ -1,4 +1,5 @@
-import React, { PropTypes } from 'react';
+import PropTypes from 'prop-types';
+import React from 'react';
 
 import spaceGrey from './images/macbook-space-grey.png';
 import gold from './images/macbook-gold.png';

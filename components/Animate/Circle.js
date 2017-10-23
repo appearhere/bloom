@@ -1,4 +1,5 @@
-import React, { PropTypes } from 'react';
+import PropTypes from 'prop-types';
+import React from 'react';
 import { Motion, spring } from 'react-motion';
 import cx from 'classnames';
 

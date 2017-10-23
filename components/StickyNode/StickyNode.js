@@ -8,7 +8,9 @@
  *
  * https://github.com/yahoo/react-stickynode
  */
-import React, { PropTypes } from 'react';
+import PropTypes from 'prop-types';
+
+import React from 'react';
 import StickyNode from 'react-stickynode';
 import cx from 'classnames';
 

@@ -1,9 +1,5 @@
-import React, {
-  Component,
-  PropTypes,
-  Children,
-  cloneElement,
-} from 'react';
+import PropTypes from 'prop-types';
+import React, { Component, Children, cloneElement } from 'react';
 import uniqueId from 'lodash/fp/uniqueId';
 import cx from 'classnames';
 

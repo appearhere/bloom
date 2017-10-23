@@ -1,4 +1,5 @@
-import React, { createElement, PropTypes } from 'react';
+import PropTypes from 'prop-types';
+import React, { createElement } from 'react';
 import cx from 'classnames';
 
 import BtnContainer from '../../../components/BtnContainer/BtnContainer';

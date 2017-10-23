@@ -1,5 +1,7 @@
 /* eslint-disable react/no-multi-comp */
-import React, { PropTypes } from 'react';
+import PropTypes from 'prop-types';
+
+import React from 'react';
 import cx from 'classnames';
 
 import css from './FormComponents.css';

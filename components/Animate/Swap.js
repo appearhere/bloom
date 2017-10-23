@@ -1,4 +1,5 @@
-import React, { PropTypes } from 'react';
+import PropTypes from 'prop-types';
+import React from 'react';
 import TransitionGroup from 'react-addons-css-transition-group';
 import transitions from './Swap.css';
 

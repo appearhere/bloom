@@ -1,4 +1,5 @@
-import React, { PropTypes, Component } from 'react';
+import PropTypes from 'prop-types';
+import React, { Component } from 'react';
 import CommonMark from 'commonmark';
 import ReactRenderer from 'commonmark-react-renderer';
 import cx from 'classnames';

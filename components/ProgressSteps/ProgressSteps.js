@@ -1,4 +1,5 @@
-import React, { PropTypes, cloneElement, Children, Component } from 'react';
+import PropTypes from 'prop-types';
+import React, { cloneElement, Children, Component } from 'react';
 import cx from 'classnames';
 
 import css from './ProgressSteps.css';

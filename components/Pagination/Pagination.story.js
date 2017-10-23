@@ -1,4 +1,5 @@
-import React, { PropTypes } from 'react';
+import PropTypes from 'prop-types';
+import React from 'react';
 import { storiesOf, action } from '@storybook/react';
 import { withKnobs, number } from '@storybook/addon-knobs';
 

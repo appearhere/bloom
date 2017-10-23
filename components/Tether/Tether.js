@@ -1,5 +1,7 @@
 /* eslint-disable react/no-multi-comp */
-import React, { Component, PropTypes, cloneElement } from 'react';
+import PropTypes from 'prop-types';
+
+import React, { Component, cloneElement } from 'react';
 import { findDOMNode } from 'react-dom';
 import keyMirror from 'key-mirror';
 import { subscribe } from 'subscribe-ui-event';
