@@ -17,7 +17,3 @@ What this does mean however is it must be protected. Changes to Bloom must be ju
 ### Usage
 
 See [README.md](https://github.com/appearhere/bloom/blob/master/README.md).
-
-### Storybook
-
-To aide development, we also [maintain a set of stories](/storybook) using [Storybook](https://github.com/storybooks/storybook).
