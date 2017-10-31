@@ -4,6 +4,7 @@ import path from 'path';
 
 const app = express();
 
+app.use('/storybook', express.static(path.join(__dirname, '../storybook-static')));
 app.use('/static', express.static(path.join(__dirname, '../build/static')));
 app.use('*', (req, res) => {
   res.sendFile('index.html', { root: path.join(__dirname, '../build') });
