@@ -1,5 +1,5 @@
 import React from 'react';
-import { storiesOf } from '@kadira/storybook';
+import { storiesOf } from '@storybook/react';
 
 import ValueIconBoxingGlove from './ValueIconBoxingGlove';
 import ValueIconOpen from './ValueIconOpen';

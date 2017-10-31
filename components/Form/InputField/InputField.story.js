@@ -1,12 +1,12 @@
 import React from 'react';
-import { storiesOf, action } from '@kadira/storybook';
+import { storiesOf, action } from '@storybook/react';
 import {
   withKnobs,
   boolean,
   array,
   select,
   number,
-} from '@kadira/storybook-addon-knobs';
+} from '@storybook/addon-knobs';
 
 import CheckboxGroup from '../CheckboxGroup/CheckboxGroup';
 import InputField from './InputField';

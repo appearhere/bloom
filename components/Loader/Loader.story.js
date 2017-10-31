@@ -1,5 +1,5 @@
 import React from 'react';
-import { storiesOf } from '@kadira/storybook';
+import { storiesOf } from '@storybook/react';
 import cx from 'classnames';
 import Loader from './Loader';
 import m from '../../globals/modifiers.css';

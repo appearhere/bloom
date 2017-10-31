@@ -1,6 +1,6 @@
 import React from 'react';
-import { storiesOf } from '@kadira/storybook';
-import { withKnobs, number, select } from '@kadira/storybook-addon-knobs';
+import { storiesOf } from '@storybook/react';
+import { withKnobs, number, select } from '@storybook/addon-knobs';
 import moment from 'moment';
 
 import DayRange from './DayRange';

@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import keyMirror from 'key-mirror';
-import { storiesOf, linkTo } from '@kadira/storybook';
-import { withKnobs, select } from '@kadira/storybook-addon-knobs';
+import { storiesOf, linkTo } from '@storybook/react';
+import { withKnobs, select } from '@storybook/addon-knobs';
 
 import Circle from './Circle';
 import Sunrise from './Sunrise';

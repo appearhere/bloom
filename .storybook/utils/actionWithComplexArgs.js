@@ -1,4 +1,4 @@
-import { action } from '@kadira/storybook';
+import { action } from '@storybook/react';
 
 export default name => (...args) => {
   /* eslint-disable no-console */

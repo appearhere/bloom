@@ -1,5 +1,5 @@
 import React from 'react';
-import { storiesOf } from '@kadira/storybook';
+import { storiesOf } from '@storybook/react';
 import { applyContainerQuery } from 'react-container-query';
 
 import ProgressSteps from './ProgressSteps';

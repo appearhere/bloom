@@ -1,6 +1,6 @@
 import React from 'react';
-import { storiesOf, action } from '@kadira/storybook';
-import { withKnobs, boolean } from '@kadira/storybook-addon-knobs';
+import { storiesOf, action } from '@storybook/react';
+import { withKnobs, boolean } from '@storybook/addon-knobs';
 import ModalAnimator from './ModalAnimator';
 import Window, { WindowTitle } from './Window';
 import WithCross from './WithCross';
