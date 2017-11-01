@@ -1,4 +1,5 @@
-import React, { Component, PropTypes } from 'react';
+import PropTypes from 'prop-types';
+import React, { Component } from 'react';
 import OnVisible from 'react-on-visible';
 import cx from 'classnames';
 

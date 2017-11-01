@@ -1,4 +1,4 @@
-import { PropTypes } from 'react';
+import PropTypes from 'prop-types';
 
 /**
  * http://stackoverflow.com/a/39457422/6700793

@@ -1,5 +1,7 @@
 /* globals window: true */
-import React, { Component, PropTypes } from 'react';
+import PropTypes from 'prop-types';
+
+import React, { Component } from 'react';
 import { TransitionMotion, spring } from 'react-motion';
 import uniqueId from 'lodash/fp/uniqueId';
 import Portal from 'react-portal';

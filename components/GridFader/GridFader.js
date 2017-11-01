@@ -1,4 +1,5 @@
-import React, { PropTypes, Component } from 'react';
+import PropTypes from 'prop-types';
+import React, { Component } from 'react';
 import TransitionGroup from 'react-addons-css-transition-group';
 import cx from 'classnames';
 

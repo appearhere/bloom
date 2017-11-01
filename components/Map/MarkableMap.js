@@ -1,4 +1,5 @@
-import React, { Component, PropTypes } from 'react';
+import PropTypes from 'prop-types';
+import React, { Component } from 'react';
 /* eslint-disable camelcase */
 import {
   unstable_renderSubtreeIntoContainer as renderSubtreeIntoContainer,
@@ -37,7 +38,7 @@ export default class MarkableMap extends Component {
   static propTypes = {
     markers: PropTypes.arrayOf(
       PropTypes.shape({
-        id: React.PropTypes.oneOfType([
+        id: PropTypes.oneOfType([
           PropTypes.string,
           PropTypes.number,
         ]).isRequired,

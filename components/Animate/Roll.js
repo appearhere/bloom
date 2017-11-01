@@ -1,4 +1,5 @@
-import React, { Component, PropTypes } from 'react';
+import PropTypes from 'prop-types';
+import React, { Component } from 'react';
 import { spring, TransitionMotion } from 'react-motion';
 
 const DEFAULT_SPRINT_CONFIG = { stiffness: 250, damping: 25 };

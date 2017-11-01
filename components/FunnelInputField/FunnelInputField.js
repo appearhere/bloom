@@ -1,4 +1,5 @@
-import React, { PropTypes } from 'react';
+import PropTypes from 'prop-types';
+import React from 'react';
 
 import mergeObjectStrings from '../../utils/mergeObjectStrings/mergeObjectStrings';
 import InputField from '../Form/InputField/InputField';

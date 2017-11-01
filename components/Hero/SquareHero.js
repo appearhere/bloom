@@ -1,4 +1,5 @@
-import React, { PropTypes, createElement } from 'react';
+import PropTypes from 'prop-types';
+import React, { createElement } from 'react';
 import cx from 'classnames';
 
 import FittedImage from '../FittedImage/FittedImage';

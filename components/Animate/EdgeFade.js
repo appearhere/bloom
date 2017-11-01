@@ -3,7 +3,9 @@
   window: true,
  */
 
-import React, { PropTypes, Component } from 'react';
+import PropTypes from 'prop-types';
+
+import React, { Component } from 'react';
 import { subscribe } from 'subscribe-ui-event';
 
 export default class EdgeFade extends Component {

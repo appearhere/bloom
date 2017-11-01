@@ -1,4 +1,5 @@
-import React, { PropTypes, cloneElement, Children } from 'react';
+import PropTypes from 'prop-types';
+import React, { cloneElement, Children } from 'react';
 
 import css from './Controls.css';
 

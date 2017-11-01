@@ -1,4 +1,5 @@
-import React, { PropTypes } from 'react';
+import PropTypes from 'prop-types';
+import React from 'react';
 
 import FittedImage from '../FittedImage/FittedImage';
 import moment from '../../utils/moment/moment';

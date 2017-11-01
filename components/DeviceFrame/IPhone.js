@@ -1,4 +1,5 @@
-import React, { PropTypes } from 'react';
+import PropTypes from 'prop-types';
+import React from 'react';
 
 import jetBlack from './images/iphone-jet-black.png';
 import DeviceFrame from './DeviceFrame';

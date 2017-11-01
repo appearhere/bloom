@@ -1,5 +1,7 @@
 /* eslint-disable react/no-multi-comp */
-import React, { Component, PropTypes, cloneElement } from 'react';
+import PropTypes from 'prop-types';
+
+import React, { Component, cloneElement } from 'react';
 import cx from 'classnames';
 import warning from 'warning';
 

@@ -1,4 +1,5 @@
-import React, { PropTypes, createElement } from 'react';
+import PropTypes from 'prop-types';
+import React, { createElement } from 'react';
 import classnames from 'classnames';
 
 import defaultCss from './SectionHeader.css';

@@ -1,4 +1,5 @@
-import React, { Component, PropTypes } from 'react';
+import PropTypes from 'prop-types';
+import React, { Component } from 'react';
 import momentPropTypes from 'react-moment-proptypes';
 import moment from 'moment';
 

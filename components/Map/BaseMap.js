@@ -1,4 +1,5 @@
-import React, { Component, PropTypes } from 'react';
+import PropTypes from 'prop-types';
+import React, { Component } from 'react';
 import cx from 'classnames';
 
 import mapStyle from '!!file-loader!./mapStyle.json';
@@ -18,7 +19,7 @@ export default class BaseMap extends Component {
     className: PropTypes.string,
     dragRotate: PropTypes.bool,
     mapClassName: PropTypes.string,
-    mapboxStyle: React.PropTypes.oneOfType([
+    mapboxStyle: PropTypes.oneOfType([
       PropTypes.string,
       PropTypes.object,
     ]),
