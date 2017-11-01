@@ -1,7 +1,7 @@
 import React, { Component, PropTypes } from 'react';
 import cx from 'classnames';
 
-import mapStyle from '!!file!./mapStyle.json';
+import mapStyle from '!!file-loader!./mapStyle.json';
 import mapboxgl from '../../utils/mapboxgl/mapboxgl';
 import lngLat from '../../utils/propTypeValidations/lngLat';
 import noop from '../../utils/noop';

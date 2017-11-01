@@ -1,6 +1,6 @@
 import React from 'react';
-import { storiesOf } from '@kadira/storybook';
-import { withKnobs, number } from '@kadira/storybook-addon-knobs';
+import { storiesOf } from '@storybook/react';
+import { withKnobs, number } from '@storybook/addon-knobs';
 import TabBar from './TabBar';
 import TabBarItem from './TabBarItem';
 import TabBarIconItem from './TabBarIconItem';

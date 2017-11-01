@@ -1,6 +1,6 @@
 import React from 'react';
-import { storiesOf, action } from '@kadira/storybook';
-import { withKnobs, array } from '@kadira/storybook-addon-knobs';
+import { storiesOf, action } from '@storybook/react';
+import { withKnobs, array } from '@storybook/addon-knobs';
 import CheckboxGroup from './CheckboxGroup';
 
 const stories = storiesOf('FormComponents', module);

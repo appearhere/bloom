@@ -1,5 +1,5 @@
 import React from 'react';
-import { storiesOf } from '@kadira/storybook';
+import { storiesOf } from '@storybook/react';
 import Tether, { VERTICAL_ATTACHMENTS, HORIZONTAL_ATTACHMENTS } from './Tether';
 
 const tetherStories = storiesOf('Tether', module)

@@ -1,6 +1,6 @@
 import React, { Component, PropTypes } from 'react';
-import { storiesOf } from '@kadira/storybook';
-import { withKnobs, boolean } from '@kadira/storybook-addon-knobs';
+import { storiesOf } from '@storybook/react';
+import { withKnobs, boolean } from '@storybook/addon-knobs';
 import uniqueId from 'lodash/fp/uniqueId';
 
 import actionWithComplexArgs from '../../.storybook/utils/actionWithComplexArgs';

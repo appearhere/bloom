@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
-import { storiesOf } from '@kadira/storybook';
-import { withKnobs, number } from '@kadira/storybook-addon-knobs';
+import { storiesOf } from '@storybook/react';
+import { withKnobs, number } from '@storybook/addon-knobs';
 import moment from 'moment';
 import DayPicker from './DayPicker';
 import { defaultDayState } from './DayPickerItem';

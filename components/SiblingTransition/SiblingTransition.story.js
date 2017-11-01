@@ -1,7 +1,7 @@
 import React, { PropTypes } from 'react';
 import keyMirror from 'key-mirror';
-import { storiesOf } from '@kadira/storybook';
-import { withKnobs, select } from '@kadira/storybook-addon-knobs';
+import { storiesOf } from '@storybook/react';
+import { withKnobs, select } from '@storybook/addon-knobs';
 import SiblingTransition from './SiblingTransition';
 
 const stories = storiesOf('SiblingTransition', module);

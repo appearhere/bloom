@@ -28,10 +28,10 @@
     "yarn": "0.27.5"
   },
   "devDependencies": {
-    "@kadira/storybook": "^2.14.0",
-    "@kadira/storybook-addon-knobs": "^1.7.1",
+    "@storybook/addon-knobs": "3.2.13",
+    "@storybook/react": "3.2.11",
     "autoprefixer": "^7.1.6",
-    "babel-core": "6.14.0",
+    "babel-core": "^6.26.0",
     "babel-eslint": "6.1.2",
     "babel-jest": "15.0.0",
     "babel-loader": "^7.1.2",
@@ -125,15 +125,18 @@
     "refractor": "^1.1.0",
     "rehype": "^5.0.0",
     "subscribe-ui-event": "^1.0.14",
-    "warning": "^3.0.0"
+    "warning": "^3.0.0",
+    "webpack-merge": "^4.1.0"
   },
   "scripts": {
     "build": "node scripts/build.js",
-    "heroku-postbuild": "yarn build",
+    "build-storybook": "build-storybook",
+    "heroku-postbuild": "yarn build && yarn run build-storybook;",
     "lint": "esw -c ./config/eslint.js ./components",
     "lint:watch": "esw -w -c ./config/eslint.js ./components",
     "serve": "node ./server",
     "start": "node scripts/start.js",
+    "storybook": "start-storybook -p 9009",
     "test": "jest --env=jsdom",
     "test:travis": "jest --env=jsdom --coverage",
     "test:watch": "jest --watch --notify --env=jsdom"

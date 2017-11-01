@@ -1,5 +1,5 @@
 import React, { PropTypes } from 'react';
-import { storiesOf, action } from '@kadira/storybook';
+import { storiesOf, action } from '@storybook/react';
 
 import PictureCard from '../Cards/PictureCard/PictureCard';
 import Carousel from './Carousel';
