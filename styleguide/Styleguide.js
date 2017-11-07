@@ -18,6 +18,7 @@ import Iconography from './screens/Design/Iconography';
 import ResponsiveDesign from './screens/Design/ResponsiveDesign';
 import Typography from './screens/Design/Typography';
 import Patterns from './screens/Patterns/Patterns';
+import Modifiers from './screens/Utilities/Modifiers';
 import FourOhFour from './404';
 
 import css from './Styleguide.css';
@@ -88,6 +89,7 @@ export default class Styleguide extends Component {
                   <Route path="/design/responsive-design" component={ ResponsiveDesign } />
                   <Route path="/design/iconography" component={ Iconography } />
                   <Route path="/design/typography" component={ Typography } />
+                  <Route path="/utilities/modifiers" component={ Modifiers } />
 
                   <Patterns />
 
