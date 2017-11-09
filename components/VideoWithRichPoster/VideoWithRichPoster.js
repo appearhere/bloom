@@ -2,12 +2,10 @@ import PropTypes from 'prop-types';
 import React, { Component } from 'react';
 import cx from 'classnames';
 
-import ScreenReadable from '../ScreenReadable/ScreenReadable';
 import Controls from '../Video/Controls/Controls';
 import PlayBtn from '../Video/PlayBtn/PlayBtn';
 import css from './VideoWithRichPoster.css';
 import Video from '../Video/Video';
-import Icon from '../Icon/Icon';
 
 export default class VideoWithPoster extends Component {
   static propTypes = {
@@ -50,11 +48,6 @@ export default class VideoWithPoster extends Component {
     } = this.props;
     const { isPlaying } = this.state;
 
-    const btnClasses = cx(
-      css.btn,
-      isPlaying ? css.btnPlaying : null,
-    );
-
     return (
       <div className={ cx(css.root, className) }>
         { isPlaying ? (
@@ -78,7 +71,7 @@ export default class VideoWithPoster extends Component {
             </Video>
             <Controls>
               <PlayBtn
-                play={ this.handleToggleVideo }
+                playPause={ this.handleToggleVideo }
                 paused
               />
             </Controls>
