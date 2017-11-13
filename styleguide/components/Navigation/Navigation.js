@@ -333,6 +333,22 @@ const Navigation = ({ className, onLinkClick }) => (
         </li>
       </ul>
     </div>
+    <div className={ css.section }>
+      <span className={ cx(scaffold.h2, css.title) }>Utilities</span>
+      <ul className={ css.linkList }>
+        <li className={ css.linkListItem }>
+          <NavLink
+            exact
+            activeClassName={ css.linkActive }
+            className={ css.link }
+            to="/utilities/modifiers"
+            onClick={ onLinkClick }
+          >
+            Modifiers
+          </NavLink>
+        </li>
+      </ul>
+    </div>
   </div>
 );
 
