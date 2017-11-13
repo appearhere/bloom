@@ -1,11 +1,11 @@
 import PropTypes from 'prop-types';
-import React, { cloneElement, Children } from 'react';
+import React from 'react';
 
 import css from './Controls.css';
 
-const Controls = ({ children, ...props }) => (
+const Controls = ({ children }) => (
   <div className={ css.root }>
-    { Children.map(children, child => cloneElement(child, props)) }
+    { children }
   </div>
 );
 

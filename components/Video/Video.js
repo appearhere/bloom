@@ -1,6 +1,6 @@
 import PropTypes from 'prop-types';
 import React, { Component } from 'react';
-import ReactVideo from 'react-html5video';
+import videoConnect, { apiHelpers as videoApiHelpers } from 'react-html5video';
 import cx from 'classnames';
 
 import Controls from './Controls/Controls';
@@ -8,14 +8,24 @@ import Scrubber from './Scrubber/Scrubber';
 import PlayBtn from './PlayBtn/PlayBtn';
 import css from './Video.css';
 
+const {
+  togglePause,
+  setCurrentTime,
+  getPercentagePlayed,
+  getPercentageBuffered,
+} = videoApiHelpers;
+
 class Video extends Component {
   static propTypes = {
     children: PropTypes.oneOfType([
       PropTypes.element,
       PropTypes.arrayOf(PropTypes.element),
     ]).isRequired,
+    video: PropTypes.shape({}).isRequired,
     className: PropTypes.string,
     controls: PropTypes.bool,
+    onPlayPauseClick: PropTypes.func.isRequired,
+    onSeekChange: PropTypes.func.isRequired,
   };
 
   static defaultProps = {
@@ -23,60 +33,87 @@ class Video extends Component {
   };
 
   state = {
-    isPlaying: false,
     hasPlayed: false,
-  }
+  };
 
-  handlePlay = () => {
+  handlePlayPause = () => {
+    const { onPlayPauseClick } = this.props;
     const { hasPlayed } = this.state;
 
-    const newState = {
-      isPlaying: true,
-    };
-
-    if (!hasPlayed) newState.hasPlayed = true;
-
-    this.setState(newState);
-  }
-
-  handlePause = () => {
-    this.setState({
-      isPlaying: false,
-    });
-  }
+    if (!hasPlayed) {
+      this.setState({
+        hasPlayed: true,
+      });
+    }
+    onPlayPauseClick();
+  };
 
   render() {
     const {
+      video,
       children: source,
       className,
       controls,
+      onSeekChange,
+      onPlayPauseClick: _onPlayPauseClick,
       ...rest,
     } = this.props;
 
-    const { hasPlayed, isPlaying } = this.state;
+    const {
+      paused,
+      duration,
+      currentTime,
+    } = video;
+
+    const { hasPlayed } = this.state;
 
     const classes = cx(
       css.root,
-      hasPlayed && !isPlaying ? css.overlay : null,
+      hasPlayed && paused ? css.overlay : null,
       className
     );
 
     return (
-      <ReactVideo
-        className={ classes }
-        controls={ controls }
-        onPlay={ this.handlePlay }
-        onPause={ this.handlePause }
-        { ...rest }
-      >
-        { source }
-        <Controls>
-          <PlayBtn />
-          <Scrubber />
-        </Controls>
-      </ReactVideo>
+      <div className={ classes }>
+        <video { ...rest }>
+          { source }
+        </video>
+
+        { controls && (
+          <div>
+            <Controls>
+              <PlayBtn
+                playPause={ this.handlePlayPause }
+                paused={ paused }
+              />
+              <Scrubber
+                duration={ duration }
+                currentTime={ currentTime }
+                seek={ onSeekChange }
+              />
+            </Controls>
+          </div>
+        ) }
+      </div>
     );
   }
 }
 
-export default Video;
+export default videoConnect(
+  Video,
+  ({ networkState, readyState, error, ...restState }) => ({
+    video: {
+      readyState,
+      networkState,
+      error: error || networkState === 3,
+      loading: readyState < (/iPad|iPhone|iPod/.test(navigator.userAgent) ? 1 : 4),
+      percentagePlayed: getPercentagePlayed(restState),
+      percentageBuffered: getPercentageBuffered(restState),
+      ...restState,
+    },
+  }),
+  (videoEl, state) => ({
+    onPlayPauseClick: () => togglePause(videoEl, state),
+    onSeekChange: e => setCurrentTime(videoEl, state, e.target.value * (state.duration / 100)),
+  })
+);

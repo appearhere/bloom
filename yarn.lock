@@ -30,17 +30,19 @@
     vt-pbf "^2.0.2"
     webworkify "^1.4.0"
 
-"@appearhere/nuka-carousel@^2.1.8":
-  version "2.1.8"
-  resolved "https://registry.yarnpkg.com/@appearhere/nuka-carousel/-/nuka-carousel-2.1.8.tgz#0914b5fb28cf64a8e89cf20155ccaaabfcfb2c96"
+"@appearhere/nuka-carousel@^2.2.0":
+  version "2.2.0"
+  resolved "https://registry.yarnpkg.com/@appearhere/nuka-carousel/-/nuka-carousel-2.2.0.tgz#a1505105418f7202753925e76903c75c978693d3"
   dependencies:
+    create-react-class "^15.6.2"
     exenv "^1.2.0"
     kw-react-tween-state "^0.1.5"
     object-assign "^4.1.0"
+    prop-types "^15.6.0"
 
-"@appearhere/react-input-range@^1.1.0":
-  version "1.1.0"
-  resolved "https://registry.yarnpkg.com/@appearhere/react-input-range/-/react-input-range-1.1.0.tgz#251ec7589742cd238ce645fd48ffd116a6306774"
+"@appearhere/react-input-range@^1.2.0":
+  version "1.2.0"
+  resolved "https://registry.yarnpkg.com/@appearhere/react-input-range/-/react-input-range-1.2.0.tgz#b0935d140a7318b6ff06571cd5d7affa1e021d69"
 
 "@hypnosphi/fuse.js@^3.0.9":
   version "3.0.9"
@@ -217,23 +219,9 @@
   version "3.0.1"
   resolved "https://registry.yarnpkg.com/@types/inline-style-prefixer/-/inline-style-prefixer-3.0.1.tgz#8541e636b029124b747952e9a28848286d2b5bf6"
 
-"@types/lodash@4.14.36":
-  version "4.14.36"
-  resolved "https://registry.yarnpkg.com/@types/lodash/-/lodash-4.14.36.tgz#a7cfd5709914cf0184388b288b684eb8baae1b76"
-
 "@types/node@^6.0.46":
   version "6.0.88"
   resolved "https://registry.yarnpkg.com/@types/node/-/node-6.0.88.tgz#f618f11a944f6a18d92b5c472028728a3e3d4b66"
-
-"@types/react-dom@0.14.17":
-  version "0.14.17"
-  resolved "https://registry.yarnpkg.com/@types/react-dom/-/react-dom-0.14.17.tgz#d8b0dec27e873c218d9075856c6ca1c5db956d5d"
-  dependencies:
-    "@types/react" "*"
-
-"@types/react@*", "@types/react@0.14.37":
-  version "0.14.37"
-  resolved "https://registry.yarnpkg.com/@types/react/-/react-0.14.37.tgz#bdc8be9b798827d448d4fb065f2b344cafc118c4"
 
 "@types/react@^16.0.18":
   version "16.0.19"
@@ -3014,6 +3002,13 @@ constants-browserify@^1.0.0:
   version "1.0.0"
   resolved "https://registry.yarnpkg.com/constants-browserify/-/constants-browserify-1.0.0.tgz#c20b96d8c617748aaf1c16021760cd27fcb8cb75"
 
+container-query-toolkit@0.1.1:
+  version "0.1.1"
+  resolved "https://registry.yarnpkg.com/container-query-toolkit/-/container-query-toolkit-0.1.1.tgz#197ec8582d119cd9609bf7cf0ed6b1dc0f8d7f83"
+  dependencies:
+    element-resize-detector "1.1.10"
+    lodash "4.17.4"
+
 contains-path@^0.1.0:
   version "0.1.0"
   resolved "https://registry.yarnpkg.com/contains-path/-/contains-path-0.1.0.tgz#fe8cf184ff6670b6baef01a9d4861a5cbec4120a"
@@ -3105,7 +3100,7 @@ create-hmac@^1.1.0, create-hmac@^1.1.2, create-hmac@^1.1.4:
     safe-buffer "^5.0.1"
     sha.js "^2.4.8"
 
-create-react-class@^15.5.2, create-react-class@^15.6.0:
+create-react-class@^15.5.2, create-react-class@^15.6.0, create-react-class@^15.6.2:
   version "15.6.2"
   resolved "https://registry.yarnpkg.com/create-react-class/-/create-react-class-15.6.2.tgz#cf1ed15f12aad7f14ef5f2dfe05e6c42f91ef02a"
   dependencies:
@@ -3562,9 +3557,15 @@ electron-to-chromium@^1.3.24, electron-to-chromium@^1.3.27:
   version "1.3.27"
   resolved "https://registry.yarnpkg.com/electron-to-chromium/-/electron-to-chromium-1.3.27.tgz#78ecb8a399066187bb374eede35d9c70565a803d"
 
-element-resize-detector@1.1.8:
-  version "1.1.8"
-  resolved "https://registry.yarnpkg.com/element-resize-detector/-/element-resize-detector-1.1.8.tgz#f293ce063d170ff9dab6a3a3e25d801b49fec3bf"
+element-resize-detector@1.1.10:
+  version "1.1.10"
+  resolved "https://registry.yarnpkg.com/element-resize-detector/-/element-resize-detector-1.1.10.tgz#512ca38e1a27b3f6582a83ea0dfed1ba1abab56d"
+  dependencies:
+    batch-processor "^1.0.0"
+
+element-resize-detector@1.1.11:
+  version "1.1.11"
+  resolved "https://registry.yarnpkg.com/element-resize-detector/-/element-resize-detector-1.1.11.tgz#34dc9aff624239e0ebdba6cdadeeae88a4cf0b1b"
   dependencies:
     batch-processor "^1.0.0"
 
@@ -6029,12 +6030,6 @@ lodash.cond@^4.3.0:
   version "4.5.2"
   resolved "https://registry.yarnpkg.com/lodash.cond/-/lodash.cond-4.5.2.tgz#f471a1da486be60f6ab955d17115523dd1d255d5"
 
-lodash.debounce@^3.0.0:
-  version "3.1.1"
-  resolved "https://registry.yarnpkg.com/lodash.debounce/-/lodash.debounce-3.1.1.tgz#812211c378a94cc29d5aa4e3346cf0bfce3a7df5"
-  dependencies:
-    lodash._getnative "^3.0.0"
-
 lodash.debounce@^4.0.8:
   version "4.0.8"
   resolved "https://registry.yarnpkg.com/lodash.debounce/-/lodash.debounce-4.0.8.tgz#82d79bff30a67c4005ffd5e2515300ad9ca4d7af"
@@ -6101,23 +6096,13 @@ lodash.sortby@^4.7.0:
   version "4.7.0"
   resolved "https://registry.yarnpkg.com/lodash.sortby/-/lodash.sortby-4.7.0.tgz#edd14c824e2cc9c1e0b0a1b42bb5210516a42438"
 
-lodash.throttle@^3.0.4:
-  version "3.0.4"
-  resolved "https://registry.yarnpkg.com/lodash.throttle/-/lodash.throttle-3.0.4.tgz#bc4f471fb328e4d6fdc6df2b3d3caf113f0f89c9"
-  dependencies:
-    lodash.debounce "^3.0.0"
-
 lodash.words@^3.0.0:
   version "3.2.0"
   resolved "https://registry.yarnpkg.com/lodash.words/-/lodash.words-3.2.0.tgz#4e2a8649bc08745b17c695b1a3ce8fee596623b3"
   dependencies:
     lodash._root "^3.0.0"
 
-lodash@4.16.2:
-  version "4.16.2"
-  resolved "https://registry.yarnpkg.com/lodash/-/lodash-4.16.2.tgz#3e626db827048a699281a8a125226326cfc0e652"
-
-lodash@4.x.x, lodash@^4.17.4:
+lodash@4.*, lodash@4.17.4, lodash@4.x.x, lodash@^4.17.4:
   version "4.17.4"
   resolved "https://registry.yarnpkg.com/lodash/-/lodash-4.17.4.tgz#78203a4d1c328ae1d86dca6460e369b57f4055ae"
 
@@ -7591,17 +7576,19 @@ react-addons-test-utils@^15.4.2:
     fbjs "^0.8.4"
     object-assign "^4.1.0"
 
-react-autosuggest@^v9.0.0:
-  version "9.0.0"
-  resolved "https://registry.yarnpkg.com/react-autosuggest/-/react-autosuggest-9.0.0.tgz#976b02e20d05615d05c328c8f1384daf98587821"
+react-autosuggest@^9.3.2:
+  version "9.3.2"
+  resolved "https://registry.yarnpkg.com/react-autosuggest/-/react-autosuggest-9.3.2.tgz#dd8c0fbe9c25aa94afe296180353647f6ecc10a7"
   dependencies:
-    react-autowhatever "^9.1.0"
+    prop-types "^15.5.10"
+    react-autowhatever "^10.1.0"
     shallow-equal "^1.0.0"
 
-react-autowhatever@^9.1.0:
-  version "9.1.0"
-  resolved "https://registry.yarnpkg.com/react-autowhatever/-/react-autowhatever-9.1.0.tgz#cc19ea05e0541ec04bb07fd53792215dc802bf75"
+react-autowhatever@^10.1.0:
+  version "10.1.0"
+  resolved "https://registry.yarnpkg.com/react-autowhatever/-/react-autowhatever-10.1.0.tgz#41f6d69382437d3447a0a3c8913bb8ca2feaabc1"
   dependencies:
+    prop-types "^15.5.8"
     react-themeable "^1.1.0"
     section-iterator "^2.0.0"
 
@@ -7615,15 +7602,13 @@ react-color@^2.11.4:
     reactcss "^1.2.0"
     tinycolor2 "^1.4.1"
 
-react-container-query@^0.6.0:
-  version "0.6.0"
-  resolved "https://registry.yarnpkg.com/react-container-query/-/react-container-query-0.6.0.tgz#026ffc6792626cd3a84a5ee59d23d646bfb0a2f2"
+react-container-query@^0.9.1:
+  version "0.9.1"
+  resolved "https://registry.yarnpkg.com/react-container-query/-/react-container-query-0.9.1.tgz#57136d98c1ada18084b27cb45a0006a9f03a95d6"
   dependencies:
-    "@types/lodash" "4.14.36"
-    "@types/react" "0.14.37"
-    "@types/react-dom" "0.14.17"
-    element-resize-detector "1.1.8"
-    lodash "4.16.2"
+    container-query-toolkit "0.1.1"
+    lodash "4.*"
+    resize-observer-lite "0.2.2"
 
 react-datetime@^2.10.3:
   version "2.10.3"
@@ -7721,11 +7706,9 @@ react-html-attributes@^1.3.0:
   dependencies:
     html-element-attributes "^1.0.0"
 
-react-html5video@^1.2.12:
-  version "1.2.12"
-  resolved "https://registry.yarnpkg.com/react-html5video/-/react-html5video-1.2.12.tgz#1d9ef876253589fe2e28279930f74201264047d9"
-  dependencies:
-    lodash.throttle "^3.0.4"
+react-html5video@^2.5.0:
+  version "2.5.0"
+  resolved "https://registry.yarnpkg.com/react-html5video/-/react-html5video-2.5.0.tgz#a2e2555388610c10f868b906c77f754579518814"
 
 react-icon-base@2.1.0:
   version "2.1.0"
@@ -7777,11 +7760,12 @@ react-moment-proptypes@^1.3.0:
   dependencies:
     moment ">=1.6.0"
 
-react-motion@^0.4.7:
-  version "0.4.7"
-  resolved "https://registry.yarnpkg.com/react-motion/-/react-motion-0.4.7.tgz#f77331ec7920bdb0d0cfc37eb6ffa10571bf42c7"
+react-motion@^0.5.2:
+  version "0.5.2"
+  resolved "https://registry.yarnpkg.com/react-motion/-/react-motion-0.5.2.tgz#0dd3a69e411316567927917c6626551ba0607316"
   dependencies:
     performance-now "^0.2.0"
+    prop-types "^15.5.8"
     raf "^3.1.0"
 
 react-on-visible@^1.0.3:
@@ -7795,9 +7779,11 @@ react-onclickoutside@^6.5.0:
   version "6.6.3"
   resolved "https://registry.yarnpkg.com/react-onclickoutside/-/react-onclickoutside-6.6.3.tgz#f3b9226f4541039d6d5a4a6120c4dfffcf7de60c"
 
-react-portal@^3.0.0:
-  version "3.0.0"
-  resolved "https://registry.yarnpkg.com/react-portal/-/react-portal-3.0.0.tgz#9304fce836e8a3216b22588f8dc91b447728f0ae"
+react-portal@^3.1.0:
+  version "3.2.0"
+  resolved "https://registry.yarnpkg.com/react-portal/-/react-portal-3.2.0.tgz#4224e19b2b05d5cbe730a7ba0e34ec7585de0043"
+  dependencies:
+    prop-types "^15.5.8"
 
 react-proxy@^3.0.0-alpha.0:
   version "3.0.0-alpha.1"
@@ -7845,11 +7831,12 @@ react-split-pane@^0.1.65:
     prop-types "^15.5.10"
     react-style-proptype "^3.0.0"
 
-react-stickynode@^1.2.1:
-  version "1.2.1"
-  resolved "https://registry.yarnpkg.com/react-stickynode/-/react-stickynode-1.2.1.tgz#ee772a19b0264dc9bfeadb1ad5b152fc3aaba79b"
+react-stickynode@^1.4.0:
+  version "1.4.0"
+  resolved "https://registry.yarnpkg.com/react-stickynode/-/react-stickynode-1.4.0.tgz#8ddbc64e2e6174d9836aac58c81efe5493dafc37"
   dependencies:
     classnames "^2.0.0"
+    prop-types "^15.6.0"
     react-addons-shallow-compare "^0.14.2 || ^15.0.0"
     subscribe-ui-event "^1.0.0"
 
@@ -8303,6 +8290,12 @@ require-uncached@^1.0.2:
 requires-port@1.0.x, requires-port@1.x.x:
   version "1.0.0"
   resolved "https://registry.yarnpkg.com/requires-port/-/requires-port-1.0.0.tgz#925d2601d39ac485e091cf0da5c6e694dc3dcaff"
+
+resize-observer-lite@0.2.2:
+  version "0.2.2"
+  resolved "https://registry.yarnpkg.com/resize-observer-lite/-/resize-observer-lite-0.2.2.tgz#fa441231bb1bd8204e00729042ec67ea608eca1b"
+  dependencies:
+    element-resize-detector "1.1.11"
 
 resolve-dir@^1.0.0:
   version "1.0.1"

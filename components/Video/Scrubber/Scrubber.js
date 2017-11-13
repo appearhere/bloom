@@ -33,8 +33,8 @@ export default class Scrubber extends Component {
   };
 
   handleSeek = (e) => {
-    const { seek, duration } = this.props;
-    seek((e.target.value * duration) / 100, true);
+    const { seek } = this.props;
+    seek(e);
   };
 
   render() {
