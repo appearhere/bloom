@@ -7831,11 +7831,12 @@ react-split-pane@^0.1.65:
     prop-types "^15.5.10"
     react-style-proptype "^3.0.0"
 
-react-stickynode@^1.2.1:
-  version "1.2.1"
-  resolved "https://registry.yarnpkg.com/react-stickynode/-/react-stickynode-1.2.1.tgz#ee772a19b0264dc9bfeadb1ad5b152fc3aaba79b"
+react-stickynode@^1.4.0:
+  version "1.4.0"
+  resolved "https://registry.yarnpkg.com/react-stickynode/-/react-stickynode-1.4.0.tgz#8ddbc64e2e6174d9836aac58c81efe5493dafc37"
   dependencies:
     classnames "^2.0.0"
+    prop-types "^15.6.0"
     react-addons-shallow-compare "^0.14.2 || ^15.0.0"
     subscribe-ui-event "^1.0.0"
 
