@@ -123,6 +123,7 @@
     "react-portal": "^3.1.0",
     "react-router-dom": "^4.2.2",
     "react-stickynode": "^1.4.0",
+    "react-transition-group": "1.x",
     "refractor": "^1.1.0",
     "rehype": "^5.0.0",
     "subscribe-ui-event": "^1.0.14",

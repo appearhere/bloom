@@ -4,8 +4,6 @@ import ReactDOM from 'react-dom';
 
 import GridFader from './GridFader';
 
-jest.mock('react-addons-css-transition-group', () => jest.fn(() => <div />));
-
 it('renders without crashing', () => {
   const div = document.createElement('div');
   ReactDOM.render(<GridFader />, div);

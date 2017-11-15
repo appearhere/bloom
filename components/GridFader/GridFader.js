@@ -1,6 +1,6 @@
 import PropTypes from 'prop-types';
 import React, { Component } from 'react';
-import TransitionGroup from 'react-addons-css-transition-group';
+import { TransitionGroup } from 'react-transition-group';
 import cx from 'classnames';
 
 import getRandomInt from '../../utils/getRandomInt';
