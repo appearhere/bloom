@@ -110,7 +110,6 @@
     "moment-range": "^3.0.2",
     "object-fit-images": "^2.5.9",
     "react": "^15.6.2",
-    "react-addons-css-transition-group": "^15.3.2",
     "react-autosuggest": "^9.3.2",
     "react-autowhatever": "^10.1.0",
     "react-container-query": "^0.9.1",
