@@ -44,6 +44,14 @@
   version "1.2.0"
   resolved "https://registry.yarnpkg.com/@appearhere/react-input-range/-/react-input-range-1.2.0.tgz#b0935d140a7318b6ff06571cd5d7affa1e021d69"
 
+"@appearhere/react-stickynode@^1.0.0":
+  version "1.0.0"
+  resolved "https://registry.yarnpkg.com/@appearhere/react-stickynode/-/react-stickynode-1.0.0.tgz#be116eb42f18413119ec3f8f71883bc3f3abd068"
+  dependencies:
+    classnames "^2.0.0"
+    prop-types "^15.6.0"
+    subscribe-ui-event "^1.0.0"
+
 "@hypnosphi/fuse.js@^3.0.9":
   version "3.0.9"
   resolved "https://registry.yarnpkg.com/@hypnosphi/fuse.js/-/fuse.js-3.0.9.tgz#ea99f6121b4a8f065b4c71f85595db2714498807"
