@@ -11,7 +11,7 @@
 import PropTypes from 'prop-types';
 
 import React from 'react';
-import StickyNode from 'react-stickynode';
+import StickyNode from '@appearhere/react-stickynode';
 import cx from 'classnames';
 
 import css from './StickyNode.css';
