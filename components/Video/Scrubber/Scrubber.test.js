@@ -1,6 +1,6 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
-import { findRenderedDOMComponentWithTag, Simulate } from 'react-addons-test-utils';
+import { findRenderedDOMComponentWithTag, Simulate } from 'react-dom/test-utils';
 
 import noop from '../../../utils/noop';
 import Scrubber from './Scrubber';

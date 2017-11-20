@@ -5,7 +5,7 @@ import React, { Component, cloneElement } from 'react';
 import { findDOMNode } from 'react-dom';
 import keyMirror from 'key-mirror';
 import { subscribe } from 'subscribe-ui-event';
-import Portal from 'react-portal';
+import { Portal } from 'react-portal';
 import cx from 'classnames';
 
 import css from './Tether.css';
@@ -375,11 +375,6 @@ export default class Tether extends Component {
       horizontalAttachment: _horziontalAttachment,
       flushHorizontal,
       flushVertical,
-      closeOnEsc,
-      closeOnOutsideClick,
-      beforeClose,
-      onClose,
-      onUpdate,
       targetClassName,
       ...rest,
     } = this.props;
@@ -405,31 +400,26 @@ export default class Tether extends Component {
             active,
           }) }
         </div>
-        <Portal
-          isOpened={ active }
-          closeOnEsc={ closeOnEsc }
-          closeOnOutsideClick={ closeOnOutsideClick }
-          beforeClose={ beforeClose }
-          onClose={ onClose }
-          onUpdate={ onUpdate }
-        >
-          <ChildWrapper
-            ref={ (c) => { this.component = findDOMNode(c); } }
-            style={ {
-              position: 'absolute',
-              top: `${top}px`,
-              left: `${left}px`,
-            } }
-          >
-            { cloneElement(children, {
-              verticalAttachment: topAttachment,
-              horizontalAttachment: leftAttachment,
-              flushHorizontal,
-              flushVertical,
-              active,
-            }) }
-          </ChildWrapper>
-        </Portal>
+        { active && (
+          <Portal>
+            <ChildWrapper
+              ref={ (c) => { this.component = findDOMNode(c); } }
+              style={ {
+                position: 'absolute',
+                top: `${top}px`,
+                left: `${left}px`,
+              } }
+            >
+              { cloneElement(children, {
+                verticalAttachment: topAttachment,
+                horizontalAttachment: leftAttachment,
+                flushHorizontal,
+                flushVertical,
+                active,
+              }) }
+            </ChildWrapper>
+          </Portal>
+        ) }
       </div>
     );
   }

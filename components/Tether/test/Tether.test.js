@@ -123,41 +123,6 @@ describe('Tether child component', () => {
     expect('flushHorizontal' in child.props).toBe(true);
     expect('flushVertical' in child.props).toBe(true);
   });
-
-  it('receives active prop from Tether', () => {
-    let child;
-
-    const div = document.createElement('div');
-    render(
-      <Tether
-        target={ <TestTarget /> }
-        active
-      >
-        <TestChild ref={ (c) => { child = c; } } />
-      </Tether>,
-      div
-    );
-
-    expect('active' in child.props).toBe(true);
-  });
-
-  it('receives closePortal prop from Portal', () => {
-    let child;
-
-    const div = document.createElement('div');
-    render(
-      <Tether
-        target={ <TestTarget /> }
-        active
-      >
-        <TestChild ref={ (c) => { child = c; } } />
-      </Tether>,
-      div
-    );
-
-    expect('closePortal' in child.props).toBe(true);
-    expect(typeof child.props.closePortal).toBe('function');
-  });
 });
 
 const OPTIMAL_ATTACHMENT_TEST_CASES = [

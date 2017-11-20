@@ -4,7 +4,7 @@ import PropTypes from 'prop-types';
 import React, { Component } from 'react';
 import { TransitionMotion, spring } from 'react-motion';
 import uniqueId from 'lodash/fp/uniqueId';
-import Portal from 'react-portal';
+import { Portal } from 'react-portal';
 
 import BtnContainer from '../../../components/BtnContainer/BtnContainer';
 import css from './OffCanvasPanel.css';
@@ -118,7 +118,7 @@ export default class OffCanvasPanel extends Component {
 
     /* eslint-disable jsx-a11y/no-static-element-interactions */
     return (
-      <Portal isOpened>
+      <Portal>
         <TransitionMotion
           styles={ active ? [{
             key: this.id,

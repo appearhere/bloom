@@ -18,7 +18,7 @@ import css from './StickyNode.css';
 
 const Sticky = ({ className, ...rest }) => {
   const classes = cx(css.root, className);
-  return <StickyNode {...rest} className={ classes } />;
+  return <StickyNode { ...rest } className={ classes } />;
 };
 
 Sticky.propTypes = {

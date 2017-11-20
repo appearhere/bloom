@@ -2,7 +2,7 @@ import PropTypes from 'prop-types';
 import React, { Component } from 'react';
 import cx from 'classnames';
 import uniqueId from 'lodash/fp/uniqueId';
-import Portal from 'react-portal';
+import { Portal } from 'react-portal';
 import { ESC } from '../../constants/keycodes';
 import noop from '../../utils/noop';
 import BodyClassNameConductor from '../../utils/BodyClassNameConductor/BodyClassNameConductor';
@@ -89,8 +89,10 @@ export default class ModalAnimator extends Component {
       windowClassName,
     } = this.props;
 
+    if (!active) return null;
+
     return (
-      <Portal isOpened={ active }>
+      <Portal>
         <div ref={ (c) => { this.modal = c; } } onClick={ this.handleClick }>
           <div className={ css.root }>
             <div className={ css.overlay } />
