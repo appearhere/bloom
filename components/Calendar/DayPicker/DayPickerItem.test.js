@@ -2,7 +2,7 @@
 import React from 'react';
 import moment from 'moment';
 import { render, findDOMNode } from 'react-dom';
-import { Simulate } from 'react-addons-test-utils';
+import { Simulate } from 'react-dom/test-utils';
 import { ENTER } from '../../../constants/keycodes';
 
 import DayPickerItem from './DayPickerItem';

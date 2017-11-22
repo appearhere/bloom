@@ -1,5 +1,6 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
+
 import StickyNode from './StickyNode';
 
 it('renders without crashing', () => {

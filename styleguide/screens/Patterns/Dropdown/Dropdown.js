@@ -66,8 +66,6 @@ export default class DropdownDocumentation extends Component {
               flushHorizontal
               active={ showDropdown }
               targetClassName={ css.target }
-              closeOnEsc={ false }
-              closeOnOutsideClick={ false }
             >
               <button onClick={ this.handleClick }>Close dropdown</button>
             </Dropdown>

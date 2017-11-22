@@ -1,6 +1,6 @@
 /* global jasmine:true */
 
-import { scryRenderedDOMComponentsWithTag, Simulate } from 'react-addons-test-utils';
+import { scryRenderedDOMComponentsWithTag, Simulate } from 'react-dom/test-utils';
 import React from 'react';
 import { render } from 'react-dom';
 
