@@ -56,6 +56,28 @@ stories
       </TabBarItem>
     </TabBar>
   ))
+  .add('Scrollable', () => (
+    <TabBar scrollable>
+      <TabBarItem
+        href="#all"
+        active={ number('Active tab', 0) === 0 }
+      >
+        All
+      </TabBarItem>
+      <TabBarItem
+        href="#Supply"
+        active={ number('Active tab', 0) === 1 }
+      >
+        Supply
+      </TabBarItem>
+      <TabBarItem
+        href="#Concierge"
+        active={ number('Active tab', 0) === 2 }
+      >
+        Concierge
+      </TabBarItem>
+    </TabBar>
+  ))
   .add('With Icon items', () => (
     <TabBar>
       <TabBarIconItem
