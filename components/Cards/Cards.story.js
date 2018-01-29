@@ -216,6 +216,34 @@ storiesOf('Cards', module)
       favouriteable
     />
   ))
+  .add('SpaceListingCard with onClick prop', () => (
+    <SpaceListingCard
+      price="$10,000,000"
+      priceUnit="/day"
+      location="Shoreditch, London"
+      size="1000 sqft"
+      name="Bold Street Shop"
+      onClick={ action('Clicked called with (e, href)') }
+      images={
+        [{
+          src: 'https://source.unsplash.com/random/500x500',
+          alt: 'hello',
+        }, {
+          src: 'https://source.unsplash.com/random/500x503',
+          alt: 'hello2',
+        }, {
+          src: 'https://source.unsplash.com/random/500x502',
+          alt: 'hello',
+        }, {
+          src: 'https://source.unsplash.com/random/500x501',
+          alt: 'hello2',
+        }]
+      }
+      href="#"
+    >
+      <button>Save space</button>
+    </SpaceListingCard>
+  ))
   .add('CondensedSpaceCard', () => (
     <CondensedSpaceCard
       price="$10,000,000"
