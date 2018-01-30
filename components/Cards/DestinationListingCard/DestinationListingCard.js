@@ -57,6 +57,10 @@ export default class DestinationListingCard extends Component {
     fav: false,
   };
 
+  onClick = (e) => {
+    this.props.onClick(e, this.props.href);
+  }
+
   handleNextImage = () => {
     this.setState(({ visibleImageIndex }, { images }) => {
       const newIndex = getValidIndex(visibleImageIndex + 1, images.length, 1);
@@ -94,7 +98,6 @@ export default class DestinationListingCard extends Component {
       carouselClassName,
       carouselOverlay,
       information,
-      onClick,
       fixedHeight,
       children,
       onFavouriteClick,
@@ -143,7 +146,7 @@ export default class DestinationListingCard extends Component {
               dragging={ false }
             >
               { images.map(({ src, alt }) => (
-                <a href={ href } key={ src } onClick={ onClick }>
+                <a href={ href } key={ src } onClick={ this.onClick }>
                   <div className={ css.imageContainer }>
                     <FittedImage
                       className={ css.image }
@@ -157,7 +160,7 @@ export default class DestinationListingCard extends Component {
           </div>
         </div>
         <div className={ cx(css.body, bodyClassName) }>
-          <a href={ href } onClick={ onClick } className={ css.bodyLink }>
+          <a href={ href } onClick={ this.onClick } className={ css.bodyLink }>
             <div className={ css.title }>
               <div className={ css.priceContainer }>
                 { priceFromLabel &&

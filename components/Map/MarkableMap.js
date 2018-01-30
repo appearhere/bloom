@@ -56,6 +56,7 @@ export default class MarkableMap extends Component {
     GroupMarkerComponent: PropTypes.func.isRequired,
     autoFit: PropTypes.bool,
     highlightedId: PropTypes.oneOfType([PropTypes.string, PropTypes.number]),
+    onMarkerClick: PropTypes.func,
   };
 
   static defaultProps = {
@@ -334,6 +335,9 @@ export default class MarkableMap extends Component {
   };
 
   handleMarkerClick = (marker) => {
+    if (this.props.onMarkerClick) {
+      this.props.onMarkerClick(marker);
+    }
     this.setState({ activeFeature: marker });
   };
 
