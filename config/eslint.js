@@ -36,9 +36,6 @@ module.exports = {
     }],
     'react/require-extension': 'off',
     'react/jsx-filename-extension': 'off',
-    // AirBnb config includes the imports plugin, so we actually have to
-    // disable the rules manually
-    'import/no-unresolved': 'off',
     'import/no-extraneous-dependencies': ['error', {
       'devDependencies': true,
       'optionalDependencies': false,
