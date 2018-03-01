@@ -4,7 +4,7 @@ import React from 'react';
 import css from './Controls.css';
 
 const Controls = ({ children }) => (
-  <div className={ css.root }>
+  <div className={css.root}>
     { children }
   </div>
 );

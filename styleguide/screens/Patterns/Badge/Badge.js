@@ -11,25 +11,25 @@ import m from '../../../../globals/modifiers.css';
 
 const BadgeDocumentation = () => (
   <div>
-    <H level={ 1 }>Badge</H>
-    <T elm="p" className={ cx(m.mtr, m.largeI, m.demi) }>
+    <H level={1}>Badge</H>
+    <T elm="p" className={cx(m.mtr, m.largeI, m.demi)}>
       Badges are used for items which require a label or additional
       categorisation using keywords.
     </T>
     <D>
       <Specimen
-        classNames={ {
+        classNames={{
           specimenContainer: m.par,
-        } }
-        code={ dedent`
+        }}
+        code={dedent`
           <Badge>Default</Badge>
           <Badge context="primary">Primary</Badge>
           <Badge context="special">Special</Badge>
         ` }
       >
-        <Badge className={ m.mrr }>Default</Badge>
-        <Badge context="primary" className={ m.mrr }>Primary</Badge>
-        <Badge context="special" className={ m.mrr }>Special</Badge>
+        <Badge className={m.mrr}>Default</Badge>
+        <Badge context="primary" className={m.mrr}>Primary</Badge>
+        <Badge context="special" className={m.mrr}>Special</Badge>
       </Specimen>
     </D>
   </div>

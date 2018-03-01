@@ -46,22 +46,22 @@ export default class Scrubber extends Component {
     );
 
     return (
-      <div className={ css.scrubber }>
+      <div className={css.scrubber}>
         <input
-          className={ css.scrubberInput }
-          onFocus={ this.handleFocus }
-          onBlur={ this.handleBlur }
-          onChange={ this.handleSeek }
+          className={css.scrubberInput}
+          onFocus={this.handleFocus}
+          onBlur={this.handleBlur}
+          onChange={this.handleSeek}
           type="range"
           min="0"
           max="100"
         />
 
         <div
-          className={ scrubberInnerClasses }
-          style={ {
+          className={scrubberInnerClasses}
+          style={{
             width: `${this.getInnerWidth()}%`,
-          } }
+          }}
         />
       </div>
     );

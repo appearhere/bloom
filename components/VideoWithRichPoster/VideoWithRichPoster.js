@@ -49,10 +49,10 @@ export default class VideoWithPoster extends Component {
     const { isPlaying } = this.state;
 
     return (
-      <div className={ cx(css.root, className) }>
+      <div className={cx(css.root, className)}>
         { isPlaying ? (
           <Video
-            className={ cx(css.video, css.overlay, videoClassName) }
+            className={cx(css.video, css.overlay, videoClassName)}
             key="video"
             autoPlay
             controls
@@ -62,7 +62,7 @@ export default class VideoWithPoster extends Component {
         ) : (
           <div>
             <Video
-              className={ cx(css.video, posterClassName) }
+              className={cx(css.video, posterClassName)}
               autoPlay
               loop
               muted
@@ -71,7 +71,7 @@ export default class VideoWithPoster extends Component {
             </Video>
             <Controls>
               <PlayBtn
-                playPause={ this.handleToggleVideo }
+                playPause={this.handleToggleVideo}
                 paused
               />
             </Controls>

@@ -8,8 +8,8 @@ stories.addDecorator(withKnobs);
 
 stories.add('RadioGroup', () => (
   <RadioGroup
-    value={ number('Value', 1) }
-    onChange={ action('checked') }
+    value={number('Value', 1)}
+    onChange={action('checked')}
   >
     { radio => (
       <span>

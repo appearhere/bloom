@@ -17,7 +17,7 @@ const SquareHero = (props) => {
     className,
     level,
     headingSide,
-    ...rest,
+    ...rest
   } = props;
 
   const rootClass = cx(
@@ -29,16 +29,16 @@ const SquareHero = (props) => {
 
   return (
     <div
-      { ...rest }
-      className={ rootClass }
+      {...rest}
+      className={rootClass}
     >
-      <div className={ cx(defaultCss.mediaContainer, css.image) }>
+      <div className={cx(defaultCss.mediaContainer, css.image)}>
         { videoProps
-          ? <VideoWithRichPoster { ...videoProps } className={ cx(defaultCss.video, css.video) } />
-          : <FittedImage className={ defaultCss.image } src={ image } alt={ alt } />
+          ? <VideoWithRichPoster {...videoProps} className={cx(defaultCss.video, css.video)} />
+          : <FittedImage className={defaultCss.image} src={image} alt={alt} />
         }
       </div>
-      <div className={ cx(defaultCss.square, css.square) }>
+      <div className={cx(defaultCss.square, css.square)}>
         { createElement(
           `h${level}`, {
             className: cx(defaultCss.title),

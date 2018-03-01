@@ -12,7 +12,7 @@ const SectionHeader = (props) => {
     className,
     level,
     css,
-    ...rest,
+    ...rest
   } = props;
 
   const titleClasses = classnames(
@@ -27,8 +27,8 @@ const SectionHeader = (props) => {
     css.strapline,
   );
 
-  const titleEl = <span className={ titleClasses }>{ title }</span>;
-  const straplineEl = strapline && <span className={ straplineClasses }>{ strapline }</span>;
+  const titleEl = <span className={titleClasses}>{ title }</span>;
+  const straplineEl = strapline && <span className={straplineClasses}>{ strapline }</span>;
 
   return (
     createElement(

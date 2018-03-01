@@ -12,16 +12,16 @@ const BtnGroup = (props) => {
     className,
     context,
     priority,
-    ...rest,
+    ...rest
   } = props;
 
   return (
     <div
-      { ...rest }
-      className={ cx(
+      {...rest}
+      className={cx(
         css[context],
         className,
-      ) }
+      )}
     >
       { Children.map(children, child => cloneElement(child, {
         className: cx(css.btn, child.props.className),

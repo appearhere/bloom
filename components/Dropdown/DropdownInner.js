@@ -12,13 +12,13 @@ const DropdownInner = (props) => {
     horizontalAttachment: _horizontalAttachment,
     active: _active,
     closePortal: _closePortal,
-    ...rest,
+    ...rest
   } = props;
 
   return (
     <div
-      { ...rest }
-      className={ cx(css.root, className) }
+      {...rest}
+      className={cx(css.root, className)}
     >
       { children }
     </div>

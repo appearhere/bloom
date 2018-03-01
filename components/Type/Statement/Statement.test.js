@@ -9,5 +9,5 @@ it('renders', () => {
 
 it('renders when provided with a number', () => {
   const div = document.createElement('div');
-  render(<Statement number={ 1 }>foo</Statement>, div);
+  render(<Statement number={1}>foo</Statement>, div);
 });

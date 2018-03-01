@@ -48,19 +48,19 @@ export default class RadioGroup extends Component {
     } = this.props;
 
     return (
-      <div className={ className }>
+      <div className={className}>
         { children && children((childProps) => {
           const checked = childProps.value === value;
 
           return (
             <Input
-              id={ id }
-              name={ name }
-              onChange={ onChange }
-              checked={ checked }
-              required={ !optional }
-              ref={ (c) => { this.input = c; } }
-              { ...childProps }
+              id={id}
+              name={name}
+              onChange={onChange}
+              checked={checked}
+              required={!optional}
+              ref={(c) => { this.input = c; }}
+              {...childProps}
             />
           );
         }) }

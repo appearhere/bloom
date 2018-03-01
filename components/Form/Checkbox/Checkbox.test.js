@@ -21,8 +21,8 @@ it('handles external focusing and blurring', () => {
   render(
     <Checkbox
       name=""
-      value={ 1 }
-      ref={ (c) => { component = c; } }
+      value={1}
+      ref={(c) => { component = c; }}
     />,
     div
   );
@@ -44,8 +44,8 @@ it('assigns a unique id to itself', () => {
   render(
     <Checkbox
       name=""
-      value={ 1 }
-      ref={ (c) => { component = c; } }
+      value={1}
+      ref={(c) => { component = c; }}
     />,
     div
   );

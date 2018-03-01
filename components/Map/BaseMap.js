@@ -134,12 +134,12 @@ export default class BaseMap extends Component {
 
     return (
       <div
-        className={ cx(css.root, className) }
-        style={ {
+        className={cx(css.root, className)}
+        style={{
           backgroundImage: `url(${tile})`,
-        } }
+        }}
       >
-        <div ref={ (c) => { this.mapContainer = c; } } className={ cx(css.map, mapClassName) } />
+        <div ref={(c) => { this.mapContainer = c; }} className={cx(css.map, mapClassName)} />
       </div>
     );
   }

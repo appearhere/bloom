@@ -77,19 +77,19 @@ export default class DeviceFrame extends Component {
     const img = children[activeIndex];
 
     return (
-      <div className={ css.root }>
+      <div className={css.root}>
         <img
-          className={ css.frame }
-          src={ deviceImage }
+          className={css.frame}
+          src={deviceImage}
           role="presentation"
         />
-        <div className={ css.inner }>
-          <Swap animationTimeout={ interval }>
+        <div className={css.inner}>
+          <Swap animationTimeout={interval}>
             <img
-              key={ activeIndex }
-              className={ css.img }
-              src={ img.src }
-              alt={ img.alt }
+              key={activeIndex}
+              className={css.img}
+              src={img.src}
+              alt={img.alt}
             />
           </Swap>
         </div>

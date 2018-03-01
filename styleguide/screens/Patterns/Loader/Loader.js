@@ -10,18 +10,18 @@ import m from '../../../../globals/modifiers.css';
 
 const LoaderDocumentation = () => (
   <div>
-    <H level={ 1 }>Loader</H>
-    <T elm="p" className={ cx(m.mtr, m.largeI, m.demi) }>
+    <H level={1}>Loader</H>
+    <T elm="p" className={cx(m.mtr, m.largeI, m.demi)}>
       Loaders help notify the user that the application is loading content.
     </T>
     <D>
       <Specimen
-        classNames={ {
+        classNames={{
           specimenContainer: m.par,
-        } }
+        }}
         code="<Loader />"
       >
-        <Loader className={ m.fontLgIv } />
+        <Loader className={m.fontLgIv} />
       </Specimen>
     </D>
   </div>

@@ -12,20 +12,20 @@ import markdown from './example.md';
 
 const MarkdownDocumentation = () => (
   <div>
-    <H level={ 1 }>Markdown</H>
-    <T elm="p" className={ cx(m.mtr, m.largeI, m.demi) }>
+    <H level={1}>Markdown</H>
+    <T elm="p" className={cx(m.mtr, m.largeI, m.demi)}>
       At Appear Here, we use markdown to markup content for use across our applications.
     </T>
-    <T elm="p" className={ m.mtLgIi }>
+    <T elm="p" className={m.mtLgIi}>
       To enable us to do this, we have created a <C>Markdown</C> component
       which provides basic styling of markdown content.
     </T>
     <Specimen
-      classNames={ {
+      classNames={{
         root: m.mtr,
         specimenContainer: m.par,
-      } }
-      code={ dedent`
+      }}
+      code={dedent`
         <Markdown>
           # An exhibit of Markdown
           ...
@@ -34,18 +34,18 @@ const MarkdownDocumentation = () => (
     >
       <Markdown>{ markdown }</Markdown>
     </Specimen>
-    <T elm="p" className={ m.mtLgIi }>
+    <T elm="p" className={m.mtLgIi}>
       You can add to or make changes to the markdown styles using the
       <C>className</C> prop. To do this, the class should act as a root
       selector, and style the any HTML elements you wish using the element
       selector.
     </T>
     <Specimen
-      classNames={ {
+      classNames={{
         root: m.mtr,
         specimenContainer: m.par,
-      } }
-      code={ dedent`
+      }}
+      code={dedent`
         // styles.css
         .markdownExtended h1 {
           color: var(--color-gold);
@@ -61,18 +61,18 @@ const MarkdownDocumentation = () => (
         </Markdown>
       ` }
     >
-      <Markdown className={ css.markdownExtended }>{ markdown }</Markdown>
+      <Markdown className={css.markdownExtended}>{ markdown }</Markdown>
     </Specimen>
-    <T elm="p" className={ m.mtLgIi }>
+    <T elm="p" className={m.mtLgIi}>
       If you wish to write your own styles from scratch, set overrideClassname
       to true.
     </T>
     <Specimen
-      classNames={ {
+      classNames={{
         root: m.mtr,
         specimenContainer: m.par,
-      } }
-      code={ dedent`
+      }}
+      code={dedent`
         // styles.css
         .markdownOverride * {
           font-family: georgia, serif;
@@ -100,7 +100,7 @@ const MarkdownDocumentation = () => (
         </Markdown>
       ` }
     >
-      <Markdown className={ css.markdownOverride } overrideClassname>
+      <Markdown className={css.markdownOverride} overrideClassname>
         { markdown }
       </Markdown>
     </Specimen>

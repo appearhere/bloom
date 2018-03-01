@@ -5,7 +5,7 @@ import cx from 'classnames';
 import css from './Suggestion.css';
 
 const Suggestion = ({ className, children, ...rest }) => (
-  <span { ...rest } className={ cx(css.root, className) }>{ children }</span>
+  <span {...rest} className={cx(css.root, className)}>{ children }</span>
 );
 
 Suggestion.propTypes = {

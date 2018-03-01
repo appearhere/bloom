@@ -4,7 +4,7 @@ import BtnContainer from './BtnContainer';
 
 storiesOf('BtnContainer', module)
   .add('Default button', () => (
-    <BtnContainer onClick={ action('Button clicked') }>
+    <BtnContainer onClick={action('Button clicked')}>
       Like
     </BtnContainer>
   ));

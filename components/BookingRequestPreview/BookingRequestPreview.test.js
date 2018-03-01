@@ -5,5 +5,5 @@ import BookingRequestPreview from './BookingRequestPreview';
 
 it('renders without crashing', () => {
   const div = document.createElement('div');
-  render(<BookingRequestPreview bookingRequests={ [] } />, div);
+  render(<BookingRequestPreview bookingRequests={[]} />, div);
 });

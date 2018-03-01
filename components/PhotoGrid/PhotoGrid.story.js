@@ -25,5 +25,5 @@ const images = [{
 
 storiesOf('Photo grids', module)
   .add('<RandomSix />', () => (
-    <RandomSix children={ images } />
+    <RandomSix children={images} />
   ));

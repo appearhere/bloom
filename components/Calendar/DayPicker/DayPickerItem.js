@@ -74,7 +74,7 @@ export default class DayPickerItem extends Component {
       onHighlight: _onHighlight,
       onInteraction: _onInteraction,
       getDayState,
-      ...rest,
+      ...rest
     } = this.props;
 
     const state = getDayState(day);
@@ -92,15 +92,15 @@ export default class DayPickerItem extends Component {
 
     return (
       <CalendarItem
-        { ...rest }
-        onClick={ this.handleInteraction }
-        onTouchEnd={ this.handleInteraction }
-        onKeyUp={ this.handleInteraction }
-        onMouseOver={ this.handleMouseOver }
-        onFocus={ this.handleFocus }
-        tabIndex={ 0 }
-        className={ className }
-        day={ day }
+        {...rest}
+        onClick={this.handleInteraction}
+        onTouchEnd={this.handleInteraction}
+        onKeyUp={this.handleInteraction}
+        onMouseOver={this.handleMouseOver}
+        onFocus={this.handleFocus}
+        tabIndex={0}
+        className={className}
+        day={day}
       />
     );
   }

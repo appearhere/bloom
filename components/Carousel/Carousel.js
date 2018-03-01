@@ -1,10 +1,9 @@
 import PropTypes from 'prop-types';
 import React, { Component, Children } from 'react';
 import cx from 'classnames';
-import noop from '../../utils/noop';
-
 import NukaCarousel from '@appearhere/nuka-carousel';
 
+import noop from '../../utils/noop';
 import css from './Carousel.css';
 
 export default class Carousel extends Component {
@@ -64,14 +63,14 @@ export default class Carousel extends Component {
     const frameOverflow = peaking ? 'visible' : 'hidden';
 
     return (
-      <div className={ cx(css.wrapper, className, peaking ? css.peaking : null) }>
+      <div className={cx(css.wrapper, className, peaking ? css.peaking : null)}>
         <NukaCarousel
-          ref={ (c) => { this.carousel = c; } }
-          decorators={ [] }
-          frameOverflow={ frameOverflow }
-          peaking={ peaking }
-          afterSlide={ this.handleChange }
-          { ...rest }
+          ref={(c) => { this.carousel = c; }}
+          decorators={[]}
+          frameOverflow={frameOverflow}
+          peaking={peaking}
+          afterSlide={this.handleChange}
+          {...rest}
         >
           { children }
         </NukaCarousel>

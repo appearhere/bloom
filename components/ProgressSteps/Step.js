@@ -16,7 +16,7 @@ const Step = (props) => {
     children,
     css,
     icon,
-    ...rest,
+    ...rest
   } = props;
 
   const leftClassName = cx(
@@ -58,28 +58,28 @@ const Step = (props) => {
 
   return (
     <LeftRight
-      { ...rest }
-      className={ cx(defaultCss.step, css.step) }
-      leftClassName={ leftClassName }
-      rightClassName={ rightClassName }
-      leftChildren={ icon ? (
+      {...rest}
+      className={cx(defaultCss.step, css.step)}
+      leftClassName={leftClassName}
+      rightClassName={rightClassName}
+      leftChildren={icon ? (
         <Icon
-          className={ defaultCss.icon }
-          name={ icon }
+          className={defaultCss.icon}
+          name={icon}
         />
       ) : (
         <Circle
-          circleClassName={ css.stepIconCircle }
-          className={ stepIconClassName }
-          completed={ completed }
+          circleClassName={css.stepIconCircle}
+          className={stepIconClassName}
+          completed={completed}
         >
           { step }
         </Circle>
-      ) }
+      )}
       rightChildren={
         <div>
-          <dt className={ stepTitleClassName }>{ title }</dt>
-          <dd className={ stepBodyClassName }>{ children }</dd>
+          <dt className={stepTitleClassName}>{ title }</dt>
+          <dd className={stepBodyClassName}>{ children }</dd>
         </div>
       }
       primarySide="right"

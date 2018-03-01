@@ -6,7 +6,7 @@ import BaseMap from '../BaseMap';
 
 storiesOf('Map Control Layer', module)
   .add('Default', () => (
-    <div style={ { height: '96vh' } }>
+    <div style={{ height: '96vh' }}>
       <ControlLayer>
         <BaseMap />
       </ControlLayer>

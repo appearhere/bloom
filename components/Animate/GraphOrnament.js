@@ -42,10 +42,10 @@ export default class GraphOrnament extends Component {
     }, className);
 
     return (
-      <svg className={ classes } viewBox="0 0 390 351">
+      <svg className={classes} viewBox="0 0 390 351">
         <defs>
           <rect
-            id={ `${this.id}-mask` }
+            id={`${this.id}-mask`}
             x="2.84217094e-14"
             y="0"
             width="390"
@@ -56,7 +56,7 @@ export default class GraphOrnament extends Component {
             y1="14.6562464%"
             x2="6.69339671%"
             y2="95.8727342%"
-            id={ `${this.id}-line-gradiant` }
+            id={`${this.id}-line-gradiant`}
           >
             <stop stopColor="#BBA080" offset="0%" />
             <stop stopColor="#BBA080" stopOpacity="0.12" offset="100%" />
@@ -66,7 +66,7 @@ export default class GraphOrnament extends Component {
             y1="12.2011619%"
             x2="-26.7618189%"
             y2="58.1035483%"
-            id={ `${this.id}-fill-gradiant` }
+            id={`${this.id}-fill-gradiant`}
           >
             <stop stopColor="#BBA080" stopOpacity="1.00294049" offset="0%" />
             <stop stopColor="#FFDD33" stopOpacity="0" offset="100%" />
@@ -74,21 +74,21 @@ export default class GraphOrnament extends Component {
         </defs>
         <g>
           <mask>
-            <use xlinkHref={ `#${this.id}-mask` } />
+            <use xlinkHref={`#${this.id}-mask`} />
           </mask>
-          <use xlinkHref={ `#${this.id}-mask` } />
+          <use xlinkHref={`#${this.id}-mask`} />
           <path
-            className={ css.line }
-            d={ line }
-            stroke={ `url(#${this.id}-line-gradiant)` }
-            mask={ `#${this.id}-mask` }
+            className={css.line}
+            d={line}
+            stroke={`url(#${this.id}-line-gradiant)`}
+            mask={`#${this.id}-mask`}
           />
           <path
-            className={ css.fill }
-            d={ fill }
-            fill={ `url(#${this.id}-fill-gradiant)` }
+            className={css.fill}
+            d={fill}
+            fill={`url(#${this.id}-fill-gradiant)`}
             opacity="0.12"
-            mask={ `#${this.id}-mask` }
+            mask={`#${this.id}-mask`}
           />
         </g>
       </svg>

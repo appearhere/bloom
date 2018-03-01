@@ -11,7 +11,7 @@ const Indicator = ({ active, className, ...rest }) => {
     className,
   );
 
-  return <div className={ classes } { ...rest } />;
+  return <div className={classes} {...rest} />;
 };
 
 Indicator.propTypes = {

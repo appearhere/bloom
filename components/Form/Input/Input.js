@@ -99,7 +99,7 @@ export default class Input extends Component {
       type,
       classNames,
       priority,
-      ...rest,
+      ...rest
     } = this.props;
 
     const mergedClassNames = mergeObjectStrings(css, classNames);
@@ -114,32 +114,32 @@ export default class Input extends Component {
     const InputComponent = type === 'textarea' ? 'textarea' : 'input';
 
     return (
-      <div className={ mergedClassNames.wrapper }>
+      <div className={mergedClassNames.wrapper}>
         <InputComponent
-          { ...rest }
-          ref={ (c) => { this.input = c; } }
-          className={ classes }
-          name={ name }
-          id={ id }
-          value={ value }
-          placeholder={ placeholder }
-          type={ type }
-          required={ required }
-          onFocus={ this.handleFocus }
-          onBlur={ this.handleBlur }
-          onChange={ this.handleChange }
+          {...rest}
+          ref={(c) => { this.input = c; }}
+          className={classes}
+          name={name}
+          id={id}
+          value={value}
+          placeholder={placeholder}
+          type={type}
+          required={required}
+          onFocus={this.handleFocus}
+          onBlur={this.handleBlur}
+          onChange={this.handleChange}
         />
         <CSSTransitionGroup
-          className={ mergedClassNames.post }
-          transitionName={ css }
-          transitionEnterTimeout={ 500 }
-          transitionLeaveTimeout={ 300 }
-          transitionAppearTimeout={ 500 }
+          className={mergedClassNames.post}
+          transitionName={css}
+          transitionEnterTimeout={500}
+          transitionLeaveTimeout={300}
+          transitionAppearTimeout={500}
           transitionAppear
         >
           { error && (
             <div
-              className={ mergedClassNames.errorMsg }
+              className={mergedClassNames.errorMsg}
             >
               { error }
             </div>

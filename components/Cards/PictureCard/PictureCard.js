@@ -14,26 +14,26 @@ const PictureCard = (props) => {
     center,
     style,
     overlayClassName,
-    ...rest,
+    ...rest
   } = props;
 
   return (
     <Card
-      { ...rest }
-      href={ href }
-      className={ cx(
+      {...rest}
+      href={href}
+      className={cx(
         css.root,
         className,
         href ? css.link : null,
         center ? css.center : null,
-      ) }
-      style={ {
+      )}
+      style={{
         ...style,
         backgroundImage: `url(${src})`,
-      } }
+      }}
     >
-      <div className={ cx(css.overlay, overlayClassName) } />
-      <div className={ css.inner }>
+      <div className={cx(css.overlay, overlayClassName)} />
+      <div className={css.inner}>
         { children }
       </div>
     </Card>

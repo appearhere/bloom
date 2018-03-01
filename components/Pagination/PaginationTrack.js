@@ -12,7 +12,7 @@ const FILLER = 'filler';
 const FIRST_PAGE = 1;
 const FILLER_THRESHOLD = 2;
 
-const PaginationFiller = () => <span className={ css.filler }>&hellip;</span>;
+const PaginationFiller = () => <span className={css.filler}>&hellip;</span>;
 
 const PaginationTrack = (props) => {
   const {
@@ -48,19 +48,19 @@ const PaginationTrack = (props) => {
   ].filter(page => page !== null);
 
   return (
-    <ul className={ css.track }>
+    <ul className={css.track}>
       { track.map((page, i) => {
         const key = page === FILLER ? `${FILLER}_${i}` : page;
 
         return (
-          <li className={ css.page } key={ key }>
+          <li className={css.page} key={key}>
             { page === FILLER ? (
               <FillerComponent />
             ) : (
               <LinkComponent
-                { ...linkProps }
-                page={ page }
-                active={ page === currentPage }
+                {...linkProps}
+                page={page}
+                active={page === currentPage}
               >
                 { page }
               </LinkComponent>

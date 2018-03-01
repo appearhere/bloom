@@ -24,7 +24,7 @@ export default class ProgressSteps extends Component {
       className,
       containerQuery,
       stepCss,
-      ...rest,
+      ...rest
     } = this.props;
 
     const stepStyles = {};
@@ -35,8 +35,8 @@ export default class ProgressSteps extends Component {
 
     return (
       <dl
-        className={ cx(css.root, className, containerQuery) }
-        { ...rest }
+        className={cx(css.root, className, containerQuery)}
+        {...rest}
       >
         { Children.map(steps, (step, i) => {
           const completed = i <= lastCompletedIndex;

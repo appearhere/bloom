@@ -6,5 +6,5 @@ const MarkerComponent = () => <button />;
 
 it('renders without crashing', () => {
   const div = document.createElement('div');
-  render(<MarkerContainer MarkerComponent={ MarkerComponent } />, div);
+  render(<MarkerContainer MarkerComponent={MarkerComponent} />, div);
 });

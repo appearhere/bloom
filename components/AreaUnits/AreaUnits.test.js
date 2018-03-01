@@ -7,7 +7,7 @@ import { AREA_UNITS } from '../../constants/units';
 it('renders without crashing', () => {
   const div = document.createElement('div');
   render(
-    <AreaUnits value={ 300 } unit={ AREA_UNITS.SQUARE_FOOT } />,
+    <AreaUnits value={300} unit={AREA_UNITS.SQUARE_FOOT} />,
     div
   );
 });

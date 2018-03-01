@@ -93,17 +93,20 @@ export default class ModalAnimator extends Component {
 
     return (
       <Portal>
-        <div ref={ (c) => { this.modal = c; } } onClick={ this.handleClick }>
-          <div className={ css.root }>
-            <div className={ css.overlay } />
+        <div
+          ref={(c) => { this.modal = c; }}
+          onClick={this.handleClick}
+        >
+          <div className={css.root}>
+            <div className={css.overlay} />
             <div
-              className={ css.wrapper }
-              aria-labelledby={ labelledBy }
-              aria-describedby={ describedBy }
+              className={css.wrapper}
+              aria-labelledby={labelledBy}
+              aria-describedby={describedBy}
             >
               <div
-                className={ cx(css.window, windowClassName) }
-                ref={ (c) => { this.modalWindow = c; } }
+                className={cx(css.window, windowClassName)}
+                ref={(c) => { this.modalWindow = c; }}
               >
                 { children }
               </div>

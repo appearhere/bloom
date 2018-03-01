@@ -19,7 +19,7 @@ describe('Icon component', () => {
     const Icon = iconHelper(icons);
 
     const div = document.createElement('div');
-    ReactDOM.render(<Icon name={ iconName } />, div);
+    ReactDOM.render(<Icon name={iconName} />, div);
   });
 
   it('throws when given an invalid icon name', () => {

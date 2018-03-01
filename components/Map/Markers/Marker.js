@@ -5,8 +5,8 @@ import cx from 'classnames';
 import css from './Marker.css';
 
 const Marker = ({ className, scrollClassName, children, variant }) => (
-  <div className={ cx(css.root, css[variant], className) }>
-    <div className={ cx(css.scrollContainer, scrollClassName) }>
+  <div className={cx(css.root, css[variant], className)}>
+    <div className={cx(css.scrollContainer, scrollClassName)}>
       { children }
     </div>
   </div>

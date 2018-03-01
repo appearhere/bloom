@@ -14,7 +14,7 @@ const IPhoneDeviceFrame = ({ video, ...rest }) => {
   };
 
   const Component = video ? VideoDeviceFrame : DeviceFrame;
-  return <Component { ...props } />;
+  return <Component {...props} />;
 };
 
 IPhoneDeviceFrame.propTypes = {

@@ -22,9 +22,9 @@ describe('DayPickerItem', () => {
 
       render(
         <DayPickerItem
-          ref={ (c) => { component = c; } }
-          day={ now }
-          onInteraction={ spy }
+          ref={(c) => { component = c; }}
+          day={now}
+          onInteraction={spy}
         />,
         div
       );
@@ -42,9 +42,9 @@ describe('DayPickerItem', () => {
 
       render(
         <DayPickerItem
-          ref={ (c) => { component = c; } }
-          day={ now }
-          onInteraction={ spy }
+          ref={(c) => { component = c; }}
+          day={now}
+          onInteraction={spy}
         />,
         div
       );
@@ -62,9 +62,9 @@ describe('DayPickerItem', () => {
 
       render(
         <DayPickerItem
-          ref={ (c) => { component = c; } }
-          day={ now }
-          onInteraction={ spy }
+          ref={(c) => { component = c; }}
+          day={now}
+          onInteraction={spy}
         />,
         div
       );
@@ -83,9 +83,9 @@ describe('DayPickerItem', () => {
 
         render(
           <DayPickerItem
-            ref={ (c) => { component = c; } }
-            day={ now }
-            onInteraction={ spy }
+            ref={(c) => { component = c; }}
+            day={now}
+            onInteraction={spy}
           />,
           div
         );
@@ -103,12 +103,12 @@ describe('DayPickerItem', () => {
 
       render(
         <DayPickerItem
-          ref={ (c) => { component = c; } }
-          day={ now }
-          onInteraction={ spy }
-          getDayState={ () => ({
+          ref={(c) => { component = c; }}
+          day={now}
+          onInteraction={spy}
+          getDayState={() => ({
             isDisabled: true,
-          }) }
+          })}
         />,
         div
       );
@@ -127,9 +127,9 @@ describe('DayPickerItem', () => {
 
       render(
         <DayPickerItem
-          ref={ (c) => { component = c; } }
-          day={ now }
-          onHighlight={ spy }
+          ref={(c) => { component = c; }}
+          day={now}
+          onHighlight={spy}
         />,
         div
       );
@@ -147,9 +147,9 @@ describe('DayPickerItem', () => {
 
       render(
         <DayPickerItem
-          ref={ (c) => { component = c; } }
-          day={ now }
-          onHighlight={ spy }
+          ref={(c) => { component = c; }}
+          day={now}
+          onHighlight={spy}
         />,
         div
       );
@@ -167,12 +167,12 @@ describe('DayPickerItem', () => {
 
       render(
         <DayPickerItem
-          ref={ (c) => { component = c; } }
-          day={ now }
-          onHighlight={ spy }
-          getDayState={ () => ({
+          ref={(c) => { component = c; }}
+          day={now}
+          onHighlight={spy}
+          getDayState={() => ({
             isDisabled: true,
-          }) }
+          })}
         />,
         div
       );

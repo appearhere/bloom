@@ -33,12 +33,12 @@ class StateManagedDayRangePicker extends React.Component {
 
     return (
       <DayRangePicker
-        startDate={ startDate }
-        endDate={ endDate }
-        selectDate={ selectDate }
-        month={ month }
-        onInteraction={ this.handleInteraction }
-        onMonthChange={ this.handleMonthChange }
+        startDate={startDate}
+        endDate={endDate}
+        selectDate={selectDate}
+        month={month}
+        onInteraction={this.handleInteraction}
+        onMonthChange={this.handleMonthChange}
       />
     );
   }

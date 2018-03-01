@@ -1,8 +1,8 @@
 import PropTypes from 'prop-types';
 import React, { Component } from 'react';
+import ReactInputRange from '@appearhere/react-input-range';
 
 import noop from '../../../utils/noop';
-import ReactInputRange from '@appearhere/react-input-range';
 import css from './InputRange.css';
 
 export const defaultClassNames = {
@@ -72,24 +72,24 @@ export default class InputRange extends Component {
       value,
       minValue,
       maxValue,
-      ...rest,
+      ...rest
     } = this.props;
 
     const defaultValue = typeof value === 'object' ? { minValue, maxValue } : maxValue;
 
     return (
-      <div className={ css.container }>
+      <div className={css.container}>
         <ReactInputRange
-          { ...rest }
-          classNames={ classNames }
-          id={ id }
-          value={ value }
-          defaultValue={ defaultValue }
-          onChange={ this.handleChange }
-          onChangeComplete={ this.handleChangeComplete }
-          minValue={ minValue }
-          maxValue={ maxValue }
-          showLabel={ false }
+          {...rest}
+          classNames={classNames}
+          id={id}
+          value={value}
+          defaultValue={defaultValue}
+          onChange={this.handleChange}
+          onChangeComplete={this.handleChangeComplete}
+          minValue={minValue}
+          maxValue={maxValue}
+          showLabel={false}
         />
       </div>
     );

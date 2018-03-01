@@ -6,13 +6,13 @@ import css from './Badge.css';
 
 const Badge = ({ className, children, context, hollow, ...rest }) => (
   <span
-    { ...rest }
-    className={ cx(
+    {...rest}
+    className={cx(
       css.root,
       css[context],
       hollow ? css.hollow : null,
       className
-    ) }
+    )}
   >
     { children }
   </span>

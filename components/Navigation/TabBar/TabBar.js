@@ -21,38 +21,38 @@ const TabBar = ({ children, variant, activeMarkerOffset, scrollable, className }
   warning(activeTabs.length < 2, '`<TabBar />`: has multiple active tabs');
 
   return (
-    <div className={ cx(css.root, css[variant], scrollable ? css.scrollable : null) }>
-      <div className={ cx(css.bar, className) }>
+    <div className={cx(css.root, css[variant], scrollable ? css.scrollable : null)}>
+      <div className={cx(css.bar, className)}>
         { Children.map(children, (child, i) => (
           <div
-            className={ cx(
+            className={cx(
               css.link,
               activeTabIndex === i ? css.active : null,
               (scrollable && i === 0) ? css.scrollableLink : null,
-            ) }
-            style={ {
+            )}
+            style={{
               width: `${tabWidth}%`,
-            } }
+            }}
           >
             { child }
           </div>
         )) }
       </div>
       <Motion
-        defaultStyle={ {
+        defaultStyle={{
           x: 0,
-        } }
-        style={ {
+        }}
+        style={{
           x: spring(activeTabIndex * 100, SPRING_CONFIG),
-        } }
+        }}
       >
         { ({ x }) => (
           <div
-            className={ cx(css.underline, scrollable ? css.scrollableUnderline : null) }
-            style={ {
+            className={cx(css.underline, scrollable ? css.scrollableUnderline : null)}
+            style={{
               width: `${tabWidth}%`,
               transform: `translate3d(${x}%, ${activeMarkerOffset}px, 0)`,
-            } }
+            }}
           />
         ) }
       </Motion>

@@ -7,7 +7,7 @@ import { markdown } from '../../typography.css';
 
 const Introduction = () => (
   <div>
-    <Markdown className={ markdown } overrideClassname>
+    <Markdown className={markdown} overrideClassname>
       { introduction }
     </Markdown>
   </div>

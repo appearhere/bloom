@@ -16,12 +16,12 @@ it('renders with a video without crashing', () => {
   const div = document.createElement('div');
   render(
     <SquareHero
-      videoProps={ {
+      videoProps={{
         videoClassName: '',
         posterClassName: '',
         posterSrc: <source />,
         videoSrc: <source />,
-      } }
+      }}
     >
       requires children
     </SquareHero>,

@@ -23,7 +23,7 @@ const CalendarDay = (props) => {
     classNames,
     today,
     outOfRange,
-    ...rest,
+    ...rest
   } = props;
 
   const classes = cx(
@@ -34,11 +34,11 @@ const CalendarDay = (props) => {
   );
 
   return day ? (
-    <div { ...rest } className={ classes }>
-      <span className={ dayClassName }>{ day.format(format) }</span>
+    <div {...rest} className={classes}>
+      <span className={dayClassName}>{ day.format(format) }</span>
     </div>
   ) : (
-    <div className={ classes }>
+    <div className={classes}>
       { '\u00a0' }
     </div>
   );

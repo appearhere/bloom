@@ -44,7 +44,7 @@ export default class Btn extends Component {
       context,
       variant,
       priority,
-      ...rest,
+      ...rest
     } = this.props;
 
     const classes = classnames(
@@ -57,12 +57,12 @@ export default class Btn extends Component {
 
     return (
       <button
-        ref={ (c) => { this.button = c; } }
-        className={ classes }
-        type={ type }
-        onClick={ onClick }
-        disabled={ disabled }
-        { ...rest }
+        ref={(c) => { this.button = c; }}
+        className={classes}
+        type={type}
+        onClick={onClick}
+        disabled={disabled}
+        {...rest}
       >
         { children }
       </button>

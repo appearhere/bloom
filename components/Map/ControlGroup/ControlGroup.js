@@ -5,7 +5,7 @@ import cx from 'classnames';
 import css from './ControlGroup.css';
 
 const ControlGroup = ({ children, className }) => (
-  <div className={ cx(css.root, css.controlGroup, className) }>
+  <div className={cx(css.root, css.controlGroup, className)}>
     { Children.map(children, child =>
       cloneElement(child, {
         className: cx(css.control, child.props.className),

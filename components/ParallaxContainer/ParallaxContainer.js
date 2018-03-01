@@ -57,10 +57,10 @@ export default class ParallaxContainer extends Component {
 
     return (
       <div
-        className={ cx(css.root, className) }
-        style={ {
+        className={cx(css.root, className)}
+        style={{
           top: (0 - top) + topOffset,
-        } }
+        }}
       >
         { children }
       </div>

@@ -10,5 +10,5 @@ it('renders with a date without crashing', () => {
 
 it('renders without a date without crashing', () => {
   const div = document.createElement('div');
-  render(<CalendarItem day={ null } />, div);
+  render(<CalendarItem day={null} />, div);
 });

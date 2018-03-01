@@ -6,17 +6,17 @@ import css from './Swatch.css';
 
 const Swatch = ({ className, name, hex, rgb, variable }) => (
   <Specimen
-    classNames={ {
+    classNames={{
       root: className,
-    } }
-    name={ name }
-    attributes={ [
+    }}
+    name={name}
+    attributes={[
       hex,
       rgb,
       variable,
-    ] }
+    ]}
   >
-    <div className={ css.color } style={ { backgroundColor: rgb } } />
+    <div className={css.color} style={{ backgroundColor: rgb }} />
   </Specimen>
 );
 

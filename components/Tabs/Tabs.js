@@ -51,7 +51,7 @@ export default class Tabs extends Component {
     this.setState({ focusedTabIndex: i });
   }
 
-  handleBlur = (e, i) => {
+  handleBlur = () => {
     this.setState({ focusedTabIndex: null });
   }
 
@@ -59,7 +59,6 @@ export default class Tabs extends Component {
     const { activeTabIndex } = this.state;
     const { children } = this.props;
     const i = keyboardHandler(e.which, activeTabIndex, Children.count(children));
-
 
     if (i > -1) {
       e.preventDefault();
@@ -74,33 +73,33 @@ export default class Tabs extends Component {
     const { activeTabIndex } = this.state;
 
     return (
-      <div className={ css.tabs }>
+      <div className={css.tabs}>
         <ScreenReadable>
           <span id={`${this.id}-description`}>
             { accessibilityDescription }
           </span>
         </ScreenReadable>
-        <div className={ css.tabsContainer }>
+        <div className={css.tabsContainer}>
           { Children.map(children, (child, i) => {
-              const id = `${this.id}-${i}-tab`;
+            const id = `${this.id}-${i}-tab`;
 
-              return cloneElement(child, {
-                ref: (c) => { this.tabs[i] = c; },
-                key: id,
-                id: id,
-                value: i,
-                selected: activeTabIndex === i,
-                onClick: this.handleClick,
-                onFocus: this.handleFocus,
-                onBlur: this.handleBlur,
-                onKeyDown: this.handleKeyDown,
-                'aria-controls': `${this.id}-${i}-panel`,
-                'aria-describedby': `${this.id}-description`,
-                role: 'tab',
-              }, child.props.label);
+            return cloneElement(child, {
+              ref: (c) => { this.tabs[i] = c; },
+              key: id,
+              id,
+              value: i,
+              selected: activeTabIndex === i,
+              onClick: this.handleClick,
+              onFocus: this.handleFocus,
+              onBlur: this.handleBlur,
+              onKeyDown: this.handleKeyDown,
+              'aria-controls': `${this.id}-${i}-panel`,
+              'aria-describedby': `${this.id}-description`,
+              role: 'tab',
+            }, child.props.label);
           }) }
         </div>
-        <div className={ css.tabsContent }>
+        <div className={css.tabsContent}>
           { Children.map(children, (child, i) => {
             const id = `${this.id}-${i}-panel`;
             const classes = cx(
@@ -115,7 +114,7 @@ export default class Tabs extends Component {
                 aria-labelledby={`${this.id}-${i}-tab`}
                 aria-hidden={activeTabIndex !== i}
                 role="tabpanel"
-                className={ classes }
+                className={classes}
               >
                 { child.props.children }
               </div>

@@ -31,11 +31,11 @@ export default class StarRating extends Component {
 
     return (
       <RadioGroup
-        { ...rest }
-        ref={ (c) => { this.group = c; } }
-        name={ name }
-        value={ value }
-        Input={ Star }
+        {...rest}
+        ref={(c) => { this.group = c; }}
+        name={name}
+        value={value}
+        Input={Star}
       >
         { radio => (
           <span>

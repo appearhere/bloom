@@ -52,17 +52,17 @@ export const T = ({ elm, className, children }) => createElement(
 );
 
 export const D = ({ className, children }) => (
-  <div className={ cx(section, className) }>
+  <div className={cx(section, className)}>
     { children }
   </div>
 );
 
 export const C = ({ className, children }) => (
-  <code className={ cx(code, className) }>{ children }</code>
+  <code className={cx(code, className)}>{ children }</code>
 );
 
 export const A = ({ className, children, ...rest }) => (
-  <a { ...rest } className={ cx(link, className) }>{ children }</a>
+  <a {...rest} className={cx(link, className)}>{ children }</a>
 );
 
 export const List = ({ className, children, type, ...rest }) => createElement(
@@ -78,23 +78,23 @@ export const List = ({ className, children, type, ...rest }) => createElement(
 );
 
 export const Dl = ({ className, children, ...rest }) => (
-  <dl { ...rest } className={ cx(descriptionList, className) }>
+  <dl {...rest} className={cx(descriptionList, className)}>
     { children }
   </dl>
 );
 
 export const Note = ({ className, children, ...rest }) => (
-  <div { ...rest } className={ cx(note, className) }>
-    <div className={ css.noteHeading }>Note</div>
+  <div {...rest} className={cx(note, className)}>
+    <div className={css.noteHeading}>Note</div>
     { children }
   </div>
 );
 
 export const Placeholder = ({ className, children, onClick, ...rest }) => (
   <BtnContainer
-    { ...rest }
-    className={ cx(css.placeholder, className) }
-    onClick={ onClick }
+    {...rest}
+    className={cx(css.placeholder, className)}
+    onClick={onClick}
   >
     { children }
   </BtnContainer>
@@ -103,11 +103,11 @@ export const Placeholder = ({ className, children, onClick, ...rest }) => (
 export const Bq = ({ className, children, citation, ...rest }) => (
   <div>
     <blockquote
-      { ...rest }
-      className={ cx(
+      {...rest}
+      className={cx(
         css.blockquote,
         className,
-      ) }
+      )}
     >
       { children }
     </blockquote>

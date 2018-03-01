@@ -9,340 +9,340 @@ import * as scaffold from '../../components/Scaffold/Scaffold';
 import css from './Navigation.css';
 
 const Navigation = ({ className, onLinkClick }) => (
-  <div className={ cx(css.root, className) }>
-    <div className={ css.section }>
-      <span className={ cx(scaffold.h2, css.title) }>Overview</span>
-      <ul className={ css.linkList }>
-        <li className={ css.linkListItem }>
+  <div className={cx(css.root, className)}>
+    <div className={css.section}>
+      <span className={cx(scaffold.h2, css.title)}>Overview</span>
+      <ul className={css.linkList}>
+        <li className={css.linkListItem}>
           <NavLink
             exact
-            activeClassName={ css.linkActive }
-            className={ css.link }
+            activeClassName={css.linkActive}
+            className={css.link}
             to="/"
-            onClick={ onLinkClick }
+            onClick={onLinkClick}
           >
             Introduction
           </NavLink>
         </li>
       </ul>
     </div>
-    <div className={ css.section }>
-      <span className={ cx(scaffold.h2, css.title) }>Design</span>
-      <ul className={ css.linkList }>
-        <li className={ css.linkListItem }>
+    <div className={css.section}>
+      <span className={cx(scaffold.h2, css.title)}>Design</span>
+      <ul className={css.linkList}>
+        <li className={css.linkListItem}>
           <NavLink
             exact
-            activeClassName={ css.linkActive }
-            className={ css.link }
+            activeClassName={css.linkActive}
+            className={css.link}
             to="/design/colors"
-            onClick={ onLinkClick }
+            onClick={onLinkClick}
           >
             Colors
           </NavLink>
         </li>
-        <li className={ css.linkListItem }>
+        <li className={css.linkListItem}>
           <NavLink
             exact
-            activeClassName={ css.linkActive }
-            className={ css.link }
+            activeClassName={css.linkActive}
+            className={css.link}
             to="/design/iconography"
-            onClick={ onLinkClick }
+            onClick={onLinkClick}
           >
             Iconography
           </NavLink>
         </li>
-        <li className={ css.linkListItem }>
+        <li className={css.linkListItem}>
           <NavLink
             exact
-            activeClassName={ css.linkActive }
-            className={ css.link }
+            activeClassName={css.linkActive}
+            className={css.link}
             to="/design/responsive-design"
-            onClick={ onLinkClick }
+            onClick={onLinkClick}
           >
             Responsive design
           </NavLink>
         </li>
-        <li className={ css.linkListItem }>
+        <li className={css.linkListItem}>
           <NavLink
             exact
-            activeClassName={ css.linkActive }
-            className={ css.link }
+            activeClassName={css.linkActive}
+            className={css.link}
             to="/design/typography"
-            onClick={ onLinkClick }
+            onClick={onLinkClick}
           >
             Typography
           </NavLink>
         </li>
       </ul>
     </div>
-    <div className={ css.section }>
-      <span className={ cx(scaffold.h2, css.title) }>Patterns</span>
-      <ul className={ css.linkList }>
-        <li className={ css.linkListItem }>
+    <div className={css.section}>
+      <span className={cx(scaffold.h2, css.title)}>Patterns</span>
+      <ul className={css.linkList}>
+        <li className={css.linkListItem}>
           <NavLink
             exact
-            activeClassName={ css.linkActive }
-            className={ css.link }
+            activeClassName={css.linkActive}
+            className={css.link}
             to="/patterns/accessibility"
-            onClick={ onLinkClick }
+            onClick={onLinkClick}
           >
             Accessibility
           </NavLink>
         </li>
-        <li className={ css.linkListItem }>
+        <li className={css.linkListItem}>
           <NavLink
             exact
-            activeClassName={ css.linkActive }
-            className={ css.link }
+            activeClassName={css.linkActive}
+            className={css.link}
             to="/patterns/animation"
-            onClick={ onLinkClick }
+            onClick={onLinkClick}
           >
             Animation
           </NavLink>
         </li>
-        <li className={ css.linkListItem }>
+        <li className={css.linkListItem}>
           <NavLink
             exact
-            activeClassName={ css.linkActive }
-            className={ css.link }
+            activeClassName={css.linkActive}
+            className={css.link}
             to="/patterns/badge"
-            onClick={ onLinkClick }
+            onClick={onLinkClick}
           >
             Badge
           </NavLink>
         </li>
-        <li className={ css.linkListItem }>
+        <li className={css.linkListItem}>
           <NavLink
             exact
-            activeClassName={ css.linkActive }
-            className={ css.link }
+            activeClassName={css.linkActive}
+            className={css.link}
             to="/patterns/buttons"
-            onClick={ onLinkClick }
+            onClick={onLinkClick}
           >
             Buttons
           </NavLink>
         </li>
-        <li className={ css.linkListItem }>
+        <li className={css.linkListItem}>
           <NavLink
             exact
-            activeClassName={ css.linkActive }
-            className={ css.link }
+            activeClassName={css.linkActive}
+            className={css.link}
             to="/patterns/cards"
-            onClick={ onLinkClick }
+            onClick={onLinkClick}
           >
             Cards
           </NavLink>
         </li>
-        <li className={ css.linkListItem }>
+        <li className={css.linkListItem}>
           <NavLink
             exact
-            activeClassName={ css.linkActive }
-            className={ css.link }
+            activeClassName={css.linkActive}
+            className={css.link}
             to="/patterns/carousel"
-            onClick={ onLinkClick }
+            onClick={onLinkClick}
           >
             Carousel
           </NavLink>
         </li>
-        <li className={ css.linkListItem }>
+        <li className={css.linkListItem}>
           <NavLink
             exact
-            activeClassName={ css.linkActive }
-            className={ css.link }
+            activeClassName={css.linkActive}
+            className={css.link}
             to="/patterns/dropdown"
-            onClick={ onLinkClick }
+            onClick={onLinkClick}
           >
             Dropdown
           </NavLink>
         </li>
-        <li className={ css.linkListItem }>
+        <li className={css.linkListItem}>
           <NavLink
             exact
-            activeClassName={ css.linkActive }
-            className={ css.link }
+            activeClassName={css.linkActive}
+            className={css.link}
             to="/patterns/figure"
-            onClick={ onLinkClick }
+            onClick={onLinkClick}
           >
             Figure
           </NavLink>
         </li>
-        <li className={ css.linkListItem }>
+        <li className={css.linkListItem}>
           <NavLink
             exact
-            activeClassName={ css.linkActive }
-            className={ css.link }
+            activeClassName={css.linkActive}
+            className={css.link}
             to="/patterns/fitted-image"
-            onClick={ onLinkClick }
+            onClick={onLinkClick}
           >
             Fitted image
           </NavLink>
         </li>
-        <li className={ css.linkListItem }>
+        <li className={css.linkListItem}>
           <NavLink
             exact
-            activeClassName={ css.linkActive }
-            className={ css.link }
+            activeClassName={css.linkActive}
+            className={css.link}
             to="/patterns/horizontal-overflow-bar"
-            onClick={ onLinkClick }
+            onClick={onLinkClick}
           >
             Horizontal Overflow Bar
           </NavLink>
         </li>
-        <li className={ css.linkListItem }>
+        <li className={css.linkListItem}>
           <NavLink
             exact
-            activeClassName={ css.linkActive }
-            className={ css.link }
+            activeClassName={css.linkActive}
+            className={css.link}
             to="/patterns/inputs"
-            onClick={ onLinkClick }
+            onClick={onLinkClick}
           >
             Inputs
           </NavLink>
         </li>
-        <li className={ css.linkListItem }>
+        <li className={css.linkListItem}>
           <NavLink
             exact
-            activeClassName={ css.linkActive }
-            className={ css.link }
+            activeClassName={css.linkActive}
+            className={css.link}
             to="/patterns/input-field"
-            onClick={ onLinkClick }
+            onClick={onLinkClick}
           >
             InputField
           </NavLink>
         </li>
-        <li className={ css.linkListItem }>
+        <li className={css.linkListItem}>
           <NavLink
             exact
-            activeClassName={ css.linkActive }
-            className={ css.link }
+            activeClassName={css.linkActive}
+            className={css.link}
             to="/patterns/leftright"
-            onClick={ onLinkClick }
+            onClick={onLinkClick}
           >
             LeftRight
           </NavLink>
         </li>
-        <li className={ css.linkListItem }>
+        <li className={css.linkListItem}>
           <NavLink
             exact
-            activeClassName={ css.linkActive }
-            className={ css.link }
+            activeClassName={css.linkActive}
+            className={css.link}
             to="/patterns/loader"
-            onClick={ onLinkClick }
+            onClick={onLinkClick}
           >
             Loader
           </NavLink>
         </li>
-        <li className={ css.linkListItem }>
+        <li className={css.linkListItem}>
           <NavLink
             exact
-            activeClassName={ css.linkActive }
-            className={ css.link }
+            activeClassName={css.linkActive}
+            className={css.link}
             to="/patterns/markdown"
-            onClick={ onLinkClick }
+            onClick={onLinkClick}
           >
             Markdown
           </NavLink>
         </li>
-        <li className={ css.linkListItem }>
+        <li className={css.linkListItem}>
           <NavLink
             exact
-            activeClassName={ css.linkActive }
-            className={ css.link }
+            activeClassName={css.linkActive}
+            className={css.link}
             to="/patterns/medallion"
-            onClick={ onLinkClick }
+            onClick={onLinkClick}
           >
             Medallion
           </NavLink>
         </li>
-        <li className={ css.linkListItem }>
+        <li className={css.linkListItem}>
           <NavLink
             exact
-            activeClassName={ css.linkActive }
-            className={ css.link }
+            activeClassName={css.linkActive}
+            className={css.link}
             to="/patterns/modals"
-            onClick={ onLinkClick }
+            onClick={onLinkClick}
           >
             Modals
           </NavLink>
         </li>
-        <li className={ css.linkListItem }>
+        <li className={css.linkListItem}>
           <NavLink
             exact
-            activeClassName={ css.linkActive }
-            className={ css.link }
+            activeClassName={css.linkActive}
+            className={css.link}
             to="/patterns/pagination"
-            onClick={ onLinkClick }
+            onClick={onLinkClick}
           >
             Pagination
           </NavLink>
         </li>
-        <li className={ css.linkListItem }>
+        <li className={css.linkListItem}>
           <NavLink
             exact
-            activeClassName={ css.linkActive }
-            className={ css.link }
+            activeClassName={css.linkActive}
+            className={css.link}
             to="/patterns/panels"
-            onClick={ onLinkClick }
+            onClick={onLinkClick}
           >
             Panels
           </NavLink>
         </li>
-        <li className={ css.linkListItem }>
+        <li className={css.linkListItem}>
           <NavLink
             exact
-            activeClassName={ css.linkActive }
-            className={ css.link }
+            activeClassName={css.linkActive}
+            className={css.link}
             to="/patterns/social-links"
-            onClick={ onLinkClick }
+            onClick={onLinkClick}
           >
             Social Links
           </NavLink>
         </li>
-        <li className={ css.linkListItem }>
+        <li className={css.linkListItem}>
           <NavLink
             exact
-            activeClassName={ css.linkActive }
-            className={ css.link }
+            activeClassName={css.linkActive}
+            className={css.link}
             to="/patterns/tabs"
-            onClick={ onLinkClick }
+            onClick={onLinkClick}
           >
             Tabs
           </NavLink>
         </li>
-        <li className={ css.linkListItem }>
+        <li className={css.linkListItem}>
           <NavLink
             exact
-            activeClassName={ css.linkActive }
-            className={ css.link }
+            activeClassName={css.linkActive}
+            className={css.link}
             to="/patterns/tab-bar"
-            onClick={ onLinkClick }
+            onClick={onLinkClick}
           >
             Tab Bar
           </NavLink>
         </li>
-        <li className={ css.linkListItem }>
+        <li className={css.linkListItem}>
           <NavLink
             exact
-            activeClassName={ css.linkActive }
-            className={ css.link }
+            activeClassName={css.linkActive}
+            className={css.link}
             to="/patterns/tether"
-            onClick={ onLinkClick }
+            onClick={onLinkClick}
           >
             Tether
           </NavLink>
         </li>
       </ul>
     </div>
-    <div className={ css.section }>
-      <span className={ cx(scaffold.h2, css.title) }>Utilities</span>
-      <ul className={ css.linkList }>
-        <li className={ css.linkListItem }>
+    <div className={css.section}>
+      <span className={cx(scaffold.h2, css.title)}>Utilities</span>
+      <ul className={css.linkList}>
+        <li className={css.linkListItem}>
           <NavLink
             exact
-            activeClassName={ css.linkActive }
-            className={ css.link }
+            activeClassName={css.linkActive}
+            className={css.link}
             to="/utilities/modifiers"
-            onClick={ onLinkClick }
+            onClick={onLinkClick}
           >
             Modifiers
           </NavLink>

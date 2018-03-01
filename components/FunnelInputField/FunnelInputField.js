@@ -10,8 +10,8 @@ const FunnelInputField = ({ classNames, ...rest }) => {
 
   return (
     <InputField
-      { ...rest }
-      classNames={ classes }
+      {...rest}
+      classNames={classes}
     />
   );
 };

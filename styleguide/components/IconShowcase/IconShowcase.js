@@ -7,7 +7,7 @@ import Icon from '../../../components/Icon/Icon';
 
 import css from './IconShowcase.css';
 
-const renderFn = ({ value }) => <Icon name={ value } />;
+const renderFn = ({ value }) => <Icon name={value} />;
 
 renderFn.propTypes = {
   value: PropTypes.string,
@@ -15,12 +15,12 @@ renderFn.propTypes = {
 
 const IconShowcase = ({ className, name, size, value, render }) => (
   <Specimen
-    classNames={ {
+    classNames={{
       root: className,
       specimenContainer: cx(css.icon, css[size]),
-    } }
-    name={ name }
-    attributes={ [value] }
+    }}
+    name={name}
+    attributes={[value]}
   >
     { render({ value }) }
   </Specimen>

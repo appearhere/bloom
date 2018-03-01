@@ -10,13 +10,13 @@ const TabBarIconItem = (props) => {
   const {
     children,
     icon,
-    ...rest,
+    ...rest
   } = props;
 
   return (
-    <TabBarItem className={ css.root } { ...rest }>
-      <Icon className={ css.icon } name={ icon } />
-      <span className={ css.label }>
+    <TabBarItem className={css.root} {...rest}>
+      <Icon className={css.icon} name={icon} />
+      <span className={css.label}>
         { children }
       </span>
     </TabBarItem>

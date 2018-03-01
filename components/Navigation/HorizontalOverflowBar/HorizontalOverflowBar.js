@@ -111,15 +111,15 @@ export default class HorizontalOverflowBar extends Component {
     );
 
     return (
-      <nav className={ classes } ref={ (c) => { this.navigation = c; } }>
-        <div className={ css.listWrapper } ref={ (c) => { this.scrollable = c; } }>
-          <ul className={ css.list }>
+      <nav className={classes} ref={(c) => { this.navigation = c; }}>
+        <div className={css.listWrapper} ref={(c) => { this.scrollable = c; }}>
+          <ul className={css.list}>
             { children && children(({
               className: childClassName,
               href,
               label,
               active,
-              ...rest,
+              ...rest
             }) => {
               const itemClasses = cx(css.item, childClassName, {
                 [css.active]: active,
@@ -129,8 +129,8 @@ export default class HorizontalOverflowBar extends Component {
               });
 
               return (
-                <li className={ itemClasses } { ...rest }>
-                  <a className={ linkClasses } href={ href }>{ label }</a>
+                <li className={itemClasses} {...rest}>
+                  <a className={linkClasses} href={href}>{ label }</a>
                 </li>
               );
             }) }

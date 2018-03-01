@@ -15,7 +15,7 @@ const FloatingActionBtn = (props) => {
     type,
     disabled,
     context,
-    ...rest,
+    ...rest
   } = props;
 
   const handleClick = (e) => {
@@ -30,11 +30,11 @@ const FloatingActionBtn = (props) => {
 
   return (
     <button
-      className={ classes }
-      type={ type }
-      onClick={ handleClick }
-      disabled={ disabled }
-      { ...rest }
+      className={classes}
+      type={type}
+      onClick={handleClick}
+      disabled={disabled}
+      {...rest}
     >
       { children }
     </button>

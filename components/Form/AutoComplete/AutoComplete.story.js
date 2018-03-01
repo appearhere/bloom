@@ -19,16 +19,16 @@ const names = [].concat(...grouped.map(section => section.members));
 storiesOf('AutoComplete', module)
   .add('Default', () => (
     <AutoComplete
-      suggestions={ names }
-      onSuggestionsFetchRequested={ action('Fetching suggestions') }
-      onSuggestionsClearRequested={ action('Clearing suggestions') }
-      onSuggestionSelected={ action('Selecting suggestion') }
-      inputProps={ {
+      suggestions={names}
+      onSuggestionsFetchRequested={action('Fetching suggestions')}
+      onSuggestionsClearRequested={action('Clearing suggestions')}
+      onSuggestionSelected={action('Selecting suggestion')}
+      inputProps={{
         value: '',
         onChange: action('input onChange'),
-      } }
-      renderSuggestion={ suggestion => <span>{ suggestion }</span> }
-      getSuggestionValue={ val => val }
+      }}
+      renderSuggestion={suggestion => <span>{ suggestion }</span>}
+      getSuggestionValue={val => val}
       focusFirstSuggestion
       alwaysRenderSuggestions
     />
@@ -44,53 +44,53 @@ storiesOf('AutoComplete', module)
   ))
   .add('with default theme', () => (
     <AutoComplete
-      theme={ theme }
-      suggestions={ names }
-      onSuggestionsFetchRequested={ action('Fetching suggestions') }
-      onSuggestionsClearRequested={ action('Clearing suggestions') }
-      onSuggestionSelected={ action('Selecting suggestion') }
-      inputProps={ {
+      theme={theme}
+      suggestions={names}
+      onSuggestionsFetchRequested={action('Fetching suggestions')}
+      onSuggestionsClearRequested={action('Clearing suggestions')}
+      onSuggestionSelected={action('Selecting suggestion')}
+      inputProps={{
         value: '',
         onChange: action('input onChange'),
-      } }
-      renderSuggestion={ suggestion => <span>{ suggestion }</span> }
-      getSuggestionValue={ val => val }
+      }}
+      renderSuggestion={suggestion => <span>{ suggestion }</span>}
+      getSuggestionValue={val => val}
       focusFirstSuggestion
       alwaysRenderSuggestions
     />
   ))
   .add('with styled suggestion', () => (
     <AutoComplete
-      theme={ theme }
-      suggestions={ names }
-      onSuggestionsFetchRequested={ action('Fetching suggestions') }
-      onSuggestionsClearRequested={ action('Clearing suggestions') }
-      onSuggestionSelected={ action('Selecting suggestion') }
-      inputProps={ {
+      theme={theme}
+      suggestions={names}
+      onSuggestionsFetchRequested={action('Fetching suggestions')}
+      onSuggestionsClearRequested={action('Clearing suggestions')}
+      onSuggestionSelected={action('Selecting suggestion')}
+      inputProps={{
         value: '',
         onChange: action('input onChange'),
-      } }
-      renderSuggestion={ suggestion => <Suggestion>{ suggestion }</Suggestion> }
-      getSuggestionValue={ val => val }
+      }}
+      renderSuggestion={suggestion => <Suggestion>{ suggestion }</Suggestion>}
+      getSuggestionValue={val => val}
       focusFirstSuggestion
       alwaysRenderSuggestions
     />
   ))
   .add('with groups', () => (
     <AutoComplete
-      theme={ theme }
-      suggestions={ grouped }
-      onSuggestionsFetchRequested={ action('Fetching suggestions') }
-      onSuggestionsClearRequested={ action('Clearing suggestions') }
-      onSuggestionSelected={ action('Selecting suggestion') }
-      inputProps={ {
+      theme={theme}
+      suggestions={grouped}
+      onSuggestionsFetchRequested={action('Fetching suggestions')}
+      onSuggestionsClearRequested={action('Clearing suggestions')}
+      onSuggestionSelected={action('Selecting suggestion')}
+      inputProps={{
         value: '',
         onChange: action('input onChange'),
-      } }
-      renderSectionTitle={ section => <Heading>{ section.discipline }</Heading> }
-      renderSuggestion={ member => <Suggestion>{ member }</Suggestion> }
-      getSectionSuggestions={ section => section.members }
-      getSuggestionValue={ val => val }
+      }}
+      renderSectionTitle={section => <Heading>{ section.discipline }</Heading>}
+      renderSuggestion={member => <Suggestion>{ member }</Suggestion>}
+      getSectionSuggestions={section => section.members}
+      getSuggestionValue={val => val}
       focusFirstSuggestion
       alwaysRenderSuggestions
       multiSection
@@ -98,20 +98,20 @@ storiesOf('AutoComplete', module)
   ))
   .add('Search with autocomplete', () => (
     <AutoComplete
-      theme={ theme }
-      suggestions={ grouped }
-      onSuggestionsFetchRequested={ action('Fetching suggestions') }
-      onSuggestionsClearRequested={ action('Clearing suggestions') }
-      onSuggestionSelected={ action('Selecting suggestion') }
-      inputProps={ {
+      theme={theme}
+      suggestions={grouped}
+      onSuggestionsFetchRequested={action('Fetching suggestions')}
+      onSuggestionsClearRequested={action('Clearing suggestions')}
+      onSuggestionSelected={action('Selecting suggestion')}
+      inputProps={{
         value: '',
         onChange: action('input onChange'),
-      } }
-      renderSectionTitle={ section => <Heading>{ section.discipline }</Heading> }
-      renderSuggestion={ member => <Suggestion>{ member }</Suggestion> }
-      getSectionSuggestions={ section => section.members }
-      getSuggestionValue={ val => val }
-      renderInputComponent={ Input }
+      }}
+      renderSectionTitle={section => <Heading>{ section.discipline }</Heading>}
+      renderSuggestion={member => <Suggestion>{ member }</Suggestion>}
+      getSectionSuggestions={section => section.members}
+      getSuggestionValue={val => val}
+      renderInputComponent={Input}
       focusFirstSuggestion
       alwaysRenderSuggestions
       multiSection

@@ -19,12 +19,12 @@ stories.add('IconInput', () => (
   <IconInput
     iconName="search"
     id="1"
-    type={ select('Type', inputTypes, inputTypes[0]) }
+    type={select('Type', inputTypes, inputTypes[0])}
     value="100"
-    onFocus={ action('Focus') }
-    onBlur={ action('Blur') }
-    onChange={ action('Change') }
-    error={ boolean('Errored', false) ? 'Something went wrong' : '' }
+    onFocus={action('Focus')}
+    onBlur={action('Blur')}
+    onChange={action('Change')}
+    error={boolean('Errored', false) ? 'Something went wrong' : ''}
   />
 ))
 .add('IconInput with rightsided icon', () => (
@@ -32,24 +32,24 @@ stories.add('IconInput', () => (
     iconName="search"
     iconSide="right"
     id="1"
-    type={ select('Type', inputTypes, inputTypes[0]) }
+    type={select('Type', inputTypes, inputTypes[0])}
     value="100"
-    onFocus={ action('Focus') }
-    onBlur={ action('Blur') }
-    onChange={ action('Change') }
-    error={ boolean('Errored', false) ? 'Something went wrong' : '' }
+    onFocus={action('Focus')}
+    onBlur={action('Blur')}
+    onChange={action('Change')}
+    error={boolean('Errored', false) ? 'Something went wrong' : ''}
   />
 ))
 .add('IconInput w/high priority', () => (
   <IconInput
     iconName="search"
     id="1"
-    type={ select('Type', inputTypes, inputTypes[0]) }
+    type={select('Type', inputTypes, inputTypes[0])}
     value="100"
-    onFocus={ action('Focus') }
-    onBlur={ action('Blur') }
-    onChange={ action('Change') }
-    error={ boolean('Errored', false) ? 'Something went wrong' : '' }
+    onFocus={action('Focus')}
+    onBlur={action('Blur')}
+    onChange={action('Change')}
+    error={boolean('Errored', false) ? 'Something went wrong' : ''}
     priority="high"
   />
 ));

@@ -16,7 +16,7 @@ export const WINDOW_VARIANT_TO_PANEL_CONTEXT = {
 };
 
 export const WindowTitle = ({ className, children, ...rest }) => (
-  <span { ...rest } className={ cx(css.title, className) }>
+  <span {...rest} className={cx(css.title, className)}>
     { children }
   </span>
 );
@@ -63,37 +63,37 @@ export default class Window extends Component {
       variant,
       className,
       classNames,
-      ...rest,
+      ...rest
     } = this.props;
 
     return (
       <div
-        { ...rest }
-        className={ cx(
+        {...rest}
+        className={cx(
           css.root,
           css[variant],
           header ? css.hasHeader : null,
           footer ? css.hasFooter : null,
           className
-        ) }
+        )}
       >
         { header && (
           <Panel
-            context={ WINDOW_VARIANT_TO_PANEL_CONTEXT[variant] }
-            className={ cx(css.header, classNames.header) }
+            context={WINDOW_VARIANT_TO_PANEL_CONTEXT[variant]}
+            className={cx(css.header, classNames.header)}
           >
             { header }
           </Panel>
         ) }
         { body && (
-          <div className={ cx(css.body, classNames.body) }>
+          <div className={cx(css.body, classNames.body)}>
             { body }
           </div>
         ) }
         { footer && (
           <Panel
-            context={ WINDOW_VARIANT_TO_PANEL_CONTEXT[variant] }
-            className={ cx(css.footer, classNames.footer) }
+            context={WINDOW_VARIANT_TO_PANEL_CONTEXT[variant]}
+            className={cx(css.footer, classNames.footer)}
           >
             { footer }
           </Panel>

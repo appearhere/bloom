@@ -35,7 +35,7 @@ storiesOf('ProgressSteps', module)
       </Step>
     </ProgressSteps>
   )).add('with one completed step', () => (
-    <ProgressSteps lastCompletedIndex={ 0 }>
+    <ProgressSteps lastCompletedIndex={0}>
       <Step title="Apply in minutes">
         <p>
           { 'Tell us a little about yourself and your space and we’ll show what’s needed ' +
@@ -56,7 +56,7 @@ storiesOf('ProgressSteps', module)
       </Step>
     </ProgressSteps>
   )).add('with multiple completed steps', () => (
-    <ProgressSteps lastCompletedIndex={ 1 }>
+    <ProgressSteps lastCompletedIndex={1}>
       <Step title="Apply in minutes">
         <p>
           { 'Tell us a little about yourself and your space and we’ll show what’s needed ' +
@@ -78,7 +78,7 @@ storiesOf('ProgressSteps', module)
     </ProgressSteps>
   ))
   .add('horizontal', () => (
-    <HorizontalProgressSteps lastCompletedIndex={ 1 }>
+    <HorizontalProgressSteps lastCompletedIndex={1}>
       <Step title="Apply in minutes">
         <p>
           { 'Tell us a little about yourself and your space and we’ll show what’s needed ' +
@@ -100,7 +100,7 @@ storiesOf('ProgressSteps', module)
     </HorizontalProgressSteps>
   ))
   .add('icons', () => (
-    <HorizontalProgressSteps lastCompletedIndex={ 1 }>
+    <HorizontalProgressSteps lastCompletedIndex={1}>
       <Step title="Apply in minutes" icon="search">
         <p>
           { 'Tell us a little about yourself and your space and we’ll show what’s needed ' +

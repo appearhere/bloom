@@ -5,9 +5,9 @@ import transitions from './Swap.css';
 
 const Swap = ({ children, animationTimeout }) => (
   <TransitionGroup
-    transitionName={ transitions }
-    transitionEnterTimeout={ animationTimeout }
-    transitionLeaveTimeout={ animationTimeout }
+    transitionName={transitions}
+    transitionEnterTimeout={animationTimeout}
+    transitionLeaveTimeout={animationTimeout}
   >
     { children }
   </TransitionGroup>

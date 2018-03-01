@@ -39,10 +39,10 @@ export default class CodeBlock extends Component {
   render() {
     const { code, className } = this.props;
     return (
-      <pre className={ cx(css.root, className) }>
+      <pre className={cx(css.root, className)}>
         <code
-          className={ css.code }
-          dangerouslySetInnerHTML={ this.createMarkup() }
+          className={css.code}
+          dangerouslySetInnerHTML={this.createMarkup()}
         />
       </pre>
     );

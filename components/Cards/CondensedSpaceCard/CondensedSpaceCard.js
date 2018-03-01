@@ -21,9 +21,9 @@ const CondensedSpaceCard = (props) => {
   /* eslint-disable react/jsx-no-target-blank */
   return (
     <a
-      href={ href }
-      className={ cx(css.root, className) }
-      title={ name }
+      href={href}
+      className={cx(css.root, className)}
+      title={name}
       target="_blank"
     >
       <LeftRight
@@ -31,21 +31,21 @@ const CondensedSpaceCard = (props) => {
         leftChildren={
           images.length > 0 && (
             <FittedImage
-              className={ css.image }
-              src={ images[0].src }
-              alt={ images[0].alt }
+              className={css.image}
+              src={images[0].src}
+              alt={images[0].alt}
             />
           )
         }
         rightChildren={
-          <div className={ css.body }>
-            <div className={ css.name }>
-              { priceFromLabel && <span className={ css.priceFromLabel }>{ priceFromLabel }</span> }
-              <span className={ css.price }>{ price }</span>
+          <div className={css.body}>
+            <div className={css.name}>
+              { priceFromLabel && <span className={css.priceFromLabel}>{ priceFromLabel }</span> }
+              <span className={css.price}>{ price }</span>
               { '\u00a0' }
-              <span className={ css.priceUnit }>{ priceUnit }</span>
+              <span className={css.priceUnit}>{ priceUnit }</span>
             </div>
-            <div className={ css.name }>{ name }</div>
+            <div className={css.name}>{ name }</div>
           </div>
         }
       />

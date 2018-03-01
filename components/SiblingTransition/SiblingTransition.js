@@ -71,31 +71,31 @@ export default class SiblingTransition extends Component {
       route,
       children: child,
       didLeave,
-      ...rest,
+      ...rest
     } = this.props;
 
     return (
       <TransitionMotion
-        { ...rest }
-        styles={ [{
+        {...rest}
+        styles={[{
           key: route,
           style: this.getStyles(),
           data: child,
-        }] }
-        willEnter={ this.willEnter }
-        willLeave={ this.willLeave }
-        didLeave={ didLeave }
+        }]}
+        willEnter={this.willEnter}
+        willLeave={this.willLeave}
+        didLeave={didLeave}
       >
         { interpolated => (
-          <div className={ css.container }>
+          <div className={css.container}>
             { interpolated.map(({ key, data, style }) => (
               <div
-                key={ key }
-                className={ css.animated }
-                style={ {
+                key={key}
+                className={css.animated}
+                style={{
                   position: style.x === 0 ? 'relative' : 'absolute',
                   transform: `translate3d(${style.x}%, 0, 0)`,
-                } }
+                }}
               >
                 { data }
               </div>

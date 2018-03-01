@@ -30,18 +30,18 @@ class WindowWithCross extends Component {
       children,
       onClose,
       variant,
-      ...rest,
+      ...rest
     } = this.props;
 
     return (
       <Window
-        { ...rest }
-        variant={ variant }
+        {...rest}
+        variant={variant}
       >
-        <BtnContainer className={ css.dismissContainer } onClick={ onClose }>
-          <Icon className={ css.icon } name="cross" />
+        <BtnContainer className={css.dismissContainer} onClick={onClose}>
+          <Icon className={css.icon} name="cross" />
         </BtnContainer>
-        <div className={ cx(css.inner, m.cf) }>
+        <div className={cx(css.inner, m.cf)}>
           { children }
         </div>
       </Window>

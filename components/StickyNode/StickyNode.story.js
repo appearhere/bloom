@@ -1,7 +1,6 @@
 import React from 'react';
 import { storiesOf } from '@storybook/react';
 
-import Hero from '../Hero/Hero';
 import m from '../../globals/modifiers.css';
 import StickyNode from './StickyNode';
 
@@ -13,7 +12,7 @@ storiesOf('StickyNode', module)
         style={{
           height: '150vh',
           background: 'url(http://subtlepatterns2015.subtlepatterns' +
-            '.netdna-cdn.com/patterns/seigaiha.png)'
+            '.netdna-cdn.com/patterns/seigaiha.png)',
         }}
       >
         <StickyNode>
@@ -29,7 +28,7 @@ storiesOf('StickyNode', module)
         style={{
           height: '300vh',
           background: 'url(http://subtlepatterns2015.subtlepatterns' +
-            '.netdna-cdn.com/patterns/seigaiha.png)'
+            '.netdna-cdn.com/patterns/seigaiha.png)',
         }}
       >
         <StickyNode>
@@ -48,7 +47,7 @@ storiesOf('StickyNode', module)
         style={{
           height: '300vh',
           background: 'url(http://subtlepatterns2015.subtlepatterns' +
-            '.netdna-cdn.com/patterns/seigaiha.png)'
+            '.netdna-cdn.com/patterns/seigaiha.png)',
         }}
       >
         <StickyNode className="panelOne">
@@ -66,10 +65,10 @@ storiesOf('StickyNode', module)
       style={{
         height: '150vh',
         background: 'url(http://subtlepatterns2015.subtlepatterns' +
-          '.netdna-cdn.com/patterns/seigaiha.png)'
+          '.netdna-cdn.com/patterns/seigaiha.png)',
       }}
     >
-      <div style={{height: '500px'}} className={[m.bgWhite, 'boundary'].join(' ')}>
+      <div style={{ height: '500px' }} className={[m.bgWhite, 'boundary'].join(' ')}>
         <StickyNode bottomBoundary=".boundary">
           <div className={[m.pal, m.bgPrimary].join(' ')} />
         </StickyNode>

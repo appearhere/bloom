@@ -11,8 +11,8 @@ storiesOf('CalendarMonth', module)
   ))
   .add('with custom heading format', () => (
     <CalendarMonth
-      columnHeadingProps={ {
+      columnHeadingProps={{
         format: 'dddd',
-      } }
+      }}
     />
   ));

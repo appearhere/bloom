@@ -50,27 +50,27 @@ class AutoCompleteInput extends Component {
 
     return (
       <div
-        className={ cx(
+        className={cx(
           css.root,
           hasFocus ? css.focus : null,
           className,
-        ) }
+        )}
       >
         <InputComponent
-          { ...rest }
-          ref={ (c) => { this.input = c; } }
-          classNames={ mergeObjectStrings(inputClassNames, {
+          {...rest}
+          ref={(c) => { this.input = c; }}
+          classNames={mergeObjectStrings(inputClassNames, {
             root: css.root,
             wrapper: css.wrapper,
             input: css.input,
-          }) }
-          onFocus={ this.handleFocus }
-          onBlur={ this.handleBlur }
+          })}
+          onFocus={this.handleFocus}
+          onBlur={this.handleBlur}
         />
-        <div className={ css.activeMarker } />
+        <div className={css.activeMarker} />
       </div>
     );
   }
 }
 
-export default props => <AutoCompleteInput { ...props } />;
+export default props => <AutoCompleteInput {...props} />;

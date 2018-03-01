@@ -18,8 +18,8 @@ it('renders without crashing', () => {
   const div = document.createElement('div');
   ReactDOM.render(
     <PlayBtn
-      play={ noop }
-      pause={ noop }
+      play={noop}
+      pause={noop}
       paused
     />,
     div

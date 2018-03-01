@@ -24,15 +24,15 @@ export default class SplitWordEntrance extends Component {
     const { children, duration, ...rest } = this.props;
 
     return (
-      <span { ...rest }>
+      <span {...rest}>
         { children.split(' ').map((word, i) => (
-          <span key={ uniqueId(`${this.id}-${word}`) }>
+          <span key={uniqueId(`${this.id}-${word}`)}>
             <span
-              className={ css.animation }
-              style={ {
+              className={css.animation}
+              style={{
                 animationDuration: `${duration}ms`,
                 animationDelay: `${duration * (i * 1.8)}ms`,
-              } }
+              }}
             >
               { word }
             </span>

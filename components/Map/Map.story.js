@@ -16,7 +16,7 @@ import { metaMarkersA, metaMarkersB, metaMarkersC } from './testMetaMarkers';
 const stories = storiesOf('Map', module);
 stories.addDecorator(withKnobs);
 
-const SpaceMarker = props => <Marker><SpaceListingCard { ...props } /></Marker>;
+const SpaceMarker = props => <Marker><SpaceListingCard {...props} /></Marker>;
 
 const prices = ['£1', '£33', '£420', '£1,000', '£20,000', '£999,999', '1 €', '20 €', '440 €',
   '4.040 €', '40.040 €', '120.040 €'];
@@ -90,14 +90,14 @@ class TestMap extends Component {
     const { metaMarkers } = this.props;
 
     return (
-      <div style={ { height: '93vh' } }>
-        <button onClick={ this.toggleMarkers }>Randomise</button>
+      <div style={{ height: '93vh' }}>
+        <button onClick={this.toggleMarkers}>Randomise</button>
         <MarkableMap
-          markers={ markers }
-          metaMarkers={ metaMarkers }
-          MarkerComponent={ SpaceMarker }
-          GroupMarkerComponent={ GroupMarker }
-          onClick={ actionWithComplexArgs('map clicked') }
+          markers={markers}
+          metaMarkers={metaMarkers}
+          MarkerComponent={SpaceMarker}
+          GroupMarkerComponent={GroupMarker}
+          onClick={actionWithComplexArgs('map clicked')}
           autoFit
         />
       </div>
@@ -107,10 +107,10 @@ class TestMap extends Component {
 
 stories
   .add('Default', () => (
-    <div style={ { height: '96vh' } }>
+    <div style={{ height: '96vh' }}>
       <BaseMap
-        onClick={ actionWithComplexArgs('map clicked') }
-        onMoveEnd={ actionWithComplexArgs('map moved') }
+        onClick={actionWithComplexArgs('map clicked')}
+        onMoveEnd={actionWithComplexArgs('map moved')}
       />
     </div>
   ))
@@ -122,16 +122,16 @@ stories
       (boolean('Meta Markers C', true) && metaMarkersC),
     ].filter(metaMarker => metaMarker);
 
-    return <TestMap metaMarkers={ metaMarkers } />;
+    return <TestMap metaMarkers={metaMarkers} />;
   })
   .add('Grouped Space Marker', () => (
-    <div style={ { height: '96vh' } }>
+    <div style={{ height: '96vh' }}>
       <MarkableMap
-        markers={ generateMarkers(7, -0.09, 51.505) }
-        MarkerComponent={ SpaceMarker }
-        GroupMarkerComponent={ GroupMarker }
-        onClick={ actionWithComplexArgs('map clicked') }
-        onMoveEnd={ actionWithComplexArgs('map moved') }
+        markers={generateMarkers(7, -0.09, 51.505)}
+        MarkerComponent={SpaceMarker}
+        GroupMarkerComponent={GroupMarker}
+        onClick={actionWithComplexArgs('map clicked')}
+        onMoveEnd={actionWithComplexArgs('map moved')}
         autoFit
       />
     </div>

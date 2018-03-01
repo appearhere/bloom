@@ -22,7 +22,7 @@ it('correctly passes props the mapboxgl contructor', () => {
   const constructorArgs = { zoom: 1, center: [0, 0], renderWorldCopies: true, style: 'test' };
 
   const div = document.createElement('div');
-  ReactDOM.render(<BaseMap { ...props } />, div);
+  ReactDOM.render(<BaseMap {...props} />, div);
 
   expect(spy.labeledCalls('constructor').length).toEqual(1);
   const call = spy.labeledCalls('constructor')[0];
@@ -34,7 +34,7 @@ it('correctly assigns event listeners', () => {
   const onClick = () => {};
 
   const div = document.createElement('div');
-  ReactDOM.render(<BaseMap onClick={ onClick } />, div);
+  ReactDOM.render(<BaseMap onClick={onClick} />, div);
 
   const call = spy.labeledCalls('on')[0];
   expect(call.args[1]).toEqual('click');

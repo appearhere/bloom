@@ -32,10 +32,10 @@ const inputTypes = [
 
 const WrappedSelect = () => (
   <Select
-    className={ m.mtl }
-    onChange={ action('onChange') }
-    onFocus={ action('onFocus') }
-    onBlur={ action('onBlur') }
+    className={m.mtl}
+    onChange={action('onChange')}
+    onFocus={action('onFocus')}
+    onBlur={action('onBlur')}
   >
     <Option value="1">One</Option>
     <Option value="2">Two</Option>
@@ -64,10 +64,10 @@ stories
         optionalLabel="optional"
       >
         <CheckboxGroup
-          className={ m.mtl }
+          className={m.mtl}
           name="CheckboxGroup"
-          value={ value }
-          onChange={ action('checked') }
+          value={value}
+          onChange={action('checked')}
         >
           { checkbox => (
             <span>
@@ -107,17 +107,17 @@ stories
       id="2"
       label="Text input"
       description="A description of the desired input"
-      error={ boolean('Errored', false) ? 'Something went wrong' : '' }
-      required={ false }
+      error={boolean('Errored', false) ? 'Something went wrong' : ''}
+      required={false}
     >
       <Input
-        className={ m.mtl }
+        className={m.mtl}
         id="1"
-        type={ select('Type', inputTypes, inputTypes[0]) }
+        type={select('Type', inputTypes, inputTypes[0])}
         value="100"
-        onFocus={ action('Focus') }
-        onBlur={ action('Blur') }
-        onChange={ action('Change') }
+        onFocus={action('Focus')}
+        onBlur={action('Blur')}
+        onChange={action('Change')}
       />
     </InputField>
   ))
@@ -126,16 +126,16 @@ stories
       id="2"
       label="Range input"
       description="A description of the desired input"
-      valueReplay={ `${number('value', 4)} units` }
+      valueReplay={`${number('value', 4)} units`}
     >
       <InputRange
-        className={ m.mtl }
-        minValue={ 0 }
-        maxValue={ 10 }
-        value={ number('value', 4) }
+        className={m.mtl}
+        minValue={0}
+        maxValue={10}
+        value={number('value', 4)}
         name="Simple range input"
-        onChange={ action('Change...') }
-        onChangeComplete={ action('Change complete...') }
+        onChange={action('Change...')}
+        onChangeComplete={action('Change complete...')}
       />
     </InputField>
   ))
@@ -146,9 +146,9 @@ stories
       description="A description of the desired input"
     >
       <RadioGroup
-        className={ m.mtl }
-        value={ number('Value', 1) }
-        onChange={ action('checked') }
+        className={m.mtl}
+        value={number('Value', 1)}
+        onChange={action('checked')}
       >
         { radio => (
           <span>
@@ -178,10 +178,10 @@ stories
       description="A description of the desired input"
     >
       <StarRating
-        className={ m.mtl }
+        className={m.mtl}
         name="RadioGroup"
-        value={ number('Value', 1) }
-        onChange={ action('Changing') }
+        value={number('Value', 1)}
+        onChange={action('Changing')}
       />
     </InputField>
   ));

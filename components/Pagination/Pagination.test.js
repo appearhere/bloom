@@ -7,8 +7,8 @@ it('renders without crashing', () => {
   const div = document.createElement('div');
   render(
     <Pagination
-      currentPage={ 1 }
-      totalPages={ 10 }
+      currentPage={1}
+      totalPages={10}
     />,
     div
   );

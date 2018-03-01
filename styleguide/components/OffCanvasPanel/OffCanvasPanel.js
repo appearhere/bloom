@@ -120,33 +120,33 @@ export default class OffCanvasPanel extends Component {
     return (
       <Portal>
         <TransitionMotion
-          styles={ active ? [{
+          styles={active ? [{
             key: this.id,
             style: this.getStyles(),
             data: child,
-          }] : [] }
-          willEnter={ this.willEnter }
-          willLeave={ this.willLeave }
+          }] : []}
+          willEnter={this.willEnter}
+          willLeave={this.willLeave}
         >
           { interpolated => (
-            <div onClick={ this.handleClick } className={ className }>
+            <div onClick={this.handleClick} className={className}>
               { interpolated.map(({ key, data, style }) => (
-                <div key={ key }>
+                <div key={key}>
                   <div
-                    className={ css.overlay }
-                    style={ {
+                    className={css.overlay}
+                    style={{
                       opacity: style.opacity,
-                    } }
+                    }}
                   />
                   <div
-                    ref={ (c) => { this.component = c; } }
-                    className={ css.menu }
-                    style={ {
+                    ref={(c) => { this.component = c; }}
+                    className={css.menu}
+                    style={{
                       transform: `translate3d(${style.x}%, 0, 0)`,
-                    } }
+                    }}
                   >
-                    <BtnContainer className={ css.closeBtn } onClick={ this.handleClose }>
-                      <Icon className={ css.closeIcon } name="cross" />
+                    <BtnContainer className={css.closeBtn} onClick={this.handleClose}>
+                      <Icon className={css.closeIcon} name="cross" />
                       <ScreenReadable>Close panel</ScreenReadable>
                     </BtnContainer>
                     { data }

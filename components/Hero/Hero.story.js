@@ -22,12 +22,12 @@ storiesOf('Hero', module)
 
     return (
       <Hero
-        className={ m.bgBlack }
+        className={m.bgBlack}
         backgroundImage="https://unsplash.it/1600/1201"
         caption="A random image from unsplash"
       >
-        <h1 className={ headingClasses }>List a space, host an idea</h1>
-        <p className={ paraClasses }>
+        <h1 className={headingClasses}>List a space, host an idea</h1>
+        <p className={paraClasses}>
           Join the world’s leading online marketplace for short-term space.
         </p>
       </Hero>
@@ -48,13 +48,13 @@ storiesOf('Hero', module)
 
     return (
       <Hero
-        className={ m.bgBlack }
+        className={m.bgBlack}
         backgroundImage="https://source.unsplash.com/random/1200x800"
         caption="A random image from unsplash"
         animate
       >
-        <h1 className={ headingClasses }>List a space, host an idea</h1>
-        <p className={ paraClasses }>
+        <h1 className={headingClasses}>List a space, host an idea</h1>
+        <p className={paraClasses}>
           Join the world’s leading online marketplace for short-term space.
         </p>
       </Hero>

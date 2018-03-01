@@ -9,19 +9,19 @@ import css from './HeartBtn.css';
 
 const HeartBtn = ({ active, onClick, className, variant, ...rest }) => (
   <BtnContainer
-    { ...rest }
-    className={ cx(
+    {...rest}
+    className={cx(
       css.root,
       css[variant],
       className,
-    ) }
-    onClick={ onClick }
+    )}
+    onClick={onClick}
   >
     <Icon
-      className={ cx(
+      className={cx(
         css.icon,
         active ? css.active : null,
-      ) }
+      )}
       name="heart"
     />
   </BtnContainer>

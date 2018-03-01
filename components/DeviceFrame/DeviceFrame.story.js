@@ -49,7 +49,7 @@ storiesOf('Device frame', module)
   .add('IPhone Video', () => (
     <IPhone video loop>
       <source
-        src={ iphoneVideo }
+        src={iphoneVideo}
         type="video/mp4"
       />
     </IPhone>

@@ -32,26 +32,26 @@ export default class IconInput extends Component {
       classNames,
       iconName,
       iconSide,
-      ...rest,
+      ...rest
     } = this.props;
 
     return (
       <div
-        className={ cx(
+        className={cx(
           css.root,
           css[iconSide],
           classNames.root
-        ) }
+        )}
       >
         <Icon
-          className={ cx(css.icon, classNames.icon) }
-          onClick={ this.focus }
-          name={ iconName }
+          className={cx(css.icon, classNames.icon)}
+          onClick={this.focus}
+          name={iconName}
         />
         <Input
-          ref={ (c) => { this.input = c; } }
-          classNames={ mergeObjectStrings(css, classNames) }
-          { ...rest }
+          ref={(c) => { this.input = c; }}
+          classNames={mergeObjectStrings(css, classNames)}
+          {...rest}
         />
       </div>
     );

@@ -8,13 +8,13 @@ import css from './Moment.css';
 import Icon from '../Icon/Icon';
 
 const Moment = ({ icon, title, children, className }) => (
-  <Wrapper className={ cx(css.root, className) }>
-    <div className={ css.inner }>
-      <div className={ css.header }>
-        <Icon name={ icon } className={ css.icon } />
-        <div className={ css.title }>{ title }</div>
+  <Wrapper className={cx(css.root, className)}>
+    <div className={css.inner}>
+      <div className={css.header}>
+        <Icon name={icon} className={css.icon} />
+        <div className={css.title}>{ title }</div>
       </div>
-      <div className={ css.body }>
+      <div className={css.body}>
         { children }
       </div>
     </div>

@@ -27,29 +27,29 @@ import Tether from './Tether/Tether';
 
 const Patterns = () => (
   <Switch>
-    <Route path="/patterns/accessibility" component={ Accessibility } />
-    <Route path="/patterns/animation" component={ Animation } />
-    <Route path="/patterns/badge" component={ Badge } />
-    <Route path="/patterns/buttons" component={ Buttons } />
-    <Route path="/patterns/horizontal-overflow-bar" component={ HorizontalOverflowBar } />
-    <Route path="/patterns/cards" component={ Cards } />
-    <Route path="/patterns/carousel" component={ Carousel } />
-    <Route path="/patterns/dropdown" component={ Dropdown } />
-    <Route path="/patterns/figure" component={ Figure } />
-    <Route path="/patterns/fitted-image" component={ FittedImage } />
-    <Route path="/patterns/input-field" component={ InputField } />
-    <Route path="/patterns/inputs" component={ Inputs } />
-    <Route path="/patterns/leftright" component={ LeftRight } />
-    <Route path="/patterns/loader" component={ Loader } />
-    <Route path="/patterns/markdown" component={ Markdown } />
-    <Route path="/patterns/medallion" component={ Medallion } />
-    <Route path="/patterns/modals" component={ Modals } />
-    <Route path="/patterns/pagination" component={ Pagination } />
-    <Route path="/patterns/panels" component={ Panels } />
-    <Route path="/patterns/social-links" component={ SocialLinks } />
-    <Route path="/patterns/tabs" component={ Tabs } />
-    <Route path="/patterns/tab-bar" component={ TabBar } />
-    <Route path="/patterns/tether" component={ Tether } />
+    <Route path="/patterns/accessibility" component={Accessibility} />
+    <Route path="/patterns/animation" component={Animation} />
+    <Route path="/patterns/badge" component={Badge} />
+    <Route path="/patterns/buttons" component={Buttons} />
+    <Route path="/patterns/horizontal-overflow-bar" component={HorizontalOverflowBar} />
+    <Route path="/patterns/cards" component={Cards} />
+    <Route path="/patterns/carousel" component={Carousel} />
+    <Route path="/patterns/dropdown" component={Dropdown} />
+    <Route path="/patterns/figure" component={Figure} />
+    <Route path="/patterns/fitted-image" component={FittedImage} />
+    <Route path="/patterns/input-field" component={InputField} />
+    <Route path="/patterns/inputs" component={Inputs} />
+    <Route path="/patterns/leftright" component={LeftRight} />
+    <Route path="/patterns/loader" component={Loader} />
+    <Route path="/patterns/markdown" component={Markdown} />
+    <Route path="/patterns/medallion" component={Medallion} />
+    <Route path="/patterns/modals" component={Modals} />
+    <Route path="/patterns/pagination" component={Pagination} />
+    <Route path="/patterns/panels" component={Panels} />
+    <Route path="/patterns/social-links" component={SocialLinks} />
+    <Route path="/patterns/tabs" component={Tabs} />
+    <Route path="/patterns/tab-bar" component={TabBar} />
+    <Route path="/patterns/tether" component={Tether} />
   </Switch>
 );
 

@@ -10,7 +10,7 @@ stories.addDecorator(withKnobs);
 
 const Panel = ({ bg }) => (
   <div
-    style={ { backgroundColor: bg, height: '100vh', width: '100vw' } }
+    style={{ backgroundColor: bg, height: '100vh', width: '100vw' }}
   />
 );
 
@@ -44,13 +44,13 @@ stories
 
     return (
       <SiblingTransition
-        route={ value }
-        shouldAnimateLeft={ shouldAnimateLeft }
+        route={value}
+        shouldAnimateLeft={shouldAnimateLeft}
         animate
       >
         <Panel
-          key={ value }
-          bg={ value }
+          key={value}
+          bg={value}
         />
       </SiblingTransition>
     );

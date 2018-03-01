@@ -15,10 +15,10 @@ const Card = ({ className, href, target, children, ...rest }) => {
 
   return (
     <Component
-      { ...rest }
-      className={ classes }
-      href={ href }
-      target={ href ? target : null }
+      {...rest}
+      className={classes}
+      href={href}
+      target={href ? target : null}
     >
       { children }
     </Component>

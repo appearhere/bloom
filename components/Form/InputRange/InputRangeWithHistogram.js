@@ -31,27 +31,27 @@ export default class InputRangeWithHistogram extends Component {
   render() {
     const { valueSelector, data, name, ...rest } = this.props;
 
-    const pointData = data.map((datum) => valueSelector(datum));
+    const pointData = data.map(datum => valueSelector(datum));
     const maxPointHeight = getVerticalScale(pointData);
     const pointWidth = getPointWidth(pointData);
 
     return (
-      <div className={ css.container }>
-        <div className={ css.histogram }>
+      <div className={css.container}>
+        <div className={css.histogram}>
           { pointData.map((datum, i) => (
             <div
-              key={ `${name}-${i}` }
-              className={ css.barContainer }
-              style={ {
+              key={`${name}-${i}`}
+              className={css.barContainer}
+              style={{
                 width: `${pointWidth}%`,
                 height: `${(datum / maxPointHeight) * 100}%`,
-              } }
+              }}
             >
-              <div className={ css.bar } />
+              <div className={css.bar} />
             </div>
           )) }
         </div>
-        <InputRange name={ name } { ...rest } />
+        <InputRange name={name} {...rest} />
       </div>
     );
   }

@@ -56,7 +56,7 @@ class Video extends Component {
       controls,
       onSeekChange,
       onPlayPauseClick: _onPlayPauseClick,
-      ...rest,
+      ...rest
     } = this.props;
 
     const {
@@ -74,8 +74,8 @@ class Video extends Component {
     );
 
     return (
-      <div className={ classes }>
-        <video { ...rest }>
+      <div className={classes}>
+        <video {...rest}>
           { source }
         </video>
 
@@ -83,13 +83,13 @@ class Video extends Component {
           <div>
             <Controls>
               <PlayBtn
-                playPause={ this.handlePlayPause }
-                paused={ paused }
+                playPause={this.handlePlayPause}
+                paused={paused}
               />
               <Scrubber
-                duration={ duration }
-                currentTime={ currentTime }
-                seek={ onSeekChange }
+                duration={duration}
+                currentTime={currentTime}
+                seek={onSeekChange}
               />
             </Controls>
           </div>

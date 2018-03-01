@@ -10,7 +10,7 @@ const Quote = (props) => {
     citation,
     className,
     citeClassName,
-    ...rest,
+    ...rest
   } = props;
 
   const bodyClasses = cx(
@@ -25,9 +25,9 @@ const Quote = (props) => {
   );
 
   return (
-    <blockquote className={ className } { ...rest }>
-      <div className={ bodyClasses }>{ children }</div>
-      <cite className={ citeClasses }>{ citation }</cite>
+    <blockquote className={className} {...rest}>
+      <div className={bodyClasses}>{ children }</div>
+      <cite className={citeClasses}>{ citation }</cite>
     </blockquote>
   );
 };

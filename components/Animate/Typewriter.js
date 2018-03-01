@@ -25,15 +25,15 @@ export default class Typewriter extends Component {
     const letters = [...children];
 
     return (
-      <span { ...rest }>
+      <span {...rest}>
         { letters.map((letter, i) => (
           <span
-            key={ uniqueId(`${this.id}-${letter}`) }
-            className={ css.animation }
-            style={ {
+            key={uniqueId(`${this.id}-${letter}`)}
+            className={css.animation}
+            style={{
               animationDuration: `${duration}ms`,
               animationDelay: `${duration * (i * 1.8)}ms`,
-            } }
+            }}
           >
             { letter }
           </span>

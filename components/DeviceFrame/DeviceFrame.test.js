@@ -25,7 +25,7 @@ describe('Device frame', () => {
   it('renders without crashing', () => {
     const div = document.createElement('div');
     render(
-      <DeviceFrame deviceImage="" css={ css }>
+      <DeviceFrame deviceImage="" css={css}>
         { images }
       </DeviceFrame>,
       div
