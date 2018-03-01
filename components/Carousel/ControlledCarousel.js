@@ -78,7 +78,7 @@ export default class ControlledCarousel extends Component {
       showIndicators,
       slidesToShow,
       wrapAround,
-      ...rest,
+      ...rest
     } = this.props;
     const nonEmptyChildren = children.filter(item => item);
 
@@ -91,38 +91,38 @@ export default class ControlledCarousel extends Component {
       : nonEmptyChildren.length - (slidesToShow - 1);
 
     return (
-      <div className={ cx(css.root, className) }>
-        <div className={ innerClassName }>
+      <div className={cx(css.root, className)}>
+        <div className={innerClassName}>
           <Carousel
-            slidesToShow={ slidesToShow }
-            lowestVisibleItemIndex={ lowestVisibleItemIndex }
-            wrapAround={ wrapAround }
-            onChange={ this.handleChange }
-            { ...rest }
+            slidesToShow={slidesToShow}
+            lowestVisibleItemIndex={lowestVisibleItemIndex}
+            wrapAround={wrapAround}
+            onChange={this.handleChange}
+            {...rest}
           >
             { nonEmptyChildren }
           </Carousel>
         </div>
-        <div className={ css.controls }>
+        <div className={css.controls}>
           <BtnContainer
-            onClick={ this.handlePreviousSlide }
-            className={ cx(css.control, css.prev) }
-            disabled={ prevDisabled }
+            onClick={this.handlePreviousSlide}
+            className={cx(css.control, css.prev)}
+            disabled={prevDisabled}
           >
             <Icon name="chevron" />
             <ScreenReadable>{ accessibilityPrevLabel }</ScreenReadable>
           </BtnContainer>
           <BtnContainer
-            onClick={ this.handleNextSlide }
-            className={ cx(css.control, css.next) }
-            disabled={ nextDisabled }
+            onClick={this.handleNextSlide}
+            className={cx(css.control, css.next)}
+            disabled={nextDisabled}
           >
             <Icon name="chevron" />
             <ScreenReadable>{ accessibilityNextLabel }</ScreenReadable>
           </BtnContainer>
         </div>
         { showIndicators && (
-          <IndicatorGroup activeIndicator={ lowestVisibleItemIndex } className={ css.indicators }>
+          <IndicatorGroup activeIndicator={lowestVisibleItemIndex} className={css.indicators}>
             { indicator => (
               <div>
                 { [...Array(indicatorCount)].map((child, i) => indicator({

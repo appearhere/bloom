@@ -19,10 +19,10 @@ stories.add('Default day range', () => {
 
   return (
     <DayRange
-      selectDate={ select('selectDate', ['START', 'END', ''], '') }
-      startDate={ startDate }
-      endDate={ endDate }
-      id={ '9081237549081327' }
+      selectDate={select('selectDate', ['START', 'END', ''], '')}
+      startDate={startDate}
+      endDate={endDate}
+      id={'9081237549081327'}
     />
   );
 });

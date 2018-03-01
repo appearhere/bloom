@@ -4,17 +4,17 @@ import React from 'react';
 import { DefaultPlayer as ReactVideo } from 'react-html5video';
 
 const VideoDeviceFrame = ({ children: source, deviceImage, css, ...rest }) => (
-  <div className={ css.root }>
+  <div className={css.root}>
     <img
-      className={ css.frame }
-      src={ deviceImage }
+      className={css.frame}
+      src={deviceImage}
       role="presentation"
     />
-    <div className={ css.inner }>
+    <div className={css.inner}>
       <ReactVideo
-        { ...rest }
-        className={ css.video }
-        controls={ [] }
+        {...rest}
+        className={css.video}
+        controls={[]}
         autoPlay
         muted
       >

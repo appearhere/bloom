@@ -17,8 +17,8 @@ storiesOf('DropdownInner', module)
 storiesOf('Dropdown', module)
   .add('Default', () => (
     <Dropdown
-      horizontalAttachment={ HORIZONTAL_ATTACHMENTS.RIGHT }
-      target={ <Target /> }
+      horizontalAttachment={HORIZONTAL_ATTACHMENTS.RIGHT}
+      target={<Target />}
       flushHorizontal
       active
     >

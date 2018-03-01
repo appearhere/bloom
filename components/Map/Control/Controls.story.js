@@ -8,12 +8,12 @@ const stories = storiesOf('Map control', module);
 stories.addDecorator(withKnobs);
 
 stories.add('Control', () => (
-  <Control onClick={ action('click') } disabled={ boolean('Disabled', false) }>
+  <Control onClick={action('click')} disabled={boolean('Disabled', false)}>
     <ControlIcon name="plus" />
   </Control>
 ))
 .add('Control with text', () => (
-  <Control onClick={ action('click') } disabled={ boolean('Disabled', false) }>
+  <Control onClick={action('click')} disabled={boolean('Disabled', false)}>
     Just Text
   </Control>
 ));

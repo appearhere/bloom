@@ -13,24 +13,24 @@ const SpaceListingCard = (props) => {
     location,
     size,
     onPlaceLabelClick,
-    ...rest,
+    ...rest
   } = props;
 
   return (
     <DestinationListingCard
-      carouselOverlay={ placeLabel && (
+      carouselOverlay={placeLabel && (
         <Link
-          onClick={ onPlaceLabelClick }
-          href={ placeHref }
-          className={ css.placeLink }
-          bodyClassName={ css.placeLinkBody }
-          iconClassName={ css.placeLinkIcon }
+          onClick={onPlaceLabelClick}
+          href={placeHref}
+          className={css.placeLink}
+          bodyClassName={css.placeLinkBody}
+          iconClassName={css.placeLinkIcon}
         >
           { placeLabel }
         </Link>
-      ) }
-      information={ [location, size] }
-      { ...rest }
+      )}
+      information={[location, size]}
+      {...rest}
     />
   );
 };

@@ -43,9 +43,9 @@ export default (iconSet, theme) => class Icon extends Component {
     /* eslint-disable react/no-danger */
     return (
       <span
-        { ...rest }
-        className={ classes }
-        dangerouslySetInnerHTML={ this.createMarkup() }
+        {...rest}
+        className={classes}
+        dangerouslySetInnerHTML={this.createMarkup()}
       />
     );
     /* eslint-enable react/no-danger */

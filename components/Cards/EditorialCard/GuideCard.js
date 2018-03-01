@@ -66,7 +66,7 @@ class GuideCard extends Component {
       className,
       unlockCallback: _unlockCallback,
       downloadCallback: _downloadCallback,
-      ...rest,
+      ...rest
     } = this.props;
 
     const classes = cx(containerQuery, className);
@@ -74,11 +74,11 @@ class GuideCard extends Component {
     /* eslint-disable jsx-a11y/no-static-element-interactions */
     return (
       <div>
-        <EditorialCard { ...rest } className={ classes } tabIndex="0">
-          <p className={ css.description }>{ description }</p>
+        <EditorialCard {...rest} className={classes} tabIndex="0">
+          <p className={css.description}>{ description }</p>
           <span
-            className={ cx(css.link, linkcss.root) }
-            onClick={ this.handleBtnClick }
+            className={cx(css.link, linkcss.root)}
+            onClick={this.handleBtnClick}
             tabIndex="0"
             role="button"
           >

@@ -46,33 +46,33 @@ export default class Panels extends Component {
 
     return (
       <div>
-        <H level={ 1 }>Panels</H>
-        <T elm="p" className={ cx(m.mtr, m.largeI, m.demi) }>
+        <H level={1}>Panels</H>
+        <T elm="p" className={cx(m.mtr, m.largeI, m.demi)}>
           Panels are used to push messages to a user.
         </T>
         <D>
-          <H level={ 2 }>Standard Panel</H>
-          <T elm="p" className={ m.mtr }>
+          <H level={2}>Standard Panel</H>
+          <T elm="p" className={m.mtr}>
             Should be used to display general messaging to a user.
           </T>
           <Specimen
-            classNames={ {
+            classNames={{
               root: m.mtr,
               specimenContainer: m.par,
-            } }
-            code={ dedent`
+            }}
+            code={dedent`
               <Panel>Default</Panel>
               <Panel context="blackout">Blackout</Panel>
               <Panel context="success">Success</Panel>
               <Panel context="error">Error</Panel>
             ` }
           >
-            <Panel className={ m.mtr }>Default</Panel>
-            <Panel context="blackout" className={ m.mtr }>Blackout</Panel>
-            <Panel context="success" className={ m.mtr }>Success</Panel>
-            <Panel context="error" className={ m.mtr }>Error</Panel>
+            <Panel className={m.mtr}>Default</Panel>
+            <Panel context="blackout" className={m.mtr}>Blackout</Panel>
+            <Panel context="success" className={m.mtr}>Success</Panel>
+            <Panel context="error" className={m.mtr}>Error</Panel>
           </Specimen>
-          <Note className={ m.mtr }>
+          <Note className={m.mtr}>
             <T elm="p">
               Be sure to provide enough meaning in the content of the panel
               itself, as opposed to relying on the additional context provided
@@ -84,12 +84,12 @@ export default class Panels extends Component {
           </Note>
         </D>
         <D>
-          <H level={ 2 }>Dismissable Panel</H>
-          <T elm="p" className={ m.mtr }>
+          <H level={2}>Dismissable Panel</H>
+          <T elm="p" className={m.mtr}>
             Use to make the panel dismissible by a user. Available in the same
             contexts as the standard panel.
           </T>
-          <Note className={ m.mtr }>
+          <Note className={m.mtr}>
             <T elm="p">
               We also provide a <C>Notification</C> component. For now, this
               is an alias of the <C>DismissablePanel</C>. Use it where providing the
@@ -98,11 +98,11 @@ export default class Panels extends Component {
             </T>
           </Note>
           <Specimen
-            classNames={ {
+            classNames={{
               root: m.mtr,
               specimenContainer: !panelsClosed ? m.par : '',
-            } }
-            code={ dedent`
+            }}
+            code={dedent`
               <DismissablePanel onClick={ this.closePanel }>
                 Default
               </DismissablePanel>
@@ -128,41 +128,41 @@ export default class Panels extends Component {
           >
             { defaultPanel && (
               <DismissablePanel
-                onClose={ this.closePanel.bind(this, 'defaultPanel') }
-                className={ css.panel }
+                onClose={this.closePanel.bind(this, 'defaultPanel')}
+                className={css.panel}
               >
                 Default
               </DismissablePanel>
             ) }
             { blackoutPanel && (
               <DismissablePanel
-                onClose={ this.closePanel.bind(this, 'blackoutPanel') }
+                onClose={this.closePanel.bind(this, 'blackoutPanel')}
                 context="blackout"
-                className={ css.panel }
+                className={css.panel}
               >
                 Blackout
               </DismissablePanel>
             ) }
             { successPanel && (
               <DismissablePanel
-                onClose={ this.closePanel.bind(this, 'successPanel') }
+                onClose={this.closePanel.bind(this, 'successPanel')}
                 context="success"
-                className={ css.panel }
+                className={css.panel}
               >
                 Success
               </DismissablePanel>
             ) }
             { errorPanel && (
               <DismissablePanel
-                onClose={ this.closePanel.bind(this, 'errorPanel') }
+                onClose={this.closePanel.bind(this, 'errorPanel')}
                 context="error"
-                className={ css.panel }
+                className={css.panel}
               >
                 Error
               </DismissablePanel>
             ) }
             { panelsClosed && (
-              <Placeholder onClick={ this.resetPanels }>
+              <Placeholder onClick={this.resetPanels}>
                 Reset state
               </Placeholder>
             ) }

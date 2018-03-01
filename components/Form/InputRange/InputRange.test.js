@@ -9,9 +9,9 @@ describe('Default InputRange', () => {
     render(
       <InputRange
         name=""
-        value={ 0 }
-        minValue={ 0 }
-        maxValue={ 1 }
+        value={0}
+        minValue={0}
+        maxValue={1}
       />,
       div
     );
@@ -24,12 +24,12 @@ describe('Multi InputRange', () => {
     render(
       <InputRange
         name=""
-        value={ {
+        value={{
           min: 0,
           max: 1,
-        } }
-        minValue={ 0 }
-        maxValue={ 1 }
+        }}
+        minValue={0}
+        maxValue={1}
       />,
       div
     );

@@ -5,6 +5,7 @@ import IndicatorGroup from './IndicatorGroup';
 
 // Test component *must* be a class so refs work
 /* eslint-disable react/prefer-stateless-function */
+/* eslint-disable class-methods-use-this */
 class TestComp extends Component {
   render() {
     return (
@@ -12,6 +13,7 @@ class TestComp extends Component {
     );
   }
 }
+/* eslint-enable class-methods-use-this */
 /* eslint-enable react/prefer-stateless-function */
 
 it('renders without crashing', () => {
@@ -29,7 +31,7 @@ it('outputs children of the correct type', () => {
   const div = document.createElement('div');
 
   ReactDOM.render(
-    <IndicatorGroup Component={ TestComp }>
+    <IndicatorGroup Component={TestComp}>
       { indicator => indicator({
         i: 0,
         ref: (c) => { renderedComponent = c; },
@@ -46,7 +48,7 @@ it('passes an active prop to it’s children', () => {
   const div = document.createElement('div');
 
   ReactDOM.render(
-    <IndicatorGroup Component={ TestComp }>
+    <IndicatorGroup Component={TestComp}>
       { indicator => indicator({
         i: 0,
         ref: (c) => { renderedComponent = c; },
@@ -64,7 +66,7 @@ it('passes the active prop to the correct child', () => {
   const div = document.createElement('div');
 
   ReactDOM.render(
-    <IndicatorGroup Component={ TestComp } activeIndicator={ 1 }>
+    <IndicatorGroup Component={TestComp} activeIndicator={1}>
       { indicator => (
         <span>
           { indicator({
@@ -91,7 +93,7 @@ it('throws when it’s children aren’t given indices', () => {
 
   try {
     ReactDOM.render(
-      <IndicatorGroup Component={ TestComp }>
+      <IndicatorGroup Component={TestComp}>
         { indicator => indicator() }
       </IndicatorGroup>,
       div

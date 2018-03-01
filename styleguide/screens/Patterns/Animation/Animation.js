@@ -25,20 +25,20 @@ export default class Animation extends Component {
 
     return (
       <div>
-        <H level={ 1 }>Animation</H>
+        <H level={1}>Animation</H>
         <D>
-          <H level={ 2 }>Roll</H>
-          <T elm="p" className={ m.mtr }>
+          <H level={2}>Roll</H>
+          <T elm="p" className={m.mtr}>
             <C>Roll</C> allows us to transition between two elements, pushing one
             out, while pushing another in. This can be useful for highlighting a
             change of state, where the resulting interface change is not obvious.
           </T>
           <Specimen
-            classNames={ {
+            classNames={{
               root: m.mtr,
               specimenContainer: m.par,
-            } }
-            code={ dedent`
+            }}
+            code={dedent`
               <Btn onClick={ this.toggleRoll }>
                 <Roll width="10rem">
                   { this.state.showMap
@@ -49,7 +49,7 @@ export default class Animation extends Component {
               </Btn>
             ` }
           >
-            <Btn onClick={ this.toggleRoll }>
+            <Btn onClick={this.toggleRoll}>
               <Roll width="10rem">
                 { roll
                   ? <span id="list">Show list</span>

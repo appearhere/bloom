@@ -11,7 +11,7 @@ export default class Roll extends Component {
     springConfig: PropTypes.shape({
       stiffness: PropTypes.number,
       damping: PropTypes.number,
-    })
+    }),
   };
 
   static defaultProps = {
@@ -47,34 +47,34 @@ export default class Roll extends Component {
 
     return (
       <TransitionMotion
-        styles={ [{
+        styles={[{
           key: child.props.id,
           style: this.getStyles(),
           data: child,
-        }] }
-        willEnter={ this.willEnter }
-        willLeave={ this.willLeave }
+        }]}
+        willEnter={this.willEnter}
+        willLeave={this.willLeave}
       >
         { interpolated => (
           <div
-            style={ {
+            style={{
               position: 'relative',
               display: 'inline-block',
               verticalAlign: 'top',
               width,
-            } }
+            }}
           >
             { interpolated.map(({ key, data, style }) => (
               <div
-                key={ key }
-                style={ {
+                key={key}
+                style={{
                   position: style.y === 0 ? 'relative' : 'absolute',
                   opacity: style.opacity,
                   transform: `translate3d(0, ${style.y}%, 0)`,
                   width,
                   willChange: 'transform, opacity',
                   backfaceVisibility: 'hidden',
-                } }
+                }}
               >
                 { data }
               </div>

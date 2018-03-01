@@ -5,7 +5,7 @@ import Counter from './Counter';
 
 it('renders without crashing', () => {
   const div = document.createElement('div');
-  render(<Counter startValue={ 0 } endValue={ 0 } />, div);
+  render(<Counter startValue={0} endValue={0} />, div);
 });
 
 it('transforms the value as expect', () => {
@@ -13,10 +13,10 @@ it('transforms the value as expect', () => {
   let component;
   render(
     <Counter
-      ref={ (c) => { component = c; } }
-      startValue={ 0 }
-      endValue={ 0 }
-      transform={ val => `£${val}` }
+      ref={(c) => { component = c; }}
+      startValue={0}
+      endValue={0}
+      transform={val => `£${val}`}
     />,
     div
   );

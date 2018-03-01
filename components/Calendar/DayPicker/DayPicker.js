@@ -76,36 +76,36 @@ export default class DayPicker extends Component {
     } = this.props;
 
     return (
-      <div className={ css.root }>
-        <div className={ css.header }>
-          <div className={ cx(css.control, css.prevControl) }>
-            <BtnContainer onClick={ this.handlePreviousMonth }>
-              <Icon name="chevron" className={ css.prevIcon } />
+      <div className={css.root}>
+        <div className={css.header}>
+          <div className={cx(css.control, css.prevControl)}>
+            <BtnContainer onClick={this.handlePreviousMonth}>
+              <Icon name="chevron" className={css.prevIcon} />
               <ScreenReadable>{ accessibilityPrevLabel }</ScreenReadable>
             </BtnContainer>
           </div>
-          <div className={ css.month }>
+          <div className={css.month}>
             { month.format('MMMM YYYY') }
           </div>
-          <div className={ cx(css.control, css.nextControl) }>
-            <BtnContainer onClick={ this.handleNextMonth }>
-              <Icon name="chevron" className={ css.nextIcon } />
+          <div className={cx(css.control, css.nextControl)}>
+            <BtnContainer onClick={this.handleNextMonth}>
+              <Icon name="chevron" className={css.nextIcon} />
               <ScreenReadable>{ accessibilityNextLabel }</ScreenReadable>
             </BtnContainer>
           </div>
         </div>
         <CalendarMonth
-          { ...this.props }
-          classNames={ classNames }
-          month={ month }
-          columnHeadingProps={ {
+          {...this.props}
+          classNames={classNames}
+          month={month}
+          columnHeadingProps={{
             className: css.columnHeader,
-          } }
-          dayProps={ {
+          }}
+          dayProps={{
             ...dayProps,
             onInteraction,
-          } }
-          DayComponent={ DayPickerItem }
+          }}
+          DayComponent={DayPickerItem}
         />
       </div>
     );

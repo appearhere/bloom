@@ -18,35 +18,35 @@ const inputTypes = [
 stories.add('Input', () => (
   <Input
     id="1"
-    type={ select('Type', inputTypes, inputTypes[0]) }
+    type={select('Type', inputTypes, inputTypes[0])}
     value="100"
-    onFocus={ action('Focus') }
-    onBlur={ action('Blur') }
-    onChange={ action('Change') }
-    error={ boolean('Errored', false) ? 'Something went wrong' : '' }
+    onFocus={action('Focus')}
+    onBlur={action('Blur')}
+    onChange={action('Change')}
+    error={boolean('Errored', false) ? 'Something went wrong' : ''}
   />
 ))
 .add('Input w/high priority', () => (
   <Input
     id="1"
-    type={ select('Type', inputTypes, inputTypes[0]) }
+    type={select('Type', inputTypes, inputTypes[0])}
     value="100"
-    onFocus={ action('Focus') }
-    onBlur={ action('Blur') }
-    onChange={ action('Change') }
-    error={ boolean('Errored', false) ? 'Something went wrong' : '' }
+    onFocus={action('Focus')}
+    onBlur={action('Blur')}
+    onChange={action('Change')}
+    error={boolean('Errored', false) ? 'Something went wrong' : ''}
     priority="high"
   />
 ))
 .add('Input w/low priority', () => (
   <Input
     id="1"
-    type={ select('Type', inputTypes, inputTypes[0]) }
+    type={select('Type', inputTypes, inputTypes[0])}
     value="100"
-    onFocus={ action('Focus') }
-    onBlur={ action('Blur') }
-    onChange={ action('Change') }
-    error={ boolean('Errored', false) ? 'Something went wrong' : '' }
+    onFocus={action('Focus')}
+    onBlur={action('Blur')}
+    onChange={action('Change')}
+    error={boolean('Errored', false) ? 'Something went wrong' : ''}
     priority="low"
   />
 ));

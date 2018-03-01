@@ -56,59 +56,59 @@ export default class InputField extends Component {
       placeholderValue,
       required,
       optionalLabel,
-      ...rest,
+      ...rest
     } = this.props;
 
     const descriptionId = `${id}-description`;
     const sharedProps = { error };
 
     return (
-      <Element { ...sharedProps } className={ classNames.root }>
+      <Element {...sharedProps} className={classNames.root}>
         { meta && (
           <Meta
-            { ...sharedProps }
-            className={ classNames.meta }
+            {...sharedProps}
+            className={classNames.meta}
           >
             { meta }
           </Meta>
         ) }
         <Label
-          { ...sharedProps }
-          htmlFor={ id }
-          className={ classNames.label }
-          optionalLabel={ !required && optionalLabel }
+          {...sharedProps}
+          htmlFor={id}
+          className={classNames.label}
+          optionalLabel={!required && optionalLabel}
         >
           { label }
         </Label>
         { !valueReplay && placeholderValue && (
           <Placeholder
-            { ...sharedProps }
-            className={ classNames.valueReplay }
+            {...sharedProps}
+            className={classNames.valueReplay}
           >
             { placeholderValue }
           </Placeholder>
         ) }
         { valueReplay && (
           <Value
-            { ...sharedProps }
-            className={ classNames.valueReplay }
+            {...sharedProps}
+            className={classNames.valueReplay}
           >
             { valueReplay }
           </Value>
         ) }
         { description && (
           <Description
-            { ...sharedProps }
-            id={ descriptionId }
-            className={ classNames.description }
+            {...sharedProps}
+            id={descriptionId}
+            className={classNames.description}
           >
             { description }
           </Description>
         ) }
         { children && (
           <InputWrapper
-            { ...sharedProps }
-            className={ classNames.inputWrapper }
+            {...sharedProps}
+            className={classNames.inputWrapper}
           >
             { cloneElement(children, {
               ...rest,

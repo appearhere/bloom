@@ -14,7 +14,7 @@ const Hero = (props) => {
     children,
     caption,
     animate,
-    ...rest,
+    ...rest
   } = props;
 
   const cl = cx(
@@ -43,23 +43,23 @@ const Hero = (props) => {
 
   return (
     <div
-      { ...rest }
-      className={ cl }
+      {...rest}
+      className={cl}
     >
       <div
-        className={ cx(css.background, backgroundClassName) }
-        style={ styles }
+        className={cx(css.background, backgroundClassName)}
+        style={styles}
       />
 
-      <div className={ overlayCl }>
-        <div className={ innerCl }>
-          <div className={ css.content }>
+      <div className={overlayCl}>
+        <div className={innerCl}>
+          <div className={css.content}>
             { children }
           </div>
         </div>
 
         { caption && backgroundImage && (
-          <div className={ captionClasses }>
+          <div className={captionClasses}>
             { caption }
           </div>
         )}

@@ -23,7 +23,7 @@ class TetherDirectionWrapper extends Component {
       children,
       className,
       active,
-      ...rest,
+      ...rest
     } = this.props;
 
     const classNames = cx(
@@ -36,7 +36,7 @@ class TetherDirectionWrapper extends Component {
     );
 
     return (
-      <div className={ classNames }>
+      <div className={classNames}>
         { cloneElement(children, {
           ...rest,
           verticalAttachment,
@@ -91,7 +91,7 @@ export default class Tooltip extends Component {
       flushHorizontal,
       flushVertical,
       className,
-      ...rest,
+      ...rest
     } = this.props;
 
     const targetClassNames = {
@@ -143,25 +143,25 @@ export default class Tooltip extends Component {
 
     return (
       <Tether
-        { ...rest }
-        flushVertical={ flushVertical }
-        flushHorizontal={ flushHorizontal }
-        target={ (
+        {...rest}
+        flushVertical={flushVertical}
+        flushHorizontal={flushHorizontal}
+        target={(
           <TetherDirectionWrapper
-            ref={ (c) => { this.target = c; } }
-            className={ targetClasses }
-            verticalClassNames={ targetClassNames.vertical }
-            horizontalClassNames={ targetClassNames.horizontal }
+            ref={(c) => { this.target = c; }}
+            className={targetClasses}
+            verticalClassNames={targetClassNames.vertical}
+            horizontalClassNames={targetClassNames.horizontal}
           >
             { target }
           </TetherDirectionWrapper>
-        ) }
+        )}
       >
         <TetherDirectionWrapper
-          ref={ (c) => { this.tooltip = c; } }
-          className={ tooltipClasses }
-          verticalClassNames={ tooltipClassNames.vertical }
-          horizontalClassNames={ tooltipClassNames.horizontal }
+          ref={(c) => { this.tooltip = c; }}
+          className={tooltipClasses}
+          verticalClassNames={tooltipClassNames.vertical}
+          horizontalClassNames={tooltipClassNames.horizontal}
         >
           { children }
         </TetherDirectionWrapper>

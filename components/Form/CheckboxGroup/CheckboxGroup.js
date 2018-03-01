@@ -71,19 +71,19 @@ export default class CheckboxGroup extends Component {
     const selected = new Set(value);
 
     return (
-      <div className={ className }>
+      <div className={className}>
         { children && children((childProps) => {
           const checked = selected.has(childProps.value);
 
           return (
             <Input
-              id={ id }
-              name={ name }
-              onChange={ this.handleChange }
-              checked={ checked }
-              required={ !optional }
-              ref={ setInputRef }
-              { ...childProps }
+              id={id}
+              name={name}
+              onChange={this.handleChange}
+              checked={checked}
+              required={!optional}
+              ref={setInputRef}
+              {...childProps}
             />
           );
         }) }

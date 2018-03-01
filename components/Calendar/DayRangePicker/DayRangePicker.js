@@ -119,18 +119,18 @@ export default class DayRangePicker extends Component {
       startDate: _startDate,
       endDate: _endDate,
       onMonthChange,
-      ...rest,
+      ...rest
     } = this.props;
 
     return (
       <DayPicker
-        { ...rest }
-        dayProps={ {
+        {...rest}
+        dayProps={{
           getDayState: this.getDayState,
           onHighlight: this.handleHighlight,
-        } }
-        onInteraction={ this.handleInteraction }
-        onMonthChange={ onMonthChange }
+        }}
+        onInteraction={this.handleInteraction}
+        onMonthChange={onMonthChange}
       />
     );
   }

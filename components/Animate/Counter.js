@@ -27,16 +27,16 @@ export default class Counter extends Component {
 
     return (
       <Motion
-        defaultStyle={ {
+        defaultStyle={{
           x: startValue,
-        } }
-        style={ {
+        }}
+        style={{
           x: spring(endValue, { stiffness: 390, damping: 46 }),
-        } }
-        onRest={ onRest }
+        }}
+        onRest={onRest}
       >
         { ({ x }) => (
-          <span className={ className }>
+          <span className={className}>
             { transform(x) }
           </span>
         ) }

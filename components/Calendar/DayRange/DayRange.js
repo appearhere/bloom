@@ -59,38 +59,38 @@ export default class DayRange extends Component {
     const mergedClassNames = mergeObjectStrings(css, classNames);
 
     return (
-      <div className={ mergedClassNames.root }>
-        <div className={ css.container }>
+      <div className={mergedClassNames.root}>
+        <div className={css.container}>
           <BtnContainer
-            { ...rest }
-            onClick={ onStartDateClick }
+            {...rest}
+            onClick={onStartDateClick}
             type="button"
-            className={ cx(
+            className={cx(
               mergedClassNames.btn,
               selectDate === SELECT_DATE.START ? mergedClassNames.btnActive : null,
-            ) }
+            )}
           >
             { startDate ? (
-              <Value className={ mergedClassNames.value }>{ startDate }</Value>
+              <Value className={mergedClassNames.value}>{ startDate }</Value>
             ) : (
-              <Placeholder className={ mergedClassNames.placeholder }>
+              <Placeholder className={mergedClassNames.placeholder}>
                 { startDatePlaceholder }
               </Placeholder>
             ) }
           </BtnContainer>
-          <Icon className={ mergedClassNames.arrow } name="arrow" />
+          <Icon className={mergedClassNames.arrow} name="arrow" />
           <BtnContainer
-            onClick={ onEndDateClick }
-            className={ cx(
+            onClick={onEndDateClick}
+            className={cx(
               mergedClassNames.btn,
               selectDate === SELECT_DATE.END ? mergedClassNames.btnActive : null,
-            ) }
+            )}
             type="button"
           >
             { endDate ? (
-              <Value className={ mergedClassNames.value }>{ endDate }</Value>
+              <Value className={mergedClassNames.value}>{ endDate }</Value>
             ) : (
-              <Placeholder className={ mergedClassNames.placeholder }>
+              <Placeholder className={mergedClassNames.placeholder}>
                 { endDatePlaceholder }
               </Placeholder>
             ) }

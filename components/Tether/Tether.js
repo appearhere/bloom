@@ -35,7 +35,7 @@ class ChildWrapper extends Component {
 
   render() {
     const { children, style, ...rest } = this.props;
-    return <div style={ style }>{ cloneElement(children, rest) }</div>;
+    return <div style={style}>{ cloneElement(children, rest) }</div>;
   }
 }
 /* eslint-enable react/prefer-stateless-function */
@@ -376,7 +376,7 @@ export default class Tether extends Component {
       flushHorizontal,
       flushVertical,
       targetClassName,
-      ...rest,
+      ...rest
     } = this.props;
 
     const {
@@ -387,10 +387,10 @@ export default class Tether extends Component {
     } = this.state;
 
     return (
-      <div { ...rest }>
+      <div {...rest}>
         <div
-          className={ cx(css.target, targetClassName) }
-          ref={ (c) => { this.target = c; } }
+          className={cx(css.target, targetClassName)}
+          ref={(c) => { this.target = c; }}
         >
           { cloneElement(target, {
             verticalAttachment: topAttachment,
@@ -403,12 +403,12 @@ export default class Tether extends Component {
         { active && (
           <Portal>
             <ChildWrapper
-              ref={ (c) => { this.component = findDOMNode(c); } }
-              style={ {
+              ref={(c) => { this.component = findDOMNode(c); }}
+              style={{
                 position: 'absolute',
                 top: `${top}px`,
                 left: `${left}px`,
-              } }
+              }}
             >
               { cloneElement(children, {
                 verticalAttachment: topAttachment,

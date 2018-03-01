@@ -20,9 +20,9 @@ describe('DayRangePicker', () => {
 
       render(
         <DayRangePicker
-          ref={ (c) => { component = c; } }
-          selectDate={ SELECT_DATE.START }
-          onInteraction={ spy }
+          ref={(c) => { component = c; }}
+          selectDate={SELECT_DATE.START}
+          onInteraction={spy}
         />,
         div
       );
@@ -43,10 +43,10 @@ describe('DayRangePicker', () => {
 
       render(
         <DayRangePicker
-          ref={ (c) => { component = c; } }
-          selectDate={ SELECT_DATE.START }
-          onInteraction={ spy }
-          startDate={ startDate }
+          ref={(c) => { component = c; }}
+          selectDate={SELECT_DATE.START}
+          onInteraction={spy}
+          startDate={startDate}
         />,
         div
       );
@@ -68,11 +68,11 @@ describe('DayRangePicker', () => {
 
       render(
         <DayRangePicker
-          ref={ (c) => { component = c; } }
-          selectDate={ SELECT_DATE.START }
-          onInteraction={ spy }
-          startDate={ startDate }
-          endDate={ endDate }
+          ref={(c) => { component = c; }}
+          selectDate={SELECT_DATE.START}
+          onInteraction={spy}
+          startDate={startDate}
+          endDate={endDate}
         />,
         div
       );
@@ -94,9 +94,9 @@ describe('DayRangePicker', () => {
 
       render(
         <DayRangePicker
-          ref={ (c) => { component = c; } }
-          selectDate={ SELECT_DATE.END }
-          onInteraction={ spy }
+          ref={(c) => { component = c; }}
+          selectDate={SELECT_DATE.END}
+          onInteraction={spy}
         />,
         div
       );
@@ -117,10 +117,10 @@ describe('DayRangePicker', () => {
 
       render(
         <DayRangePicker
-          ref={ (c) => { component = c; } }
-          selectDate={ SELECT_DATE.END }
-          onInteraction={ spy }
-          startDate={ startDate }
+          ref={(c) => { component = c; }}
+          selectDate={SELECT_DATE.END}
+          onInteraction={spy}
+          startDate={startDate}
         />,
         div
       );
@@ -141,10 +141,10 @@ describe('DayRangePicker', () => {
 
         render(
           <DayRangePicker
-            ref={ (c) => { component = c; } }
-            selectDate={ SELECT_DATE.END }
-            onInteraction={ spy }
-            startDate={ startDate }
+            ref={(c) => { component = c; }}
+            selectDate={SELECT_DATE.END}
+            onInteraction={spy}
+            startDate={startDate}
           />,
           div
         );
@@ -166,11 +166,11 @@ describe('DayRangePicker', () => {
 
       render(
         <DayRangePicker
-          ref={ (c) => { component = c; } }
-          selectDate={ SELECT_DATE.END }
-          onInteraction={ spy }
-          startDate={ startDate }
-          endDate={ selected }
+          ref={(c) => { component = c; }}
+          selectDate={SELECT_DATE.END}
+          onInteraction={spy}
+          startDate={startDate}
+          endDate={selected}
         />,
         div
       );
@@ -191,10 +191,10 @@ describe('DayRangePicker', () => {
 
       render(
         <DayRangePicker
-          ref={ (c) => { component = c; } }
-          selectDate={ SELECT_DATE.END }
-          onInteraction={ spy }
-          startDate={ startDate }
+          ref={(c) => { component = c; }}
+          selectDate={SELECT_DATE.END}
+          onInteraction={spy}
+          startDate={startDate}
         />,
         div
       );

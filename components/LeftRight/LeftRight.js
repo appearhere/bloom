@@ -30,9 +30,9 @@ const LeftRight = (props) => {
   );
 
   return (
-    <div { ...rest } className={ classes }>
-      <div className={ leftClasses }>{ leftChildren }</div>
-      <div className={ rightClasses }>{ rightChildren }</div>
+    <div {...rest} className={classes}>
+      <div className={leftClasses}>{ leftChildren }</div>
+      <div className={rightClasses}>{ rightChildren }</div>
     </div>
   );
 };

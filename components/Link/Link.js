@@ -6,9 +6,9 @@ import css from './Link.css';
 import Icon from '../Icon/Icon';
 
 const Link = ({ href, className, bodyClassName, iconClassName, children, ...rest }) => (
-  <a { ...rest } href={ href } className={ cx(css.root, className) }>
-    <span className={ cx(css.body, bodyClassName) }>{ children }</span>
-    <Icon className={ cx(css.icon, iconClassName) } name="chevron-right" />
+  <a {...rest} href={href} className={cx(css.root, className)}>
+    <span className={cx(css.body, bodyClassName)}>{ children }</span>
+    <Icon className={cx(css.icon, iconClassName)} name="chevron-right" />
   </a>
 );
 

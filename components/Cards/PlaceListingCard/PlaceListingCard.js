@@ -18,43 +18,43 @@ const PlaceListingCard = (props) => {
     spaceDetail,
     onClick,
     className,
-    ...rest,
+    ...rest
   } = props;
 
   const hasCompleteInfo = location && spaceDetail;
 
   return (
     <PictureCard
-      { ...rest }
-      href={ href }
-      onClick={ onClick }
-      className={ cx(css.root, className) }
-      src={ imageSrc }
-      overlayClassName={ css.overlay }
+      {...rest}
+      href={href}
+      onClick={onClick}
+      className={cx(css.root, className)}
+      src={imageSrc}
+      overlayClassName={css.overlay}
     >
-      <div className={ css.body }>
-        <div className={ css.name }>
-          { priceFromLabel && <span className={ css.priceFromLabel }>{ priceFromLabel }</span> }
-          <span className={ css.price }>{ price }</span>
+      <div className={css.body}>
+        <div className={css.name}>
+          { priceFromLabel && <span className={css.priceFromLabel}>{ priceFromLabel }</span> }
+          <span className={css.price}>{ price }</span>
           { '\u00a0' }
-          <span className={ css.priceUnit }>{ priceUnit }</span>
+          <span className={css.priceUnit}>{ priceUnit }</span>
         </div>
-        <div className={ css.name }>{ name }</div>
-        <div className={ css.additionalInformationBlock }>
+        <div className={css.name}>{ name }</div>
+        <div className={css.additionalInformationBlock}>
           <span
-            className={ css.additionalInformationItem }
-            style={ {
+            className={css.additionalInformationItem}
+            style={{
               maxWidth: hasCompleteInfo ? 'calc(50% - 1rem)' : '100%',
-            } }
+            }}
           >
             { location }
           </span>
-          { hasCompleteInfo ? <span className={ css.spacer }>•</span> : null }
+          { hasCompleteInfo ? <span className={css.spacer}>•</span> : null }
           <span
-            className={ css.additionalInformationItem }
-            style={ {
+            className={css.additionalInformationItem}
+            style={{
               maxWidth: hasCompleteInfo ? 'calc(50% - 1rem)' : '100%',
-            } }
+            }}
           >
             { spaceDetail }
           </span>

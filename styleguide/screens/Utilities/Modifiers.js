@@ -12,28 +12,28 @@ import css from './Modifiers.css';
 
 const Modifiers = () => (
   <div>
-    <H level={ 1 }>Modifiers</H>
-    <T elm="p" className={ cx(m.mtr, m.largeI, m.demi) }>
+    <H level={1}>Modifiers</H>
+    <T elm="p" className={cx(m.mtr, m.largeI, m.demi)}>
       To aid in the development of interfaces at Appear Here, we provide a&nbsp;
-      <A href="http://tachyons.io/" className={ css.link }>tachyons</A> inspired
+      <A href="http://tachyons.io/" className={css.link}>tachyons</A> inspired
       set of modifier classes. These are helper classes designed to promote consistency
       across each interface, including spacing,&nbsp;
-      <Link className={ cx(scaffoldCss.link, css.link) } to="/design/typography">
+      <Link className={cx(scaffoldCss.link, css.link)} to="/design/typography">
         typography
       </Link> and&nbsp;
-      <Link className={ cx(scaffoldCss.link, css.link) } to="/design/colors">colors</Link>.
+      <Link className={cx(scaffoldCss.link, css.link)} to="/design/colors">colors</Link>.
     </T>
-    <T elm="p" className={ m.mtr }>
+    <T elm="p" className={m.mtr}>
       Typically speaking, you should use modifier classes where it is more efficient than writing a
       bespoke CSS rule. They’re great when you need a few basic rules and are great building blocks
       for prototyping. Use modifier classes until the code becomes hard to read.
       A good rule of thumb for this is if you’d have to place the classes on
       multiple lines, or use five different modifiers.
     </T>
-    <T elm="p" className={ m.mtr }>For example:</T>
+    <T elm="p" className={m.mtr}>For example:</T>
     <CodeBlock
-      className={ m.mtr }
-      code={ dedent`
+      className={m.mtr}
+      code={dedent`
           { /* Good */ }
           <div className={ cx(m.mtr, m.bgBlack, m.fgWhite) }>
             ...
@@ -47,11 +47,11 @@ const Modifiers = () => (
       syntax="jsx"
     />
     <D>
-      <H level={ 2 }>Variables</H>
-      <H level={ 3 } className={ m.mtr }>Size</H>
+      <H level={2}>Variables</H>
+      <H level={3} className={m.mtr}>Size</H>
       <CodeBlock
-        className={ m.mtr }
-        code={ dedent`
+        className={m.mtr}
+        code={dedent`
           // 12.5rem / 200px
           --size-lg-vii
 
@@ -92,21 +92,21 @@ const Modifiers = () => (
       />
     </D>
     <D>
-      <H level={ 3 }>Margin and padding</H>
+      <H level={3}>Margin and padding</H>
       <CodeBlock
-        className={ m.mtr }
-        code={ dedent`
+        className={m.mtr}
+        code={dedent`
           // verbose
           .[margin|padding][side][size]
         ` }
         syntax="jsx"
       />
-      <T elm="p" className={ m.mtr }>
+      <T elm="p" className={m.mtr}>
         Pick margin or padding, by using the first letter of either word:
       </T>
       <CodeBlock
-        className={ m.mtr }
-        code={ dedent`
+        className={m.mtr}
+        code={dedent`
           // margin
           .m[side][size]
 
@@ -115,10 +115,10 @@ const Modifiers = () => (
         ` }
         syntax="jsx"
       />
-      <T elm="p" className={ m.mtr }>From here, you can choose a size like so:</T>
+      <T elm="p" className={m.mtr}>From here, you can choose a size like so:</T>
       <CodeBlock
-        className={ m.mtr }
-        code={ dedent`
+        className={m.mtr}
+        code={dedent`
           // top
           .mt[size]
 
@@ -133,12 +133,12 @@ const Modifiers = () => (
         ` }
         syntax="jsx"
       />
-      <T elm="p" className={ m.mtr }>
+      <T elm="p" className={m.mtr}>
         Then you can supply a size, which maps to the variables defined above:
       </T>
       <CodeBlock
-        className={ m.mtr }
-        code={ dedent`
+        className={m.mtr}
+        code={dedent`
           // --size-lg-vii / 12.5rem / 200px
           .ptLgVii
 
@@ -179,15 +179,15 @@ const Modifiers = () => (
       />
     </D>
     <D>
-      <H level={ 3 }>Colors</H>
-      <T elm="p" className={ m.mtr }>
+      <H level={3}>Colors</H>
+      <T elm="p" className={m.mtr}>
         As with the sizes, all of our&nbsp;
-        <Link className={ scaffoldCss.link } to="/design/colors">colors</Link> are also available
+        <Link className={scaffoldCss.link} to="/design/colors">colors</Link> are also available
         as modifiers.  You can apply the colours to the foreground of a background element like so:
       </T>
       <CodeBlock
-        className={ m.mtr }
-        code={ dedent`
+        className={m.mtr}
+        code={dedent`
           // foreground
           .fg[color]
 
@@ -204,14 +204,14 @@ const Modifiers = () => (
       />
     </D>
     <D>
-      <H level={ 3 }>Typography</H>
-      <T elm="p" className={ m.mtr }>
+      <H level={3}>Typography</H>
+      <T elm="p" className={m.mtr}>
         To style typography with the full set of typographic rules,
         you can use the <C>.font[size]</C> classes
       </T>
       <CodeBlock
-        className={ m.mtr }
-        code={ dedent`
+        className={m.mtr}
+        code={dedent`
           /*
             font-family: var(--font-avenir);
             font-size: var(--fontsize-large-v);
@@ -286,13 +286,13 @@ const Modifiers = () => (
         ` }
         syntax="jsx"
       />
-      <T elm="p" className={ m.mtr }>
+      <T elm="p" className={m.mtr}>
         At some points, you may just want to apply <C>font-size</C> to an element.
         If you don’t want to compose your own class, you can use the following modifiers:
       </T>
       <CodeBlock
-        className={ m.mtr }
-        code={ dedent`
+        className={m.mtr}
+        code={dedent`
           // --fontsize-large-v
           .largeV
 
@@ -319,12 +319,12 @@ const Modifiers = () => (
         ` }
         syntax="jsx"
       />
-      <T elm="p" className={ m.mtr }>
+      <T elm="p" className={m.mtr}>
         Similarly, you can provide the letter spacing that is associated to each font size:
       </T>
       <CodeBlock
-        className={ m.mtr }
-        code={ dedent`
+        className={m.mtr}
+        code={dedent`
           // --letter-spacing-large-v
           .letSpacingLargeV
 
@@ -351,13 +351,13 @@ const Modifiers = () => (
         ` }
         syntax="jsx"
       />
-      <T elm="p" className={ m.mtr }>
+      <T elm="p" className={m.mtr}>
         Apply additional typographic styles using various classes which apply weights, styles,
         decorations and transforms:
       </T>
       <CodeBlock
-        className={ m.mtr }
-        code={ dedent`
+        className={m.mtr}
+        code={dedent`
           // font-weight: var(--fontweight-bold);
           .bold
 
@@ -401,17 +401,17 @@ const Modifiers = () => (
       />
     </D>
     <D>
-      <H level={ 2 } className={ m.mtr }>Additional utilities</H>
-      <H level={ 3 } className={ m.mtr }>Rotation</H>
-      <T elm="p" className={ m.mtr }>
+      <H level={2} className={m.mtr}>Additional utilities</H>
+      <H level={3} className={m.mtr}>Rotation</H>
+      <T elm="p" className={m.mtr}>
         You can rotate elements simply by providing them with a class that fits the pattern
         <C>rotate[degrees]</C>. These classes work great when you need to rotate icons, such as them
         arrow or chevron, allowing you to point them in different directions as required while
         allowing us to minimise the number of icons available.
       </T>
       <CodeBlock
-        className={ m.mtr }
-        code={ dedent`
+        className={m.mtr}
+        code={dedent`
           // transform: rotate(90deg);
           .rotate90
 
@@ -423,14 +423,14 @@ const Modifiers = () => (
         ` }
         syntax="jsx"
       />
-      <H level={ 3 } className={ m.mtr }>Display and position</H>
-      <T elm="p" className={ m.mtr }>
+      <H level={3} className={m.mtr}>Display and position</H>
+      <T elm="p" className={m.mtr}>
         These classes allow you to easily change an elements <C>display</C> or
         <C>position</C> properties.
       </T>
       <CodeBlock
-        className={ m.mtr }
-        code={ dedent`
+        className={m.mtr}
+        code={dedent`
           // display: inline-block;
           .dib
 
@@ -454,14 +454,14 @@ const Modifiers = () => (
         ` }
         syntax="jsx"
       />
-      <H level={ 3 } className={ m.mtr }>Vertical Alignment</H>
-      <T elm="p" className={ m.mtr }>
+      <H level={3} className={m.mtr}>Vertical Alignment</H>
+      <T elm="p" className={m.mtr}>
         Similarly, we have provided classes for easily setting an element’s <C>vertical-align</C>
         property.
       </T>
       <CodeBlock
-        className={ m.mtr }
-        code={ dedent`
+        className={m.mtr}
+        code={dedent`
           // vertical-align: top;
           .valignt
 
@@ -473,10 +473,10 @@ const Modifiers = () => (
         ` }
         syntax="jsx"
       />
-      <H level={ 3 } className={ m.mtr }>Float</H>
+      <H level={3} className={m.mtr}>Float</H>
       <CodeBlock
-        className={ m.mtr }
-        code={ dedent`
+        className={m.mtr}
+        code={dedent`
           // vertical-align: top;
           .valignt
 
@@ -488,18 +488,18 @@ const Modifiers = () => (
         ` }
         syntax="jsx"
       />
-      <H level={ 3 } className={ m.mtr }>Clearfix</H>
-      <T elm="p" className={ m.mtr }>
+      <H level={3} className={m.mtr}>Clearfix</H>
+      <T elm="p" className={m.mtr}>
         If you need to apply a “clearfix” to an element, you can either use
         <C>lost-utility: clearfix</C> in your own class, or supply the <C>.cf</C> class.
       </T>
-      <H level={ 3 } className={ m.mtr }>Width</H>
-      <T elm="p" className={ m.mtr }>
+      <H level={3} className={m.mtr}>Width</H>
+      <T elm="p" className={m.mtr}>
         You can make elements full width, or set them back to auto:
       </T>
       <CodeBlock
-        className={ m.mtr }
-        code={ dedent`
+        className={m.mtr}
+        code={dedent`
           // width: 100%
           .widthFull
 

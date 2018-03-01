@@ -13,29 +13,29 @@ const DismissablePanel = (props) => {
     className,
     context,
     onClose,
-    ...rest,
+    ...rest
   } = props;
 
   return (
     <Panel
-      { ...rest }
-      context={ context }
-      className={ cx(
+      {...rest}
+      context={context}
+      className={cx(
         css.root,
         onClose ? css.dismissable : null,
         className,
-      ) }
+      )}
     >
       <div
-        className={ cx(
+        className={cx(
           css.inner,
-        ) }
+        )}
       >
         { children }
       </div>
       { onClose && (
-        <BtnContainer className={ css.dismissContainer } onClick={ onClose }>
-          <Icon className={ css.icon } name="cross" />
+        <BtnContainer className={css.dismissContainer} onClick={onClose}>
+          <Icon className={css.icon} name="cross" />
         </BtnContainer>
       ) }
     </Panel>

@@ -10,7 +10,7 @@ const StepIcon = (props) => {
     className,
     circleClassName,
     completed,
-    ...rest,
+    ...rest
   } = props;
 
   const circleClasses = cx(
@@ -24,17 +24,17 @@ const StepIcon = (props) => {
       width="50px"
       height="50px"
       viewBox="0 0 46 46"
-      className={ cx(css.root, className) }
-      { ...rest }
+      className={cx(css.root, className)}
+      {...rest}
     >
       <g fill="none">
         <circle
-          className={ circleClasses }
+          className={circleClasses}
           cx="23"
           cy="23"
           r="22"
         />
-        <text className={ css.text } textAnchor="middle">
+        <text className={css.text} textAnchor="middle">
           <tspan x="22.5" y="28">{ children }</tspan>
         </text>
       </g>

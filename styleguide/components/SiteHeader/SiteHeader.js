@@ -10,17 +10,17 @@ import Badge from '../../../components/Badge/Badge';
 import css from './SiteHeader.css';
 
 const SiteHeader = ({ version, onLinkClick }) => (
-  <div className={ css.root }>
+  <div className={css.root}>
     <NavLink
       exact
       to="/"
-      onClick={ onLinkClick }
-      className={ css.link }
+      onClick={onLinkClick}
+      className={css.link}
     >
-      <Icon name="appearhere-brackets" className={ css.logo } />
+      <Icon name="appearhere-brackets" className={css.logo} />
       <ScreenReadable>Back home</ScreenReadable>
     </NavLink>
-    <Badge className={ css.version }>v{ version }</Badge>
+    <Badge className={css.version}>v{ version }</Badge>
   </div>
 );
 

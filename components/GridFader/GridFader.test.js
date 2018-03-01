@@ -15,8 +15,8 @@ it('splits the grid and queue correctly', () => {
   /* eslint-disable react/no-render-return-value */
   const instance = ReactDOM.render(
     <GridFader
-      grid={ grid }
-      limit={ 1 }
+      grid={grid}
+      limit={1}
     />,
     div
   );
@@ -35,9 +35,9 @@ it('swaps correctly swaps items on a timed basis', () => {
   /* eslint-disable react/no-render-return-value */
   const instance = ReactDOM.render(
     <GridFader
-      grid={ grid }
-      limit={ 1 }
-      interval={ interval }
+      grid={grid}
+      limit={1}
+      interval={interval}
     />,
     div
   );

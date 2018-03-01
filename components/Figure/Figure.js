@@ -9,16 +9,16 @@ const Figure = (props) => {
     className,
     caption,
     children,
-    ...rest,
+    ...rest
   } = props;
 
   const classes = cx(css.root, className);
   const captionClasses = cx(css.caption);
 
   return (
-    <figure { ...rest } className={ classes }>
+    <figure {...rest} className={classes}>
       { children }
-      <figcaption className={ captionClasses }>{ caption }</figcaption>
+      <figcaption className={captionClasses}>{ caption }</figcaption>
     </figure>
   );
 };

@@ -3,9 +3,9 @@ import React from 'react';
 
 const Option = ({ selected, value, children, ...rest }) => (
   <option
-    selected={ selected }
-    value={ value }
-    { ...rest }
+    selected={selected}
+    value={value}
+    {...rest}
   >
     { children }
   </option>

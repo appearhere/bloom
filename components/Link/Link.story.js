@@ -8,7 +8,7 @@ storiesOf('Link', module)
     <Link
       href="https://en.wikipedia.org/wiki/Special:Random"
       target="_blank"
-      className={ linkcss.root }
+      className={linkcss.root}
     >
       Random Wikipedia article
     </Link>

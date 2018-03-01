@@ -74,40 +74,40 @@ export default class Checkbox extends Component {
       name,
       label,
       className,
-      ...rest,
+      ...rest
     } = this.props;
 
     return (
-      <span className={ cx(css.root, className) }>
+      <span className={cx(css.root, className)}>
         <input
-          { ...rest }
-          id={ this.id }
+          {...rest}
+          id={this.id}
           type="checkbox"
-          name={ name }
-          value={ value }
-          checked={ checked }
-          onChange={ this.handleChange }
-          ref={ (c) => { this.input = c; } }
-          onFocus={ this.handleFocus }
-          onBlur={ this.handleBlur }
+          name={name}
+          value={value}
+          checked={checked}
+          onChange={this.handleChange}
+          ref={(c) => { this.input = c; }}
+          onFocus={this.handleFocus}
+          onBlur={this.handleBlur}
         />
-        <label htmlFor={ this.id }>
+        <label htmlFor={this.id}>
           { children ? (
             <div><ScreenReadable>{ value }</ScreenReadable>{ children }</div>
           ) : (
             <div>
               <ScreenReadable>{ value }</ScreenReadable>
               <LeftRight
-                leftChildren={ (
-                  <span className={ css.checkbox }>
-                    <Icon className={ css.icon } name="tick" />
+                leftChildren={(
+                  <span className={css.checkbox}>
+                    <Icon className={css.icon} name="tick" />
                   </span>
-                ) }
-                rightChildren={ (
-                  <span className={ css.label }>{ label }</span>
-                ) }
+                )}
+                rightChildren={(
+                  <span className={css.label}>{ label }</span>
+                )}
                 primarySide="right"
-                rightClassName={ css.labelContainer }
+                rightClassName={css.labelContainer}
               />
             </div>
           ) }

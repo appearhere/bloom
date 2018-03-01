@@ -13,8 +13,8 @@ stories
     return (
       <CheckboxGroup
         name="CheckboxGroup"
-        value={ value }
-        onChange={ action('checked') }
+        value={value}
+        onChange={action('checked')}
       >
         { checkbox => (
           <span>

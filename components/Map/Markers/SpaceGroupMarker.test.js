@@ -4,5 +4,5 @@ import SpaceGroupMarker from './SpaceGroupMarker';
 
 it('renders without crashing', () => {
   const div = document.createElement('div');
-  render(<SpaceGroupMarker group={ [] } />, div);
+  render(<SpaceGroupMarker group={[]} />, div);
 });

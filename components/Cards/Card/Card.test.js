@@ -13,7 +13,7 @@ it('renders a div by default', () => {
   let component;
 
   render(
-    <div ref={ (c) => { component = c; } }>
+    <div ref={(c) => { component = c; }}>
       <Card />
     </div>,
     div
@@ -28,7 +28,7 @@ it('renders an anchor when provided a href', () => {
   let component;
 
   render(
-    <div ref={ (c) => { component = c; } }>
+    <div ref={(c) => { component = c; }}>
       <Card href="#" />
     </div>,
     div

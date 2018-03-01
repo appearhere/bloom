@@ -1,5 +1,5 @@
 import PropTypes from 'prop-types';
-import React, { Children } from 'react';
+import React from 'react';
 import cx from 'classnames';
 
 import m from '../../globals/modifiers.css';
@@ -12,42 +12,42 @@ const RandomSix = ({ children, className }) => {
     2: three,
     3: four,
     4: five,
-    5: six
+    5: six,
   } = children;
 
   return (
-    <div className={ cx(css.root, className) }>
+    <div className={cx(css.root, className)}>
       <div className={css.row}>
-        <div className={ cx(css.imageContainer, css.imageContainerLeft) }>
+        <div className={cx(css.imageContainer, css.imageContainerLeft)}>
           { one.src && (
-            <img className={ css.image } src={ one.src } alt={ one.alt } />
+            <img className={css.image} src={one.src} alt={one.alt} />
           ) }
         </div>
-        <div className={ cx(css.imageContainer, css.imageContainerCenter) }>
+        <div className={cx(css.imageContainer, css.imageContainerCenter)}>
           { two.src && (
-            <img className={ css.image } src={ two.src } alt={ two.alt } />
+            <img className={css.image} src={two.src} alt={two.alt} />
           ) }
         </div>
-        <div className={ cx(css.imageContainer, css.imageContainerRight) }>
+        <div className={cx(css.imageContainer, css.imageContainerRight)}>
           { three.src && (
-            <img className={ css.image } src={ three.src } alt={ three.alt } />
+            <img className={css.image} src={three.src} alt={three.alt} />
           ) }
         </div>
       </div>
       <div className={css.row}>
-        <div className={ cx(css.imageContainer, css.imageContainerLeft, m.valignt) }>
+        <div className={cx(css.imageContainer, css.imageContainerLeft, m.valignt)}>
           { four.src && (
-            <img className={ css.image } src={ four.src } alt={ four.alt } />
+            <img className={css.image} src={four.src} alt={four.alt} />
           ) }
         </div>
-        <div className={ cx(css.imageContainer, css.imageContainerCenter, m.valignt) }>
+        <div className={cx(css.imageContainer, css.imageContainerCenter, m.valignt)}>
           { five.src && (
-            <img className={ css.image } src={ five.src } alt={ five.alt } />
+            <img className={css.image} src={five.src} alt={five.alt} />
           ) }
         </div>
-        <div className={ cx(css.imageContainer, css.imageContainerRight, m.valignt) }>
+        <div className={cx(css.imageContainer, css.imageContainerRight, m.valignt)}>
           { six.src && (
-            <img className={ css.image } src={ six.src } alt={ six.alt } />
+            <img className={css.image} src={six.src} alt={six.alt} />
           ) }
         </div>
       </div>

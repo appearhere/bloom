@@ -10,16 +10,16 @@ const TabBarItem = (props) => {
     className,
     active: _active,
     children,
-    ...rest,
+    ...rest
   } = props;
 
   return (
     <Component
-      { ...rest }
-      className={ cx(
+      {...rest}
+      className={cx(
         css.root,
         className
-      ) }
+      )}
     >
       { children }
     </Component>

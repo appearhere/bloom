@@ -9,15 +9,15 @@ const IndicatorGroup = (props) => {
     children,
     activeIndicator,
     Component,
-    ...parentProps,
+    ...parentProps
   } = props;
 
   return (
-    <div { ...parentProps }>
+    <div {...parentProps}>
       { children && children(({ i, ...childProps }) => {
         warning(!isNaN(i), 'IndicatorGroup(): children must be passed an index prop, `i`');
         const active = activeIndicator === i;
-        return <Component { ...childProps } active={ active } />;
+        return <Component {...childProps} active={active} />;
       }) }
     </div>
   );

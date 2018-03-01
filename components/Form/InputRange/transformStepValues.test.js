@@ -69,9 +69,9 @@ describe('transformStepValues higher order function', () => {
     render(
       <WrappedInputRange
         name=""
-        minValue={ steps[0] }
-        maxValue={ steps[6] }
-        value={ { min: steps[0], max: steps[6] } }
+        minValue={steps[0]}
+        maxValue={steps[6]}
+        value={{ min: steps[0], max: steps[6] }}
       />,
       div
     );
@@ -87,12 +87,12 @@ describe('transformStepValues higher order function', () => {
 
     render(
       <WrappedInputRange
-        ref={ (c) => { wrapperComponent = c; } }
+        ref={(c) => { wrapperComponent = c; }}
         name=""
-        minValue={ steps[0] }
-        maxValue={ steps[6] }
-        value={ steps[value] }
-        onChange={ spy }
+        minValue={steps[0]}
+        maxValue={steps[6]}
+        value={steps[value]}
+        onChange={spy}
       />,
       div
     );
@@ -114,12 +114,12 @@ describe('transformStepValues higher order function', () => {
     const div = document.createElement('div');
     render(
       <WrappedInputRange
-        ref={ (c) => { wrapperComponent = c; } }
+        ref={(c) => { wrapperComponent = c; }}
         name=""
-        minValue={ steps[0] }
-        maxValue={ steps[6] }
-        value={ { min, max } }
-        onChange={ changeSpy }
+        minValue={steps[0]}
+        maxValue={steps[6]}
+        value={{ min, max }}
+        onChange={changeSpy}
       />,
       div
     );
@@ -142,12 +142,12 @@ describe('transformStepValues higher order function', () => {
 
     render(
       <WrappedInputRange
-        ref={ (c) => { wrapperComponent = c; } }
+        ref={(c) => { wrapperComponent = c; }}
         name=""
-        minValue={ steps[0] }
-        maxValue={ steps[6] }
-        value={ value }
-        onChangeComplete={ changeCompleteSpy }
+        minValue={steps[0]}
+        maxValue={steps[6]}
+        value={value}
+        onChangeComplete={changeCompleteSpy}
       />,
       div
     );
@@ -169,12 +169,12 @@ describe('transformStepValues higher order function', () => {
     const div = document.createElement('div');
     render(
       <WrappedInputRange
-        ref={ (c) => { wrapperComponent = c; } }
+        ref={(c) => { wrapperComponent = c; }}
         name=""
-        minValue={ steps[0] }
-        maxValue={ steps[6] }
-        value={ { min, max } }
-        onChangeComplete={ changeCompleteSpy }
+        minValue={steps[0]}
+        maxValue={steps[6]}
+        value={{ min, max }}
+        onChangeComplete={changeCompleteSpy}
       />,
       div
     );

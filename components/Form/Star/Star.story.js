@@ -7,5 +7,5 @@ const stories = storiesOf('FormComponents', module);
 stories.addDecorator(withKnobs);
 
 stories.add('Star', () => (
-  <Star checked={ boolean('Checked', false) } />
+  <Star checked={boolean('Checked', false)} />
 ));

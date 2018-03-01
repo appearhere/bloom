@@ -5,7 +5,7 @@ import BookingRequestPreview from './BookingRequestPreview';
 storiesOf('BookingRequestPreview', module)
   .add('Default', () => (
     <BookingRequestPreview
-      bookingRequests={ [{
+      bookingRequests={[{
         id: 44241,
         idea_name: 'Tiny TY (like Little Waitrose who we love, love, love)',
         idea_category: 'popup_bar',
@@ -32,6 +32,6 @@ storiesOf('BookingRequestPreview', module)
         primary_photo_thumbnail_url: 'https://source.unsplash.com/random/150x150',
         tooltip: 'Booked',
         complete: true,
-      }] }
+      }]}
     />
   ));

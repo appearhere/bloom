@@ -7,12 +7,12 @@ import Marker from './Marker';
 import css from './SpaceGroupMarker.css';
 
 const SpaceGroupMarker = ({ group, ...rest }) => (
-  <Marker { ...rest }>
+  <Marker {...rest}>
     { group.map(space => (
       <CondensedSpaceCard
-        className={ css.card }
-        key={ space.id }
-        { ...space }
+        className={css.card}
+        key={space.id}
+        {...space}
       />
     )) }
   </Marker>

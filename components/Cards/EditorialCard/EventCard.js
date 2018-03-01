@@ -56,7 +56,7 @@ class EventCard extends Component {
       containerQuery,
       className,
       ctaCallback,
-      ...rest,
+      ...rest
     } = this.props;
 
     const classes = cx(containerQuery, className);
@@ -64,16 +64,16 @@ class EventCard extends Component {
     /* eslint-disable jsx-a11y/no-static-element-interactions */
     return (
       <div>
-        <EditorialCard { ...rest } className={ classes } tabIndex="0">
-          <div className={ css.body }>
-            <span className={ css.meta }>
+        <EditorialCard {...rest} className={classes} tabIndex="0">
+          <div className={css.body}>
+            <span className={css.meta}>
               { date }{ date && location && ' · ' }{ location }
             </span>
-            <p className={ css.description }>{ description }</p>
+            <p className={css.description}>{ description }</p>
             { ctaCallback && (
               <span
-                className={ cx(css.link, linkcss.root) }
-                onClick={ this.handleBtnClick }
+                className={cx(css.link, linkcss.root)}
+                onClick={this.handleBtnClick}
                 tabIndex="0"
                 role="button"
               >

@@ -63,34 +63,34 @@ export default class Specimen extends Component {
 
     /* eslint-disable react/no-danger */
     return (
-      <div className={ classes.root }>
+      <div className={classes.root}>
         <div
-          className={ cx(
+          className={cx(
             classes.specimenContainer,
             classes[variant],
-          ) }
+          )}
         >
-          <span className={ classes.specimen }>
+          <span className={classes.specimen}>
             { children }
           </span>
         </div>
-        <div className={ classes.body }>
-          <div className={ classes.name }>{ name }</div>
+        <div className={classes.body}>
+          <div className={classes.name}>{ name }</div>
           { attributes.length > 0 && (
-            <ul className={ classes.attributes }>
+            <ul className={classes.attributes}>
               { attributes.map((attribute, i) => (
-                <li key={ i } className={ classes.attribute }>
+                <li key={i} className={classes.attribute}>
                   { attribute }
                 </li>
               )) }
             </ul>
           ) }
           { code && (
-            <div className={ css.codeBlock }>
-              <pre className={ css.pre }>
+            <div className={css.codeBlock}>
+              <pre className={css.pre}>
                 <code
-                  className={ css.code }
-                  dangerouslySetInnerHTML={ this.createMarkup() }
+                  className={css.code}
+                  dangerouslySetInnerHTML={this.createMarkup()}
                 />
               </pre>
             </div>

@@ -18,12 +18,12 @@ const ControlLayer = (props) => {
   } = props;
 
   return (
-    <div className={ cx(css.root, className) }>
-      <ControlGroup className={ cx(css.controlGroup, controlGroupClassName) }>
-        <Control onClick={ onZoomIn }>
+    <div className={cx(css.root, className)}>
+      <ControlGroup className={cx(css.controlGroup, controlGroupClassName)}>
+        <Control onClick={onZoomIn}>
           <ControlIcon name="plus" />
         </Control>
-        <Control onClick={ onZoomOut }>
+        <Control onClick={onZoomOut}>
           <ControlIcon name="minus" />
         </Control>
       </ControlGroup>

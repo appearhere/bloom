@@ -57,43 +57,43 @@ export default class Styleguide extends Component {
     return (
       <BrowserRouter>
         <ScrollToTop>
-          <div className={ css.root }>
-            <BtnContainer className={ css.menuBtn } onClick={ this.openNavigation }>
-              <Icon className={ css.menuIcon } name="menu" />
+          <div className={css.root}>
+            <BtnContainer className={css.menuBtn} onClick={this.openNavigation}>
+              <Icon className={css.menuIcon} name="menu" />
               <ScreenReadable>Open menu</ScreenReadable>
             </BtnContainer>
             <OffCanvasPanel
-              className={ css.navigationSm }
-              activeClassName={ css.navigationActive }
-              active={ showNavigation }
-              onClose={ this.closeNavigation }
+              className={css.navigationSm}
+              activeClassName={css.navigationActive}
+              active={showNavigation}
+              onClose={this.closeNavigation}
             >
               <SiteHeader
-                version={ process.env.npm_package_version }
-                onLinkClick={ this.closeMenu }
+                version={process.env.npm_package_version}
+                onLinkClick={this.closeMenu}
               />
-              <Navigation onLinkClick={ this.closeNavigation } />
+              <Navigation onLinkClick={this.closeNavigation} />
             </OffCanvasPanel>
-            <div className={ css.navigationLg }>
+            <div className={css.navigationLg}>
               <SiteHeader
-                version={ process.env.npm_package_version }
-                onLinkClick={ this.closeMenu }
+                version={process.env.npm_package_version}
+                onLinkClick={this.closeMenu}
               />
-              <Navigation onLinkClick={ this.closeNavigation } />
+              <Navigation onLinkClick={this.closeNavigation} />
             </div>
-            <div className={ css.body }>
-              <Wrapper className={ css.wrapper }>
+            <div className={css.body}>
+              <Wrapper className={css.wrapper}>
                 <Switch>
-                  <Route exact path="/" component={ Introduction } />
-                  <Route path="/design/colors" component={ Colors } />
-                  <Route path="/design/responsive-design" component={ ResponsiveDesign } />
-                  <Route path="/design/iconography" component={ Iconography } />
-                  <Route path="/design/typography" component={ Typography } />
-                  <Route path="/utilities/modifiers" component={ Modifiers } />
+                  <Route exact path="/" component={Introduction} />
+                  <Route path="/design/colors" component={Colors} />
+                  <Route path="/design/responsive-design" component={ResponsiveDesign} />
+                  <Route path="/design/iconography" component={Iconography} />
+                  <Route path="/design/typography" component={Typography} />
+                  <Route path="/utilities/modifiers" component={Modifiers} />
 
                   <Patterns />
 
-                  <Route component={ FourOhFour } />
+                  <Route component={FourOhFour} />
                 </Switch>
               </Wrapper>
             </div>

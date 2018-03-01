@@ -12,6 +12,7 @@ import HORIZONTAL_POSITION_FIXTURES from './horizontalPositionFixtures';
 
 /* eslint-disable react/prefer-stateless-function */
 /* eslint-disable react/no-multi-comp */
+/* eslint-disable class-methods-use-this */
 class TestTarget extends Component {
   static propTypes = {
     verticalAttachment: PropTypes.oneOf(Object.keys(VERTICAL_ATTACHMENTS)),
@@ -34,6 +35,7 @@ class TestChild extends Component {
     return <div />;
   }
 }
+/* eslint-active class-methods-use-this */
 /* eslint-active react/no-multi-comp */
 /* eslint-active react/prefer-stateless-function */
 
@@ -42,7 +44,7 @@ describe('Tether component', () => {
     const div = document.createElement('div');
     render(
       <Tether
-        target={ <TestTarget /> }
+        target={<TestTarget />}
       >
         <TestChild />
       </Tether>,
@@ -54,7 +56,7 @@ describe('Tether component', () => {
     const div = document.createElement('div');
     render(
       <Tether
-        target={ <TestTarget /> }
+        target={<TestTarget />}
         active
       >
         <TestChild />
@@ -71,7 +73,7 @@ describe('Tether target component', () => {
     const div = document.createElement('div');
     render(
       <Tether
-        target={ <TestTarget ref={ (c) => { target = c; } } /> }
+        target={<TestTarget ref={(c) => { target = c; }} />}
         active
       >
         <TestChild />
@@ -91,7 +93,7 @@ describe('Tether target component', () => {
     const div = document.createElement('div');
     render(
       <Tether
-        target={ <TestTarget ref={ (c) => { target = c; } } /> }
+        target={<TestTarget ref={(c) => { target = c; }} />}
         active
       >
         <TestChild />
@@ -110,10 +112,10 @@ describe('Tether child component', () => {
     const div = document.createElement('div');
     render(
       <Tether
-        target={ <TestTarget /> }
+        target={<TestTarget />}
         active
       >
-        <TestChild ref={ (c) => { child = c; } } />
+        <TestChild ref={(c) => { child = c; }} />
       </Tether>,
       div
     );
@@ -143,8 +145,8 @@ OPTIMAL_ATTACHMENT_TEST_CASES.forEach(({ method, args, expected }) => {
     const div = document.createElement('div');
     render(
       <Tether
-        ref={ (c) => { component = c; } }
-        target={ <TestTarget /> }
+        ref={(c) => { component = c; }}
+        target={<TestTarget />}
         active
       >
         <TestChild />
@@ -176,8 +178,8 @@ TETHERED_POSITION_TEST_CASES.forEach(({ method, args, expected }) => {
     const div = document.createElement('div');
     render(
       <Tether
-        ref={ (c) => { component = c; } }
-        target={ <TestTarget /> }
+        ref={(c) => { component = c; }}
+        target={<TestTarget />}
         active
       >
         <TestChild />

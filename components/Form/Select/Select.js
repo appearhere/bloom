@@ -93,7 +93,7 @@ export default class Select extends Component {
       value,
       children,
       priority,
-      ...rest,
+      ...rest
     } = this.props;
 
     const mergedClassNames = mergeObjectStrings(css, classNames);
@@ -106,34 +106,34 @@ export default class Select extends Component {
     );
 
     return (
-      <div className={ mergedClassNames.wrapper }>
+      <div className={mergedClassNames.wrapper}>
         <select
-          { ...rest }
-          ref={ (c) => { this.select = c; } }
-          className={ classes }
-          name={ name }
-          id={ id }
-          required={ required }
-          onFocus={ this.handleFocus }
-          onBlur={ this.handleBlur }
-          onChange={ this.handleChange }
-          value={ value }
-          multiple={ multiple }
+          {...rest}
+          ref={(c) => { this.select = c; }}
+          className={classes}
+          name={name}
+          id={id}
+          required={required}
+          onFocus={this.handleFocus}
+          onBlur={this.handleBlur}
+          onChange={this.handleChange}
+          value={value}
+          multiple={multiple}
         >
           { children }
         </select>
-        { !multiple && <Icon name="chevron" className={ mergedClassNames.arrow } /> }
+        { !multiple && <Icon name="chevron" className={mergedClassNames.arrow} /> }
         <CSSTransitionGroup
-          className={ mergedClassNames.post }
-          transitionName={ css }
-          transitionEnterTimeout={ 500 }
-          transitionLeaveTimeout={ 300 }
-          transitionAppearTimeout={ 500 }
+          className={mergedClassNames.post}
+          transitionName={css}
+          transitionEnterTimeout={500}
+          transitionLeaveTimeout={300}
+          transitionAppearTimeout={500}
           transitionAppear
         >
           { error && error.length > 0 && (
             <div
-              className={ mergedClassNames.errorMsg }
+              className={mergedClassNames.errorMsg}
             >
               { error }
             </div>

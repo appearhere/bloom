@@ -9,7 +9,7 @@ it('renders without crashing', () => {
   const div = document.createElement('div');
   render(
     <Dropdown
-      target={ <TestComponent /> }
+      target={<TestComponent />}
     >
       <TestComponent />
     </Dropdown>,

@@ -12,19 +12,19 @@ import m from '../../../../globals/modifiers.css';
 
 const InputFieldDocumentation = () => (
   <div>
-    <H level={ 1 }>InputField</H>
-    <T elm="p" className={ cx(m.mtr, m.largeI, m.demi) }>
+    <H level={1}>InputField</H>
+    <T elm="p" className={cx(m.mtr, m.largeI, m.demi)}>
       An <C>InputField</C> combines multiple elements that may be required when using
       any given input. It gives you the flexibility to build out your forms in
       many different ways.
     </T>
     <D>
       <Specimen
-        classNames={ {
+        classNames={{
           root: m.mtr,
           specimenContainer: m.par,
-        } }
-        code={ dedent`
+        }}
+        code={dedent`
           <FunnelInputField
             id="example"
             meta="Meta data"
@@ -53,7 +53,7 @@ const InputFieldDocumentation = () => (
       <T elm="p">
         Each property on the <C>InputField</C> has a specific purpose. They should be used like so:
       </T>
-      <Dl className={ m.mtr }>
+      <Dl className={m.mtr}>
         <T elm="dt">
           Meta data
         </T>
@@ -104,14 +104,14 @@ const InputFieldDocumentation = () => (
       </Dl>
     </D>
     <D>
-      <H level={ 2 }>Usage</H>
-      <T elm="p" className={ m.mtr }>
+      <H level={2}>Usage</H>
+      <T elm="p" className={m.mtr}>
         When using <C>InputField</C>, be careful not to over complicate
         the interface by using <strong>too many</strong> of the available
         properties. At minimum, you should include a label and input. From there,
         add additional elements when necessary.
       </T>
-      <T elm="p" className={ m.mtr }>
+      <T elm="p" className={m.mtr}>
         When the only elements on the page are a series of
         <C>InputField</C> components, having them left-aligned may not
         be appropriate. In this case, center it.

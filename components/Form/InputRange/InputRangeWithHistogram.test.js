@@ -26,13 +26,13 @@ describe('InputRange with Histogram', () => {
     render(
       <InputRangeWithHistogram
         name=""
-        value={ {
+        value={{
           min: 0,
           max: 1,
-        } }
-        minValue={ 0 }
-        maxValue={ 1 }
-        data={ [] }
+        }}
+        minValue={0}
+        maxValue={1}
+        data={[]}
       />,
       div
     );

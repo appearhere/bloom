@@ -22,11 +22,11 @@ export default class FittedImage extends Component {
 
     return (
       <img
-        { ...rest }
-        className={ className }
-        src={ src }
-        alt={ alt }
-        ref={ (c) => { this.component = c; } }
+        {...rest}
+        className={className}
+        src={src}
+        alt={alt}
+        ref={(c) => { this.component = c; }}
       />
     );
   }

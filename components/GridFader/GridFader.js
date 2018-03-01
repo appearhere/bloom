@@ -85,7 +85,7 @@ export default class GridFader extends Component {
     const columnClasses = cx(css.column, columnClass);
 
     return (
-      <div className={ css.row }>
+      <div className={css.row}>
         { grid.map((item, i) => (
           /*
             Supplying the index as the key to the outer most `<div />` is
@@ -93,8 +93,8 @@ export default class GridFader extends Component {
             `<Swap />` doesn't get rerendered when the Logo changes.
           */
           <div
-            key={ i }
-            className={ columnClasses }
+            key={i}
+            className={columnClasses}
           >
             { /*
                 `animationTimeout` has to be shorter than the interval to
@@ -105,13 +105,13 @@ export default class GridFader extends Component {
                 of time, causing the grid to break
               */ }
             <TransitionGroup
-              transitionName={ transitions }
-              transitionEnterTimeout={ swapInterval - 100 }
-              transitionLeaveTimeout={ swapInterval - 100 }
+              transitionName={transitions}
+              transitionEnterTimeout={swapInterval - 100}
+              transitionLeaveTimeout={swapInterval - 100}
             >
               <GridItemComponent
-                { ...item }
-                key={ `logo-${item.key}` }
+                {...item}
+                key={`logo-${item.key}`}
               />
             </TransitionGroup>
           </div>

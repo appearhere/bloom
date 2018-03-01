@@ -37,23 +37,23 @@ export default class Pagination extends Component {
     } = this.props;
 
     return (
-      <div className={ cx(css.root, className) }>
+      <div className={cx(css.root, className)}>
         { showPrevNext && (
-          <span className={ css.page }>
+          <span className={css.page}>
             <PreviousComponent
-              { ...arrowProps }
-              page={ currentPage - 1 }
-              disabled={ currentPage === 1 }
+              {...arrowProps}
+              page={currentPage - 1}
+              disabled={currentPage === 1}
             />
           </span>
         ) }
         { children }
         { showPrevNext && (
-          <span className={ css.page }>
+          <span className={css.page}>
             <NextComponent
-              { ...arrowProps }
-              page={ currentPage + 1 }
-              disabled={ currentPage === totalPages }
+              {...arrowProps}
+              page={currentPage + 1}
+              disabled={currentPage === totalPages}
             />
           </span>
         ) }

@@ -16,13 +16,13 @@ const Synopsis = ({ title, children, className, level, ...rest }) => {
   );
 
   return (
-    <div className={ className } { ...rest }>
+    <div className={className} {...rest}>
       { createElement(
         `h${level}`,
         { className: titleClasses, ...rest },
         title
       ) }
-      <div className={ bodyClasses }>{ children }</div>
+      <div className={bodyClasses}>{ children }</div>
     </div>
   );
 };

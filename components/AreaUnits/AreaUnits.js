@@ -7,8 +7,8 @@ const AreaUnits = ({ value, unit, className, ...rest }) => {
   switch (unit) {
     case AREA_UNITS.METERS_SQUARED: return (
       <span
-        { ...rest }
-        className={ className }
+        {...rest}
+        className={className}
       >
         { value }
         m<sup>2</sup>
@@ -17,8 +17,8 @@ const AreaUnits = ({ value, unit, className, ...rest }) => {
     case AREA_UNITS.SQUARE_FOOT:
     default: return (
       <span
-        { ...rest }
-        className={ className }
+        {...rest}
+        className={className}
       >
         { value } sq ft
       </span>

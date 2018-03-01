@@ -5,5 +5,5 @@ import SpaceListingCard from './SpaceListingCard';
 
 it('renders without crashing', () => {
   const div = document.createElement('div');
-  render(<SpaceListingCard images={ [] } />, div);
+  render(<SpaceListingCard images={[]} />, div);
 });

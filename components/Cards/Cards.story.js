@@ -22,7 +22,7 @@ storiesOf('Cards', module)
   ))
   .add('PictureCard', () => (
     <PictureCard
-      style={ { minHeight: '10vh' } }
+      style={{ minHeight: '10vh' }}
       src="https://source.unsplash.com/random"
     >
       Hello, world
@@ -30,7 +30,7 @@ storiesOf('Cards', module)
   ))
   .add('PictureCard with link', () => (
     <PictureCard
-      style={ { minHeight: '10vh' } }
+      style={{ minHeight: '10vh' }}
       href="#"
       src="https://source.unsplash.com/random"
     >
@@ -39,7 +39,7 @@ storiesOf('Cards', module)
   ))
   .add('PictureCard with centered content', () => (
     <PictureCard
-      style={ { minHeight: '10vh' } }
+      style={{ minHeight: '10vh' }}
       src="https://source.unsplash.com/random"
       center
     >
@@ -87,7 +87,7 @@ storiesOf('Cards', module)
     <SpaceListingCard
       price="$10,000,00000000000000000000000"
       priceUnit="/day"
-      badge={ <Badge context="primary" hollow={ false }>New</Badge> }
+      badge={<Badge context="primary" hollow={false}>New</Badge>}
       location="Shoreditch, London in the Greater London Area"
       size="1000 sqft"
       name="A really long Bold Street Shop, maybe the biggest shop you've ever seen"
@@ -223,7 +223,7 @@ storiesOf('Cards', module)
       location="Shoreditch, London"
       size="1000 sqft"
       name="Bold Street Shop"
-      onClick={ action('Clicked called with (e, href)') }
+      onClick={action('Clicked called with (e, href)')}
       images={
         [{
           src: 'https://source.unsplash.com/random/500x500',
@@ -284,7 +284,7 @@ storiesOf('Cards', module)
       imageSrc="https://source.unsplash.com/random/500x500"
       spaceDetail="2 available spaces"
       href="#"
-      onClick={ action('place click') }
+      onClick={action('place click')}
     />
   ))
   .add('EditorialCard', () => (
@@ -301,12 +301,12 @@ storiesOf('Cards', module)
       title="How to PR your Pop Up Shop"
       href="#"
       src="https://source.unsplash.com/random/500x500"
-      description={ 'Inside, you’ll find everything you need to know to launch a shop share, ' +
-        ' from choosing the right location to setting up the space.' }
-      unlockCallback={ (e) => {
+      description={'Inside, you’ll find everything you need to know to launch a shop share, ' +
+        ' from choosing the right location to setting up the space.'}
+      unlockCallback={(e) => {
         e.stopPropagation();
         action('Unlocking')(e);
-      } }
+      }}
     />
   ))
   .add('GuideCard unlocked', () => (
@@ -314,12 +314,12 @@ storiesOf('Cards', module)
       title="How to PR your Pop Up Shop"
       href="#"
       src="https://source.unsplash.com/random/500x500"
-      description={ 'Inside, you’ll find everything you need to know to launch a shop share, ' +
-        ' from choosing the right location to setting up the space.' }
-      downloadCallback={ (e) => {
+      description={'Inside, you’ll find everything you need to know to launch a shop share, ' +
+        ' from choosing the right location to setting up the space.'}
+      downloadCallback={(e) => {
         e.stopPropagation();
         action('Downloading')(e);
-      } }
+      }}
     />
   ))
   .add('EventCard', () => (
@@ -330,9 +330,9 @@ storiesOf('Cards', module)
       description="Nam erat urna, tincidunt eleifend libero ut, posuere dictum augue."
       location="London"
       date="28th August 2016"
-      ctaCallback={ (e) => {
+      ctaCallback={(e) => {
         e.stopPropagation();
         action('Redirecting')(e);
-      } }
+      }}
     />
   ));

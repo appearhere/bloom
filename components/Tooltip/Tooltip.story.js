@@ -9,9 +9,9 @@ const DropdownContent = () => <div>Dropdown content, like a list of actions, hel
 
 const stories = storiesOf('Tooltip', module)
   .add('Default Tooltip', () => (
-    <div style={ { textAlign: 'center', marginTop: '5rem' } }>
+    <div style={{ textAlign: 'center', marginTop: '5rem' }}>
       <Tooltip
-        target={ <Target /> }
+        target={<Target />}
         active
       >
         <DropdownContent />
@@ -19,9 +19,9 @@ const stories = storiesOf('Tooltip', module)
     </div>
   ))
   .add('Light Tooltip', () => (
-    <div style={ { textAlign: 'center', marginTop: '5rem' } }>
+    <div style={{ textAlign: 'center', marginTop: '5rem' }}>
       <Tooltip
-        target={ <Target /> }
+        target={<Target />}
         variant="light"
         active
       >
@@ -30,11 +30,11 @@ const stories = storiesOf('Tooltip', module)
     </div>
   ))
   .add('Positioned bottom right', () => (
-    <div style={ { textAlign: 'center', marginTop: '5rem' } }>
+    <div style={{ textAlign: 'center', marginTop: '5rem' }}>
       <Tooltip
-        target={ <Target /> }
-        verticalAttachment={ VERTICAL_ATTACHMENTS.BOTTOM }
-        horizontalAttachment={ HORIZONTAL_ATTACHMENTS.RIGHT }
+        target={<Target />}
+        verticalAttachment={VERTICAL_ATTACHMENTS.BOTTOM}
+        horizontalAttachment={HORIZONTAL_ATTACHMENTS.RIGHT}
         active
       >
         <DropdownContent />
@@ -42,11 +42,11 @@ const stories = storiesOf('Tooltip', module)
     </div>
   ))
   .add('Positioned center right', () => (
-    <div style={ { textAlign: 'center', marginTop: '5rem' } }>
+    <div style={{ textAlign: 'center', marginTop: '5rem' }}>
       <Tooltip
-        target={ <Target /> }
-        verticalAttachment={ VERTICAL_ATTACHMENTS.CENTER }
-        horizontalAttachment={ HORIZONTAL_ATTACHMENTS.RIGHT }
+        target={<Target />}
+        verticalAttachment={VERTICAL_ATTACHMENTS.CENTER}
+        horizontalAttachment={HORIZONTAL_ATTACHMENTS.RIGHT}
         active
       >
         <DropdownContent />
@@ -54,11 +54,11 @@ const stories = storiesOf('Tooltip', module)
     </div>
   ))
   .add('Positioned top right', () => (
-    <div style={ { textAlign: 'center', marginTop: '5rem' } }>
+    <div style={{ textAlign: 'center', marginTop: '5rem' }}>
       <Tooltip
-        target={ <Target /> }
-        verticalAttachment={ VERTICAL_ATTACHMENTS.TOP }
-        horizontalAttachment={ HORIZONTAL_ATTACHMENTS.RIGHT }
+        target={<Target />}
+        verticalAttachment={VERTICAL_ATTACHMENTS.TOP}
+        horizontalAttachment={HORIZONTAL_ATTACHMENTS.RIGHT}
         active
       >
         <DropdownContent />
@@ -66,11 +66,11 @@ const stories = storiesOf('Tooltip', module)
     </div>
   ))
   .add('Positioned top center', () => (
-    <div style={ { textAlign: 'center', marginTop: '5rem' } }>
+    <div style={{ textAlign: 'center', marginTop: '5rem' }}>
       <Tooltip
-        target={ <Target /> }
-        verticalAttachment={ VERTICAL_ATTACHMENTS.TOP }
-        horizontalAttachment={ HORIZONTAL_ATTACHMENTS.CENTER }
+        target={<Target />}
+        verticalAttachment={VERTICAL_ATTACHMENTS.TOP}
+        horizontalAttachment={HORIZONTAL_ATTACHMENTS.CENTER}
         active
       >
         <DropdownContent />
@@ -78,11 +78,11 @@ const stories = storiesOf('Tooltip', module)
     </div>
   ))
   .add('Positioned top left', () => (
-    <div style={ { textAlign: 'center', marginTop: '5rem' } }>
+    <div style={{ textAlign: 'center', marginTop: '5rem' }}>
       <Tooltip
-        target={ <Target /> }
-        verticalAttachment={ VERTICAL_ATTACHMENTS.TOP }
-        horizontalAttachment={ HORIZONTAL_ATTACHMENTS.LEFT }
+        target={<Target />}
+        verticalAttachment={VERTICAL_ATTACHMENTS.TOP}
+        horizontalAttachment={HORIZONTAL_ATTACHMENTS.LEFT}
         active
       >
         <DropdownContent />
@@ -90,11 +90,11 @@ const stories = storiesOf('Tooltip', module)
     </div>
   ))
   .add('Positioned center left', () => (
-    <div style={ { textAlign: 'center', marginTop: '5rem' } }>
+    <div style={{ textAlign: 'center', marginTop: '5rem' }}>
       <Tooltip
-        target={ <Target /> }
-        verticalAttachment={ VERTICAL_ATTACHMENTS.CENTER }
-        horizontalAttachment={ HORIZONTAL_ATTACHMENTS.LEFT }
+        target={<Target />}
+        verticalAttachment={VERTICAL_ATTACHMENTS.CENTER}
+        horizontalAttachment={HORIZONTAL_ATTACHMENTS.LEFT}
         active
       >
         <DropdownContent />
@@ -102,11 +102,11 @@ const stories = storiesOf('Tooltip', module)
     </div>
   ))
   .add('Positioned bottom left', () => (
-    <div style={ { textAlign: 'center', marginTop: '5rem' } }>
+    <div style={{ textAlign: 'center', marginTop: '5rem' }}>
       <Tooltip
-        target={ <Target /> }
-        verticalAttachment={ VERTICAL_ATTACHMENTS.BOTTOM }
-        horizontalAttachment={ HORIZONTAL_ATTACHMENTS.LEFT }
+        target={<Target />}
+        verticalAttachment={VERTICAL_ATTACHMENTS.BOTTOM}
+        horizontalAttachment={HORIZONTAL_ATTACHMENTS.LEFT}
         active
       >
         <DropdownContent />
@@ -114,11 +114,11 @@ const stories = storiesOf('Tooltip', module)
     </div>
   ))
   .add('Positioned center center', () => (
-    <div style={ { textAlign: 'center', marginTop: '5rem' } }>
+    <div style={{ textAlign: 'center', marginTop: '5rem' }}>
       <Tooltip
-        target={ <Target /> }
-        verticalAttachment={ VERTICAL_ATTACHMENTS.CENTER }
-        horizontalAttachment={ HORIZONTAL_ATTACHMENTS.CENTER }
+        target={<Target />}
+        verticalAttachment={VERTICAL_ATTACHMENTS.CENTER}
+        horizontalAttachment={HORIZONTAL_ATTACHMENTS.CENTER}
         active
       >
         <DropdownContent />
@@ -126,13 +126,13 @@ const stories = storiesOf('Tooltip', module)
     </div>
   ));
 
-stories.
-  add('Positioned flush bottom right', () => (
-    <div style={ { textAlign: 'center', marginTop: '5rem' } }>
+stories
+  .add('Positioned flush bottom right', () => (
+    <div style={{ textAlign: 'center', marginTop: '5rem' }}>
       <Tooltip
-        target={ <Target /> }
-        verticalAttachment={ VERTICAL_ATTACHMENTS.BOTTOM }
-        horizontalAttachment={ HORIZONTAL_ATTACHMENTS.RIGHT }
+        target={<Target />}
+        verticalAttachment={VERTICAL_ATTACHMENTS.BOTTOM}
+        horizontalAttachment={HORIZONTAL_ATTACHMENTS.RIGHT}
         flushVertical
         active
       >
@@ -141,11 +141,11 @@ stories.
     </div>
   ))
   .add('Positioned flush top right', () => (
-    <div style={ { textAlign: 'center', marginTop: '5rem' } }>
+    <div style={{ textAlign: 'center', marginTop: '5rem' }}>
       <Tooltip
-        target={ <Target /> }
-        verticalAttachment={ VERTICAL_ATTACHMENTS.TOP }
-        horizontalAttachment={ HORIZONTAL_ATTACHMENTS.RIGHT }
+        target={<Target />}
+        verticalAttachment={VERTICAL_ATTACHMENTS.TOP}
+        horizontalAttachment={HORIZONTAL_ATTACHMENTS.RIGHT}
         flushVertical
         active
       >
@@ -154,11 +154,11 @@ stories.
     </div>
   ))
   .add('Positioned flush top center', () => (
-    <div style={ { textAlign: 'center', marginTop: '5rem' } }>
+    <div style={{ textAlign: 'center', marginTop: '5rem' }}>
       <Tooltip
-        target={ <Target /> }
-        verticalAttachment={ VERTICAL_ATTACHMENTS.TOP }
-        horizontalAttachment={ HORIZONTAL_ATTACHMENTS.CENTER }
+        target={<Target />}
+        verticalAttachment={VERTICAL_ATTACHMENTS.TOP}
+        horizontalAttachment={HORIZONTAL_ATTACHMENTS.CENTER}
         flushVertical
         active
       >
@@ -167,11 +167,11 @@ stories.
     </div>
   ))
   .add('Positioned flush top left', () => (
-    <div style={ { textAlign: 'center', marginTop: '5rem' } }>
+    <div style={{ textAlign: 'center', marginTop: '5rem' }}>
       <Tooltip
-        target={ <Target /> }
-        verticalAttachment={ VERTICAL_ATTACHMENTS.TOP }
-        horizontalAttachment={ HORIZONTAL_ATTACHMENTS.LEFT }
+        target={<Target />}
+        verticalAttachment={VERTICAL_ATTACHMENTS.TOP}
+        horizontalAttachment={HORIZONTAL_ATTACHMENTS.LEFT}
         flushVertical
         active
       >
@@ -180,11 +180,11 @@ stories.
     </div>
   ))
   .add('Positioned flush bottom left', () => (
-    <div style={ { textAlign: 'center', marginTop: '5rem' } }>
+    <div style={{ textAlign: 'center', marginTop: '5rem' }}>
       <Tooltip
-        target={ <Target /> }
-        verticalAttachment={ VERTICAL_ATTACHMENTS.BOTTOM }
-        horizontalAttachment={ HORIZONTAL_ATTACHMENTS.LEFT }
+        target={<Target />}
+        verticalAttachment={VERTICAL_ATTACHMENTS.BOTTOM}
+        horizontalAttachment={HORIZONTAL_ATTACHMENTS.LEFT}
         flushVertical
         active
       >
@@ -193,11 +193,11 @@ stories.
     </div>
   ))
   .add('Positioned flush bottom center', () => (
-    <div style={ { textAlign: 'center', marginTop: '5rem' } }>
+    <div style={{ textAlign: 'center', marginTop: '5rem' }}>
       <Tooltip
-        target={ <Target /> }
-        verticalAttachment={ VERTICAL_ATTACHMENTS.BOTTOM }
-        horizontalAttachment={ HORIZONTAL_ATTACHMENTS.CENTER }
+        target={<Target />}
+        verticalAttachment={VERTICAL_ATTACHMENTS.BOTTOM}
+        horizontalAttachment={HORIZONTAL_ATTACHMENTS.CENTER}
         flushVertical
         active
       >
@@ -208,11 +208,11 @@ stories.
 
 stories
   .add('Positioned bottom flush right', () => (
-    <div style={ { textAlign: 'center', marginTop: '5rem' } }>
+    <div style={{ textAlign: 'center', marginTop: '5rem' }}>
       <Tooltip
-        target={ <Target /> }
-        verticalAttachment={ VERTICAL_ATTACHMENTS.BOTTOM }
-        horizontalAttachment={ HORIZONTAL_ATTACHMENTS.RIGHT }
+        target={<Target />}
+        verticalAttachment={VERTICAL_ATTACHMENTS.BOTTOM}
+        horizontalAttachment={HORIZONTAL_ATTACHMENTS.RIGHT}
         flushHorizontal
         active
       >
@@ -221,11 +221,11 @@ stories
     </div>
   ))
   .add('Positioned top flush right', () => (
-    <div style={ { textAlign: 'center', marginTop: '5rem' } }>
+    <div style={{ textAlign: 'center', marginTop: '5rem' }}>
       <Tooltip
-        target={ <Target /> }
-        verticalAttachment={ VERTICAL_ATTACHMENTS.TOP }
-        horizontalAttachment={ HORIZONTAL_ATTACHMENTS.RIGHT }
+        target={<Target />}
+        verticalAttachment={VERTICAL_ATTACHMENTS.TOP}
+        horizontalAttachment={HORIZONTAL_ATTACHMENTS.RIGHT}
         flushHorizontal
         active
       >
@@ -234,11 +234,11 @@ stories
     </div>
   ))
   .add('Positioned top flush left', () => (
-    <div style={ { textAlign: 'center', marginTop: '5rem' } }>
+    <div style={{ textAlign: 'center', marginTop: '5rem' }}>
       <Tooltip
-        target={ <Target /> }
-        verticalAttachment={ VERTICAL_ATTACHMENTS.TOP }
-        horizontalAttachment={ HORIZONTAL_ATTACHMENTS.LEFT }
+        target={<Target />}
+        verticalAttachment={VERTICAL_ATTACHMENTS.TOP}
+        horizontalAttachment={HORIZONTAL_ATTACHMENTS.LEFT}
         flushHorizontal
         active
       >
@@ -247,11 +247,11 @@ stories
     </div>
   ))
   .add('Positioned bottom flush left', () => (
-    <div style={ { textAlign: 'center', marginTop: '5rem' } }>
+    <div style={{ textAlign: 'center', marginTop: '5rem' }}>
       <Tooltip
-        target={ <Target /> }
-        verticalAttachment={ VERTICAL_ATTACHMENTS.BOTTOM }
-        horizontalAttachment={ HORIZONTAL_ATTACHMENTS.LEFT }
+        target={<Target />}
+        verticalAttachment={VERTICAL_ATTACHMENTS.BOTTOM}
+        horizontalAttachment={HORIZONTAL_ATTACHMENTS.LEFT}
         flushHorizontal
         active
       >

@@ -75,38 +75,38 @@ export default class Radio extends Component {
       name,
       label,
       className,
-      ...rest,
+      ...rest
     } = this.props;
 
     return (
-      <div className={ cx(css.root, className) }>
+      <div className={cx(css.root, className)}>
         <input
-          { ...rest }
-          id={ this.id }
+          {...rest}
+          id={this.id}
           type="radio"
-          name={ name }
-          value={ value }
-          checked={ checked }
-          onChange={ this.handleChange }
-          ref={ (c) => { this.input = c; } }
-          onFocus={ this.handleFocus }
-          onBlur={ this.handleBlur }
+          name={name}
+          value={value}
+          checked={checked}
+          onChange={this.handleChange}
+          ref={(c) => { this.input = c; }}
+          onFocus={this.handleFocus}
+          onBlur={this.handleBlur}
         />
-        <label htmlFor={ this.id }>
+        <label htmlFor={this.id}>
           { children ? (
             <div><ScreenReadable>{ value }</ScreenReadable>{ children }</div>
           ) : (
             <div>
               <ScreenReadable>{ value }</ScreenReadable>
               <LeftRight
-                leftChildren={ (
-                  <span className={ css.radio }>
-                    <Icon className={ css.icon } name="radio" />
+                leftChildren={(
+                  <span className={css.radio}>
+                    <Icon className={css.icon} name="radio" />
                   </span>
-                ) }
-                rightChildren={ (
-                  <span className={ css.label }>{ label }</span>
-                ) }
+                )}
+                rightChildren={(
+                  <span className={css.label}>{ label }</span>
+                )}
                 primarySide="right"
               />
             </div>

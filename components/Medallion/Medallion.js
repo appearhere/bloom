@@ -6,12 +6,12 @@ import css from './Medallion.css';
 
 const Medallion = ({ className, variant, children, ...rest }) => (
   <span
-    { ...rest }
-    className={ cx(
+    {...rest}
+    className={cx(
       css.root,
       css[variant],
       className,
-    ) }
+    )}
   >
     { children }
   </span>

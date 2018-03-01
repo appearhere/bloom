@@ -13,18 +13,18 @@ import scaffoldCss from '../../../components/Scaffold/Scaffold.css';
 
 const TabsDocumentation = () => (
   <div>
-    <H level={ 1 }>Tabs</H>
-    <T elm="p" className={ cx(m.mtr, m.largeI, m.demi) }>
+    <H level={1}>Tabs</H>
+    <T elm="p" className={cx(m.mtr, m.largeI, m.demi)}>
       <C>Tabs</C> provide an easy way to navigate between views on a single page,
       where content is related. For cases when you need page level
-      tabs, <Link className={ scaffoldCss.link } to="/patterns/tab-bar">TabBar</Link>.
+      tabs, <Link className={scaffoldCss.link} to="/patterns/tab-bar">TabBar</Link>.
     </T>
     <D>
       <Specimen
-        classNames={ {
+        classNames={{
           specimenContainer: m.par,
-        } }
-        code={ dedent`
+        }}
+        code={dedent`
           <Tabs>
             <Tab label="One">
               Barry Chuckle

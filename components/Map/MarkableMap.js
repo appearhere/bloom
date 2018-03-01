@@ -430,9 +430,9 @@ export default class MarkableMap extends Component {
       renderSubtreeIntoContainer(
         this,
         <MarkerContainer
-          key={ `${this.id}-activeMarker` }
-          MarkerComponent={ GroupMarkerComponent }
-          props={ { group: clusteredMarkers.map(marker => marker.props) } }
+          key={`${this.id}-activeMarker`}
+          MarkerComponent={GroupMarkerComponent}
+          props={{ group: clusteredMarkers.map(marker => marker.props) }}
         />,
         element
       );
@@ -442,9 +442,9 @@ export default class MarkableMap extends Component {
       renderSubtreeIntoContainer(
         this,
         <MarkerContainer
-          key={ `${this.id}-activeMarker` }
-          MarkerComponent={ MarkerComponent }
-          props={ marker.props }
+          key={`${this.id}-activeMarker`}
+          MarkerComponent={MarkerComponent}
+          props={marker.props}
         />,
         element
       );
@@ -455,10 +455,10 @@ export default class MarkableMap extends Component {
     const { markers: _markers, MarkerComponent: _MarkerComponent, ...rest } = this.props;
     return (
       <BaseMap
-        ref={ (c) => { this.map = c; } }
-        onMapLoad={ this.handleMapLoad }
-        { ...rest }
-        onClick={ this.handleMapClick }
+        ref={(c) => { this.map = c; }}
+        onMapLoad={this.handleMapLoad}
+        {...rest}
+        onClick={this.handleMapClick}
       />
     );
   }

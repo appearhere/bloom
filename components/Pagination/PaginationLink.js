@@ -9,14 +9,14 @@ import ScreenReadable from '../ScreenReadable/ScreenReadable';
 import css from './PaginationLink.css';
 
 export const NextLink = props => (
-  <PaginationLink { ...props }>
-    <Icon name="arrow" className={ css.nextArrow } />
+  <PaginationLink {...props}>
+    <Icon name="arrow" className={css.nextArrow} />
   </PaginationLink>
 );
 
 export const PreviousLink = props => (
-  <PaginationLink { ...props }>
-    <Icon name="arrow" className={ css.prevArrow } />
+  <PaginationLink {...props}>
+    <Icon name="arrow" className={css.prevArrow} />
   </PaginationLink>
 );
 
@@ -45,13 +45,13 @@ export class PaginationLink extends Component {
 
     return (
       <a
-        href={ !disabled ? `?page=${page}` : null }
-        className={ cx(
+        href={!disabled ? `?page=${page}` : null}
+        className={cx(
           css.root,
           active ? css.active : null,
           disabled ? css.disabled : null,
-        ) }
-        onClick={ this.handleClick }
+        )}
+        onClick={this.handleClick}
       >
         { children }
         <ScreenReadable>{ accessibilityLabel } { page }</ScreenReadable>

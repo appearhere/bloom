@@ -23,8 +23,8 @@ it('renders without crashing', () => {
   const div = document.createElement('div');
   ReactDOM.render(
     <MarkableMap
-      MarkerComponent={ SpaceMarker }
-      GroupMarkerComponent={ SpaceGroupMarker }
+      MarkerComponent={SpaceMarker}
+      GroupMarkerComponent={SpaceGroupMarker}
     />, div);
 });
 
@@ -35,10 +35,10 @@ it('it renders the active marker correctly', () => {
   const div = document.createElement('div');
   ReactDOM.render(
     <MarkableMap
-      ref={ (c) => { component = c; } }
-      MarkerComponent={ SpaceMarker }
-      GroupMarkerComponent={ SpaceGroupMarker }
-      markers={ [{ id: 1, lngLat: [1, 0], label: 'test' }] }
+      ref={(c) => { component = c; }}
+      MarkerComponent={SpaceMarker}
+      GroupMarkerComponent={SpaceGroupMarker}
+      markers={[{ id: 1, lngLat: [1, 0], label: 'test' }]}
     />,
     div
   );
@@ -63,9 +63,9 @@ it('it autosizes the map correctly', () => {
   const div = document.createElement('div');
   ReactDOM.render(
     <MarkableMap
-      MarkerComponent={ SpaceMarker }
-      GroupMarkerComponent={ SpaceGroupMarker }
-      markers={ [{ id: 1, lngLat: [1, 0], label: 'test' }] }
+      MarkerComponent={SpaceMarker}
+      GroupMarkerComponent={SpaceGroupMarker}
+      markers={[{ id: 1, lngLat: [1, 0], label: 'test' }]}
       autoFit
     />,
     div
@@ -77,12 +77,12 @@ it('it autosizes the map correctly', () => {
 
   ReactDOM.render(
     <MarkableMap
-      MarkerComponent={ SpaceMarker }
-      GroupMarkerComponent={ SpaceGroupMarker }
-      markers={ [
+      MarkerComponent={SpaceMarker}
+      GroupMarkerComponent={SpaceGroupMarker}
+      markers={[
         { id: 1, lngLat: [0, 0], label: 'test' },
         { id: 2, lngLat: [1, 1], label: 'test' },
-      ] }
+      ]}
       autoFit
     />,
     div
@@ -97,12 +97,12 @@ it('it autosizes the map correctly', () => {
 
   ReactDOM.render(
     <MarkableMap
-      MarkerComponent={ SpaceMarker }
-      GroupMarkerComponent={ SpaceGroupMarker }
-      markers={ [
+      MarkerComponent={SpaceMarker}
+      GroupMarkerComponent={SpaceGroupMarker}
+      markers={[
         { id: 1, lngLat: [0, 0], label: 'test' },
         { id: 2, lngLat: [1, 1], label: 'test' },
-      ] }
+      ]}
       autoFit
     />,
     div
@@ -118,9 +118,9 @@ it('unmounts without crashing', () => {
   const div = document.createElement('div');
   ReactDOM.render(
     <MarkableMap
-      MarkerComponent={ SpaceMarker }
-      GroupMarkerComponent={ SpaceGroupMarker }
-      markers={ [{ id: 1, lngLat: [1, 0], label: 'test' }] }
+      MarkerComponent={SpaceMarker}
+      GroupMarkerComponent={SpaceGroupMarker}
+      markers={[{ id: 1, lngLat: [1, 0], label: 'test' }]}
     />,
     div
   );

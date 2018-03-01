@@ -67,10 +67,10 @@ export default class EdgeFade extends Component {
 
     return (
       <div
-        ref={ (c) => { this.wrapper = c; } }
-        style={ {
+        ref={(c) => { this.wrapper = c; }}
+        style={{
           opacity,
-        } }
+        }}
       >
         { children }
       </div>

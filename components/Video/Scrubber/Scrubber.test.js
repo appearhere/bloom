@@ -9,9 +9,9 @@ it('renders without crashing', () => {
   const div = document.createElement('div');
   ReactDOM.render(
     <Scrubber
-      currentTime={ 0 }
-      duration={ 0 }
-      seek={ noop }
+      currentTime={0}
+      duration={0}
+      seek={noop}
     />,
     div
   );
@@ -23,10 +23,10 @@ it('calculates the progress correctly', () => {
 
   ReactDOM.render(
     <Scrubber
-      ref={ (c) => { component = c; } }
-      currentTime={ 5 }
-      duration={ 10 }
-      seek={ noop }
+      ref={(c) => { component = c; }}
+      currentTime={5}
+      duration={10}
+      seek={noop}
     />,
     div
   );
@@ -35,10 +35,10 @@ it('calculates the progress correctly', () => {
 
   ReactDOM.render(
     <Scrubber
-      ref={ (c) => { component = c; } }
-      currentTime={ 2 }
-      duration={ 8 }
-      seek={ noop }
+      ref={(c) => { component = c; }}
+      currentTime={2}
+      duration={8}
+      seek={noop}
     />,
     div
   );
@@ -52,10 +52,10 @@ it('handles internal focus', () => {
 
   ReactDOM.render(
     <Scrubber
-      ref={ (c) => { component = c; } }
-      currentTime={ 5 }
-      duration={ 10 }
-      seek={ noop }
+      ref={(c) => { component = c; }}
+      currentTime={5}
+      duration={10}
+      seek={noop}
     />,
     div
   );

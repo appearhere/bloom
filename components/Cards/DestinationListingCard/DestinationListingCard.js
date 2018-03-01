@@ -103,55 +103,55 @@ export default class DestinationListingCard extends Component {
       onFavouriteClick,
       favourite,
       favouriteable,
-      ...rest,
+      ...rest
     } = this.props;
 
     return (
       <div
-        { ...rest }
-        className={ cx(
+        {...rest}
+        className={cx(
           css.root,
           className,
           fixedHeight ? css.fixedHeight : null,
-        ) }
+        )}
       >
         { favouriteable && (
           <HeartBtn
-            className={ css.heart }
-            onClick={ onFavouriteClick }
-            active={ favourite }
+            className={css.heart}
+            onClick={onFavouriteClick}
+            active={favourite}
           />
         ) }
-        <div className={ cx(css.carousel, carouselClassName) }>
+        <div className={cx(css.carousel, carouselClassName)}>
           { carouselOverlay }
           <BtnContainer
-            onClick={ this.handlePrevImage }
-            className={ cx(css.control, css.prev) }
+            onClick={this.handlePrevImage}
+            className={cx(css.control, css.prev)}
           >
-            <Icon className={ cx(css.icon, css.prevIcon) } name="chevron" />
+            <Icon className={cx(css.icon, css.prevIcon)} name="chevron" />
             <ScreenReadable>{ accessibilityPrevLabel }</ScreenReadable>
           </BtnContainer>
           <BtnContainer
-            onClick={ this.handleNextImage }
-            className={ cx(css.control, css.next) }
+            onClick={this.handleNextImage}
+            className={cx(css.control, css.next)}
           >
-            <Icon className={ cx(css.icon, css.nextIcon) } name="chevron" />
+            <Icon className={cx(css.icon, css.nextIcon)} name="chevron" />
             <ScreenReadable>{ accessibilityNextLabel }</ScreenReadable>
           </BtnContainer>
-          <div className={ css.inner }>
+          <div className={css.inner}>
             <Carousel
-              lowestVisibleItemIndex={ visibleImageIndex }
+              lowestVisibleItemIndex={visibleImageIndex}
               wrapAround
-              swiping={ false }
-              dragging={ false }
+              swiping={false}
+              dragging={false}
             >
               { images.map(({ src, alt }) => (
-                <a href={ href } key={ src } onClick={ this.onClick }>
-                  <div className={ css.imageContainer }>
+                <a href={href} key={src} onClick={this.onClick}>
+                  <div className={css.imageContainer}>
                     <FittedImage
-                      className={ css.image }
-                      src={ src }
-                      alt={ alt }
+                      className={css.image}
+                      src={src}
+                      alt={alt}
                     />
                   </div>
                 </a>
@@ -159,26 +159,26 @@ export default class DestinationListingCard extends Component {
             </Carousel>
           </div>
         </div>
-        <div className={ cx(css.body, bodyClassName) }>
-          <a href={ href } onClick={ this.onClick } className={ css.bodyLink }>
-            <div className={ css.title }>
-              <div className={ css.priceContainer }>
+        <div className={cx(css.body, bodyClassName)}>
+          <a href={href} onClick={this.onClick} className={css.bodyLink}>
+            <div className={css.title}>
+              <div className={css.priceContainer}>
                 { priceFromLabel &&
-                  <span className={ css.priceFromLabel }>
+                  <span className={css.priceFromLabel}>
                     { priceFromLabel }
                   </span> }
-                <span className={ css.price }>
+                <span className={css.price}>
                   { price }
                 </span>
                 { '\u00a0' }
-                <span className={ css.priceUnit }>
+                <span className={css.priceUnit}>
                   { priceUnit }
                 </span>
               </div>
               { badge }
             </div>
-            <div className={ css.name }>{ name }</div>
-            <div className={ css.additionalInformationBlock }>
+            <div className={css.name}>{ name }</div>
+            <div className={css.additionalInformationBlock}>
               {
                 information
                   .filter(info => info)
@@ -186,17 +186,17 @@ export default class DestinationListingCard extends Component {
                   .reduce((accu, elem, i, arr) => {
                     const wrappedEl = (
                       <span
-                        key={ `info-${i}` }
-                        className={ css.additionalInformationItem }
-                        style={ {
+                        key={`info-${i}`}
+                        className={css.additionalInformationItem}
+                        style={{
                           maxWidth: `calc(${100 / arr.length}% - 1rem)`,
-                        } }
+                        }}
                       >
                         { elem }
                       </span>
                     );
                     const spacer = (
-                      <span key={ `info-spacer-${i}` } className={ css.spacer }>•</span>
+                      <span key={`info-spacer-${i}`} className={css.spacer}>•</span>
                     );
 
                     return accu === null
@@ -209,7 +209,7 @@ export default class DestinationListingCard extends Component {
             </div>
           </a>
           { children && (
-            <div className={ css.footer }>
+            <div className={css.footer}>
               { children }
             </div>
           ) }

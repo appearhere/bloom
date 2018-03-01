@@ -8,10 +8,10 @@ export { HORIZONTAL_ATTACHMENTS, VERTICAL_ATTACHMENTS } from '../Tether/Tether';
 
 const Dropdown = ({ target, children, className, ...rest }) => (
   <Tether
-    { ...rest }
-    target={ target }
+    {...rest}
+    target={target}
   >
-    <Inner className={ className }>
+    <Inner className={className}>
       { children }
     </Inner>
   </Tether>

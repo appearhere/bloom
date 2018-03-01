@@ -63,13 +63,13 @@ const transformStepValues = WrappedComponent => steps => class extends Component
 
     return (
       <WrappedComponent
-        { ...this.props }
-        maxValue={ rawMaxValue }
-        minValue={ rawMinValue }
-        value={ rawValues }
-        ref={ (c) => { this.component = c; } }
-        onChange={ this.handleChange }
-        onChangeComplete={ this.handleChangeComplete }
+        {...this.props}
+        maxValue={rawMaxValue}
+        minValue={rawMinValue}
+        value={rawValues}
+        ref={(c) => { this.component = c; }}
+        onChange={this.handleChange}
+        onChangeComplete={this.handleChangeComplete}
       />
     );
   }

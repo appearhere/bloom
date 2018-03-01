@@ -26,23 +26,23 @@ const links = generateArray(12)
 
 const HorizontalOverflowBarDocumentation = () => (
   <div>
-    <H level={ 1 }>Horizontal Overflow Bar</H>
-    <T elm="p" className={ cx(m.mtr, m.largeI, m.demi) }>
+    <H level={1}>Horizontal Overflow Bar</H>
+    <T elm="p" className={cx(m.mtr, m.largeI, m.demi)}>
       This component is used to display a sub navigation on a webpage, which
       works across all screen sizes.
     </T>
     <D>
-      <H level={ 2 }>Default</H>
-      <T elm="p" className={ m.mtr }>
+      <H level={2}>Default</H>
+      <T elm="p" className={m.mtr}>
         By default, both smaller and larger screens are left aligned with
         consistent spacing throughout.
       </T>
       <Specimen
-        classNames={ {
+        classNames={{
           root: m.mtr,
           specimenContainer: m.par,
-        } }
-        code={ dedent`
+        }}
+        code={dedent`
           <HorizontalOverflowBar>
             { link => links.map(props => link(props)) }
           </HorizontalOverflowBar>
@@ -52,7 +52,7 @@ const HorizontalOverflowBarDocumentation = () => (
           { link => links.map(props => link(props)) }
         </HorizontalOverflowBar>
       </Specimen>
-      <Note className={ m.mtr }>
+      <Note className={m.mtr}>
         <T elm="p">
           For the <C>HorizontalOverflowBar</C> component to work correctly, try not to
           not add too many links. It uses a fixed width of <C>56.25rem</C>
@@ -62,8 +62,8 @@ const HorizontalOverflowBarDocumentation = () => (
       </Note>
     </D>
     <D>
-      <H level={ 2 }>Centered</H>
-      <T elm="p" className={ m.mtr }>
+      <H level={2}>Centered</H>
+      <T elm="p" className={m.mtr}>
         Consider using the <C>applyContainerQuery</C> higher-order component
         to override the default styles when the <C>HorizontalOverflowBar</C>&#39;s
         default behaviour is not necessary, e.g., at larger viewport sizes.

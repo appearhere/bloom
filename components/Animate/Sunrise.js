@@ -58,12 +58,12 @@ export default class Sunrise extends Component {
     const classes = cx(css.root, visible && (start || hasPlayed) ? css.visible : null);
 
     return (
-      <OnVisible percent={ percent } onChange={ this.handleChange }>
+      <OnVisible percent={percent} onChange={this.handleChange}>
         <div
-          className={ classes }
-          style={ {
+          className={classes}
+          style={{
             transitionDelay: `${transitionDelay}ms`,
-          } }
+          }}
         >
           { children }
         </div>

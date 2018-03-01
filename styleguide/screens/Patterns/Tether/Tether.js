@@ -20,7 +20,7 @@ import scaffoldCss from '../../../components/Scaffold/Scaffold.css';
 
 const Target = () => <div>Anchor</div>;
 // eslint-disable-next-line react/prop-types
-const TetherChild = ({ className }) => <div className={ className } />;
+const TetherChild = ({ className }) => <div className={className} />;
 
 export default class TetherDocumentation extends Component {
   state = {
@@ -72,90 +72,90 @@ export default class TetherDocumentation extends Component {
 
     return (
       <div>
-        <H level={ 1 }>Tether</H>
-        <T elm="p" className={ cx(m.mtr, m.largeI, m.demi) }>
+        <H level={1}>Tether</H>
+        <T elm="p" className={cx(m.mtr, m.largeI, m.demi)}>
           The <C>Tether</C> component allows you define and manage the position of an element
           in relation to another element.
         </T>
         <D>
-          <T elm="p" className={ m.mtr }>
+          <T elm="p" className={m.mtr}>
             Tether is useful where you need to position a element in relation to another element.
             It’s great as the foundation for other components such as { ' ' }
-            <Link className={ scaffoldCss.link } to="/patterns/dropdown">Dropdown</Link>.
+            <Link className={scaffoldCss.link} to="/patterns/dropdown">Dropdown</Link>.
           </T>
-          <T elm="p" className={ m.mtr }>
+          <T elm="p" className={m.mtr}>
             A useful fact about the Tether component is that it will reposition itself back into
             the viewport if incorrect horizontal and vertical positioning or scrolling cause it to
             move outside of the viewport.
           </T>
-          <Note className={ m.mtr }>
+          <Note className={m.mtr}>
             <T elm="p">
               It is best to avoid using the <C>Tether</C> component with a target with { ' ' }
               <C>position: fixed</C> as it will break the repositioning functionality.
             </T>
           </Note>
-          <div className={ css.controls } >
-            <div className={ css.control }>
-              <Label className={ css.label } htmlFor="verticalAttachment">
+          <div className={css.controls} >
+            <div className={css.control}>
+              <Label className={css.label} htmlFor="verticalAttachment">
                 vertical attachment
               </Label>
               <Select
-                classNames={ { select: m.mtSmIi } }
+                classNames={{ select: m.mtSmIi }}
                 name="verticalAttachment"
-                value={ verticalAttachment }
-                onChange={ this.handleVerticalAttachmentChange }
+                value={verticalAttachment}
+                onChange={this.handleVerticalAttachmentChange}
               >
                 <Option value="TOP">TOP</Option>
                 <Option value="BOTTOM">BOTTOM</Option>
                 <Option value="CENTER">CENTER</Option>
               </Select>
             </div>
-            <div className={ css.control }>
-              <Label className={ css.label } htmlFor="horizontalAttachment">
+            <div className={css.control}>
+              <Label className={css.label} htmlFor="horizontalAttachment">
                 horizontal attachment
               </Label>
               <Select
-                classNames={ { select: m.mtSmIi } }
+                classNames={{ select: m.mtSmIi }}
                 name="horizontalAttachment"
-                value={ horizontalAttachment }
-                onChange={ this.handleHorizontallAttachmentChange }
+                value={horizontalAttachment}
+                onChange={this.handleHorizontallAttachmentChange}
               >
                 <Option value="CENTER">CENTER</Option>
                 <Option value="LEFT">LEFT</Option>
                 <Option value="RIGHT">RIGHT</Option>
               </Select>
             </div>
-            <div className={ css.control }>
-              <Label className={ css.label } htmlFor="flushVertical">
+            <div className={css.control}>
+              <Label className={css.label} htmlFor="flushVertical">
                 flush vertical
               </Label>
               <Checkbox
-                className={ m.mtSmIi }
+                className={m.mtSmIi}
                 name="flushVertical"
-                checked={ flushVertical }
+                checked={flushVertical}
                 value="flushVertical"
-                onChange={ this.handleFlushVerticalChange }
+                onChange={this.handleFlushVerticalChange}
               />
             </div>
-            <div className={ css.control }>
-              <Label className={ css.label } htmlFor="flushHorizontal">
+            <div className={css.control}>
+              <Label className={css.label} htmlFor="flushHorizontal">
                 flush horizontal
               </Label>
               <Checkbox
-                className={ m.mtSmIi }
+                className={m.mtSmIi}
                 name="flushHorizontal"
-                checked={ flushHorizontal }
+                checked={flushHorizontal}
                 value="flushHorizontal"
-                onChange={ this.handleFlushHorizontalChange }
+                onChange={this.handleFlushHorizontalChange}
               />
             </div>
           </div>
           <Specimen
-            classNames={ {
+            classNames={{
               root: m.mtr,
               specimenContainer: cx(m.paLgV, css.specimenContainer),
-            } }
-            code={ dedent`
+            }}
+            code={dedent`
               <Tether
                 target={ <button>Anchor</button> }
                 verticalAttachment={ ${verticalAttachment} }
@@ -167,17 +167,17 @@ export default class TetherDocumentation extends Component {
             ` }
           >
             <Tether
-              target={ <Target /> }
-              verticalAttachment={ verticalAttachment }
-              horizontalAttachment={ horizontalAttachment }
-              flushVertical={ flushVertical }
-              flushHorizontal={ flushHorizontal }
+              target={<Target />}
+              verticalAttachment={verticalAttachment}
+              horizontalAttachment={horizontalAttachment}
+              flushVertical={flushVertical}
+              flushHorizontal={flushHorizontal}
               active
             >
-              <TetherChild className={ css.tether } />
+              <TetherChild className={css.tether} />
             </Tether>
           </Specimen>
-          <T elm="p" className={ m.mtr }>
+          <T elm="p" className={m.mtr}>
             Passing the <C>flushHorizontal</C> will align the tether element so it is parallel to
             the <C>horizontalAttachment</C> and the <C>flushVertical</C> prop will align the
             element so it is parallel to the <C>verticalAttachment</C>.

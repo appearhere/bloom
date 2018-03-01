@@ -16,17 +16,17 @@ const Panel = (props) => {
     children,
     className,
     context,
-    ...rest,
+    ...rest
   } = props;
 
   return (
     <div
-      { ...rest }
-      className={ cx(
+      {...rest}
+      className={cx(
         css.root,
         css[context],
         className,
-      ) }
+      )}
     >
       { children }
     </div>

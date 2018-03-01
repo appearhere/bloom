@@ -17,34 +17,34 @@ const BookingRequestPreview = ({ bookingRequests, className, ...rest }) => {
   }, {});
 
   return (
-    <div { ...rest } className={ className }>
+    <div {...rest} className={className}>
       { Object.keys(keyedBookingRequests).map((state) => {
         const requests = keyedBookingRequests[state];
 
         return (
-          <div className={ css.requestList } key={ state }>
-            <div className={ css.state }>{ state }</div>
-            { requests.map((request) => (
+          <div className={css.requestList} key={state}>
+            <div className={css.state}>{ state }</div>
+            { requests.map(request => (
               <LeftRight
-                className={ css.request }
-                key={ request.id }
+                className={css.request}
+                key={request.id}
                 primarySide="right"
                 leftChildren={
                   <FittedImage
-                    className={ css.image }
-                    src={ request.primary_photo_thumbnail_url }
-                    alt={ request.idea_name }
+                    className={css.image}
+                    src={request.primary_photo_thumbnail_url}
+                    alt={request.idea_name}
                   />
                 }
                 rightChildren={
-                  <div className={ css.requestDetail }>
-                    <div className={ css.ideaName }>
+                  <div className={css.requestDetail}>
+                    <div className={css.ideaName}>
                       { request.idea_name }
                     </div>
-                    <div className={ css.dates }>
+                    <div className={css.dates}>
                       { moment(request.start_on).format('L') }
                       <Icon
-                        className={ css.untilIcon }
+                        className={css.untilIcon}
                         name="arrow"
                       />
                       { moment(request.end_on).format('L') }

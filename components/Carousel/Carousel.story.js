@@ -7,15 +7,15 @@ import Carousel from './Carousel';
 import ControlledCarousel from './ControlledCarousel';
 
 const StorySlide = ({ number }) => (
-  <div key={ `slide-${number}` } style={ { paddingLeft: '2%', paddingRight: '2%' } }>
+  <div key={`slide-${number}`} style={{ paddingLeft: '2%', paddingRight: '2%' }}>
     <PictureCard
-      src={ `http://placekitten.com/g/287/4${(number * 2) + 10}` }
-      style={ {
+      src={`http://placekitten.com/g/287/4${(number * 2) + 10}`}
+      style={{
         height: '300px',
         verticalAlign: 'middle',
         textAlign: 'center',
         fontSize: '5rem',
-      } }
+      }}
       center
       href="#"
     >
@@ -24,11 +24,11 @@ const StorySlide = ({ number }) => (
   </div>
 );
 StorySlide.propTypes = { number: PropTypes.number };
-const slides = [...Array(10).keys()].map(i => <StorySlide number={ i } key={ i } />);
+const slides = [...Array(10).keys()].map(i => <StorySlide number={i} key={i} />);
 
 storiesOf('Carousel', module)
   .add('Default', () => (
-    <Carousel onChange={ action('Slide changed') }>
+    <Carousel onChange={action('Slide changed')}>
       { slides }
     </Carousel>
   ));
@@ -40,7 +40,7 @@ storiesOf('Controlled Carousel', module)
     </ControlledCarousel>
   ))
   .add('Muliple in view 💯', () => (
-    <ControlledCarousel slidesToShow={ 3 }>
+    <ControlledCarousel slidesToShow={3}>
       { slides }
     </ControlledCarousel>
   ))
@@ -55,7 +55,7 @@ storiesOf('Controlled Carousel', module)
     </ControlledCarousel>
   ))
   .add('🐦 + ∞ + 💯', () => (
-    <ControlledCarousel peaking wrapAround slidesToShow={ 3 }>
+    <ControlledCarousel peaking wrapAround slidesToShow={3}>
       { slides }
     </ControlledCarousel>
   ));

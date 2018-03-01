@@ -17,9 +17,9 @@ class TestHeartContainer extends Component {
 
     return (
       <HeartBtn
-        { ...this.props }
-        onClick={ this.toggleActive }
-        active={ active }
+        {...this.props}
+        onClick={this.toggleActive}
+        active={active}
       />
     );
   }

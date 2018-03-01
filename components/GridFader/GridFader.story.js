@@ -27,7 +27,7 @@ const grid = [{
 storiesOf('GridFader', module)
   .add('default', () => (
     <GridFader
-      grid={ grid }
-      limit={ 2 }
+      grid={grid}
+      limit={2}
     />
   ));

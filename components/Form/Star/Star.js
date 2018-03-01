@@ -25,13 +25,13 @@ export default class Star extends Component {
 
     return (
       <Radio
-        { ...rest }
-        className={ cx(css.root, className) }
-        ref={ (c) => {
+        {...rest}
+        className={cx(css.root, className)}
+        ref={(c) => {
           this.component = c;
-        } }
+        }}
       >
-        <Icon name="star" className={ cx(css.star, iconClassName) } />
+        <Icon name="star" className={cx(css.star, iconClassName)} />
       </Radio>
     );
   }

@@ -21,9 +21,9 @@ export default class BtnContainer extends Component {
 
     return (
       <button
-        className={ classes }
-        type={ type }
-        { ...rest }
+        className={classes}
+        type={type}
+        {...rest}
       >
         { children }
       </button>

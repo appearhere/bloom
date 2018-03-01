@@ -6,10 +6,10 @@ import css from './Blokk.css';
 
 const Blokk = ({ variant, length, className }) => (
   <span
-    className={ cx(css.root, css[variant], className) }
-    style={ {
+    className={cx(css.root, css[variant], className)}
+    style={{
       maxWidth: `${length}em`,
-    } }
+    }}
   />
 );
 

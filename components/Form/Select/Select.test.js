@@ -22,7 +22,7 @@ it('handles external focusing and blurring', () => {
   let component;
 
   render(
-    <Select ref={ (c) => { component = c; } }>
+    <Select ref={(c) => { component = c; }}>
       <Option>option</Option>
     </Select>,
     div
@@ -45,7 +45,7 @@ describe('multiple select', () => {
     let component;
 
     render(
-      <Select onChange={ spy } value={ ['1'] } multiple ref={ (c) => { component = c; } }>
+      <Select onChange={spy} value={['1']} multiple ref={(c) => { component = c; }}>
         <Option value="1" key="1">1</Option>
         <Option value="2" key="2">2</Option>
       </Select>,
