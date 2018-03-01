@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import { BrowserRouter, Switch, Route } from 'react-router-dom';
+import GA from 'react-ga';
 
 import SiteHeader from './components/SiteHeader/SiteHeader';
 import Navigation from './components/Navigation/Navigation';
@@ -10,6 +11,7 @@ import ScreenReadable from '../components/ScreenReadable/ScreenReadable';
 import Wrapper from '../components/Wrapper/Wrapper';
 import BodyClassNameConductor from '../utils/BodyClassNameConductor/BodyClassNameConductor';
 import ScrollToTop from './components/ScrollToTop/ScrollToTop';
+import GoogleAnalytics from './utils/GoogleAnalytics';
 
 /* Pages */
 import Introduction from './screens/Overview/Introduction';
@@ -22,6 +24,10 @@ import Modifiers from './screens/Utilities/Modifiers';
 import FourOhFour from './404';
 
 import css from './Styleguide.css';
+
+GA.initialize('UA-37603427-11', {
+  debug: process.env.NODE_ENV === 'development',
+});
 
 export default class Styleguide extends Component {
   constructor(props) {
@@ -57,6 +63,7 @@ export default class Styleguide extends Component {
     return (
       <BrowserRouter>
         <ScrollToTop>
+          <Route path="/" component={GoogleAnalytics} />
           <div className={css.root}>
             <BtnContainer className={css.menuBtn} onClick={this.openNavigation}>
               <Icon className={css.menuIcon} name="menu" />
