@@ -4,5 +4,5 @@ import Synopsis from './Synopsis';
 
 it('renders without crashing', () => {
   const div = document.createElement('div');
-  ReactDOM.render(<Synopsis title="" />, div);
+  ReactDOM.render(<Synopsis title="">Test</Synopsis>, div);
 });
