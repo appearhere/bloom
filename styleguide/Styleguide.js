@@ -25,7 +25,7 @@ import FourOhFour from './404';
 
 import css from './Styleguide.css';
 
-GA.initialize('UA-37603427-11', {
+GA.initialize(process.env.GA_TRACKING_ID, {
   debug: process.env.NODE_ENV === 'development',
 });
 
