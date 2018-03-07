@@ -11,7 +11,7 @@ const AreaUnits = ({ value, unit, className, ...rest }) => {
         className={className}
       >
         { value }
-        m<sup>2</sup>
+        m&sup2;
       </span>
     );
     case AREA_UNITS.SQUARE_FOOT:
