@@ -1,0 +1,18 @@
+{
+  "name": "@appearhere/common-styles",
+  "version": "1.0.0",
+  "description": "",
+  "main": "dist/bundle.js",
+  "scripts": {
+    "build": "./node_modules/.bin/webpack-cli --mode production",
+    "dev": "./node_modules/.bin/webpack-cli --mode development --watch"
+  },
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "babel-loader": "^7.1.4",
+    "webpack": "^4.1.1",
+    "webpack-cli": "2.0.12",
+    "webpack-postcss-tools": "^1.1.2"
+  }
+}

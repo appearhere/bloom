@@ -1,0 +1,116 @@
+.root {
+  width: 100%;
+  box-sizing: border-box;
+  position: relative;
+  max-width: 75.75rem;
+  margin-left: auto;
+  margin-right: auto;
+  lost-utility: clearfix;
+}
+
+.root * {
+  box-sizing: border-box;
+}
+
+.square {
+  background-color: var(--color-black);
+  width: 80%;
+  max-width: 18.75rem;
+  position: relative;
+  float: right;
+  z-index: 1;
+  margin-top: calc(var(--space-96) * -1);
+}
+
+.right .square {
+  float: left;
+}
+
+.square:before {
+  content: '';
+  display: block;
+  padding-top: 100%;
+  width: 100%;
+}
+
+.title {
+  composes: fontLargeI from '../../globals/typography.css';
+  color: var(--color-white);
+  position: absolute;
+  vertical-align: middle;
+  padding: var(--size-large);
+  top: 50%;
+  width: 100%;
+  transform: translateY(-50%);
+  text-transform: uppercase;
+  margin-top: 0;
+  margin-bottom: 0;
+}
+
+.image {
+  width: 100%;
+}
+
+@media(--squareHero-lg-i) {
+  .title {
+    composes: largeIii from '../../globals/typography.css';
+    composes: bold from '../../globals/typography.css';
+    composes: letSpacingLargeIii from '../../globals/typography.css';
+    line-height: var(--lineheight-large-iii);
+    padding: var(--space-48);
+  }
+}
+
+@media(--squareHero-lg-ii) {
+  .root {
+    padding-left: var(--space-48);
+    padding-right: var(--space-48);
+    margin-top: var(--space-48);
+    margin-bottom: var(--space-48);
+  }
+
+  .image {
+    object-fit: cover;
+    height: 28rem;
+  }
+
+  .mediaContainer {
+    width: 75%;
+    float: right;
+  }
+
+  .square {
+    float: none;
+    position: absolute;
+    left: var(--space-48);
+    top: 50%;
+    transform: translateY(-50%);
+    margin-top: 0;
+  }
+
+  .right .mediaContainer {
+    float: left;
+  }
+
+  .right .square {
+    left: auto;
+    right: var(--space-48);
+  }
+}
+
+@media(--squareHero-lg-iii) {
+  .square {
+    max-width: 22.5rem;
+    transform: translateY(-50%);
+  }
+
+  .title {
+    composes: largeIv from '../../globals/typography.css';
+    composes: letSpacingLargeIv from '../../globals/typography.css';
+    line-height: var(--lineheight-large-iv);
+  }
+
+  .image {
+    height: 34.0625rem;
+  }
+}

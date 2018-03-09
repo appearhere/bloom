@@ -1,0 +1,26 @@
+/**
+ * Breakpoints get defined on the global level so
+ * it's easier to tell what content breaks and when
+ */
+:root {
+  @custom-media --hero-width-lg-i (min-width: 50rem);
+  @custom-media --hero-height-lg-i (min-height: 50rem);
+  @custom-media --hero-height-lg-ii (min-height: 64rem);
+  @custom-media --wrapper-large (min-width: 62.25rem);
+  @custom-media --signpost-full (min-width: 31.25rem);
+  @custom-media --squareHero-lg-i (min-width: 25rem);
+  @custom-media --squareHero-lg-ii (min-width: 46.875rem);
+  @custom-media --squareHero-lg-iii (min-width: 62.5rem);
+  @custom-media --modal-lg (min-width: 37.5rem);
+
+  /* style-guide */
+  @custom-media --scaffold-dl-lg-i (min-width: 30rem);
+  @custom-media --colors-2up (min-width: 25rem);
+  @custom-media --colors-3up (min-width: 50rem);
+  @custom-media --iconography-3up (min-width: 31.875rem);
+  @custom-media --iconography-4up (min-width: 50rem);
+  @custom-media --typography-2up (min-width: 25rem);
+  @custom-media --typography-3up (min-width: 50rem);
+  @custom-media --medallion-2up (min-width: 31.875rem);
+  @custom-media --controls-transpose (min-width: 35rem);
+}
