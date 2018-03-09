@@ -99,20 +99,30 @@ class Video extends Component {
   }
 }
 
-export default videoConnect(
-  Video,
-  ({ networkState, readyState, error, ...restState }) => ({
+const mapStateToProps = ({ networkState, readyState, error, ...restState }) => {
+  let loading;
+
+  if (typeof navigator !== 'undefined') {
+    const minRequiredState = (/iPad|iPhone|iPod/.test(navigator.userAgent) ? 1 : 4);
+    loading = readyState < minRequiredState;
+  } else {
+    loading = false;
+  }
+
+  return {
     video: {
       readyState,
       networkState,
       error: error || networkState === 3,
-      loading: readyState < (/iPad|iPhone|iPod/.test(navigator.userAgent) ? 1 : 4),
+      loading,
       percentagePlayed: getPercentagePlayed(restState),
       percentageBuffered: getPercentageBuffered(restState),
       ...restState,
-    },
-  }),
-  (videoEl, state) => ({
+    }
+  }
+}
+
+export default videoConnect(Video, mapStateToProps, (videoEl, state) => ({
     onPlayPauseClick: () => togglePause(videoEl, state),
     onSeekChange: e => setCurrentTime(videoEl, state, e.target.value * (state.duration / 100)),
   })
