@@ -1,7 +1,7 @@
 import PropTypes from 'prop-types';
 import React from 'react';
 
-import { DefaultPlayer as ReactVideo } from 'react-html5video';
+import Video from '../Video/Video';
 
 const VideoDeviceFrame = ({ children: source, deviceImage, css, ...rest }) => (
   <div className={css.root}>
@@ -11,15 +11,15 @@ const VideoDeviceFrame = ({ children: source, deviceImage, css, ...rest }) => (
       role="presentation"
     />
     <div className={css.inner}>
-      <ReactVideo
-        {...rest}
+      <Video
         className={css.video}
-        controls={[]}
+        controls={false}
         autoPlay
         muted
+        {...rest}
       >
         { source }
-      </ReactVideo>
+      </Video>
     </div>
   </div>
 );
