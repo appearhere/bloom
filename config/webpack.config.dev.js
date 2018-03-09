@@ -1,5 +1,6 @@
 const CaseSensitivePathsPlugin = require('case-sensitive-paths-webpack-plugin');
 const env = require('./env');
+const InterpolateHtmlPlugin = require('react-dev-utils/InterpolateHtmlPlugin');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
 const path = require('path');
 const webpack = require('webpack');
@@ -116,6 +117,9 @@ module.exports = {
     }],
   },
   plugins: [
+    new InterpolateHtmlPlugin({
+      'GA_TRACKING_ID': process.env.GA_TRACKING_ID,
+    }),
     new HtmlWebpackPlugin({
       inject: true,
       template: paths.appHtml,

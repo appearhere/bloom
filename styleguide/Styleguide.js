@@ -1,6 +1,5 @@
 import React, { Component } from 'react';
 import { BrowserRouter, Switch, Route } from 'react-router-dom';
-import GA from 'react-ga';
 
 import SiteHeader from './components/SiteHeader/SiteHeader';
 import Navigation from './components/Navigation/Navigation';
@@ -24,10 +23,6 @@ import Modifiers from './screens/Utilities/Modifiers';
 import FourOhFour from './404';
 
 import css from './Styleguide.css';
-
-GA.initialize(process.env.GA_TRACKING_ID, {
-  debug: process.env.NODE_ENV === 'development',
-});
 
 export default class Styleguide extends Component {
   constructor(props) {
