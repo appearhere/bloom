@@ -1,7 +1,8 @@
-import GA from 'react-ga';
-
 export default (props) => {
-  GA.set({ page: props.location.pathname + props.location.search });
-  GA.pageview(props.location.pathname + props.location.search);
+  if (typeof window.gtag !== 'undefined') {
+    window.gtag('config', process.env.GA_TRACKING_ID, {
+      page_path: props.location.pathname + props.location.search,
+    });
+  }
   return null;
 };

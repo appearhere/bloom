@@ -1,4 +1,5 @@
 const ExtractTextPlugin = require('extract-text-webpack-plugin');
+const InterpolateHtmlPlugin = require('react-dev-utils/InterpolateHtmlPlugin');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
 const path = require('path');
 const url = require('url');
@@ -127,6 +128,9 @@ module.exports = {
     }],
   },
   plugins: [
+    new InterpolateHtmlPlugin({
+      'GA_TRACKING_ID': process.env.GA_TRACKING_ID,
+    }),
     new HtmlWebpackPlugin({
       inject: true,
       template: paths.appHtml,
