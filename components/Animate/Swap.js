@@ -1,16 +1,16 @@
 import PropTypes from 'prop-types';
 import React from 'react';
-import { TransitionGroup } from 'react-transition-group';
+import { CSSTransitionGroup } from 'react-transition-group';
 import transitions from './Swap.css';
 
 const Swap = ({ children, animationTimeout }) => (
-  <TransitionGroup
+  <CSSTransitionGroup
     transitionName={transitions}
     transitionEnterTimeout={animationTimeout}
     transitionLeaveTimeout={animationTimeout}
   >
     { children }
-  </TransitionGroup>
+  </CSSTransitionGroup>
 );
 
 Swap.propTypes = {

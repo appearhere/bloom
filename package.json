@@ -65,7 +65,7 @@
     "html-loader": "0.4.3",
     "html-webpack-plugin": "2.22.0",
     "http-proxy-middleware": "0.17.1",
-    "jest": "^18.0.0",
+    "jest": "^22.4.0",
     "json-loader": "0.5.4",
     "object-assign": "4.1.0",
     "opn": "4.0.2",
@@ -139,7 +139,7 @@
     "serve": "node ./server",
     "start": "node scripts/start.js",
     "storybook": "start-storybook -p 9009",
-    "test": "jest --env=jsdom",
+    "test": "jest --env=jsdom --verbose",
     "test:travis": "jest --env=jsdom --coverage",
     "test:watch": "jest --watch --notify --env=jsdom"
   },
