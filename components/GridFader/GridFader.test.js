@@ -1,8 +1,16 @@
-/* global jasmine: true */
 import React from 'react';
 import ReactDOM from 'react-dom';
 
 import GridFader from './GridFader';
+
+jest.mock('react-transition-group/CSSTransitionGroup', () => 'div');
+
+beforeEach(() => {
+  jest.resetModules();
+  jest.useFakeTimers();
+
+  spyOn(console, 'error');
+});
 
 it('renders without crashing', () => {
   const div = document.createElement('div');
@@ -27,17 +35,14 @@ it('splits the grid and queue correctly', () => {
 });
 
 it('swaps correctly swaps items on a timed basis', () => {
-  jasmine.clock().install();
-
   const grid = [{ key: 1 }, { key: 2 }];
-  const interval = 2100;
   const div = document.createElement('div');
   /* eslint-disable react/no-render-return-value */
   const instance = ReactDOM.render(
     <GridFader
       grid={grid}
       limit={1}
-      interval={interval}
+      interval={2100}
     />,
     div
   );
@@ -46,15 +51,13 @@ it('swaps correctly swaps items on a timed basis', () => {
   expect(instance.state.grid[0].key).toBe(1);
   expect(instance.state.queue[0].key).toBe(2);
 
-  jasmine.clock().tick(interval);
+  jest.runOnlyPendingTimers();
 
   expect(instance.state.grid[0].key).toBe(2);
   expect(instance.state.queue[0].key).toBe(1);
 
-  jasmine.clock().tick(interval);
+  jest.runOnlyPendingTimers();
 
   expect(instance.state.grid[0].key).toBe(1);
   expect(instance.state.queue[0].key).toBe(2);
-
-  jasmine.clock().uninstall();
 });

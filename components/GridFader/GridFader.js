@@ -1,6 +1,6 @@
 import PropTypes from 'prop-types';
 import React, { Component } from 'react';
-import { TransitionGroup } from 'react-transition-group';
+import { CSSTransitionGroup } from 'react-transition-group';
 import cx from 'classnames';
 
 import getRandomInt from '../../utils/getRandomInt';
@@ -104,7 +104,7 @@ export default class GridFader extends Component {
                 causing an additional element to render for a short period
                 of time, causing the grid to break
               */ }
-            <TransitionGroup
+            <CSSTransitionGroup
               transitionName={transitions}
               transitionEnterTimeout={swapInterval - 100}
               transitionLeaveTimeout={swapInterval - 100}
@@ -113,7 +113,7 @@ export default class GridFader extends Component {
                 {...item}
                 key={`logo-${item.key}`}
               />
-            </TransitionGroup>
+            </CSSTransitionGroup>
           </div>
         )) }
       </div>
