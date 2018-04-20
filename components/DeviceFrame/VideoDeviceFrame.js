@@ -5,20 +5,10 @@ import Video from '../Video/Video';
 
 const VideoDeviceFrame = ({ children: source, deviceImage, css, ...rest }) => (
   <div className={css.root}>
-    <img
-      className={css.frame}
-      src={deviceImage}
-      role="presentation"
-    />
+    <img className={css.frame} src={deviceImage} role="presentation" />
     <div className={css.inner}>
-      <Video
-        className={css.video}
-        controls={false}
-        autoPlay
-        muted
-        {...rest}
-      >
-        { source }
+      <Video className={css.video} controls={false} autoPlay muted {...rest}>
+        {source}
       </Video>
     </div>
   </div>

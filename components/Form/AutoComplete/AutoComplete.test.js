@@ -18,6 +18,6 @@ it('renders without crashing', () => {
         value: '',
       }}
     />,
-    div
+    div,
   );
 });

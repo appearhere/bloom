@@ -35,7 +35,7 @@ class ChildWrapper extends Component {
 
   render() {
     const { children, style, ...rest } = this.props;
-    return <div style={style}>{ cloneElement(children, rest) }</div>;
+    return <div style={style}>{cloneElement(children, rest)}</div>;
   }
 }
 /* eslint-enable react/prefer-stateless-function */
@@ -88,13 +88,11 @@ export default class Tether extends Component {
   componentDidUpdate(prevProps) {
     if (
       this.props.active &&
-      (
-        this.props.active !== prevProps.active ||
+      (this.props.active !== prevProps.active ||
         this.props.verticalAttachment !== prevProps.verticalAttachment ||
         this.props.horizontalAttachment !== prevProps.horizontalAttachment ||
         this.props.flushVertical !== prevProps.flushVertical ||
-        this.props.flushHorizontal !== prevProps.flushHorizontal
-      )
+        this.props.flushHorizontal !== prevProps.flushHorizontal)
     ) {
       this.positionTethered();
     }
@@ -105,7 +103,7 @@ export default class Tether extends Component {
     this.scrollEventSubscription.unsubscribe();
   }
 
-  getVerticalPosition = (options) => {
+  getVerticalPosition = options => {
     const {
       viewportHeight,
       boundaryRect,
@@ -138,7 +136,7 @@ export default class Tether extends Component {
       top: topPosition,
       topAttachment: optimialVerticalAttachment,
     };
-  }
+  };
 
   getHorizontalPosition = ({ boundaryRect, targetRect, componentRect }) => {
     const { horizontalAttachment, flushHorizontal } = this.props;
@@ -163,7 +161,7 @@ export default class Tether extends Component {
       left: leftPosition,
       leftAttachment: optimialHorizontalAttachment,
     };
-  }
+  };
 
   getElementBounds = () => {
     const viewportHeight = window.innerHeight;
@@ -172,9 +170,9 @@ export default class Tether extends Component {
     const componentRect = this.component.getBoundingClientRect();
 
     return { viewportHeight, boundaryRect, targetRect, componentRect };
-  }
+  };
 
-  getOptimalVerticalAttachment = (options) => {
+  getOptimalVerticalAttachment = options => {
     const {
       viewportHeight,
       targetRect,
@@ -188,11 +186,12 @@ export default class Tether extends Component {
     const { height: componentHeight } = componentRect;
 
     const flushModifier = flushVertical ? targetHeight : 0;
-    const isInViewTop = (targetTop - componentHeight) + flushModifier >= 0;
-    const isInViewBottom = (targetBottom + componentHeight) - flushModifier <= viewportHeight;
+    const isInViewTop = targetTop - componentHeight + flushModifier >= 0;
+    const isInViewBottom = targetBottom + componentHeight - flushModifier <= viewportHeight;
 
-    const shouldPositionCenter = (attachmentPreference === VERTICAL_ATTACHMENTS.CENTER) &&
-      (horizontalAttachment !== HORIZONTAL_ATTACHMENTS.CENTER);
+    const shouldPositionCenter =
+      attachmentPreference === VERTICAL_ATTACHMENTS.CENTER &&
+      horizontalAttachment !== HORIZONTAL_ATTACHMENTS.CENTER;
     const shouldPositionTop =
       (attachmentPreference === VERTICAL_ATTACHMENTS.TOP && isInViewTop) ||
       (attachmentPreference === VERTICAL_ATTACHMENTS.BOTTOM && !isInViewBottom);
@@ -212,9 +211,9 @@ export default class Tether extends Component {
     if (shouldPositionTop) return VERTICAL_ATTACHMENTS.TOP;
 
     return VERTICAL_ATTACHMENTS.BOTTOM;
-  }
+  };
 
-  getOptimalHorizontalAttachment = (options) => {
+  getOptimalHorizontalAttachment = options => {
     const {
       boundaryRect,
       targetRect,
@@ -227,13 +226,12 @@ export default class Tether extends Component {
     const { width: targetWidth, left: targetLeft, right: targetRight } = targetRect;
     const { width: componentWidth } = componentRect;
 
-
     const flushModifier = flushHorizontal ? targetWidth : 0;
-    const isInboundsLeft = (targetLeft - componentWidth) + flushModifier >= boundaryLeft;
-    const isInboundsRight = (targetRight + componentWidth) - flushModifier <= boundaryRight;
+    const isInboundsLeft = targetLeft - componentWidth + flushModifier >= boundaryLeft;
+    const isInboundsRight = targetRight + componentWidth - flushModifier <= boundaryRight;
 
     const shouldPositionCenter =
-      (attachmentPreference === HORIZONTAL_ATTACHMENTS.CENTER) ||
+      attachmentPreference === HORIZONTAL_ATTACHMENTS.CENTER ||
       (!isInboundsLeft && !isInboundsRight);
     const shouldPositionRight =
       (attachmentPreference === HORIZONTAL_ATTACHMENTS.RIGHT && isInboundsRight) ||
@@ -250,9 +248,9 @@ export default class Tether extends Component {
      * NOTE: Should never happen. Consider how we handle this scenario
      */
     return HORIZONTAL_ATTACHMENTS.CENTER;
-  }
+  };
 
-  getTopPosition = (options) => {
+  getTopPosition = options => {
     const {
       boundaryRect,
       targetRect,
@@ -265,43 +263,35 @@ export default class Tether extends Component {
     const { height: targetHeight, top: targetTop } = targetRect;
     const { height: componentHeight } = componentRect;
 
-    const {
-      top: bodyTop,
-    } = boundaryRect;
+    const { top: bodyTop } = boundaryRect;
 
-    const flushModifier = flushVertical && horizontalAttachment !== HORIZONTAL_ATTACHMENTS.CENTER
-      ? targetHeight
-      : 0;
+    const flushModifier =
+      flushVertical && horizontalAttachment !== HORIZONTAL_ATTACHMENTS.CENTER ? targetHeight : 0;
     const targetTopOffset = targetTop - bodyTop;
     const positions = {
-      [VERTICAL_ATTACHMENTS.CENTER]: (targetTopOffset + (targetHeight / 2)) - (componentHeight / 2),
-      [VERTICAL_ATTACHMENTS.TOP]: (targetTopOffset - componentHeight) + flushModifier,
-      [VERTICAL_ATTACHMENTS.BOTTOM]: (targetTopOffset + targetHeight) - flushModifier,
+      [VERTICAL_ATTACHMENTS.CENTER]: targetTopOffset + targetHeight / 2 - componentHeight / 2,
+      [VERTICAL_ATTACHMENTS.TOP]: targetTopOffset - componentHeight + flushModifier,
+      [VERTICAL_ATTACHMENTS.BOTTOM]: targetTopOffset + targetHeight - flushModifier,
     };
 
     return positions[attachment];
-  }
+  };
 
-  getLeftPosition = (options) => {
-    const {
-      targetRect,
-      componentRect,
-      attachment,
-      flushHorizontal,
-    } = options;
+  getLeftPosition = options => {
+    const { targetRect, componentRect, attachment, flushHorizontal } = options;
 
     const { width: targetWidth, left: targetLeft, right: targetRight } = targetRect;
     const { width: componentWidth } = componentRect;
 
     const flushModifier = flushHorizontal ? targetWidth : 0;
     const positions = {
-      [HORIZONTAL_ATTACHMENTS.CENTER]: (targetLeft + (targetWidth / 2)) - (componentWidth / 2),
-      [HORIZONTAL_ATTACHMENTS.LEFT]: (targetLeft - componentWidth) + flushModifier,
+      [HORIZONTAL_ATTACHMENTS.CENTER]: targetLeft + targetWidth / 2 - componentWidth / 2,
+      [HORIZONTAL_ATTACHMENTS.LEFT]: targetLeft - componentWidth + flushModifier,
       [HORIZONTAL_ATTACHMENTS.RIGHT]: targetRight - flushModifier,
     };
 
     return positions[attachment];
-  }
+  };
 
   positionTethered = () => {
     const { active } = this.props;
@@ -309,15 +299,13 @@ export default class Tether extends Component {
     if (active) {
       const { viewportHeight, boundaryRect, targetRect, componentRect } = this.getElementBounds();
 
-      const {
-        left,
-        leftAttachment,
-      } = this.getHorizontalPosition({ boundaryRect, targetRect, componentRect });
+      const { left, leftAttachment } = this.getHorizontalPosition({
+        boundaryRect,
+        targetRect,
+        componentRect,
+      });
 
-      const {
-        top,
-        topAttachment,
-      } = this.getVerticalPosition({
+      const { top, topAttachment } = this.getVerticalPosition({
         viewportHeight,
         boundaryRect,
         targetRect,
@@ -342,15 +330,10 @@ export default class Tether extends Component {
     if (active) {
       const { viewportHeight, boundaryRect, targetRect, componentRect } = this.getElementBounds();
 
-      this.setState((currentState) => {
-        const {
-          leftAttachment,
-        } = currentState;
+      this.setState(currentState => {
+        const { leftAttachment } = currentState;
 
-        const {
-          top,
-          topAttachment,
-        } = this.getVerticalPosition({
+        const { top, topAttachment } = this.getVerticalPosition({
           viewportHeight,
           boundaryRect,
           targetRect,
@@ -364,7 +347,7 @@ export default class Tether extends Component {
         };
       });
     }
-  }
+  };
 
   render() {
     const {
@@ -379,47 +362,46 @@ export default class Tether extends Component {
       ...rest
     } = this.props;
 
-    const {
-      top,
-      topAttachment,
-      left,
-      leftAttachment,
-    } = this.state;
+    const { top, topAttachment, left, leftAttachment } = this.state;
 
     return (
       <div {...rest}>
         <div
           className={cx(css.target, targetClassName)}
-          ref={(c) => { this.target = c; }}
+          ref={c => {
+            this.target = c;
+          }}
         >
-          { cloneElement(target, {
+          {cloneElement(target, {
             verticalAttachment: topAttachment,
             horizontalAttachment: leftAttachment,
             flushHorizontal,
             flushVertical,
             active,
-          }) }
+          })}
         </div>
-        { active && (
+        {active && (
           <Portal>
             <ChildWrapper
-              ref={(c) => { this.component = findDOMNode(c); }}
+              ref={c => {
+                this.component = findDOMNode(c);
+              }}
               style={{
                 position: 'absolute',
                 top: `${top}px`,
                 left: `${left}px`,
               }}
             >
-              { cloneElement(children, {
+              {cloneElement(children, {
                 verticalAttachment: topAttachment,
                 horizontalAttachment: leftAttachment,
                 flushHorizontal,
                 flushVertical,
                 active,
-              }) }
+              })}
             </ChildWrapper>
           </Portal>
-        ) }
+        )}
       </div>
     );
   }

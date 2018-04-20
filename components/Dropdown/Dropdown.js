@@ -7,13 +7,8 @@ import Inner from './DropdownInner';
 export { HORIZONTAL_ATTACHMENTS, VERTICAL_ATTACHMENTS } from '../Tether/Tether';
 
 const Dropdown = ({ target, children, className, ...rest }) => (
-  <Tether
-    {...rest}
-    target={target}
-  >
-    <Inner className={className}>
-      { children }
-    </Inner>
+  <Tether {...rest} target={target}>
+    <Inner className={className}>{children}</Inner>
   </Tether>
 );
 

@@ -12,11 +12,9 @@ const Moment = ({ icon, title, children, className }) => (
     <div className={css.inner}>
       <div className={css.header}>
         <Icon name={icon} className={css.icon} />
-        <div className={css.title}>{ title }</div>
+        <div className={css.title}>{title}</div>
       </div>
-      <div className={css.body}>
-        { children }
-      </div>
+      <div className={css.body}>{children}</div>
     </div>
   </Wrapper>
 );

@@ -5,7 +5,7 @@ import cx from 'classnames';
 import m from '../../globals/modifiers.css';
 import css from './Hero.css';
 
-const Hero = (props) => {
+const Hero = props => {
   const {
     className,
     innerClassName,
@@ -21,48 +21,27 @@ const Hero = (props) => {
     css.root,
     backgroundImage ? css.backgroundImage : null,
     animate ? css.animate : null,
-    className
+    className,
   );
 
-  const overlayCl = cx(
-    css.overlay,
-    backgroundImage ? css.overlayActive : null
-  );
+  const overlayCl = cx(css.overlay, backgroundImage ? css.overlayActive : null);
 
-  const innerCl = cx(
-    css.inner,
-    innerClassName,
-  );
+  const innerCl = cx(css.inner, innerClassName);
 
-  const captionClasses = cx(
-    css.caption,
-    m.fontRegular,
-  );
+  const captionClasses = cx(css.caption, m.fontRegular);
 
   const styles = { backgroundImage: backgroundImage ? `url(${backgroundImage})` : null };
 
   return (
-    <div
-      {...rest}
-      className={cl}
-    >
-      <div
-        className={cx(css.background, backgroundClassName)}
-        style={styles}
-      />
+    <div {...rest} className={cl}>
+      <div className={cx(css.background, backgroundClassName)} style={styles} />
 
       <div className={overlayCl}>
         <div className={innerCl}>
-          <div className={css.content}>
-            { children }
-          </div>
+          <div className={css.content}>{children}</div>
         </div>
 
-        { caption && backgroundImage && (
-          <div className={captionClasses}>
-            { caption }
-          </div>
-        )}
+        {caption && backgroundImage && <div className={captionClasses}>{caption}</div>}
       </div>
     </div>
   );

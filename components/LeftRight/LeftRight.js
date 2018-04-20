@@ -4,7 +4,7 @@ import cx from 'classnames';
 
 import css from './LeftRight.css';
 
-const LeftRight = (props) => {
+const LeftRight = props => {
   const {
     className,
     leftClassName,
@@ -17,22 +17,14 @@ const LeftRight = (props) => {
 
   const classes = cx(css.root, className);
 
-  const leftClasses = cx(
-    css.left,
-    primarySide === 'left' ? css.large : null,
-    leftClassName
-  );
+  const leftClasses = cx(css.left, primarySide === 'left' ? css.large : null, leftClassName);
 
-  const rightClasses = cx(
-    css.right,
-    primarySide === 'right' ? css.large : null,
-    rightClassName
-  );
+  const rightClasses = cx(css.right, primarySide === 'right' ? css.large : null, rightClassName);
 
   return (
     <div {...rest} className={classes}>
-      <div className={leftClasses}>{ leftChildren }</div>
-      <div className={rightClasses}>{ rightChildren }</div>
+      <div className={leftClasses}>{leftChildren}</div>
+      <div className={rightClasses}>{rightChildren}</div>
     </div>
   );
 };

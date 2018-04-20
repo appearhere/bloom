@@ -6,29 +6,24 @@ import Link from '../../Link/Link';
 
 import css from './SpaceListingCard.css';
 
-const SpaceListingCard = (props) => {
-  const {
-    placeLabel,
-    placeHref,
-    location,
-    size,
-    onPlaceLabelClick,
-    ...rest
-  } = props;
+const SpaceListingCard = props => {
+  const { placeLabel, placeHref, location, size, onPlaceLabelClick, ...rest } = props;
 
   return (
     <DestinationListingCard
-      carouselOverlay={placeLabel && (
-        <Link
-          onClick={onPlaceLabelClick}
-          href={placeHref}
-          className={css.placeLink}
-          bodyClassName={css.placeLinkBody}
-          iconClassName={css.placeLinkIcon}
-        >
-          { placeLabel }
-        </Link>
-      )}
+      carouselOverlay={
+        placeLabel && (
+          <Link
+            onClick={onPlaceLabelClick}
+            href={placeHref}
+            className={css.placeLink}
+            bodyClassName={css.placeLinkBody}
+            iconClassName={css.placeLinkIcon}
+          >
+            {placeLabel}
+          </Link>
+        )
+      }
       information={[location, size]}
       {...rest}
     />

@@ -26,7 +26,7 @@ export default class Typewriter extends Component {
 
     return (
       <span {...rest}>
-        { letters.map((letter, i) => (
+        {letters.map((letter, i) => (
           <span
             key={uniqueId(`${this.id}-${letter}`)}
             className={css.animation}
@@ -35,9 +35,9 @@ export default class Typewriter extends Component {
               animationDelay: `${duration * (i * 1.8)}ms`,
             }}
           >
-            { letter }
+            {letter}
           </span>
-        )) }
+        ))}
       </span>
     );
   }

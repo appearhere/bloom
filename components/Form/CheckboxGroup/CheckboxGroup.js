@@ -6,10 +6,7 @@ import noop from '../../../utils/noop';
 
 export default class CheckboxGroup extends Component {
   static propTypes = {
-    Input: PropTypes.oneOfType([
-      PropTypes.func,
-      PropTypes.string,
-    ]),
+    Input: PropTypes.oneOfType([PropTypes.func, PropTypes.string]),
     children: PropTypes.func.isRequired,
     value: PropTypes.arrayOf(PropTypes.string),
     onChange: PropTypes.func,
@@ -44,23 +41,15 @@ export default class CheckboxGroup extends Component {
     }
 
     onChange(e, name, Array.from(selected));
-  }
+  };
 
   render() {
-    const {
-      children,
-      Input,
-      optional,
-      value,
-      name,
-      className,
-      id,
-    } = this.props;
+    const { children, Input, optional, value, name, className, id } = this.props;
 
     const setInputRef = (() => {
       let called = false;
 
-      return (c) => {
+      return c => {
         if (!called) {
           called = true;
           this.input = c;
@@ -72,21 +61,22 @@ export default class CheckboxGroup extends Component {
 
     return (
       <div className={className}>
-        { children && children((childProps) => {
-          const checked = selected.has(childProps.value);
+        {children &&
+          children(childProps => {
+            const checked = selected.has(childProps.value);
 
-          return (
-            <Input
-              id={id}
-              name={name}
-              onChange={this.handleChange}
-              checked={checked}
-              required={!optional}
-              ref={setInputRef}
-              {...childProps}
-            />
-          );
-        }) }
+            return (
+              <Input
+                id={id}
+                name={name}
+                onChange={this.handleChange}
+                checked={checked}
+                required={!optional}
+                ref={setInputRef}
+                {...childProps}
+              />
+            );
+          })}
       </div>
     );
   }

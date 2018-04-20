@@ -16,10 +16,7 @@ export default class Checkbox extends Component {
     onBlur: PropTypes.func,
     onChange: PropTypes.func,
     children: PropTypes.node,
-    value: PropTypes.oneOfType([
-      PropTypes.string,
-      PropTypes.number,
-    ]).isRequired,
+    value: PropTypes.oneOfType([PropTypes.string, PropTypes.number]).isRequired,
     checked: PropTypes.bool,
     className: PropTypes.string,
     label: PropTypes.node,
@@ -39,43 +36,35 @@ export default class Checkbox extends Component {
 
   state = {
     hasFocus: false,
-  }
+  };
 
   focus = () => {
     this.input.focus();
     this.handleFocus();
-  }
+  };
 
   blur = () => {
     this.input.blur();
     this.handleBlur();
-  }
+  };
 
   handleFocus = () => {
     const { onFocus } = this.props;
     this.setState({ hasFocus: true }, onFocus);
-  }
+  };
 
   handleBlur = () => {
     const { onBlur } = this.props;
     this.setState({ hasFocus: false }, onBlur);
-  }
+  };
 
-  handleChange = (e) => {
+  handleChange = e => {
     const { name, value, onChange } = this.props;
     onChange(e, name, value);
-  }
+  };
 
   render() {
-    const {
-      children,
-      value,
-      checked,
-      name,
-      label,
-      className,
-      ...rest
-    } = this.props;
+    const { children, value, checked, name, label, className, ...rest } = this.props;
 
     return (
       <span className={cx(css.root, className)}>
@@ -87,30 +76,33 @@ export default class Checkbox extends Component {
           value={value}
           checked={checked}
           onChange={this.handleChange}
-          ref={(c) => { this.input = c; }}
+          ref={c => {
+            this.input = c;
+          }}
           onFocus={this.handleFocus}
           onBlur={this.handleBlur}
         />
         <label htmlFor={this.id}>
-          { children ? (
-            <div><ScreenReadable>{ value }</ScreenReadable>{ children }</div>
+          {children ? (
+            <div>
+              <ScreenReadable>{value}</ScreenReadable>
+              {children}
+            </div>
           ) : (
             <div>
-              <ScreenReadable>{ value }</ScreenReadable>
+              <ScreenReadable>{value}</ScreenReadable>
               <LeftRight
-                leftChildren={(
+                leftChildren={
                   <span className={css.checkbox}>
                     <Icon className={css.icon} name="tick" />
                   </span>
-                )}
-                rightChildren={(
-                  <span className={css.label}>{ label }</span>
-                )}
+                }
+                rightChildren={<span className={css.label}>{label}</span>}
                 primarySide="right"
                 rightClassName={css.labelContainer}
               />
             </div>
-          ) }
+          )}
         </label>
       </span>
     );

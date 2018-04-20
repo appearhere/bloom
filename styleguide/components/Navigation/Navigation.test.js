@@ -5,7 +5,7 @@ import Navigation from './Navigation';
 
 jest.mock('react-router-dom', () => ({
   // eslint-disable-next-line react/prop-types
-  NavLink: ({ children }) => <div>{ children }</div>,
+  NavLink: ({ children }) => <div>{children}</div>,
 }));
 
 it('renders without crashing', () => {

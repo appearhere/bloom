@@ -8,18 +8,15 @@ import Icon from '../../Icon/Icon';
 import css from './PlayBtn.css';
 
 const PlayBtn = ({ playPause, paused }) => (
-  <BtnContainer
-    className={css.root}
-    onClick={playPause}
-  >
-    { paused ? (
+  <BtnContainer className={css.root} onClick={playPause}>
+    {paused ? (
       <span>
         <Icon name="play-c" className={css.icon} />
         <ScreenReadable>Play</ScreenReadable>
       </span>
     ) : (
       <ScreenReadable>Pause</ScreenReadable>
-    ) }
+    )}
   </BtnContainer>
 );
 

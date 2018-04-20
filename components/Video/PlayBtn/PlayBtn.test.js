@@ -16,12 +16,5 @@ import PlayBtn from './PlayBtn';
 
 it('renders without crashing', () => {
   const div = document.createElement('div');
-  ReactDOM.render(
-    <PlayBtn
-      play={noop}
-      pause={noop}
-      paused
-    />,
-    div
-  );
+  ReactDOM.render(<PlayBtn play={noop} pause={noop} paused />, div);
 });

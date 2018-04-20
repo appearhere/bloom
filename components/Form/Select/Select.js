@@ -33,10 +33,7 @@ export default class Select extends Component {
     hasError: PropTypes.bool,
     multiple: PropTypes.bool,
     children: PropTypes.node.isRequired,
-    value: PropTypes.oneOfType([
-      PropTypes.string,
-      PropTypes.array,
-    ]),
+    value: PropTypes.oneOfType([PropTypes.string, PropTypes.array]),
     error: PropTypes.string,
     priority: PropTypes.oneOf(['high']),
   };
@@ -49,36 +46,36 @@ export default class Select extends Component {
 
   state = {
     hasFocus: false,
-  }
+  };
 
   focus = () => {
     this.select.focus();
     this.handleFocus();
-  }
+  };
 
   blur = () => {
     this.select.blur();
     this.handleBlur();
-  }
+  };
 
   handleFocus = () => {
     const { onFocus } = this.props;
     this.setState({ hasFocus: true }, onFocus);
-  }
+  };
 
   handleBlur = () => {
     const { onBlur } = this.props;
     this.setState({ hasFocus: false }, onBlur);
-  }
+  };
 
-  handleChange = (e) => {
+  handleChange = e => {
     const { onChange, name, multiple } = this.props;
     const value = multiple
       ? [].filter.call(this.select.options, o => o.selected).map(o => o.value)
       : e.target.value;
 
     onChange(e, name, value);
-  }
+  };
 
   render() {
     const { hasFocus } = this.state;
@@ -109,7 +106,9 @@ export default class Select extends Component {
       <div className={mergedClassNames.wrapper}>
         <select
           {...rest}
-          ref={(c) => { this.select = c; }}
+          ref={c => {
+            this.select = c;
+          }}
           className={classes}
           name={name}
           id={id}
@@ -120,9 +119,9 @@ export default class Select extends Component {
           value={value}
           multiple={multiple}
         >
-          { children }
+          {children}
         </select>
-        { !multiple && <Icon name="chevron" className={mergedClassNames.arrow} /> }
+        {!multiple && <Icon name="chevron" className={mergedClassNames.arrow} />}
         <CSSTransitionGroup
           className={mergedClassNames.post}
           transitionName={css}
@@ -131,13 +130,7 @@ export default class Select extends Component {
           transitionAppearTimeout={500}
           transitionAppear
         >
-          { error && error.length > 0 && (
-            <div
-              className={mergedClassNames.errorMsg}
-            >
-              { error }
-            </div>
-          ) }
+          {error && error.length > 0 && <div className={mergedClassNames.errorMsg}>{error}</div>}
         </CSSTransitionGroup>
       </div>
     );

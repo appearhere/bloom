@@ -7,14 +7,7 @@ import Scrubber from './Scrubber';
 
 it('renders without crashing', () => {
   const div = document.createElement('div');
-  ReactDOM.render(
-    <Scrubber
-      currentTime={0}
-      duration={0}
-      seek={noop}
-    />,
-    div
-  );
+  ReactDOM.render(<Scrubber currentTime={0} duration={0} seek={noop} />, div);
 });
 
 it('calculates the progress correctly', () => {
@@ -23,24 +16,28 @@ it('calculates the progress correctly', () => {
 
   ReactDOM.render(
     <Scrubber
-      ref={(c) => { component = c; }}
+      ref={c => {
+        component = c;
+      }}
       currentTime={5}
       duration={10}
       seek={noop}
     />,
-    div
+    div,
   );
 
   expect(component.getInnerWidth()).toBe(50);
 
   ReactDOM.render(
     <Scrubber
-      ref={(c) => { component = c; }}
+      ref={c => {
+        component = c;
+      }}
       currentTime={2}
       duration={8}
       seek={noop}
     />,
-    div
+    div,
   );
 
   expect(component.getInnerWidth()).toBe(25);
@@ -52,12 +49,14 @@ it('handles internal focus', () => {
 
   ReactDOM.render(
     <Scrubber
-      ref={(c) => { component = c; }}
+      ref={c => {
+        component = c;
+      }}
       currentTime={5}
       duration={10}
       seek={noop}
     />,
-    div
+    div,
   );
 
   const rangeInput = findRenderedDOMComponentWithTag(component, 'input');

@@ -1,13 +1,7 @@
 import React from 'react';
 import { render } from 'react-dom';
 
-import {
-  Field,
-  Meta,
-  Description,
-  Label,
-  Value,
-} from './FormComponents';
+import { Field, Meta, Description, Label, Value } from './FormComponents';
 
 describe('Field', () => {
   it('renders without crashing', () => {

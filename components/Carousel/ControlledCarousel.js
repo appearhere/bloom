@@ -46,17 +46,17 @@ export default class ControlledCarousel extends Component {
     const { lowestVisibleItemIndex } = this.state;
     const { slidesToScroll } = this.props;
     this.goToIndex(lowestVisibleItemIndex - slidesToScroll);
-  }
+  };
 
   handleNextSlide = () => {
     const { lowestVisibleItemIndex } = this.state;
     const { slidesToScroll } = this.props;
     this.goToIndex(lowestVisibleItemIndex + slidesToScroll);
-  }
+  };
 
-  handleChange = (lowestVisibleItemIndex) => {
+  handleChange = lowestVisibleItemIndex => {
     this.setState({ lowestVisibleItemIndex });
-  }
+  };
 
   goToIndex(i) {
     const { slidesToShow, children } = this.props;
@@ -83,8 +83,8 @@ export default class ControlledCarousel extends Component {
     const nonEmptyChildren = children.filter(item => item);
 
     const prevDisabled = !wrapAround && lowestVisibleItemIndex <= 0;
-    const nextDisabled = !wrapAround &&
-      lowestVisibleItemIndex >= nonEmptyChildren.length - slidesToShow;
+    const nextDisabled =
+      !wrapAround && lowestVisibleItemIndex >= nonEmptyChildren.length - slidesToShow;
 
     const indicatorCount = wrapAround
       ? nonEmptyChildren.length
@@ -100,7 +100,7 @@ export default class ControlledCarousel extends Component {
             onChange={this.handleChange}
             {...rest}
           >
-            { nonEmptyChildren }
+            {nonEmptyChildren}
           </Carousel>
         </div>
         <div className={css.controls}>
@@ -110,7 +110,7 @@ export default class ControlledCarousel extends Component {
             disabled={prevDisabled}
           >
             <Icon name="chevron" />
-            <ScreenReadable>{ accessibilityPrevLabel }</ScreenReadable>
+            <ScreenReadable>{accessibilityPrevLabel}</ScreenReadable>
           </BtnContainer>
           <BtnContainer
             onClick={this.handleNextSlide}
@@ -118,22 +118,24 @@ export default class ControlledCarousel extends Component {
             disabled={nextDisabled}
           >
             <Icon name="chevron" />
-            <ScreenReadable>{ accessibilityNextLabel }</ScreenReadable>
+            <ScreenReadable>{accessibilityNextLabel}</ScreenReadable>
           </BtnContainer>
         </div>
-        { showIndicators && (
+        {showIndicators && (
           <IndicatorGroup activeIndicator={lowestVisibleItemIndex} className={css.indicators}>
-            { indicator => (
+            {indicator => (
               <div>
-                { [...Array(indicatorCount)].map((child, i) => indicator({
-                  i,
-                  key: i,
-                  className: cx(m.dib, m.mt0, m.mrs, css.indicator),
-                })) }
+                {[...Array(indicatorCount)].map((child, i) =>
+                  indicator({
+                    i,
+                    key: i,
+                    className: cx(m.dib, m.mt0, m.mrs, css.indicator),
+                  }),
+                )}
               </div>
-            ) }
+            )}
           </IndicatorGroup>
-        ) }
+        )}
       </div>
     );
   }

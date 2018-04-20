@@ -34,7 +34,7 @@ export default class DayPickerItem extends Component {
     onMouseOver: noop,
   };
 
-  handleInteraction = (e) => {
+  handleInteraction = e => {
     const { type, keyCode } = e;
     const { day, onInteraction, getDayState } = this.props;
     const { isDisabled } = getDayState(day);
@@ -56,14 +56,14 @@ export default class DayPickerItem extends Component {
         handled = false;
       }
     }
-  }
+  };
 
-  handleHighlight = (e) => {
+  handleHighlight = e => {
     const { day, onHighlight, getDayState } = this.props;
     const { isDisabled } = getDayState(day);
 
     if (!isDisabled && onHighlight) onHighlight(e, day);
-  }
+  };
 
   handleMouseOver = this.handleHighlight;
   handleFocus = this.handleHighlight;

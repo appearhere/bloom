@@ -8,16 +8,12 @@ import css from './Carousel.css';
 
 export default class Carousel extends Component {
   static propTypes = {
-    children: PropTypes.oneOfType([
-      PropTypes.element,
-      PropTypes.array,
-    ]).isRequired,
+    children: PropTypes.oneOfType([PropTypes.element, PropTypes.array]).isRequired,
     className: PropTypes.string,
     lowestVisibleItemIndex: PropTypes.number,
     onChange: PropTypes.func,
     peaking: PropTypes.bool,
     speed: PropTypes.number,
-
   };
 
   static defaultProps = {
@@ -53,10 +49,12 @@ export default class Carousel extends Component {
     }
   }
 
-  handleChange = (lowestVisibleItemIndex) => {
+  handleChange = lowestVisibleItemIndex => {
     const { onChange } = this.props;
-    this.setState({ lowestVisibleItemIndex }, () => { onChange(lowestVisibleItemIndex); });
-  }
+    this.setState({ lowestVisibleItemIndex }, () => {
+      onChange(lowestVisibleItemIndex);
+    });
+  };
 
   render() {
     const { peaking, children, className, ...rest } = this.props;
@@ -65,14 +63,16 @@ export default class Carousel extends Component {
     return (
       <div className={cx(css.wrapper, className, peaking ? css.peaking : null)}>
         <NukaCarousel
-          ref={(c) => { this.carousel = c; }}
+          ref={c => {
+            this.carousel = c;
+          }}
           decorators={[]}
           frameOverflow={frameOverflow}
           peaking={peaking}
           afterSlide={this.handleChange}
           {...rest}
         >
-          { children }
+          {children}
         </NukaCarousel>
       </div>
     );

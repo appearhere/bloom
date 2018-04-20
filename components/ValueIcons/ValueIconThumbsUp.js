@@ -5,11 +5,8 @@ import cx from 'classnames';
 import defaultcss from './ValueIcon.css';
 import css from './ValueIconThumbsUp.css';
 
-const ValueIconThumbsUp = (props) => {
-  const {
-    className,
-    ...rest
-  } = props;
+const ValueIconThumbsUp = props => {
+  const { className, ...rest } = props;
 
   return (
     <span className={cx(defaultcss.root, className)} {...rest}>
@@ -18,7 +15,8 @@ const ValueIconThumbsUp = (props) => {
         <line x1="42.15" y1="25.83" x2="47.95" y2="25.83" />
         <line x1="41.19" y1="32.59" x2="46.5" y2="32.59" />
         <path
-          d={'M26.72,18.24,32.47,9V1.68s5.71.15,5.71,6.59c0,3.33-4.67,9.62,2.59,9.69s9.1,0,9.1,' +
+          d={
+            'M26.72,18.24,32.47,9V1.68s5.71.15,5.71,6.59c0,3.33-4.67,9.62,2.59,9.69s9.1,0,9.1,' +
             '0L45.19,40.32H26.72l0-18.91Z'
           }
         />
@@ -33,4 +31,3 @@ ValueIconThumbsUp.propTypes = {
 };
 
 export default ValueIconThumbsUp;
-

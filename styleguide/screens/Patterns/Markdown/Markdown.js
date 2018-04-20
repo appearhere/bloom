@@ -17,8 +17,8 @@ const MarkdownDocumentation = () => (
       At Appear Here, we use markdown to markup content for use across our applications.
     </T>
     <T elm="p" className={m.mtLgIi}>
-      To enable us to do this, we have created a <C>Markdown</C> component
-      which provides basic styling of markdown content.
+      To enable us to do this, we have created a <C>Markdown</C> component which provides basic
+      styling of markdown content.
     </T>
     <Specimen
       classNames={{
@@ -30,15 +30,14 @@ const MarkdownDocumentation = () => (
           # An exhibit of Markdown
           ...
         </Markdown>
-      ` }
+      `}
     >
-      <Markdown>{ markdown }</Markdown>
+      <Markdown>{markdown}</Markdown>
     </Specimen>
     <T elm="p" className={m.mtLgIi}>
       You can add to or make changes to the markdown styles using the
-      <C>className</C> prop. To do this, the class should act as a root
-      selector, and style the any HTML elements you wish using the element
-      selector.
+      <C>className</C> prop. To do this, the class should act as a root selector, and style the any
+      HTML elements you wish using the element selector.
     </T>
     <Specimen
       classNames={{
@@ -59,13 +58,12 @@ const MarkdownDocumentation = () => (
           # An exhibit of Markdown
           ...
         </Markdown>
-      ` }
+      `}
     >
-      <Markdown className={css.markdownExtended}>{ markdown }</Markdown>
+      <Markdown className={css.markdownExtended}>{markdown}</Markdown>
     </Specimen>
     <T elm="p" className={m.mtLgIi}>
-      If you wish to write your own styles from scratch, set overrideClassname
-      to true.
+      If you wish to write your own styles from scratch, set overrideClassname to true.
     </T>
     <Specimen
       classNames={{
@@ -98,10 +96,10 @@ const MarkdownDocumentation = () => (
           # An exhibit of Markdown
           ...
         </Markdown>
-      ` }
+      `}
     >
       <Markdown className={css.markdownOverride} overrideClassname>
-        { markdown }
+        {markdown}
       </Markdown>
     </Specimen>
   </div>

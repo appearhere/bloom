@@ -10,12 +10,18 @@ stories.addDecorator(withKnobs);
 
 stories.add('Default day range', () => {
   const startDateModifier = number('day', 0);
-  const startDate = startDateModifier > 0
-    ? moment().add(startDateModifier, 'day').format('DD/MM')
-    : undefined;
-  const endDate = startDateModifier > 0
-    ? moment().add(startDateModifier + 5, 'day').format('DD/MM')
-    : undefined;
+  const startDate =
+    startDateModifier > 0
+      ? moment()
+          .add(startDateModifier, 'day')
+          .format('DD/MM')
+      : undefined;
+  const endDate =
+    startDateModifier > 0
+      ? moment()
+          .add(startDateModifier + 5, 'day')
+          .format('DD/MM')
+      : undefined;
 
   return (
     <DayRange

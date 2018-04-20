@@ -16,17 +16,33 @@ import { metaMarkersA, metaMarkersB, metaMarkersC } from './testMetaMarkers';
 const stories = storiesOf('Map', module);
 stories.addDecorator(withKnobs);
 
-const SpaceMarker = props => <Marker><SpaceListingCard {...props} /></Marker>;
+const SpaceMarker = props => (
+  <Marker>
+    <SpaceListingCard {...props} />
+  </Marker>
+);
 
-const prices = ['£1', '£33', '£420', '£1,000', '£20,000', '£999,999', '1 €', '20 €', '440 €',
-  '4.040 €', '40.040 €', '120.040 €'];
+const prices = [
+  '£1',
+  '£33',
+  '£420',
+  '£1,000',
+  '£20,000',
+  '£999,999',
+  '1 €',
+  '20 €',
+  '440 €',
+  '4.040 €',
+  '40.040 €',
+  '120.040 €',
+];
 
 const generateMarkers = (number = 1, lng, lat) => {
   const markers = [];
 
   for (let i = 0; i < number; i += 1) {
-    const markerLng = lng || (-0.09 + ((Math.random() - Math.random()) * Math.random()));
-    const markerLat = lat || (51.505 + ((Math.random() - Math.random()) * Math.random()));
+    const markerLng = lng || -0.09 + (Math.random() - Math.random()) * Math.random();
+    const markerLat = lat || 51.505 + (Math.random() - Math.random()) * Math.random();
 
     const price = prices[Math.floor(Math.random() * prices.length)];
     const id = uniqueId();
@@ -43,19 +59,24 @@ const generateMarkers = (number = 1, lng, lat) => {
         city: 'London',
         size: '1000 sqft',
         name: 'Bold Street Shop',
-        images: [{
-          src: 'https://source.unsplash.com/random/500x503',
-          alt: 'hello',
-        }, {
-          src: 'https://source.unsplash.com/random/500x500',
-          alt: 'hello2',
-        }, {
-          src: 'https://source.unsplash.com/random/500x502',
-          alt: 'hello',
-        }, {
-          src: 'https://source.unsplash.com/random/500x501',
-          alt: 'hello2',
-        }],
+        images: [
+          {
+            src: 'https://source.unsplash.com/random/500x503',
+            alt: 'hello',
+          },
+          {
+            src: 'https://source.unsplash.com/random/500x500',
+            alt: 'hello2',
+          },
+          {
+            src: 'https://source.unsplash.com/random/500x502',
+            alt: 'hello',
+          },
+          {
+            src: 'https://source.unsplash.com/random/500x501',
+            alt: 'hello2',
+          },
+        ],
         href: '#',
       },
     });
@@ -117,9 +138,9 @@ stories
   .add('MarkableMap', () => <TestMap />)
   .add('MarkableMap w/Meta markers', () => {
     const metaMarkers = [
-      (boolean('Meta Markers A', true) && metaMarkersA),
-      (boolean('Meta Markers B', true) && metaMarkersB),
-      (boolean('Meta Markers C', true) && metaMarkersC),
+      boolean('Meta Markers A', true) && metaMarkersA,
+      boolean('Meta Markers B', true) && metaMarkersB,
+      boolean('Meta Markers C', true) && metaMarkersC,
     ].filter(metaMarker => metaMarker);
 
     return <TestMap metaMarkers={metaMarkers} />;

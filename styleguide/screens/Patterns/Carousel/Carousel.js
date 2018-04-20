@@ -17,19 +17,17 @@ const CarouselDocumentation = () => (
   <div>
     <H level={1}>Carousel</H>
     <T elm="p" className={cx(m.mtr, m.largeI, m.demi)}>
-      A carousel is a way of displaying and cycling through
-      a series of content (Images, text or custom markup).
-      Carousels are some of the worst ways of displaying
-      content on a page, and in most cases, users scroll straight past them.
-      We recommend using as a last case scenario.
+      A carousel is a way of displaying and cycling through a series of content (Images, text or
+      custom markup). Carousels are some of the worst ways of displaying content on a page, and in
+      most cases, users scroll straight past them. We recommend using as a last case scenario.
     </T>
     <D>
       <H level={2}>Default</H>
       <T elm="p" className={m.mtr}>
-        The regular carousel component provides all of the
-        carousel functionality without dictating how it is controlled.
-        Use this to build other carousels that require a set of controls and/or indicators.
-        It is based on our own fork of <A href="https://github.com/FormidableLabs/nuka-carousel">NukaCarousel</A>.
+        The regular carousel component provides all of the carousel functionality without dictating
+        how it is controlled. Use this to build other carousels that require a set of controls
+        and/or indicators. It is based on our own fork of{' '}
+        <A href="https://github.com/FormidableLabs/nuka-carousel">NukaCarousel</A>.
       </T>
       <Specimen
         classNames={{
@@ -40,7 +38,7 @@ const CarouselDocumentation = () => (
           <Carousel>
             { /* Slides */ }
           </Carousel>
-        ` }
+        `}
       >
         <Carousel>
           <div className={css.slide}>
@@ -85,7 +83,9 @@ const CarouselDocumentation = () => (
           </div>
         </Carousel>
       </Specimen>
-      <H level={3} className={m.mtLgIi}>Displaying multiple slides</H>
+      <H level={3} className={m.mtLgIi}>
+        Displaying multiple slides
+      </H>
       <T elm="p" className={m.mtr}>
         You can show multiple slides at the same time using the <C>slidesToShow</C> prop.
       </T>
@@ -98,7 +98,7 @@ const CarouselDocumentation = () => (
           <Carousel slidesToShow={ 3 }>
             { /* Slides */ }
           </Carousel>
-        ` }
+        `}
       >
         <Carousel slidesToShow={3}>
           <div className={css.slide}>
@@ -143,10 +143,12 @@ const CarouselDocumentation = () => (
           </div>
         </Carousel>
       </Specimen>
-      <H level={3} className={m.mtLgIi}>Infinite slides</H>
+      <H level={3} className={m.mtLgIi}>
+        Infinite slides
+      </H>
       <T elm="p" className={m.mtr}>
-        To make the carousel wrap around when you reach the end of the slides,
-        provide the <C>wrapAround</C> prop.
+        To make the carousel wrap around when you reach the end of the slides, provide the{' '}
+        <C>wrapAround</C> prop.
       </T>
       <Specimen
         classNames={{
@@ -157,7 +159,7 @@ const CarouselDocumentation = () => (
           <Carousel wrapAround>
             { /* Slides */ }
           </Carousel>
-        ` }
+        `}
       >
         <Carousel wrapAround>
           <div className={css.slide}>
@@ -202,12 +204,13 @@ const CarouselDocumentation = () => (
           </div>
         </Carousel>
       </Specimen>
-      <H level={3} className={m.mtLgIi}>Peaking</H>
+      <H level={3} className={m.mtLgIi}>
+        Peaking
+      </H>
       <T elm="p" className={m.mtr}>
-        To indicate to the user there is actually more
-        content on the page than just the first slide,
-        you can partially show the next and previous slides.
-        To do this, provide the <C>peaking</C> prop.
+        To indicate to the user there is actually more content on the page than just the first
+        slide, you can partially show the next and previous slides. To do this, provide the{' '}
+        <C>peaking</C> prop.
       </T>
       <Specimen
         classNames={{
@@ -218,7 +221,7 @@ const CarouselDocumentation = () => (
           <Carousel peaking>
             { /* Slides */ }
           </Carousel>
-        ` }
+        `}
       >
         <Carousel peaking>
           <div className={css.slide}>
@@ -264,16 +267,19 @@ const CarouselDocumentation = () => (
         </Carousel>
       </Specimen>
       <T elm="p" className={m.mtr}>
-        All of these props, and more (found in the <A href="https://github.com/FormidableLabs/nuka-carousel">NukaCarousel documentation</A>),
+        All of these props, and more (found in the{' '}
+        <A href="https://github.com/FormidableLabs/nuka-carousel">NukaCarousel documentation</A>),
         can be used in combination of each other.
       </T>
     </D>
     <D>
-      <H level={2} className={shared.componentTitle}>Controlled Carousel</H>
+      <H level={2} className={shared.componentTitle}>
+        Controlled Carousel
+      </H>
       <T elm="p" className={m.mtr}>
-        You should use this component in the majority of cases where you need a carousel.
-        It provides the default set of controls and indicators to provide the base level
-        of interaction expected when using a carousel.
+        You should use this component in the majority of cases where you need a carousel. It
+        provides the default set of controls and indicators to provide the base level of interaction
+        expected when using a carousel.
       </T>
       <Specimen
         classNames={{
@@ -284,7 +290,7 @@ const CarouselDocumentation = () => (
           <ControlledCarousel>
             { /* Slides */ }
           </ControlledCarousel>
-        ` }
+        `}
       >
         <ControlledCarousel>
           <div className={css.slide}>

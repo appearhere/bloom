@@ -6,11 +6,9 @@ import SignPost from './SignPost';
 it('renders without crashing', () => {
   const div = document.createElement('div');
   render(
-    <SignPost
-      title=""
-    >
+    <SignPost title="">
       <span />
     </SignPost>,
-    div
+    div,
   );
 });

@@ -4,16 +4,8 @@ import classnames from 'classnames';
 
 import defaultCss from './SectionHeader.css';
 
-
-const SectionHeader = (props) => {
-  const {
-    title,
-    strapline,
-    className,
-    level,
-    css,
-    ...rest
-  } = props;
+const SectionHeader = props => {
+  const { title, strapline, className, level, css, ...rest } = props;
 
   const titleClasses = classnames(
     defaultCss.base,
@@ -21,23 +13,12 @@ const SectionHeader = (props) => {
     css.title,
   );
 
-  const straplineClasses = classnames(
-    defaultCss.base,
-    defaultCss.strapline,
-    css.strapline,
-  );
+  const straplineClasses = classnames(defaultCss.base, defaultCss.strapline, css.strapline);
 
-  const titleEl = <span className={titleClasses}>{ title }</span>;
-  const straplineEl = strapline && <span className={straplineClasses}>{ strapline }</span>;
+  const titleEl = <span className={titleClasses}>{title}</span>;
+  const straplineEl = strapline && <span className={straplineClasses}>{strapline}</span>;
 
-  return (
-    createElement(
-      `h${level}`,
-      { className, ...rest },
-      titleEl,
-      straplineEl
-    )
-  );
+  return createElement(`h${level}`, { className, ...rest }, titleEl, straplineEl);
 };
 
 SectionHeader.propTypes = {

@@ -9,6 +9,6 @@ it('renders without crashing', () => {
     <Tabs>
       <Tab />
     </Tabs>,
-    div
+    div,
   );
 });

@@ -9,4 +9,3 @@ describe('DayRange', () => {
     render(<DayRange />, div);
   });
 });
-

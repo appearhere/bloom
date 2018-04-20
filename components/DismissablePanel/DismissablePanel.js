@@ -7,37 +7,21 @@ import BtnContainer from '../BtnContainer/BtnContainer';
 import Icon from '../Icon/Icon';
 import css from './DismissablePanel.css';
 
-const DismissablePanel = (props) => {
-  const {
-    children,
-    className,
-    context,
-    onClose,
-    ...rest
-  } = props;
+const DismissablePanel = props => {
+  const { children, className, context, onClose, ...rest } = props;
 
   return (
     <Panel
       {...rest}
       context={context}
-      className={cx(
-        css.root,
-        onClose ? css.dismissable : null,
-        className,
-      )}
+      className={cx(css.root, onClose ? css.dismissable : null, className)}
     >
-      <div
-        className={cx(
-          css.inner,
-        )}
-      >
-        { children }
-      </div>
-      { onClose && (
+      <div className={cx(css.inner)}>{children}</div>
+      {onClose && (
         <BtnContainer className={css.dismissContainer} onClick={onClose}>
           <Icon className={css.icon} name="cross" />
         </BtnContainer>
-      ) }
+      )}
     </Panel>
   );
 };

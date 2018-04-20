@@ -8,12 +8,7 @@ import css from './FunnelInputField.css';
 const FunnelInputField = ({ classNames, ...rest }) => {
   const classes = mergeObjectStrings(css, classNames);
 
-  return (
-    <InputField
-      {...rest}
-      classNames={classes}
-    />
-  );
+  return <InputField {...rest} classNames={classes} />;
 };
 
 FunnelInputField.propTypes = {

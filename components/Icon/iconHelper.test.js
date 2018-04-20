@@ -30,7 +30,9 @@ describe('Icon component', () => {
     const elm = React.createElement(Icon, { name: incorrectIconName });
     const div = document.createElement('div');
 
-    expect(() => { ReactDOM.render(elm, div); }).toThrow();
+    expect(() => {
+      ReactDOM.render(elm, div);
+    }).toThrow();
   });
 
   it('falls back if the fallback prop is give', () => {

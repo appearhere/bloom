@@ -7,43 +7,33 @@ import VideoWithRichPoster from '../VideoWithRichPoster/VideoWithRichPoster';
 
 import defaultCss from './SquareHero.css';
 
-const SquareHero = (props) => {
-  const {
-    children,
-    image,
-    videoProps,
-    alt,
-    css,
-    className,
-    level,
-    headingSide,
-    ...rest
-  } = props;
+const SquareHero = props => {
+  const { children, image, videoProps, alt, css, className, level, headingSide, ...rest } = props;
 
   const rootClass = cx(
     defaultCss.root,
     videoProps ? defaultCss.videoRoot : defaultCss.imageRoot,
     defaultCss[headingSide],
-    className
+    className,
   );
 
   return (
-    <div
-      {...rest}
-      className={rootClass}
-    >
+    <div {...rest} className={rootClass}>
       <div className={cx(defaultCss.mediaContainer, css.image)}>
-        { videoProps
-          ? <VideoWithRichPoster {...videoProps} className={cx(defaultCss.video, css.video)} />
-          : <FittedImage className={defaultCss.image} src={image} alt={alt} />
-        }
+        {videoProps ? (
+          <VideoWithRichPoster {...videoProps} className={cx(defaultCss.video, css.video)} />
+        ) : (
+          <FittedImage className={defaultCss.image} src={image} alt={alt} />
+        )}
       </div>
       <div className={cx(defaultCss.square, css.square)}>
-        { createElement(
-          `h${level}`, {
+        {createElement(
+          `h${level}`,
+          {
             className: cx(defaultCss.title),
-          }, children
-        ) }
+          },
+          children,
+        )}
       </div>
     </div>
   );
@@ -61,7 +51,7 @@ SquareHero.propTypes = {
       if (type !== expected) {
         return new Error(
           `Invalid ${location} \`${propName}\` of type \`${type}\` ` +
-          `supplied to \`${name}\`, expected \`${expected}\`.`
+            `supplied to \`${name}\`, expected \`${expected}\`.`,
         );
       }
     }

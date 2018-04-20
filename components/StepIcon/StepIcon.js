@@ -4,20 +4,10 @@ import cx from 'classnames';
 
 import css from './StepIcon.css';
 
-const StepIcon = (props) => {
-  const {
-    children,
-    className,
-    circleClassName,
-    completed,
-    ...rest
-  } = props;
+const StepIcon = props => {
+  const { children, className, circleClassName, completed, ...rest } = props;
 
-  const circleClasses = cx(
-    css.circle,
-    completed ? css.circleCompleted : null,
-    circleClassName,
-  );
+  const circleClasses = cx(css.circle, completed ? css.circleCompleted : null, circleClassName);
 
   return (
     <svg
@@ -28,14 +18,11 @@ const StepIcon = (props) => {
       {...rest}
     >
       <g fill="none">
-        <circle
-          className={circleClasses}
-          cx="23"
-          cy="23"
-          r="22"
-        />
+        <circle className={circleClasses} cx="23" cy="23" r="22" />
         <text className={css.text} textAnchor="middle">
-          <tspan x="22.5" y="28">{ children }</tspan>
+          <tspan x="22.5" y="28">
+            {children}
+          </tspan>
         </text>
       </g>
     </svg>

@@ -13,19 +13,19 @@ export default class Tab extends Component {
     onClick: PropTypes.func,
     onFocus: PropTypes.func,
     onBlur: PropTypes.func,
-  }
+  };
 
-  handleClick = (e) => {
+  handleClick = e => {
     const { onClick, value } = this.props;
     onClick(e, parseInt(value, 10));
   };
 
-  handleFocus = (e) => {
+  handleFocus = e => {
     const { onFocus, value } = this.props;
     onFocus(e, parseInt(value, 10));
   };
 
-  handleBlur = (e) => {
+  handleBlur = e => {
     const { onBlur, value } = this.props;
     onBlur(e, parseInt(value, 10));
   };
@@ -39,24 +39,14 @@ export default class Tab extends Component {
   };
 
   render() {
-    const {
-      value,
-      selected,
-      className,
-      children,
-      ...rest
-    } = this.props;
+    const { value, selected, className, children, ...rest } = this.props;
 
-    const classes = cx(
-      css.tab,
-      selected ? css.tabActive : null,
-      className
-    );
+    const classes = cx(css.tab, selected ? css.tabActive : null, className);
 
     return (
       <button
         {...rest}
-        ref={(c) => {
+        ref={c => {
           this.component = c;
         }}
         type="button"
@@ -67,7 +57,7 @@ export default class Tab extends Component {
         value={value}
         tabIndex={selected ? 0 : -1}
       >
-        { children }
+        {children}
       </button>
     );
   }

@@ -35,7 +35,7 @@ export class PaginationLink extends Component {
     onClick: noop,
   };
 
-  handleClick = (e) => {
+  handleClick = e => {
     const { page, onClick } = this.props;
     onClick(e, page);
   };
@@ -46,15 +46,13 @@ export class PaginationLink extends Component {
     return (
       <a
         href={!disabled ? `?page=${page}` : null}
-        className={cx(
-          css.root,
-          active ? css.active : null,
-          disabled ? css.disabled : null,
-        )}
+        className={cx(css.root, active ? css.active : null, disabled ? css.disabled : null)}
         onClick={this.handleClick}
       >
-        { children }
-        <ScreenReadable>{ accessibilityLabel } { page }</ScreenReadable>
+        {children}
+        <ScreenReadable>
+          {accessibilityLabel} {page}
+        </ScreenReadable>
       </a>
     );
   }

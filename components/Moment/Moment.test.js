@@ -9,6 +9,6 @@ it('renders without crashing', () => {
     <Moment title="">
       <span />
     </Moment>,
-    div
+    div,
   );
 });

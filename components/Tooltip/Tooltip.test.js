@@ -8,11 +8,9 @@ const TestComponent = () => <button />;
 it('renders without crashing', () => {
   const div = document.createElement('div');
   render(
-    <Tooltip
-      target={<TestComponent />}
-    >
+    <Tooltip target={<TestComponent />}>
       <TestComponent />
     </Tooltip>,
-    div
+    div,
   );
 });

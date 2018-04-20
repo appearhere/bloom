@@ -5,7 +5,9 @@ import cx from 'classnames';
 import css from './Heading.css';
 
 const Heading = ({ className, children, ...rest }) => (
-  <span {...rest} className={cx(css.root, className)}>{ children }</span>
+  <span {...rest} className={cx(css.root, className)}>
+    {children}
+  </span>
 );
 
 Heading.propTypes = {

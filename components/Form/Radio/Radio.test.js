@@ -8,10 +8,7 @@ jest.mock('lodash/fp/uniqueId', () => jest.fn(() => mockedId));
 
 it('renders without crashing', () => {
   const div = document.createElement('div');
-  render(
-    <Radio name="" value="" />,
-    div
-  );
+  render(<Radio name="" value="" />, div);
 });
 
 it('handles external focusing and blurring', () => {
@@ -22,9 +19,11 @@ it('handles external focusing and blurring', () => {
     <Radio
       name=""
       value={1}
-      ref={(c) => { component = c; }}
+      ref={c => {
+        component = c;
+      }}
     />,
-    div
+    div,
   );
 
   component.focus();
@@ -45,9 +44,11 @@ it('assigns a unique id to itself', () => {
     <Radio
       name=""
       value={1}
-      ref={(c) => { component = c; }}
+      ref={c => {
+        component = c;
+      }}
     />,
-    div
+    div,
   );
 
   expect(component.id).toBe(mockedId);

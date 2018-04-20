@@ -8,7 +8,7 @@ it('renders with an image without crashing', () => {
     <SquareHero image="" alt="">
       requires children
     </SquareHero>,
-    div
+    div,
   );
 });
 
@@ -25,6 +25,6 @@ it('renders with a video without crashing', () => {
     >
       requires children
     </SquareHero>,
-    div
+    div,
   );
 });

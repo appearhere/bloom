@@ -74,7 +74,9 @@ storiesOf('BtnGroup', module)
       <Btn>
         <Icon className={m.mrRegular} name="filter" />
         Filters
-        <Medallion variant="dark" className={cx(m.mlRegular, m.fr)}>9001</Medallion>
+        <Medallion variant="dark" className={cx(m.mlRegular, m.fr)}>
+          9001
+        </Medallion>
       </Btn>
       <Btn>
         <Icon className={m.mrRegular} name="map" /> Map

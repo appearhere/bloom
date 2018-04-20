@@ -3,20 +3,9 @@ import React from 'react';
 import { render } from 'react-dom';
 
 import InputRange from './InputRange';
-import transformStepValues, {
-  getDomainValue,
-  getRawValue,
-} from './transformStepValues';
+import transformStepValues, { getDomainValue, getRawValue } from './transformStepValues';
 
-const steps = [
-  0,
-  2,
-  4,
-  8,
-  16,
-  32,
-  64,
-];
+const steps = [0, 2, 4, 8, 16, 32, 64];
 
 describe('getDomainValue', () => {
   it('maps a value to a step', () => {
@@ -73,7 +62,7 @@ describe('transformStepValues higher order function', () => {
         maxValue={steps[6]}
         value={{ min: steps[0], max: steps[6] }}
       />,
-      div
+      div,
     );
   });
 
@@ -87,14 +76,16 @@ describe('transformStepValues higher order function', () => {
 
     render(
       <WrappedInputRange
-        ref={(c) => { wrapperComponent = c; }}
+        ref={c => {
+          wrapperComponent = c;
+        }}
         name=""
         minValue={steps[0]}
         maxValue={steps[6]}
         value={steps[value]}
         onChange={spy}
       />,
-      div
+      div,
     );
 
     wrapperComponent.component.handleChange(value);
@@ -114,14 +105,16 @@ describe('transformStepValues higher order function', () => {
     const div = document.createElement('div');
     render(
       <WrappedInputRange
-        ref={(c) => { wrapperComponent = c; }}
+        ref={c => {
+          wrapperComponent = c;
+        }}
         name=""
         minValue={steps[0]}
         maxValue={steps[6]}
         value={{ min, max }}
         onChange={changeSpy}
       />,
-      div
+      div,
     );
 
     wrapperComponent.component.handleChange({ min, max });
@@ -142,14 +135,16 @@ describe('transformStepValues higher order function', () => {
 
     render(
       <WrappedInputRange
-        ref={(c) => { wrapperComponent = c; }}
+        ref={c => {
+          wrapperComponent = c;
+        }}
         name=""
         minValue={steps[0]}
         maxValue={steps[6]}
         value={value}
         onChangeComplete={changeCompleteSpy}
       />,
-      div
+      div,
     );
 
     wrapperComponent.component.handleChangeComplete(value);
@@ -169,14 +164,16 @@ describe('transformStepValues higher order function', () => {
     const div = document.createElement('div');
     render(
       <WrappedInputRange
-        ref={(c) => { wrapperComponent = c; }}
+        ref={c => {
+          wrapperComponent = c;
+        }}
         name=""
         minValue={steps[0]}
         maxValue={steps[6]}
         value={{ min, max }}
         onChangeComplete={changeCompleteSpy}
       />,
-      div
+      div,
     );
 
     wrapperComponent.component.handleChangeComplete({ min, max });

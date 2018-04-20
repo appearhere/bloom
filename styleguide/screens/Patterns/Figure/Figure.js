@@ -27,17 +27,10 @@ const FigureDocumentation = () => (
           <Figure caption="As a team, we launch stores of our own">
             <img />
           </Figure>
-        ` }
+        `}
       >
-        <Figure
-          caption="As a team, we launch stores of our own"
-          className={css.figure}
-        >
-          <img
-            src={conceptStore}
-            className={css.figureImage}
-            alt="Appear Here concept store"
-          />
+        <Figure caption="As a team, we launch stores of our own" className={css.figure}>
+          <img src={conceptStore} className={css.figureImage} alt="Appear Here concept store" />
         </Figure>
       </Specimen>
     </D>

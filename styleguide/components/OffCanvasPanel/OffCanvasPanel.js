@@ -87,11 +87,10 @@ export default class OffCanvasPanel extends Component {
     };
   };
 
-  handleClick = (e) => {
+  handleClick = e => {
     const { target } = e;
-    const isComponent = this.component && (
-      target === this.component || this.component.contains(target)
-    );
+    const isComponent =
+      this.component && (target === this.component || this.component.contains(target));
 
     if (!isComponent) {
       this.handleClose();
@@ -99,7 +98,7 @@ export default class OffCanvasPanel extends Component {
     }
   };
 
-  handleKeyUp = (e) => {
+  handleKeyUp = e => {
     const { keyCode } = e;
 
     if (keyCode === ESC) {
@@ -111,7 +110,7 @@ export default class OffCanvasPanel extends Component {
   handleClose = () => {
     const { onClose } = this.props;
     onClose();
-  }
+  };
 
   render() {
     const { className, active, children: child } = this.props;
@@ -120,17 +119,23 @@ export default class OffCanvasPanel extends Component {
     return (
       <Portal>
         <TransitionMotion
-          styles={active ? [{
-            key: this.id,
-            style: this.getStyles(),
-            data: child,
-          }] : []}
+          styles={
+            active
+              ? [
+                  {
+                    key: this.id,
+                    style: this.getStyles(),
+                    data: child,
+                  },
+                ]
+              : []
+          }
           willEnter={this.willEnter}
           willLeave={this.willLeave}
         >
-          { interpolated => (
+          {interpolated => (
             <div onClick={this.handleClick} className={className}>
-              { interpolated.map(({ key, data, style }) => (
+              {interpolated.map(({ key, data, style }) => (
                 <div key={key}>
                   <div
                     className={css.overlay}
@@ -139,7 +144,9 @@ export default class OffCanvasPanel extends Component {
                     }}
                   />
                   <div
-                    ref={(c) => { this.component = c; }}
+                    ref={c => {
+                      this.component = c;
+                    }}
                     className={css.menu}
                     style={{
                       transform: `translate3d(${style.x}%, 0, 0)`,
@@ -149,12 +156,12 @@ export default class OffCanvasPanel extends Component {
                       <Icon className={css.closeIcon} name="cross" />
                       <ScreenReadable>Close panel</ScreenReadable>
                     </BtnContainer>
-                    { data }
+                    {data}
                   </div>
                 </div>
-              )) }
+              ))}
             </div>
-          ) }
+          )}
         </TransitionMotion>
       </Portal>
     );

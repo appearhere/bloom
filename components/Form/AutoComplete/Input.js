@@ -27,12 +27,12 @@ class AutoCompleteInput extends Component {
   focus = () => {
     this.input.focus();
     this.handleFocus();
-  }
+  };
 
   blur = () => {
     this.input.blur();
     this.handleBlur();
-  }
+  };
 
   handleFocus = () => {
     const { onFocus } = this.props;
@@ -49,16 +49,12 @@ class AutoCompleteInput extends Component {
     const { hasFocus } = this.state;
 
     return (
-      <div
-        className={cx(
-          css.root,
-          hasFocus ? css.focus : null,
-          className,
-        )}
-      >
+      <div className={cx(css.root, hasFocus ? css.focus : null, className)}>
         <InputComponent
           {...rest}
-          ref={(c) => { this.input = c; }}
+          ref={c => {
+            this.input = c;
+          }}
           classNames={mergeObjectStrings(inputClassNames, {
             root: css.root,
             wrapper: css.wrapper,

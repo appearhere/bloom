@@ -7,36 +7,18 @@ import css from './FloatingActionBtn.css';
 /**
  * https://material.io/guidelines/components/buttons-floating-action-button.html
  */
-const FloatingActionBtn = (props) => {
-  const {
-    children,
-    className,
-    onClick,
-    type,
-    disabled,
-    context,
-    ...rest
-  } = props;
+const FloatingActionBtn = props => {
+  const { children, className, onClick, type, disabled, context, ...rest } = props;
 
-  const handleClick = (e) => {
+  const handleClick = e => {
     onClick(e);
   };
 
-  const classes = classnames(
-    css.root,
-    className,
-    css[context],
-  );
+  const classes = classnames(css.root, className, css[context]);
 
   return (
-    <button
-      className={classes}
-      type={type}
-      onClick={handleClick}
-      disabled={disabled}
-      {...rest}
-    >
-      { children }
+    <button className={classes} type={type} onClick={handleClick} disabled={disabled} {...rest}>
+      {children}
     </button>
   );
 };

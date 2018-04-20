@@ -20,11 +20,13 @@ describe('DayRangePicker', () => {
 
       render(
         <DayRangePicker
-          ref={(c) => { component = c; }}
+          ref={c => {
+            component = c;
+          }}
           selectDate={SELECT_DATE.START}
           onInteraction={spy}
         />,
-        div
+        div,
       );
 
       component.handleInteraction(null, selected);
@@ -43,12 +45,14 @@ describe('DayRangePicker', () => {
 
       render(
         <DayRangePicker
-          ref={(c) => { component = c; }}
+          ref={c => {
+            component = c;
+          }}
           selectDate={SELECT_DATE.START}
           onInteraction={spy}
           startDate={startDate}
         />,
-        div
+        div,
       );
 
       component.handleInteraction(null, selected);
@@ -68,13 +72,15 @@ describe('DayRangePicker', () => {
 
       render(
         <DayRangePicker
-          ref={(c) => { component = c; }}
+          ref={c => {
+            component = c;
+          }}
           selectDate={SELECT_DATE.START}
           onInteraction={spy}
           startDate={startDate}
           endDate={endDate}
         />,
-        div
+        div,
       );
 
       component.handleInteraction(null, selected);
@@ -94,11 +100,13 @@ describe('DayRangePicker', () => {
 
       render(
         <DayRangePicker
-          ref={(c) => { component = c; }}
+          ref={c => {
+            component = c;
+          }}
           selectDate={SELECT_DATE.END}
           onInteraction={spy}
         />,
-        div
+        div,
       );
 
       component.handleInteraction(null, selected);
@@ -117,12 +125,14 @@ describe('DayRangePicker', () => {
 
       render(
         <DayRangePicker
-          ref={(c) => { component = c; }}
+          ref={c => {
+            component = c;
+          }}
           selectDate={SELECT_DATE.END}
           onInteraction={spy}
           startDate={startDate}
         />,
-        div
+        div,
       );
 
       component.handleInteraction(null, selected);
@@ -141,12 +151,14 @@ describe('DayRangePicker', () => {
 
         render(
           <DayRangePicker
-            ref={(c) => { component = c; }}
+            ref={c => {
+              component = c;
+            }}
             selectDate={SELECT_DATE.END}
             onInteraction={spy}
             startDate={startDate}
           />,
-          div
+          div,
         );
 
         component.handleInteraction(null, startDate);
@@ -166,13 +178,15 @@ describe('DayRangePicker', () => {
 
       render(
         <DayRangePicker
-          ref={(c) => { component = c; }}
+          ref={c => {
+            component = c;
+          }}
           selectDate={SELECT_DATE.END}
           onInteraction={spy}
           startDate={startDate}
           endDate={selected}
         />,
-        div
+        div,
       );
 
       component.handleInteraction(null, selected);
@@ -191,12 +205,14 @@ describe('DayRangePicker', () => {
 
       render(
         <DayRangePicker
-          ref={(c) => { component = c; }}
+          ref={c => {
+            component = c;
+          }}
           selectDate={SELECT_DATE.END}
           onInteraction={spy}
           startDate={startDate}
         />,
-        div
+        div,
       );
 
       component.handleInteraction(null, selected);

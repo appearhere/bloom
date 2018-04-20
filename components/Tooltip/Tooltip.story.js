@@ -10,21 +10,14 @@ const DropdownContent = () => <div>Dropdown content, like a list of actions, hel
 const stories = storiesOf('Tooltip', module)
   .add('Default Tooltip', () => (
     <div style={{ textAlign: 'center', marginTop: '5rem' }}>
-      <Tooltip
-        target={<Target />}
-        active
-      >
+      <Tooltip target={<Target />} active>
         <DropdownContent />
       </Tooltip>
     </div>
   ))
   .add('Light Tooltip', () => (
     <div style={{ textAlign: 'center', marginTop: '5rem' }}>
-      <Tooltip
-        target={<Target />}
-        variant="light"
-        active
-      >
+      <Tooltip target={<Target />} variant="light" active>
         <DropdownContent />
       </Tooltip>
     </div>

@@ -38,21 +38,15 @@ storiesOf('Type', module)
     />
   ))
   .add('<Synopsis /> default', () => (
-    <Synopsis
-      className={[m.pa48].join(' ')}
-      title="Thousands of spaces, for any idea and budget."
-    >
-      Find a space that matches your price, location, and audience, or browse
-      our destination guides for inspiration.
+    <Synopsis className={[m.pa48].join(' ')} title="Thousands of spaces, for any idea and budget.">
+      Find a space that matches your price, location, and audience, or browse our destination guides
+      for inspiration.
     </Synopsis>
   ))
   .add('<Synopsis /> centered', () => (
-    <Synopsis
-      className={[m.pa48, m.center].join(' ')}
-      title="Focus on your idea."
-    >
-      We’ve organised legals & deposits simply so you can focus on the one thing
-      { ' ' }that really matters - making your idea happen.
+    <Synopsis className={[m.pa48, m.center].join(' ')} title="Focus on your idea.">
+      We’ve organised legals & deposits simply so you can focus on the one thing that really matters
+      - making your idea happen.
     </Synopsis>
   ))
   .add('<Synopsis /> advanced', () => (
@@ -65,8 +59,8 @@ storiesOf('Type', module)
         </span>
       }
     >
-      We’ve organised legals & deposits simply so you can focus on the one thing
-      { ' ' }that really matters - making your idea happen.
+      We’ve organised legals & deposits simply so you can focus on the one thing that really matters
+      - making your idea happen.
     </Synopsis>
   ))
   .add('<Quote /> centered', () => (
@@ -84,18 +78,14 @@ storiesOf('Type', module)
       Frankly my dear, I don’t give a damn
     </Quote>
   ))
-  .add('<IconLabel />', () => (
-    <IconLabel iconName="bogroll">
-      Bog roll
-    </IconLabel>
-  ))
+  .add('<IconLabel />', () => <IconLabel iconName="bogroll">Bog roll</IconLabel>)
   .add('<Statement />', () => (
     <Statement>
       More <span className={m.fgPrimary}>experiences</span> mean better cities.
     </Statement>
   ))
   .add('<Statement /> with number', () => (
-    <Statement number={1} >
+    <Statement number={1}>
       More <span className={m.fgPrimary}>experiences</span> mean better cities.
     </Statement>
   ));

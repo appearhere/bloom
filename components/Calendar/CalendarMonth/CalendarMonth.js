@@ -73,7 +73,7 @@ export default class CalendarMonth extends Component {
       <table className={classNames.root}>
         <thead className={classNames.head}>
           <tr className={classNames.row}>
-            { head.map((offset) => {
+            {head.map(offset => {
               const day = startOfMonth.clone().weekday(offset);
               return (
                 <td key={`${month.format('MM')}-${day.format('dd')}`}>
@@ -84,28 +84,20 @@ export default class CalendarMonth extends Component {
                   />
                 </td>
               );
-            }) }
+            })}
           </tr>
         </thead>
         <tbody className={classNames.body}>
-          { calendarMonth.map(row => (
-            <tr
-              className={classNames.row}
-              key={`${month.format('MM')}-${row[0].format('DD/MM')}`}
-            >
-              { row.map((date) => {
-                const isCurrentMonth = date.isSameOrAfter(startOfMonth) &&
-                  date.isSameOrBefore(endOfMonth);
+          {calendarMonth.map(row => (
+            <tr className={classNames.row} key={`${month.format('MM')}-${row[0].format('DD/MM')}`}>
+              {row.map(date => {
+                const isCurrentMonth =
+                  date.isSameOrAfter(startOfMonth) && date.isSameOrBefore(endOfMonth);
 
-                const day = showOutOfRange || isCurrentMonth
-                  ? date
-                  : null;
+                const day = showOutOfRange || isCurrentMonth ? date : null;
 
                 return (
-                  <td
-                    className={classNames.cell}
-                    key={`${date.format('DD/MM/YYYY')}`}
-                  >
+                  <td className={classNames.cell} key={`${date.format('DD/MM/YYYY')}`}>
                     <DayComponent
                       {...dayProps}
                       today={date.isSame(today, 'day')}
@@ -114,9 +106,9 @@ export default class CalendarMonth extends Component {
                     />
                   </td>
                 );
-              }) }
+              })}
             </tr>
-          )) }
+          ))}
         </tbody>
       </table>
     );

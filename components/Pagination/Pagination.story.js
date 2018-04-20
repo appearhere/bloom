@@ -13,21 +13,33 @@ const SimplePagination = props => (
 );
 
 const PageButton = ({ onClick, page }) => (
-  <button onClick={(e) => { onClick(e, page); }} >
-    { page }
+  <button
+    onClick={e => {
+      onClick(e, page);
+    }}
+  >
+    {page}
   </button>
 );
 PageButton.propTypes = { onClick: PropTypes.func, page: PropTypes.any };
 
 const NextButton = ({ onClick, page }) => (
-  <button onClick={(e) => { onClick(e, page); }} >
+  <button
+    onClick={e => {
+      onClick(e, page);
+    }}
+  >
     Next
   </button>
 );
 NextButton.propTypes = { onClick: PropTypes.func, page: PropTypes.any };
 
 const PreviousButton = ({ onClick, page }) => (
-  <button onClick={(e) => { onClick(e, page); }} >
+  <button
+    onClick={e => {
+      onClick(e, page);
+    }}
+  >
     Previous
   </button>
 );
@@ -48,21 +60,21 @@ const EventedPagination = props => (
   </Pagination>
 );
 
-
 const stories = storiesOf('Pagination', module);
 stories.addDecorator(withKnobs);
 
-stories.add('With track', () => (
-  <SimplePagination
-    currentPage={number('current page', 1)}
-    totalPages={number('total pages', 10)}
-    displayRange={number('track range', 3)}
-  />
-))
-.add('Evented pagination', () => (
-  <EventedPagination
-    currentPage={number('current page', 1)}
-    totalPages={number('total pages', 10)}
-    displayRange={number('track range', 3)}
-  />
-));
+stories
+  .add('With track', () => (
+    <SimplePagination
+      currentPage={number('current page', 1)}
+      totalPages={number('total pages', 10)}
+      displayRange={number('track range', 3)}
+    />
+  ))
+  .add('Evented pagination', () => (
+    <EventedPagination
+      currentPage={number('current page', 1)}
+      totalPages={number('total pages', 10)}
+      displayRange={number('track range', 3)}
+    />
+  ));

@@ -8,7 +8,7 @@ import { SIBLING_TRANSITION as SPRING_CONFIG } from '../../../constants/springs'
 import css from './TabBar.css';
 
 const TabBar = ({ children, variant, activeMarkerOffset, scrollable, className }) => {
-  const tabWidth = scrollable ? (100 / children.length) * 2 : 100 / children.length;
+  const tabWidth = scrollable ? 100 / children.length * 2 : 100 / children.length;
   const activeTabs = children
     .map((child, i) => {
       if (child.props.active === true) return i;
@@ -23,20 +23,20 @@ const TabBar = ({ children, variant, activeMarkerOffset, scrollable, className }
   return (
     <div className={cx(css.root, css[variant], scrollable ? css.scrollable : null)}>
       <div className={cx(css.bar, className)}>
-        { Children.map(children, (child, i) => (
+        {Children.map(children, (child, i) => (
           <div
             className={cx(
               css.link,
               activeTabIndex === i ? css.active : null,
-              (scrollable && i === 0) ? css.scrollableLink : null,
+              scrollable && i === 0 ? css.scrollableLink : null,
             )}
             style={{
               width: `${tabWidth}%`,
             }}
           >
-            { child }
+            {child}
           </div>
-        )) }
+        ))}
       </div>
       <Motion
         defaultStyle={{
@@ -46,7 +46,7 @@ const TabBar = ({ children, variant, activeMarkerOffset, scrollable, className }
           x: spring(activeTabIndex * 100, SPRING_CONFIG),
         }}
       >
-        { ({ x }) => (
+        {({ x }) => (
           <div
             className={cx(css.underline, scrollable ? css.scrollableUnderline : null)}
             style={{
@@ -54,7 +54,7 @@ const TabBar = ({ children, variant, activeMarkerOffset, scrollable, className }
               transform: `translate3d(${x}%, ${activeMarkerOffset}px, 0)`,
             }}
           />
-        ) }
+        )}
       </Motion>
     </div>
   );

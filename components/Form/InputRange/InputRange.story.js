@@ -8,15 +8,7 @@ import InputRangeWithHistogram from './InputRangeWithHistogram';
 const stories = storiesOf('FormComponents', module);
 stories.addDecorator(withKnobs);
 
-const bucket = [
-  0,
-  2,
-  4,
-  8,
-  16,
-  32,
-  64,
-];
+const bucket = [0, 2, 4, 8, 16, 32, 64];
 
 stories
   .add('Default InputRange', () => (

@@ -16,7 +16,7 @@ export default class EdgeFade extends Component {
 
   static defaultProps = {
     threshold: 150,
-  }
+  };
 
   state = {
     opacity: 1,
@@ -67,12 +67,14 @@ export default class EdgeFade extends Component {
 
     return (
       <div
-        ref={(c) => { this.wrapper = c; }}
+        ref={c => {
+          this.wrapper = c;
+        }}
         style={{
           opacity,
         }}
       >
-        { children }
+        {children}
       </div>
     );
   }

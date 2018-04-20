@@ -10,6 +10,6 @@ it('renders without crashing', () => {
     <BtnGroup>
       <Btn>foo</Btn>
     </BtnGroup>,
-    div
+    div,
   );
 });

@@ -8,9 +8,5 @@ const stories = storiesOf('FormComponents', module);
 stories.addDecorator(withKnobs);
 
 stories.add('StarRating', () => (
-  <StarRating
-    name="RadioGroup"
-    value={number('Value', 1)}
-    onChange={action('Changing')}
-  />
+  <StarRating name="RadioGroup" value={number('Value', 1)} onChange={action('Changing')} />
 ));

@@ -9,11 +9,7 @@ const IconLabel = ({ iconName, children, className }) => (
   <LeftRight
     className={className}
     leftClassName={css.icon}
-    leftChildren={
-      <Icon
-        name={iconName}
-      />
-    }
+    leftChildren={<Icon name={iconName} />}
     rightClassName={css.label}
     rightChildren={children}
     primarySide="right"

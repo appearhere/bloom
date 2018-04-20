@@ -37,11 +37,11 @@ class TetherDirectionWrapper extends Component {
 
     return (
       <div className={classNames}>
-        { cloneElement(children, {
+        {cloneElement(children, {
           ...rest,
           verticalAttachment,
           horizontalAttachment,
-        }) }
+        })}
       </div>
     );
   }
@@ -124,21 +124,14 @@ export default class Tooltip extends Component {
       },
     };
 
-    const targetClasses = cx(
-      css.target,
-      css[variant],
-    );
+    const targetClasses = cx(css.target, css[variant]);
 
-    const tooltipClasses = cx(
-      css.tooltip,
-      css[variant],
-      className,
-    );
+    const tooltipClasses = cx(css.tooltip, css[variant], className);
 
     warning(
       !(flushVertical && flushHorizontal),
-      '`Tooltip` component doesn\'t support the use of `flushVertical` and `flushHorizontal`' +
-      ' in tandem. The tooltip will cover it\'s target and may cause unexpected behaviour'
+      "`Tooltip` component doesn't support the use of `flushVertical` and `flushHorizontal`" +
+        " in tandem. The tooltip will cover it's target and may cause unexpected behaviour",
     );
 
     return (
@@ -146,24 +139,28 @@ export default class Tooltip extends Component {
         {...rest}
         flushVertical={flushVertical}
         flushHorizontal={flushHorizontal}
-        target={(
+        target={
           <TetherDirectionWrapper
-            ref={(c) => { this.target = c; }}
+            ref={c => {
+              this.target = c;
+            }}
             className={targetClasses}
             verticalClassNames={targetClassNames.vertical}
             horizontalClassNames={targetClassNames.horizontal}
           >
-            { target }
+            {target}
           </TetherDirectionWrapper>
-        )}
+        }
       >
         <TetherDirectionWrapper
-          ref={(c) => { this.tooltip = c; }}
+          ref={c => {
+            this.tooltip = c;
+          }}
           className={tooltipClasses}
           verticalClassNames={tooltipClassNames.vertical}
           horizontalClassNames={tooltipClassNames.horizontal}
         >
-          { children }
+          {children}
         </TetherDirectionWrapper>
       </Tether>
     );

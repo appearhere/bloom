@@ -5,7 +5,7 @@ import Tether from './Tether';
 
 jest.mock('react-router-dom', () => ({
   // eslint-disable-next-line react/prop-types
-  Link: ({ children }) => <span>{ children }</span>,
+  Link: ({ children }) => <span>{children}</span>,
 }));
 
 it('renders without crashing', () => {

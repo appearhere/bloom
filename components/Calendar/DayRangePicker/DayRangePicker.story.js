@@ -44,6 +44,4 @@ class StateManagedDayRangePicker extends React.Component {
   }
 }
 
-stories.add('Managed', () => (
-  <StateManagedDayRangePicker />
-));
+stories.add('Managed', () => <StateManagedDayRangePicker />);

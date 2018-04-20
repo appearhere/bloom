@@ -15,20 +15,10 @@ class TestHeartContainer extends Component {
   render() {
     const { active } = this.state;
 
-    return (
-      <HeartBtn
-        {...this.props}
-        onClick={this.toggleActive}
-        active={active}
-      />
-    );
+    return <HeartBtn {...this.props} onClick={this.toggleActive} active={active} />;
   }
 }
 
 storiesOf('HeartBtn', module)
-  .add('Default (dark) variant', () => (
-    <TestHeartContainer />
-  ))
-  .add('Light variant', () => (
-    <TestHeartContainer variant="light" />
-  ));
+  .add('Default (dark) variant', () => <TestHeartContainer />)
+  .add('Light variant', () => <TestHeartContainer variant="light" />);

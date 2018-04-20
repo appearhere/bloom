@@ -34,7 +34,7 @@ describe('InputRange with Histogram', () => {
         maxValue={1}
         data={[]}
       />,
-      div
+      div,
     );
   });
 });

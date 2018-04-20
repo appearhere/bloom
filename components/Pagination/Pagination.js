@@ -38,7 +38,7 @@ export default class Pagination extends Component {
 
     return (
       <div className={cx(css.root, className)}>
-        { showPrevNext && (
+        {showPrevNext && (
           <span className={css.page}>
             <PreviousComponent
               {...arrowProps}
@@ -46,9 +46,9 @@ export default class Pagination extends Component {
               disabled={currentPage === 1}
             />
           </span>
-        ) }
-        { children }
-        { showPrevNext && (
+        )}
+        {children}
+        {showPrevNext && (
           <span className={css.page}>
             <NextComponent
               {...arrowProps}
@@ -56,7 +56,7 @@ export default class Pagination extends Component {
               disabled={currentPage === totalPages}
             />
           </span>
-        ) }
+        )}
       </div>
     );
   }

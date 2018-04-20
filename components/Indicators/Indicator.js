@@ -5,11 +5,7 @@ import classnames from 'classnames';
 import css from './Indicator.css';
 
 const Indicator = ({ active, className, ...rest }) => {
-  const classes = classnames(
-    css.root,
-    active ? css.active : null,
-    className,
-  );
+  const classes = classnames(css.root, active ? css.active : null, className);
 
   return <div className={classes} {...rest} />;
 };

@@ -4,21 +4,17 @@ import warning from 'warning';
 
 import Indicator from './Indicator';
 
-const IndicatorGroup = (props) => {
-  const {
-    children,
-    activeIndicator,
-    Component,
-    ...parentProps
-  } = props;
+const IndicatorGroup = props => {
+  const { children, activeIndicator, Component, ...parentProps } = props;
 
   return (
     <div {...parentProps}>
-      { children && children(({ i, ...childProps }) => {
-        warning(!isNaN(i), 'IndicatorGroup(): children must be passed an index prop, `i`');
-        const active = activeIndicator === i;
-        return <Component {...childProps} active={active} />;
-      }) }
+      {children &&
+        children(({ i, ...childProps }) => {
+          warning(!isNaN(i), 'IndicatorGroup(): children must be passed an index prop, `i`');
+          const active = activeIndicator === i;
+          return <Component {...childProps} active={active} />;
+        })}
     </div>
   );
 };

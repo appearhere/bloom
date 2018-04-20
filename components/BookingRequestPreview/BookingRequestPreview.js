@@ -18,13 +18,13 @@ const BookingRequestPreview = ({ bookingRequests, className, ...rest }) => {
 
   return (
     <div {...rest} className={className}>
-      { Object.keys(keyedBookingRequests).map((state) => {
+      {Object.keys(keyedBookingRequests).map(state => {
         const requests = keyedBookingRequests[state];
 
         return (
           <div className={css.requestList} key={state}>
-            <div className={css.state}>{ state }</div>
-            { requests.map(request => (
+            <div className={css.state}>{state}</div>
+            {requests.map(request => (
               <LeftRight
                 className={css.request}
                 key={request.id}
@@ -38,24 +38,19 @@ const BookingRequestPreview = ({ bookingRequests, className, ...rest }) => {
                 }
                 rightChildren={
                   <div className={css.requestDetail}>
-                    <div className={css.ideaName}>
-                      { request.idea_name }
-                    </div>
+                    <div className={css.ideaName}>{request.idea_name}</div>
                     <div className={css.dates}>
-                      { moment(request.start_on).format('L') }
-                      <Icon
-                        className={css.untilIcon}
-                        name="arrow"
-                      />
-                      { moment(request.end_on).format('L') }
+                      {moment(request.start_on).format('L')}
+                      <Icon className={css.untilIcon} name="arrow" />
+                      {moment(request.end_on).format('L')}
                     </div>
                   </div>
                 }
               />
-            )) }
+            ))}
           </div>
         );
-      }) }
+      })}
     </div>
   );
 };
@@ -71,7 +66,7 @@ BookingRequestPreview.propTypes = {
       primary_photo_thumbnail_url: PropTypes.string,
       tooltip: PropTypes.string,
       complete: PropTypes.bool,
-    })
+    }),
   ),
   className: PropTypes.string,
 };

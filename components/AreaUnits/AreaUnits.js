@@ -5,32 +5,25 @@ import { AREA_UNITS } from '../../constants/units';
 
 const AreaUnits = ({ value, unit, className, ...rest }) => {
   switch (unit) {
-    case AREA_UNITS.METERS_SQUARED: return (
-      <span
-        {...rest}
-        className={className}
-      >
-        { value }
-        m&sup2;
-      </span>
-    );
+    case AREA_UNITS.METERS_SQUARED:
+      return (
+        <span {...rest} className={className}>
+          {value}
+          m&sup2;
+        </span>
+      );
     case AREA_UNITS.SQUARE_FOOT:
-    default: return (
-      <span
-        {...rest}
-        className={className}
-      >
-        { value } sq ft
-      </span>
-    );
+    default:
+      return (
+        <span {...rest} className={className}>
+          {value} sq ft
+        </span>
+      );
   }
 };
 
 AreaUnits.propTypes = {
-  value: PropTypes.oneOfType([
-    PropTypes.number,
-    PropTypes.string,
-  ]).isRequired,
+  value: PropTypes.oneOfType([PropTypes.number, PropTypes.string]).isRequired,
   unit: PropTypes.string.isRequired,
   className: PropTypes.string,
 };

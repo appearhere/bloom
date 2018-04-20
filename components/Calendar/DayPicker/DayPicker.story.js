@@ -11,7 +11,7 @@ class StateManagedDayPicker extends Component {
     month: moment(),
   };
 
-  getDayState = (day) => {
+  getDayState = day => {
     const { date } = this.state;
     return Object.assign({}, defaultDayState, {
       isSelected: day && date && day.isSame(date, 'day'),
@@ -56,11 +56,12 @@ stories
   .add('Single date selected', () => (
     <DayPicker
       dayProps={{
-        getDayState: d => Object.assign({}, defaultDayState, {
-          isSelected: d && d.isSame(moment(), 'day'),
-          isFirstSelected: d && d.isSame(moment(), 'day'),
-          isLastSelected: d && d.isSame(moment(), 'day'),
-        }),
+        getDayState: d =>
+          Object.assign({}, defaultDayState, {
+            isSelected: d && d.isSame(moment(), 'day'),
+            isFirstSelected: d && d.isSame(moment(), 'day'),
+            isLastSelected: d && d.isSame(moment(), 'day'),
+          }),
       }}
       month={moment().month(4)}
     />
@@ -68,7 +69,7 @@ stories
   .add('Multiple dates selected', () => (
     <DayPicker
       dayProps={{
-        getDayState: (d) => {
+        getDayState: d => {
           const startDate = moment().add(-5, 'day');
           const endDate = moment().add(5, 'day');
 
@@ -82,6 +83,4 @@ stories
       month={moment({ month: number('month', today.month()) })}
     />
   ))
-  .add('Interactive', () => (
-    <StateManagedDayPicker />
-  ));
+  .add('Interactive', () => <StateManagedDayPicker />);

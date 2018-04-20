@@ -1,12 +1,6 @@
 import React from 'react';
 import { storiesOf, action } from '@storybook/react';
-import {
-  withKnobs,
-  boolean,
-  array,
-  select,
-  number,
-} from '@storybook/addon-knobs';
+import { withKnobs, boolean, array, select, number } from '@storybook/addon-knobs';
 
 import CheckboxGroup from '../Form/CheckboxGroup/CheckboxGroup';
 import FunnelInputField from './FunnelInputField';
@@ -21,14 +15,7 @@ import m from '../../globals/modifiers.css';
 const stories = storiesOf('FunnelInputField', module);
 stories.addDecorator(withKnobs);
 
-const inputTypes = [
-  'text',
-  'email',
-  'password',
-  'search',
-  'url',
-  'textarea',
-];
+const inputTypes = ['text', 'email', 'password', 'search', 'url', 'textarea'];
 
 const WrappedSelect = () => (
   <Select
@@ -62,35 +49,35 @@ stories
           value={value}
           onChange={action('checked')}
         >
-          { checkbox => (
+          {checkbox => (
             <span>
-              { checkbox({
+              {checkbox({
                 value: '1',
                 label: 'One',
                 name: '',
-              }) }
-              { checkbox({
+              })}
+              {checkbox({
                 value: '2',
                 label: 'Two',
                 name: '',
-              }) }
-              { checkbox({
+              })}
+              {checkbox({
                 value: '3',
                 label: 'Three',
                 name: '',
-              }) }
-              { checkbox({
+              })}
+              {checkbox({
                 value: '4',
                 label: 'Four',
                 name: '',
-              }) }
-              { checkbox({
+              })}
+              {checkbox({
                 value: '5',
                 label: 'Five',
                 name: '',
-              }) }
+              })}
             </span>
-          ) }
+          )}
         </CheckboxGroup>
       </FunnelInputField>
     );
@@ -132,43 +119,27 @@ stories
     </FunnelInputField>
   ))
   .add('RadioGroup', () => (
-    <FunnelInputField
-      id="1"
-      label="Radio buttons"
-      description="A description of the desired input"
-    >
-      <RadioGroup
-        className={m.mtl}
-        value={number('Value', 1)}
-        onChange={action('checked')}
-      >
-        { radio => (
+    <FunnelInputField id="1" label="Radio buttons" description="A description of the desired input">
+      <RadioGroup className={m.mtl} value={number('Value', 1)} onChange={action('checked')}>
+        {radio => (
           <span>
-            { radio({ value: 1, label: 'One' }) }
-            { radio({ value: 2, label: 'Two' }) }
-            { radio({ value: 3, label: 'Three' }) }
-            { radio({ value: 4, label: 'Four' }) }
-            { radio({ value: 5, label: 'Five' }) }
+            {radio({ value: 1, label: 'One' })}
+            {radio({ value: 2, label: 'Two' })}
+            {radio({ value: 3, label: 'Three' })}
+            {radio({ value: 4, label: 'Four' })}
+            {radio({ value: 5, label: 'Five' })}
           </span>
-        ) }
+        )}
       </RadioGroup>
     </FunnelInputField>
   ))
   .add('Select', () => (
-    <FunnelInputField
-      id="1"
-      label="Select box"
-      description="A description of the desired input"
-    >
+    <FunnelInputField id="1" label="Select box" description="A description of the desired input">
       <WrappedSelect />
     </FunnelInputField>
   ))
   .add('StarRating', () => (
-    <FunnelInputField
-      id="1"
-      label="Radio buttons"
-      description="A description of the desired input"
-    >
+    <FunnelInputField id="1" label="Radio buttons" description="A description of the desired input">
       <StarRating
         className={m.mtl}
         name="RadioGroup"

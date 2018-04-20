@@ -5,11 +5,9 @@ import css from './InputRange.css';
 import InputRange from './InputRange';
 
 /* eslint-disable arrow-body-style */
-export const getVerticalScale = data => data
-  .reduce((currentHighestValue, datum) => {
-    return datum >= currentHighestValue
-      ? datum
-      : currentHighestValue;
+export const getVerticalScale = data =>
+  data.reduce((currentHighestValue, datum) => {
+    return datum >= currentHighestValue ? datum : currentHighestValue;
   }, 0);
 /* eslint-enable arrow-body-style */
 
@@ -38,18 +36,18 @@ export default class InputRangeWithHistogram extends Component {
     return (
       <div className={css.container}>
         <div className={css.histogram}>
-          { pointData.map((datum, i) => (
+          {pointData.map((datum, i) => (
             <div
               key={`${name}-${i}`}
               className={css.barContainer}
               style={{
                 width: `${pointWidth}%`,
-                height: `${(datum / maxPointHeight) * 100}%`,
+                height: `${datum / maxPointHeight * 100}%`,
               }}
             >
               <div className={css.bar} />
             </div>
-          )) }
+          ))}
         </div>
         <InputRange name={name} {...rest} />
       </div>

@@ -32,20 +32,24 @@ export default class StarRating extends Component {
     return (
       <RadioGroup
         {...rest}
-        ref={(c) => { this.group = c; }}
+        ref={c => {
+          this.group = c;
+        }}
         name={name}
         value={value}
         Input={Star}
       >
-        { radio => (
+        {radio => (
           <span>
-            { ratings.map(rating => radio({
-              key: `${name}-${rating}`,
-              value: rating,
-              className: cx(css.starContainer, value >= rating ? starCss.active : null),
-            })) }
+            {ratings.map(rating =>
+              radio({
+                key: `${name}-${rating}`,
+                value: rating,
+                className: cx(css.starContainer, value >= rating ? starCss.active : null),
+              }),
+            )}
           </span>
-        ) }
+        )}
       </RadioGroup>
     );
   }

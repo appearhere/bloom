@@ -20,10 +20,7 @@ export default class InputField extends Component {
       valueReplay: PropTypes.string,
       description: PropTypes.string,
     }),
-    Element: PropTypes.oneOfType([
-      PropTypes.string,
-      PropTypes.func,
-    ]),
+    Element: PropTypes.oneOfType([PropTypes.string, PropTypes.func]),
     id: PropTypes.string.isRequired,
     meta: PropTypes.node,
     label: PropTypes.node,
@@ -64,63 +61,50 @@ export default class InputField extends Component {
 
     return (
       <Element {...sharedProps} className={classNames.root}>
-        { meta && (
-          <Meta
-            {...sharedProps}
-            className={classNames.meta}
-          >
-            { meta }
+        {meta && (
+          <Meta {...sharedProps} className={classNames.meta}>
+            {meta}
           </Meta>
-        ) }
+        )}
         <Label
           {...sharedProps}
           htmlFor={id}
           className={classNames.label}
           optionalLabel={!required && optionalLabel}
         >
-          { label }
+          {label}
         </Label>
-        { !valueReplay && placeholderValue && (
-          <Placeholder
-            {...sharedProps}
-            className={classNames.valueReplay}
-          >
-            { placeholderValue }
-          </Placeholder>
-        ) }
-        { valueReplay && (
-          <Value
-            {...sharedProps}
-            className={classNames.valueReplay}
-          >
-            { valueReplay }
+        {!valueReplay &&
+          placeholderValue && (
+            <Placeholder {...sharedProps} className={classNames.valueReplay}>
+              {placeholderValue}
+            </Placeholder>
+          )}
+        {valueReplay && (
+          <Value {...sharedProps} className={classNames.valueReplay}>
+            {valueReplay}
           </Value>
-        ) }
-        { description && (
-          <Description
-            {...sharedProps}
-            id={descriptionId}
-            className={classNames.description}
-          >
-            { description }
+        )}
+        {description && (
+          <Description {...sharedProps} id={descriptionId} className={classNames.description}>
+            {description}
           </Description>
-        ) }
-        { children && (
-          <InputWrapper
-            {...sharedProps}
-            className={classNames.inputWrapper}
-          >
-            { cloneElement(children, {
+        )}
+        {children && (
+          <InputWrapper {...sharedProps} className={classNames.inputWrapper}>
+            {cloneElement(children, {
               ...rest,
               ...sharedProps,
-              ref: (c) => { this.input = c; },
+              ref: c => {
+                this.input = c;
+              },
               name: id,
               id,
               required,
               'aria-describedby': descriptionId,
-            }) }
+            })}
           </InputWrapper>
-        ) }
+        )}
       </Element>
     );
   }

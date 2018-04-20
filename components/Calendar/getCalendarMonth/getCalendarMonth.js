@@ -1,16 +1,16 @@
-import {
-  generateArray,
-  generateNumberFilledArray,
-  reshapeArray,
-} from '../../../utils/array/array';
+import { generateArray, generateNumberFilledArray, reshapeArray } from '../../../utils/array/array';
 
 export const CALENDAR_MONTH_LENGTH = 42;
 export const DAYS_PER_WEEK = 7;
 export const CALENDAR_ROWS = CALENDAR_MONTH_LENGTH / DAYS_PER_WEEK;
 
-export const getPreDayCount = date => date.clone().startOf('month').weekday();
+export const getPreDayCount = date =>
+  date
+    .clone()
+    .startOf('month')
+    .weekday();
 
-export const getPostDayCount = (date) => {
+export const getPostDayCount = date => {
   const preDayCount = getPreDayCount(date);
   return CALENDAR_MONTH_LENGTH - date.daysInMonth() - preDayCount;
 };
@@ -36,14 +36,11 @@ const getCalendarMonth = (date, preDayCount, postDayCount) => {
         .add(offset, 'days');
     });
 
-  const monthDays = generateNumberFilledArray(month.daysInMonth(), 1)
-    .map(day => month.clone().date(day));
+  const monthDays = generateNumberFilledArray(month.daysInMonth(), 1).map(day =>
+    month.clone().date(day),
+  );
 
-  const calendarMonth = [
-    ...preDays,
-    ...monthDays,
-    ...postDays,
-  ];
+  const calendarMonth = [...preDays, ...monthDays, ...postDays];
   return reshapeArray(calendarMonth, CALENDAR_ROWS);
 };
 

@@ -6,14 +6,14 @@ const getPaginationTrack = (currentPage, totalPages, minimumTrackLength = 3) => 
   let trackLength = minimumTrackLength;
 
   const startOfTrack = currentPage <= trackLength;
-  const endOfTrack = (currentPage + trackLength) > totalPages;
+  const endOfTrack = currentPage + trackLength > totalPages;
 
   if (startOfTrack) {
     trackLength += 1;
     startPoint = TRACK_FLOOR;
   } else if (endOfTrack) {
     trackLength += 1;
-    startPoint = (totalPages - trackLength);
+    startPoint = totalPages - trackLength;
   } else {
     const padding = Math.floor(trackLength / 2);
     startPoint = currentPage - padding;

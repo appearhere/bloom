@@ -10,11 +10,7 @@ const Swatch = ({ className, name, hex, rgb, variable }) => (
       root: className,
     }}
     name={name}
-    attributes={[
-      hex,
-      rgb,
-      variable,
-    ]}
+    attributes={[hex, rgb, variable]}
   >
     <div className={css.color} style={{ backgroundColor: rgb }} />
   </Specimen>

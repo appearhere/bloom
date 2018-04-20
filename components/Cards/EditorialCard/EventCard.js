@@ -40,7 +40,7 @@ class EventCard extends Component {
     ctaLabel: 'Get tickets',
   };
 
-  handleBtnClick = (e) => {
+  handleBtnClick = e => {
     e.stopPropagation();
     e.preventDefault();
 
@@ -67,19 +67,21 @@ class EventCard extends Component {
         <EditorialCard {...rest} className={classes} tabIndex="0">
           <div className={css.body}>
             <span className={css.meta}>
-              { date }{ date && location && ' · ' }{ location }
+              {date}
+              {date && location && ' · '}
+              {location}
             </span>
-            <p className={css.description}>{ description }</p>
-            { ctaCallback && (
+            <p className={css.description}>{description}</p>
+            {ctaCallback && (
               <span
                 className={cx(css.link, linkcss.root)}
                 onClick={this.handleBtnClick}
                 tabIndex="0"
                 role="button"
               >
-                { ctaLabel }
+                {ctaLabel}
               </span>
-            ) }
+            )}
           </div>
         </EditorialCard>
       </div>

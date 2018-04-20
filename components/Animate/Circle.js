@@ -16,7 +16,7 @@ const Circle = ({ percent }) => (
         x: spring(percent, { stiffness: 35, damping: 10 }),
       }}
     >
-      { ({ x }) => (
+      {({ x }) => (
         <circle
           className={cx(css.circle, css.circleFilled)}
           cx="17"
@@ -24,12 +24,9 @@ const Circle = ({ percent }) => (
           r="15.9154943092"
           strokeDasharray={`${x}, 100`}
         />
-        )
-      }
-
+      )}
     </Motion>
   </svg>
-
 );
 
 Circle.propTypes = {
@@ -41,4 +38,3 @@ Circle.defaultProps = {
 };
 
 export default Circle;
-

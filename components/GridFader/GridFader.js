@@ -12,17 +12,11 @@ export default class GridFader extends Component {
     grid: PropTypes.arrayOf(
       PropTypes.shape({
         /* eslint-disable react/no-unused-prop-types */
-        key: PropTypes.oneOfType([
-          PropTypes.string,
-          PropTypes.number,
-        ]).isRequired,
+        key: PropTypes.oneOfType([PropTypes.string, PropTypes.number]).isRequired,
         /* eslint-enable react/no-unused-prop-types */
       }),
     ).isRequired,
-    GridItemComponent: PropTypes.oneOfType([
-      PropTypes.string,
-      PropTypes.func,
-    ]),
+    GridItemComponent: PropTypes.oneOfType([PropTypes.string, PropTypes.func]),
     columnClass: PropTypes.string,
     limit: PropTypes.number,
     swapInterval: PropTypes.number,
@@ -86,36 +80,30 @@ export default class GridFader extends Component {
 
     return (
       <div className={css.row}>
-        { grid.map((item, i) => (
+        {grid.map((item, i) => (
           /*
             Supplying the index as the key to the outer most `<div />` is
             intentional. This means the `<div />` and, more importantly,
             `<Swap />` doesn't get rerendered when the Logo changes.
           */
-          <div
-            key={i}
-            className={columnClasses}
-          >
-            { /*
+          <div key={i} className={columnClasses}>
+            {/*
                 `animationTimeout` has to be shorter than the interval to
                 ensure that the animation has finished before we swap out
                 another element. Without it, it's possibly we'll swap
                 out the same element while it's animating in or out,
                 causing an additional element to render for a short period
                 of time, causing the grid to break
-              */ }
+              */}
             <CSSTransitionGroup
               transitionName={transitions}
               transitionEnterTimeout={swapInterval - 100}
               transitionLeaveTimeout={swapInterval - 100}
             >
-              <GridItemComponent
-                {...item}
-                key={`logo-${item.key}`}
-              />
+              <GridItemComponent {...item} key={`logo-${item.key}`} />
             </CSSTransitionGroup>
           </div>
-        )) }
+        ))}
       </div>
     );
   }

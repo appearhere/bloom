@@ -9,7 +9,7 @@ const Swap = ({ children, animationTimeout }) => (
     transitionEnterTimeout={animationTimeout}
     transitionLeaveTimeout={animationTimeout}
   >
-    { children }
+    {children}
   </CSSTransitionGroup>
 );
 

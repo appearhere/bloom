@@ -21,7 +21,7 @@ export default class Scrubber extends Component {
 
   getInnerWidth = () => {
     const { currentTime, duration } = this.props;
-    return (currentTime / duration) * 100;
+    return currentTime / duration * 100;
   };
 
   handleFocus = () => {
@@ -32,7 +32,7 @@ export default class Scrubber extends Component {
     this.setState({ focused: false });
   };
 
-  handleSeek = (e) => {
+  handleSeek = e => {
     const { seek } = this.props;
     seek(e);
   };
@@ -40,10 +40,7 @@ export default class Scrubber extends Component {
   render() {
     const { focused } = this.state;
 
-    const scrubberInnerClasses = cx(
-      css.scrubberInner,
-      focused ? css.scrubberInnerFocused : null,
-    );
+    const scrubberInnerClasses = cx(css.scrubberInner, focused ? css.scrubberInnerFocused : null);
 
     return (
       <div className={css.scrubber}>

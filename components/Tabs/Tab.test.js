@@ -4,8 +4,5 @@ import Tab from './Tab';
 
 it('renders without crashing', () => {
   const div = document.createElement('div');
-  ReactDOM.render(
-    <Tab />,
-    div
-  );
+  ReactDOM.render(<Tab />, div);
 });

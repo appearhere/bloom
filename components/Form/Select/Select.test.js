@@ -13,7 +13,7 @@ it('renders without crashing', () => {
     <Select>
       <Option>option</Option>
     </Select>,
-    div
+    div,
   );
 });
 
@@ -22,10 +22,14 @@ it('handles external focusing and blurring', () => {
   let component;
 
   render(
-    <Select ref={(c) => { component = c; }}>
+    <Select
+      ref={c => {
+        component = c;
+      }}
+    >
       <Option>option</Option>
     </Select>,
-    div
+    div,
   );
 
   component.focus();
@@ -45,11 +49,22 @@ describe('multiple select', () => {
     let component;
 
     render(
-      <Select onChange={spy} value={['1']} multiple ref={(c) => { component = c; }}>
-        <Option value="1" key="1">1</Option>
-        <Option value="2" key="2">2</Option>
+      <Select
+        onChange={spy}
+        value={['1']}
+        multiple
+        ref={c => {
+          component = c;
+        }}
+      >
+        <Option value="1" key="1">
+          1
+        </Option>
+        <Option value="2" key="2">
+          2
+        </Option>
       </Select>,
-      div
+      div,
     );
 
     const option = scryRenderedDOMComponentsWithTag(component, 'option')[1];

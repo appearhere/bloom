@@ -8,14 +8,8 @@ import ControlIcon from '../Control/ControlIcon';
 
 import css from './ControlLayer.css';
 
-const ControlLayer = (props) => {
-  const {
-    children,
-    className,
-    controlGroupClassName,
-    onZoomIn,
-    onZoomOut,
-  } = props;
+const ControlLayer = props => {
+  const { children, className, controlGroupClassName, onZoomIn, onZoomOut } = props;
 
   return (
     <div className={cx(css.root, className)}>
@@ -27,7 +21,7 @@ const ControlLayer = (props) => {
           <ControlIcon name="minus" />
         </Control>
       </ControlGroup>
-      { children }
+      {children}
     </div>
   );
 };

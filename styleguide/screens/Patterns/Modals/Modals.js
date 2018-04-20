@@ -25,8 +25,8 @@ export default class ModalDocumentation extends Component {
     showWithCrossDark: false,
   };
 
-  toggleModal = (id) => {
-    this.setState((state) => {
+  toggleModal = id => {
+    this.setState(state => {
       const currentActive = state[id];
 
       return {
@@ -54,23 +54,21 @@ export default class ModalDocumentation extends Component {
       <div>
         <H level={1}>Modals</H>
         <T elm="p" className={cx(m.mtr, m.largeI, m.demi)}>
-          Modals are a secondary window that allow you to display additional
-          information whilst keeping context. Please use sparingly, as modals
-          interrupt a users flow.
+          Modals are a secondary window that allow you to display additional information whilst
+          keeping context. Please use sparingly, as modals interrupt a users flow.
         </T>
         <D>
           <H level={2}>Modal Animator</H>
           <T elm="p" className={m.mtr}>
-            Use the modal animator to control how the modal window enters and leaves
-            the page. By default, the animator fades the window in.
+            Use the modal animator to control how the modal window enters and leaves the page. By
+            default, the animator fades the window in.
           </T>
           <Note className={m.mtr}>
             <T elm="p">
-              We original wanted to have a more extravagant entrance animation for
-              our modal windows. Limitations within iOS Safari however prevent us
-              from doing this; at the time of writing you cannot
-              animate <C>transform: translate()</C> in conjunction the use
-              of <C>-webkit-overflow-scrolling: touch</C>.
+              We original wanted to have a more extravagant entrance animation for our modal
+              windows. Limitations within iOS Safari however prevent us from doing this; at the time
+              of writing you cannot animate <C>transform: translate()</C> in conjunction the use of{' '}
+              <C>-webkit-overflow-scrolling: touch</C>.
             </T>
           </Note>
           <Specimen
@@ -84,11 +82,9 @@ export default class ModalDocumentation extends Component {
               >
                 { /* Modal window */ }
               </ModalAnimator>
-            ` }
+            `}
           >
-            <Placeholder onClick={this.toggleAnimator}>
-              Trigger modal
-            </Placeholder>
+            <Placeholder onClick={this.toggleAnimator}>Trigger modal</Placeholder>
             <ModalAnimator active={showAnimator} onClose={this.toggleAnimator}>
               <div className={css.exampleModal}>
                 <button onClick={this.toggleAnimator}>Close</button>
@@ -101,8 +97,7 @@ export default class ModalDocumentation extends Component {
             Using the standard <C>Window</C> component
           </H>
           <T elm="p" className={m.mtr}>
-            This is an actionable modal. Typically used when an action(s) is
-            required by a user.
+            This is an actionable modal. Typically used when an action(s) is required by a user.
           </T>
           <Specimen
             classNames={{
@@ -130,28 +125,21 @@ export default class ModalDocumentation extends Component {
                   { /* Modal content */ }
                 </Window>
               </ModalAnimator>
-            ` }
+            `}
           >
             <Placeholder onClick={this.toggleWindow}>Trigger modal</Placeholder>
-            <ModalAnimator
-              active={showWindow}
-              onClose={this.toggleWindow}
-            >
+            <ModalAnimator active={showWindow} onClose={this.toggleWindow}>
               <Window
-                header={
-                  <WindowTitle>The power of good design</WindowTitle>
-                }
-                footer={(
-                  <Btn
-                    context="primary"
-                    className={m.widthFull}
-                    onClick={this.toggleWindow}
-                  >
+                header={<WindowTitle>The power of good design</WindowTitle>}
+                footer={
+                  <Btn context="primary" className={m.widthFull} onClick={this.toggleWindow}>
                     Confirm
                   </Btn>
-                )}
+                }
               >
-                <Markdown className={markdown} overrideClassname>{ exampleContent }</Markdown>
+                <Markdown className={markdown} overrideClassname>
+                  {exampleContent}
+                </Markdown>
               </Window>
             </ModalAnimator>
           </Specimen>
@@ -174,29 +162,22 @@ export default class ModalDocumentation extends Component {
                   { /* Modal content */ }
                 </Window>
               </ModalAnimator>
-            ` }
+            `}
           >
             <Placeholder onClick={this.toggleWindowDark}>Trigger modal</Placeholder>
-            <ModalAnimator
-              active={showWindowDark}
-              onClose={this.toggleWindowDark}
-            >
+            <ModalAnimator active={showWindowDark} onClose={this.toggleWindowDark}>
               <Window
                 variant="dark"
-                header={
-                  <WindowTitle>The power of good design</WindowTitle>
-                }
-                footer={(
-                  <Btn
-                    context="primary"
-                    className={m.widthFull}
-                    onClick={this.toggleWindowDark}
-                  >
+                header={<WindowTitle>The power of good design</WindowTitle>}
+                footer={
+                  <Btn context="primary" className={m.widthFull} onClick={this.toggleWindowDark}>
                     Confirm
                   </Btn>
-                )}
+                }
               >
-                <Markdown className={markdown} overrideClassname>{ exampleContent }</Markdown>
+                <Markdown className={markdown} overrideClassname>
+                  {exampleContent}
+                </Markdown>
               </Window>
             </ModalAnimator>
           </Specimen>
@@ -206,8 +187,7 @@ export default class ModalDocumentation extends Component {
             Using the <C>WithCross</C> component
           </H>
           <T elm="p" className={m.mtr}>
-            This is your typical modal. Use to display non actionable messaging
-            to a user.
+            This is your typical modal. Use to display non actionable messaging to a user.
           </T>
           <Specimen
             classNames={{
@@ -222,15 +202,14 @@ export default class ModalDocumentation extends Component {
                   { /* Modal content */ }
                 </WithCross>
               </ModalAnimator>
-            ` }
+            `}
           >
             <Placeholder onClick={this.toggleWithCross}>Trigger modal</Placeholder>
-            <ModalAnimator
-              active={showWithCross}
-              onClose={this.toggleWithCross}
-            >
+            <ModalAnimator active={showWithCross} onClose={this.toggleWithCross}>
               <WithCross onClose={this.toggleWithCross}>
-                <Markdown className={markdown} overrideClassname>{ exampleContent }</Markdown>
+                <Markdown className={markdown} overrideClassname>
+                  {exampleContent}
+                </Markdown>
               </WithCross>
             </ModalAnimator>
           </Specimen>
@@ -238,8 +217,8 @@ export default class ModalDocumentation extends Component {
             Dark variant
           </H>
           <T elm="p" className={m.mtr}>
-            Similarly with the <C>Window</C> component, you should use the <C>dark</C> variant
-            when using this component on a dark interface.
+            Similarly with the <C>Window</C> component, you should use the <C>dark</C> variant when
+            using this component on a dark interface.
           </T>
           <Specimen
             classNames={{
@@ -257,15 +236,14 @@ export default class ModalDocumentation extends Component {
                   { /* Modal content */ }
                 </WithCross>
               </ModalAnimator>
-            ` }
+            `}
           >
             <Placeholder onClick={this.toggleWithCrossDark}>Trigger modal</Placeholder>
-            <ModalAnimator
-              active={showWithCrossDark}
-              onClose={this.toggleWithCrossDark}
-            >
+            <ModalAnimator active={showWithCrossDark} onClose={this.toggleWithCrossDark}>
               <WithCross variant="dark" onClose={this.toggleWithCrossDark}>
-                <Markdown className={markdown} overrideClassname>{ exampleContent }</Markdown>
+                <Markdown className={markdown} overrideClassname>
+                  {exampleContent}
+                </Markdown>
               </WithCross>
             </ModalAnimator>
           </Specimen>

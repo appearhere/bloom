@@ -5,14 +5,16 @@ import DeviceFrame from './DeviceFrame';
 import Macbook from './Macbook';
 import IPhone from './IPhone';
 
-
-const images = [{
-  src: '',
-  alt: '',
-}, {
-  src: '',
-  alt: '',
-}];
+const images = [
+  {
+    src: '',
+    alt: '',
+  },
+  {
+    src: '',
+    alt: '',
+  },
+];
 
 const css = {
   root: '',
@@ -26,9 +28,9 @@ describe('Device frame', () => {
     const div = document.createElement('div');
     render(
       <DeviceFrame deviceImage="" css={css}>
-        { images }
+        {images}
       </DeviceFrame>,
-      div
+      div,
     );
   });
 });
@@ -36,23 +38,13 @@ describe('Device frame', () => {
 describe('Macbook device frame', () => {
   it('renders without crashing', () => {
     const div = document.createElement('div');
-    render(
-      <Macbook>
-        { images }
-      </Macbook>,
-      div
-    );
+    render(<Macbook>{images}</Macbook>, div);
   });
 });
 
 describe('IPhone device frame', () => {
   it('renders without crashing', () => {
     const div = document.createElement('div');
-    render(
-      <IPhone>
-        { images }
-      </IPhone>,
-      div
-    );
+    render(<IPhone>{images}</IPhone>, div);
   });
 });

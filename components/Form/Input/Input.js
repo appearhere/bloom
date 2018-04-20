@@ -36,14 +36,7 @@ export default class Input extends Component {
      * Subset of the HTML5 spec, as other types will most likely have their
      * own, bespoke component
      */
-    type: PropTypes.oneOf([
-      'text',
-      'email',
-      'password',
-      'search',
-      'url',
-      'textarea',
-    ]),
+    type: PropTypes.oneOf(['text', 'email', 'password', 'search', 'url', 'textarea']),
     priority: PropTypes.oneOf(['high', 'low']),
   };
 
@@ -59,32 +52,32 @@ export default class Input extends Component {
 
   state = {
     hasFocus: false,
-  }
+  };
 
   focus = () => {
     this.input.focus();
     this.handleFocus();
-  }
+  };
 
   blur = () => {
     this.input.blur();
     this.handleBlur();
-  }
+  };
 
   handleFocus = () => {
     const { onFocus } = this.props;
     this.setState({ hasFocus: true }, onFocus);
-  }
+  };
 
   handleBlur = () => {
     const { onBlur } = this.props;
     this.setState({ hasFocus: false }, onBlur);
-  }
+  };
 
-  handleChange = (e) => {
+  handleChange = e => {
     const { onChange, name } = this.props;
     onChange(e, name, e.target.value);
-  }
+  };
 
   render() {
     const { hasFocus } = this.state;
@@ -117,7 +110,9 @@ export default class Input extends Component {
       <div className={mergedClassNames.wrapper}>
         <InputComponent
           {...rest}
-          ref={(c) => { this.input = c; }}
+          ref={c => {
+            this.input = c;
+          }}
           className={classes}
           name={name}
           id={id}
@@ -137,13 +132,7 @@ export default class Input extends Component {
           transitionAppearTimeout={500}
           transitionAppear
         >
-          { error && (
-            <div
-              className={mergedClassNames.errorMsg}
-            >
-              { error }
-            </div>
-          ) }
+          {error && <div className={mergedClassNames.errorMsg}>{error}</div>}
         </CSSTransitionGroup>
       </div>
     );

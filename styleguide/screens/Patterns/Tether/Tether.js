@@ -30,7 +30,7 @@ export default class TetherDocumentation extends Component {
     flushHorizontal: false,
   };
 
-  handleVerticalAttachmentChange = (e) => {
+  handleVerticalAttachmentChange = e => {
     const { value: attachment } = e.target;
 
     this.setState({
@@ -38,7 +38,7 @@ export default class TetherDocumentation extends Component {
     });
   };
 
-  handleHorizontallAttachmentChange = (e) => {
+  handleHorizontallAttachmentChange = e => {
     const { value: attachment } = e.target;
 
     this.setState({
@@ -46,7 +46,7 @@ export default class TetherDocumentation extends Component {
     });
   };
 
-  handleFlushVerticalChange = (e) => {
+  handleFlushVerticalChange = e => {
     const { checked: flushVertical } = e.target;
 
     this.setState({
@@ -54,7 +54,7 @@ export default class TetherDocumentation extends Component {
     });
   };
 
-  handleFlushHorizontalChange = (e) => {
+  handleFlushHorizontalChange = e => {
     const { checked: flushHorizontal } = e.target;
 
     this.setState({
@@ -63,38 +63,35 @@ export default class TetherDocumentation extends Component {
   };
 
   render() {
-    const {
-      verticalAttachment,
-      horizontalAttachment,
-      flushVertical,
-      flushHorizontal,
-    } = this.state;
+    const { verticalAttachment, horizontalAttachment, flushVertical, flushHorizontal } = this.state;
 
     return (
       <div>
         <H level={1}>Tether</H>
         <T elm="p" className={cx(m.mtr, m.largeI, m.demi)}>
-          The <C>Tether</C> component allows you define and manage the position of an element
-          in relation to another element.
+          The <C>Tether</C> component allows you define and manage the position of an element in
+          relation to another element.
         </T>
         <D>
           <T elm="p" className={m.mtr}>
             Tether is useful where you need to position a element in relation to another element.
-            It’s great as the foundation for other components such as { ' ' }
-            <Link className={scaffoldCss.link} to="/patterns/dropdown">Dropdown</Link>.
+            It’s great as the foundation for other components such as{' '}
+            <Link className={scaffoldCss.link} to="/patterns/dropdown">
+              Dropdown
+            </Link>.
           </T>
           <T elm="p" className={m.mtr}>
-            A useful fact about the Tether component is that it will reposition itself back into
-            the viewport if incorrect horizontal and vertical positioning or scrolling cause it to
-            move outside of the viewport.
+            A useful fact about the Tether component is that it will reposition itself back into the
+            viewport if incorrect horizontal and vertical positioning or scrolling cause it to move
+            outside of the viewport.
           </T>
           <Note className={m.mtr}>
             <T elm="p">
-              It is best to avoid using the <C>Tether</C> component with a target with { ' ' }
+              It is best to avoid using the <C>Tether</C> component with a target with{' '}
               <C>position: fixed</C> as it will break the repositioning functionality.
             </T>
           </Note>
-          <div className={css.controls} >
+          <div className={css.controls}>
             <div className={css.control}>
               <Label className={css.label} htmlFor="verticalAttachment">
                 vertical attachment
@@ -164,7 +161,7 @@ export default class TetherDocumentation extends Component {
               >
                 <div />
               </Tether>
-            ` }
+            `}
           >
             <Tether
               target={<Target />}
@@ -179,8 +176,8 @@ export default class TetherDocumentation extends Component {
           </Specimen>
           <T elm="p" className={m.mtr}>
             Passing the <C>flushHorizontal</C> will align the tether element so it is parallel to
-            the <C>horizontalAttachment</C> and the <C>flushVertical</C> prop will align the
-            element so it is parallel to the <C>verticalAttachment</C>.
+            the <C>horizontalAttachment</C> and the <C>flushVertical</C> prop will align the element
+            so it is parallel to the <C>verticalAttachment</C>.
           </T>
         </D>
       </div>
