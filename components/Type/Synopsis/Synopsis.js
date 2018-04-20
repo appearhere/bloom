@@ -4,25 +4,15 @@ import cx from 'classnames';
 
 import css from './Synopsis.css';
 
-const bodyClasses = cx(
-  css.base,
-  css.body,
-);
+const bodyClasses = cx(css.base, css.body);
 
 const Synopsis = ({ title, children, className, level, ...rest }) => {
-  const titleClasses = cx(
-    css.base,
-    css.title,
-  );
+  const titleClasses = cx(css.base, css.title);
 
   return (
     <div className={className} {...rest}>
-      { createElement(
-        `h${level}`,
-        { className: titleClasses, ...rest },
-        title
-      ) }
-      <div className={bodyClasses}>{ children }</div>
+      {createElement(`h${level}`, { className: titleClasses, ...rest }, title)}
+      <div className={bodyClasses}>{children}</div>
     </div>
   );
 };

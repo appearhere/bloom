@@ -9,7 +9,6 @@ import css from './WithCross.css';
 import Icon from '../Icon/Icon';
 import BtnContainer from '../BtnContainer/BtnContainer';
 
-
 /**
  * TODO: Figure out react-motion compatible focus trap
  */
@@ -26,24 +25,14 @@ class WindowWithCross extends Component {
   };
 
   render() {
-    const {
-      children,
-      onClose,
-      variant,
-      ...rest
-    } = this.props;
+    const { children, onClose, variant, ...rest } = this.props;
 
     return (
-      <Window
-        {...rest}
-        variant={variant}
-      >
+      <Window {...rest} variant={variant}>
         <BtnContainer className={css.dismissContainer} onClick={onClose}>
           <Icon className={css.icon} name="cross" />
         </BtnContainer>
-        <div className={cx(css.inner, m.cf)}>
-          { children }
-        </div>
+        <div className={cx(css.inner, m.cf)}>{children}</div>
       </Window>
     );
   }

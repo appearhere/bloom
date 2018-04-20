@@ -12,7 +12,7 @@ const Colors = () => (
     <D>
       <H level={2}>Brand</H>
       <div className={css.colorGroup}>
-        { brand.map(color => (
+        {brand.map(color => (
           <Swatch
             key={color.id}
             className={css.color}
@@ -21,13 +21,13 @@ const Colors = () => (
             rgb={color.rgb}
             variable={color.variable}
           />
-        )) }
+        ))}
       </div>
     </D>
     <D>
       <H level={2}>Greys</H>
       <div className={css.colorGroup}>
-        { greys.map(color => (
+        {greys.map(color => (
           <Swatch
             key={color.id}
             className={css.color}
@@ -36,13 +36,13 @@ const Colors = () => (
             rgb={color.rgb}
             variable={color.variable}
           />
-        )) }
+        ))}
       </div>
     </D>
     <D>
       <H level={2}>UI</H>
       <div className={css.colorGroup}>
-        { ui.map(color => (
+        {ui.map(color => (
           <Swatch
             key={color.id}
             className={css.color}
@@ -51,7 +51,7 @@ const Colors = () => (
             rgb={color.rgb}
             variable={color.variable}
           />
-        )) }
+        ))}
       </div>
     </D>
   </div>

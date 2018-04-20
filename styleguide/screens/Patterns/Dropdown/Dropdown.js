@@ -11,7 +11,7 @@ import css from './Dropdown.css';
 
 // eslint-disable-next-line react/prop-types
 const Target = ({ onClick, placeholderText }) => (
-  <Placeholder onClick={onClick}>{ placeholderText }</Placeholder>
+  <Placeholder onClick={onClick}>{placeholderText}</Placeholder>
 );
 
 export default class DropdownDocumentation extends Component {
@@ -33,8 +33,8 @@ export default class DropdownDocumentation extends Component {
         <H level={1}>Dropdown</H>
         <T elm="p" className={cx(m.mtr, m.largeI, m.demi)}>
           Dropdowns are toggleable overlays. They’re typically used to add additional information or
-          functionality to a given element. Only trigger the display of a dropdown using
-          a <C>click</C>.
+          functionality to a given element. Only trigger the display of a dropdown using a{' '}
+          <C>click</C>.
         </T>
         <D>
           <T elm="p" className={m.mtr}>
@@ -53,7 +53,7 @@ export default class DropdownDocumentation extends Component {
             >
               <DropdownContent />
             </Dropdown>
-          ` }
+          `}
           >
             <Dropdown
               horizontalAttachment={HORIZONTAL_ATTACHMENTS.LEFT}
@@ -71,15 +71,15 @@ export default class DropdownDocumentation extends Component {
             </Dropdown>
           </Specimen>
           <Note className={m.mtr}>
-            For consistency’s sake, all dropdowns also wrap their content in { ' ' }
-            <C>DropdownInner</C> component.
+            For consistency’s sake, all dropdowns also wrap their content in <C>DropdownInner</C>{' '}
+            component.
           </Note>
           <T elm="p" className={m.mtr}>
             Be cautious when using dropdowns, especially the case where you are hiding away
-            important functionality from the user. Defaulting to a dropdown, or a form of
-            "overflow menu" may result in a "cleaner" interface. However, we’re simply hiding the
-            complexity as opposed to solving it. By limiting ourselves from using this sort of
-            design, it encourages us to make tough decisions, resulting in much better product.
+            important functionality from the user. Defaulting to a dropdown, or a form of "overflow
+            menu" may result in a "cleaner" interface. However, we’re simply hiding the complexity
+            as opposed to solving it. By limiting ourselves from using this sort of design, it
+            encourages us to make tough decisions, resulting in much better product.
           </T>
           <T elm="p" className={m.mtr}>
             In scenario&#39;s where an "overflow menu" is hard to avoid:
@@ -94,8 +94,8 @@ export default class DropdownDocumentation extends Component {
               e.g., "More filters" vs "More".
             </T>
             <T elm="li">
-              Never mix action types in an overflow menu. This causes confusion for the user,
-              as they are unable to predict what is hidden in the dropdown.
+              Never mix action types in an overflow menu. This causes confusion for the user, as
+              they are unable to predict what is hidden in the dropdown.
             </T>
           </List>
           <Bq

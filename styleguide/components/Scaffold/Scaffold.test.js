@@ -1,15 +1,7 @@
 import React from 'react';
 import { render } from 'react-dom';
 
-import {
-  H,
-  T,
-  D,
-  C,
-  A,
-  Dl,
-  Placeholder,
-} from './Scaffold';
+import { H, T, D, C, A, Dl, Placeholder } from './Scaffold';
 
 describe('Scaffold components', () => {
   describe('H', () => {

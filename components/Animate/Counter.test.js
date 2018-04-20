@@ -13,12 +13,14 @@ it('transforms the value as expect', () => {
   let component;
   render(
     <Counter
-      ref={(c) => { component = c; }}
+      ref={c => {
+        component = c;
+      }}
       startValue={0}
       endValue={0}
       transform={val => `£${val}`}
     />,
-    div
+    div,
   );
 
   expect(findDOMNode(component).innerHTML).toBe('£0');

@@ -1,11 +1,7 @@
 import React from 'react';
 import { render } from 'react-dom';
 
-import {
-  NextLink,
-  PreviousLink,
-  PaginationLink,
-} from './PaginationLink';
+import { NextLink, PreviousLink, PaginationLink } from './PaginationLink';
 
 describe('PaginationLink', () => {
   it('renders without crashing', () => {

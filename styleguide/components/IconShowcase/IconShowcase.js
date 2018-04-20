@@ -22,7 +22,7 @@ const IconShowcase = ({ className, name, size, value, render }) => (
     name={name}
     attributes={[value]}
   >
-    { render({ value }) }
+    {render({ value })}
   </Specimen>
 );
 

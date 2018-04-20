@@ -60,13 +60,13 @@ export default class ModalAnimator extends Component {
     window.removeEventListener('keyup', this.keyupEvent);
   }
 
-  handleKeyUp = (e) => {
+  handleKeyUp = e => {
     const { closeOnEsc, onClose } = this.props;
     const { keyCode } = e;
     if (closeOnEsc && keyCode === ESC) onClose(e);
   };
 
-  handleClick = (e) => {
+  handleClick = e => {
     const { closeOnOutsideClick, onClose } = this.props;
     const { target } = e;
 
@@ -94,7 +94,9 @@ export default class ModalAnimator extends Component {
     return (
       <Portal>
         <div
-          ref={(c) => { this.modal = c; }}
+          ref={c => {
+            this.modal = c;
+          }}
           onClick={this.handleClick}
         >
           <div className={css.root}>
@@ -106,9 +108,11 @@ export default class ModalAnimator extends Component {
             >
               <div
                 className={cx(css.window, windowClassName)}
-                ref={(c) => { this.modalWindow = c; }}
+                ref={c => {
+                  this.modalWindow = c;
+                }}
               >
-                { children }
+                {children}
               </div>
             </div>
           </div>

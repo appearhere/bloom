@@ -17,7 +17,7 @@ export default class Sunrise extends Component {
   static defaultProps = {
     start: true,
     transitionDelay: 0,
-  }
+  };
 
   constructor(props) {
     super(props);
@@ -33,7 +33,7 @@ export default class Sunrise extends Component {
     if (start && visible) this.hasPlayed();
   }
 
-  handleChange = (visible) => {
+  handleChange = visible => {
     const { start } = this.props;
 
     this.setState({
@@ -41,15 +41,14 @@ export default class Sunrise extends Component {
     });
 
     if (visible && start) this.hasPlayed();
-  }
-
+  };
 
   hasPlayed = () => {
     const { hasPlayed } = this.state;
     if (hasPlayed) return;
 
     this.setState({ hasPlayed: true });
-  }
+  };
 
   render() {
     const { children, percent, start, transitionDelay } = this.props;
@@ -65,7 +64,7 @@ export default class Sunrise extends Component {
             transitionDelay: `${transitionDelay}ms`,
           }}
         >
-          { children }
+          {children}
         </div>
       </OnVisible>
     );

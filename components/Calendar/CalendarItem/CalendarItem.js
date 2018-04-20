@@ -14,17 +14,8 @@ export const defaultClassNames = {
   outOfRange: css.outOfRange,
 };
 
-const CalendarDay = (props) => {
-  const {
-    day,
-    format,
-    className,
-    dayClassName,
-    classNames,
-    today,
-    outOfRange,
-    ...rest
-  } = props;
+const CalendarDay = props => {
+  const { day, format, className, dayClassName, classNames, today, outOfRange, ...rest } = props;
 
   const classes = cx(
     classNames.root,
@@ -35,12 +26,10 @@ const CalendarDay = (props) => {
 
   return day ? (
     <div {...rest} className={classes}>
-      <span className={dayClassName}>{ day.format(format) }</span>
+      <span className={dayClassName}>{day.format(format)}</span>
     </div>
   ) : (
-    <div className={classes}>
-      { '\u00a0' }
-    </div>
+    <div className={classes}>{'\u00a0'}</div>
   );
 };
 

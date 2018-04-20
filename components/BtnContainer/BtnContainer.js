@@ -20,12 +20,8 @@ export default class BtnContainer extends Component {
     const classes = cx(css.root, className);
 
     return (
-      <button
-        className={classes}
-        type={type}
-        {...rest}
-      >
-        { children }
+      <button className={classes} type={type} {...rest}>
+        {children}
       </button>
     );
   }

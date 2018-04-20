@@ -10,24 +10,22 @@ const style = {
   display: 'inline-block',
 };
 
-const grid = [{
-  key: 'success',
-  className: m.bgSuccess,
-  style,
-}, {
-  key: 'danger',
-  className: m.bgDanger,
-  style,
-}, {
-  key: 'primary',
-  className: m.bgPrimary,
-  style,
-}];
+const grid = [
+  {
+    key: 'success',
+    className: m.bgSuccess,
+    style,
+  },
+  {
+    key: 'danger',
+    className: m.bgDanger,
+    style,
+  },
+  {
+    key: 'primary',
+    className: m.bgPrimary,
+    style,
+  },
+];
 
-storiesOf('GridFader', module)
-  .add('default', () => (
-    <GridFader
-      grid={grid}
-      limit={2}
-    />
-  ));
+storiesOf('GridFader', module).add('default', () => <GridFader grid={grid} limit={2} />);

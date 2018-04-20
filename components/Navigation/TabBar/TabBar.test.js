@@ -10,6 +10,6 @@ it('renders without crashing', () => {
       <span />
       <span />
     </TabBar>,
-    div
+    div,
   );
 });

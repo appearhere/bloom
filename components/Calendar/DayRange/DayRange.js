@@ -70,13 +70,13 @@ export default class DayRange extends Component {
               selectDate === SELECT_DATE.START ? mergedClassNames.btnActive : null,
             )}
           >
-            { startDate ? (
-              <Value className={mergedClassNames.value}>{ startDate }</Value>
+            {startDate ? (
+              <Value className={mergedClassNames.value}>{startDate}</Value>
             ) : (
               <Placeholder className={mergedClassNames.placeholder}>
-                { startDatePlaceholder }
+                {startDatePlaceholder}
               </Placeholder>
-            ) }
+            )}
           </BtnContainer>
           <Icon className={mergedClassNames.arrow} name="arrow" />
           <BtnContainer
@@ -87,13 +87,13 @@ export default class DayRange extends Component {
             )}
             type="button"
           >
-            { endDate ? (
-              <Value className={mergedClassNames.value}>{ endDate }</Value>
+            {endDate ? (
+              <Value className={mergedClassNames.value}>{endDate}</Value>
             ) : (
               <Placeholder className={mergedClassNames.placeholder}>
-                { endDatePlaceholder }
+                {endDatePlaceholder}
               </Placeholder>
-            ) }
+            )}
           </BtnContainer>
         </div>
       </div>

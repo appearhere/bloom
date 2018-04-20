@@ -19,10 +19,7 @@ export default class BaseMap extends Component {
     className: PropTypes.string,
     dragRotate: PropTypes.bool,
     mapClassName: PropTypes.string,
-    mapboxStyle: PropTypes.oneOfType([
-      PropTypes.string,
-      PropTypes.object,
-    ]),
+    mapboxStyle: PropTypes.oneOfType([PropTypes.string, PropTypes.object]),
     maxZoom: PropTypes.number,
     onClick: PropTypes.func,
     onMapLoad: PropTypes.func,
@@ -69,7 +66,9 @@ export default class BaseMap extends Component {
     this.map.on('click', onClick);
     this.map.on('movestart', this.handleMoveStart);
     this.map.on('moveend', this.handleMoveEnd);
-    this.map.on('load', (event) => { onMapLoad(event.target); });
+    this.map.on('load', event => {
+      onMapLoad(event.target);
+    });
   }
 
   componentWillUnmount() {
@@ -85,7 +84,7 @@ export default class BaseMap extends Component {
     return this.map;
   }
 
-  setCenter = (center) => {
+  setCenter = center => {
     this.map.setCenter(center, { user: false });
   };
 
@@ -97,7 +96,7 @@ export default class BaseMap extends Component {
     this.map.fitBounds(bounds, options, { user: false });
   }
 
-  handleMoveEnd = (data) => {
+  handleMoveEnd = data => {
     const { onMoveEnd } = this.props;
     const { user, ...rest } = data;
 
@@ -113,11 +112,11 @@ export default class BaseMap extends Component {
     );
   };
 
-  handleMoveStart = (e) => {
+  handleMoveStart = e => {
     const { onMoveStart } = this.props;
 
     onMoveStart(e);
-  }
+  };
 
   zoomIn = () => {
     this.map.zoomIn();
@@ -139,7 +138,12 @@ export default class BaseMap extends Component {
           backgroundImage: `url(${tile})`,
         }}
       >
-        <div ref={(c) => { this.mapContainer = c; }} className={cx(css.map, mapClassName)} />
+        <div
+          ref={c => {
+            this.mapContainer = c;
+          }}
+          className={cx(css.map, mapClassName)}
+        />
       </div>
     );
   }

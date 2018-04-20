@@ -8,13 +8,7 @@ import css from './SpaceGroupMarker.css';
 
 const SpaceGroupMarker = ({ group, ...rest }) => (
   <Marker {...rest}>
-    { group.map(space => (
-      <CondensedSpaceCard
-        className={css.card}
-        key={space.id}
-        {...space}
-      />
-    )) }
+    {group.map(space => <CondensedSpaceCard className={css.card} key={space.id} {...space} />)}
   </Marker>
 );
 

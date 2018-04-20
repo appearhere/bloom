@@ -44,11 +44,11 @@ class EditorialCard extends Component {
       ...rest
     } = this.props;
 
-    const renderHorizontal = (allowHorizontal && containerQuery[css.horizontal]) ||
-      forceHorizontal;
+    const renderHorizontal = (allowHorizontal && containerQuery[css.horizontal]) || forceHorizontal;
 
     const classes = cx(
-      css.root, {
+      css.root,
+      {
         ...containerQuery,
         [css.horizontal]: renderHorizontal,
       },
@@ -58,15 +58,11 @@ class EditorialCard extends Component {
     return (
       <Card {...rest} className={classes}>
         <div className={css.imageContainer}>
-          <FittedImage
-            src={src}
-            alt={title}
-            className={css.image}
-          />
+          <FittedImage src={src} alt={title} className={css.image} />
         </div>
         <div className={css.content}>
-          <span className={css.title}>{ title }</span>
-          <div className={css.body}>{ children }</div>
+          <span className={css.title}>{title}</span>
+          <div className={css.body}>{children}</div>
         </div>
       </Card>
     );

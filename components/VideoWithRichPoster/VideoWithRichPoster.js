@@ -9,14 +9,10 @@ import Video from '../Video/Video';
 
 export default class VideoWithPoster extends Component {
   static propTypes = {
-    posterSrc: PropTypes.oneOfType([
-      PropTypes.arrayOf(PropTypes.element),
-      PropTypes.element,
-    ]).isRequired,
-    videoSrc: PropTypes.oneOfType([
-      PropTypes.arrayOf(PropTypes.element),
-      PropTypes.element,
-    ]).isRequired,
+    posterSrc: PropTypes.oneOfType([PropTypes.arrayOf(PropTypes.element), PropTypes.element])
+      .isRequired,
+    videoSrc: PropTypes.oneOfType([PropTypes.arrayOf(PropTypes.element), PropTypes.element])
+      .isRequired,
     className: PropTypes.string,
     posterClassName: PropTypes.string,
     videoClassName: PropTypes.string,
@@ -39,44 +35,30 @@ export default class VideoWithPoster extends Component {
   };
 
   render() {
-    const {
-      videoSrc,
-      posterSrc,
-      className,
-      videoClassName,
-      posterClassName,
-    } = this.props;
+    const { videoSrc, posterSrc, className, videoClassName, posterClassName } = this.props;
     const { isPlaying } = this.state;
 
     return (
       <div className={cx(css.root, className)}>
-        { isPlaying ? (
+        {isPlaying ? (
           <Video
             className={cx(css.video, css.overlay, videoClassName)}
             key="video"
             autoPlay
             controls
           >
-            { videoSrc }
+            {videoSrc}
           </Video>
         ) : (
           <div>
-            <Video
-              className={cx(css.video, posterClassName)}
-              autoPlay
-              loop
-              muted
-            >
-              { posterSrc }
+            <Video className={cx(css.video, posterClassName)} autoPlay loop muted>
+              {posterSrc}
             </Video>
             <Controls>
-              <PlayBtn
-                playPause={this.handleToggleVideo}
-                paused
-              />
+              <PlayBtn playPause={this.handleToggleVideo} paused />
             </Controls>
           </div>
-        ) }
+        )}
       </div>
     );
   }

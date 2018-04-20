@@ -12,12 +12,11 @@ const MedallionDocumentation = () => (
   <div>
     <H level={1}>Medallion</H>
     <T elm="p" className={cx(m.mtr, m.largeI, m.demi)}>
-      Medallions are used to display a numerical value alongside  other
-      information, such as a label.
+      Medallions are used to display a numerical value alongside other information, such as a label.
     </T>
     <T elm="p" className={m.mtLgIi}>
-      Medallions currently exist in 2 variations, <C>light</C> for dark
-      backgrounds, and <C>dark</C> for lighter backgrounds.
+      Medallions currently exist in 2 variations, <C>light</C> for dark backgrounds, and <C>dark</C>{' '}
+      for lighter backgrounds.
     </T>
     <div className={css.group}>
       <Specimen

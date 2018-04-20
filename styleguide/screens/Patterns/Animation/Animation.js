@@ -29,9 +29,9 @@ export default class Animation extends Component {
         <D>
           <H level={2}>Roll</H>
           <T elm="p" className={m.mtr}>
-            <C>Roll</C> allows us to transition between two elements, pushing one
-            out, while pushing another in. This can be useful for highlighting a
-            change of state, where the resulting interface change is not obvious.
+            <C>Roll</C> allows us to transition between two elements, pushing one out, while pushing
+            another in. This can be useful for highlighting a change of state, where the resulting
+            interface change is not obvious.
           </T>
           <Specimen
             classNames={{
@@ -47,14 +47,11 @@ export default class Animation extends Component {
                   }
                 </Roll>
               </Btn>
-            ` }
+            `}
           >
             <Btn onClick={this.toggleRoll}>
               <Roll width="10rem">
-                { roll
-                  ? <span id="list">Show list</span>
-                  : <span id="map">Show map</span>
-                }
+                {roll ? <span id="list">Show list</span> : <span id="map">Show map</span>}
               </Roll>
             </Btn>
           </Specimen>

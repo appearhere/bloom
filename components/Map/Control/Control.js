@@ -5,11 +5,8 @@ import cx from 'classnames';
 import css from './Control.css';
 
 const Control = ({ className, children, ...rest }) => (
-  <button
-    className={cx(css.root, className)}
-    {...rest}
-  >
-    { children }
+  <button className={cx(css.root, className)} {...rest}>
+    {children}
   </button>
 );
 

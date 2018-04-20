@@ -9,5 +9,6 @@ it('renders without crashing', () => {
     <ControlGroup>
       <button>child</button>
     </ControlGroup>,
-  div);
+    div,
+  );
 });

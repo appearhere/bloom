@@ -38,14 +38,11 @@ export default class MarkableMap extends Component {
   static propTypes = {
     markers: PropTypes.arrayOf(
       PropTypes.shape({
-        id: PropTypes.oneOfType([
-          PropTypes.string,
-          PropTypes.number,
-        ]).isRequired,
+        id: PropTypes.oneOfType([PropTypes.string, PropTypes.number]).isRequired,
         lngLat: lngLatType.isRequired,
         label: PropTypes.string.isRequired,
         props: PropTypes.object,
-      })
+      }),
     ),
     metaMarkers: PropTypes.array,
     colorStops: PropTypes.arrayOf(PropTypes.array),
@@ -99,7 +96,7 @@ export default class MarkableMap extends Component {
     }
 
     if (autoFit) {
-      const markersMoved = markers.some((marker) => {
+      const markersMoved = markers.some(marker => {
         const prevMarker = prevMarkers.find(prev => prev.id === marker.id);
         return !prevMarker || !isEqual(prevMarker.lngLat, marker.lngLat);
       });
@@ -132,7 +129,7 @@ export default class MarkableMap extends Component {
     return undefined;
   };
 
-  setCenter = (center) => {
+  setCenter = center => {
     this.map.setCenter(center);
   };
 
@@ -156,12 +153,7 @@ export default class MarkableMap extends Component {
       id: MARKER_LAYER,
       type: DEFAULT_MARKER_CONFIG.type,
       source: MARKER_SOURCE,
-      filter: [
-        'all',
-        ['!=', 'active', true],
-        ['!has', 'point_count'],
-        ['!=', 'highlighted', true],
-      ],
+      filter: ['all', ['!=', 'active', true], ['!has', 'point_count'], ['!=', 'highlighted', true]],
       layout: {
         'icon-allow-overlap': true,
         'text-allow-overlap': true,
@@ -180,12 +172,7 @@ export default class MarkableMap extends Component {
       id: HIGHLIGHTED_MARKER_LAYER,
       type: DEFAULT_MARKER_CONFIG.type,
       source: MARKER_SOURCE,
-      filter: [
-        'all',
-        ['!=', 'active', true],
-        ['!has', 'point_count'],
-        ['==', 'highlighted', true],
-      ],
+      filter: ['all', ['!=', 'active', true], ['!has', 'point_count'], ['==', 'highlighted', true]],
       layout: {
         'icon-allow-overlap': true,
         'text-allow-overlap': true,
@@ -204,11 +191,7 @@ export default class MarkableMap extends Component {
       id: CLUSTER_LAYER,
       type: DEFAULT_MARKER_CONFIG.type,
       source: MARKER_SOURCE,
-      filter: [
-        'all',
-        ['has', 'point_count'],
-        ['!=', 'highlighted', true],
-      ],
+      filter: ['all', ['has', 'point_count'], ['!=', 'highlighted', true]],
       layout: {
         'icon-image': 'pin-cluster',
         'text-field': '{point_count}',
@@ -222,11 +205,7 @@ export default class MarkableMap extends Component {
       id: HIGHLIGHTED_CLUSTER_LAYER,
       type: DEFAULT_MARKER_CONFIG.type,
       source: MARKER_SOURCE,
-      filter: [
-        'all',
-        ['has', 'point_count'],
-        ['==', 'highlighted', true],
-      ],
+      filter: ['all', ['has', 'point_count'], ['==', 'highlighted', true]],
       layout: {
         'icon-image': 'pin-cluster-highlight',
         'text-field': '{point_count}',
@@ -237,7 +216,7 @@ export default class MarkableMap extends Component {
     });
 
     // When hovering on a marker change the cursor to a pointer
-    mapbox.on('mousemove', (e) => {
+    mapbox.on('mousemove', e => {
       const features = mapbox.queryRenderedFeatures(e.point, {
         layers: [MARKER_LAYER, CLUSTER_LAYER],
       });
@@ -274,19 +253,16 @@ export default class MarkableMap extends Component {
     });
   };
 
-  updateMetaMarkerSource = (prevMetaMarkers) => {
+  updateMetaMarkerSource = prevMetaMarkers => {
     const { metaMarkers } = this.props;
     const mapbox = this.getMapboxGL();
 
     if (prevMetaMarkers) {
-      prevMetaMarkers.forEach((prevMetaMarker) => {
+      prevMetaMarkers.forEach(prevMetaMarker => {
         const prevMetaMarkerSource = mapbox.getSource(prevMetaMarker.id);
         const prevMetaMarkerLayer = mapbox.getLayer(prevMetaMarker.id);
 
-        if (
-          (prevMetaMarkerSource && prevMetaMarkerLayer) &&
-          !metaMarkers.includes(prevMetaMarker)
-        ) {
+        if (prevMetaMarkerSource && prevMetaMarkerLayer && !metaMarkers.includes(prevMetaMarker)) {
           mapbox.removeSource(prevMetaMarker.id);
           mapbox.removeLayer(prevMetaMarker.id);
         }
@@ -318,7 +294,7 @@ export default class MarkableMap extends Component {
     });
   };
 
-  handleMapClick = (e) => {
+  handleMapClick = e => {
     const { originalEvent, point } = e;
     if (originalEvent.target !== this.getMapboxGL().getCanvas()) return;
 
@@ -334,14 +310,14 @@ export default class MarkableMap extends Component {
     }
   };
 
-  handleMarkerClick = (marker) => {
+  handleMarkerClick = marker => {
     if (this.props.onMarkerClick) {
       this.props.onMarkerClick(marker);
     }
     this.setState({ activeFeature: marker });
   };
 
-  handleClusterClick = (cluster) => {
+  handleClusterClick = cluster => {
     const { markers } = this.props;
     const clusterSet = JSON.parse(cluster.properties.markerids);
 
@@ -367,20 +343,20 @@ export default class MarkableMap extends Component {
     }
   };
 
-  fitMarkers = (markers) => {
+  fitMarkers = markers => {
     if (!markers.length) return;
 
-    this.map.fitBounds(
-      minLngLatBounds(markers.map(marker => marker.lngLat)),
-      { padding: { top: 20, bottom: 20, left: 50, right: 50 }, offset: [0, 20] },
-    );
+    this.map.fitBounds(minLngLatBounds(markers.map(marker => marker.lngLat)), {
+      padding: { top: 20, bottom: 20, left: 50, right: 50 },
+      offset: [0, 20],
+    });
   };
 
-  easeTo = (lngLat) => {
+  easeTo = lngLat => {
     const [lng, lat] = lngLat;
     const zoom = this.getMapboxGL().getZoom();
 
-    const nextLat = lat + ((MOVE_TO_MARKER_MAX_LAT_OFFSET * 2) / Math.pow(2, zoom));
+    const nextLat = lat + MOVE_TO_MARKER_MAX_LAT_OFFSET * 2 / Math.pow(2, zoom);
     const nextCenter = [lng, nextLat];
 
     this.map.easeTo({ center: nextCenter });
@@ -395,7 +371,7 @@ export default class MarkableMap extends Component {
     this.activeMarker = null;
   };
 
-  markerPopupElement = (lngLat) => {
+  markerPopupElement = lngLat => {
     if (!this.activeMarker) {
       this.activeMarker = new mapboxgl.Marker().setLngLat(lngLat).addTo(this.getMapboxGL());
     } else {
@@ -415,7 +391,7 @@ export default class MarkableMap extends Component {
     this.map.zoomOut();
   };
 
-  renderMarkerPopup = (activeFeature) => {
+  renderMarkerPopup = activeFeature => {
     const { MarkerComponent, GroupMarkerComponent, markers } = this.props;
     const lngLat = activeFeature.geometry.coordinates;
 
@@ -434,7 +410,7 @@ export default class MarkableMap extends Component {
           MarkerComponent={GroupMarkerComponent}
           props={{ group: clusteredMarkers.map(marker => marker.props) }}
         />,
-        element
+        element,
       );
     } else {
       const marker = markers.find(m => m.id === activeFeature.properties.id);
@@ -446,7 +422,7 @@ export default class MarkableMap extends Component {
           MarkerComponent={MarkerComponent}
           props={marker.props}
         />,
-        element
+        element,
       );
     }
   };
@@ -455,7 +431,9 @@ export default class MarkableMap extends Component {
     const { markers: _markers, MarkerComponent: _MarkerComponent, ...rest } = this.props;
     return (
       <BaseMap
-        ref={(c) => { this.map = c; }}
+        ref={c => {
+          this.map = c;
+        }}
         onMapLoad={this.handleMapLoad}
         {...rest}
         onClick={this.handleMapClick}

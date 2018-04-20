@@ -5,11 +5,8 @@ import cx from 'classnames';
 import defaultcss from './ValueIcon.css';
 import css from './ValueIconHandshake.css';
 
-const ValueIconHandshake = (props) => {
-  const {
-    className,
-    ...rest
-  } = props;
+const ValueIconHandshake = props => {
+  const { className, ...rest } = props;
 
   return (
     <span className={cx(defaultcss.root, className)} {...rest}>
@@ -17,7 +14,8 @@ const ValueIconHandshake = (props) => {
         <polyline points="38.01 12.92 46.58 27.24 22.4 37.56 14.23 26.27 14.08 4.44 31.87 4.44" />
         <rect x="48.99" y="4.44" width="13.58" height="22.3" />
         <path
-          d={'M49,4.44H31.87S31.23,4.92,23,12c-2.42,2.24-2,4.11-.93,5.54a4.21,4.21,0,0,0,' +
+          d={
+            'M49,4.44H31.87S31.23,4.92,23,12c-2.42,2.24-2,4.11-.93,5.54a4.21,4.21,0,0,0,' +
             '5.35.87c9.6-5.21,10.48-5.71,10.48-5.71L46,26.27h3Z'
           }
         />

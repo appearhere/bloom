@@ -44,7 +44,7 @@ class GuideCard extends Component {
     unlockLabel: 'Unlock',
   };
 
-  handleBtnClick = (e) => {
+  handleBtnClick = e => {
     e.stopPropagation();
     e.preventDefault();
     const { unlockCallback, downloadCallback } = this.props;
@@ -75,14 +75,14 @@ class GuideCard extends Component {
     return (
       <div>
         <EditorialCard {...rest} className={classes} tabIndex="0">
-          <p className={css.description}>{ description }</p>
+          <p className={css.description}>{description}</p>
           <span
             className={cx(css.link, linkcss.root)}
             onClick={this.handleBtnClick}
             tabIndex="0"
             role="button"
           >
-            { downloadCallback ? downloadLabel : unlockLabel }
+            {downloadCallback ? downloadLabel : unlockLabel}
           </span>
         </EditorialCard>
       </div>

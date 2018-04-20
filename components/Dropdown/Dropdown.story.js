@@ -7,21 +7,19 @@ import DropdownInner from './DropdownInner';
 const Target = () => <button>Anchor</button>;
 const DropdownContent = () => <div>Dropdown content, like a list of actions, helper text etc.</div>;
 
-storiesOf('DropdownInner', module)
-  .add('Default', () => (
-    <DropdownInner>
-      <DropdownContent />
-    </DropdownInner>
-  ));
+storiesOf('DropdownInner', module).add('Default', () => (
+  <DropdownInner>
+    <DropdownContent />
+  </DropdownInner>
+));
 
-storiesOf('Dropdown', module)
-  .add('Default', () => (
-    <Dropdown
-      horizontalAttachment={HORIZONTAL_ATTACHMENTS.RIGHT}
-      target={<Target />}
-      flushHorizontal
-      active
-    >
-      <DropdownContent />
-    </Dropdown>
-  ));
+storiesOf('Dropdown', module).add('Default', () => (
+  <Dropdown
+    horizontalAttachment={HORIZONTAL_ATTACHMENTS.RIGHT}
+    target={<Target />}
+    flushHorizontal
+    active
+  >
+    <DropdownContent />
+  </Dropdown>
+));

@@ -9,19 +9,21 @@ const simpleIndicators = [1, 2, 3, 4];
 storiesOf('IndicatorGroup', module)
   .add('Default view', () => (
     <IndicatorGroup activeIndicator={2}>
-      { indicator => <div>{ simpleIndicators.map(i => indicator({ i, key: i })) }</div> }
+      {indicator => <div>{simpleIndicators.map(i => indicator({ i, key: i }))}</div>}
     </IndicatorGroup>
   ))
   .add('Horizontal', () => (
     <IndicatorGroup activeIndicator={2}>
-      { indicator => (
+      {indicator => (
         <div>
-          { simpleIndicators.map(i => indicator({
-            i,
-            key: i,
-            className: [m.dib, m.mt0, m.mrs].join(' '),
-          })) }
+          {simpleIndicators.map(i =>
+            indicator({
+              i,
+              key: i,
+              className: [m.dib, m.mt0, m.mrs].join(' '),
+            }),
+          )}
         </div>
-      ) }
+      )}
     </IndicatorGroup>
   ));

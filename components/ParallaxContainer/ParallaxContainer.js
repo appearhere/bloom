@@ -12,7 +12,7 @@ import cx from 'classnames';
 import css from './ParallaxContainer.css';
 
 export default class ParallaxContainer extends Component {
-  static propTypes= {
+  static propTypes = {
     children: PropTypes.node.isRequired,
     speed: PropTypes.number,
     topOffset: PropTypes.number,
@@ -42,14 +42,12 @@ export default class ParallaxContainer extends Component {
   updatePosition = () => {
     const { speed } = this.props;
     const scrollPosition =
-      (window.pageYOffset || document.scrollTop) -
-      (document.clientTop || 0) ||
-      0;
+      (window.pageYOffset || document.scrollTop) - (document.clientTop || 0) || 0;
 
     this.setState({
       top: scrollPosition * speed,
     });
-  }
+  };
 
   render() {
     const { children, topOffset, className } = this.props;
@@ -59,10 +57,10 @@ export default class ParallaxContainer extends Component {
       <div
         className={cx(css.root, className)}
         style={{
-          top: (0 - top) + topOffset,
+          top: 0 - top + topOffset,
         }}
       >
-        { children }
+        {children}
       </div>
     );
   }

@@ -6,12 +6,8 @@ import css from './SignPost.css';
 
 const SignPost = ({ title, children, className, ...rest }) => (
   <div {...rest} className={cx(css.root, className)}>
-    <span className={css.title}>
-      { title }
-    </span>
-    <div className={css.body}>
-      { children }
-    </div>
+    <span className={css.title}>{title}</span>
+    <div className={css.body}>{children}</div>
   </div>
 );
 

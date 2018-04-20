@@ -6,11 +6,9 @@ import InputField from './InputField';
 it('renders without crashing', () => {
   const div = document.createElement('div');
   render(
-    <InputField
-      id=""
-    >
+    <InputField id="">
       <input />
     </InputField>,
-    div
+    div,
   );
 });

@@ -3,12 +3,8 @@ import { storiesOf } from '@storybook/react';
 import CalendarItem from './CalendarItem';
 
 storiesOf('CalendarItem', module)
-  .add('Default ', () => (
-    <CalendarItem />
-  ))
-  .add('Empty ', () => (
-    <CalendarItem day={null} />
-  ))
+  .add('Default ', () => <CalendarItem />)
+  .add('Empty ', () => <CalendarItem day={null} />)
   .add('With builtin `selected` modifier', () => (
     <CalendarItem
       modifiers={{
@@ -23,8 +19,4 @@ storiesOf('CalendarItem', module)
       }}
     />
   ))
-  .add('With non-default formatting', () => (
-    <CalendarItem
-      format="MMM"
-    />
-  ));
+  .add('With non-default formatting', () => <CalendarItem format="MMM" />);

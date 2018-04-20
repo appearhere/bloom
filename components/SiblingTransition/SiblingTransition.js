@@ -38,7 +38,7 @@ export default class SiblingTransition extends Component {
     return {
       x: spring(0, springConfig),
     };
-  }
+  };
 
   willEnter = () => {
     const { shouldAnimateLeft, animate } = this.props;
@@ -51,7 +51,7 @@ export default class SiblingTransition extends Component {
     return {
       x: transitionLeft ? 100 : -100,
     };
-  }
+  };
 
   willLeave = () => {
     const { springConfig, animate, shouldAnimateLeft } = this.props;
@@ -64,31 +64,28 @@ export default class SiblingTransition extends Component {
     return {
       x: spring(transitionLeft ? -100 : 100, springConfig),
     };
-  }
+  };
 
   render() {
-    const {
-      route,
-      children: child,
-      didLeave,
-      ...rest
-    } = this.props;
+    const { route, children: child, didLeave, ...rest } = this.props;
 
     return (
       <TransitionMotion
         {...rest}
-        styles={[{
-          key: route,
-          style: this.getStyles(),
-          data: child,
-        }]}
+        styles={[
+          {
+            key: route,
+            style: this.getStyles(),
+            data: child,
+          },
+        ]}
         willEnter={this.willEnter}
         willLeave={this.willLeave}
         didLeave={didLeave}
       >
-        { interpolated => (
+        {interpolated => (
           <div className={css.container}>
-            { interpolated.map(({ key, data, style }) => (
+            {interpolated.map(({ key, data, style }) => (
               <div
                 key={key}
                 className={css.animated}
@@ -97,11 +94,11 @@ export default class SiblingTransition extends Component {
                   transform: `translate3d(${style.x}%, 0, 0)`,
                 }}
               >
-                { data }
+                {data}
               </div>
-            )) }
+            ))}
           </div>
-        ) }
+        )}
       </TransitionMotion>
     );
   }

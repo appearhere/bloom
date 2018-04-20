@@ -7,20 +7,11 @@ import css from './Card.css';
 const Card = ({ className, href, target, children, ...rest }) => {
   const Component = href ? 'a' : 'div';
 
-  const classes = cx(
-    css.root,
-    href ? css.link : null,
-    className,
-  );
+  const classes = cx(css.root, href ? css.link : null, className);
 
   return (
-    <Component
-      {...rest}
-      className={classes}
-      href={href}
-      target={href ? target : null}
-    >
-      { children }
+    <Component {...rest} className={classes} href={href} target={href ? target : null}>
+      {children}
     </Component>
   );
 };

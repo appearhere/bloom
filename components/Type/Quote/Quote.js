@@ -4,30 +4,17 @@ import cx from 'classnames';
 
 import css from './Quote.css';
 
-const Quote = (props) => {
-  const {
-    children,
-    citation,
-    className,
-    citeClassName,
-    ...rest
-  } = props;
+const Quote = props => {
+  const { children, citation, className, citeClassName, ...rest } = props;
 
-  const bodyClasses = cx(
-    css.base,
-    css.quoteBody,
-  );
+  const bodyClasses = cx(css.base, css.quoteBody);
 
-  const citeClasses = cx(
-    citeClassName,
-    css.base,
-    css.cite,
-  );
+  const citeClasses = cx(citeClassName, css.base, css.cite);
 
   return (
     <blockquote className={className} {...rest}>
-      <div className={bodyClasses}>{ children }</div>
-      <cite className={citeClasses}>{ citation }</cite>
+      <div className={bodyClasses}>{children}</div>
+      <cite className={citeClasses}>{citation}</cite>
     </blockquote>
   );
 };

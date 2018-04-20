@@ -6,29 +6,19 @@ import childrenOf from '../../utils/propTypeValidations/childrenOf';
 import Btn from '../Btn/Btn';
 import css from './BtnGroup.css';
 
-const BtnGroup = (props) => {
-  const {
-    children,
-    className,
-    context,
-    priority,
-    ...rest
-  } = props;
+const BtnGroup = props => {
+  const { children, className, context, priority, ...rest } = props;
 
   return (
-    <div
-      {...rest}
-      className={cx(
-        css[context],
-        className,
+    <div {...rest} className={cx(css[context], className)}>
+      {Children.map(children, child =>
+        cloneElement(child, {
+          className: cx(css.btn, child.props.className),
+          variant: 'default',
+          context,
+          priority,
+        }),
       )}
-    >
-      { Children.map(children, child => cloneElement(child, {
-        className: cx(css.btn, child.props.className),
-        variant: 'default',
-        context,
-        priority,
-      })) }
     </div>
   );
 };

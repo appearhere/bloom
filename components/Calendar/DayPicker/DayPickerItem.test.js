@@ -22,11 +22,13 @@ describe('DayPickerItem', () => {
 
       render(
         <DayPickerItem
-          ref={(c) => { component = c; }}
+          ref={c => {
+            component = c;
+          }}
           day={now}
           onInteraction={spy}
         />,
-        div
+        div,
       );
 
       Simulate.click(findDOMNode(component));
@@ -42,11 +44,13 @@ describe('DayPickerItem', () => {
 
       render(
         <DayPickerItem
-          ref={(c) => { component = c; }}
+          ref={c => {
+            component = c;
+          }}
           day={now}
           onInteraction={spy}
         />,
-        div
+        div,
       );
 
       Simulate.touchEnd(findDOMNode(component));
@@ -62,11 +66,13 @@ describe('DayPickerItem', () => {
 
       render(
         <DayPickerItem
-          ref={(c) => { component = c; }}
+          ref={c => {
+            component = c;
+          }}
           day={now}
           onInteraction={spy}
         />,
-        div
+        div,
       );
 
       Simulate.keyUp(findDOMNode(component), { keyCode: ENTER });
@@ -74,28 +80,7 @@ describe('DayPickerItem', () => {
       expect(spy.calls.mostRecent().args[1].isSame(now)).toBe(true);
     });
 
-    it('doesn\'t fire the `onInteraction` callback the user presses any other key besides `enter`',
-      () => {
-        let component;
-        const div = document.createElement('div');
-        const spy = jasmine.createSpy();
-        const now = moment();
-
-        render(
-          <DayPickerItem
-            ref={(c) => { component = c; }}
-            day={now}
-            onInteraction={spy}
-          />,
-          div
-        );
-
-        Simulate.keyUp(findDOMNode(component), { keyCode: 1 });
-        expect(spy.calls.count()).toEqual(0);
-      }
-    );
-
-    it('doesn\'t fire the `onInteraction` callback when interacted with whilst disabled', () => {
+    it("doesn't fire the `onInteraction` callback the user presses any other key besides `enter`", () => {
       let component;
       const div = document.createElement('div');
       const spy = jasmine.createSpy();
@@ -103,14 +88,37 @@ describe('DayPickerItem', () => {
 
       render(
         <DayPickerItem
-          ref={(c) => { component = c; }}
+          ref={c => {
+            component = c;
+          }}
+          day={now}
+          onInteraction={spy}
+        />,
+        div,
+      );
+
+      Simulate.keyUp(findDOMNode(component), { keyCode: 1 });
+      expect(spy.calls.count()).toEqual(0);
+    });
+
+    it("doesn't fire the `onInteraction` callback when interacted with whilst disabled", () => {
+      let component;
+      const div = document.createElement('div');
+      const spy = jasmine.createSpy();
+      const now = moment();
+
+      render(
+        <DayPickerItem
+          ref={c => {
+            component = c;
+          }}
           day={now}
           onInteraction={spy}
           getDayState={() => ({
             isDisabled: true,
           })}
         />,
-        div
+        div,
       );
 
       Simulate.click(findDOMNode(component));
@@ -127,11 +135,13 @@ describe('DayPickerItem', () => {
 
       render(
         <DayPickerItem
-          ref={(c) => { component = c; }}
+          ref={c => {
+            component = c;
+          }}
           day={now}
           onHighlight={spy}
         />,
-        div
+        div,
       );
 
       Simulate.mouseOver(findDOMNode(component));
@@ -147,11 +157,13 @@ describe('DayPickerItem', () => {
 
       render(
         <DayPickerItem
-          ref={(c) => { component = c; }}
+          ref={c => {
+            component = c;
+          }}
           day={now}
           onHighlight={spy}
         />,
-        div
+        div,
       );
 
       Simulate.focus(findDOMNode(component));
@@ -159,7 +171,7 @@ describe('DayPickerItem', () => {
       expect(spy.calls.mostRecent().args[1].isSame(now)).toBe(true);
     });
 
-    it('doesn\'t fire the `onHighlight` callback when interacted with whilst disabled', () => {
+    it("doesn't fire the `onHighlight` callback when interacted with whilst disabled", () => {
       let component;
       const div = document.createElement('div');
       const spy = jasmine.createSpy();
@@ -167,14 +179,16 @@ describe('DayPickerItem', () => {
 
       render(
         <DayPickerItem
-          ref={(c) => { component = c; }}
+          ref={c => {
+            component = c;
+          }}
           day={now}
           onHighlight={spy}
           getDayState={() => ({
             isDisabled: true,
           })}
         />,
-        div
+        div,
       );
 
       Simulate.mouseOver(findDOMNode(component));

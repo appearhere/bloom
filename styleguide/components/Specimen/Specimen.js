@@ -50,51 +50,34 @@ export default class Specimen extends Component {
   }
 
   render() {
-    const {
-      classNames,
-      children,
-      name,
-      attributes,
-      code,
-      variant,
-    } = this.props;
+    const { classNames, children, name, attributes, code, variant } = this.props;
 
     const classes = mergeObjectStrings(css, classNames);
 
     /* eslint-disable react/no-danger */
     return (
       <div className={classes.root}>
-        <div
-          className={cx(
-            classes.specimenContainer,
-            classes[variant],
-          )}
-        >
-          <span className={classes.specimen}>
-            { children }
-          </span>
+        <div className={cx(classes.specimenContainer, classes[variant])}>
+          <span className={classes.specimen}>{children}</span>
         </div>
         <div className={classes.body}>
-          <div className={classes.name}>{ name }</div>
-          { attributes.length > 0 && (
+          <div className={classes.name}>{name}</div>
+          {attributes.length > 0 && (
             <ul className={classes.attributes}>
-              { attributes.map((attribute, i) => (
+              {attributes.map((attribute, i) => (
                 <li key={i} className={classes.attribute}>
-                  { attribute }
+                  {attribute}
                 </li>
-              )) }
+              ))}
             </ul>
-          ) }
-          { code && (
+          )}
+          {code && (
             <div className={css.codeBlock}>
               <pre className={css.pre}>
-                <code
-                  className={css.code}
-                  dangerouslySetInnerHTML={this.createMarkup()}
-                />
+                <code className={css.code} dangerouslySetInnerHTML={this.createMarkup()} />
               </pre>
             </div>
-          ) }
+          )}
         </div>
       </div>
     );

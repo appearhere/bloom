@@ -6,11 +6,7 @@ import Icon from '../Icon/Icon';
 import Loader from '../Loader/Loader';
 
 storiesOf('Btn', module)
-  .add('Default button', () => (
-    <Btn onClick={action('Button clicked')}>
-      Cancel
-    </Btn>
-  ))
+  .add('Default button', () => <Btn onClick={action('Button clicked')}>Cancel</Btn>)
   .add('with Icon', () => (
     <Btn onClick={action('Button clicked')}>
       <Icon className={m.mrs} name="cross" />

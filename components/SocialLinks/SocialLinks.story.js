@@ -9,11 +9,7 @@ import m from '../../globals/modifiers.css';
 /* eslint-disable no-undef */
 storiesOf('SocialLinks', module)
   .add('Default', () => (
-    <SocialLinks
-      uri={window.location.href}
-      twitterTweet="lmao"
-      twitterVia="realDonaldTrump"
-    />
+    <SocialLinks uri={window.location.href} twitterTweet="lmao" twitterVia="realDonaldTrump" />
   ))
   .add('Dark', () => (
     <div className={cx(m.bgBlack, m.paRegular)}>

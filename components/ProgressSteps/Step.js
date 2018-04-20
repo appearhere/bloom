@@ -8,16 +8,8 @@ import Icon from '../Icon/Icon';
 import m from '../../globals/modifiers.css';
 import defaultCss from './ProgressSteps.css';
 
-const Step = (props) => {
-  const {
-    step,
-    completed,
-    title,
-    children,
-    css,
-    icon,
-    ...rest
-  } = props;
+const Step = props => {
+  const { step, completed, title, children, css, icon, ...rest } = props;
 
   const leftClassName = cx(
     m.valignt,
@@ -62,24 +54,23 @@ const Step = (props) => {
       className={cx(defaultCss.step, css.step)}
       leftClassName={leftClassName}
       rightClassName={rightClassName}
-      leftChildren={icon ? (
-        <Icon
-          className={defaultCss.icon}
-          name={icon}
-        />
-      ) : (
-        <Circle
-          circleClassName={css.stepIconCircle}
-          className={stepIconClassName}
-          completed={completed}
-        >
-          { step }
-        </Circle>
-      )}
+      leftChildren={
+        icon ? (
+          <Icon className={defaultCss.icon} name={icon} />
+        ) : (
+          <Circle
+            circleClassName={css.stepIconCircle}
+            className={stepIconClassName}
+            completed={completed}
+          >
+            {step}
+          </Circle>
+        )
+      }
       rightChildren={
         <div>
-          <dt className={stepTitleClassName}>{ title }</dt>
-          <dd className={stepBodyClassName}>{ children }</dd>
+          <dt className={stepTitleClassName}>{title}</dt>
+          <dd className={stepBodyClassName}>{children}</dd>
         </div>
       }
       primarySide="right"

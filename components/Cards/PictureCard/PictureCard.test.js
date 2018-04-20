@@ -5,10 +5,5 @@ import PictureCard from './PictureCard';
 
 it('renders without crashing', () => {
   const div = document.createElement('div');
-  ReactDOM.render(
-    <PictureCard
-      src="#"
-    />,
-    div
-  );
+  ReactDOM.render(<PictureCard src="#" />, div);
 });

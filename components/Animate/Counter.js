@@ -17,13 +17,7 @@ export default class Counter extends Component {
   };
 
   render() {
-    const {
-      transform,
-      startValue,
-      endValue,
-      className,
-      onRest,
-    } = this.props;
+    const { transform, startValue, endValue, className, onRest } = this.props;
 
     return (
       <Motion
@@ -35,11 +29,7 @@ export default class Counter extends Component {
         }}
         onRest={onRest}
       >
-        { ({ x }) => (
-          <span className={className}>
-            { transform(x) }
-          </span>
-        ) }
+        {({ x }) => <span className={className}>{transform(x)}</span>}
       </Motion>
     );
   }

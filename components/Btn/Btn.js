@@ -32,7 +32,7 @@ export default class Btn extends Component {
 
   blur = () => {
     this.button.blur();
-  }
+  };
 
   render() {
     const {
@@ -47,24 +47,20 @@ export default class Btn extends Component {
       ...rest
     } = this.props;
 
-    const classes = classnames(
-      css.root,
-      className,
-      css[context],
-      css[variant],
-      css[priority]
-    );
+    const classes = classnames(css.root, className, css[context], css[variant], css[priority]);
 
     return (
       <button
-        ref={(c) => { this.button = c; }}
+        ref={c => {
+          this.button = c;
+        }}
         className={classes}
         type={type}
         onClick={onClick}
         disabled={disabled}
         {...rest}
       >
-        { children }
+        {children}
       </button>
     );
   }

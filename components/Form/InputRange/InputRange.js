@@ -55,25 +55,18 @@ export default class InputRange extends Component {
     classNames: defaultClassNames,
   };
 
-  handleChange = (val) => {
+  handleChange = val => {
     const { name, onChange } = this.props;
     onChange(null, name, val);
   };
 
-  handleChangeComplete = (val) => {
+  handleChangeComplete = val => {
     const { name, onChangeComplete } = this.props;
     onChangeComplete(null, name, val);
   };
 
   render() {
-    const {
-      classNames,
-      id,
-      value,
-      minValue,
-      maxValue,
-      ...rest
-    } = this.props;
+    const { classNames, id, value, minValue, maxValue, ...rest } = this.props;
 
     const defaultValue = typeof value === 'object' ? { minValue, maxValue } : maxValue;
 

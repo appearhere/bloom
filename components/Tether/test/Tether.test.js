@@ -43,25 +43,20 @@ describe('Tether component', () => {
   it('renders closed without crashing', () => {
     const div = document.createElement('div');
     render(
-      <Tether
-        target={<TestTarget />}
-      >
+      <Tether target={<TestTarget />}>
         <TestChild />
       </Tether>,
-      div
+      div,
     );
   });
 
   it('renders opened without crashing', () => {
     const div = document.createElement('div');
     render(
-      <Tether
-        target={<TestTarget />}
-        active
-      >
+      <Tether target={<TestTarget />} active>
         <TestChild />
       </Tether>,
-      div
+      div,
     );
   });
 });
@@ -73,12 +68,18 @@ describe('Tether target component', () => {
     const div = document.createElement('div');
     render(
       <Tether
-        target={<TestTarget ref={(c) => { target = c; }} />}
+        target={
+          <TestTarget
+            ref={c => {
+              target = c;
+            }}
+          />
+        }
         active
       >
         <TestChild />
       </Tether>,
-      div
+      div,
     );
 
     expect('horizontalAttachment' in target.props).toBe(true);
@@ -93,12 +94,18 @@ describe('Tether target component', () => {
     const div = document.createElement('div');
     render(
       <Tether
-        target={<TestTarget ref={(c) => { target = c; }} />}
+        target={
+          <TestTarget
+            ref={c => {
+              target = c;
+            }}
+          />
+        }
         active
       >
         <TestChild />
       </Tether>,
-      div
+      div,
     );
 
     expect('active' in target.props).toBe(true);
@@ -111,13 +118,14 @@ describe('Tether child component', () => {
 
     const div = document.createElement('div');
     render(
-      <Tether
-        target={<TestTarget />}
-        active
-      >
-        <TestChild ref={(c) => { child = c; }} />
+      <Tether target={<TestTarget />} active>
+        <TestChild
+          ref={c => {
+            child = c;
+          }}
+        />
       </Tether>,
-      div
+      div,
     );
 
     expect('horizontalAttachment' in child.props).toBe(true);
@@ -136,7 +144,8 @@ const OPTIMAL_ATTACHMENT_TEST_CASES = [
 
 OPTIMAL_ATTACHMENT_TEST_CASES.forEach(({ method, args, expected }) => {
   const isFlush = args.flushHorizontal || args.flushVertical;
-  const description = `Tether \`${method}\` given \`${args.attachmentPreference}\`` +
+  const description =
+    `Tether \`${method}\` given \`${args.attachmentPreference}\`` +
     ` ${isFlush ? 'and is flush' : ''}`;
 
   describe(description, () => {
@@ -145,19 +154,19 @@ OPTIMAL_ATTACHMENT_TEST_CASES.forEach(({ method, args, expected }) => {
     const div = document.createElement('div');
     render(
       <Tether
-        ref={(c) => { component = c; }}
+        ref={c => {
+          component = c;
+        }}
         target={<TestTarget />}
         active
       >
         <TestChild />
       </Tether>,
-      div
+      div,
     );
 
     it(`returns an optimal attachment of \`${expected}\``, () => {
-      expect(
-        component[method](args)
-      ).toEqual(expected);
+      expect(component[method](args)).toEqual(expected);
     });
   });
 });
@@ -169,8 +178,8 @@ const TETHERED_POSITION_TEST_CASES = [
 
 TETHERED_POSITION_TEST_CASES.forEach(({ method, args, expected }) => {
   const isFlush = args.flushHorizontal || args.flushVertical;
-  const description = `Tether \`${method}\` given \`${args.attachment}\`` +
-    ` ${isFlush ? 'and is flush' : ''}`;
+  const description =
+    `Tether \`${method}\` given \`${args.attachment}\`` + ` ${isFlush ? 'and is flush' : ''}`;
 
   describe(description, () => {
     let component;
@@ -178,19 +187,19 @@ TETHERED_POSITION_TEST_CASES.forEach(({ method, args, expected }) => {
     const div = document.createElement('div');
     render(
       <Tether
-        ref={(c) => { component = c; }}
+        ref={c => {
+          component = c;
+        }}
         target={<TestTarget />}
         active
       >
         <TestChild />
       </Tether>,
-      div
+      div,
     );
 
     it(`returns a top value of \`${expected}px\``, () => {
-      expect(
-        component[method](args)
-      ).toEqual(expected);
+      expect(component[method](args)).toEqual(expected);
     });
   });
 });

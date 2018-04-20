@@ -70,17 +70,11 @@ export default class Styleguide extends Component {
               active={showNavigation}
               onClose={this.closeNavigation}
             >
-              <SiteHeader
-                version={process.env.npm_package_version}
-                onLinkClick={this.closeMenu}
-              />
+              <SiteHeader version={process.env.npm_package_version} onLinkClick={this.closeMenu} />
               <Navigation onLinkClick={this.closeNavigation} />
             </OffCanvasPanel>
             <div className={css.navigationLg}>
-              <SiteHeader
-                version={process.env.npm_package_version}
-                onLinkClick={this.closeMenu}
-              />
+              <SiteHeader version={process.env.npm_package_version} onLinkClick={this.closeMenu} />
               <Navigation onLinkClick={this.closeNavigation} />
             </div>
             <div className={css.body}>

@@ -6,6 +6,4 @@ import Star from './Star';
 const stories = storiesOf('FormComponents', module);
 stories.addDecorator(withKnobs);
 
-stories.add('Star', () => (
-  <Star checked={boolean('Checked', false)} />
-));
+stories.add('Star', () => <Star checked={boolean('Checked', false)} />);

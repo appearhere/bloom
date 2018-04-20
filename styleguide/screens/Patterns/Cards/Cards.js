@@ -51,13 +51,17 @@ export default class CardDocumentation extends Component {
         <D>
           <H level={2}>Default Cards</H>
           <T elm="p" className={m.mtr}>
-            The <C>Card</C> component is used as the foundation for other card components.
-            It&#39;s unlikely you&#39;ll ever use it for any other purpose than composing
-            together another card component, like the ones found below.
+            The <C>Card</C> component is used as the foundation for other card components. It&#39;s
+            unlikely you&#39;ll ever use it for any other purpose than composing together another
+            card component, like the ones found below.
           </T>
 
-          <H level={3} className={m.mtLgIi}>Default</H>
-          <T elm="p" className={m.mtr}>Normally, the card component does absolutely nothing.</T>
+          <H level={3} className={m.mtLgIi}>
+            Default
+          </H>
+          <T elm="p" className={m.mtr}>
+            Normally, the card component does absolutely nothing.
+          </T>
           <Specimen
             classNames={{
               root: m.mtr,
@@ -67,7 +71,7 @@ export default class CardDocumentation extends Component {
                 <Card>
                   { /* Card content */ }
                 </Card>
-            ` }
+            `}
           >
             <div className={css.cardContainer}>
               <div className={css.cardContainer}>
@@ -77,10 +81,12 @@ export default class CardDocumentation extends Component {
               </div>
             </div>
           </Specimen>
-          <H level={3} className={m.mtLgIi}>As a link</H>
+          <H level={3} className={m.mtLgIi}>
+            As a link
+          </H>
           <T elm="p" className={m.mtr}>
-            When provided a href prop, the card adds a hover effect,
-            which moves the card further off the page than it&#39;s surrounding elements.
+            When provided a href prop, the card adds a hover effect, which moves the card further
+            off the page than it&#39;s surrounding elements.
           </T>
           <Specimen
             classNames={{
@@ -91,9 +97,8 @@ export default class CardDocumentation extends Component {
               <Card href="#">
                 { /* Card content */ }
               </Card>
-            ` }
+            `}
           >
-
             <div className={css.cardContainer}>
               <Card href="#" className={css.card}>
                 <div className={css.defaultCardContent} />
@@ -102,11 +107,12 @@ export default class CardDocumentation extends Component {
           </Specimen>
         </D>
         <D>
-          <H level={2} className={shared.componentTitle}>Picture Card</H>
+          <H level={2} className={shared.componentTitle}>
+            Picture Card
+          </H>
           <T elm="p" className={m.mtr}>
-            Similarly to the <C>Card</C> component, the picture card is
-            the foundation of other card components. It&#39;s typically
-            used where the background of the card should be a full
+            Similarly to the <C>Card</C> component, the picture card is the foundation of other card
+            components. It&#39;s typically used where the background of the card should be a full
             bleed image. Otherwise, it acts exactly as the regular card component.
           </T>
           <Specimen
@@ -118,21 +124,20 @@ export default class CardDocumentation extends Component {
               <PictureCard
                 src="https://source.unsplash.com/random"
               />
-            ` }
+            `}
           >
             <div className={css.cardContainer}>
-              <PictureCard
-                src="https://source.unsplash.com/random"
-                className={css.pictureCard}
-              />
+              <PictureCard src="https://source.unsplash.com/random" className={css.pictureCard} />
             </div>
           </Specimen>
         </D>
         <D>
-          <H level={2} className={shared.componentTitle}>Space Feature Card</H>
+          <H level={2} className={shared.componentTitle}>
+            Space Feature Card
+          </H>
           <T elm="p" className={m.mtr}>
-            Use when you want to feature a space in a more discrete way,
-            where it&#39;s not the primary purpose of the page/section.
+            Use when you want to feature a space in a more discrete way, where it&#39;s not the
+            primary purpose of the page/section.
           </T>
           <Specimen
             classNames={{
@@ -147,7 +152,7 @@ export default class CardDocumentation extends Component {
                 href="#"
                 src="https://source.unsplash.com/random"
               />
-            ` }
+            `}
           >
             <div className={css.cardContainer}>
               <SpaceFeatureCard
@@ -162,7 +167,9 @@ export default class CardDocumentation extends Component {
           </Specimen>
         </D>
         <D>
-          <H level={2} className={shared.componentTitle}>Empty Listing Card</H>
+          <H level={2} className={shared.componentTitle}>
+            Empty Listing Card
+          </H>
           <T elm="p" className={m.mtr}>
             Used as a placeholder / loading state for <C>SpaceListingCard</C>
           </T>
@@ -179,7 +186,9 @@ export default class CardDocumentation extends Component {
           </Specimen>
         </D>
         <D>
-          <H level={2} className={shared.componentTitle}>Space Listing Card</H>
+          <H level={2} className={shared.componentTitle}>
+            Space Listing Card
+          </H>
           <T elm="p" className={m.mtr}>
             Should be used at the primary way to display space within the app.
           </T>
@@ -212,7 +221,7 @@ export default class CardDocumentation extends Component {
                 }
                 href="#"
               />
-            ` }
+            `}
           >
             <div className={css.cardContainer}>
               <SpaceListingCard
@@ -221,21 +230,24 @@ export default class CardDocumentation extends Component {
                 location="Chelsea, London"
                 size="70000 sqft"
                 name="Saatchi Gallery"
-                images={
-                  [{
+                images={[
+                  {
                     src: 'https://source.unsplash.com/random/500x500',
                     alt: 'hello',
-                  }, {
+                  },
+                  {
                     src: 'https://source.unsplash.com/random/500x503',
                     alt: 'hello2',
-                  }, {
+                  },
+                  {
                     src: 'https://source.unsplash.com/random/500x502',
                     alt: 'hello',
-                  }, {
+                  },
+                  {
                     src: 'https://source.unsplash.com/random/500x501',
                     alt: 'hello2',
-                  }]
-                }
+                  },
+                ]}
                 href="#"
                 className={css.card}
               />
@@ -243,7 +255,9 @@ export default class CardDocumentation extends Component {
           </Specimen>
         </D>
         <D>
-          <H level={2} className={shared.componentTitle}>Space Listing Card with Badge</H>
+          <H level={2} className={shared.componentTitle}>
+            Space Listing Card with Badge
+          </H>
           <T elm="p" className={m.mtr}>
             Should be used to display additional information to a <C>SpaceListingCard</C> e.g., new.
             Using the <C>Badge</C> component.
@@ -278,31 +292,38 @@ export default class CardDocumentation extends Component {
                 }
                 href="#"
               />
-            ` }
+            `}
           >
             <div className={css.cardContainer}>
               <SpaceListingCard
                 price="£7,500"
                 priceUnit="/day"
-                badge={<Badge context="primary" hollow={false}>New</Badge>}
+                badge={
+                  <Badge context="primary" hollow={false}>
+                    New
+                  </Badge>
+                }
                 location="Chelsea, London"
                 size="1000 sqft"
                 name="Saatchi Gallery"
-                images={
-                  [{
+                images={[
+                  {
                     src: 'https://source.unsplash.com/random/500x500',
                     alt: 'hello',
-                  }, {
+                  },
+                  {
                     src: 'https://source.unsplash.com/random/500x503',
                     alt: 'hello2',
-                  }, {
+                  },
+                  {
                     src: 'https://source.unsplash.com/random/500x502',
                     alt: 'hello',
-                  }, {
+                  },
+                  {
                     src: 'https://source.unsplash.com/random/500x501',
                     alt: 'hello2',
-                  }]
-                }
+                  },
+                ]}
                 href="#"
                 className={css.card}
               />
@@ -347,7 +368,7 @@ export default class CardDocumentation extends Component {
                 }
                 href="#"
               />
-            ` }
+            `}
           >
             <div className={css.cardContainer}>
               <SpaceListingCard
@@ -358,21 +379,24 @@ export default class CardDocumentation extends Component {
                 name="Bold Street Shop"
                 placeLabel="Part of Boxpark"
                 placeHref="#"
-                images={
-                  [{
+                images={[
+                  {
                     src: 'https://source.unsplash.com/random/500x500',
                     alt: 'hello',
-                  }, {
+                  },
+                  {
                     src: 'https://source.unsplash.com/random/500x503',
                     alt: 'hello2',
-                  }, {
+                  },
+                  {
                     src: 'https://source.unsplash.com/random/500x502',
                     alt: 'hello',
-                  }, {
+                  },
+                  {
                     src: 'https://source.unsplash.com/random/500x501',
                     alt: 'hello2',
-                  }]
-                }
+                  },
+                ]}
                 href="#"
                 className={css.card}
               />
@@ -380,7 +404,9 @@ export default class CardDocumentation extends Component {
           </Specimen>
         </D>
         <D>
-          <H level={2} className={shared.componentTitle}>Favouritable SpaceListingCard</H>
+          <H level={2} className={shared.componentTitle}>
+            Favouritable SpaceListingCard
+          </H>
           <T elm="p" className={m.mtr}>
             Same as Space Listing Card, but allows users to favourite/unfavourite a space.
           </T>
@@ -416,7 +442,7 @@ export default class CardDocumentation extends Component {
                 favourite={ isSpaceFavourited }
                 favouriteable
               />
-            ` }
+            `}
           >
             <div className={css.cardContainer}>
               <SpaceListingCard
@@ -425,21 +451,24 @@ export default class CardDocumentation extends Component {
                 location="Shoreditch, London"
                 size="1000 sqft"
                 name="Bold Street Shop"
-                images={
-                  [{
+                images={[
+                  {
                     src: 'https://source.unsplash.com/random/500x500',
                     alt: 'hello',
-                  }, {
+                  },
+                  {
                     src: 'https://source.unsplash.com/random/500x503',
                     alt: 'hello2',
-                  }, {
+                  },
+                  {
                     src: 'https://source.unsplash.com/random/500x502',
                     alt: 'hello',
-                  }, {
+                  },
+                  {
                     src: 'https://source.unsplash.com/random/500x501',
                     alt: 'hello2',
-                  }]
-                }
+                  },
+                ]}
                 href="#"
                 onFavouriteClick={this.handleFavouriteClick}
                 favourite={isSpaceFavourited}
@@ -450,10 +479,12 @@ export default class CardDocumentation extends Component {
           </Specimen>
         </D>
         <D>
-          <H level={2} className={shared.componentTitle}>Condensed Space Card</H>
+          <H level={2} className={shared.componentTitle}>
+            Condensed Space Card
+          </H>
           <T elm="p" className={m.mtr}>
-            Should be used when space is limited, and isn&#39;t the primary way to view
-            a <C>SpaceListingCard</C> (typically shown with a tooltip)
+            Should be used when space is limited, and isn&#39;t the primary way to view a{' '}
+            <C>SpaceListingCard</C> (typically shown with a tooltip)
           </T>
           <Specimen
             classNames={{
@@ -475,7 +506,7 @@ export default class CardDocumentation extends Component {
                 }
                 href="#"
               />
-            ` }
+            `}
           >
             <div className={css.cardContainer}>
               <CondensedSpaceCard
@@ -484,12 +515,12 @@ export default class CardDocumentation extends Component {
                 name="Bold Street Shop"
                 placeLabel="Part of Boxpark"
                 placeHref="#"
-                images={
-                  [{
+                images={[
+                  {
                     src: 'https://source.unsplash.com/random/500x500',
                     alt: 'hello',
-                  }]
-                }
+                  },
+                ]}
                 href="#"
                 className={css.card}
               />
@@ -497,7 +528,9 @@ export default class CardDocumentation extends Component {
           </Specimen>
         </D>
         <D>
-          <H level={2} className={shared.componentTitle}>Place Listing Card</H>
+          <H level={2} className={shared.componentTitle}>
+            Place Listing Card
+          </H>
           <T elm="p" className={m.mtr}>
             Should be used as the primary way to display a place within the app.
           </T>
@@ -518,7 +551,7 @@ export default class CardDocumentation extends Component {
                 spaceDetail="2 available spaces"
                 href="#"
               />
-            ` }
+            `}
           >
             <div className={css.cardContainer}>
               <PlaceListingCard
@@ -537,10 +570,12 @@ export default class CardDocumentation extends Component {
           </Specimen>
         </D>
         <D>
-          <H level={2} className={shared.componentTitle}>Editorial Card</H>
+          <H level={2} className={shared.componentTitle}>
+            Editorial Card
+          </H>
           <T elm="p" className={m.mtr}>
-            A card used to display information that is not a space
-            (used within the editorial seciton of the website)
+            A card used to display information that is not a space (used within the editorial
+            seciton of the website)
           </T>
           <Specimen
             classNames={{
@@ -555,7 +590,7 @@ export default class CardDocumentation extends Component {
               >
                 Nam erat urna, tincidunt eleifend libero ut, posuere dictum augue.
               </EditorialCard>
-            ` }
+            `}
           >
             <div className={css.cardContainer}>
               <EditorialCard
@@ -570,12 +605,13 @@ export default class CardDocumentation extends Component {
           </Specimen>
         </D>
         <D>
-          <H level={2} className={shared.componentTitle}>Guide Card</H>
+          <H level={2} className={shared.componentTitle}>
+            Guide Card
+          </H>
           <T elm="p" className={m.mtr}>
-            Same as the EditorialCard but provides a link to an additional resource.
-            This link can exist in a locked an unlocked state, which is useful for
-            providing different funtionality to users in different states, e.g.,
-            logged in and logged out.
+            Same as the EditorialCard but provides a link to an additional resource. This link can
+            exist in a locked an unlocked state, which is useful for providing different
+            funtionality to users in different states, e.g., logged in and logged out.
           </T>
           <Specimen
             classNames={{
@@ -594,10 +630,10 @@ export default class CardDocumentation extends Component {
                 unlockCallback={ this.handleLoginClick }
                 downloadCallback={ isUserLoggedin ? () => { alert('Downloading') } : null }
               />
-            ` }
+            `}
           >
             <div className={css.cardContainer}>
-              { /* eslint-disable no-alert */ }
+              {/* eslint-disable no-alert */}
               <GuideCard
                 title="How to PR your Pop Up Shop"
                 href="#"
@@ -607,15 +643,23 @@ export default class CardDocumentation extends Component {
                 }
                 unlockLabel="Login to download"
                 unlockCallback={this.handleLoginClick}
-                downloadCallback={isUserLoggedin ? () => { window.alert('Downloading'); } : null}
+                downloadCallback={
+                  isUserLoggedin
+                    ? () => {
+                        window.alert('Downloading');
+                      }
+                    : null
+                }
                 className={css.card}
               />
-              { /* eslint-disable no-alert */ }
+              {/* eslint-disable no-alert */}
             </div>
           </Specimen>
         </D>
         <D>
-          <H level={2} className={shared.componentTitle}>Event Card</H>
+          <H level={2} className={shared.componentTitle}>
+            Event Card
+          </H>
           <T elm="p" className={m.mtr}>
             Same as the EditorialCard, but displays a date and location. Used to display all events.
           </T>
@@ -633,7 +677,7 @@ export default class CardDocumentation extends Component {
                 location="London"
                 date="28th August 2016"
               />
-            ` }
+            `}
           >
             <div className={css.cardContainer}>
               <EventCard

@@ -34,11 +34,8 @@ export default class ProgressSteps extends Component {
     }
 
     return (
-      <dl
-        className={cx(css.root, className, containerQuery)}
-        {...rest}
-      >
-        { Children.map(steps, (step, i) => {
+      <dl className={cx(css.root, className, containerQuery)} {...rest}>
+        {Children.map(steps, (step, i) => {
           const completed = i <= lastCompletedIndex;
 
           return cloneElement(step, {
@@ -47,7 +44,7 @@ export default class ProgressSteps extends Component {
             style: stepStyles,
             css: stepCss,
           });
-        }) }
+        })}
       </dl>
     );
   }

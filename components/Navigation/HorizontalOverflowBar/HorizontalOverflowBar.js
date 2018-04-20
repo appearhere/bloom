@@ -48,24 +48,26 @@ export default class HorizontalOverflowBar extends Component {
     if (!canUseDOM) return;
 
     const { scrollable } = this;
-    const listItems = Array.prototype.slice.call(
-      scrollable.querySelectorAll(`.${css.item}`)
-    );
+    const listItems = Array.prototype.slice.call(scrollable.querySelectorAll(`.${css.item}`));
 
-    const unpaddedWidth = listItems.reduce((prev, component) =>
-      prev + component.offsetWidth
-    , 0);
+    const unpaddedWidth = listItems.reduce((prev, component) => prev + component.offsetWidth, 0);
 
     const leftPadding = parseInt(
       /* eslint-disable no-undef */
-      window.getComputedStyle(scrollable, null).getPropertyValue('padding-left').slice('px')[0],
-      10
+      window
+        .getComputedStyle(scrollable, null)
+        .getPropertyValue('padding-left')
+        .slice('px')[0],
+      10,
       /* eslint-enable no-undef */
     );
     const rightPadding = parseInt(
       /* eslint-disable no-undef */
-      window.getComputedStyle(scrollable, null).getPropertyValue('padding-right').slice('px')[0],
-      10
+      window
+        .getComputedStyle(scrollable, null)
+        .getPropertyValue('padding-right')
+        .slice('px')[0],
+      10,
       /* eslint-enable no-undef */
     );
 
@@ -107,33 +109,40 @@ export default class HorizontalOverflowBar extends Component {
       },
       className,
       containerQuery,
-      m.fontRegular
+      m.fontRegular,
     );
 
     return (
-      <nav className={classes} ref={(c) => { this.navigation = c; }}>
-        <div className={css.listWrapper} ref={(c) => { this.scrollable = c; }}>
+      <nav
+        className={classes}
+        ref={c => {
+          this.navigation = c;
+        }}
+      >
+        <div
+          className={css.listWrapper}
+          ref={c => {
+            this.scrollable = c;
+          }}
+        >
           <ul className={css.list}>
-            { children && children(({
-              className: childClassName,
-              href,
-              label,
-              active,
-              ...rest
-            }) => {
-              const itemClasses = cx(css.item, childClassName, {
-                [css.active]: active,
-              });
-              const linkClasses = cx(css.link, {
-                [css.activeLink]: active,
-              });
+            {children &&
+              children(({ className: childClassName, href, label, active, ...rest }) => {
+                const itemClasses = cx(css.item, childClassName, {
+                  [css.active]: active,
+                });
+                const linkClasses = cx(css.link, {
+                  [css.activeLink]: active,
+                });
 
-              return (
-                <li className={itemClasses} {...rest}>
-                  <a className={linkClasses} href={href}>{ label }</a>
-                </li>
-              );
-            }) }
+                return (
+                  <li className={itemClasses} {...rest}>
+                    <a className={linkClasses} href={href}>
+                      {label}
+                    </a>
+                  </li>
+                );
+              })}
           </ul>
         </div>
       </nav>

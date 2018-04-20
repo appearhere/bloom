@@ -6,10 +6,7 @@ const metaMarkersA = {
   features: [
     {
       geometry: {
-        coordinates: [
-          -0.3484224,
-          51.3960673,
-        ],
+        coordinates: [-0.3484224, 51.3960673],
         type: 'Point',
       },
       properties: {
@@ -20,10 +17,7 @@ const metaMarkersA = {
     },
     {
       geometry: {
-        coordinates: [
-          -0.349404970957125,
-          51.3949483990099,
-        ],
+        coordinates: [-0.349404970957125, 51.3949483990099],
         type: 'Point',
       },
       properties: {
@@ -34,10 +28,7 @@ const metaMarkersA = {
     },
     {
       geometry: {
-        coordinates: [
-          -0.348814,
-          51.398839,
-        ],
+        coordinates: [-0.348814, 51.398839],
         type: 'Point',
       },
       properties: {
@@ -48,10 +39,7 @@ const metaMarkersA = {
     },
     {
       geometry: {
-        coordinates: [
-          -0.348622,
-          51.399212,
-        ],
+        coordinates: [-0.348622, 51.399212],
         type: 'Point',
       },
       properties: {
@@ -62,10 +50,7 @@ const metaMarkersA = {
     },
     {
       geometry: {
-        coordinates: [
-          -0.348979,
-          51.399185,
-        ],
+        coordinates: [-0.348979, 51.399185],
         type: 'Point',
       },
       properties: {
@@ -76,10 +61,7 @@ const metaMarkersA = {
     },
     {
       geometry: {
-        coordinates: [
-          -0.351540131829349,
-          51.4072566688305,
-        ],
+        coordinates: [-0.351540131829349, 51.4072566688305],
         type: 'Point',
       },
       properties: {
@@ -90,10 +72,7 @@ const metaMarkersA = {
     },
     {
       geometry: {
-        coordinates: [
-          -0.34933990240097,
-          51.425163269043,
-        ],
+        coordinates: [-0.34933990240097, 51.425163269043],
         type: 'Point',
       },
       properties: {
@@ -104,10 +83,7 @@ const metaMarkersA = {
     },
     {
       geometry: {
-        coordinates: [
-          -0.349287762648642,
-          51.4283193108185,
-        ],
+        coordinates: [-0.349287762648642, 51.4283193108185],
         type: 'Point',
       },
       properties: {
@@ -118,10 +94,7 @@ const metaMarkersA = {
     },
     {
       geometry: {
-        coordinates: [
-          -0.348165273894053,
-          51.4323932568167,
-        ],
+        coordinates: [-0.348165273894053, 51.4323932568167],
         type: 'Point',
       },
       properties: {
@@ -132,10 +105,7 @@ const metaMarkersA = {
     },
     {
       geometry: {
-        coordinates: [
-          -0.347987732253237,
-          51.4324653882346,
-        ],
+        coordinates: [-0.347987732253237, 51.4324653882346],
         type: 'Point',
       },
       properties: {
@@ -155,10 +125,7 @@ const metaMarkersB = {
   features: [
     {
       geometry: {
-        coordinates: [
-          -0.347981788742138,
-          51.4323681173447,
-        ],
+        coordinates: [-0.347981788742138, 51.4323681173447],
         type: 'Point',
       },
       properties: {
@@ -169,10 +136,7 @@ const metaMarkersB = {
     },
     {
       geometry: {
-        coordinates: [
-          -0.348029081486836,
-          51.4325423397993,
-        ],
+        coordinates: [-0.348029081486836, 51.4325423397993],
         type: 'Point',
       },
       properties: {
@@ -183,10 +147,7 @@ const metaMarkersB = {
     },
     {
       geometry: {
-        coordinates: [
-          -0.34796932686546,
-          51.4323630758005,
-        ],
+        coordinates: [-0.34796932686546, 51.4323630758005],
         type: 'Point',
       },
       properties: {
@@ -206,10 +167,7 @@ const metaMarkersC = {
   features: [
     {
       geometry: {
-        coordinates: [
-          -0.35156215809263,
-          51.4328170652326,
-        ],
+        coordinates: [-0.35156215809263, 51.4328170652326],
         type: 'Point',
       },
       properties: {

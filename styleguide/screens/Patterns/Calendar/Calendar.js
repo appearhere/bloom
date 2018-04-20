@@ -8,7 +8,9 @@ import { D, H, T, C } from '../../../components/Scaffold/Scaffold';
 
 import DayPicker from '../../../../components/Calendar/DayPicker/DayPicker';
 import { defaultDayState } from '../../../../components/Calendar/DayPicker/DayPickerItem';
-import DayRangePicker, { SELECT_DATE } from '../../../../components/Calendar/DayRangePicker/DayRangePicker';
+import DayRangePicker, {
+  SELECT_DATE,
+} from '../../../../components/Calendar/DayRangePicker/DayRangePicker';
 import CalendarItem from '../../../../components/Calendar/CalendarItem/CalendarItem';
 import CalendarMonth from '../../../../components/Calendar/CalendarMonth/CalendarMonth';
 import DayRange from '../../../../components/Calendar/DayRange/DayRange';
@@ -35,7 +37,7 @@ export default class CalendarDocumentation extends Component {
     },
   };
 
-  getDayState = (day) => {
+  getDayState = day => {
     const { dayPicker } = this.state;
     return {
       ...defaultDayState,
@@ -109,8 +111,8 @@ export default class CalendarDocumentation extends Component {
       <div>
         <H level={1}>Calendar</H>
         <T elm="p" className={cx(m.mtr, m.largeI, m.demi)}>
-          The Calendar components are to be used in a scenario where you need to either
-          display, or get a date from a user.
+          The Calendar components are to be used in a scenario where you need to either display, or
+          get a date from a user.
         </T>
 
         <D>
@@ -119,12 +121,16 @@ export default class CalendarDocumentation extends Component {
             Use these components to display a date, date range, or calendar month.
           </T>
 
-          <H level={3} className={m.mtLgIi}>Calendar Item</H>
+          <H level={3} className={m.mtLgIi}>
+            Calendar Item
+          </H>
           <T elm="p" className={m.mtr}>
             The <C>CalendarItem</C> is used to represent a single date.
           </T>
 
-          <H level={4} className={m.mtLgIi}>Default</H>
+          <H level={4} className={m.mtLgIi}>
+            Default
+          </H>
           <T elm="p" className={m.mtr}>
             By default it shows the current day of the month.
           </T>
@@ -140,7 +146,9 @@ export default class CalendarDocumentation extends Component {
             <CalendarItem />
           </Specimen>
 
-          <H level={4} className={m.mtLgIi}>Custom Formatting</H>
+          <H level={4} className={m.mtLgIi}>
+            Custom Formatting
+          </H>
           <T elm="p" className={m.mtr}>
             The <C>CalendarItem</C> supports different date formats. This can be controlled using
             the <C>format</C> prop shown below.
@@ -157,11 +165,13 @@ export default class CalendarDocumentation extends Component {
             <CalendarItem format="MMM" />
           </Specimen>
 
-          <H level={3} className={m.mtLgIi}>Day Range</H>
+          <H level={3} className={m.mtLgIi}>
+            Day Range
+          </H>
           <T elm="p" className={m.mtr}>
-            The Day Range can be used to display a start and an end date. The component is
-            intended to be used a target to date selection. Clicking on either the start date
-            or end date container will indicate the current selection with an underline.
+            The Day Range can be used to display a start and an end date. The component is intended
+            to be used a target to date selection. Clicking on either the start date or end date
+            container will indicate the current selection with an underline.
           </T>
           <Specimen
             classNames={{
@@ -187,13 +197,17 @@ export default class CalendarDocumentation extends Component {
             />
           </Specimen>
 
-          <H level={3} className={m.mtLgIi}>Calendar Month</H>
+          <H level={3} className={m.mtLgIi}>
+            Calendar Month
+          </H>
           <T elm="p" className={m.mtr}>
-            The <C>CalendarMonth</C> component should be used to represent the current month,
-            the current day is indicated by type weight.
+            The <C>CalendarMonth</C> component should be used to represent the current month, the
+            current day is indicated by type weight.
           </T>
 
-          <H level={4} className={m.mtLgIi}>Default</H>
+          <H level={4} className={m.mtLgIi}>
+            Default
+          </H>
           <Specimen
             classNames={{
               root: m.mtr,
@@ -206,7 +220,9 @@ export default class CalendarDocumentation extends Component {
             <CalendarMonth />
           </Specimen>
 
-          <H level={4} className={m.mtLgIi}>Show Dates From Adjacent Months</H>
+          <H level={4} className={m.mtLgIi}>
+            Show Dates From Adjacent Months
+          </H>
           <T elm="p" className={m.mtr}>
             By default the <C>CalendarMonth</C> component hides dates outside of the current month.
             To override this behaviour use the <C>showOutOfRange</C> prop shown below. The out of
@@ -224,7 +240,9 @@ export default class CalendarDocumentation extends Component {
             <CalendarMonth showOutOfRange />
           </Specimen>
 
-          <H level={4} className={m.mtLgIi}>Custom Heading Formatting</H>
+          <H level={4} className={m.mtLgIi}>
+            Custom Heading Formatting
+          </H>
           <T elm="p" className={m.mtr}>
             The <C>CalendarMonth</C> column heading format can be controlled using the
             <C>columnHeadingProps</C> and <C>format</C> props.
@@ -245,11 +263,13 @@ export default class CalendarDocumentation extends Component {
             />
           </Specimen>
 
-          <H level={3} className={m.mtLgIi}>Day Picker</H>
+          <H level={3} className={m.mtLgIi}>
+            Day Picker
+          </H>
           <T elm="p" className={m.mtr}>
-            Like <C>calendarMonth</C>, but allows a day to be selected when clicked or touched;
-            the selected day is indicated by a filled square. Using the left and right chevrons you
-            can navigate through the months.
+            Like <C>calendarMonth</C>, but allows a day to be selected when clicked or touched; the
+            selected day is indicated by a filled square. Using the left and right chevrons you can
+            navigate through the months.
           </T>
           <Specimen
             classNames={{
@@ -274,11 +294,12 @@ export default class CalendarDocumentation extends Component {
             />
           </Specimen>
 
-          <H level={3} className={m.mtLgIi}>Day Range Picker</H>
+          <H level={3} className={m.mtLgIi}>
+            Day Range Picker
+          </H>
           <T elm="p" className={m.mtr}>
-            Clicking a date selects a start date and then moving the mouse into the future
-            indicates the range using a row or block of filled squares. Clicking again selects the
-            end date.
+            Clicking a date selects a start date and then moving the mouse into the future indicates
+            the range using a row or block of filled squares. Clicking again selects the end date.
           </T>
           <Specimen
             classNames={{

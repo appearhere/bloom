@@ -5,37 +5,21 @@ import cx from 'classnames';
 import css from './PictureCard.css';
 import Card from '../Card/Card';
 
-const PictureCard = (props) => {
-  const {
-    src,
-    href,
-    children,
-    className,
-    center,
-    style,
-    overlayClassName,
-    ...rest
-  } = props;
+const PictureCard = props => {
+  const { src, href, children, className, center, style, overlayClassName, ...rest } = props;
 
   return (
     <Card
       {...rest}
       href={href}
-      className={cx(
-        css.root,
-        className,
-        href ? css.link : null,
-        center ? css.center : null,
-      )}
+      className={cx(css.root, className, href ? css.link : null, center ? css.center : null)}
       style={{
         ...style,
         backgroundImage: `url(${src})`,
       }}
     >
       <div className={cx(css.overlay, overlayClassName)} />
-      <div className={css.inner}>
-        { children }
-      </div>
+      <div className={css.inner}>{children}</div>
     </Card>
   );
 };

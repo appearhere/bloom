@@ -1,12 +1,6 @@
 import React from 'react';
 import { storiesOf, action } from '@storybook/react';
-import {
-  withKnobs,
-  boolean,
-  array,
-  select,
-  number,
-} from '@storybook/addon-knobs';
+import { withKnobs, boolean, array, select, number } from '@storybook/addon-knobs';
 
 import CheckboxGroup from '../CheckboxGroup/CheckboxGroup';
 import InputField from './InputField';
@@ -21,14 +15,7 @@ import m from '../../../globals/modifiers.css';
 const stories = storiesOf('InputField', module);
 stories.addDecorator(withKnobs);
 
-const inputTypes = [
-  'text',
-  'email',
-  'password',
-  'search',
-  'url',
-  'textarea',
-];
+const inputTypes = ['text', 'email', 'password', 'search', 'url', 'textarea'];
 
 const WrappedSelect = () => (
   <Select
@@ -46,13 +33,7 @@ const WrappedSelect = () => (
 );
 
 stories
-  .add('Simple', () => (
-    <InputField
-      id="0"
-      label="Appearing date"
-      valueReplay="31 Mar"
-    />
-  ))
+  .add('Simple', () => <InputField id="0" label="Appearing date" valueReplay="31 Mar" />)
   .add('CheckboxGroup', () => {
     const value = array('Value(s)', ['1'], ',');
 
@@ -69,35 +50,35 @@ stories
           value={value}
           onChange={action('checked')}
         >
-          { checkbox => (
+          {checkbox => (
             <span>
-              { checkbox({
+              {checkbox({
                 value: '1',
                 label: 'One',
                 name: '',
-              }) }
-              { checkbox({
+              })}
+              {checkbox({
                 value: '2',
                 label: 'Two',
                 name: '',
-              }) }
-              { checkbox({
+              })}
+              {checkbox({
                 value: '3',
                 label: 'Three',
                 name: '',
-              }) }
-              { checkbox({
+              })}
+              {checkbox({
                 value: '4',
                 label: 'Four',
                 name: '',
-              }) }
-              { checkbox({
+              })}
+              {checkbox({
                 value: '5',
                 label: 'Five',
                 name: '',
-              }) }
+              })}
             </span>
-          ) }
+          )}
         </CheckboxGroup>
       </InputField>
     );
@@ -140,43 +121,27 @@ stories
     </InputField>
   ))
   .add('RadioGroup', () => (
-    <InputField
-      id="1"
-      label="Radio buttons"
-      description="A description of the desired input"
-    >
-      <RadioGroup
-        className={m.mtl}
-        value={number('Value', 1)}
-        onChange={action('checked')}
-      >
-        { radio => (
+    <InputField id="1" label="Radio buttons" description="A description of the desired input">
+      <RadioGroup className={m.mtl} value={number('Value', 1)} onChange={action('checked')}>
+        {radio => (
           <span>
-            { radio({ value: 1, label: 'One' }) }
-            { radio({ value: 2, label: 'Two' }) }
-            { radio({ value: 3, label: 'Three' }) }
-            { radio({ value: 4, label: 'Four' }) }
-            { radio({ value: 5, label: 'Five' }) }
+            {radio({ value: 1, label: 'One' })}
+            {radio({ value: 2, label: 'Two' })}
+            {radio({ value: 3, label: 'Three' })}
+            {radio({ value: 4, label: 'Four' })}
+            {radio({ value: 5, label: 'Five' })}
           </span>
-        ) }
+        )}
       </RadioGroup>
     </InputField>
   ))
   .add('Select', () => (
-    <InputField
-      id="1"
-      label="Select box"
-      description="A description of the desired input"
-    >
+    <InputField id="1" label="Select box" description="A description of the desired input">
       <WrappedSelect />
     </InputField>
   ))
   .add('StarRating', () => (
-    <InputField
-      id="1"
-      label="Radio buttons"
-      description="A description of the desired input"
-    >
+    <InputField id="1" label="Radio buttons" description="A description of the desired input">
       <StarRating
         className={m.mtl}
         name="RadioGroup"

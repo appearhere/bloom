@@ -7,7 +7,7 @@ import m from '../../globals/modifiers.css';
 
 const story = storiesOf('Icon', module);
 
-Object.keys(icons).forEach((icon) => {
+Object.keys(icons).forEach(icon => {
   story.add(icon, () => (
     <div className={m.base}>
       {icon}: <Icon name={icon} />
@@ -15,10 +15,11 @@ Object.keys(icons).forEach((icon) => {
   ));
 });
 
-story.add('Large icon', () => (
-  <div className={m.titleLarge}>
-    <Icon name="bogroll" /> Flush
-  </div>
+story
+  .add('Large icon', () => (
+    <div className={m.titleLarge}>
+      <Icon name="bogroll" /> Flush
+    </div>
   ))
   .add('Primary icon', () => (
     <div className={m.fgPrimary}>

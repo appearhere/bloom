@@ -11,24 +11,12 @@ export const PANEL_CONTEXT = {
   SUCCESS: 'success',
 };
 
-const Panel = (props) => {
-  const {
-    children,
-    className,
-    context,
-    ...rest
-  } = props;
+const Panel = props => {
+  const { children, className, context, ...rest } = props;
 
   return (
-    <div
-      {...rest}
-      className={cx(
-        css.root,
-        css[context],
-        className,
-      )}
-    >
-      { children }
+    <div {...rest} className={cx(css.root, css[context], className)}>
+      {children}
     </div>
   );
 };

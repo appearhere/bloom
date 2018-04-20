@@ -35,26 +35,15 @@ class SpaceFeatureCard extends Component {
       ...rest
     } = this.props;
 
-    const classes = cx(
-      css.root,
-      containerQuery,
-      className,
-    );
-
+    const classes = cx(css.root, containerQuery, className);
 
     return (
       <PictureCard {...rest} className={classes}>
         <div className={css.inner}>
-          <span className={css.location}>
-            { location }
-          </span>
+          <span className={css.location}>{location}</span>
           <div className={css.bottom}>
-            <div className={css.name}>
-              { name }
-            </div>
-            <div className={css.price}>
-              { price }
-            </div>
+            <div className={css.name}>{name}</div>
+            <div className={css.price}>{price}</div>
           </div>
         </div>
       </PictureCard>

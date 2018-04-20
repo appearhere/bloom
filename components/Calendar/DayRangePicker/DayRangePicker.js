@@ -55,7 +55,7 @@ export default class DayRangePicker extends Component {
     endHighlight: null,
   };
 
-  getDayState = (day) => {
+  getDayState = day => {
     const { startDate, endDate, isDisabled } = this.props;
     const { endHighlight } = this.state;
 
@@ -64,12 +64,10 @@ export default class DayRangePicker extends Component {
     return {
       isDisabled: isDisabled(day),
       isSelected: dayInRange(day, startDate, endDate),
-      isFirstSelected: day.isSame(startDate, 'day') ||
-        (startDate && !endDate) ||
-        (!startDate && endDate),
-      isLastSelected: day.isSame(endDate, 'day') ||
-        (startDate && !endDate) ||
-        (!startDate && endDate),
+      isFirstSelected:
+        day.isSame(startDate, 'day') || (startDate && !endDate) || (!startDate && endDate),
+      isLastSelected:
+        day.isSame(endDate, 'day') || (startDate && !endDate) || (!startDate && endDate),
       isHighlighted: dayInRange(day, startDate, endHighlight),
       isFirstHighlighted: day.isSame(startDate, 'day'),
       isLastHighlighted: day.isSame(endHighlight, 'day'),
@@ -115,12 +113,7 @@ export default class DayRangePicker extends Component {
     });
   };
   render() {
-    const {
-      startDate: _startDate,
-      endDate: _endDate,
-      onMonthChange,
-      ...rest
-    } = this.props;
+    const { startDate: _startDate, endDate: _endDate, onMonthChange, ...rest } = this.props;
 
     return (
       <DayPicker

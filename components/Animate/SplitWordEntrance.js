@@ -25,7 +25,7 @@ export default class SplitWordEntrance extends Component {
 
     return (
       <span {...rest}>
-        { children.split(' ').map((word, i) => (
+        {children.split(' ').map((word, i) => (
           <span key={uniqueId(`${this.id}-${word}`)}>
             <span
               className={css.animation}
@@ -34,11 +34,10 @@ export default class SplitWordEntrance extends Component {
                 animationDelay: `${duration * (i * 1.8)}ms`,
               }}
             >
-              { word }
-            </span>
-            { ' ' }
+              {word}
+            </span>{' '}
           </span>
-        )) }
+        ))}
       </span>
     );
   }

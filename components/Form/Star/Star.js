@@ -10,15 +10,15 @@ export default class Star extends Component {
   static propTypes = {
     className: PropTypes.string,
     iconClassName: PropTypes.string,
-  }
+  };
 
   focus = () => {
     this.component.focus();
-  }
+  };
 
   blur = () => {
     this.component.blur();
-  }
+  };
 
   render() {
     const { className, iconClassName, ...rest } = this.props;
@@ -27,7 +27,7 @@ export default class Star extends Component {
       <Radio
         {...rest}
         className={cx(css.root, className)}
-        ref={(c) => {
+        ref={c => {
           this.component = c;
         }}
       >

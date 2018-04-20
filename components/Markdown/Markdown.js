@@ -18,15 +18,10 @@ export default class Markdown extends Component {
 
   static defaultProps = {
     overrideClassname: false,
-  }
+  };
 
   render() {
-    const {
-      children,
-      className,
-      overrideClassname,
-      ...rest
-    } = this.props;
+    const { children, className, overrideClassname, ...rest } = this.props;
 
     const ast = parser.parse(children);
 

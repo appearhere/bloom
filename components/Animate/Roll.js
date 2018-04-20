@@ -47,15 +47,17 @@ export default class Roll extends Component {
 
     return (
       <TransitionMotion
-        styles={[{
-          key: child.props.id,
-          style: this.getStyles(),
-          data: child,
-        }]}
+        styles={[
+          {
+            key: child.props.id,
+            style: this.getStyles(),
+            data: child,
+          },
+        ]}
         willEnter={this.willEnter}
         willLeave={this.willLeave}
       >
-        { interpolated => (
+        {interpolated => (
           <div
             style={{
               position: 'relative',
@@ -64,7 +66,7 @@ export default class Roll extends Component {
               width,
             }}
           >
-            { interpolated.map(({ key, data, style }) => (
+            {interpolated.map(({ key, data, style }) => (
               <div
                 key={key}
                 style={{
@@ -76,9 +78,9 @@ export default class Roll extends Component {
                   backfaceVisibility: 'hidden',
                 }}
               >
-                { data }
+                {data}
               </div>
-            )) }
+            ))}
           </div>
         )}
       </TransitionMotion>

@@ -14,35 +14,20 @@ import GuideCard from './EditorialCard/GuideCard';
 import EventCard from './EditorialCard/EventCard';
 
 storiesOf('Cards', module)
-  .add('Default', () => (
-    <Card>Hello, world</Card>
-  ))
-  .add('Default with link', () => (
-    <Card href="#">Hello, world</Card>
-  ))
+  .add('Default', () => <Card>Hello, world</Card>)
+  .add('Default with link', () => <Card href="#">Hello, world</Card>)
   .add('PictureCard', () => (
-    <PictureCard
-      style={{ minHeight: '10vh' }}
-      src="https://source.unsplash.com/random"
-    >
+    <PictureCard style={{ minHeight: '10vh' }} src="https://source.unsplash.com/random">
       Hello, world
     </PictureCard>
   ))
   .add('PictureCard with link', () => (
-    <PictureCard
-      style={{ minHeight: '10vh' }}
-      href="#"
-      src="https://source.unsplash.com/random"
-    >
+    <PictureCard style={{ minHeight: '10vh' }} href="#" src="https://source.unsplash.com/random">
       Hello, world
     </PictureCard>
   ))
   .add('PictureCard with centered content', () => (
-    <PictureCard
-      style={{ minHeight: '10vh' }}
-      src="https://source.unsplash.com/random"
-      center
-    >
+    <PictureCard style={{ minHeight: '10vh' }} src="https://source.unsplash.com/random" center>
       Hello, world
     </PictureCard>
   ))
@@ -55,9 +40,7 @@ storiesOf('Cards', module)
       src="https://source.unsplash.com/random"
     />
   ))
-  .add('EmptyListingCard', () => (
-    <EmptyListingCard />
-  ))
+  .add('EmptyListingCard', () => <EmptyListingCard />)
   .add('SpaceListingCard', () => (
     <SpaceListingCard
       price="$10,000,000"
@@ -65,21 +48,24 @@ storiesOf('Cards', module)
       location="Shoreditch, London in the Greater London Area"
       size="1000 sqft"
       name="A really long Bold Street Shop, maybe the biggest shop you've ever seen"
-      images={
-        [{
+      images={[
+        {
           src: 'https://source.unsplash.com/random/500x500',
           alt: 'hello',
-        }, {
+        },
+        {
           src: 'https://source.unsplash.com/random/500x503',
           alt: 'hello2',
-        }, {
+        },
+        {
           src: 'https://source.unsplash.com/random/500x502',
           alt: 'hello',
-        }, {
+        },
+        {
           src: 'https://source.unsplash.com/random/500x501',
           alt: 'hello2',
-        }]
-      }
+        },
+      ]}
       href="#"
     />
   ))
@@ -87,25 +73,32 @@ storiesOf('Cards', module)
     <SpaceListingCard
       price="$10,000,00000000000000000000000"
       priceUnit="/day"
-      badge={<Badge context="primary" hollow={false}>New</Badge>}
+      badge={
+        <Badge context="primary" hollow={false}>
+          New
+        </Badge>
+      }
       location="Shoreditch, London in the Greater London Area"
       size="1000 sqft"
       name="A really long Bold Street Shop, maybe the biggest shop you've ever seen"
-      images={
-        [{
+      images={[
+        {
           src: 'https://source.unsplash.com/random/500x500',
           alt: 'hello',
-        }, {
+        },
+        {
           src: 'https://source.unsplash.com/random/500x503',
           alt: 'hello2',
-        }, {
+        },
+        {
           src: 'https://source.unsplash.com/random/500x502',
           alt: 'hello',
-        }, {
+        },
+        {
           src: 'https://source.unsplash.com/random/500x501',
           alt: 'hello2',
-        }]
-      }
+        },
+      ]}
       href="#"
     />
   ))
@@ -118,21 +111,24 @@ storiesOf('Cards', module)
       name="Bold Street Shop"
       placeLabel="Part of Boxpark"
       placeHref="#"
-      images={
-        [{
+      images={[
+        {
           src: 'https://source.unsplash.com/random/500x500',
           alt: 'hello',
-        }, {
+        },
+        {
           src: 'https://source.unsplash.com/random/500x503',
           alt: 'hello2',
-        }, {
+        },
+        {
           src: 'https://source.unsplash.com/random/500x502',
           alt: 'hello',
-        }, {
+        },
+        {
           src: 'https://source.unsplash.com/random/500x501',
           alt: 'hello2',
-        }]
-      }
+        },
+      ]}
       href="#"
     />
   ))
@@ -143,21 +139,24 @@ storiesOf('Cards', module)
       location="Shoreditch, London"
       size="1000 sqft"
       name="Bold Street Shop"
-      images={
-        [{
+      images={[
+        {
           src: 'https://source.unsplash.com/random/500x500',
           alt: 'hello',
-        }, {
+        },
+        {
           src: 'https://source.unsplash.com/random/500x503',
           alt: 'hello2',
-        }, {
+        },
+        {
           src: 'https://source.unsplash.com/random/500x502',
           alt: 'hello',
-        }, {
+        },
+        {
           src: 'https://source.unsplash.com/random/500x501',
           alt: 'hello2',
-        }]
-      }
+        },
+      ]}
       href="#"
     >
       <button>Save space</button>
@@ -170,21 +169,24 @@ storiesOf('Cards', module)
       location="Shoreditch, London"
       size="1000 sqft"
       name="Bold Street Shop"
-      images={
-        [{
+      images={[
+        {
           src: 'https://source.unsplash.com/random/500x500',
           alt: 'hello',
-        }, {
+        },
+        {
           src: 'https://source.unsplash.com/random/500x503',
           alt: 'hello2',
-        }, {
+        },
+        {
           src: 'https://source.unsplash.com/random/500x502',
           alt: 'hello',
-        }, {
+        },
+        {
           src: 'https://source.unsplash.com/random/500x501',
           alt: 'hello2',
-        }]
-      }
+        },
+      ]}
       href="#"
       favouriteable
     />
@@ -196,21 +198,24 @@ storiesOf('Cards', module)
       location="Shoreditch, London"
       size="1000 sqft"
       name="Bold Street Shop"
-      images={
-        [{
+      images={[
+        {
           src: 'https://source.unsplash.com/random/500x500',
           alt: 'hello',
-        }, {
+        },
+        {
           src: 'https://source.unsplash.com/random/500x503',
           alt: 'hello2',
-        }, {
+        },
+        {
           src: 'https://source.unsplash.com/random/500x502',
           alt: 'hello',
-        }, {
+        },
+        {
           src: 'https://source.unsplash.com/random/500x501',
           alt: 'hello2',
-        }]
-      }
+        },
+      ]}
       href="#"
       favourite
       favouriteable
@@ -224,21 +229,24 @@ storiesOf('Cards', module)
       size="1000 sqft"
       name="Bold Street Shop"
       onClick={action('Clicked called with (e, href)')}
-      images={
-        [{
+      images={[
+        {
           src: 'https://source.unsplash.com/random/500x500',
           alt: 'hello',
-        }, {
+        },
+        {
           src: 'https://source.unsplash.com/random/500x503',
           alt: 'hello2',
-        }, {
+        },
+        {
           src: 'https://source.unsplash.com/random/500x502',
           alt: 'hello',
-        }, {
+        },
+        {
           src: 'https://source.unsplash.com/random/500x501',
           alt: 'hello2',
-        }]
-      }
+        },
+      ]}
       href="#"
     >
       <button>Save space</button>
@@ -251,12 +259,12 @@ storiesOf('Cards', module)
       name="Bold Street Shop"
       placeLabel="Part of Boxpark"
       placeHref="#"
-      images={
-        [{
+      images={[
+        {
           src: 'https://source.unsplash.com/random/500x500',
           alt: 'hello',
-        }]
-      }
+        },
+      ]}
       href="#"
     />
   ))
@@ -301,9 +309,11 @@ storiesOf('Cards', module)
       title="How to PR your Pop Up Shop"
       href="#"
       src="https://source.unsplash.com/random/500x500"
-      description={'Inside, you’ll find everything you need to know to launch a shop share, ' +
-        ' from choosing the right location to setting up the space.'}
-      unlockCallback={(e) => {
+      description={
+        'Inside, you’ll find everything you need to know to launch a shop share, ' +
+        ' from choosing the right location to setting up the space.'
+      }
+      unlockCallback={e => {
         e.stopPropagation();
         action('Unlocking')(e);
       }}
@@ -314,9 +324,11 @@ storiesOf('Cards', module)
       title="How to PR your Pop Up Shop"
       href="#"
       src="https://source.unsplash.com/random/500x500"
-      description={'Inside, you’ll find everything you need to know to launch a shop share, ' +
-        ' from choosing the right location to setting up the space.'}
-      downloadCallback={(e) => {
+      description={
+        'Inside, you’ll find everything you need to know to launch a shop share, ' +
+        ' from choosing the right location to setting up the space.'
+      }
+      downloadCallback={e => {
         e.stopPropagation();
         action('Downloading')(e);
       }}
@@ -330,7 +342,7 @@ storiesOf('Cards', module)
       description="Nam erat urna, tincidunt eleifend libero ut, posuere dictum augue."
       location="London"
       date="28th August 2016"
-      ctaCallback={(e) => {
+      ctaCallback={e => {
         e.stopPropagation();
         action('Redirecting')(e);
       }}

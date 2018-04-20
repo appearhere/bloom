@@ -6,15 +6,7 @@ import InputRange from './InputRange';
 describe('Default InputRange', () => {
   it('renders without crashing', () => {
     const div = document.createElement('div');
-    render(
-      <InputRange
-        name=""
-        value={0}
-        minValue={0}
-        maxValue={1}
-      />,
-      div
-    );
+    render(<InputRange name="" value={0} minValue={0} maxValue={1} />, div);
   });
 });
 
@@ -31,7 +23,7 @@ describe('Multi InputRange', () => {
         minValue={0}
         maxValue={1}
       />,
-      div
+      div,
     );
   });
 });

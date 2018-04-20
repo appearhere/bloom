@@ -13,7 +13,7 @@ export default class DeviceFrame extends Component {
         src: PropTypes.string,
         alt: PropTypes.string,
         /* eslint-enable react/no-unused-prop-types */
-      })
+      }),
     ).isRequired,
     deviceImage: PropTypes.string.isRequired,
     interval: PropTypes.number,
@@ -69,7 +69,7 @@ export default class DeviceFrame extends Component {
         /* eslint-enable no-undef */
       });
     }
-  }
+  };
 
   render() {
     const { children, interval, css, deviceImage } = this.props;
@@ -78,19 +78,10 @@ export default class DeviceFrame extends Component {
 
     return (
       <div className={css.root}>
-        <img
-          className={css.frame}
-          src={deviceImage}
-          role="presentation"
-        />
+        <img className={css.frame} src={deviceImage} role="presentation" />
         <div className={css.inner}>
           <Swap animationTimeout={interval}>
-            <img
-              key={activeIndex}
-              className={css.img}
-              src={img.src}
-              alt={img.alt}
-            />
+            <img key={activeIndex} className={css.img} src={img.src} alt={img.alt} />
           </Swap>
         </div>
       </div>

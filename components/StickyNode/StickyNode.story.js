@@ -11,7 +11,8 @@ storiesOf('StickyNode', module)
         className={m.pa96}
         style={{
           height: '150vh',
-          background: 'url(http://subtlepatterns2015.subtlepatterns' +
+          background:
+            'url(http://subtlepatterns2015.subtlepatterns' +
             '.netdna-cdn.com/patterns/seigaiha.png)',
         }}
       >
@@ -27,7 +28,8 @@ storiesOf('StickyNode', module)
         className={m.pa96}
         style={{
           height: '300vh',
-          background: 'url(http://subtlepatterns2015.subtlepatterns' +
+          background:
+            'url(http://subtlepatterns2015.subtlepatterns' +
             '.netdna-cdn.com/patterns/seigaiha.png)',
         }}
       >
@@ -46,7 +48,8 @@ storiesOf('StickyNode', module)
         className={m.pa96}
         style={{
           height: '300vh',
-          background: 'url(http://subtlepatterns2015.subtlepatterns' +
+          background:
+            'url(http://subtlepatterns2015.subtlepatterns' +
             '.netdna-cdn.com/patterns/seigaiha.png)',
         }}
       >
@@ -64,8 +67,8 @@ storiesOf('StickyNode', module)
       className={m.pa96}
       style={{
         height: '150vh',
-        background: 'url(http://subtlepatterns2015.subtlepatterns' +
-          '.netdna-cdn.com/patterns/seigaiha.png)',
+        background:
+          'url(http://subtlepatterns2015.subtlepatterns' + '.netdna-cdn.com/patterns/seigaiha.png)',
       }}
     >
       <div style={{ height: '500px' }} className={[m.bgWhite, 'boundary'].join(' ')}>

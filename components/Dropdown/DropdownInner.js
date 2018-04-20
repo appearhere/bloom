@@ -4,7 +4,7 @@ import cx from 'classnames';
 
 import css from './DropdownInner.css';
 
-const DropdownInner = (props) => {
+const DropdownInner = props => {
   const {
     className,
     children,
@@ -16,11 +16,8 @@ const DropdownInner = (props) => {
   } = props;
 
   return (
-    <div
-      {...rest}
-      className={cx(css.root, className)}
-    >
-      { children }
+    <div {...rest} className={cx(css.root, className)}>
+      {children}
     </div>
   );
 };

@@ -9,7 +9,7 @@ export default class FittedImage extends Component {
     src: PropTypes.string.isRequired,
     alt: PropTypes.string,
     className: PropTypes.string,
-  }
+  };
 
   componentDidMount() {
     if (canUseDOM && typeof objectFitImages === 'function') {
@@ -26,7 +26,9 @@ export default class FittedImage extends Component {
         className={className}
         src={src}
         alt={alt}
-        ref={(c) => { this.component = c; }}
+        ref={c => {
+          this.component = c;
+        }}
       />
     );
   }

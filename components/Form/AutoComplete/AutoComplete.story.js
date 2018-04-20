@@ -27,21 +27,15 @@ storiesOf('AutoComplete', module)
         value: '',
         onChange: action('input onChange'),
       }}
-      renderSuggestion={suggestion => <span>{ suggestion }</span>}
+      renderSuggestion={suggestion => <span>{suggestion}</span>}
       getSuggestionValue={val => val}
       focusFirstSuggestion
       alwaysRenderSuggestions
     />
   ))
-  .add('Heading', () => (
-    <Heading>Category</Heading>
-  ))
-  .add('Suggestion', () => (
-    <Suggestion>Neil</Suggestion>
-  ))
-  .add('Input', () => (
-    <Input />
-  ))
+  .add('Heading', () => <Heading>Category</Heading>)
+  .add('Suggestion', () => <Suggestion>Neil</Suggestion>)
+  .add('Input', () => <Input />)
   .add('with default theme', () => (
     <AutoComplete
       theme={theme}
@@ -53,7 +47,7 @@ storiesOf('AutoComplete', module)
         value: '',
         onChange: action('input onChange'),
       }}
-      renderSuggestion={suggestion => <span>{ suggestion }</span>}
+      renderSuggestion={suggestion => <span>{suggestion}</span>}
       getSuggestionValue={val => val}
       focusFirstSuggestion
       alwaysRenderSuggestions
@@ -70,7 +64,7 @@ storiesOf('AutoComplete', module)
         value: '',
         onChange: action('input onChange'),
       }}
-      renderSuggestion={suggestion => <Suggestion>{ suggestion }</Suggestion>}
+      renderSuggestion={suggestion => <Suggestion>{suggestion}</Suggestion>}
       getSuggestionValue={val => val}
       focusFirstSuggestion
       alwaysRenderSuggestions
@@ -87,8 +81,8 @@ storiesOf('AutoComplete', module)
         value: '',
         onChange: action('input onChange'),
       }}
-      renderSectionTitle={section => <Heading>{ section.discipline }</Heading>}
-      renderSuggestion={member => <Suggestion>{ member }</Suggestion>}
+      renderSectionTitle={section => <Heading>{section.discipline}</Heading>}
+      renderSuggestion={member => <Suggestion>{member}</Suggestion>}
       getSectionSuggestions={section => section.members}
       getSuggestionValue={val => val}
       focusFirstSuggestion
@@ -107,8 +101,8 @@ storiesOf('AutoComplete', module)
         value: '',
         onChange: action('input onChange'),
       }}
-      renderSectionTitle={section => <Heading>{ section.discipline }</Heading>}
-      renderSuggestion={member => <Suggestion>{ member }</Suggestion>}
+      renderSectionTitle={section => <Heading>{section.discipline}</Heading>}
+      renderSuggestion={member => <Suggestion>{member}</Suggestion>}
       getSectionSuggestions={section => section.members}
       getSuggestionValue={val => val}
       renderInputComponent={Input}

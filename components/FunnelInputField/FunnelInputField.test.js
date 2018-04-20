@@ -6,11 +6,9 @@ import FunnelInputField from './FunnelInputField';
 it('renders without crashing', () => {
   const div = document.createElement('div');
   render(
-    <FunnelInputField
-      id=""
-    >
+    <FunnelInputField id="">
       <input />
     </FunnelInputField>,
-    div
+    div,
   );
 });

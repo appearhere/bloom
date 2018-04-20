@@ -54,13 +54,13 @@ export default class DayPicker extends Component {
     accessibilityPrevLabel: 'Go to previous month',
   };
 
-  handleNextMonth = (e) => {
+  handleNextMonth = e => {
     const { month, onMonthChange } = this.props;
     const nextMonth = month.clone().add(1, 'month');
     onMonthChange(e, nextMonth);
   };
 
-  handlePreviousMonth = (e) => {
+  handlePreviousMonth = e => {
     const { month, onMonthChange } = this.props;
     const prevMonth = month.clone().add(-1, 'month');
     onMonthChange(e, prevMonth);
@@ -81,16 +81,14 @@ export default class DayPicker extends Component {
           <div className={cx(css.control, css.prevControl)}>
             <BtnContainer onClick={this.handlePreviousMonth}>
               <Icon name="chevron" className={css.prevIcon} />
-              <ScreenReadable>{ accessibilityPrevLabel }</ScreenReadable>
+              <ScreenReadable>{accessibilityPrevLabel}</ScreenReadable>
             </BtnContainer>
           </div>
-          <div className={css.month}>
-            { month.format('MMMM YYYY') }
-          </div>
+          <div className={css.month}>{month.format('MMMM YYYY')}</div>
           <div className={cx(css.control, css.nextControl)}>
             <BtnContainer onClick={this.handleNextMonth}>
               <Icon name="chevron" className={css.nextIcon} />
-              <ScreenReadable>{ accessibilityNextLabel }</ScreenReadable>
+              <ScreenReadable>{accessibilityNextLabel}</ScreenReadable>
             </BtnContainer>
           </div>
         </div>

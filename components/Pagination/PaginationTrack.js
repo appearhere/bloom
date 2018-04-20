@@ -14,7 +14,7 @@ const FILLER_THRESHOLD = 2;
 
 const PaginationFiller = () => <span className={css.filler}>&hellip;</span>;
 
-const PaginationTrack = (props) => {
+const PaginationTrack = props => {
   const {
     LinkComponent,
     FillerComponent,
@@ -49,25 +49,21 @@ const PaginationTrack = (props) => {
 
   return (
     <ul className={css.track}>
-      { track.map((page, i) => {
+      {track.map((page, i) => {
         const key = page === FILLER ? `${FILLER}_${i}` : page;
 
         return (
           <li className={css.page} key={key}>
-            { page === FILLER ? (
+            {page === FILLER ? (
               <FillerComponent />
             ) : (
-              <LinkComponent
-                {...linkProps}
-                page={page}
-                active={page === currentPage}
-              >
-                { page }
+              <LinkComponent {...linkProps} page={page} active={page === currentPage}>
+                {page}
               </LinkComponent>
-            ) }
+            )}
           </li>
         );
-      }) }
+      })}
     </ul>
   );
 };

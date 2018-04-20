@@ -5,15 +5,8 @@ import cx from 'classnames';
 import css from './Medallion.css';
 
 const Medallion = ({ className, variant, children, ...rest }) => (
-  <span
-    {...rest}
-    className={cx(
-      css.root,
-      css[variant],
-      className,
-    )}
-  >
-    { children }
+  <span {...rest} className={cx(css.root, css[variant], className)}>
+    {children}
   </span>
 );
 

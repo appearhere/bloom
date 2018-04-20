@@ -8,17 +8,9 @@ import m from '../../globals/modifiers.css';
 
 storiesOf('Hero', module)
   .add('Default', () => {
-    const headingClasses = classnames(
-      m.fontLgIv,
-      m.fgWhite,
-      m.uppercase,
-      m.wideSpacing,
-    );
+    const headingClasses = classnames(m.fontLgIv, m.fgWhite, m.uppercase, m.wideSpacing);
 
-    const paraClasses = classnames(
-      m.fontRegular,
-      m.fgWhite,
-    );
+    const paraClasses = classnames(m.fontRegular, m.fgWhite);
 
     return (
       <Hero
@@ -34,17 +26,9 @@ storiesOf('Hero', module)
     );
   })
   .add('Animated', () => {
-    const headingClasses = classnames(
-      m.fontLgIv,
-      m.fgWhite,
-      m.uppercase,
-      m.wideSpacing,
-    );
+    const headingClasses = classnames(m.fontLgIv, m.fgWhite, m.uppercase, m.wideSpacing);
 
-    const paraClasses = classnames(
-      m.fontRegular,
-      m.fgWhite,
-    );
+    const paraClasses = classnames(m.fontRegular, m.fgWhite);
 
     return (
       <Hero
@@ -61,10 +45,7 @@ storiesOf('Hero', module)
     );
   })
   .add('<SquareHero />', () => (
-    <SquareHero
-      image="https://source.unsplash.com/random/1200x800"
-      alt=""
-    >
+    <SquareHero image="https://source.unsplash.com/random/1200x800" alt="">
       Curators, makers, rule breakers. Questioners & forward thinkers
     </SquareHero>
   ));

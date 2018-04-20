@@ -6,7 +6,7 @@ import PictureCard from '../PictureCard/PictureCard';
 
 import css from './PlaceListingCard.css';
 
-const PlaceListingCard = (props) => {
+const PlaceListingCard = props => {
   const {
     imageSrc,
     href,
@@ -34,12 +34,12 @@ const PlaceListingCard = (props) => {
     >
       <div className={css.body}>
         <div className={css.name}>
-          { priceFromLabel && <span className={css.priceFromLabel}>{ priceFromLabel }</span> }
-          <span className={css.price}>{ price }</span>
-          { '\u00a0' }
-          <span className={css.priceUnit}>{ priceUnit }</span>
+          {priceFromLabel && <span className={css.priceFromLabel}>{priceFromLabel}</span>}
+          <span className={css.price}>{price}</span>
+          {'\u00a0'}
+          <span className={css.priceUnit}>{priceUnit}</span>
         </div>
-        <div className={css.name}>{ name }</div>
+        <div className={css.name}>{name}</div>
         <div className={css.additionalInformationBlock}>
           <span
             className={css.additionalInformationItem}
@@ -47,16 +47,16 @@ const PlaceListingCard = (props) => {
               maxWidth: hasCompleteInfo ? 'calc(50% - 1rem)' : '100%',
             }}
           >
-            { location }
+            {location}
           </span>
-          { hasCompleteInfo ? <span className={css.spacer}>•</span> : null }
+          {hasCompleteInfo ? <span className={css.spacer}>•</span> : null}
           <span
             className={css.additionalInformationItem}
             style={{
               maxWidth: hasCompleteInfo ? 'calc(50% - 1rem)' : '100%',
             }}
           >
-            { spaceDetail }
+            {spaceDetail}
           </span>
         </div>
       </div>

@@ -8,9 +8,7 @@ import IndicatorGroup from './IndicatorGroup';
 /* eslint-disable class-methods-use-this */
 class TestComp extends Component {
   render() {
-    return (
-      <div />
-    );
+    return <div />;
   }
 }
 /* eslint-enable class-methods-use-this */
@@ -18,12 +16,7 @@ class TestComp extends Component {
 
 it('renders without crashing', () => {
   const div = document.createElement('div');
-  ReactDOM.render(
-    <IndicatorGroup>
-      { indicator => indicator({ i: 0 }) }
-    </IndicatorGroup>,
-    div
-  );
+  ReactDOM.render(<IndicatorGroup>{indicator => indicator({ i: 0 })}</IndicatorGroup>, div);
 });
 
 it('outputs children of the correct type', () => {
@@ -32,12 +25,16 @@ it('outputs children of the correct type', () => {
 
   ReactDOM.render(
     <IndicatorGroup Component={TestComp}>
-      { indicator => indicator({
-        i: 0,
-        ref: (c) => { renderedComponent = c; },
-      }) }
+      {indicator =>
+        indicator({
+          i: 0,
+          ref: c => {
+            renderedComponent = c;
+          },
+        })
+      }
     </IndicatorGroup>,
-    div
+    div,
   );
 
   expect(renderedComponent instanceof TestComp).toBe(true);
@@ -49,12 +46,16 @@ it('passes an active prop to it’s children', () => {
 
   ReactDOM.render(
     <IndicatorGroup Component={TestComp}>
-      { indicator => indicator({
-        i: 0,
-        ref: (c) => { renderedComponent = c; },
-      }) }
+      {indicator =>
+        indicator({
+          i: 0,
+          ref: c => {
+            renderedComponent = c;
+          },
+        })
+      }
     </IndicatorGroup>,
-    div
+    div,
   );
 
   expect('active' in renderedComponent.props).toBe(true);
@@ -67,20 +68,24 @@ it('passes the active prop to the correct child', () => {
 
   ReactDOM.render(
     <IndicatorGroup Component={TestComp} activeIndicator={1}>
-      { indicator => (
+      {indicator => (
         <span>
-          { indicator({
+          {indicator({
             i: 0,
-            ref: (c) => { regularComponent = c; },
-          }) }
-          { indicator({
+            ref: c => {
+              regularComponent = c;
+            },
+          })}
+          {indicator({
             i: 1,
-            ref: (c) => { activeComponent = c; },
-          }) }
+            ref: c => {
+              activeComponent = c;
+            },
+          })}
         </span>
-      ) }
+      )}
     </IndicatorGroup>,
-    div
+    div,
   );
 
   expect(regularComponent.props.active).toBe(false);
@@ -93,10 +98,8 @@ it('throws when it’s children aren’t given indices', () => {
 
   try {
     ReactDOM.render(
-      <IndicatorGroup Component={TestComp}>
-        { indicator => indicator() }
-      </IndicatorGroup>,
-      div
+      <IndicatorGroup Component={TestComp}>{indicator => indicator()}</IndicatorGroup>,
+      div,
     );
   } catch (e) {
     hasThrown = true;

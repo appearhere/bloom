@@ -22,10 +22,9 @@ const labeledCalls = (spy, label) => spy.calls.all().filter(call => call.args[0]
 it('renders without crashing', () => {
   const div = document.createElement('div');
   ReactDOM.render(
-    <MarkableMap
-      MarkerComponent={SpaceMarker}
-      GroupMarkerComponent={SpaceGroupMarker}
-    />, div);
+    <MarkableMap MarkerComponent={SpaceMarker} GroupMarkerComponent={SpaceGroupMarker} />,
+    div,
+  );
 });
 
 it('it renders the active marker correctly', () => {
@@ -35,12 +34,14 @@ it('it renders the active marker correctly', () => {
   const div = document.createElement('div');
   ReactDOM.render(
     <MarkableMap
-      ref={(c) => { component = c; }}
+      ref={c => {
+        component = c;
+      }}
       MarkerComponent={SpaceMarker}
       GroupMarkerComponent={SpaceGroupMarker}
       markers={[{ id: 1, lngLat: [1, 0], label: 'test' }]}
     />,
-    div
+    div,
   );
 
   const geoJSONFeature = { geometry: { coordinates: [1, 0] }, properties: { id: 1 } };
@@ -68,7 +69,7 @@ it('it autosizes the map correctly', () => {
       markers={[{ id: 1, lngLat: [1, 0], label: 'test' }]}
       autoFit
     />,
-    div
+    div,
   );
 
   let fitBoundsCalls = labeledCalls(mapSpy, 'fitBounds');
@@ -79,13 +80,10 @@ it('it autosizes the map correctly', () => {
     <MarkableMap
       MarkerComponent={SpaceMarker}
       GroupMarkerComponent={SpaceGroupMarker}
-      markers={[
-        { id: 1, lngLat: [0, 0], label: 'test' },
-        { id: 2, lngLat: [1, 1], label: 'test' },
-      ]}
+      markers={[{ id: 1, lngLat: [0, 0], label: 'test' }, { id: 2, lngLat: [1, 1], label: 'test' }]}
       autoFit
     />,
-    div
+    div,
   );
 
   fitBoundsCalls = labeledCalls(mapSpy, 'fitBounds');
@@ -99,13 +97,10 @@ it('it autosizes the map correctly', () => {
     <MarkableMap
       MarkerComponent={SpaceMarker}
       GroupMarkerComponent={SpaceGroupMarker}
-      markers={[
-        { id: 1, lngLat: [0, 0], label: 'test' },
-        { id: 2, lngLat: [1, 1], label: 'test' },
-      ]}
+      markers={[{ id: 1, lngLat: [0, 0], label: 'test' }, { id: 2, lngLat: [1, 1], label: 'test' }]}
       autoFit
     />,
-    div
+    div,
   );
 
   fitBoundsCalls = labeledCalls(mapSpy, 'fitBounds');
@@ -122,7 +117,7 @@ it('unmounts without crashing', () => {
       GroupMarkerComponent={SpaceGroupMarker}
       markers={[{ id: 1, lngLat: [1, 0], label: 'test' }]}
     />,
-    div
+    div,
   );
   ReactDOM.unmountComponentAtNode(div);
 

@@ -6,10 +6,10 @@ import css from './Statement.css';
 
 const Statement = ({ children, className, number, ...rest }) => (
   <span>
-    <strong {...rest} className={cx(css.statement, className)} >
-      { children }
+    <strong {...rest} className={cx(css.statement, className)}>
+      {children}
     </strong>
-    { number && <span className={cx(css.number)}>{ number }</span> }
+    {number && <span className={cx(css.number)}>{number}</span>}
   </span>
 );
 
