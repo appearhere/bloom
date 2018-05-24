@@ -1,8 +1,6 @@
 import ExecutionEnvironment from 'exenv';
-// import mapboxGl from '@appearhere/mapbox-gl/dist/mapbox-gl';
 
-// const mapbox = ExecutionEnvironment.canUseDOM ? mapboxGl : {};
-const mapbox = {};
+const mapbox = ExecutionEnvironment.canUseDOM ? require('@appearhere/mapbox-gl/dist/mapbox-gl') : {};
 
 mapbox.accessToken = 'pk.eyJ1IjoiYXBwZWFyaGVyZSIsImEiOiJvUlJ0MWxNIn0.8_mzlmxdekKy99luyV4T7w';
 
