@@ -1,15 +1,15 @@
 import { extname, relative } from 'path';
 import postcssCssnext from 'postcss-cssnext';
 import postcssModules from 'postcss-modules';
+import postcss from 'postcss';
+import lost from 'lost';
+import babel from 'rollup-plugin-babel';
 import progress from 'rollup-plugin-progress';
 import json from 'rollup-plugin-json';
-import { readFileSync, writeFileSync } from 'fs';
-import cssnano from 'cssnano';
-import babel from 'rollup-plugin-babel';
-import { parseString } from 'xml2js';
-import postcss from 'postcss';
 import reactSvg from "rollup-plugin-react-svg";
-import lost from 'lost';
+import cssnano from 'cssnano';
+import { readFileSync, writeFileSync } from 'fs';
+import { parseString } from 'xml2js';
 
 import cssMap from '@appearhere/common-styles';
 
