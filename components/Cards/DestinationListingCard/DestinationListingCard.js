@@ -37,6 +37,7 @@ export default class DestinationListingCard extends Component {
     fixedHeight: PropTypes.bool,
     children: PropTypes.node,
     onFavouriteClick: PropTypes.func,
+    onCarouselChange: PropTypes.func,
     favourite: PropTypes.bool,
     favouriteable: PropTypes.bool,
   };
@@ -50,6 +51,7 @@ export default class DestinationListingCard extends Component {
     fixedHeight: false,
     onClick: noop,
     onFavouriteClick: noop,
+    onCarouselChange: noop,
   };
 
   state = {
@@ -101,6 +103,7 @@ export default class DestinationListingCard extends Component {
       fixedHeight,
       children,
       onFavouriteClick,
+      onCarouselChange,
       favourite,
       favouriteable,
       ...rest
@@ -127,6 +130,7 @@ export default class DestinationListingCard extends Component {
               wrapAround
               swiping={false}
               dragging={false}
+              onChange={onCarouselChange}
             >
               {images.map(({ src, alt }) => (
                 <a href={href} key={src} onClick={this.onClick}>
