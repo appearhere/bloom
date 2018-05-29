@@ -4,7 +4,7 @@ import Swatch from '../../components/Swatch/Swatch';
 import { H, D } from '../../components/Scaffold/Scaffold';
 
 import { brand, greys, ui } from './swatches';
-import css from './Colors.css';
+import css from './Colors.module.css';
 
 const Colors = () => (
   <div>

@@ -10,7 +10,7 @@ import Specimen from '../../../components/Specimen/Specimen';
 import { H, T, D, A, C, Bq, Note, List, Placeholder } from '../../../components/Scaffold/Scaffold';
 
 import { Modifiers as m } from '@appearhere/bloom';
-import css from './Dropdown.css';
+import css from './Dropdown.module.css';
 
 // eslint-disable-next-line react/prop-types
 const Target = ({ onClick, placeholderText }) => (

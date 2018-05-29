@@ -6,7 +6,7 @@ import { LeftRight } from '@appearhere/bloom';
 import Specimen from '../../../components/Specimen/Specimen';
 import { H, T, A, C } from '../../../components/Scaffold/Scaffold';
 
-import css from './LeftRight.css';
+import css from './LeftRight.module.css';
 import { Modifiers as m } from '@appearhere/bloom';
 
 const LeftRightDocumentation = () => (

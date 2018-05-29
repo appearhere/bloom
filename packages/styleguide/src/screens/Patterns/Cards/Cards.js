@@ -22,7 +22,7 @@ import {
 
 import shared from '../../../shared.css';
 import { Modifiers as m } from '@appearhere/bloom';
-import css from './Cards.css';
+import css from './Cards.module.css';
 
 export default class CardDocumentation extends Component {
   state = {

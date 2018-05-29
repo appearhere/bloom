@@ -8,7 +8,7 @@ import CodeBlock from '../../components/CodeBlock/CodeBlock';
 
 import { Modifiers as m } from '@appearhere/bloom';
 import scaffoldCss from '../../components/Scaffold/Scaffold.module.css';
-import css from './Modifiers.css';
+import css from './Modifiers.module.css';
 
 const Modifiers = () => (
   <div>

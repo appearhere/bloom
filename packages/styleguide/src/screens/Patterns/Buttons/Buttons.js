@@ -13,7 +13,7 @@ import {
 
 import Specimen from '../../../components/Specimen/Specimen';
 import { H, T, C, D } from '../../../components/Scaffold/Scaffold';
-import css from './Buttons.css';
+import css from './Buttons.module.css';
 import shared from '../../../shared.css';
 import { Modifiers as m } from '@appearhere/bloom';
 

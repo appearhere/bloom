@@ -9,7 +9,7 @@ import {
 import Specimen from '../../../components/Specimen/Specimen';
 import { H, T, D, C, Note, Placeholder } from '../../../components/Scaffold/Scaffold';
 
-import css from './Panels.css';
+import css from './Panels.module.css';
 import { Modifiers as m } from '@appearhere/bloom';
 
 export default class Panels extends Component {

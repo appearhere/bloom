@@ -3,7 +3,7 @@ import React from 'react';
 import { Markdown } from '@appearhere/bloom';
 import introduction from './introduction.md';
 
-import { markdown } from '../../typography.css';
+import { markdown } from '../../typography.module.css';
 
 const Introduction = () => (
   <div>

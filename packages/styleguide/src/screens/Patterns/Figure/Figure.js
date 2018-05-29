@@ -8,7 +8,7 @@ import { D, H, T, C } from '../../../components/Scaffold/Scaffold';
 import { Figure } from '@appearhere/bloom';
 
 import { Modifiers as m } from '@appearhere/bloom';
-import css from './Figure.css';
+import css from './Figure.module.css';
 
 import conceptStore from './concept-store.jpg';
 

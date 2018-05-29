@@ -13,7 +13,7 @@ import {
 
 import shared from '../../../shared.css';
 import { Modifiers as m } from '@appearhere/bloom';
-import css from './Carousel.css';
+import css from './Carousel.module.css';
 
 const CarouselDocumentation = () => (
   <div>

@@ -4,7 +4,7 @@ import cx from 'classnames';
 import Specimen from '../../components/Specimen/Specimen';
 import { H, D } from '../../components/Scaffold/Scaffold';
 
-import css from './Typography.css';
+import css from './Typography.module.css';
 
 const Typography = () => (
   <div>

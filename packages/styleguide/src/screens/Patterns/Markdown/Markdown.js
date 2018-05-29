@@ -6,7 +6,7 @@ import { Markdown } from '@appearhere/bloom';
 import Specimen from '../../../components/Specimen/Specimen';
 import { H, T, C } from '../../../components/Scaffold/Scaffold';
 
-import css from './Markdown.css';
+import css from './Markdown.module.css';
 import { Modifiers as m } from '@appearhere/bloom';
 import markdown from './example.md';
 

@@ -3,7 +3,7 @@ import { render } from 'react-dom';
 
 import Inputs from './Inputs';
 
-jest.mock('../../../../components/Form/Input/Input.css', () => ({
+jest.mock('../../../../components/Form/Input/Input.module.css', () => ({
   enter: 'enter',
   appear: 'appear',
   enterActive: 'enterActive',

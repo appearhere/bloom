@@ -5,7 +5,7 @@ import { Medallion } from '@appearhere/bloom';
 import Specimen from '../../../components/Specimen/Specimen';
 import { H, T, C } from '../../../components/Scaffold/Scaffold';
 
-import css from './Medallion.css';
+import css from './Medallion.module.css';
 import { Modifiers as m } from '@appearhere/bloom';
 
 const MedallionDocumentation = () => (

@@ -5,7 +5,7 @@ import { SpaceTypeIcon } from '@appearhere/bloom';
 import { H, D } from '../../components/Scaffold/Scaffold';
 
 import { uiIcons, brandIcons, valueIcons, spaceTypeIcons } from './icons';
-import css from './Iconography.css';
+import css from './Iconography.module.css';
 
 const Iconography = () => (
   <div>

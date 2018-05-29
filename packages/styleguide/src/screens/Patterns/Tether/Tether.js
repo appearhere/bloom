@@ -15,7 +15,7 @@ import Tether, {
 } from '@appearhere/bloom';
 
 import { Modifiers as m } from '@appearhere/bloom';
-import css from './Tether.css';
+import css from './Tether.module.css';
 import scaffoldCss from '../../../components/Scaffold/Scaffold.module.css';
 
 const Target = () => <div>Anchor</div>;

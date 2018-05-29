@@ -6,7 +6,7 @@ import { D, H, T, C, A } from '../../../components/Scaffold/Scaffold';
 
 import { FittedImage } from '@appearhere/bloom';
 
-import css from './FittedImage.css';
+import css from './FittedImage.module.css';
 import { Modifiers as m } from '@appearhere/bloom';
 
 const FittedImageDocumentation = () => (

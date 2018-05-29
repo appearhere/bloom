@@ -15,8 +15,8 @@ import {
 import exampleContent from './modal-content.md';
 
 import shared from '../../../shared.css';
-import { markdown } from '../../../typography.css';
-import css from './Modals.css';
+import { markdown } from '../../../typography.module.css';
+import css from './Modals.module.css';
 import { Modifiers as m } from '@appearhere/bloom';
 
 export default class ModalDocumentation extends Component {
@@ -147,7 +147,7 @@ export default class ModalDocumentation extends Component {
                   >
                     Confirm
                   </Btn>
-                }
+                )}
               >
                 <Markdown className={markdown} overrideClassname>{ exampleContent }</Markdown>
               </ModalWindow>
@@ -192,7 +192,7 @@ export default class ModalDocumentation extends Component {
                   >
                     Confirm
                   </Btn>
-                }
+                )}
               >
                 <Markdown className={markdown} overrideClassname>{ exampleContent }</Markdown>
               </ModalWindow>
