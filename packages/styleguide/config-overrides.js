@@ -7,7 +7,7 @@ const lost = require('lost');
 const cssMap = require('@appearhere/common-styles');
 
 const postcss = (config, env) => {
-  config.module.rules[2].oneOf[3].use[2].options.plugins = () => [
+  config.module.rules[2].oneOf[4].use[2].options.plugins = () => [
     require('postcss-flexbugs-fixes'),
     autoprefixer({
       flexbox: 'no-2009',
@@ -20,6 +20,7 @@ const postcss = (config, env) => {
     }),
     customProperties({
       variables: cssMap.vars,
+      preserve: false
     }),
     customMedia({
       extensions: cssMap.media,
@@ -30,10 +31,20 @@ const postcss = (config, env) => {
   return config;
 }
 
+const markdown = (config, env) => {
+  config.module.rules[2].oneOf = [{
+    test: /\.md$/,
+    loader: 'raw-loader',
+  }, ...config.module.rules[2].oneOf];
+
+  console.log(config.module.rules);
+  return config;
+};
+
 module.exports = function override(config, env) {
   config = rewireReactHotLoader(config, env);
 
   config = postcss(config, env);
-
+  config = markdown(config, env);
   return config;
 }
