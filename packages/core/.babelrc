@@ -19,6 +19,7 @@
     ["transform-runtime", {
       "helpers": false,
       "polyfill": false
-    }]
+    }],
+    "external-helpers"
   ]
 }
