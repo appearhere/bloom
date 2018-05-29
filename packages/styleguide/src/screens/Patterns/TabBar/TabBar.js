@@ -7,9 +7,7 @@ import Specimen from '../../../components/Specimen/Specimen';
 import { D, H, T, C } from '../../../components/Scaffold/Scaffold';
 
 import {
-  TabBar,
-  TabBarItem,
-  TabBarIconItem
+  Navigation
 } from '@appearhere/bloom';
 
 import { Modifiers as m } from '@appearhere/bloom';
@@ -33,34 +31,34 @@ const TabBarDocumentation = () => (
           specimenContainer: m.par,
         }}
         code={dedent`
-          <TabBar>
-            <TabBarItem
+          <Navigation.TabBar>
+            <Navigation.TabBarItem
               href="#search"
               active
             >
               Search
-            </TabBarItem>
-            <TabBarItem
+            </Navigation.TabBarItem>
+            <Navigation.TabBarItem
               href="#favourites"
             >
               Favourites
-            </TabBarItem>
-            <TabBarItem
+            </Navigation.TabBarItem>
+            <Navigation.TabBarItem
               href="#notification"
               active
             >
               Notifications
-            </TabBarItem>
-          </TabBar>
+            </Navigation.TabBarItem>
+          </Navigation.TabBar>
         `}
       >
-        <TabBar>
-          <TabBarItem href="#search" active>
+        <Navigation.TabBar>
+          <Navigation.TabBarItem href="#search" active>
             Search
-          </TabBarItem>
-          <TabBarItem href="#favourites">Favourites</TabBarItem>
-          <TabBarItem href="#notification">Notifications</TabBarItem>
-        </TabBar>
+          </Navigation.TabBarItem>
+          <Navigation.TabBarItem href="#favourites">Favourites</Navigation.TabBarItem>
+          <Navigation.TabBarItem href="#notification">Notifications</Navigation.TabBarItem>
+        </Navigation.TabBar>
       </Specimen>
       <H level={3} className={m.mtLgIi}>
         As part of a SPA
@@ -75,19 +73,19 @@ const TabBarDocumentation = () => (
           specimenContainer: m.par,
         }}
         code={dedent`
-          <TabBar>
-            <TabBarItem onClick={ this.navigateToSearch } Component="button">
+          <Navigation.TabBar>
+            <Navigation.TabBarItem onClick={ this.navigateToSearch } Component="button">
               Search
-            </TabBarItem>
-            <TabBarItem onClick={ this.navigateToFavourites } Component="button">
+            </Navigation.TabBarItem>
+            <Navigation.TabBarItem onClick={ this.navigateToFavourites } Component="button">
               Favourites
-            </TabBarItem>
-          </TabBar>
+            </Navigation.TabBarItem>
+          </Navigation.TabBar>
         `}
       >
         {/* eslint-disable no-alert */}
-        <TabBar>
-          <TabBarItem
+        <Navigation.TabBar>
+          <Navigation.TabBarItem
             onClick={() => {
               window.alert('Navigating...');
             }}
@@ -95,8 +93,8 @@ const TabBarDocumentation = () => (
             className={m.bgWhite}
           >
             Search
-          </TabBarItem>
-          <TabBarItem
+          </Navigation.TabBarItem>
+          <Navigation.TabBarItem
             onClick={() => {
               window.alert('Navigating...');
             }}
@@ -104,8 +102,8 @@ const TabBarDocumentation = () => (
             className={m.bgWhite}
           >
             Favourites
-          </TabBarItem>
-        </TabBar>
+          </Navigation.TabBarItem>
+        </Navigation.TabBar>
         {/* eslint-enable no-alert */}
       </Specimen>
     </D>
@@ -120,34 +118,34 @@ const TabBarDocumentation = () => (
           specimenContainer: m.par,
         }}
         code={dedent`
-          <TabBar variant="dark">
-            <TabBarItem
+          <Navigation.TabBar variant="dark">
+            <Navigation.TabBarItem
               href="#search"
               active
             >
               Search
-            </TabBarItem>
-            <TabBarItem
+            </Navigation.TabBarItem>
+            <Navigation.TabBarItem
               href="#favourites"
             >
               Favourites
-            </TabBarItem>
-            <TabBarItem
+            </Navigation.TabBarItem>
+            <Navigation.TabBarItem
               href="#notification"
               active
             >
               Notifications
-            </TabBarItem>
-          </TabBar>
+            </Navigation.TabBarItem>
+          </Navigation.TabBar>
         `}
       >
-        <TabBar variant="dark">
-          <TabBarItem href="#search" active>
+        <Navigation.TabBar variant="dark">
+          <Navigation.TabBarItem href="#search" active>
             Search
-          </TabBarItem>
-          <TabBarItem href="#favourites">Favourites</TabBarItem>
-          <TabBarItem href="#notification">Notifications</TabBarItem>
-        </TabBar>
+          </Navigation.TabBarItem>
+          <Navigation.TabBarItem href="#favourites">Favourites</Navigation.TabBarItem>
+          <Navigation.TabBarItem href="#notification">Notifications</Navigation.TabBarItem>
+        </Navigation.TabBar>
       </Specimen>
     </D>
     <D>
@@ -162,40 +160,40 @@ const TabBarDocumentation = () => (
           specimenContainer: m.par,
         }}
         code={dedent`
-          <TabBar>
-            <TabBarIconItem
+          <Navigation.TabBar>
+            <Navigation.TabBarIconItem
               icon="search"
               href="#search"
               active
             >
               Search
-            </TabBarIconItem>
-            <TabBarIconItem
+            </Navigation.TabBarIconItem>
+            <Navigation.TabBarIconItem
               icon="star"
               href="#favourites"
             >
               Favourites
-            </TabBarIconItem>
-            <TabBarIconItem
+            </Navigation.TabBarIconItem>
+            <Navigation.TabBarIconItem
               icon="notification"
               href="#notification"
             >
               Notifications
-            </TabBarIconItem>
-          </TabBar>
+            </Navigation.TabBarIconItem>
+          </Navigation.TabBar>
         `}
       >
-        <TabBar>
-          <TabBarIconItem icon="search" href="#search" active>
+        <Navigation.TabBar>
+          <Navigation.TabBarIconItem icon="search" href="#search" active>
             Search
-          </TabBarIconItem>
-          <TabBarIconItem icon="star" href="#favourites">
+          </Navigation.TabBarIconItem>
+          <Navigation.TabBarIconItem icon="star" href="#favourites">
             Favourites
-          </TabBarIconItem>
-          <TabBarIconItem icon="notification" href="#notification">
+          </Navigation.TabBarIconItem>
+          <Navigation.TabBarIconItem icon="notification" href="#notification">
             Notifications
-          </TabBarIconItem>
-        </TabBar>
+          </Navigation.TabBarIconItem>
+        </Navigation.TabBar>
       </Specimen>
     </D>
   </div>

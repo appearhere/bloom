@@ -148,10 +148,12 @@ export Moment from './Moment/Moment';
 
 import TabBar from './Navigation/TabBar/TabBar';
 import TabBarItem from './Navigation/TabBar/TabBarItem';
+import TabBarIconItem from './Navigation/TabBar/TabBarIconItem';
 
 export const Navigation = {
   TabBar,
-  TabBarItem
+  TabBarItem,
+  TabBarIconItem
 };
 
 export Notification from './Notification/Notification';
