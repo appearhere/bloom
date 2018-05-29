@@ -1,4 +1,6 @@
 import { extname, relative } from 'path';
+import resolve from 'rollup-plugin-node-resolve';
+import commonjs from 'rollup-plugin-commonjs';
 import postcssCssnext from 'postcss-cssnext';
 import postcssModules from 'postcss-modules';
 import postcss from 'postcss';
@@ -38,7 +40,7 @@ const cssModules = (options = {}) => {
         if (!Object.prototype.hasOwnProperty.call(scopeNames, hash)) {
           // base 36 encode the unique scope name
           const i = Object.keys(scopeNames).length;
-          scopeNames[hash] = `${name}_${i.toString(36)}`;
+          scopeNames[hash] = `Bloom__${name}_${i.toString(36)}`;
         }
 
         return scopeNames[hash];
@@ -65,11 +67,8 @@ const cssModules = (options = {}) => {
       };
 
       return postcssParser.process(code, opts).then(result => {
-        // Append CSS to output
         css += result.css;
 
-        // We can't yet export consts because some selector names aren't
-        // valid js variable names (anything with a hyphen "foo-bar").
         const js = `
           export default ${JSON.stringify(cssExportMap[result.opts.from])};
           `;
@@ -99,29 +98,42 @@ export default {
   },
   // All the used libs needs to be here
   external: [
-    'react',
-    'react-dom',
-    'classnames',
-    'react-motion',
-    'prop-types',
-    'subscribe-ui-event',
-    'react-transition-group',
-    'classnames/bind',
-    'exenv',
-    'es6-symbol',
-    'warning',
-    'react-moment-proptypes',
-    'key-mirror',
     '@appearhere/nuka-carousel',
-    'react-container-query',
-    'react-autosuggest',
     '@appearhere/react-input-range',
+    '@appearhere/react-stickynode',
+    'classnames',
+    'classnames/bind',
     'commonmark',
     'commonmark-react-renderer',
-    '@appearhere/react-stickynode',
+    'es6-symbol',
+    'exenv',
+    'key-mirror',
+    'lodash/fp/find',
+    'lodash/fp/first',
+    'lodash/fp/flattenDeep',
+    'lodash/fp/isArray',
+    'lodash/fp/isEqual',
+    'lodash/fp/last',
+    'lodash/fp/uniqueId',
+    'moment',
+    'moment-range',
+    'prop-types',
+    'react',
+    'react-autosuggest',
+    'react-container-query',
+    'react-dom',
     'react-html5video',
-    'lodash/fp/uniqueId'
+    'react-moment-proptypes',
+    'react-motion',
+    'react-move',
+    'react-on-visible',
+    'react-transition-group',
+    'subscribe-ui-event',
+    'warning'
   ],
+  watch: {
+    clearScreen: false
+  },
   plugins: [
     progress(),
     reactSvg({
@@ -138,5 +150,11 @@ export default {
       preferConst: true,
     }),
     babel(),
+    resolve({
+      customResolveOptions: {
+        moduleDirectory: '../../node_modules'
+      }
+    }),
+    commonjs(),
   ]
 }
