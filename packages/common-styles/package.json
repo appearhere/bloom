@@ -4,15 +4,13 @@
   "description": "",
   "main": "dist/bundle.js",
   "scripts": {
-    "build": "./node_modules/.bin/webpack-cli --mode production",
-    "dev": "./node_modules/.bin/webpack-cli --mode development --watch"
+    "build": "node ./scripts/build.js",
+    "build:watch": "node ./scripts/build.js --watch"
   },
   "author": "",
   "license": "ISC",
   "devDependencies": {
-    "babel-loader": "^7.1.4",
-    "webpack": "^4.1.1",
-    "webpack-cli": "2.0.12",
+    "chokidar": "^2.0.3",
     "webpack-postcss-tools": "^1.1.2"
   }
 }
