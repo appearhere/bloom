@@ -33,10 +33,11 @@
     "packages/*"
   ],
   "devDependencies": {
+    "concurrently": "^3.5.1",
     "lerna": "^2.9.0"
   },
   "scripts": {
-    "dev": "lerna run dev --parallel"
+    "dev": "concurrently \"cd packages/core && yarn build:watch\" \"cd packages/styleguide && yarn start\" \"cd packages/common-styles && yarn build:watch\""
   },
   "eslintConfig": {
     "extends": "./eslint.js"

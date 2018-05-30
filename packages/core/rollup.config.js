@@ -132,13 +132,14 @@ export default {
     'warning'
   ],
   watch: {
-    clearScreen: false
+    clearScreen: false,
+    chokidar: true
   },
   plugins: [
     progress(),
     reactSvg({
       svgo: {
-        plugins: [], // passed to svgo
+        plugins: [],
         multipass: true
       },
       jsx: true,

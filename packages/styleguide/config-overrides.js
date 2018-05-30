@@ -37,13 +37,11 @@ const markdown = (config, env) => {
     loader: 'raw-loader',
   }, ...config.module.rules[2].oneOf];
 
-  console.log(config.module.rules);
   return config;
 };
 
 module.exports = function override(config, env) {
   config = rewireReactHotLoader(config, env);
-
   config = postcss(config, env);
   config = markdown(config, env);
   return config;
