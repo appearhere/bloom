@@ -7,7 +7,15 @@ import Link from '../../Link/Link';
 import css from './SpaceListingCard.css';
 
 const SpaceListingCard = props => {
-  const { placeLabel, placeHref, location, size, onPlaceLabelClick, ...rest } = props;
+  const {
+    placeLabel,
+    placeHref,
+    location,
+    size,
+    onPlaceLabelClick,
+    onCarouselChange,
+    ...rest
+  } = props;
 
   return (
     <DestinationListingCard
@@ -25,6 +33,7 @@ const SpaceListingCard = props => {
         )
       }
       information={[location, size]}
+      onCarouselChange={onCarouselChange}
       {...rest}
     />
   );
@@ -38,6 +47,7 @@ SpaceListingCard.propTypes = {
   price: PropTypes.node,
   priceUnit: PropTypes.node,
   onPlaceLabelClick: PropTypes.func,
+  onCarouselChange: PropTypes.func,
 };
 
 export default SpaceListingCard;
