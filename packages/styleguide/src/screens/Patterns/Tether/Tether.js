@@ -5,13 +5,14 @@ import dedent from 'dedent';
 
 import Specimen from '../../../components/Specimen/Specimen';
 import { D, H, T, C, Note } from '../../../components/Scaffold/Scaffold';
-import Tether, {
-  VERTICAL_ATTACHMENTS,
-  HORIZONTAL_ATTACHMENTS,
+import {
+  Tether,
+  TETHER_VERTICAL_ATTACHMENTS,
+  TETHER_HORIZONTAL_ATTACHMENTS,
   Select,
   Option,
   Checkbox,
-  Label
+  Form
 } from '@appearhere/bloom';
 
 import { Modifiers as m } from '@appearhere/bloom';
@@ -24,8 +25,8 @@ const TetherChild = ({ className }) => <div className={className} />;
 
 export default class TetherDocumentation extends Component {
   state = {
-    verticalAttachment: VERTICAL_ATTACHMENTS.CENTER,
-    horizontalAttachment: HORIZONTAL_ATTACHMENTS.RIGHT,
+    verticalAttachment: TETHER_VERTICAL_ATTACHMENTS.CENTER,
+    horizontalAttachment: TETHER_HORIZONTAL_ATTACHMENTS.RIGHT,
     flushVertical: false,
     flushHorizontal: false,
   };
@@ -34,7 +35,7 @@ export default class TetherDocumentation extends Component {
     const { value: attachment } = e.target;
 
     this.setState({
-      verticalAttachment: VERTICAL_ATTACHMENTS[attachment],
+      verticalAttachment: TETHER_VERTICAL_ATTACHMENTS[attachment],
     });
   };
 
@@ -42,7 +43,7 @@ export default class TetherDocumentation extends Component {
     const { value: attachment } = e.target;
 
     this.setState({
-      horizontalAttachment: HORIZONTAL_ATTACHMENTS[attachment],
+      horizontalAttachment: TETHER_HORIZONTAL_ATTACHMENTS[attachment],
     });
   };
 
@@ -93,9 +94,9 @@ export default class TetherDocumentation extends Component {
           </Note>
           <div className={css.controls}>
             <div className={css.control}>
-              <Label className={css.label} htmlFor="verticalAttachment">
+              <Form.Label className={css.label} htmlFor="verticalAttachment">
                 vertical attachment
-              </Label>
+              </Form.Label>
               <Select
                 classNames={{ select: m.mtSmIi }}
                 name="verticalAttachment"
@@ -108,9 +109,9 @@ export default class TetherDocumentation extends Component {
               </Select>
             </div>
             <div className={css.control}>
-              <Label className={css.label} htmlFor="horizontalAttachment">
+              <Form.Label className={css.label} htmlFor="horizontalAttachment">
                 horizontal attachment
-              </Label>
+              </Form.Label>
               <Select
                 classNames={{ select: m.mtSmIi }}
                 name="horizontalAttachment"
@@ -123,9 +124,9 @@ export default class TetherDocumentation extends Component {
               </Select>
             </div>
             <div className={css.control}>
-              <Label className={css.label} htmlFor="flushVertical">
+              <Form.Label className={css.label} htmlFor="flushVertical">
                 flush vertical
-              </Label>
+              </Form.Label>
               <Checkbox
                 className={m.mtSmIi}
                 name="flushVertical"
@@ -135,9 +136,9 @@ export default class TetherDocumentation extends Component {
               />
             </div>
             <div className={css.control}>
-              <Label className={css.label} htmlFor="flushHorizontal">
+              <Form.Label className={css.label} htmlFor="flushHorizontal">
                 flush horizontal
-              </Label>
+              </Form.Label>
               <Checkbox
                 className={m.mtSmIi}
                 name="flushHorizontal"

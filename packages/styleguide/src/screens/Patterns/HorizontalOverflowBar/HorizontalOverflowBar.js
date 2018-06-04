@@ -6,7 +6,7 @@ import uniqueId from 'lodash/fp/uniqueId';
 import Specimen from '../../../components/Specimen/Specimen';
 import { D, H, T, Note, C } from '../../../components/Scaffold/Scaffold';
 
-import { HorizontalOverflowBar } from '@appearhere/bloom';
+import { Navigation } from '@appearhere/bloom';
 
 import { Modifiers as m } from '@appearhere/bloom';
 
@@ -40,14 +40,14 @@ const HorizontalOverflowBarDocumentation = () => (
           specimenContainer: m.par,
         }}
         code={dedent`
-          <HorizontalOverflowBar>
+          <Navigation.HorizontalOverflowBar>
             { link => links.map(props => link(props)) }
-          </HorizontalOverflowBar>
+          </Navigation.HorizontalOverflowBar>
         ` }
       >
-        <HorizontalOverflowBar>
+        <Navigation.HorizontalOverflowBar>
           { link => links.map(props => link(props)) }
-        </HorizontalOverflowBar>
+        </Navigation.HorizontalOverflowBar>
       </Specimen>
       <Note className={m.mtr}>
         <T elm="p">

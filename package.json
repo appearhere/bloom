@@ -1,70 +1,19 @@
 {
-  "name": "@appearhere/bloom",
-  "version": "1.0.1-0",
-  "description": "Appear Here's pattern library and styleguide",
-  "licence": "MIT",
-  "keywords": [
-    "Pattern library",
-    "styleguide",
-    "Appear Here",
-    "react",
-    "components"
-  ],
-  "homepage": "",
-  "repository": {
-    "type": "git",
-    "url": "https://github.com/appearhere/bloom.git"
-  },
-  "contributors": [
-    "Richard Palmer <rich@rdjpalmer.com> (http://rdjpalmer.com)",
-    "Jordan Amblin <hello@jordanamblin.co.uk>",
-    "Nick Maher <nick@appearhere.co.uk>",
-    "Steve Smith <steve.smith@appearhere.co.uk>",
-    "Faraz Khan <farazcsk@gmail.com>",
-    "Daniel Magliola <daniel@appearhere.co.uk>",
-    "Nique Woodhouse <nique@appearhere.co.uk>"
-  ],
-  "engines": {
-    "node": ">=8.1.4",
-    "yarn": ">=0.27.5"
-  },
   "private": true,
   "workspaces": [
     "packages/*"
   ],
   "devDependencies": {
+    "babel-jest": "^23.0.1",
     "concurrently": "^3.5.1",
+    "jest": "^23.1.0",
     "lerna": "^2.9.0"
   },
   "scripts": {
-    "dev": "concurrently \"cd packages/core && yarn build:watch\" \"cd packages/styleguide && yarn start\" \"cd packages/common-styles && yarn build:watch\""
+    "dev": "concurrently \"cd packages/core && yarn build:watch\" \"cd packages/styleguide && yarn start\" \"cd packages/common-styles && yarn build:watch\"",
+    "test": "jest --projects packages/*"
   },
   "eslintConfig": {
     "extends": "./eslint.js"
-  },
-  "jest": {
-    "moduleFileExtensions": [
-      "jsx",
-      "js",
-      "json"
-    ],
-    "moduleNameMapper": {
-      "^[./a-zA-Z0-9$_!-]+\\.(jpg|png|gif|eot|otf|webp|svg|ttf|woff|woff2|mp4|webm|json|md)$": "<rootDir>/config/jest/FileStub.js",
-      "^[./a-zA-Z0-9$_\\-\\!]+\\.css": "<rootDir>/config/jest/CSSStub.js"
-    },
-    "transform": {
-      ".*": "<rootDir>/config/jest/transform.js"
-    },
-    "setupFiles": [
-      "<rootDir>/config/polyfills.js",
-      "raf/polyfill"
-    ],
-    "testPathIgnorePatterns": [
-      "<rootDir>/(build|docs|node_modules)/"
-    ],
-    "testEnvironment": "node",
-    "testRegex": "(/__tests__/.*|\\.(test|spec))\\.(js|jsx)$",
-    "setupTestFrameworkScriptFile": "<rootDir>/config/jest/setupTestFramework.js",
-    "coverageDirectory": "<rootDir>/coverage"
   }
 }

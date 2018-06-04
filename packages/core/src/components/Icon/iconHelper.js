@@ -10,8 +10,9 @@ export default (iconSet, theme) => class Icon extends Component {
   };
 
   render() {
-    const { className, name, ...rest } = this.props;
+    const { className, name } = this.props;
     const IconComponent = iconSet[name];
+
     const classes = classnames(
       css.root,
       theme ? theme.root : null,
@@ -22,7 +23,6 @@ export default (iconSet, theme) => class Icon extends Component {
     /* eslint-disable react/no-danger */
     return (
       <span
-        {...rest}
         className={classes}
       ><IconComponent /></span>
     );

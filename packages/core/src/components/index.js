@@ -146,11 +146,13 @@ export const Modal = {
 
 export Moment from './Moment/Moment';
 
+import HorizontalOverflowBar from './Navigation/HorizontalOverflowBar/HorizontalOverflowBar';
 import TabBar from './Navigation/TabBar/TabBar';
 import TabBarItem from './Navigation/TabBar/TabBarItem';
 import TabBarIconItem from './Navigation/TabBar/TabBarIconItem';
 
 export const Navigation = {
+  HorizontalOverflowBar,
   TabBar,
   TabBarItem,
   TabBarIconItem

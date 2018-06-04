@@ -13,7 +13,7 @@ describe('Icon helper', () => {
 
 describe('Icon component', () => {
   it('renders without crashing when given a valid icon name', () => {
-    const svg = <svg />;
+    const svg = () => <svg />;
     const iconName = 'icon';
     const icons = { [iconName]: svg };
     const Icon = iconHelper(icons);
@@ -23,7 +23,7 @@ describe('Icon component', () => {
   });
 
   it('throws when given an invalid icon name', () => {
-    const svg = <svg />;
+    const svg = () => <svg />;
     const incorrectIconName = 'troll';
     const icons = { icon: svg };
     const Icon = iconHelper(icons);
@@ -33,16 +33,5 @@ describe('Icon component', () => {
     expect(() => {
       ReactDOM.render(elm, div);
     }).toThrow();
-  });
-
-  it('falls back if the fallback prop is give', () => {
-    const incorrectIconName = 'troll';
-    const icons = { icon: <svg /> };
-    const Icon = iconHelper(icons);
-
-    const elm = React.createElement(Icon, { name: incorrectIconName, fallback: 'Troll' });
-
-    const div = document.createElement('div');
-    ReactDOM.render(elm, div);
   });
 });

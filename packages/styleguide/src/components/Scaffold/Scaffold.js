@@ -87,7 +87,7 @@ export const Dl = ({ className, children, ...rest }) => (
 
 export const Note = ({ className, children, ...rest }) => (
   <div {...rest} className={cx(note, className)}>
-    <div className={css.noteHeading, t.fontSmI}>Note</div>
+    <div className={cx(css.noteHeading, t.fontSmI)}>Note</div>
     { children }
   </div>
 );

@@ -39,5 +39,17 @@
       "Firefox ESR",
       "not ie < 11"
     ]
+  },
+  "jest": {
+    "displayName": "styleguide",
+    "testEnvironment": "jsdom",
+    "moduleNameMapper": {
+      "\\.(jpg|png|gif|eot|otf|webp|svg|ttf|woff|woff2|mp4|webm|json|md)$": "<rootDir>../../__mocks__/fileMock.js",
+      "\\.(css)$": "<rootDir>../../__mocks__/cssMock.js"
+    },
+    "testPathIgnorePatterns": [
+      "<rootDir>../../node_modules/"
+    ],
+    "setupTestFrameworkScriptFile": "<rootDir>../../scripts/setupTest.js"
   }
 }

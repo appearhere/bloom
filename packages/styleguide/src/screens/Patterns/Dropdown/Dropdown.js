@@ -4,7 +4,7 @@ import dedent from 'dedent';
 
 import {
   Dropdown,
-  HORIZONTAL_ATTACHMENTS
+  TETHER_HORIZONTAL_ATTACHMENTS
 } from '@appearhere/bloom';
 import Specimen from '../../../components/Specimen/Specimen';
 import { H, T, D, A, C, Bq, Note, List, Placeholder } from '../../../components/Scaffold/Scaffold';
@@ -59,7 +59,7 @@ export default class DropdownDocumentation extends Component {
           `}
           >
             <Dropdown
-              horizontalAttachment={HORIZONTAL_ATTACHMENTS.LEFT}
+              horizontalAttachment={TETHER_HORIZONTAL_ATTACHMENTS.LEFT}
               target={
                 <Target
                   onClick={this.handleClick}
