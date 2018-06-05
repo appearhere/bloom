@@ -1,5 +1,5 @@
 {
-  "name": "styleguide",
+  "name": "@appearhere/bloom-styleguide",
   "version": "1.0.0",
   "private": true,
   "dependencies": {
