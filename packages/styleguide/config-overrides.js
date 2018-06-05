@@ -7,7 +7,11 @@ const lost = require('lost');
 const cssMap = require('@appearhere/common-styles');
 
 const postcss = (config, env) => {
-  config.module.rules[2].oneOf[4].use[2].options.plugins = () => [
+  let options = env === 'production'
+    ? config.module.rules[2].oneOf[4].loader[2].options
+    : config.module.rules[2].oneOf[4].use[2].options;
+
+  options.plugins = () => [
     require('postcss-flexbugs-fixes'),
     autoprefixer({
       flexbox: 'no-2009',
