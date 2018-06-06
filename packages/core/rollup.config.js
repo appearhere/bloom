@@ -133,8 +133,7 @@ export default {
     'warning'
   ],
   watch: {
-    clearScreen: false,
-    chokidar: true
+    clearScreen: false
   },
   plugins: [
     progress(),
