@@ -18,5 +18,8 @@
   },
   "eslintConfig": {
     "extends": "./eslint.js"
+  },
+  "dependencies": {
+    "upath": "^1.0.5"
   }
 }
