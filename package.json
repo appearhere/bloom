@@ -13,7 +13,6 @@
     "dev": "concurrently \"cd packages/core && yarn build:watch\" \"cd packages/styleguide && yarn start\" \"cd packages/common-styles && yarn build:watch\"",
     "build": "lerna run build",
     "test": "jest --projects packages/*",
-    "bump": "lerna publish --exact --skip-npm --since \"v$(npm info @appearhere/bloom version)\""
     "bump": "lerna publish --exact --skip-npm --since \"v$(npm info @appearhere/bloom version)\"",
     "test:travis": "yarn test --coverage"
   },
