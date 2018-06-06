@@ -16,3 +16,8 @@ storybook-static
 .DS_Store
 npm-debug.log
 yarn-error.log
+
+packages/core/dist/
+packages/common-styles/dist/
+
+lerna-debug.log

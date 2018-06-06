@@ -1,0 +1,72 @@
+{
+  "env": {
+    "development": {
+      "presets": [
+        "stage-1",
+        "react",
+        [
+          "latest", {
+            "es2015": {
+              "modules": false
+            }
+          }
+        ],
+      ],
+      "plugins": [
+        "transform-class-properties",
+        "transform-object-rest-spread",
+        ["transform-regenerator", {
+          "async": false
+        }],
+        ["transform-runtime", {
+          "helpers": false,
+          "polyfill": false
+        }],
+        "external-helpers"
+      ]
+    },
+    "production": {
+      "presets": [
+        "stage-1",
+        "react",
+        [
+          "latest", {
+            "es2015": {
+              "modules": false
+            }
+          }
+        ],
+      ],
+      "plugins": [
+        "transform-class-properties",
+        "transform-object-rest-spread",
+        ["transform-regenerator", {
+          "async": false
+        }],
+        ["transform-runtime", {
+          "helpers": false,
+          "polyfill": false
+        }],
+        "external-helpers"
+      ]
+    },
+    "test": {
+      "presets": [
+        "env",
+        "react",
+        "stage-2"
+      ],
+      "plugins": [
+        "transform-class-properties",
+        "transform-object-rest-spread",
+        ["transform-regenerator", {
+          "async": false
+        }],
+        ["transform-runtime", {
+          "helpers": false,
+          "polyfill": false
+        }],
+      ]
+    }
+  },
+}

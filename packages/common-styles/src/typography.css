@@ -1,0 +1,64 @@
+/**
+ * Each property declaration should have its own variable, which are then
+ * composed together to make `font` property declarations.
+ *
+ * Typically, start by using the `font` properties and override **individual
+ * properties**:
+ *
+ * ```css
+ * .example {
+ *   font: var(--font-regular);
+ *   line-height: 1.8;
+ * }
+ * ```
+ */
+:root {
+  --font-avenir: 'Avenir Next W01', 'Helvetica Neue', 'Helvetica', 'sans-serif';
+  --font-fira-code: 'Fira Mono', monospace;
+
+  --fontweight-bold: 800;
+  --fontweight-demi: 700;
+  --fontweight-regular: 400;
+
+  --fontsize-large-v: 2.75rem;
+  --fontsize-large-iv: 2rem;
+  --fontsize-large-iii: 1.75rem;
+  --fontsize-large-ii: 1.5rem;
+  --fontsize-large-i: 1.1875rem;
+  --fontsize-regular: 1rem;
+  --fontsize-small-i: 0.875rem;
+  --fontsize-small-ii: 0.6875rem;
+
+  --font-large-v: var(--fontweight-bold) var(--fontsize-large-v)/var(--lineheight-large-v) var(--font-avenir);
+  --font-large-iv: var(--fontweight-demi) var(--fontsize-large-iv)/var(--lineheight-large-iv) var(--font-avenir);
+  --font-large-iii: var(--fontweight-demi) var(--fontsize-large-iii)/var(--lineheight-large-iii) var(--font-avenir);
+  --font-large-ii: var(--fontweight-demi) var(--fontsize-large-ii)/var(--lineheight-large-ii) var(--font-avenir);
+  --font-large-i: var(--fontweight-regular) var(--fontsize-large-i)/var(--lineheight-large-i) var(--font-avenir);
+  --font-regular: var(--fontweight-regular) var(--fontsize-regular)/var(--lineheight-regular) var(--font-avenir);
+  --font-small-i: var(--fontweight-regular) var(--fontsize-small-i)/var(--lineheight-small-i) var(--font-avenir);
+  --font-small-ii: var(--fontweight-regular) var(--fontsize-small-ii)/var(--lineheight-small-ii) var(--font-avenir);
+
+  --lineheight-large-v: 0.8148;
+  --lineheight-large-iv: 1.34375;
+  --lineheight-large-iii: 1.28571;
+  --lineheight-large-ii: 1.333;
+  --lineheight-large-i: 1.263;
+  --lineheight-regular: 1.4375;
+  --lineheight-small-i: 1.285;
+  --lineheight-small-ii: 1.363;
+
+  --letter-spacing-large-v: 0.32rem;
+  --letter-spacing-large-iv: 0.01875rem;
+  --letter-spacing-large-iii: 0.01875rem;
+  --letter-spacing-large-ii: 0.01875rem;
+  --letter-spacing-large-i: 0.0125rem;
+  --letter-spacing-regular: 0.010625rem;
+  --letter-spacing-small-i: 0.009375rem;
+  --letter-spacing-small-ii: 0.009375rem;
+
+  /* Old style spacing */
+  /* TODO: Remove in future version */
+  --letterspacing-wide: 0.125rem;
+  --letterspacing-less-wide: 0.009375rem;
+}
+

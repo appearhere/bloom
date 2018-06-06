@@ -1,0 +1,35 @@
+/**
+ * Declare z-index values based on presets. Every z-index value should
+ * be a variable that directly maps to one of these presets, e.g.:
+ *
+ * --z-modal: var(--z-9);
+ * --z-modalOverlay: var(--z-8);
+ *
+ * https://css-tricks.com/handling-z-index/
+ */
+
+:root {
+  /* Raw values */
+  --z-1: 10;
+  --z-2: 20;
+  --z-3: 30;
+  --z-4: 40;
+  --z-5: 50;
+  --z-6: 60;
+  --z-7: 70;
+  --z-8: 80;
+  --z-9: 90;
+
+  /* Aliases */
+  --z-modal: var(--z-8);
+  --z-floatingActionBtn: var(--z-6);
+  --z-stickyNode: var(--z-5);
+  --z-tooltip: var(--z-3);
+  --z-mapCanvas: var(--z-1);
+  --z-mapMarker: var(--z-2);
+  --z-mapControls: var(--z-3);
+
+  /* Style guide aliases */
+  --z-offcanvasPanel: var(--z-7);
+  --z-overlay: var(--z-7);
+}

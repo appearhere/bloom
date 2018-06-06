@@ -1,0 +1,29 @@
+:root {
+  --size-lg-vii: 12.5rem;
+  --size-lg-vi: 9rem;
+  --size-lg-v: 6rem;
+  --size-lg-iv: 5rem;
+  --size-lg-iii: 4rem;
+  --size-lg-ii: 3rem;
+  --size-lg-i: 1.5rem;
+  --size-regular: 1rem;
+  --size-sm-i: 0.75rem;
+  --size-sm-ii: 0.5rem;
+  --size-sm-iii: 0.25rem;
+  --size-sm-iv: 0.1rem;
+
+  /**
+   * Legacy size variables
+   * TODO: Remove in future version
+   */
+  --space-200: var(--size-lg-vii);
+  --space-144: var(--size-lg-vi);
+  --space-96: var(--size-lg-v);
+  --space-80: var(--size-lg-iv);
+  --space-64: var(--size-lg-iii);
+  --space-48: var(--size-lg-ii);
+  --size-large: var(--size-lg-i);
+  --size-medium: var(--size-regular);
+  --size-small: var(--size-sm-ii);
+  --size-micro: var(--size-sm-iii);
+}
