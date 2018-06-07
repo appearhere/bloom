@@ -6,7 +6,6 @@ import postcssModules from 'postcss-modules';
 import postcss from 'postcss';
 import lost from 'lost';
 import babel from 'rollup-plugin-babel';
-import progress from 'rollup-plugin-progress';
 import json from 'rollup-plugin-json';
 import reactSvg from "rollup-plugin-react-svg";
 import cssnano from 'cssnano';
@@ -136,7 +135,6 @@ export default {
     clearScreen: false
   },
   plugins: [
-    progress(),
     reactSvg({
       svgo: {
         plugins: [],
