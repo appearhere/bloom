@@ -14,7 +14,7 @@
     "build": "cd packages/common-styles && yarn build && cd ../core && yarn build && cd ../styleguide && yarn build",
     "test": "jest --projects packages/*",
     "bump": "lerna publish --exact --skip-npm --since \"v$(npm info @appearhere/bloom version)\"",
-    "test:travis": "yarn test --coverage"
+    "test:travis": "yarn test --debug"
   },
   "eslintConfig": {
     "extends": "./eslint.js"
