@@ -6,7 +6,6 @@ import noop from '../../../utils/noop';
 import BtnContainer from '../../BtnContainer/BtnContainer';
 import Carousel from '../../Carousel/Carousel';
 import FittedImage from '../../FittedImage/FittedImage';
-import getValidIndex from '../../../utils/getValidIndex/getValidIndex';
 import HeartBtn from '../../HeartBtn/HeartBtn';
 import Icon from '../../Icon/Icon';
 import ScreenReadable from '../../ScreenReadable/ScreenReadable';
@@ -19,7 +18,7 @@ export default class DestinationListingCard extends Component {
       PropTypes.shape({
         src: PropTypes.string,
         alt: PropTypes.string,
-      })
+      }),
     ),
     priceFromLabel: PropTypes.node,
     price: PropTypes.node,
@@ -58,9 +57,9 @@ export default class DestinationListingCard extends Component {
     fav: false,
   };
 
-  onClick = (e) => {
+  onClick = e => {
     this.props.onClick(e, this.props.href);
-  }
+  };
 
   render() {
     const {
@@ -88,59 +87,38 @@ export default class DestinationListingCard extends Component {
     } = this.props;
 
     return (
-      <div
-        {...rest}
-        className={cx(
-          css.root,
-          className,
-          fixedHeight ? css.fixedHeight : null,
+      <div {...rest} className={cx(css.root, className, fixedHeight ? css.fixedHeight : null)}>
+        {favouriteable && (
+          <HeartBtn className={css.heart} onClick={onFavouriteClick} active={favourite} />
         )}
-      >
-        { favouriteable && (
-          <HeartBtn
-            className={css.heart}
-            onClick={onFavouriteClick}
-            active={favourite}
-          />
-        ) }
         <div className={cx(css.carousel, carouselClassName)}>
-          { carouselOverlay }
+          {carouselOverlay}
           <div className={css.inner}>
             <Carousel
               wrapAround
               swiping={false}
               dragging={false}
               renderCenterLeftControls={({ previousSlide }) => (
-                <BtnContainer
-                  onClick={previousSlide}
-                  className={cx(css.control, css.prev)}
-                >
+                <BtnContainer onClick={previousSlide} className={cx(css.control, css.prev)}>
                   <Icon className={cx(css.icon, css.prevIcon)} name="chevron" />
-                  <ScreenReadable>{ accessibilityPrevLabel }</ScreenReadable>
+                  <ScreenReadable>{accessibilityPrevLabel}</ScreenReadable>
                 </BtnContainer>
               )}
               renderCenterRightControls={({ nextSlide }) => (
-                <BtnContainer
-                  onClick={nextSlide}
-                  className={cx(css.control, css.next)}
-                >
+                <BtnContainer onClick={nextSlide} className={cx(css.control, css.next)}>
                   <Icon className={cx(css.icon, css.nextIcon)} name="chevron" />
-                  <ScreenReadable>{ accessibilityNextLabel }</ScreenReadable>
+                  <ScreenReadable>{accessibilityNextLabel}</ScreenReadable>
                 </BtnContainer>
               )}
               onChange={onCarouselChange}
             >
-              {images.map(({ src, alt }) => (
-                <a href={href} key={src} onClick={this.onClick}>
+              {images.map(({ ...imageProps }) => (
+                <a href={href} key={imageProps.src} onClick={this.onClick}>
                   <div className={css.imageContainer}>
-                    <FittedImage
-                      className={css.image}
-                      src={src}
-                      alt={alt}
-                    />
+                    <FittedImage className={css.image} {...imageProps} />
                   </div>
                 </a>
-              )) }
+              ))}
             </Carousel>
           </div>
         </div>
@@ -148,56 +126,41 @@ export default class DestinationListingCard extends Component {
           <a href={href} onClick={this.onClick} className={css.bodyLink}>
             <div className={css.title}>
               <div className={css.priceContainer}>
-                { priceFromLabel &&
-                  <span className={css.priceFromLabel}>
-                    { priceFromLabel }
-                  </span> }
-                <span className={css.price}>
-                  { price }
-                </span>
-                { '\u00a0' }
-                <span className={css.priceUnit}>
-                  { priceUnit }
-                </span>
+                {priceFromLabel && <span className={css.priceFromLabel}>{priceFromLabel}</span>}
+                <span className={css.price}>{price}</span>
+                {'\u00a0'}
+                <span className={css.priceUnit}>{priceUnit}</span>
               </div>
-              { badge }
+              {badge}
             </div>
-            <div className={css.name}>{ name }</div>
+            <div className={css.name}>{name}</div>
             <div className={css.additionalInformationBlock}>
-              {
-                information
-                  .filter(info => info)
-                  .map(info => <span>{ info }</span>)
-                  .reduce((accu, elem, i, arr) => {
-                    const wrappedEl = (
-                      <span
-                        key={`info-${i}`}
-                        className={css.additionalInformationItem}
-                        style={{
-                          maxWidth: `calc(${100 / arr.length}% - 1rem)`,
-                        }}
-                      >
-                        { elem }
-                      </span>
-                    );
-                    const spacer = (
-                      <span key={`info-spacer-${i}`} className={css.spacer}>•</span>
-                    );
+              {information
+                .filter(info => info)
+                .map(info => <span>{info}</span>)
+                .reduce((accu, elem, i, arr) => {
+                  const wrappedEl = (
+                    <span
+                      key={`info-${i}`}
+                      className={css.additionalInformationItem}
+                      style={{
+                        maxWidth: `calc(${100 / arr.length}% - 1rem)`,
+                      }}
+                    >
+                      {elem}
+                    </span>
+                  );
+                  const spacer = (
+                    <span key={`info-spacer-${i}`} className={css.spacer}>
+                      •
+                    </span>
+                  );
 
-                    return accu === null
-                      ? [wrappedEl]
-                      : [...accu, spacer, wrappedEl];
-                  },
-                    null,
-                  )
-              }
+                  return accu === null ? [wrappedEl] : [...accu, spacer, wrappedEl];
+                }, null)}
             </div>
           </a>
-          { children && (
-            <div className={css.footer}>
-              { children }
-            </div>
-          ) }
+          {children && <div className={css.footer}>{children}</div>}
         </div>
       </div>
     );
