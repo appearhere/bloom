@@ -1,6 +1,9 @@
 import PropTypes from 'prop-types';
 import React, { Component } from 'react';
 import { canUseDOM } from 'exenv';
+import cx from 'classnames';
+
+import css from './FittedImage.css';
 
 const objectFitImages = canUseDOM ? require('object-fit-images') : null;
 
@@ -23,7 +26,7 @@ export default class FittedImage extends Component {
     return (
       <img
         {...rest}
-        className={className}
+        className={cx(css.root, className)}
         src={src}
         alt={alt}
         ref={c => {

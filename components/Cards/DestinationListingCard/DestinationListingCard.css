@@ -120,6 +120,7 @@
   border-radius: 4px 4px 0 0;
   display: block;
   background-color: var(--color-greyLighter);
+  min-width: 100%;
 }
 
 .body {
