@@ -104,6 +104,7 @@ export default class DestinationListingCard extends Component {
       children,
       onFavouriteClick,
       onCarouselChange,
+      onClick,
       favourite,
       favouriteable,
       ...rest
