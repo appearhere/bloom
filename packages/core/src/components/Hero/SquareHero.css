@@ -53,9 +53,9 @@
 
 @media(--squareHero-lg-i) {
   .title {
-    composes: largeIii from '../../globals/typography.css';
-    composes: bold from '../../globals/typography.css';
-    composes: letSpacingLargeIii from '../../globals/typography.css';
+    font-size: var(--fontsize-large-iii);
+    font-weight: var(--fontweight-bold);
+    letter-spacing: var(--letter-spacing-large-iii);
     line-height: var(--lineheight-large-iii);
     padding: var(--space-48);
   }
@@ -105,8 +105,8 @@
   }
 
   .title {
-    composes: largeIv from '../../globals/typography.css';
-    composes: letSpacingLargeIv from '../../globals/typography.css';
+    font-size: var(--fontsize-large-iv);
+    letter-spacing: var(--letter-spacing-large-iv);
     line-height: var(--lineheight-large-iv);
   }
 

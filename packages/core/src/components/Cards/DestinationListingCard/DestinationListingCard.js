@@ -1,5 +1,5 @@
-import PropTypes from 'prop-types';
 import React, { Component } from 'react';
+import PropTypes from 'prop-types';
 import cx from 'classnames';
 
 import noop from '../../../utils/noop';
@@ -82,6 +82,7 @@ export default class DestinationListingCard extends Component {
       children,
       onFavouriteClick,
       onCarouselChange,
+      onClick,
       favourite,
       favouriteable,
       ...rest
@@ -130,14 +131,10 @@ export default class DestinationListingCard extends Component {
               )}
               onChange={onCarouselChange}
             >
-              {images.map(({ src, alt }) => (
+              {images.map(({ src, ...imageProps }) => (
                 <a href={href} key={src} onClick={this.onClick}>
                   <div className={css.imageContainer}>
-                    <FittedImage
-                      className={css.image}
-                      src={src}
-                      alt={alt}
-                    />
+                    <FittedImage className={css.image} src={src} {...imageProps} />
                   </div>
                 </a>
               )) }
