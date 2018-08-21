@@ -8,20 +8,20 @@
 }
 
 .title {
+  composes: fontLargeIv from '../../../globals/typography.css';
   margin-top: 0;
   margin-bottom: 0;
-  composes: fontLargeIv from '../../../globals/typography.css';
 }
 
 .strapline {
+  composes: fontLargeIii from '../../../globals/typography.css';
   margin-top: var(--size-medium);
   margin-bottom: 0;
-  composes: fontLargeIii from '../../../globals/typography.css';
 }
 
 .titleWithStrapline {
-  text-transform: uppercase;
   composes: fontRegular from '../../../globals/typography.css';
-  font-weight: var(--fontweight-demi);
+  composes: demi from '../../../globals/typography.css';
+  text-transform: uppercase;
   color: var(--color-greyDark);
 }
