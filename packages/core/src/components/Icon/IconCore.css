@@ -1,8 +1,6 @@
 .root {
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
-  /* fix webkit/blink poor rendering issues */
-  transform: translate3d(0,0,0);
 }
 
 .root svg {

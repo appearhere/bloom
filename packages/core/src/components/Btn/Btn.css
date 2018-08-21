@@ -50,16 +50,16 @@
 }
 
 .root.hollow {
-  color: var(--color-grey);
+  color: var(--color-greyDarkest);
   background-color: transparent;
-  border-color: var(--color-greyLighter);
+  border-color: var(--color-greyDarkest);
 }
 
 .root.hollow:enabled:focus,
 .root.hollow:enabled:hover {
   border-color: var(--color-greyDark);
   background-color: transparent;
-  color: var(--color-greyDark);
+  color: var(--color-greyDarkest);
 }
 
 .root.subtle {
@@ -67,7 +67,7 @@
   background-color: transparent;
   border-color: transparent;
   text-decoration: underline;
-  text-decoration-color: var(--color-primary);
+  text-decoration-color: var(--color-greyLighter);
 }
 
 .root.subtle:enabled:focus,
