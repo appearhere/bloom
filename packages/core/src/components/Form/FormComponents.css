@@ -1,13 +1,5 @@
-/**
- * TODO: Remove this as it breaks convention of preferring `[margin|padding]-top`
- */
 .field {
   padding-bottom: var(--size-lg-i);
-}
-
-.field + .field {
-  border-top: 1px solid var(--color-greyLighter);
-  padding-top: var(--size-lg-i);
 }
 
 .errorField {
@@ -39,14 +31,14 @@
   display: block;
   composes: fontSmallIi from '../../globals/typography.css';
   color: var(--color-greyDark);
-  font-weight: var(--fontweight-demi);
+  composes: demi from '../../globals/modifiers.css';
   text-transform: uppercase;
 }
 
 .optional {
   composes: fontSmallIi from '../../globals/typography.css';
   text-transform: none;
-  font-weight: var(--fontweight-regular);
+  composes: fontRegular from '../../globals/modifiers.css';
   color: var(--color-greyLight);
   font-style: italic;
   margin-left: var(--size-small);
