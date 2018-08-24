@@ -1,7 +1,7 @@
 import PropTypes from 'prop-types';
 import React, { Component, Children } from 'react';
 import cx from 'classnames';
-import NukaCarousel from 'nuka-carousel';
+import NukaCarousel from '@appearhere/nuka-carousel';
 
 import noop from '../../utils/noop';
 import css from './Carousel.css';
@@ -67,13 +67,9 @@ export default class Carousel extends Component {
             this.carousel = c;
           }}
           decorators={[]}
-          renderBottomCenterControls={() => {}}
-          renderCenterLeftControls={() => {}}
-          renderCenterRightControls={() => {}}
           frameOverflow={frameOverflow}
           peaking={peaking}
           afterSlide={this.handleChange}
-          dragging
           {...rest}
         >
           {children}

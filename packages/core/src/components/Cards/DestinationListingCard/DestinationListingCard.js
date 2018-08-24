@@ -56,13 +56,35 @@ export default class DestinationListingCard extends Component {
 
   state = {
     fav: false,
+    visibleImageIndex: 0,
   };
 
   onClick = (e) => {
     this.props.onClick(e, this.props.href);
   }
 
+  handleNextImage = () => {
+    this.setState(({ visibleImageIndex }, { images }) => {
+      const newIndex = getValidIndex(visibleImageIndex + 1, images.length, 1);
+
+      return {
+        visibleImageIndex: newIndex,
+      };
+    });
+  };
+
+  handlePrevImage = () => {
+    this.setState(({ visibleImageIndex }, { images }) => {
+      const newIndex = getValidIndex(visibleImageIndex - 1, images.length, 1);
+
+      return {
+        visibleImageIndex: newIndex,
+      };
+    });
+  };
+
   render() {
+    const { visibleImageIndex } = this.state;
     const {
       href,
       images,
@@ -106,29 +128,20 @@ export default class DestinationListingCard extends Component {
         ) }
         <div className={cx(css.carousel, carouselClassName)}>
           { carouselOverlay }
+          <BtnContainer onClick={this.handlePrevImage} className={cx(css.control, css.prev)}>
+            <Icon className={cx(css.icon, css.prevIcon)} name="chevron" />
+            <ScreenReadable>{accessibilityPrevLabel}</ScreenReadable>
+          </BtnContainer>
+          <BtnContainer onClick={this.handleNextImage} className={cx(css.control, css.next)}>
+            <Icon className={cx(css.icon, css.nextIcon)} name="chevron" />
+            <ScreenReadable>{accessibilityNextLabel}</ScreenReadable>
+          </BtnContainer>
           <div className={css.inner}>
             <Carousel
+              lowestVisibleItemIndex={visibleImageIndex}
               wrapAround
               swiping={false}
               dragging={false}
-              renderCenterLeftControls={({ previousSlide }) => (
-                <BtnContainer
-                  onClick={previousSlide}
-                  className={cx(css.control, css.prev)}
-                >
-                  <Icon className={cx(css.icon, css.prevIcon)} name="chevron" />
-                  <ScreenReadable>{ accessibilityPrevLabel }</ScreenReadable>
-                </BtnContainer>
-              )}
-              renderCenterRightControls={({ nextSlide }) => (
-                <BtnContainer
-                  onClick={nextSlide}
-                  className={cx(css.control, css.next)}
-                >
-                  <Icon className={cx(css.icon, css.nextIcon)} name="chevron" />
-                  <ScreenReadable>{ accessibilityNextLabel }</ScreenReadable>
-                </BtnContainer>
-              )}
               onChange={onCarouselChange}
             >
               {images.map(({ src, ...imageProps }) => (
