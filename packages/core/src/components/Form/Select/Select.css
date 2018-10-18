@@ -17,6 +17,7 @@
 
 select.select {
   -webkit-appearance: none;
+  -moz-appearance: none;
   border: 1px solid var(--color-greyLighter);
   padding: var(--size-sm-i) var(--size-regular);
   font-family: var(--font-avenir);
