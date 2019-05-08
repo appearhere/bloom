@@ -10,12 +10,12 @@ import DayPickerItem from './DayPickerItem';
 import moment from '../../../utils/moment/moment';
 import BtnContainer from '../../BtnContainer/BtnContainer';
 import ScreenReadable from '../../ScreenReadable/ScreenReadable';
-import CalendarMonth, { defaultClassNames } from '../CalendarMonth/CalendarMonth';
+import CalendarMonth, { defaultClassNames as calendarMonthDefaultClassNames } from '../CalendarMonth/CalendarMonth';
 import css from './DayPicker.css';
 
-const classNames = Object.assign({}, defaultClassNames, {
-  head: cx(defaultClassNames.head, css.head),
-  cell: cx(defaultClassNames.cell, css.cell),
+const calendarMonthClassNames = Object.assign({}, calendarMonthDefaultClassNames, {
+  head: cx(calendarMonthDefaultClassNames.head, css.head),
+  cell: cx(calendarMonthDefaultClassNames.cell, css.cell),
 });
 
 export const SELECT_DATE = keyMirror({
@@ -42,6 +42,10 @@ export default class DayPicker extends Component {
     dayProps: PropTypes.object,
     accessibilityNextLabel: PropTypes.string,
     accessibilityPrevLabel: PropTypes.string,
+    classNames: PropTypes.shape({
+      root: PropTypes.string,
+      header: PropTypes.string,
+    }),
   };
 
   static defaultProps = {
@@ -52,6 +56,10 @@ export default class DayPicker extends Component {
     dayProps: {},
     accessibilityNextLabel: 'Go to next month',
     accessibilityPrevLabel: 'Go to previous month',
+    classNames: {
+      root: '',
+      header: '',
+    },
   };
 
   handleNextMonth = e => {
@@ -73,11 +81,12 @@ export default class DayPicker extends Component {
       onInteraction,
       accessibilityNextLabel,
       accessibilityPrevLabel,
+      classNames,
     } = this.props;
 
     return (
-      <div className={css.root}>
-        <div className={css.header}>
+      <div className={cx(css.root, classNames.root)}>
+        <div className={cx(css.header, classNames.header)}>
           <div className={cx(css.control, css.prevControl)}>
             <BtnContainer onClick={this.handlePreviousMonth}>
               <Icon name="chevron" className={css.prevIcon} />
@@ -94,7 +103,7 @@ export default class DayPicker extends Component {
         </div>
         <CalendarMonth
           {...this.props}
-          classNames={classNames}
+          classNames={calendarMonthClassNames}
           month={month}
           columnHeadingProps={{
             className: css.columnHeader,
