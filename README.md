@@ -208,14 +208,12 @@ So as to not slow us down, we should continue to publish Bloom on a regular basi
 
 ### Making a release
 
-**Unfortunately, `yarn`'s publishing mechanism doesn't work quite as we'd like, so for now we use `npm`:**
+Bloom uses Lerna to publish new versions of the library.
 
-Pull down latest master. Then on master,
+To publish a new version, pull down latest master, then run:
 
-1. `npm version [major|minor|patch]` (see below for which one to use)
-2. npm will automatically check to make sure the build succeeds and all tests pass
-3. `git push [REMOTE] master && git push [REMOTE] master --tags`
-4. `npm publish`
+1. `yarn build` (see below for which one to use)
+2. `lerna publish`
 
 When to use what:
 
