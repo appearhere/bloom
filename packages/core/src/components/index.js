@@ -141,7 +141,8 @@ import ModalWithCross from './Modal/WithCross';
 export const Modal = {
   ModalAnimator,
   ModalWindow,
-  ModalWindowTitle
+  ModalWindowTitle,
+  ModalWithCross,
 };
 
 export Moment from './Moment/Moment';
