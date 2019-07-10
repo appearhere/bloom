@@ -11,6 +11,7 @@ import CalendarItem from '../CalendarItem/CalendarItem';
 export const defaultDayState = {
   isDisabled: false,
   isSelected: false,
+  isClosed: false,
   isFirstSelected: false,
   isLastSelected: false,
   isHighlighted: false,
@@ -88,6 +89,7 @@ export default class DayPickerItem extends Component {
       state.isLastSelected ? css.lastSelected : null,
       state.isFirstHighlighted ? css.firstHighlighted : null,
       state.isLastHighlighted ? css.lastHighlighted : null,
+      state.isClosed ? css.closed : null,
     );
 
     return (

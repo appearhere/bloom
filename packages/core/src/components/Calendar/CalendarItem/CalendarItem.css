@@ -13,3 +13,8 @@
 .outOfRange {
   color: var(--color-greyLight);
 }
+
+.closed span {
+  text-decoration: line-through;
+  color: var(--color-greyLight);
+}

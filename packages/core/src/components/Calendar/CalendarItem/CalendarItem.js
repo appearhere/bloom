@@ -12,15 +12,17 @@ export const defaultClassNames = {
   root: css.root,
   today: css.today,
   outOfRange: css.outOfRange,
+  closed: css.closed,
 };
 
 const CalendarDay = props => {
-  const { day, format, className, dayClassName, classNames, today, outOfRange, ...rest } = props;
+  const { day, format, className, dayClassName, classNames, today, outOfRange, openDays, ...rest } = props;
 
   const classes = cx(
     classNames.root,
     today ? classNames.today : null,
     outOfRange ? classNames.outOfRange : null,
+    day && openDays[day.day()] === false ? classNames.closed : null,
     className,
   );
 
@@ -41,6 +43,7 @@ CalendarDay.propTypes = {
   classNames: PropTypes.object,
   today: PropTypes.bool,
   outOfRange: PropTypes.bool,
+  openDays: PropTypes.array,
 };
 
 CalendarDay.defaultProps = {
@@ -48,6 +51,7 @@ CalendarDay.defaultProps = {
   format: 'D',
   dayClassName: '',
   classNames: defaultClassNames,
+  openDays: [],
 };
 
 export default CalendarDay;
