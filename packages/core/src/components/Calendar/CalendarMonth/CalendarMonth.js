@@ -75,10 +75,12 @@ export default class CalendarMonth extends Component {
           <tr className={classNames.row}>
             {head.map(offset => {
               const day = startOfMonth.clone().weekday(offset);
+              const isClosed = columnHeadingProps.isClosed ? columnHeadingProps.isClosed(day) : false;
               return (
                 <td key={`${month.format('MM')}-${day.format('dd')}`}>
                   <ColumnHeadingComponent
                     {...columnHeadingProps}
+                    isClosed={day && isClosed}
                     day={day}
                     format={columnHeadingProps.format || 'dd'}
                   />
