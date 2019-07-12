@@ -40,6 +40,7 @@ export default class DayPicker extends Component {
     onInteraction: PropTypes.func,
     onMonthChange: PropTypes.func,
     dayProps: PropTypes.object,
+    columnHeadingProps: PropTypes.object,
     accessibilityNextLabel: PropTypes.string,
     accessibilityPrevLabel: PropTypes.string,
     classNames: PropTypes.shape({
@@ -54,6 +55,7 @@ export default class DayPicker extends Component {
     onHighlight: noop,
     onMonthChange: noop,
     dayProps: {},
+    columnHeadingProps: {},
     accessibilityNextLabel: 'Go to next month',
     accessibilityPrevLabel: 'Go to previous month',
     classNames: {
@@ -78,6 +80,7 @@ export default class DayPicker extends Component {
     const {
       month,
       dayProps,
+      columnHeadingProps,
       onInteraction,
       accessibilityNextLabel,
       accessibilityPrevLabel,
@@ -107,6 +110,7 @@ export default class DayPicker extends Component {
           classNames={calendarMonthClassNames}
           month={month}
           columnHeadingProps={{
+            ...columnHeadingProps,
             className: css.columnHeader,
           }}
           dayProps={{
