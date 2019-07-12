@@ -1,10 +1,10 @@
 {
   "name": "@appearhere/bloom-styleguide",
-  "version": "1.1.0-beta.9",
+  "version": "1.1.0-beta.10",
   "private": true,
   "dependencies": {
-    "@appearhere/bloom": "^1.1.0-beta.9",
-    "@appearhere/common-styles": "^1.1.0-beta.9",
+    "@appearhere/bloom": "^1.1.0-beta.10",
+    "@appearhere/common-styles": "^1.1.0-beta.10",
     "react": "^16.2.0",
     "react-dom": "^16.2.0",
     "react-ga": "^2.4.1",
