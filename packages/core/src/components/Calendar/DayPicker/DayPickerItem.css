@@ -16,6 +16,11 @@
   color: var(--color-white);
 }
 
+.closed {
+  color: var(--color-greyLight);
+  text-decoration: line-through;
+}
+
 .disabled {
   pointer-events: none;
   color: var(--color-greyLight);
@@ -46,4 +51,3 @@
   border-top-left-radius: 0;
   border-bottom-left-radius: 0;
 }
-

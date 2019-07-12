@@ -82,6 +82,7 @@ export default class DayPicker extends Component {
       accessibilityNextLabel,
       accessibilityPrevLabel,
       classNames,
+      children
     } = this.props;
 
     return (
@@ -114,6 +115,7 @@ export default class DayPicker extends Component {
           }}
           DayComponent={DayPickerItem}
         />
+        {children}
       </div>
     );
   }
