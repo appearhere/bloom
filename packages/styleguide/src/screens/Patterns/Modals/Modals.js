@@ -10,14 +10,14 @@ import {
   ModalWindowTitle,
   ModalWithCross,
   Btn,
-  Markdown
+  Markdown,
+  Modifiers as m
 } from '@appearhere/bloom';
 import exampleContent from './modal-content.md';
 
 import shared from '../../../shared.css';
 import { markdown } from '../../../typography.module.css';
 import css from './Modals.module.css';
-import { Modifiers as m } from '@appearhere/bloom';
 
 export default class ModalDocumentation extends Component {
   state = {
