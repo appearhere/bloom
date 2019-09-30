@@ -12,6 +12,7 @@
   "scripts": {
     "dev": "concurrently \"cd packages/core && yarn build:watch\" \"cd packages/styleguide && yarn start\" \"cd packages/common-styles && yarn build:watch\"",
     "build": "cd packages/common-styles && yarn build && cd ../core && yarn build && cd ../styleguide && yarn build",
+    "styleguide": "cd packages/styleguide && yarn start",
     "test": "jest --projects packages/*",
     "bump": "lerna publish --exact --skip-npm --since \"v$(npm info @appearhere/bloom version)\"",
     "test:travis": "yarn test --coverage --maxWorkers=4"
