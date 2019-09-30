@@ -8,7 +8,7 @@ const cssMap = require('@appearhere/common-styles');
 
 const postcss = (config, env) => {
   let options = env === 'production'
-    ? config.module.rules[2].oneOf[4].loader[2].options
+    ? config.module.rules[2].oneOf[4].loader[3].options
     : config.module.rules[2].oneOf[4].use[2].options;
 
   options.plugins = () => [
