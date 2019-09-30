@@ -168,6 +168,7 @@ export ParallaxContainer from './ParallaxContainer/ParallaxContainer';
 export PhotoGrid from './PhotoGrid/RandomSix';
 
 export ProgressSteps from './ProgressSteps/ProgressSteps';
+export Step from './ProgressSteps/Step';
 export ScreenReadable from './ScreenReadable/ScreenReadable';
 export SiblingTransition from './SiblingTransition/SiblingTransition';
 export SignPost from './SignPost/SignPost';
