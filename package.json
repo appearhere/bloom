@@ -10,7 +10,7 @@
     "lerna": "^2.9.0"
   },
   "scripts": {
-    "dev": "concurrently \"cd packages/core && yarn build:watch\" \"cd packages/styleguide && yarn start\" \"cd packages/common-styles && yarn build:watch\"",
+    "dev": "concurrently \"cd packages/core && yarn build:watch\" \"cd packages/common-styles && yarn build:watch\" \"cd packages/playground && yarn storybook\"",
     "build": "cd packages/common-styles && yarn build && cd ../core && yarn build && cd ../styleguide && yarn build",
     "styleguide": "cd packages/styleguide && yarn start",
     "test": "jest --projects packages/*",

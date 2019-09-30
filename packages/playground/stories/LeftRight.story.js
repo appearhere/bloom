@@ -1,0 +1,18 @@
+import React from 'react';
+import { storiesOf } from '@storybook/react';
+import { LeftRight } from '@appearhere/bloom';
+
+storiesOf('LeftRight', module)
+  .add('Default view', () => (
+    <LeftRight
+      leftChildren={<button>Let your space</button>}
+      rightChildren={<p>Join 3,900 spaces around the world.</p>}
+    />
+  ))
+  .add('Right primary side', () => (
+    <LeftRight
+      leftChildren={<button>Let your space</button>}
+      rightChildren={<p>Join 3,900 spaces around the world.</p>}
+      primarySide="right"
+    />
+  ));
