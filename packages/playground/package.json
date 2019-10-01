@@ -20,9 +20,7 @@
     "@storybook/addon-links": "^5.1.9",
     "@storybook/addons": "^5.1.9",
     "@storybook/react": "^5.1.9",
-    "babel-loader": "^8.0.6",
-    "react": "^16.2.0",
-    "react-dom": "^16.2.0"
+    "babel-loader": "^8.0.6"
   },
   "scripts": {
     "storybook": "start-storybook -p 6006",

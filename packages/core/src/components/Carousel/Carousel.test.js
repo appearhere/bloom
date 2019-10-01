@@ -1,14 +1,13 @@
 import React from 'react';
-import ReactDOM from 'react-dom';
+import { render } from '@testing-library/react';
+import '@testing-library/jest-dom/extend-expect';
 
 import Carousel from './Carousel';
 
 it('renders without crashing', () => {
-  const div = document.createElement('div');
-  ReactDOM.render(
+  const { container } = render(
     <Carousel>
       <span>child</span>
-    </Carousel>,
-    div,
+    </Carousel>
   );
 });
