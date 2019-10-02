@@ -42,7 +42,7 @@ const icons = [
   'minus',
   'notification',
   'percentage',
-  'pintrest',
+  'pinterest',
   'play',
   'plus',
   'radio',
