@@ -23,7 +23,7 @@ script:
 after_script:
 - "./cc-test-reporter after-build --exit-code $TRAVIS_TEST_RESULT"
 after_success:
-- test $TRAVIS_BRANCH = "master" yarn run deploy-storybook
+- test $TRAVIS_BRANCH = "master" && test $TRAVIS_PULL_REQUEST = "false" && yarn run deploy-storybook
 notifications:
   slack:
     secure: f6UMZn/OUzGdWkYn9d1KhFjXx7K9HRwZ8HedsCKVku4CUTvsXUs4rA27ycnDjeOKZK3NyqyvAoVBpnxxZJIYUvTaaCHiY0Lda1qTwaSpfkO78cqp3HYcdtmu7v6NxZo6MjB4n95K94H+mDSrCkVvEXNNDNbNzTtYDTzl189N4WpcvwOKNrGUQVwRmXOrVC7H1+v1nlzKHk3pczeJHg7schJwXCV1KJOpU3UvJytVz4o71hwobz+ADHIzZzmbUxFAOwrTmqs6yXOkbZhJ0Em2ii6wvSTIlDiHlJRS60wOEhGizcv6sgG42JSPAs5yMuSPsY1jsngkOpmctp7lL8+YUarN6UG8gRw4IN+8exqVvszzMtyd+mEVpHTWFfOspydRPMffZT9oJThAU5jkOydeZntijikaM9Ry00hVKw/WuWfXxm1UesgiXgkjGABaNJRQhm6/y4b5QBNAA9aDY2QfqHf69qyDN1+zIyNhjP9cGUs2hc+8r2Or5gSNP7dLN8ggBkBlsdOlS5pW+h6tRAKBQ83CxfrUAHwfaZs41zG6+NiG1Aai9qdxqdg18UyuziN6yLF+4wFg0xaI/h5K2F/edAUOxymwvbeP5NuoTVOWDoUYHiJ1n83wCtd76dxlbOr8ZCuFuYvLmL2lVwQy4R7sUUtrpyjxzsA1IpBJ+8iaiX0=
