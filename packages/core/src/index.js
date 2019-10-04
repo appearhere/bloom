@@ -70,6 +70,7 @@ export {
   ParallaxContainer,
   PhotoGrid,
   ProgressSteps,
+  Step,
   ScreenReadable,
   SiblingTransition,
   SignPost,

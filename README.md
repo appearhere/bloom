@@ -1,5 +1,5 @@
 # Bloom
-[![GitHub license](https://img.shields.io/badge/license-MIT-blue.svg)](https://github.com/appearhere/bloom/blob/master/LICENSE) [![Build Status](https://travis-ci.com/appearhere/bloom.svg?token=Dby1wcjAJdzRsf4NN8um&branch=master)](https://travis-ci.com/appearhere/bloom) [![Code Climate](https://codeclimate.com/github/appearhere/bloom/badges/gpa.svg)](https://codeclimate.com/github/appearhere/bloom) [![Test Coverage](https://codeclimate.com/github/appearhere/bloom/badges/coverage.svg)](https://codeclimate.com/github/appearhere/bloom/coverage) [![Issue Count](https://codeclimate.com/github/appearhere/bloom/badges/issue_count.svg)](https://codeclimate.com/github/appearhere/bloom)
+[![GitHub license](https://img.shields.io/badge/license-MIT-blue.svg)](https://github.com/appearhere/bloom/blob/master/LICENSE) [![Build Status](https://travis-ci.org/appearhere/bloom.svg?branch=master)](https://travis-ci.com/appearhere/bloom) [![Storybook](https://cdn.jsdelivr.net/gh/storybookjs/brand@master/badge/badge-storybook.svg)](https://appearhere.github.io/bloom)
 
 Bloom acts as a central repository for reuseable React components and common styles to promote consistency across various projects at Appear Here. It also acts as a style guide to demonstrate how components should be used on their own and in combination with each other.
 
