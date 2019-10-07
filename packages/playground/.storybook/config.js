@@ -46,6 +46,7 @@ function loadStories() {
   require('../stories/Modal.story.js');
   require('../stories/Moment.story.js');
   require('../stories/Notification.story.js');
+  require('../stories/OptionCard.story.js');
   require('../stories/Pagination.story.js');
   require('../stories/Panel.story.js');
   require('../stories/ParallaxContainer.story.js');
