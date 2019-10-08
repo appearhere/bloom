@@ -5,11 +5,11 @@ import css from './OptionCard.css';
 
 export default class OptionCard extends Component {
   static propTypes = {
-    img: PropTypes.string.isRequired,
+    img: PropTypes.string,
     children: PropTypes.node,
-    heading: PropTypes.string.isRequired,
-    subheading: PropTypes.string.isRequired,
-    active: PropTypes.bool.isRequired,
+    heading: PropTypes.string,
+    subheading: PropTypes.string,
+    active: PropTypes.bool,
   };
 
   render() {
