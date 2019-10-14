@@ -145,7 +145,7 @@ export default class DestinationListingCard extends Component {
               onChange={onCarouselChange}
             >
               {images.map(({ src, ...imageProps }) => (
-                <a href={href} key={src} onClick={this.onClick}>
+                <a href={href} key={src} onClick={this.onClick} target="_blank">
                   <div className={css.imageContainer}>
                     <FittedImage className={css.image} src={src} {...imageProps} />
                   </div>
@@ -155,7 +155,7 @@ export default class DestinationListingCard extends Component {
           </div>
         </div>
         <div className={cx(css.body, bodyClassName)}>
-          <a href={href} onClick={this.onClick} className={css.bodyLink}>
+          <a href={href} onClick={this.onClick} className={css.bodyLink} target="_blank">
             <div className={css.title}>
               <div className={css.priceContainer}>
                 { priceFromLabel &&
