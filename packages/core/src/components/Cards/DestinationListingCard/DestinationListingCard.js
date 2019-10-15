@@ -40,6 +40,7 @@ export default class DestinationListingCard extends Component {
     onCarouselChange: PropTypes.func,
     favourite: PropTypes.bool,
     favouriteable: PropTypes.bool,
+    target: PropTypes.oneOf(['_self', '_blank', '_parent', '_top']),
   };
 
   static defaultProps = {
@@ -52,6 +53,7 @@ export default class DestinationListingCard extends Component {
     onClick: noop,
     onFavouriteClick: noop,
     onCarouselChange: noop,
+    target: '_self',
   };
 
   state = {
@@ -107,6 +109,7 @@ export default class DestinationListingCard extends Component {
       onClick,
       favourite,
       favouriteable,
+      target,
       ...rest
     } = this.props;
 
@@ -145,7 +148,7 @@ export default class DestinationListingCard extends Component {
               onChange={onCarouselChange}
             >
               {images.map(({ src, ...imageProps }) => (
-                <a href={href} key={src} onClick={this.onClick} target="_blank">
+                <a href={href} key={src} onClick={this.onClick} target={target}>
                   <div className={css.imageContainer}>
                     <FittedImage className={css.image} src={src} {...imageProps} />
                   </div>
@@ -155,7 +158,7 @@ export default class DestinationListingCard extends Component {
           </div>
         </div>
         <div className={cx(css.body, bodyClassName)}>
-          <a href={href} onClick={this.onClick} className={css.bodyLink} target="_blank">
+          <a href={href} onClick={this.onClick} className={css.bodyLink} target={target}>
             <div className={css.title}>
               <div className={css.priceContainer}>
                 { priceFromLabel &&
