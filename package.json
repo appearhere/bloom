@@ -11,7 +11,7 @@
   },
   "scripts": {
     "dev": "concurrently \"cd packages/core && yarn build:watch\" \"cd packages/common-styles && yarn build:watch\" \"cd packages/playground && yarn storybook\"",
-    "build": "cd packages/common-styles && yarn build && cd ../core && yarn build && cd ../styleguide && yarn build",
+    "build": "cd packages/common-styles && yarn build && cd ../core && yarn build",
     "storybook": "cd packages/playground && yarn storybook",
     "build-storybook": "cd packages/playground && yarn run build-storybook",
     "deploy-storybook": "cd packages/playground && yarn run deploy",
