@@ -218,3 +218,7 @@
 .additionalInformationBadge {
   margin-right: 8px;
 }
+
+.special {
+  color: var(--color-gold);
+}

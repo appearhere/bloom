@@ -41,6 +41,7 @@ export default class DestinationListingCard extends Component {
     favourite: PropTypes.bool,
     favouriteable: PropTypes.bool,
     target: PropTypes.oneOf(['_self', '_blank', '_parent', '_top']),
+    variant: PropTypes.oneOf(['default', 'special']),
   };
 
   static defaultProps = {
@@ -54,6 +55,7 @@ export default class DestinationListingCard extends Component {
     onFavouriteClick: noop,
     onCarouselChange: noop,
     target: '_self',
+    variant: 'default',
   };
 
   state = {
@@ -110,6 +112,7 @@ export default class DestinationListingCard extends Component {
       favourite,
       favouriteable,
       target,
+      variant,
       ...rest
     } = this.props;
 
@@ -181,7 +184,7 @@ export default class DestinationListingCard extends Component {
                  { badge }
                 </div>
               }
-              <div className={cx(css.additionalInformationText, css[context])}>
+              <div className={cx(css.additionalInformationText, css[variant])}>
                 {
                   information
                     .filter(info => info)
