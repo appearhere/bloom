@@ -72,6 +72,35 @@ storiesOf('Cards', module)
       href="#"
     />
   ))
+  .add('SpaceListingCard - Special variant', () => (
+    <SpaceListingCard
+      price="$10,000,000"
+      priceUnit="/day"
+      location="Shoreditch, London in the Greater London Area"
+      size="1000 sqft"
+      name="A really long Bold Street Shop, maybe the biggest shop you've ever seen"
+      images={[
+        {
+          src: 'https://source.unsplash.com/random/500x500',
+          alt: 'hello',
+        },
+        {
+          src: 'https://source.unsplash.com/random/500x503',
+          alt: 'hello2',
+        },
+        {
+          src: 'https://source.unsplash.com/random/500x502',
+          alt: 'hello',
+        },
+        {
+          src: 'https://source.unsplash.com/random/500x501',
+          alt: 'hello2',
+        },
+      ]}
+      href="#"
+      variant="special"
+    />
+  ))
   .add('SpaceListingCard with badge', () => (
     <SpaceListingCard
       price="$10,000,00000000000000000000000"

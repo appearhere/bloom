@@ -41,6 +41,7 @@ export default class DestinationListingCard extends Component {
     favourite: PropTypes.bool,
     favouriteable: PropTypes.bool,
     target: PropTypes.oneOf(['_self', '_blank', '_parent', '_top']),
+    variant: PropTypes.oneOf(['default', 'special']),
   };
 
   static defaultProps = {
@@ -54,6 +55,7 @@ export default class DestinationListingCard extends Component {
     onFavouriteClick: noop,
     onCarouselChange: noop,
     target: '_self',
+    variant: 'default',
   };
 
   state = {
@@ -110,6 +112,7 @@ export default class DestinationListingCard extends Component {
       favourite,
       favouriteable,
       target,
+      variant,
       ...rest
     } = this.props;
 
@@ -173,37 +176,43 @@ export default class DestinationListingCard extends Component {
                   { priceUnit }
                 </span>
               </div>
-              { badge }
             </div>
             <div className={css.name}>{ name }</div>
             <div className={css.additionalInformationBlock}>
-              {
-                information
-                  .filter(info => info)
-                  .map(info => <span>{ info }</span>)
-                  .reduce((accu, elem, i, arr) => {
-                    const wrappedEl = (
-                      <span
-                        key={`info-${i}`}
-                        className={css.additionalInformationItem}
-                        style={{
-                          maxWidth: `calc(${100 / arr.length}% - 1rem)`,
-                        }}
-                      >
-                        { elem }
-                      </span>
-                    );
-                    const spacer = (
-                      <span key={`info-spacer-${i}`} className={css.spacer}>•</span>
-                    );
-
-                    return accu === null
-                      ? [wrappedEl]
-                      : [...accu, spacer, wrappedEl];
-                  },
-                    null,
-                  )
+              {badge &&
+                <div className={css.additionalInformationBadge}>
+                 { badge }
+                </div>
               }
+              <div className={cx(css.additionalInformationText, css[variant])}>
+                {
+                  information
+                    .filter(info => info)
+                    .map(info => <span>{ info }</span>)
+                    .reduce((accu, elem, i, arr) => {
+                      const wrappedEl = (
+                        <span
+                          key={`info-${i}`}
+                          className={css.additionalInformationItem}
+                          style={{
+                            maxWidth: `calc(${100 / arr.length}% - 1rem)`,
+                          }}
+                        >
+                          { elem }
+                        </span>
+                      );
+                      const spacer = (
+                        <span key={`info-spacer-${i}`} className={css.spacer}>•</span>
+                      );
+
+                      return accu === null
+                        ? [wrappedEl]
+                        : [...accu, spacer, wrappedEl];
+                    },
+                      null,
+                    )
+                }
+              </div>
             </div>
           </a>
           { children && (
