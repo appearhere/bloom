@@ -173,37 +173,43 @@ export default class DestinationListingCard extends Component {
                   { priceUnit }
                 </span>
               </div>
-              { badge }
             </div>
             <div className={css.name}>{ name }</div>
             <div className={css.additionalInformationBlock}>
-              {
-                information
-                  .filter(info => info)
-                  .map(info => <span>{ info }</span>)
-                  .reduce((accu, elem, i, arr) => {
-                    const wrappedEl = (
-                      <span
-                        key={`info-${i}`}
-                        className={css.additionalInformationItem}
-                        style={{
-                          maxWidth: `calc(${100 / arr.length}% - 1rem)`,
-                        }}
-                      >
-                        { elem }
-                      </span>
-                    );
-                    const spacer = (
-                      <span key={`info-spacer-${i}`} className={css.spacer}>•</span>
-                    );
-
-                    return accu === null
-                      ? [wrappedEl]
-                      : [...accu, spacer, wrappedEl];
-                  },
-                    null,
-                  )
+              {badge &&
+                <div className={css.additionalInformationBadge}>
+                 { badge }
+                </div>
               }
+              <div className={cx(css.additionalInformationText, css[context])}>
+                {
+                  information
+                    .filter(info => info)
+                    .map(info => <span>{ info }</span>)
+                    .reduce((accu, elem, i, arr) => {
+                      const wrappedEl = (
+                        <span
+                          key={`info-${i}`}
+                          className={css.additionalInformationItem}
+                          style={{
+                            maxWidth: `calc(${100 / arr.length}% - 1rem)`,
+                          }}
+                        >
+                          { elem }
+                        </span>
+                      );
+                      const spacer = (
+                        <span key={`info-spacer-${i}`} className={css.spacer}>•</span>
+                      );
+
+                      return accu === null
+                        ? [wrappedEl]
+                        : [...accu, spacer, wrappedEl];
+                    },
+                      null,
+                    )
+                }
+              </div>
             </div>
           </a>
           { children && (

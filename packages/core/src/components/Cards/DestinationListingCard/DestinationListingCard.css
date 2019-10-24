@@ -200,7 +200,8 @@
   composes: fontSmallI from '../../../globals/typography.css';
   color: var(--color-grey);
   margin-top: var(--size-sm-ii);
-  display: block;
+  display: flex;
+  align-items: center;
 }
 
 .additionalInformationItem {
@@ -208,4 +209,12 @@
   white-space: nowrap;
   overflow: hidden;
   text-overflow: ellipsis;
+}
+
+.additionalInformationText {
+  display: flex;
+}
+
+.additionalInformationBadge {
+  margin-right: 8px;
 }
