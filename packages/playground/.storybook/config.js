@@ -72,6 +72,7 @@ function loadStories() {
   require('../stories/ValueIcon.story.js');
   require('../stories/Video.story.js');
   require('../stories/VideoWithRichPoster.story.js');
+  require('../stories/CollapsibleRow.story.js');
 }
 
 configure(loadStories, module);

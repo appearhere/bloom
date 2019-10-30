@@ -224,3 +224,4 @@ export Video from './Video/Video';
 export VideoWithRichPoster from './VideoWithRichPoster/VideoWithRichPoster';
 export Wrapper from './Wrapper/Wrapper';
 export OptionCard from './OptionCard/OptionCard';
+export CollapsibleRow from './CollapsibleRow/CollapsibleRow';

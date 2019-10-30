@@ -1,0 +1,50 @@
+.row {
+  font-family: var(--font-avenir);
+  border: 1px solid;
+}
+
+.container {
+  display: flex;
+}
+
+.left {
+  padding: 1rem;
+  height: 55px;
+  box-sizing: border-box;
+}
+
+.right {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+}
+
+.title {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  height: 55px;
+  box-sizing: border-box;
+  padding: 1rem;
+}
+
+.body {
+  padding: 1rem;
+  flex: 1;
+}
+
+.chevron {
+  transform-origin: center center;
+  pointer-events: none;
+  font-size: 0.75em;
+  color: var(--color-grey);
+}
+
+.chevron svg {
+  margin-left: 0.5rem;
+  transform: rotate(180deg);
+}
+
+.chevronActive svg {
+  transform: rotate(0deg);
+}
