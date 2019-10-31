@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import cx from 'classnames';
 import PropTypes from 'prop-types';
 import { CSSTransitionGroup } from 'react-transition-group';
@@ -8,8 +8,12 @@ import Radio from '../Form/Radio/Radio';
 
 import css from './CollapsibleRow.css';
 
-const CollapsibleRow = ({ title, body, left }) => {
+const CollapsibleRow = ({ title, body, left, opened }) => {
   const [open, toggle] = useState(false);
+
+  useEffect(() => {
+    toggle(opened);
+  }, [opened])
 
   return (
     <div className={cx(css.root, css.row, {[css.opened]: open})}>
