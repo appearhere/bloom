@@ -12,17 +12,17 @@ const CollapsibleRow = ({ title, body, controlled, border, animationTimeout, lef
   const [open, toggle] = useState(false);
 
   return (
-    <div className={cx(css.root, css.row)}>
+    <div className={cx(css.root, css.row, {[css.withBorder]: border, [css.opened]: open})}>
       <div className={css.container}>
-        <div className={css.left}>
+        { left && <div className={css.left}>
           {left}
-        </div>
+        </div> }
         <div className={css.right}>
-          <div className={css.title} onClick={() => toggle(!open)}>
+          <div className={cx(css.title, {[css.withLeftContent]: left})} onClick={() => toggle(!open)}>
             {title}
             <Icon className={cx(css.chevron, open && css.chevronActive)} name="chevron" />
           </div>
-          { open && <div className={css.body}>{body}</div> }
+          { open && <div className={cx(css.body, {[css.withLeftContent]: left})}>{body}</div> }
         </div>
       </div>
     </div>
@@ -34,7 +34,8 @@ CollapsibleRow.propTypes = {
   body: PropTypes.oneOf([PropTypes.string, PropTypes.node]),
   controlled: PropTypes.bool,
   border: PropTypes.bool,
-  animationTimeout: PropTypes.number
+  animationTimeout: PropTypes.number,
+  left: PropTypes.node
 };
 
 CollapsibleRow.defaultProps = {

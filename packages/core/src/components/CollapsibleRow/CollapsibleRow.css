@@ -1,6 +1,14 @@
 .row {
   font-family: var(--font-avenir);
-  border: 1px solid;
+  margin-bottom: .5rem;
+}
+
+.row.withBorder {
+  border: 1px solid #bebebe;
+}
+
+.row.opened {
+  box-shadow: 0 2px 4px 0 rgba(206, 206, 206, 0.5);
 }
 
 .container {
@@ -9,7 +17,8 @@
 
 .left {
   padding: 1rem;
-  height: 55px;
+  height: 56px;
+  width: 56px;
   box-sizing: border-box;
 }
 
@@ -23,14 +32,22 @@
   display: flex;
   justify-content: space-between;
   align-items: center;
-  height: 55px;
+  height: 56px;
   box-sizing: border-box;
   padding: 1rem;
+  cursor: pointer;
+  user-select: none;
+  font-weight: var(--fontweight-demi);
 }
 
 .body {
-  padding: 1rem;
+  padding: 0 2rem 1rem 1rem;
   flex: 1;
+  color: #8b8b8b;
+}
+
+.withLeftContent {
+  padding-left: 0;
 }
 
 .chevron {
@@ -38,6 +55,8 @@
   pointer-events: none;
   font-size: 0.75em;
   color: var(--color-grey);
+  margin-left: .5rem;
+  padding: .5rem;
 }
 
 .chevron svg {
