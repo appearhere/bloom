@@ -8,7 +8,7 @@ import Radio from '../Form/Radio/Radio';
 
 import css from './CollapsibleRow.css';
 
-const CollapsibleRow = ({ title, body, left, opened }) => {
+const CollapsibleRow = ({ title, body, left, opened, onClick }) => {
   const [open, toggle] = useState(false);
 
   useEffect(() => {
@@ -16,7 +16,7 @@ const CollapsibleRow = ({ title, body, left, opened }) => {
   }, [opened])
 
   return (
-    <div className={cx(css.root, css.row, {[css.opened]: open})}>
+    <div onClick={onClick} className={cx(css.root, css.row, {[css.opened]: open})}>
       <div className={css.container}>
         { left && <div className={css.left}>
           {left}
@@ -36,7 +36,8 @@ const CollapsibleRow = ({ title, body, left, opened }) => {
 CollapsibleRow.propTypes = {
   title: PropTypes.oneOf([PropTypes.string, PropTypes.node]).isRequired,
   body: PropTypes.oneOf([PropTypes.string, PropTypes.node]).isRequired,
-  left: PropTypes.node
+  left: PropTypes.node,
+  onClick: PropTypes.func,
 };
 
 export default CollapsibleRow;
