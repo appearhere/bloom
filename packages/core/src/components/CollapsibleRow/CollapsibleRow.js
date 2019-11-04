@@ -34,8 +34,8 @@ const CollapsibleRow = ({ title, body, left, opened, onClick }) => {
 };
 
 CollapsibleRow.propTypes = {
-  title: PropTypes.oneOf([PropTypes.string, PropTypes.node]).isRequired,
-  body: PropTypes.oneOf([PropTypes.string, PropTypes.node]).isRequired,
+  title: PropTypes.oneOfType([PropTypes.string, PropTypes.node]).isRequired,
+  body: PropTypes.oneOfType([PropTypes.string, PropTypes.node]).isRequired,
   left: PropTypes.node,
   onClick: PropTypes.func,
 };
