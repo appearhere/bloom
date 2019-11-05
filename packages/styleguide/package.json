@@ -1,9 +1,9 @@
 {
   "name": "@appearhere/bloom-styleguide",
-  "version": "1.1.0-beta.19",
+  "version": "1.1.0-beta.20",
   "private": true,
   "dependencies": {
-    "@appearhere/bloom": "^1.1.0-beta.19",
+    "@appearhere/bloom": "^1.1.0-beta.20",
     "@appearhere/common-styles": "^1.1.0-beta.15",
     "react": "^16.2.0",
     "react-dom": "^16.2.0",
