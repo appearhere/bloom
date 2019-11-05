@@ -13,6 +13,7 @@
   border-radius: 20px;
   border: 2px solid var(--color-gold);
   position: relative;
+  box-sizing: content-box;
 }
 
 .progressSteps .opened .circle {
