@@ -21,8 +21,8 @@
 
 .left {
   padding: 1rem;
-  width: 56px;
-  box-sizing: border-box;
+  width: 1.5rem;
+  box-sizing: content-box;
 }
 
 .right {
