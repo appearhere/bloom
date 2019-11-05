@@ -1,0 +1,57 @@
+.circleContainer {
+  height: 100%;
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  position: relative;
+}
+
+.circle {
+  width: 20px;
+  height: 20px;
+  background: #fff;
+  border-radius: 20px;
+  border: 2px solid var(--color-gold);
+  position: relative;
+}
+
+.progressSteps .opened .circle {
+  background: var(--color-gold);
+}
+
+.lineBottom {
+  width: 2px;
+  height: 100%;
+  background: var(--color-greyLight);
+  position: absolute;
+  bottom: -24px;
+}
+
+.lineTop {
+  width: 2px;
+  height: 100%;
+  background: var(--color-greyLight);
+  position: absolute;
+  top: -24px;
+}
+
+.opened .lineBottom {
+  background: var(--color-gold);
+}
+
+.opened + .row .lineTop {
+  background: var(--color-gold);
+}
+
+.progressSteps >:first-child .lineTop {
+  display: none;
+}
+
+.progressSteps >:last-child .lineBottom {
+  display: none;
+}
+
+.progressSteps >:last-child.opened .lineBottom {
+  display: block;
+  bottom: 0;
+}

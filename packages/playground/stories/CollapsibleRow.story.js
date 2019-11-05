@@ -14,4 +14,5 @@ storiesOf('CollapsibleRow', module)
   .add('With title component', () => <CollapsibleRow title={titleComponent} body="Lorem ipsum dolor sit amet, consectetur adipiscing elit" />)
   .add('With left content', () => <CollapsibleRow left={<Radio />} title="Collapsible title" body="Lorem ipsum dolor sit amet, consectetur adipiscing elit" />)
   .add('Opened by default', () => <CollapsibleRow opened left={<Radio />} title="Collapsible title" body="Lorem ipsum dolor sit amet, consectetur adipiscing elit" />)
+  .add('No border', () => <CollapsibleRow border={false} opened left={<Radio />} title="Collapsible title" body="Lorem ipsum dolor sit amet, consectetur adipiscing elit" />)
 
