@@ -1,12 +1,18 @@
 .row {
   font-family: var(--font-avenir);
-  margin-bottom: .5rem;
+}
+
+.row.border {
   border: 1px solid var(--color-greyLight);
 }
 
-.row.opened {
+.row.border.opened {
   box-shadow: 0 2px 4px 0 rgba(206, 206, 206, 0.5);
   border-color: var(--color-gold);
+}
+
+.row.marginBottom {
+  margin-bottom: .5rem;
 }
 
 .container {
@@ -15,7 +21,6 @@
 
 .left {
   padding: 1rem;
-  height: 56px;
   width: 56px;
   box-sizing: border-box;
 }
@@ -42,6 +47,7 @@
   padding: 0 2rem 1rem 1rem;
   flex: 1;
   color: var(--color-grey);
+  line-height: 1.5;
 }
 
 .withLeftContent {

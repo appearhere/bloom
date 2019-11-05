@@ -17,6 +17,7 @@ function loadStories() {
   require('../stories/Checkbox.story.js');
   require('../stories/CheckboxGroup.story.js');
   require('../stories/CollapsibleRow.story.js');
+  require('../stories/CollapsibleProgressSteps.story.js');
   require('../stories/DayPicker.story.js');
   require('../stories/DayRange.story.js');
   require('../stories/DayRangePicker.story.js');

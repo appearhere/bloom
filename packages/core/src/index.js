@@ -95,7 +95,8 @@ export {
   AutoCompleteInput,
   autoCompleteTheme,
   OptionCard,
-  CollapsibleRow
+  CollapsibleRow,
+  CollapsibleProgressSteps,
 } from './components/index.js';
 
 export Colors from './globals/colors.css';
