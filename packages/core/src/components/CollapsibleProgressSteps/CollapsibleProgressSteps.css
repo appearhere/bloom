@@ -1,57 +1,51 @@
-.circleContainer {
-  height: 100%;
-  display: flex;
-  align-items: center;
-  flex-direction: column;
+.progressSteps, .progressSteps *, .progressSteps *:before {
+  box-sizing: border-box;
+}
+
+.step {
+  padding-left: 1.5rem;
   position: relative;
 }
 
-.circle {
-  width: 20px;
-  height: 20px;
+.step:after {
+  content: " ";
+  display: block;
+  width: 2px;
+  height: 100%;
+  background: #bebebe;
+  left: 11px;
+  position: absolute;
+  top: calc(24px + 1rem);
+  bottom: 1rem;
+}
+
+.step.opened:after, .step.opened:before {
+  background: var(--color-gold);
+}
+
+.step:before {
+  content: " ";
+  display: block;
+  width: 24px;
+  height: 24px;
   background: #fff;
   border-radius: 20px;
-  border: 2px solid var(--color-gold);
-  position: relative;
-}
-
-.progressSteps .opened .circle {
-  background: var(--color-gold);
-}
-
-.lineBottom {
-  width: 2px;
-  height: 100%;
-  background: var(--color-greyLight);
+  border: 2px solid #baa082;
   position: absolute;
-  bottom: -24px;
+  left: 0;
+  top: 1rem;
 }
 
-.lineTop {
-  width: 2px;
-  height: 100%;
-  background: var(--color-greyLight);
-  position: absolute;
-  top: -24px;
+.progressSteps {
+  margin-left: 1rem;
 }
 
-.opened .lineBottom {
-  background: var(--color-gold);
-}
-
-.opened + .row .lineTop {
-  background: var(--color-gold);
-}
-
-.progressSteps >:first-child .lineTop {
+.progressSteps >:last-child:after {
   display: none;
-}
-
-.progressSteps >:last-child .lineBottom {
-  display: none;
-}
-
-.progressSteps >:last-child.opened .lineBottom {
-  display: block;
   bottom: 0;
+  height: unset;
+}
+
+.progressSteps >:last-child.opened:after {
+  display: block;
 }
