@@ -10,14 +10,14 @@ const CollapsibleRow = ({ title, body, left, opened, onClick, border, marginBott
 
   useEffect(() => {
     toggle(opened);
-  }, [opened])
+  }, [opened]);
 
   const handleClick = () => {
     toggle(!open);
     if (onClick) {
       onClick();
     }
-  }
+  };
 
   return (
     <div
@@ -47,7 +47,7 @@ const CollapsibleRow = ({ title, body, left, opened, onClick, border, marginBott
 CollapsibleRow.defaultProps = {
   border: true,
   marginBottom: true,
-}
+};
 
 CollapsibleRow.propTypes = {
   title: PropTypes.oneOfType([PropTypes.string, PropTypes.node]).isRequired,
