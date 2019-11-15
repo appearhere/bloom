@@ -32,7 +32,7 @@
     "dedent": "^0.7.0",
     "file-loader": "^1.1.11",
     "key-mirror": "^1.0.1",
-    "lodash": "^4.16.3",
+    "lodash": "^4.17.12",
     "moment-range": "^3.1.1",
     "object-fit-images": "^3.2.3",
     "react-autosuggest": "^9.3.4",
