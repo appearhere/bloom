@@ -17,6 +17,7 @@ export const defaultDayState = {
   isHighlighted: false,
   isFirstHighlighted: false,
   isLastHighlighted: false,
+  subtext: undefined,
 };
 
 const defaultGetDateState = () => defaultDayState;
@@ -103,6 +104,7 @@ export default class DayPickerItem extends Component {
         tabIndex={0}
         className={className}
         day={day}
+        subtext={state.subtext}
       />
     );
   }

@@ -18,3 +18,9 @@
   text-decoration: line-through;
   color: var(--color-greyLight);
 }
+
+.subtext p {
+  color: var(--color-grey);
+  font-size: 0.5625rem;
+  margin: 0.2rem 0 0;
+}

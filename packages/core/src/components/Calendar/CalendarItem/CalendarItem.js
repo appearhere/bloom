@@ -16,7 +16,7 @@ export const defaultClassNames = {
 };
 
 const CalendarDay = props => {
-  const { day, format, className, dayClassName, classNames, today, outOfRange, isClosed, ...rest } = props;
+  const { day, format, className, dayClassName, classNames, today, outOfRange, isClosed, subtext, ...rest } = props;
 
   const classes = cx(
     classNames.root,
@@ -29,6 +29,11 @@ const CalendarDay = props => {
   return day ? (
     <div {...rest} className={classes}>
       <span className={dayClassName}>{day.format(format)}</span>
+        {subtext &&
+          <div className={css.subtext}>
+            <p>{subtext}</p>
+          </div>
+        }
     </div>
   ) : (
     <div className={classes}>{'\u00a0'}</div>
@@ -44,6 +49,7 @@ CalendarDay.propTypes = {
   today: PropTypes.bool,
   outOfRange: PropTypes.bool,
   isClosed: PropTypes.bool,
+  subtext: PropTypes.string,
 };
 
 CalendarDay.defaultProps = {
