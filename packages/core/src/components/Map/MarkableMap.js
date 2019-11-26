@@ -54,12 +54,14 @@ export default class MarkableMap extends Component {
     autoFit: PropTypes.bool,
     highlightedId: PropTypes.oneOfType([PropTypes.string, PropTypes.number]),
     onMarkerClick: PropTypes.func,
+    animateFitBounds: PropTypes.bool,
   };
 
   static defaultProps = {
     markers: [],
     metaMarkers: [],
     autoFit: false,
+    animateFitBounds: true,
   };
 
   constructor(props) {
@@ -349,6 +351,7 @@ export default class MarkableMap extends Component {
     this.map.fitBounds(minLngLatBounds(markers.map(marker => marker.lngLat)), {
       padding: { top: 20, bottom: 20, left: 50, right: 50 },
       offset: [0, 20],
+      animate: this.props.animateFitBounds,
     });
   };
 
