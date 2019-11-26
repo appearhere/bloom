@@ -2,7 +2,7 @@
   composes: fontRegular from '../../../globals/typography.css';
   display: block;
   width: 100%;
-  padding: var(--size-small);
+  padding: 0.5rem 0;
   text-align: center;
 }
 
