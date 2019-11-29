@@ -118,10 +118,7 @@ export default class MarkableMap extends Component {
     const { activeFeature } = this.state;
 
     if (activeFeature.properties.cluster) {
-      const clusterSet = JSON.parse(activeFeature.properties.markerids);
-      const clusterMarkerIds = flattenDeep(clusterSet);
-
-      return find(marker => clusterMarkerIds.indexOf(marker.id) > -1, markers);
+      return activeFeature;
     }
 
     if (activeFeature) {
@@ -320,29 +317,25 @@ export default class MarkableMap extends Component {
   };
 
   handleClusterClick = cluster => {
-    const { markers } = this.props;
-    const clusterSet = JSON.parse(cluster.properties.markerids);
+    const map = this.map;
 
-    const unbreakableCluster = () => {
-      // all markers are clustered at the same zoom level
-      const singleZoomCluster = isSingleLevelArray(clusterSet);
-      if (!singleZoomCluster) return false;
-
-      const zoom = this.getMapboxGL().getZoom();
-      const clusterZoomLevel = nestedArrayDepth(clusterSet) + Math.ceil(zoom);
-
-      // the cluster cannot uncluster even at max zoom
-      return clusterZoomLevel >= CLUSTER_MAX_ZOOM;
+    const unbreakableCluster = cluster => {
+      this.setState({ activeFeature: cluster });
     };
 
-    if (unbreakableCluster()) {
-      this.setState({ activeFeature: cluster });
-    } else {
-      const clusterMarkerIds = flattenDeep(clusterSet);
-      const clusteredMarkers = markers.filter(marker => clusterMarkerIds.indexOf(marker.id) !== -1);
+    this.getMapboxGL().getSource(MARKER_SOURCE).getClusterExpansionZoom(cluster.id, function (err, zoom) {
+      if (err)
+        return;
 
-      this.fitMarkers(clusteredMarkers);
-    }
+      if (zoom >= CLUSTER_MAX_ZOOM) {
+        unbreakableCluster(cluster);
+      }
+
+      map.easeTo({
+        center: cluster.geometry.coordinates,
+        zoom: zoom
+      });
+    });
   };
 
   fitMarkers = markers => {
@@ -401,29 +394,34 @@ export default class MarkableMap extends Component {
     this.easeTo(lngLat);
     const element = this.markerPopupElement(lngLat);
 
+    const getMarkerPropsById = markerId => {
+      const marker = markers.find(m => m.id === markerId);
+
+      return marker.props;
+    };
+
     if (activeFeature.properties.cluster) {
-      const clusterSet = JSON.parse(activeFeature.properties.markerids);
-      const clusterMarkerIds = flattenDeep(clusterSet);
-      const clusteredMarkers = markers.filter(marker => clusterMarkerIds.indexOf(marker.id) !== -1);
+      const pointCount = activeFeature.properties.point_count;
 
-      renderSubtreeIntoContainer(
-        this,
-        <MarkerContainer
-          key={`${this.id}-activeMarker`}
-          MarkerComponent={GroupMarkerComponent}
-          props={{ group: clusteredMarkers.map(marker => marker.props) }}
-        />,
-        element,
-      );
+      const _self = this;
+      this.getMapboxGL().getSource(MARKER_SOURCE).getClusterLeaves(activeFeature.id, pointCount, 0, function(err, activeMarkers) {
+        renderSubtreeIntoContainer(
+          _self,
+          <MarkerContainer
+            key={`${_self.id}-activeMarker`}
+            MarkerComponent={GroupMarkerComponent}
+            props={{ group: activeMarkers.map(activeMarker => getMarkerPropsById(activeMarker.properties.id)) }}
+          />,
+          element,
+        );
+      })
     } else {
-      const marker = markers.find(m => m.id === activeFeature.properties.id);
-
       renderSubtreeIntoContainer(
         this,
         <MarkerContainer
           key={`${this.id}-activeMarker`}
           MarkerComponent={MarkerComponent}
-          props={marker.props}
+          props={getMarkerPropsById(activeFeature.properties.id)}
         />,
         element,
       );
