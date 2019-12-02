@@ -1,6 +1,6 @@
 {
   "name": "@appearhere/bloom",
-  "version": "1.1.0-beta.26",
+  "version": "1.1.0-beta.27",
   "description": "Appear Here's pattern library",
   "main": "dist/bundle.js",
   "style": "dist/bloom.css",
@@ -23,7 +23,6 @@
   },
   "dependencies": {
     "@appearhere/mapbox-gl": "^1.5.0",
-    "nuka-carousel": "^4.5.13",
     "@appearhere/react-input-range": "^1.2.0",
     "@appearhere/react-stickynode": "^1.0.1",
     "classnames": "^2.2.5",
@@ -34,6 +33,7 @@
     "key-mirror": "^1.0.1",
     "lodash": "^4.17.12",
     "moment-range": "^3.1.1",
+    "nuka-carousel": "^4.5.13",
     "object-fit-images": "^3.2.3",
     "react-autosuggest": "^9.3.4",
     "react-container-query": "^0.11.0",
