@@ -13,7 +13,6 @@ function loadStories() {
   require('../stories/CalendarItem.story.js');
   require('../stories/CalendarMonth.story.js');
   require('../stories/Cards.story.js');
-  require('../stories/Carousel.story.js');
   require('../stories/Checkbox.story.js');
   require('../stories/CheckboxGroup.story.js');
   require('../stories/CollapsibleRow.story.js');

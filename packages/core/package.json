@@ -23,7 +23,7 @@
   },
   "dependencies": {
     "@appearhere/mapbox-gl": "^1.5.0",
-    "@appearhere/nuka-carousel": "^2.2.0",
+    "nuka-carousel": "^4.5.13",
     "@appearhere/react-input-range": "^1.2.0",
     "@appearhere/react-stickynode": "^1.0.1",
     "classnames": "^2.2.5",
