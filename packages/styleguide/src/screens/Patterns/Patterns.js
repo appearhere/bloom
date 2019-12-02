@@ -7,7 +7,6 @@ import Badge from './Badge/Badge';
 import Buttons from './Buttons/Buttons';
 import Calendar from './Calendar/Calendar';
 import Cards from './Cards/Cards';
-import Carousel from './Carousel/Carousel';
 import Dropdown from './Dropdown/Dropdown';
 import Figure from './Figure/Figure';
 import FittedImage from './FittedImage/FittedImage';
@@ -35,7 +34,6 @@ const Patterns = () => (
     <Route path="/patterns/horizontal-overflow-bar" component={HorizontalOverflowBar} />
     <Route path="/patterns/calendar" component={Calendar} />
     <Route path="/patterns/cards" component={Cards} />
-    <Route path="/patterns/carousel" component={Carousel} />
     <Route path="/patterns/dropdown" component={Dropdown} />
     <Route path="/patterns/figure" component={Figure} />
     <Route path="/patterns/fitted-image" component={FittedImage} />

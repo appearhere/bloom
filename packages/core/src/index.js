@@ -24,8 +24,6 @@ export {
   SpaceListingCard,
   EventCard,
   GuideCard,
-  Carousel,
-  ControlledCarousel,
   DismissablePanel,
   Dropdown,
   Figure,

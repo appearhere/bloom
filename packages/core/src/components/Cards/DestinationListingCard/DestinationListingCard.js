@@ -1,10 +1,10 @@
 import React, { Component } from 'react';
 import PropTypes from 'prop-types';
 import cx from 'classnames';
+import Carousel from 'nuka-carousel';
 
 import noop from '../../../utils/noop';
 import BtnContainer from '../../BtnContainer/BtnContainer';
-import Carousel from '../../Carousel/Carousel';
 import FittedImage from '../../FittedImage/FittedImage';
 import getValidIndex from '../../../utils/getValidIndex/getValidIndex';
 import HeartBtn from '../../HeartBtn/HeartBtn';
@@ -144,11 +144,12 @@ export default class DestinationListingCard extends Component {
           </BtnContainer>
           <div className={css.inner}>
             <Carousel
-              lowestVisibleItemIndex={visibleImageIndex}
+              slideIndex={visibleImageIndex}
               wrapAround
               swiping={false}
               dragging={false}
               onChange={onCarouselChange}
+              withoutControls
             >
               {images.map(({ src, ...imageProps }) => (
                 <a href={href} key={src} onClick={this.onClick} target={target}>

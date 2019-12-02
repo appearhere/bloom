@@ -48,8 +48,6 @@ export PlaceListingCard from './Cards/PlaceListingCard/PlaceListingCard';
 export SpaceFeatureCard from './Cards/SpaceFeatureCard/SpaceFeatureCard';
 export SpaceListingCard from './Cards/SpaceListingCard/SpaceListingCard';
 
-export Carousel from './Carousel/Carousel';
-export ControlledCarousel from './Carousel/ControlledCarousel';
 export DismissablePanel from './DismissablePanel/DismissablePanel';
 export Dropdown from './Dropdown/Dropdown';
 export Figure from './Figure/Figure';

@@ -149,17 +149,6 @@ const Navigation = ({ className, onLinkClick }) => (
             exact
             activeClassName={css.linkActive}
             className={cx(css.link, t.fontRegular)}
-            to="/patterns/carousel"
-            onClick={onLinkClick}
-          >
-            Carousel
-          </NavLink>
-        </li>
-        <li className={css.linkListItem}>
-          <NavLink
-            exact
-            activeClassName={css.linkActive}
-            className={cx(css.link, t.fontRegular)}
             to="/patterns/dropdown"
             onClick={onLinkClick}
           >
