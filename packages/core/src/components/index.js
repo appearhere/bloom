@@ -224,3 +224,4 @@ export Wrapper from './Wrapper/Wrapper';
 export OptionCard from './OptionCard/OptionCard';
 export CollapsibleRow from './CollapsibleRow/CollapsibleRow';
 export CollapsibleProgressSteps from './CollapsibleProgressSteps/CollapsibleProgressSteps';
+export ScreenSize from './ScreenSize/ScreenSize';
