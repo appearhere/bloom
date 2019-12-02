@@ -29,6 +29,11 @@ storiesOf('Cards', module)
       Hello, world
     </PictureCard>
   ))
+  .add('PictureCard with bottom content', () => (
+    <PictureCard style={{ minHeight: '10vh' }} src="https://source.unsplash.com/random" bottom>
+      Hello, world
+    </PictureCard>
+  ))
   .add('PictureCard with centered content', () => (
     <PictureCard style={{ minHeight: '10vh' }} src="https://source.unsplash.com/random" center>
       Hello, world
