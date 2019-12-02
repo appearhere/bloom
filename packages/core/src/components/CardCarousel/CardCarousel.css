@@ -1,0 +1,55 @@
+.title {
+  font-size: var(--fontsize-large-ii);
+  margin: 0 0 1.5rem 0;
+}
+
+.controls {
+  display: flex;
+  justify-content: space-between;
+}
+
+.buttons {
+  margin: 0 -0.25rem 1.5rem -0.25rem;
+}
+
+.button {
+  width: 28px;
+  height: 28px;
+  border-radius: 100px;
+  background: var(--color-black);
+  border: 0;
+  outline: none;
+  cursor: pointer;
+  margin: 0 0.25rem;
+  padding: 0;
+  font-size: 0.6rem;
+}
+
+.button:disabled {
+  background: var(--color-greyLightest);
+}
+
+.controls .chevron svg {
+  fill: var(--color-greyLighter);
+}
+
+.prevIcon svg {
+  transform: rotate(180deg);
+}
+
+.slideInner {
+  padding: 0 0.25rem;
+}
+
+@media(min-width: 48rem) {
+  .slideInner {
+    padding: 0 0.5rem;
+  }
+}
+
+@media(min-width: 64rem) {
+  .slideInner {
+    padding: 0 0.25rem;
+  }
+}
+  
