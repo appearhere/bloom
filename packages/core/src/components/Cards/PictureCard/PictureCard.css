@@ -41,3 +41,11 @@
   transform: translateY(-50%);
   height: auto;
 }
+
+.bottom .inner {
+  position: absolute;
+  bottom: 2rem;
+  left: 0;
+  height: auto;
+  top: unset;
+}

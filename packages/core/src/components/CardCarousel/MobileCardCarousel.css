@@ -1,0 +1,26 @@
+.slides {
+  overflow-x: auto;
+  transition: transform 0.5s ease 0s;
+  white-space: nowrap;
+  margin: 0 -0.25rem;
+  scroll-snap-type: x mandatory;
+  -webkit-overflow-scrolling: touch;
+}
+
+.slides::-webkit-scrollbar {
+  display: none;
+}
+
+.slide {
+  display: inline-block;
+  white-space: normal;
+}
+
+.slideInner {
+  padding: 0 0.25rem;
+}
+
+.title {
+  margin: 0 0 1.5rem 0;
+  font-size: var(--fontsize-large-ii);
+}

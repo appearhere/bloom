@@ -6,13 +6,19 @@ import css from './PictureCard.css';
 import Card from '../Card/Card';
 
 const PictureCard = props => {
-  const { src, href, children, className, center, style, overlayClassName, ...rest } = props;
+  const { src, href, children, className, center, bottom, style, overlayClassName, ...rest } = props;
 
   return (
     <Card
       {...rest}
       href={href}
-      className={cx(css.root, className, href ? css.link : null, center ? css.center : null)}
+      className={cx(
+        css.root,
+        className,
+        href ? css.link : null,
+        center ? css.center : null,
+        bottom ? css.bottom : null,
+      )}
       style={{
         ...style,
         backgroundImage: `url(${src})`,
@@ -31,6 +37,7 @@ PictureCard.propTypes = {
   className: PropTypes.string,
   innerClassName: PropTypes.string,
   center: PropTypes.bool,
+  bottom: PropTypes.bool,
   style: PropTypes.object,
   overlayClassName: PropTypes.string,
 };
