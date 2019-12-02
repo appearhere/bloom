@@ -24,7 +24,8 @@ export {
   SpaceListingCard,
   EventCard,
   GuideCard,
-  CardCarousel,
+  Carousel,
+  MobileCarousel,
   DismissablePanel,
   Dropdown,
   Figure,
@@ -96,7 +97,8 @@ export {
   OptionCard,
   CollapsibleRow,
   CollapsibleProgressSteps,
-  ScreenSize,
+  WindowDimensionsProvider,
+  ScreenWidth
 } from './components/index.js';
 
 export Colors from './globals/colors.css';
