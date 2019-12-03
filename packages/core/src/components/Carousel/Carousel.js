@@ -2,6 +2,7 @@ import PropTypes from 'prop-types';
 import React, { useState, useEffect } from 'react';
 import cx from 'classnames';
 import NukaCarousel from 'nuka-carousel';
+import shortid from 'short-id';
 import Icon from '../Icon/Icon';
 import SectionHeader from '../Type/SectionHeader/SectionHeader';
 
@@ -40,8 +41,8 @@ const Carousel = props => {
     <div>
       {renderDesktopControls()}
       <NukaCarousel slideIndex={slideIndex} {...props}>
-        {props.children.map((slide, index) => (
-          <div key={index} className={css.slideInner}>
+        {props.children.map((slide) => (
+          <div key={shortid.generate()} className={css.slideInner}>
             {slide}
           </div>
         ))}
