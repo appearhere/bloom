@@ -5,7 +5,7 @@ import { action } from '@storybook/addon-actions';
 
 import {
   PictureCard,
-  CardCarousel,
+  Carousel,
 } from '@appearhere/bloom';
 
 const StorySlide = ({ number }) => (
@@ -29,10 +29,11 @@ const StorySlide = ({ number }) => (
 StorySlide.propTypes = { number: PropTypes.number };
 const slides = [...Array(10).keys()].map(i => <StorySlide number={i} key={i} />);
 
-storiesOf('CardCarousel', module)
+
+storiesOf('Carousel', module)
 .add('Default', () => (
-  <CardCarousel slidesToShow={4} onChange={action('Slide changed')}>{slides}</CardCarousel>
+  <Carousel slidesToShow={4} onChange={action('Slide changed')}>{slides}</Carousel>
 ))
 .add('With Title', () => (
-  <CardCarousel title="Carousel Title" slidesToShow={4} onChange={action('Slide changed')}>{slides}</CardCarousel>
+  <Carousel title="Carousel Title" slidesToShow={4} onChange={action('Slide changed')}>{slides}</Carousel>
 ));

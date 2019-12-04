@@ -2,19 +2,21 @@ import React from 'react';
 import { render } from '@testing-library/react';
 import '@testing-library/jest-dom/extend-expect';
 import 'mutationobserver-shim';
+import Carousel from './Carousel';
 
-window.matchMedia = jest.fn().mockImplementation(query => {
+window.matchMedia = jest.fn().mockImplementation(() => {
   return {
     matches: false,
   };
 });
 
-import ScreenSize from './ScreenSize';
-
 it('renders without crashing', () => {
-  const { container } = render(
-    <ScreenSize render={({}) => (
-      <div />
-    )} />
+  const div = document.createElement('div');
+  render(
+    <Carousel>
+      <span>child</span>
+      <span>child</span>
+    </Carousel>,
+    div,
   );
 });
