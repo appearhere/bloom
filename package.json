@@ -18,7 +18,8 @@
     "styleguide": "cd packages/styleguide && yarn start",
     "test": "jest --projects packages/*",
     "bump": "lerna publish --exact --skip-npm --since \"v$(npm info @appearhere/bloom version)\"",
-    "test:travis": "yarn test --coverage --maxWorkers=4"
+    "test:travis": "yarn test --coverage --maxWorkers=4",
+    "now-build": "yarn build && yarn build-storybook"
   },
   "eslintConfig": {
     "extends": "./eslint.js"
