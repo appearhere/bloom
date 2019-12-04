@@ -116,6 +116,7 @@ export default {
     'lodash/fp/last',
     'lodash/fp/uniqueId',
     'lodash/fp/throttle',
+    'mapbox-gl',
     'moment',
     'moment-range',
     'prop-types',
