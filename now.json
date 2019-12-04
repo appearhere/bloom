@@ -1,0 +1,13 @@
+{
+  "version": 2,
+  "name": "storybook",
+  "builds": [
+    {
+      "src": "package.json",
+      "use": "@now/static-build",
+      "config": {
+        "distDir": "packages/playground/storybook-static"
+      }
+    }
+  ]
+}
