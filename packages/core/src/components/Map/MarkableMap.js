@@ -8,15 +8,12 @@ import {
 /* eslint-enable camelcase */
 import isEqual from 'lodash/fp/isEqual';
 import uniqueId from 'lodash/fp/uniqueId';
-import flattenDeep from 'lodash/fp/flattenDeep';
 import find from 'lodash/fp/find';
 import cx from 'classnames';
 
 import lngLatType from '../../utils/propTypeValidations/lngLat';
 import minLngLatBounds from '../../utils/geoUtils/minLngLatBounds';
 import mapboxgl from '../../utils/mapboxgl/mapboxgl';
-import isSingleLevelArray from '../../utils/isSingleLevelArray/isSingleLevelArray';
-import nestedArrayDepth from '../../utils/nestedArrayDepth/nestedArrayDepth';
 import MarkerContainer from './Markers/MarkerContainer';
 import BaseMap from './BaseMap';
 
