@@ -79,9 +79,9 @@ const grid = [
 stories.add('default', () => (
   <GridLayout
     grid={grid}
-    limit={number('Limit', 6)}
+    limit={number('Limit', 3)}
     col={number('Columns', 3)}
-    colGap={number('Column Gap', 10)}
-    rowHeight={number('Row Height', 150)}
+    colGap={number('Column Gap (rem)', 1)}
+    rowHeight={number('Row Height (rem)', 10)}
   />
 ));

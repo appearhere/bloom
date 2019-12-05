@@ -19,10 +19,10 @@ export default class GridLayout extends Component {
   static defaultProps = {
     grid: [],
     GridItemComponent: 'div',
-    limit: 30,
-    col: 5,
-    colGap: 10,
-    rowHeight: 100
+    limit: 16,
+    col: 4,
+    colGap: 1,
+    rowHeight: 10
   };
 
   constructor(props) {
@@ -33,7 +33,6 @@ export default class GridLayout extends Component {
     this.state = {
       grid: grid.slice(0, limit)
     };
-
   }
 
   componentWillReceiveProps(props) {
@@ -53,8 +52,8 @@ export default class GridLayout extends Component {
         className={css.container}
         style={{
           gridTemplateColumns: `repeat(${col}, minmax(0, 1fr))`,
-          gridGap: `${colGap}px`,
-          gridAutoRows: `${rowHeight}px`,
+          gridGap: `${colGap}rem`,
+          gridAutoRows: `${rowHeight}rem`,
         }}
       >
         {grid.slice(0, this.props.limit).map((item, i) => (
