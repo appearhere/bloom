@@ -71,7 +71,6 @@ export {
   ParallaxContainer,
   PhotoGrid,
   ProgressSteps,
-  ResponsiveGridLayout,
   Step,
   ScreenReadable,
   SiblingTransition,

@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import css from './GridLayout.css';
 import PropTypes from 'prop-types';
+import shortid from 'short-id';
 
 export default class GridLayout extends Component {
   static propTypes = {
@@ -9,7 +10,7 @@ export default class GridLayout extends Component {
         key: PropTypes.oneOfType([PropTypes.string, PropTypes.number]).isRequired,
       }),
     ).isRequired,
-    GridItemComponent: PropTypes.any,
+    gridItemComponent: PropTypes.any,
     limit: PropTypes.number,
     col: PropTypes.number,
     colGap: PropTypes.number,
@@ -18,35 +19,17 @@ export default class GridLayout extends Component {
 
   static defaultProps = {
     grid: [],
-    GridItemComponent: 'div',
+    gridItemComponent: 'div',
     limit: 16,
     col: 4,
     colGap: 1,
     rowHeight: 10
   };
 
-  constructor(props) {
-    super(props);
-
-    const { grid, limit } = props;
-
-    this.state = {
-      grid: grid.slice(0, limit)
-    };
-  }
-
-  componentWillReceiveProps(props) {
-    const { grid, limit } = props;
-
-    this.setState({
-      grid: grid.slice(0, limit)
-    });
-  }
-
   
   render() {
-    const { grid } = this.state;
-    const { col, colGap, GridItemComponent, rowHeight } = this.props;
+    const { grid, limit } = this.props;
+    const { col, colGap, gridItemComponent, rowHeight } = this.props;
     return (
       <div 
         className={css.container}
@@ -56,9 +39,9 @@ export default class GridLayout extends Component {
           gridAutoRows: `${rowHeight}rem`,
         }}
       >
-        {grid.slice(0, this.props.limit).map((item, i) => (
-          <div key={i} className={css.item}>
-            <GridItemComponent {...item} key={`logo-${item.key}`} />
+        {grid.slice(0, limit).map(item => (
+          <div key={shortid.generate()} className={css.item}>
+            <gridItemComponent {...item} key={`logo-${item.key}`} />
           </div>
         ))}
       </div>  
