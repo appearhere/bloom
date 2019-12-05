@@ -58,6 +58,7 @@ function loadStories() {
   require('../stories/ProgressSteps.story.js');
   require('../stories/Radio.story.js');
   require('../stories/RadioGroup.story.js');
+  require('../stories/ResponsiveGridLayout.story.js');
   require('../stories/ScreenReadable.story.js');
   require('../stories/Select.story.js');
   require('../stories/SiblingTransition.story.js');
