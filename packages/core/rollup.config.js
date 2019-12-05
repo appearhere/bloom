@@ -9,8 +9,7 @@ import babel from 'rollup-plugin-babel';
 import json from 'rollup-plugin-json';
 import reactSvg from "rollup-plugin-react-svg";
 import cssnano from 'cssnano';
-import { readFileSync, writeFileSync } from 'fs';
-import { parseString } from 'xml2js';
+import { writeFileSync } from 'fs';
 
 import cssMap from '@appearhere/common-styles';
 
@@ -116,6 +115,7 @@ export default {
     'lodash/fp/last',
     'lodash/fp/uniqueId',
     'lodash/fp/throttle',
+    'mapbox-gl',
     'moment',
     'moment-range',
     'prop-types',
