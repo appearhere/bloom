@@ -104,6 +104,7 @@ export const Indicators = {
 
 export FunnelInputField from './FunnelInputField/FunnelInputField';
 export GridFader from './GridFader/GridFader';
+export GridLayout from './GridLayout/GridLayout';
 export HeartBtn from './HeartBtn/HeartBtn';
 export Hero from './Hero/Hero';
 export SquareHero from './Hero/SquareHero';
