@@ -5,22 +5,16 @@ import shortid from 'short-id';
 
 export default class GridLayout extends Component {
   static propTypes = {
-    grid: PropTypes.arrayOf(
-      PropTypes.shape({
-        key: PropTypes.oneOfType([PropTypes.string, PropTypes.number]).isRequired,
-      }),
-    ).isRequired,
-    gridItemComponent: PropTypes.any,
-    limit: PropTypes.number,
+    children: PropTypes.oneOfType([
+      PropTypes.arrayOf(PropTypes.node),
+      PropTypes.node
+      ]).isRequired,
     col: PropTypes.number,
     colGap: PropTypes.number,
     rowHeight: PropTypes.number,
   };
 
   static defaultProps = {
-    grid: [],
-    gridItemComponent: 'div',
-    limit: 16,
     col: 4,
     colGap: 1,
     rowHeight: 10
@@ -28,8 +22,8 @@ export default class GridLayout extends Component {
 
   
   render() {
-    const { grid, limit } = this.props;
-    const { col, colGap, gridItemComponent, rowHeight } = this.props;
+    const { col, colGap, rowHeight, children } = this.props;
+    
     return (
       <div 
         className={css.container}
@@ -39,11 +33,11 @@ export default class GridLayout extends Component {
           gridAutoRows: `${rowHeight}rem`,
         }}
       >
-        {grid.slice(0, limit).map(item => (
-          <div key={shortid.generate()} className={css.item}>
-            <gridItemComponent {...item} key={`logo-${item.key}`} />
-          </div>
-        ))}
+       {children.map(item => (
+         <div key={shortid.generate()} className={css.item}>
+           {item}
+         </div>
+       ))}
       </div>  
     );
   }
