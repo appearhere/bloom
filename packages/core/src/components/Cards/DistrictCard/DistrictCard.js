@@ -15,7 +15,6 @@ const DistrictCard = props => {
       </div>
 
       <div className={css.content}>
-        {/*<a href={href} className={css.title}>{title}</a>*/}
         <h3 className={css.title}>{title}</h3>
         <p className={css.subtitle}>{subtitle}</p>
       </div>
