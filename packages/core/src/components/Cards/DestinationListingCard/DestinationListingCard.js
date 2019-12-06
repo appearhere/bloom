@@ -148,7 +148,7 @@ export default class DestinationListingCard extends Component {
               wrapAround
               swiping={false}
               dragging={false}
-              onChange={onCarouselChange}
+              afterSlide={onCarouselChange}
               withoutControls
             >
               {images.map(({ src, ...imageProps }) => (
