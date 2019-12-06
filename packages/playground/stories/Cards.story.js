@@ -5,6 +5,7 @@ import { action } from '@storybook/addon-actions';
 import {
   Badge,
   Card,
+  DistrictCard,
   PictureCard,
   SpaceFeatureCard,
   SpaceListingCard,
@@ -13,12 +14,21 @@ import {
   EmptyListingCard,
   EditorialCard,
   GuideCard,
-  EventCard
+  EventCard,
 } from '@appearhere/bloom';
 
 storiesOf('Cards', module)
   .add('Default', () => <Card>Hello, world</Card>)
   .add('Default with link', () => <Card href="#">Hello, world</Card>)
+  .add('District Card', () => (
+    <DistrictCard
+      title="Covent Garden"
+      subtitle="A haven for pleasure and procrastination"
+      src="https://picsum.photos/500"
+      alt="hello"
+      href="#"
+    />
+  ))
   .add('PictureCard', () => (
     <PictureCard style={{ minHeight: '10vh' }} src="https://source.unsplash.com/random">
       Hello, world

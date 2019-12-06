@@ -47,6 +47,7 @@ export PictureCard from './Cards/PictureCard/PictureCard';
 export PlaceListingCard from './Cards/PlaceListingCard/PlaceListingCard';
 export SpaceFeatureCard from './Cards/SpaceFeatureCard/SpaceFeatureCard';
 export SpaceListingCard from './Cards/SpaceListingCard/SpaceListingCard';
+export DistrictCard from './Cards/DistrictCard/DistrictCard';
 
 export DismissablePanel from './DismissablePanel/DismissablePanel';
 export Dropdown from './Dropdown/Dropdown';

@@ -16,6 +16,7 @@ export {
   getCalendarMonth,
   CondensedSpaceCard,
   DestinationListingCard,
+  DistrictCard,
   EditorialCard,
   EmptyListingCard,
   PictureCard,
