@@ -2,7 +2,20 @@
   width: 100%;
   height: 100%;
   border: solid 1px var(--color-greyLighter);
-  background-color: var(--color-greyLightest);
+  background-color: var(--color-white);
+}
+
+.district:hover {
+  color: var(--color-greyDark);
+}
+
+.imageContainer,
+.content {
+  vertical-align: top;
+}
+
+.imageContainer {
+  width: 100%;
 }
 
 .image {
@@ -10,7 +23,7 @@
   height: 100%;
 }
 
-.info {
+.content {
   margin: 1rem;
   padding: 0;
 }
