@@ -29,8 +29,10 @@
   z-index: -1;
 }
 
-.link:hover:after {
-  opacity: 1;
+@media(hover) {
+  .link:hover:after {
+    opacity: 1;
+  }
 }
 
 .link > * {
