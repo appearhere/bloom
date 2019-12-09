@@ -22,5 +22,6 @@
 
 .title {
   margin: 0 0 1.5rem 0;
+  font-family: var(--font-avenir);
   font-size: var(--fontsize-large-ii);
 }

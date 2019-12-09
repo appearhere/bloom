@@ -1,17 +1,18 @@
 import PropTypes from 'prop-types';
 import React, { Children } from 'react';
-import shortid from 'short-id';
+import nanoid from 'nanoid';
 import SectionHeader from '../Type/SectionHeader/SectionHeader';
 
 import css from './MobileCarousel.css';
 
 const MobileCarousel = ({ children = [], title }) => {
+  var id = nanoid();
   return (
     <div>
       <SectionHeader title={title} level={2} className={css.title} />
       <div className={css.slides}>
         {children.map((slide) => (
-          <div key={shortid.generate()} className={css.slide}>
+          <div key={id} className={css.slide}>
             <div className={css.slideInner}>{slide}</div>
           </div>
         ))}
