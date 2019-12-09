@@ -1,4 +1,5 @@
 .title {
+  font-family: var(--font-avenir);
   font-size: var(--fontsize-large-ii);
   margin: 0 0 1.5rem 0;
 }
@@ -23,6 +24,7 @@
   margin: 0 0.25rem;
   padding: 0;
   font-size: 0.6rem;
+  text-align: center;
 }
 
 .button:disabled {
@@ -33,12 +35,75 @@
   fill: var(--color-greyLighter);
 }
 
-.prevIcon svg {
-  transform: rotate(180deg);
-}
-
 .slideInner {
   padding: 0 0.25rem;
+}
+
+.carousel {
+  position: relative;
+}
+
+.control {
+  position: absolute;
+  color: var(--color-white);
+  font-size: var(--size-lg-i);
+  background-color: transparent;
+  border: 0;
+  opacity: 0.75;
+  z-index: 1;
+  height: 100%;
+}
+
+.control:hover,
+.control:focus,
+.control:active {
+  color: var(--color-white);
+  opacity: 1;
+}
+
+.control:disabled,
+.control:hover:disabled,
+.control:active:disabled,
+.control:focus:disabled {
+  opacity: 0.3;
+  color: var(--color-white);
+  background-color: transparent;
+  border: 0;
+}
+
+.prev {
+  right: auto;
+  left: 0;
+  vertical-align: middle;
+}
+
+.next {
+  right: 0;
+  left: auto;
+  vertical-align: middle;
+}
+
+.control .prevIcon,
+.control .nextIcon {
+  display: inline-block;
+}
+
+.control .prevIcon {
+  padding-left: var(--size-regular);
+  padding-right: var(--size-regular);
+}
+
+.control .nextIcon {
+  padding-right: var(--size-regular);
+  padding-left: var(--size-regular);
+}
+
+.prevIcon svg {
+  transform: rotate(270deg);
+}
+
+.nextIcon svg {
+  transform: rotate(90deg);
 }
 
 @media(min-width: 48rem) {

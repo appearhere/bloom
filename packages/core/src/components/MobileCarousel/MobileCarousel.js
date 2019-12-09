@@ -1,14 +1,13 @@
 import PropTypes from 'prop-types';
 import React, { Children } from 'react';
 import shortid from 'short-id';
-import SectionHeader from '../Type/SectionHeader/SectionHeader';
 
 import css from './MobileCarousel.css';
 
 const MobileCarousel = ({ children = [], title }) => {
   return (
     <div>
-      <SectionHeader title={title} level={2} className={css.title} />
+      <h2 className={css.title}>{title}</h2>
       <div className={css.slides}>
         {children.map((slide) => (
           <div key={shortid.generate()} className={css.slide}>

@@ -29,9 +29,14 @@
   left: 0;
 }
 
-.link:hover .overlay,
 .link:focus .overlay {
   opacity: 0.6;
+}
+
+@media(hover) {
+  .link:hover .overlay {
+    opacity: 0.6;
+  }
 }
 
 .center .inner {
