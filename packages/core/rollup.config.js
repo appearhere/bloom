@@ -98,8 +98,7 @@ export default {
   external: [
     '@appearhere/react-input-range',
     '@appearhere/react-stickynode',
-    'nanoid',
-    'mutationobserver-shim',
+    'short-id',
     'nuka-carousel',
     'classnames',
     'classnames/bind',

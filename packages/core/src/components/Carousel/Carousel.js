@@ -1,52 +1,45 @@
-import 'mutationobserver-shim';
-
 import PropTypes from 'prop-types';
 import React, { useState, useEffect } from 'react';
 import cx from 'classnames';
 import NukaCarousel from 'nuka-carousel';
-import nanoid from 'nanoid';
+import shortid from 'short-id';
 import Icon from '../Icon/Icon';
-import SectionHeader from '../Type/SectionHeader/SectionHeader';
 import BtnContainer from '../BtnContainer/BtnContainer';
 import ScreenReadable from '../ScreenReadable/ScreenReadable';
 
 import css from './Carousel.css';
 
 const Carousel = props => {
-  const id = nanoid();
   const [slideIndex, setSlideIndex] = useState(0);
 
-  const renderTopRightControls = () => {
-    if (!props.useTopRightControls) return null;
-    return (
-      <div className={css.controls}>
-        <SectionHeader title={props.title} level={2} className={css.title} />
-        {props.slidesToShow < props.children.length && (
-          <div className={css.buttons}>
-            <BtnContainer
-              onClick={() => setSlideIndex(slideIndex - 1)}
-              className={css.button}
-              disabled={slideIndex === 0}
-            >
-              <Icon className={cx(css.chevron, css.prevIcon)} name="chevron" />
-              <ScreenReadable>{props.accessibilityPrevLabel}</ScreenReadable>
-            </BtnContainer>
-            <BtnContainer
-              onClick={() => setSlideIndex(slideIndex + 1)}
-              className={css.button}
-              disabled={slideIndex === props.children.length - props.slidesToShow}
-            >
-              <Icon className={cx(css.chevron, css.nextIcon)} name="chevron" />
-              <ScreenReadable>{props.accessibilityNextLabel}</ScreenReadable>
-            </BtnContainer>
-          </div>
-        )}
-      </div>
-    );
-  };
+  const renderTopRightControls = () => (
+    <div className={css.controls}>
+      <h2 className={css.title}>{props.title}</h2>
+      {props.slidesToShow < props.children.length && (
+        <div className={css.buttons}>
+          <BtnContainer
+            onClick={() => setSlideIndex(slideIndex - 1)}
+            className={css.button}
+            disabled={slideIndex === 0}
+          >
+            <Icon className={cx(css.chevron, css.prevIcon)} name="chevron" />
+            <ScreenReadable>{props.accessibilityPrevLabel}</ScreenReadable>
+          </BtnContainer>
+          <BtnContainer
+            onClick={() => setSlideIndex(slideIndex + 1)}
+            className={css.button}
+            disabled={slideIndex === props.children.length - props.slidesToShow}
+          >
+            <Icon className={cx(css.chevron, css.nextIcon)} name="chevron" />
+            <ScreenReadable>{props.accessibilityNextLabel}</ScreenReadable>
+          </BtnContainer>
+        </div>
+      )}
+    </div>
+  );
 
-  const renderCenterLeftcontrols = () => {
-    if (!props.useCenterControls || (!props.infinite && slideIndex === 0)) return null;
+  const renderCenterLeftControls = () => {
+    if (!props.infinite && slideIndex === 0) return null;
     return (
       <BtnContainer onClick={() => setSlideIndex(slideIndex - 1)} className={cx(css.control, css.prev)}>
         <Icon className={css.prevIcon} name="chevron" />
@@ -55,8 +48,8 @@ const Carousel = props => {
     )
   }
 
-  const renderCenterRightcontrols = () => {
-    if (!props.useCenterControls || (!props.infinite && slideIndex === props.children.length - props.slidesToShow)) return null;
+  const renderCenterRightControls = () => {
+    if (!props.infinite && slideIndex === props.children.length - props.slidesToShow) return null;
     return (
       <BtnContainer onClick={() => setSlideIndex(slideIndex + 1)} className={cx(css.control, css.next)}>
         <Icon className={css.nextIcon} name="chevron" />
@@ -67,12 +60,12 @@ const Carousel = props => {
 
   return (
     <div className={css.carousel}>
-      {renderTopRightControls()}
-      {renderCenterLeftcontrols()}
-      {renderCenterRightcontrols()}
+      {props.useTopRightControls && renderTopRightControls()}
+      {props.useCenterControls && renderCenterLeftControls()}
+      {props.useCenterControls && renderCenterRightControls()}
       <NukaCarousel slideIndex={slideIndex} {...props}>
         {props.children.map((slide) => (
-          <div key={id} className={css.slideInner}>
+          <div key={shortid.generate()} className={css.slideInner}>
             {slide}
           </div>
         ))}
