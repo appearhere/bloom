@@ -169,7 +169,7 @@
 }
 
 .price {
-  composes: fontRegular from '../../../globals/typography.css';
+  composes: fontSmallI from '../../../globals/typography.css';
   font-weight: var(--fontweight-demi);
   color: var(--color-greyDarker);
 }
