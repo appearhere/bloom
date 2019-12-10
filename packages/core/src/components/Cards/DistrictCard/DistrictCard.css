@@ -21,6 +21,7 @@
 .image {
   width: 100%;
   height: 100%;
+  object-fit: cover;
 }
 
 .content {
@@ -41,7 +42,7 @@
 
 .subtitle {
   font-family: var(--font-avenir);
-  font-size: var(--font-small-i);
+  font-size: var(--fontsize-small-i);
   line-height: 1.43020625rem;
   color: var(--color-grey);
   margin: 0;
