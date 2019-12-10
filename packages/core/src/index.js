@@ -49,6 +49,7 @@ export {
   AutoComplete,
   FunnelInputField,
   GridFader,
+  GridLayout,
   HeartBtn,
   Hero,
   SquareHero,

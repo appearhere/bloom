@@ -30,6 +30,7 @@ function loadStories() {
   require('../stories/FormComponents.story.js');
   require('../stories/FunnelInputField.story.js');
   require('../stories/GridFader.story.js');
+  require('../stories/GridLayout.story.js');
   require('../stories/HeartBtn.story.js');
   require('../stories/Hero.story.js');
   require('../stories/HorizontalOverflowBar.story.js');

@@ -1,0 +1,14 @@
+.container {
+  display: grid;
+  height: auto;
+  justify-items: center;
+  align-items:center;
+}
+
+.item {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  height: 100%;
+} 
