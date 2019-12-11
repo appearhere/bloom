@@ -2,7 +2,7 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import shortid from 'short-id';
 import FittedImage from "../../FittedImage/FittedImage";
-import Icon from '../../Icon/Icon';
+import IconLink from '../../IconLink/IconLink';
 
 import css from './SuccessStoryCardDesktop.css';
 
@@ -28,7 +28,7 @@ const SuccessStoryCardDesktop = ({title, imageSrc, copy, brands = [], href}) => 
       <div className={css.rightInner}>
         <div className={css.info}>
           <p className={css.copy}>{copy}</p>
-          <a href={href} className={css.readMore}>Read More <Icon name="arrow" className={css.arrow} /></a>
+          <IconLink inverted href={href} iconName="arrow" text="Read More" />
         </div>
       </div>
     </div>

@@ -238,3 +238,4 @@ export WindowDimensionsProvider from './WindowDimensionsProvider/WindowDimension
 export Carousel from './Carousel/Carousel';
 export MobileCarousel from './MobileCarousel/MobileCarousel';
 export ScreenWidth from './ScreenWidth/ScreenWidth';
+export IconLink from './IconLink/IconLink';
