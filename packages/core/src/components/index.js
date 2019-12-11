@@ -49,6 +49,14 @@ export SpaceFeatureCard from './Cards/SpaceFeatureCard/SpaceFeatureCard';
 export SpaceListingCard from './Cards/SpaceListingCard/SpaceListingCard';
 export DistrictCard from './Cards/DistrictCard/DistrictCard';
 
+import SuccessStoryCardMobile from './Cards/SuccessStoryCard/SuccessStoryCardMobile';
+import SuccessStoryCardDesktop from './Cards/SuccessStoryCard/SuccessStoryCardDesktop';
+
+export const SuccessStoryCard = {
+  SuccessStoryCardMobile,
+  SuccessStoryCardDesktop
+}
+
 export DismissablePanel from './DismissablePanel/DismissablePanel';
 export Dropdown from './Dropdown/Dropdown';
 export Figure from './Figure/Figure';

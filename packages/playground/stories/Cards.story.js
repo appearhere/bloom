@@ -15,6 +15,7 @@ import {
   EditorialCard,
   GuideCard,
   EventCard,
+  SuccessStoryCard,
 } from '@appearhere/bloom';
 
 storiesOf('Cards', module)
@@ -394,4 +395,30 @@ storiesOf('Cards', module)
         action('Redirecting')(e);
       }}
     />
-  ));
+  ))
+  .add('SuccessStoryCardMobile', () => (
+    <SuccessStoryCard.SuccessStoryCardMobile
+      title="Space for streetwear ideas"
+      imageSrc="https://source.unsplash.com/random/500x500"
+      copy="Highsnobiety’s fashion director shares his advice"
+      href="http://www.google.com"
+      brands={[
+        { logoSrc: "https://source.unsplash.com/random/50x30", name: "Brand Name", url: "http://www.google.com" },
+        { logoSrc: "https://source.unsplash.com/random/50x30", name: "Brand Name", url: "http://www.google.com" },
+        { logoSrc: "https://source.unsplash.com/random/50x30", name: "Brand Name", url: "http://www.google.com" },
+      ]}
+    />
+  ))
+  .add('SuccessStoryCardDesktop', () => (
+    <SuccessStoryCard.SuccessStoryCardDesktop
+      title="Space for streetwear ideas"
+      imageSrc="https://source.unsplash.com/random/500x500"
+      copy="Highsnobiety’s fashion director shares his advice to young designers"
+      href="http://www.google.com"
+      brands={[
+        { logoSrc: "https://source.unsplash.com/random/50x30", name: "Brand Name", url: "http://www.google.com" },
+        { logoSrc: "https://source.unsplash.com/random/50x30", name: "Brand Name", url: "http://www.google.com" },
+        { logoSrc: "https://source.unsplash.com/random/50x30", name: "Brand Name", url: "http://www.google.com" },
+      ]}
+    />
+  ))

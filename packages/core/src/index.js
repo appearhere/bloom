@@ -23,6 +23,7 @@ export {
   PlaceListingCard,
   SpaceFeatureCard,
   SpaceListingCard,
+  SuccessStoryCard,
   EventCard,
   GuideCard,
   Carousel,
