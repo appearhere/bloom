@@ -36,6 +36,7 @@ function loadStories() {
   require('../stories/HorizontalOverflowBar.story.js');
   require('../stories/Icon.story.js');
   require('../stories/IconInput.story.js');
+  require('../stories/IconLink.story.js');
   require('../stories/IndicatorGroup.story.js');
   require('../stories/Input.story.js');
   require('../stories/InputField.story.js');

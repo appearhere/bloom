@@ -23,6 +23,7 @@ export {
   PlaceListingCard,
   SpaceFeatureCard,
   SpaceListingCard,
+  SuccessStoryCard,
   EventCard,
   GuideCard,
   Carousel,
@@ -100,7 +101,8 @@ export {
   CollapsibleRow,
   CollapsibleProgressSteps,
   WindowDimensionsProvider,
-  ScreenWidth
+  ScreenWidth,
+  IconLink
 } from './components/index.js';
 
 export Colors from './globals/colors.css';
