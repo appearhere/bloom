@@ -407,6 +407,7 @@ storiesOf('Cards', module)
         { logoSrc: "https://source.unsplash.com/random/50x30", name: "Brand Name", url: "http://www.google.com" },
         { logoSrc: "https://source.unsplash.com/random/50x30", name: "Brand Name", url: "http://www.google.com" },
       ]}
+      brandsTitle="Success Stories"
     />
   ))
   .add('SuccessStoryCardDesktop', () => (
@@ -420,5 +421,6 @@ storiesOf('Cards', module)
         { logoSrc: "https://source.unsplash.com/random/50x30", name: "Brand Name", url: "http://www.google.com" },
         { logoSrc: "https://source.unsplash.com/random/50x30", name: "Brand Name", url: "http://www.google.com" },
       ]}
+      brandsTitle="Success Stories"
     />
   ))

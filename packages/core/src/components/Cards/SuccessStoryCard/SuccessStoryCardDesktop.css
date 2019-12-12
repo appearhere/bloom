@@ -46,6 +46,8 @@
 
 .info {
   padding: 0 3rem 0 11rem;
+  position: relative;
+  z-index: 1;
 }
 
 .rightInner {
@@ -56,6 +58,14 @@
   align-items: center;
   text-align: right;
   justify-content: flex-end;
+}
+
+.rightInner::after {
+  content: '';
+  position: absolute;
+  height: 100%;
+  width: 100%;
+  background: rgba(0,0,0,0.3);
 }
 
 .copy {
