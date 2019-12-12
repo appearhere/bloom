@@ -1,7 +1,14 @@
 .successStoryCard {
-  background: var(--color-greyDarkest);
   display: flex;
   height: 368px;
+}
+
+.goldBackground {
+  background: var(--color-gold);
+}
+
+.blackBackground {
+  background: var(--color-greyDarkest);
 }
 
 .title {
@@ -68,10 +75,12 @@
 .logos {
   margin: 0 -0.5rem;
   display: flex;
+  align-items: center;
 }
 
 .brandLogo {
   margin: 0 0.5rem;
+  width: 50px;
 }
 
 .brandLogo img {

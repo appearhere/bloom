@@ -17,11 +17,11 @@ const SuccessStoryCardMobile = ({title, imageSrc, copy, brands = [], href}) => (
     <div className={css.brands}>
       <p className={css.successStoriesTitle}>Success Stories</p>
       <div className={css.logos}>
-        {brands.map((brand) => (
-          <a key={shortid.generate()} href={brand.url} className={css.brandLogo}>
+        {brands.map((brand) => {
+          return brand.logoSrc && <a key={shortid.generate()} href={brand.url} className={css.brandLogo}>
             <FittedImage src={brand.logoSrc} alt={brand.name} />
           </a>
-        ))}
+        })}
       </div>
     </div>
   </div>

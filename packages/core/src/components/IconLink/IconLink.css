@@ -19,7 +19,7 @@
   margin-left: 0.25rem;
 }
 
-.iconLink.inverted {
+.iconLink.inverted:not(:hover) {
   color: var(--color-white);
   border-color: var(--color-white);
 }
