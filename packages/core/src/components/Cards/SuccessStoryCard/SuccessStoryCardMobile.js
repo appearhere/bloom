@@ -1,6 +1,6 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import shortid from 'short-id';
+import shortid from 'shortid';
 import FittedImage from '../../FittedImage/FittedImage';
 import Icon from '../../Icon/Icon';
 import RemoveOrphans from '../../RemoveOrphans/RemoveOrphans';
