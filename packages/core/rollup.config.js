@@ -98,7 +98,7 @@ export default {
   external: [
     '@appearhere/react-input-range',
     '@appearhere/react-stickynode',
-    'short-id',
+    'shortid',
     'nuka-carousel',
     'classnames',
     'classnames/bind',

@@ -1,6 +1,6 @@
 import PropTypes from 'prop-types';
-import React, { Children } from 'react';
-import shortid from 'short-id';
+import React from 'react';
+import shortid from 'shortid';
 
 import css from './MobileCarousel.css';
 

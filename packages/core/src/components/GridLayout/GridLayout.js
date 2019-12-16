@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import css from './GridLayout.css';
 import PropTypes from 'prop-types';
-import shortid from 'short-id';
+import shortid from 'shortid';
 
 export default class GridLayout extends Component {
   static propTypes = {
