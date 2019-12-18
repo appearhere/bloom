@@ -102,7 +102,8 @@ export {
   CollapsibleProgressSteps,
   WindowDimensionsProvider,
   ScreenWidth,
-  IconLink
+  IconLink,
+  RemoveOrphans
 } from './components/index.js';
 
 export Colors from './globals/colors.css';
