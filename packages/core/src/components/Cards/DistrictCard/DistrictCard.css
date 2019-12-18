@@ -59,5 +59,12 @@
   -webkit-box-orient: vertical;
   overflow: hidden;
   text-overflow: ellipsis;
-  height: 2.6rem;/* Fallback for non-webkit */
+  height: auto;/* Fallback for non-webkit */
+  word-break: break-word;
+}
+
+@media(min-width: 48rem) {
+  .subtitle {
+    height: 2.6rem;/* Fallback for non-webkit */
+  }
 }
