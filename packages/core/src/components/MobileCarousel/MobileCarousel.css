@@ -1,5 +1,6 @@
 .slides {
   overflow-x: auto;
+  overflow-y: hidden;
   transition: transform 0.5s ease 0s;
   white-space: nowrap;
   margin: 0 -0.25rem;
@@ -14,6 +15,7 @@
 .slide {
   display: inline-block;
   white-space: normal;
+  vertical-align: top;
 }
 
 .slideInner {
@@ -24,4 +26,6 @@
   margin: 0 0 1.5rem 0;
   font-family: var(--font-avenir);
   font-size: var(--fontsize-large-ii);
+  font-weight: var(--fontweight-demi);
+  letter-spacing: normal;
 }

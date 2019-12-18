@@ -1,6 +1,8 @@
 .title {
   font-family: var(--font-avenir);
   font-size: var(--fontsize-large-ii);
+  font-weight: var(--fontweight-demi);
+  letter-spacing: normal;
   margin: 0 0 1.5rem 0;
 }
 
