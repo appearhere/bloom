@@ -1,6 +1,13 @@
 .successStoryCard {
-  background: var(--color-black);
   padding: 2rem 1.5rem;
+}
+
+.goldBackground {
+  background: var(--color-gold);
+}
+
+.blackBackground {
+  background: var(--color-greyDarkest);
 }
 
 .title {
