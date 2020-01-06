@@ -4,12 +4,11 @@ import { storiesOf } from '@storybook/react';
 import { withKnobs, boolean } from '@storybook/addon-knobs';
 import uniqueId from 'lodash/fp/uniqueId';
 
-import actionWithComplexArgs from '../../.storybook/utils/actionWithComplexArgs';
-import MarkableMap from './MarkableMap';
-import BaseMap from './BaseMap';
-import Marker from './Markers/Marker';
-import GroupMarker from './Markers/SpaceGroupMarker';
-import SpaceListingCard from '../Cards/SpaceListingCard/SpaceListingCard';
+import {
+  Map,
+  SpaceListingCard,
+  Badge,
+} from '@appearhere/bloom';
 
 import { metaMarkersA, metaMarkersB, metaMarkersC } from './testMetaMarkers';
 
@@ -17,9 +16,9 @@ const stories = storiesOf('Map', module);
 stories.addDecorator(withKnobs);
 
 const SpaceMarker = props => (
-  <Marker>
+  <Map.BaseMarker>
     <SpaceListingCard {...props} />
-  </Marker>
+  </Map.BaseMarker>
 );
 
 const prices = [
@@ -97,8 +96,21 @@ class TestMap extends Component {
     super(props);
     this.state = {
       markers: generateMarkers(10),
+      highlightedId: null,
     };
   }
+
+  highlightMarker = (id) => {
+    this.setState({
+      highlightedId: id,
+    });
+  };
+
+  resetHighlight = () => {
+    this.setState({
+      highlightedId: null,
+    });
+  };
 
   toggleMarkers = () => {
     this.setState({
@@ -113,12 +125,24 @@ class TestMap extends Component {
     return (
       <div style={{ height: '93vh' }}>
         <button onClick={this.toggleMarkers}>Randomise</button>
-        <MarkableMap
+        <div style={{display: 'flex', flexDirection: 'row', margin: '1rem 0'}}>
+          {markers.map(marker => (
+            <Badge
+              hollow
+              key={marker.id}
+              onMouseEnter={this.highlightMarker.bind(this, marker.id)}
+              onMouseLeave={this.resetHighlight}
+            >
+              Space {marker.id}
+            </Badge>
+          ))}
+        </div>
+        <Map.MarkableMap
           markers={markers}
           metaMarkers={metaMarkers}
           MarkerComponent={SpaceMarker}
-          GroupMarkerComponent={GroupMarker}
-          onClick={actionWithComplexArgs('map clicked')}
+          highlightedId={this.state.highlightedId}
+          GroupMarkerComponent={Map.GroupMarker}
           autoFit
         />
       </div>
@@ -127,14 +151,6 @@ class TestMap extends Component {
 }
 
 stories
-  .add('Default', () => (
-    <div style={{ height: '96vh' }}>
-      <BaseMap
-        onClick={actionWithComplexArgs('map clicked')}
-        onMoveEnd={actionWithComplexArgs('map moved')}
-      />
-    </div>
-  ))
   .add('MarkableMap', () => <TestMap />)
   .add('MarkableMap w/Meta markers', () => {
     const metaMarkers = [
@@ -147,12 +163,10 @@ stories
   })
   .add('Grouped Space Marker', () => (
     <div style={{ height: '96vh' }}>
-      <MarkableMap
+      <Map.MarkableMap
         markers={generateMarkers(7, -0.09, 51.505)}
         MarkerComponent={SpaceMarker}
-        GroupMarkerComponent={GroupMarker}
-        onClick={actionWithComplexArgs('map clicked')}
-        onMoveEnd={actionWithComplexArgs('map moved')}
+        GroupMarkerComponent={Map.GroupMarker}
         autoFit
       />
     </div>
