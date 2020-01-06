@@ -141,6 +141,9 @@ export default class MarkableMap extends Component {
       cluster: true,
       clusterRadius: CLUSTER_RADIUS,
       clusterMaxZoom: CLUSTER_MAX_ZOOM,
+      clusterProperties: {
+        highlighted: ['any', ['==', ['get', 'highlighted'], true]],
+      },
     });
 
     this.mapboxMarkerSource = mapbox.getSource(MARKER_SOURCE);
@@ -190,6 +193,8 @@ export default class MarkableMap extends Component {
       filter: ['all', ['has', 'point_count'], ['!=', 'highlighted', true]],
       layout: {
         'icon-image': 'pin-cluster',
+        'icon-allow-overlap': true,
+        'text-allow-overlap': true,
         'text-field': '{point_count}',
         'text-font': DEFAULT_MARKER_CONFIG.layout.textFont,
         'text-size': DEFAULT_MARKER_CONFIG.layout.textSize,
@@ -204,6 +209,8 @@ export default class MarkableMap extends Component {
       filter: ['all', ['has', 'point_count'], ['==', 'highlighted', true]],
       layout: {
         'icon-image': 'pin-cluster-highlight',
+        'icon-allow-overlap': true,
+        'text-allow-overlap': true,
         'text-field': '{point_count}',
         'text-font': DEFAULT_MARKER_CONFIG.layout.textFont,
         'text-size': DEFAULT_MARKER_CONFIG.layout.textSize,
