@@ -6,6 +6,7 @@ import barRestaurant from './icons/icon-bar-restaurant.svg';
 import market from './icons/icon-market.svg';
 import retail from './icons/icon-retail.svg';
 import unique from './icons/icon-unique.svg';
+import shoppingCenter from './icons/icon-shopping-center.svg';
 
 export default {
   shopShare: shopShare,
@@ -14,4 +15,5 @@ export default {
   market: market,
   retail: retail,
   unique: unique,
+  shoppingCenter: shoppingCenter,
 };
