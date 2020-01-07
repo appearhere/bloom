@@ -9,7 +9,7 @@ cache:
   - node_modules
   - yarn
 install:
-- nvm install node
+- nvm install 12
 - source travis/install_yarn
 - yarn install
 - yarn build
