@@ -9,6 +9,9 @@
     "jest": "22.1.2",
     "lerna": "^2.9.0"
   },
+  "engines": {
+    "node": "12.x"
+  },
   "scripts": {
     "dev": "concurrently \"cd packages/core && yarn build:watch\" \"cd packages/common-styles && yarn build:watch\" \"cd packages/playground && yarn storybook\"",
     "build": "cd packages/common-styles && yarn build && cd ../core && yarn build",
