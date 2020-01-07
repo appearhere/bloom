@@ -1,18 +1,1 @@
-<?xml version="1.0" encoding="utf-8"?>
-<!-- Generator: Adobe Illustrator 21.0.0, SVG Export Plug-In . SVG Version: 6.00 Build 0)  -->
-<svg version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
-	 viewBox="0 0 40 40" style="enable-background:new 0 0 40 40;" xml:space="preserve">
-<title>icon /spacetype/icon_events_01 copy 4</title>
-<desc>Created with Sketch.</desc>
-<g>
-	<path d="M8.4,15l-0.6-3.4l7.9-1.4l0.3,2l1-0.2l-0.3-2l18.7-3.3l0.7,4.1c-1.6,0.7-2.6,2.5-2.3,4.3c0.3,1.8,1.8,3.2,3.6,3.3l0.7,4.1
-		l-9,1.6C29,24.4,29,24.8,29,25c0,0,0,0.1,0,0.1l10.3-1.8l-1-5.9l-0.4,0c-1.5,0-2.8-1-3-2.5c-0.3-1.5,0.6-2.9,2-3.4l0.4-0.1l-1-5.9
-		L6.7,10.7L7.4,15H8.4z"/>
-	<polygon points="16.6,15 17.6,15 17.4,13.9 16.4,14.1 	"/>
-	<path d="M28,25c0-1.5,1.1-2.8,2.6-3L31,22v-6H1v6L1.4,22C2.9,22.2,4,23.5,4,25s-1.1,2.8-2.6,3L1,28v6h30v-6L30.6,28
-		C29.1,27.8,28,26.5,28,25z M30,33H11v-2h-1v2H2v-4.1c1.7-0.4,3-2,3-3.9c0-1.8-1.3-3.4-3-3.9V17h8v2h1v-2h19v4.1c-1.7,0.4-3,2-3,3.9
-		c0,1.8,1.3,3.4,3,3.9V33z"/>
-	<rect x="10" y="21" width="1" height="3"/>
-	<rect x="10" y="26" width="1" height="3"/>
-</g>
-</svg>
+<svg width="24" height="24" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"><defs><path d="M3 21v-1h1v-6.17c-.292-.14-.583-.287-.874-.442l-.369-.2.486-.875c.252.14.505.274.757.403V11h1v2.192c.667.296 1.333.55 2 .762V3h10v10.955a19.366 19.366 0 002-.763V11h1v1.716l.392-.204.365-.2.486.875c-.414.23-.829.445-1.243.644V20h1v1H3zm2-6.719V20h2v-5c-.5-.15-1-.322-1.5-.517l-.5-.202zm12 .72V20h2v-5.719c-.667.28-1.333.52-2 .72zm-1 .27a16.93 16.93 0 01-8 0V20h8v-4.73zM16 4H8v10.24c2.667.68 5.332.68 8 0V4z" id="a"/></defs><g fill="none" fill-rule="evenodd"><mask id="b" fill="#fff"><use xlink:href="#a"/></mask><use fill="#979797" fill-rule="nonzero" xlink:href="#a"/><g mask="url(#b)" fill="#B29577"><path d="M0 0h24v24H0z"/></g></g></svg>
