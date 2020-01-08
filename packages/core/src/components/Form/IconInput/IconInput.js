@@ -12,11 +12,16 @@ export default class IconInput extends Component {
     classNames: PropTypes.object,
     iconName: PropTypes.string.isRequired,
     iconSide: PropTypes.oneOf(['left', 'right']),
+    iconDimensions: PropTypes.objectOf({
+      height: PropTypes.number.isRequired,
+      width: PropTypes.number.isRequired,
+    }),
   };
 
   static defaultProps = {
     classNames: {},
     iconSide: 'left',
+    iconDimensions: { height: 16, width: 16 },
   };
 
   focus = () => {
@@ -28,11 +33,16 @@ export default class IconInput extends Component {
   };
 
   render() {
-    const { classNames, iconName, iconSide, ...rest } = this.props;
+    const { classNames, iconName, iconSide, iconDimensions, ...rest } = this.props;
 
     return (
       <div className={cx(css.root, css[iconSide], classNames.root)}>
-        <Icon className={cx(css.icon, classNames.icon)} onClick={this.focus} name={iconName} />
+        <Icon
+          className={cx(css.icon, classNames.icon)}
+          onClick={this.focus}
+          name={iconName}
+          dimensions={iconDimensions}
+        />
         <Input
           ref={c => {
             this.input = c;
