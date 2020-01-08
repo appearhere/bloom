@@ -1,12 +1,10 @@
-import svgClean from '../../utils/svgClean/svgClean';
-
-import shopShare from './icons/icon-shop-share.svg';
-import event from './icons/icon-event.svg';
-import barRestaurant from './icons/icon-bar-restaurant.svg';
-import market from './icons/icon-market.svg';
-import retail from './icons/icon-retail.svg';
-import unique from './icons/icon-unique.svg';
-import shoppingCenter from './icons/icon-shopping-center.svg';
+import shopShare from './icons/shop-share.svg';
+import event from './icons/event.svg';
+import barRestaurant from './icons/bar-rest.svg';
+import market from './icons/market.svg';
+import retail from './icons/retail.svg';
+import unique from './icons/unique.svg';
+import shoppingCentre from './icons/shopping-centre.svg';
 
 export default {
   shopShare: shopShare,
@@ -15,5 +13,5 @@ export default {
   market: market,
   retail: retail,
   unique: unique,
-  shoppingCenter: shoppingCenter,
+  shoppingCentre: shoppingCentre,
 };

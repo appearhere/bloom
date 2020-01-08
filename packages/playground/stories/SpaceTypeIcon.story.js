@@ -14,7 +14,7 @@ const icons = [
   'market',
   'retail',
   'unique',
-  'shoppingCenter',
+  'shoppingCentre',
 ];
 
 icons.forEach(icon => {
