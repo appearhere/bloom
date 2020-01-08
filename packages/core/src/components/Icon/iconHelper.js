@@ -8,14 +8,14 @@ export default (iconSet, theme) =>
     static propTypes = {
       name: PropTypes.string.isRequired,
       className: PropTypes.string,
-      dimensions: PropTypes.objectOf({
-        height: PropTypes.number.isRequired,
-        width: PropTypes.number.isRequired,
+      dimensions: PropTypes.shape({
+        height: PropTypes.string,
+        width: PropTypes.string,
       }),
     };
 
-    static defaultProp = {
-      dimensions: { height: 16, width: 16 },
+    static defaultProps = {
+      dimensions: { height: '1em', width: '1em' },
     };
 
     render() {

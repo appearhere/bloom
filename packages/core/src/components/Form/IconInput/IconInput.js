@@ -12,16 +12,16 @@ export default class IconInput extends Component {
     classNames: PropTypes.object,
     iconName: PropTypes.string.isRequired,
     iconSide: PropTypes.oneOf(['left', 'right']),
-    iconDimensions: PropTypes.objectOf({
-      height: PropTypes.number.isRequired,
-      width: PropTypes.number.isRequired,
+    iconDimensions: PropTypes.shape({
+      height: PropTypes.string,
+      width: PropTypes.string,
     }),
   };
 
   static defaultProps = {
     classNames: {},
     iconSide: 'left',
-    iconDimensions: { height: 16, width: 16 },
+    iconDimensions: { height: '1em', width: '1em' },
   };
 
   focus = () => {
