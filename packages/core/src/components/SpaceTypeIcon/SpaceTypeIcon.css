@@ -8,8 +8,8 @@
 .market svg,
 .retail svg,
 .shopShare svg,
+.shoppingCentre svg,
 .unique svg {
   stroke: transparent;
   fill: currentColor;
-  stroke-linecap: round;
 }
