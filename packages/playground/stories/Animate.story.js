@@ -51,8 +51,8 @@ const labels = ['Map', 'Results'];
 stories
   .add('Sunrise', () => (
     <div>
-      {sunrisePanels.map(() => (
-        <Animate.Sunrise percent={50}>
+      {sunrisePanels.map((panelId) => (
+        <Animate.Sunrise percent={50} key={panelId}>
           <div
             className={m.bgPrimary}
             style={{
