@@ -9,7 +9,7 @@ const inputTypes = ['text', 'email', 'password', 'search', 'url', 'textarea'];
 stories
   .add('default', () => (
     <IconLink
-      iconName="arrow"
+      iconName="arrow-right"
       text="hello"
       href="http://www.google.com"
     />
@@ -17,7 +17,7 @@ stories
   .add('inverted', () => (
     <div style={{ background: 'black', padding: 10 }}>
       <IconLink
-        iconName="arrow"
+        iconName="arrow-right"
         text="goodbye"
         inverted
         href="http://www.google.com"

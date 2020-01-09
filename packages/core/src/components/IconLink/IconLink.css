@@ -3,24 +3,75 @@
   color: var(--color-black);
   font-family: var(--font-avenir);
   font-weight: var(--fontweight-demi);
-  font-size: var(--fontsize-small-i);
+  font-size: 0.75rem;
+  letter-spacing: 0.07rem;
   text-transform: uppercase;
   text-decoration: none;
-  padding-bottom: 0.5rem;
-  border-bottom: 1px solid var(--color-black);
+  padding: 0.5rem 0;
+  position: relative;
+  overflow: hidden;
+  display: inline-flex;
+  align-items: center;
 }
 
-.icon {
-  font-size: 1.5rem;
-  margin-left: 0.25rem;
+.iconLink:after, .iconLink:before {
+  content: "";
+  display: block;
+  height: 1px;
+  background: var(--color-black);
+  widtH: 100%;
+  position: absolute;
+  bottom: 0;
+  left: 0; 
+  transition: 350ms;
+}
+
+.iconLink:before {
+   transform: translate(-101%, 0);
+   transition-delay: 200ms;
+}
+
+.iconLink:hover:after {
+  transform: translate(100%, 0);
+}
+.iconLink:hover:before {
+  transform: translate(0%, 0);
+}
+
+.iconLink.inverted:after, .iconLink.inverted:before {
+  background: var(--color-white);
 }
 
 .iconLink.inverted {
   color: var(--color-white);
-  border-color: var(--color-white);
 }
 
-.iconLink:hover {
-  border-color: var(--color-gold);
-  color: var(--color-gold);
+.icon {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition:300ms;
+}
+
+.text {
+  padding-right: 8px;
+  transition:500ms;
+}
+
+.iconLink:hover .text {
+  color: #BAA082;
+  transition:500ms;
+}
+
+.iconLink.inverted:hover .text {
+  color: var(--color-grey);
+}
+
+.icon svg {
+  height: 8px;
+  width: 16px;
+}
+
+.iconLink.inverted .icon svg {
+  fill: var(--color-white);
 }

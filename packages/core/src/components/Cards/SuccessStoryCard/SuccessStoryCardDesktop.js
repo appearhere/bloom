@@ -50,7 +50,7 @@ const SuccessStoryCardDesktop = ({
           <p className={css.copy}>
             <RemoveOrphans text={copy} />
           </p>
-          <IconLink inverted href={href} iconName="arrow" text="Read More" />
+          <IconLink inverted href={href} iconName="arrow-right" text="Read More" />
         </div>
       </div>
     </div>
