@@ -5,6 +5,7 @@ import appearhere from './icons/icon-appearhere.svg';
 import appearhereBrackets from './icons/icon-appearhere-brackets.svg';
 import arrow from './icons/icon-arrow.svg';
 import automaticPayments from './icons/icon-automatic-payments.svg';
+import backArrow from './icons/icon-back-arrow.svg';
 import bogroll from './icons/icon-bogroll.svg';
 import book from './icons/icon-book.svg';
 import calendar from './icons/icon-calendar.svg';
@@ -65,6 +66,7 @@ export default {
   account: account,
   appearhere: appearhere,
   arrow: arrow,
+  back: backArrow,
   bogroll: bogroll,
   book: book,
   calendar: calendar,
