@@ -12,7 +12,7 @@ const IconLink = ({
   inverted,
 }) => (
   <a href={href} target={target} className={cx(css.iconLink, { [css.inverted]: inverted })}>
-    {text} <Icon name={iconName} className={css.icon} />
+    <span className={css.text}>{text}</span> <Icon name={iconName} className={css.icon} />
   </a>
 );
 

@@ -21,7 +21,7 @@ const SuccessStoryCardMobile = ({title, imageSrc, copy, brands = [], href, brand
       <p className={css.copy}>
         <RemoveOrphans text={copy} />
       </p>
-      <Icon name="arrow" className={css.arrow} />
+      <Icon name="arrow-right" className={css.arrow} />
     </a>
     <div className={css.brands}>
       <p className={css.successStoriesTitle}>

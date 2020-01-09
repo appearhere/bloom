@@ -30,7 +30,7 @@
   height: 24px;
   background: #fff;
   border-radius: 20px;
-  border: 2px solid #baa082;
+  border: 2px solid var(--color-gold);
   position: absolute;
   left: 0;
   top: 1rem;
