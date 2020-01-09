@@ -22,7 +22,7 @@ stories
       error={boolean('Errored', false) ? 'Something went wrong' : ''}
     />
   ))
-  .add('IconInput with rightsided icon', () => (
+  .add('IconInput w/ rightsided icon', () => (
     <IconInput
       iconName="search"
       iconSide="right"
@@ -35,7 +35,7 @@ stories
       error={boolean('Errored', false) ? 'Something went wrong' : ''}
     />
   ))
-  .add('IconInput w/high priority', () => (
+  .add('IconInput w/ high priority', () => (
     <IconInput
       iconName="search"
       id="1"
@@ -46,5 +46,18 @@ stories
       onChange={action('Change')}
       error={boolean('Errored', false) ? 'Something went wrong' : ''}
       priority="high"
+    />
+  ))
+  .add('IconInput w/ custom icon dimensions', () => (
+    <IconInput
+      iconName="search"
+      iconDimensions={{ height: 32, width: 32 }}
+      id="1"
+      type={select('Type', inputTypes, inputTypes[0])}
+      value="London"
+      onFocus={action('Focus')}
+      onBlur={action('Blur')}
+      onChange={action('Change')}
+      error={boolean('Errored', false) ? 'Something went wrong' : ''}
     />
   ));
