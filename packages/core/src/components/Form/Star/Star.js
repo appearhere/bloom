@@ -8,6 +8,8 @@ import Radio from '../Radio/Radio';
 
 export default class Star extends Component {
   static propTypes = {
+    name: PropTypes.string.isRequired,
+    value: PropTypes.oneOfType([PropTypes.string, PropTypes.number]).isRequired,
     className: PropTypes.string,
     iconClassName: PropTypes.string,
   };
@@ -21,11 +23,13 @@ export default class Star extends Component {
   };
 
   render() {
-    const { className, iconClassName, ...rest } = this.props;
+    const { name, value, className, iconClassName, ...rest } = this.props;
 
     return (
       <Radio
         {...rest}
+        name={name}
+        value={value}
         className={cx(css.root, className)}
         ref={c => {
           this.component = c;
