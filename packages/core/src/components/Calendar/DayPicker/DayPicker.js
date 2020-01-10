@@ -62,6 +62,7 @@ export default class DayPicker extends Component {
       root: '',
       header: '',
     },
+    maskSize: 1,
   };
 
   handleNextMonth = e => {
@@ -78,48 +79,59 @@ export default class DayPicker extends Component {
 
   render() {
     const {
-      month,
       dayProps,
       columnHeadingProps,
       onInteraction,
       accessibilityNextLabel,
       accessibilityPrevLabel,
       classNames,
-      children
+      children,
+      maskSize,
     } = this.props;
 
     return (
       <div className={cx(css.root, classNames.root)}>
-        <div className={cx(css.header, classNames.header)}>
-          <div className={cx(css.control, css.prevControl)}>
-            <BtnContainer onClick={this.handlePreviousMonth}>
-              <Icon name="chevron" className={css.prevIcon} />
-              <ScreenReadable>{accessibilityPrevLabel}</ScreenReadable>
-            </BtnContainer>
-          </div>
-          <div className={css.month}>{month.format('MMMM YYYY')}</div>
-          <div className={cx(css.control, css.nextControl)}>
-            <BtnContainer onClick={this.handleNextMonth}>
-              <Icon name="chevron" className={css.nextIcon} />
-              <ScreenReadable>{accessibilityNextLabel}</ScreenReadable>
-            </BtnContainer>
-          </div>
-        </div>
-        <CalendarMonth
-          {...this.props}
-          classNames={calendarMonthClassNames}
-          month={month}
-          columnHeadingProps={{
-            ...columnHeadingProps,
-            className: css.columnHeader,
-          }}
-          dayProps={{
-            ...dayProps,
-            onInteraction,
-          }}
-          DayComponent={DayPickerItem}
-        />
-        {children}
+        {[...Array(maskSize)].map((_, i) => {
+          const month = this.props.month.clone().add(i, 'months');
+          return (
+            <div className={css.monthWrapper} key={`month-${month.toISOString()}`}>
+              <div className={cx(css.header, classNames.header)}>
+                <div className={cx(css.control, css.prevControl)}>
+                {i === 0 && (
+                  <BtnContainer onClick={this.handlePreviousMonth}>
+                    <Icon name="chevron" className={css.prevIcon} />
+                    <ScreenReadable>{accessibilityPrevLabel}</ScreenReadable>
+                  </BtnContainer>
+                )}
+                </div>
+                <div className={css.month}>{month.format('MMMM YYYY')}</div>
+                <div className={cx(css.control, css.nextControl)}>
+                {i === maskSize - 1 && (
+                  <BtnContainer onClick={this.handleNextMonth}>
+                    <Icon name="chevron" className={css.nextIcon} />
+                    <ScreenReadable>{accessibilityNextLabel}</ScreenReadable>
+                  </BtnContainer>
+                )}
+                </div>
+              </div>
+              <CalendarMonth
+                {...this.props}
+                classNames={calendarMonthClassNames}
+                month={month}
+                columnHeadingProps={{
+                  ...columnHeadingProps,
+                  className: css.columnHeader,
+                }}
+                dayProps={{
+                  ...dayProps,
+                  onInteraction,
+                }}
+                DayComponent={DayPickerItem}
+              />
+              {children}
+            </div>
+          );
+        })}
       </div>
     );
   }
