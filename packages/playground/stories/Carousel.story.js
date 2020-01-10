@@ -11,7 +11,7 @@ import {
 const StorySlide = ({ number }) => (
   <div key={`slide-${number}`}>
     <PictureCard
-      src={`http://placekitten.com/g/287/4${number * 2 + 10}`}
+      src={`https://placekitten.com/g/287/4${number * 2 + 10}`}
       style={{
         height: '300px',
         verticalAlign: 'middle',

@@ -8,7 +8,7 @@ const stories = storiesOf('FormComponents', module);
 stories.addDecorator(withKnobs);
 
 stories.add('RadioGroup', () => (
-  <RadioGroup value={number('Value', 1)} onChange={action('checked')}>
+  <RadioGroup name="RadioGroup" value={number('Value', 1)} onChange={action('checked')}>
     {radio => (
       <span>
         {radio({ value: 1, label: 'One' })}
