@@ -2,6 +2,15 @@
   position: relative;
   width: 100%;
   height: 100%;
+  display: flex;
+}
+
+.monthWrapper {
+  display: flex;
+  flex: 1;
+  flex-direction: column;
+  margin-left: .25rem;
+  margin-right: .25rem;
 }
 
 .header {
