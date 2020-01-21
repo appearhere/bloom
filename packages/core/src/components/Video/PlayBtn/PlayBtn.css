@@ -9,9 +9,16 @@
 }
 
 .icon {
-  font-size: 4rem;
+  font-size: 3rem;
+  display: inline-flex;
 }
 
 .icon svg {
   stroke-width: 0.5px;
+}
+
+@media (min-width: 70.5rem) {
+  .icon {
+    font-size: 4rem;
+  }
 }
