@@ -35,7 +35,7 @@
 
 .title {
   font-family: var(--font-avenir);
-  font-size: var(--fontsize-large-i);
+  font-size: var(--fontsize-regular);
   font-weight: var(--fontweight-demi);
   line-height: 1.74583125rem;
   color: var(--color-black);

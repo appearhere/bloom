@@ -32,7 +32,7 @@ const SpaceListingCard = props => {
           </Link>
         )
       }
-      information={[location, size]}
+      information={[location, size].filter((el) => { return el; })}
       onCarouselChange={onCarouselChange}
       {...rest}
     />

@@ -114,10 +114,6 @@
   margin: 0 2rem 0 0;
 }
 
-.goldBackground .successStoriesTitle {
-  color: var(--color-greyDarkest);
-}
-
 @media (min-width: 64rem) {
   .title {
     font-size: var(--fontsize-large-v);
