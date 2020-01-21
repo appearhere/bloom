@@ -86,10 +86,6 @@
   margin: 0;
 }
 
-.goldBackground .successStoriesTitle {
-  color: var(--color-greyDarkest);
-}
-
 .arrow {
   font-size: 1.25rem;
 }

@@ -179,42 +179,46 @@ export default class DestinationListingCard extends Component {
               </div>
             </div>
             <div className={css.name}>{ name }</div>
-            <div className={css.additionalInformationBlock}>
-              {badge &&
-                <div className={css.additionalInformationBadge}>
-                 { badge }
-                </div>
-              }
-              <div className={cx(css.additionalInformationText, css[variant])}>
-                {
-                  information
-                    .filter(info => info)
-                    .map(info => <span>{ info }</span>)
-                    .reduce((accu, elem, i, arr) => {
-                      const wrappedEl = (
-                        <span
-                          key={`info-${i}`}
-                          className={css.additionalInformationItem}
-                          style={{
-                            maxWidth: `calc(${100 / arr.length}% - 1rem)`,
-                          }}
-                        >
-                          { elem }
-                        </span>
-                      );
-                      const spacer = (
-                        <span key={`info-spacer-${i}`} className={css.spacer}>•</span>
-                      );
+            { (badge || information.length > 0) &&
+              <div className={css.additionalInformationBlock}>
+                {badge &&
+                  <div className={css.additionalInformationBadge}>
+                  { badge }
+                  </div>
+                }
+                { information.length > 0 &&
+                  <div className={cx(css.additionalInformationText, css[variant])}>
+                    {
+                      information
+                        .filter(info => info)
+                        .map(info => <span>{ info }</span>)
+                        .reduce((accu, elem, i, arr) => {
+                          const wrappedEl = (
+                            <span
+                              key={`info-${i}`}
+                              className={css.additionalInformationItem}
+                              style={{
+                                maxWidth: `calc(${100 / arr.length}% - 1rem)`,
+                              }}
+                            >
+                              { elem }
+                            </span>
+                          );
+                          const spacer = (
+                            <span key={`info-spacer-${i}`} className={css.spacer}>•</span>
+                          );
 
-                      return accu === null
-                        ? [wrappedEl]
-                        : [...accu, spacer, wrappedEl];
-                    },
-                      null,
-                    )
+                          return accu === null
+                            ? [wrappedEl]
+                            : [...accu, spacer, wrappedEl];
+                        },
+                          null,
+                        )
+                    }
+                  </div>
                 }
               </div>
-            </div>
+            }
           </a>
           { children && (
             <div className={css.footer}>

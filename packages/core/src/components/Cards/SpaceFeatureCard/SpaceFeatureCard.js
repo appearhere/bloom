@@ -38,7 +38,7 @@ class SpaceFeatureCard extends Component {
     const classes = cx(css.root, containerQuery, className);
 
     return (
-      <PictureCard {...rest} className={classes}>
+      <PictureCard {...rest} className={classes} bgImage>
         <div className={css.inner}>
           <span className={css.location}>{location}</span>
           <div className={css.bottom}>
