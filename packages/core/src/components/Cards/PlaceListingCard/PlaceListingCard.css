@@ -3,7 +3,7 @@
   position: relative;
   border-radius: var(--size-sm-iii);
   height: 0;
-  padding-bottom: calc(56.25% + var(--destination-listing-content-height));
+  padding-bottom: calc(64.25% + var(--destination-listing-content-height));
 }
 
 .root:after {
@@ -71,4 +71,8 @@
 
 .priceUnit {
   composes: fontSmallI from '../../../globals/typography.css';
+}
+
+.image {
+  position: absolute;
 }
