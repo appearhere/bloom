@@ -6,7 +6,7 @@ import css from './PictureCard.css';
 import Card from '../Card/Card';
 
 const PictureCard = props => {
-  const { src, href, children, className, center, bottom, style, overlayClassName, bgImage, ...rest } = props;
+  const { src, href, children, className, center, bottom, style, overlayClassName, bgImage, imageClassName, ...rest } = props;
 
   return (
     <Card
@@ -20,7 +20,7 @@ const PictureCard = props => {
         bottom ? css.bottom : null,
       )}
     >
-      { !bgImage && <img src={src} /> }
+      { !bgImage && <img src={src} className={imageClassName} /> }
       <div className={css.inner}>{children}</div>
     </Card>
   );
@@ -41,6 +41,7 @@ PictureCard.propTypes = {
   style: PropTypes.object,
   overlayClassName: PropTypes.string,
   bgImage: PropTypes.bool,
+  imageClassName: PropTypes.string
 };
 
 export default PictureCard;
