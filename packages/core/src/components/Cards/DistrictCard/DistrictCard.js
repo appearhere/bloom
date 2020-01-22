@@ -5,11 +5,11 @@ import FittedImage from "../../FittedImage/FittedImage";
 import Card from "../Card/Card";
 
 const DistrictCard = props => {
-  const {title, subtitle, src, alt, href} = props;
+  const {title, subtitle, src, alt, href, ...rest} = props;
 
 
   return (
-    <Card href={href} className={css.district}>
+    <Card href={href} className={css.district} {...rest}>
       <div className={css.imageContainer}>
         <FittedImage src={src} alt={alt} className={css.image}/>
       </div>
