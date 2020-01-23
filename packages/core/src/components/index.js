@@ -44,6 +44,7 @@ export EventCard from './Cards/EditorialCard/EventCard';
 export GuideCard from './Cards/EditorialCard/GuideCard';
 export EmptyListingCard from './Cards/EmptyListingCard/EmptyListingCard';
 export PictureCard from './Cards/PictureCard/PictureCard';
+export AnimatedPictureCard from './Cards/AnimatedPictureCard/AnimatedPictureCard';
 export PlaceListingCard from './Cards/PlaceListingCard/PlaceListingCard';
 export SpaceFeatureCard from './Cards/SpaceFeatureCard/SpaceFeatureCard';
 export SpaceListingCard from './Cards/SpaceListingCard/SpaceListingCard';

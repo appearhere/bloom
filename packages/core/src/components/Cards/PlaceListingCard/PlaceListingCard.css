@@ -72,7 +72,3 @@
 .priceUnit {
   composes: fontSmallI from '../../../globals/typography.css';
 }
-
-.image {
-  position: absolute;
-}

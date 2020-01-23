@@ -20,6 +20,7 @@ export {
   EditorialCard,
   EmptyListingCard,
   PictureCard,
+  AnimatedPictureCard,
   PlaceListingCard,
   SpaceFeatureCard,
   SpaceListingCard,
