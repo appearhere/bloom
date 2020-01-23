@@ -7,6 +7,7 @@ import {
   Card,
   DistrictCard,
   PictureCard,
+  AnimatedPictureCard,
   SpaceFeatureCard,
   SpaceListingCard,
   CondensedSpaceCard,
@@ -49,6 +50,9 @@ storiesOf('Cards', module)
     <PictureCard style={{ minHeight: '10vh' }} src="https://source.unsplash.com/random" center>
       Hello, world
     </PictureCard>
+  ))
+  .add('AnimatedPictureCard', () => (
+    <AnimatedPictureCard href="#" src="https://source.unsplash.com/random" title="Hello, world" />
   ))
   .add('SpaceFeatureCard with link', () => (
     <SpaceFeatureCard

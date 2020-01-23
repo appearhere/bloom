@@ -31,7 +31,6 @@ const PlaceListingCard = props => {
       className={cx(css.root, className)}
       src={imageSrc}
       overlayClassName={css.overlay}
-      imageClassName={css.image}
     >
       <div className={css.body}>
         <div className={css.name}>
