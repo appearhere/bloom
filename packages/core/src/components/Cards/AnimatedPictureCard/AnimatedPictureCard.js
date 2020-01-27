@@ -1,16 +1,22 @@
-import PropTypes from 'prop-types';
+//@flow
 import React from 'react';
 import cx from 'classnames';
 
 import css from './AnimatedPictureCard.css';
 import Card from '../Card/Card';
 
-const AnimatedPictureCard = props => {
+type Props = {
+  src: string,
+  href: string,
+  title: string,
+}
+
+const AnimatedPictureCard = (props: Props) => {
   const { src, href, title, ...rest } = props;
 
   return (
     <Card
-      {...rest}
+      {...(rest: any)}
       href={href}
       className={css.animatedPictureCard}
     >
@@ -18,12 +24,6 @@ const AnimatedPictureCard = props => {
       <div className={css.title}>{title}</div>
     </Card>
   );
-};
-
-AnimatedPictureCard.propTypes = {
-  src: PropTypes.string.isRequired,
-  href: PropTypes.string,
-  title: PropTypes.string,
 };
 
 export default AnimatedPictureCard;

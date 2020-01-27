@@ -1,18 +1,18 @@
-import PropTypes from 'prop-types';
+//@flow
 import React, { Component } from 'react';
 import { Motion, spring } from 'react-motion';
 
-export default class Counter extends Component {
-  static propTypes = {
-    transform: PropTypes.func,
-    startValue: PropTypes.number,
-    endValue: PropTypes.number.isRequired,
-    className: PropTypes.string,
-    onRest: PropTypes.func,
-  };
+type Props = {
+  transform: Function,
+  startValue: number,
+  endValue?: number,
+  className?: string,
+  onRest?: Function,
+}
 
+export default class Counter extends Component<Props> {
   static defaultProps = {
-    transform: val => val,
+    transform: (val: number) => val,
     startValue: 0,
   };
 

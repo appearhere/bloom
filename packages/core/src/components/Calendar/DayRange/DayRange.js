@@ -1,5 +1,5 @@
-import PropTypes from 'prop-types';
-import React, { Component } from 'react';
+//@flow
+import * as React from 'react';
 import cx from 'classnames';
 
 import { SELECT_DATE } from '../DayRangePicker/DayRangePicker';
@@ -11,29 +11,31 @@ import { Value, Placeholder } from '../../Form/FormComponents';
 
 import css from './DayRange.css';
 
-export default class DayRange extends Component {
-  static propTypes = {
-    id: PropTypes.string,
-    startLabel: PropTypes.string,
-    endLabel: PropTypes.string,
-    startDate: PropTypes.string,
-    endDate: PropTypes.string,
-    startDatePlaceholder: PropTypes.string,
-    endDatePlaceholder: PropTypes.string,
-    children: PropTypes.node,
-    classNames: PropTypes.shape({
-      root: PropTypes.string,
-      container: PropTypes.string,
-      btn: PropTypes.string,
-      value: PropTypes.string,
-      placeholder: PropTypes.string,
-      arrow: PropTypes.string,
-    }),
-    onStartDateClick: PropTypes.func,
-    onEndDateClick: PropTypes.func,
-    inputClassNames: PropTypes.object,
-    selectDate: PropTypes.oneOf([SELECT_DATE.START, SELECT_DATE.END, '']),
-  };
+type Classnames = {
+  root: string,
+  container: string,
+  btn: string,
+  value: string,
+  placeholder: string,
+  arrow: string,
+}
+
+type Props = {
+  id: string,
+  startLabel: string,
+  endLabel: string,
+  startDate: string,
+  endDate: string,
+  startDatePlaceholder: string,
+  endDatePlaceholder: string,
+  children: React.Node,
+  classNames?: Classnames,
+  onStartDateClick: Function,
+  onEndDateClick: Function,
+  inputClassNames?: Object,
+  selectDate: SELECT_DATE.START | SELECT_DATE.END | '',
+}
+export default class DayRange extends React.Component<Props> {
 
   static defaultProps = {
     onStartDateClick: noop,

@@ -1,5 +1,6 @@
-import PropTypes from 'prop-types';
-import React, { Component } from 'react';
+//@flow
+
+import * as React from 'react';
 import cx from 'classnames';
 import uniqueId from 'lodash/fp/uniqueId';
 import { Portal } from 'react-portal';
@@ -9,19 +10,25 @@ import BodyClassNameConductor from '../../utils/BodyClassNameConductor/BodyClass
 
 import css from './ModalAnimator.css';
 
-export default class ModalAnimator extends Component {
-  static propTypes = {
-    id: PropTypes.string,
-    onClose: PropTypes.func,
-    active: PropTypes.bool,
-    children: PropTypes.node,
-    'aria-labelledby': PropTypes.string,
-    'aria-describedby': PropTypes.string,
-    closeOnEsc: PropTypes.bool,
-    closeOnOutsideClick: PropTypes.bool,
-    windowClassName: PropTypes.string,
-    preventScroll: PropTypes.bool,
-  };
+type Props = {
+  id: string,
+  onClose: Function,
+  active: boolean,
+  children: React.Node,
+  'aria-labelledby': string,
+  'aria-describedby': string,
+  closeOnEsc: boolean,
+  closeOnOutsideClick: boolean,
+  windowClassName: string,
+  preventScroll: boolean,
+}
+
+export default class ModalAnimator extends React.Component<Props> {
+  id: string;
+  bodyClassName: any;
+  keyupEvent: any;
+  modal: any;
+  modalWindow: any;
 
   static defaultProps = {
     onClose: noop,
@@ -30,7 +37,7 @@ export default class ModalAnimator extends Component {
     preventScroll: true,
   };
 
-  constructor(props) {
+  constructor(props: Props) {
     super(props);
     this.id = props.id || uniqueId('modal');
     this.bodyClassName = new BodyClassNameConductor(this.id);
@@ -42,7 +49,7 @@ export default class ModalAnimator extends Component {
     this.keyupEvent = window.addEventListener('keyup', this.handleKeyUp);
   }
 
-  componentWillReceiveProps(nextProps) {
+  componentWillReceiveProps(nextProps: Props) {
     const { active: newActive, preventScroll } = nextProps;
     const { active: oldActive } = this.props;
 
@@ -60,13 +67,13 @@ export default class ModalAnimator extends Component {
     window.removeEventListener('keyup', this.keyupEvent);
   }
 
-  handleKeyUp = e => {
+  handleKeyUp = (e: KeyboardEvent) => {
     const { closeOnEsc, onClose } = this.props;
     const { keyCode } = e;
     if (closeOnEsc && keyCode === ESC) onClose(e);
   };
 
-  handleClick = e => {
+  handleClick = (e: Event) => {
     const { closeOnOutsideClick, onClose } = this.props;
     const { target } = e;
 

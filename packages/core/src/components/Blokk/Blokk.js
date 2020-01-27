@@ -1,10 +1,16 @@
-import PropTypes from 'prop-types';
+//@flow
 import React from 'react';
 import cx from 'classnames';
 
 import css from './Blokk.css';
 
-const Blokk = ({ variant, length, className }) => (
+type Props = {
+  length: number,
+  variant: 'light' | 'dark',
+  className?: string,
+}
+
+const Blokk = ({ variant, length, className }: Props) => (
   <span
     className={cx(css.root, css[variant], className)}
     style={{
@@ -12,12 +18,6 @@ const Blokk = ({ variant, length, className }) => (
     }}
   />
 );
-
-Blokk.propTypes = {
-  length: PropTypes.number,
-  variant: PropTypes.oneOf(['light', 'dark']),
-  className: PropTypes.string,
-};
 
 Blokk.defaultProps = {
   variant: 'light',

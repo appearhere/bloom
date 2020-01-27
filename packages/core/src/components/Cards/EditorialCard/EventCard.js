@@ -1,5 +1,6 @@
-import PropTypes from 'prop-types';
-import React, { Component } from 'react';
+//@flow
+import * as React from 'react';
+
 import cx from 'classnames';
 import { applyContainerQuery } from 'react-container-query';
 
@@ -20,21 +21,28 @@ const query = {
   },
 };
 
-class EventCard extends Component {
-  static propTypes = {
-    description: PropTypes.node,
-    location: PropTypes.string.isRequired,
-    date: PropTypes.string.isRequired,
-    ctaCallback: PropTypes.func,
-    ctaLabel: PropTypes.string,
-    href: PropTypes.string,
-    className: PropTypes.string,
-    containerQuery: PropTypes.shape({
-      [css.showDescription]: PropTypes.bool,
-      [css.showMeta]: PropTypes.bool,
-      [css.showLink]: PropTypes.bool,
-    }),
-  };
+type CSS = {
+  showDescription: boolean,
+  showMeta: boolean,
+  showLink: boolean
+}
+
+type ContainerQuery = {
+  css: CSS
+}
+
+type Props = {
+  description: React.Node,
+  location?: string,
+  date: string,
+  ctaCallback: Function,
+  ctaLabel: string,
+  href: string,
+  className?: string,
+  containerQuery: ContainerQuery,
+};
+
+class EventCard extends React.Component<Props> {
 
   static defaultProps = {
     ctaLabel: 'Get tickets',

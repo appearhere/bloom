@@ -8,21 +8,20 @@
  *
  * https://github.com/yahoo/react-stickynode
  */
-import PropTypes from 'prop-types';
-
+//@flow
 import React from 'react';
 import StickyNode from '@appearhere/react-stickynode';
 import cx from 'classnames';
 
 import css from './StickyNode.css';
 
-const Sticky = ({ className, ...rest }) => {
+type Props = {
+  className: string,
+}
+
+const Sticky = ({ className, ...rest }: Props) => {
   const classes = cx(css.root, className);
   return <StickyNode {...rest} className={classes} />;
-};
-
-Sticky.propTypes = {
-  className: PropTypes.string,
 };
 
 export default Sticky;

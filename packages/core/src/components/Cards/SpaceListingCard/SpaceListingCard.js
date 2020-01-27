@@ -1,12 +1,23 @@
-import PropTypes from 'prop-types';
-import React from 'react';
+//@flow
+import * as React from 'react';
 
 import DestinationListingCard from '../DestinationListingCard/DestinationListingCard';
 import Link from '../../Link/Link';
 
 import css from './SpaceListingCard.css';
 
-const SpaceListingCard = props => {
+type Props = {
+  placeLabel: React.Node,
+  placeHref: string,
+  location: React.Node,
+  size: React.Node,
+  price: React.Node,
+  priceUnit: React.Node,
+  onPlaceLabelClick: Function,
+  onCarouselChange: Function,
+}
+
+const SpaceListingCard = (props: Props) => {
   const {
     placeLabel,
     placeHref,
@@ -34,20 +45,9 @@ const SpaceListingCard = props => {
       }
       information={[location, size].filter((el) => { return el; })}
       onCarouselChange={onCarouselChange}
-      {...rest}
+      {...(rest: any)}
     />
   );
-};
-
-SpaceListingCard.propTypes = {
-  placeLabel: PropTypes.node,
-  placeHref: PropTypes.string,
-  location: PropTypes.node,
-  size: PropTypes.node,
-  price: PropTypes.node,
-  priceUnit: PropTypes.node,
-  onPlaceLabelClick: PropTypes.func,
-  onCarouselChange: PropTypes.func,
 };
 
 export default SpaceListingCard;

@@ -1,5 +1,6 @@
-import PropTypes from 'prop-types';
-import React, { Component } from 'react';
+//@flow
+import * as React from 'react';
+
 import cx from 'classnames';
 import { applyContainerQuery } from 'react-container-query';
 
@@ -14,19 +15,26 @@ const query = {
   },
 };
 
-class EditorialCard extends Component {
-  static propTypes = {
-    title: PropTypes.string.isRequired,
-    children: PropTypes.node,
-    className: PropTypes.string,
-    src: PropTypes.string,
-    allowHorizontal: PropTypes.bool,
-    forceHorizontal: PropTypes.bool,
-    containerQuery: PropTypes.shape({
-      [css.horizontal]: PropTypes.bool,
-      [css.large]: PropTypes.bool,
-    }),
-  };
+type Css = {
+  horizontal: boolean,
+  large: boolean
+}
+
+type ContainerQuery = {
+  css: Css
+}
+
+type Props = {
+  title: string,
+  children: React.Node,
+  className?: string,
+  src: string,
+  allowHorizontal: boolean,
+  forceHorizontal?: boolean,
+  containerQuery: ContainerQuery,
+}
+
+class EditorialCard extends React.Component<Props> {
 
   static defaultProps = {
     allowHorizontal: true,
@@ -56,7 +64,7 @@ class EditorialCard extends Component {
     );
 
     return (
-      <Card {...rest} className={classes}>
+      <Card {...(rest: any)} className={classes}>
         <div className={css.imageContainer}>
           <FittedImage src={src} alt={title} className={css.image} />
         </div>

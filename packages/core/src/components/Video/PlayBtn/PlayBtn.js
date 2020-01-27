@@ -1,13 +1,18 @@
-import PropTypes from 'prop-types';
-import React from 'react';
+// @flow
 
+import React from 'react';
 import noop from '../../../utils/noop';
 import ScreenReadable from '../../ScreenReadable/ScreenReadable';
 import BtnContainer from '../../BtnContainer/BtnContainer';
 import Icon from '../../Icon/Icon';
 import css from './PlayBtn.css';
 
-const PlayBtn = ({ playPause, paused }) => (
+type Props = {
+  playPause: Function,
+  paused: boolean,
+}
+
+const PlayBtn = ({ playPause, paused }: Props) => (
   <BtnContainer className={css.root} onClick={playPause}>
     {paused ? (
       <span>
@@ -19,11 +24,6 @@ const PlayBtn = ({ playPause, paused }) => (
     )}
   </BtnContainer>
 );
-
-PlayBtn.propTypes = {
-  playPause: PropTypes.func,
-  paused: PropTypes.bool.isRequired,
-};
 
 PlayBtn.defaultProps = {
   playPause: noop,

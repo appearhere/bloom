@@ -1,10 +1,16 @@
-import PropTypes from 'prop-types';
-import React from 'react';
+//@flow
+import * as React from 'react';
+
 import cx from 'classnames';
 
 import css from './Figure.css';
 
-const Figure = props => {
+type Props = {
+  className?: string,
+  caption: React.Node,
+  children?: React.Node,
+}
+const Figure = (props: Props) => {
   const { className, caption, children, ...rest } = props;
 
   const classes = cx(css.root, className);
@@ -16,12 +22,6 @@ const Figure = props => {
       <figcaption className={captionClasses}>{caption}</figcaption>
     </figure>
   );
-};
-
-Figure.propTypes = {
-  className: PropTypes.string,
-  caption: PropTypes.node.isRequired,
-  children: PropTypes.node.isRequired,
 };
 
 export default Figure;

@@ -1,4 +1,5 @@
-import PropTypes from 'prop-types';
+//@flow
+
 import React from 'react';
 import cx from 'classnames';
 
@@ -25,7 +26,24 @@ export const defaultPlatforms = [
   },
 ];
 
-const SocialLinks = props => {
+type Platform = {
+  name: string,
+  shareUrl: Function,
+}
+
+type Props = {
+  uri: string,
+  twitterTweet: string,
+  twitterVia: string,
+  accessibilityLabel: string,
+  platforms: Array<Platform>,
+  className: string,
+  variant: 'light' | 'dark',
+  linkClassName: string,
+  onClick: Function,
+}
+
+const SocialLinks = (props: Props) => {
   const {
     uri,
     twitterTweet,
@@ -68,23 +86,6 @@ const SocialLinks = props => {
       ))}
     </div>
   );
-};
-
-SocialLinks.propTypes = {
-  uri: PropTypes.string.isRequired,
-  twitterTweet: PropTypes.string,
-  twitterVia: PropTypes.string,
-  accessibilityLabel: PropTypes.string,
-  platforms: PropTypes.arrayOf(
-    PropTypes.shape({
-      name: PropTypes.string,
-      shareUrl: PropTypes.func,
-    }),
-  ),
-  className: PropTypes.string,
-  variant: PropTypes.oneOf(['light', 'dark']),
-  linkClassName: PropTypes.string,
-  onClick: PropTypes.func,
 };
 
 SocialLinks.defaultProps = {

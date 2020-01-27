@@ -1,24 +1,31 @@
-/* eslint-disable react/no-multi-comp */
-import PropTypes from 'prop-types';
+//@flow
+import * as React from 'react';
 
-import React from 'react';
 import cx from 'classnames';
 
 import css from './FormComponents.css';
 
-export const Field = ({ className, children, error }) => (
+type Props = {
+  className?: string,
+  children: React.Node,
+  error?: React.Node,
+  htmlFor?: string,
+  optionalLabel?: string,
+};
+
+export const Field = ({ className, children, error }: Props) => (
   <div className={cx(css.field, error ? css.errorField : null, className)}>{children}</div>
 );
 
-export const Meta = ({ className, children }) => (
+export const Meta = ({ className, children }: Props) => (
   <span className={cx(css.meta, className)}>{children}</span>
 );
 
-export const Description = ({ className, children }) => (
+export const Description = ({ className, children }: Props) => (
   <span className={cx(css.description, className)}>{children}</span>
 );
 
-export const Label = props => {
+export const Label = (props: Props) => {
   const { className, children, htmlFor, error, optionalLabel } = props;
 
   return (
@@ -28,35 +35,16 @@ export const Label = props => {
   );
 };
 
-export const Value = ({ className, children }) => (
+export const Value = ({ className, children }: Props) => (
   <span className={cx(css.value, className)}>{children}</span>
 );
 
-export const Placeholder = ({ className, children }) => (
+export const Placeholder = ({ className, children }: Props) => (
   <span className={cx(css.placeholder, className)}>{children}</span>
 );
 
-export const InputWrapper = ({ className, children }) => (
+export const InputWrapper = ({ className, children }: Props) => (
   <div className={cx(css.inputWrapper, className)}>{children}</div>
 );
 
-const sharedPropTypes = {
-  className: PropTypes.string,
-  children: PropTypes.node,
-};
-
-Field.propTypes = {
-  ...sharedPropTypes,
-  error: PropTypes.string,
-};
-Meta.propTypes = sharedPropTypes;
-Description.propTypes = sharedPropTypes;
-Label.propTypes = {
-  ...sharedPropTypes,
-  htmlFor: PropTypes.string,
-  optionalLabel: PropTypes.string,
-};
-Value.propTypes = sharedPropTypes;
-Placeholder.propTypes = sharedPropTypes;
-InputWrapper.propTypes = sharedPropTypes;
 /* eslint-enable react/no-multi-comp */

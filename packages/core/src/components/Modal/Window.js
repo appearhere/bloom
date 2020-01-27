@@ -1,5 +1,6 @@
-import PropTypes from 'prop-types';
-import React, { Component } from 'react';
+//@flow
+
+import * as React from 'react';
 import cx from 'classnames';
 
 import Panel, { PANEL_CONTEXT } from '../Panel/Panel';
@@ -15,34 +16,37 @@ export const WINDOW_VARIANT_TO_PANEL_CONTEXT = {
   [WINDOW_VARIANT.DARK]: PANEL_CONTEXT.BLACKOUT,
 };
 
-export const WindowTitle = ({ className, children, ...rest }) => (
+type WindowTitleProps = {
+  className: string,
+  children: React.Node
+}
+
+export const WindowTitle = ({ className, children, ...rest }: WindowTitleProps) => (
   <span {...rest} className={cx(css.title, className)}>
     {children}
   </span>
 );
 
-WindowTitle.propTypes = {
-  className: PropTypes.string,
-  children: PropTypes.node,
-};
-
 /**
  * TODO: Figure out react-motion compatible focus trap
  */
-export default class Window extends Component {
-  static propTypes = {
-    children: PropTypes.node,
-    header: PropTypes.node,
-    footer: PropTypes.node,
-    className: PropTypes.string,
-    classNames: PropTypes.shape({
-      header: PropTypes.string,
-      body: PropTypes.string,
-      footer: PropTypes.string,
-    }),
-    variant: PropTypes.oneOf([WINDOW_VARIANT.LIGHT, WINDOW_VARIANT.DARK]),
-  };
 
+type ClassNames = {
+  header: string,
+  body: string,
+  footer: string,
+}
+
+type WindowProps = {
+  children: React.Node,
+  header?: React.Node,
+  footer?: React.Node,
+  className?: string,
+  classNames: ClassNames,
+  variant: typeof WINDOW_VARIANT.LIGHT | typeof WINDOW_VARIANT.DARK,
+}
+
+export default class Window extends React.Component<WindowProps> {
   static defaultProps = {
     classNames: {
       header: '',

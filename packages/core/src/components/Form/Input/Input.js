@@ -1,5 +1,5 @@
-import PropTypes from 'prop-types';
-import React, { Component } from 'react';
+//@flow
+import * as React from 'react';
 import { CSSTransitionGroup } from 'react-transition-group';
 import cx from 'classnames';
 
@@ -7,38 +7,42 @@ import mergeObjectStrings from '../../../utils/mergeObjectStrings/mergeObjectStr
 import noop from '../../../utils/noop';
 import css from './Input.css';
 
-export default class Input extends Component {
-  static propTypes = {
-    onFocus: PropTypes.func,
-    onBlur: PropTypes.func,
-    onChange: PropTypes.func,
-    name: PropTypes.string,
-    id: PropTypes.string,
-    value: PropTypes.string,
-    required: PropTypes.bool,
-    placeholder: PropTypes.string,
-    classNames: PropTypes.shape({
-      wrapper: PropTypes.string,
-      input: PropTypes.string,
-      high: PropTypes.string,
-      error: PropTypes.string,
-      post: PropTypes.string,
-      errorMsg: PropTypes.string,
-      enter: PropTypes.string,
-      enterActive: PropTypes.string,
-      appear: PropTypes.string,
-      appearActive: PropTypes.string,
-      leave: PropTypes.string,
-      leaveActive: PropTypes.string,
-    }),
-    error: PropTypes.string,
-    /**
-     * Subset of the HTML5 spec, as other types will most likely have their
-     * own, bespoke component
-     */
-    type: PropTypes.oneOf(['text', 'email', 'password', 'search', 'url', 'textarea']),
-    priority: PropTypes.oneOf(['high', 'low']),
-  };
+type Classnames = {
+  wrapper?: string,
+  input?: string,
+  high?: string,
+  error?: string,
+  post?: string,
+  errorMsg?: string,
+  enter?: string,
+  enterActive?: string,
+  appear?: string,
+  appearActive?: string,
+  leave?: string,
+  leaveActive?: string,
+}
+
+type Props = {
+  onFocus: Function,
+  onBlur: Function,
+  onChange: Function,
+  name: string,
+  id: string,
+  value: string,
+  required: boolean,
+  placeholder: string,
+  error: string,
+  classNames: Classnames,
+  type: 'text' | 'email' | 'password' | 'search' | 'url' | 'textarea',
+  priority: 'high' | 'low',
+}
+
+type State = {
+  hasFocus: boolean,
+};
+
+export default class Input extends React.Component<Props, State> {
+  input: any;
 
   static defaultProps = {
     onChange: noop,
@@ -54,27 +58,27 @@ export default class Input extends Component {
     hasFocus: false,
   };
 
-  focus = () => {
+  focus = (): void => {
     this.input.focus();
     this.handleFocus();
   };
 
-  blur = () => {
+  blur = (): void => {
     this.input.blur();
     this.handleBlur();
   };
 
-  handleFocus = () => {
+  handleFocus = (): void => {
     const { onFocus } = this.props;
     this.setState({ hasFocus: true }, onFocus);
   };
 
-  handleBlur = () => {
+  handleBlur = (): void => {
     const { onBlur } = this.props;
     this.setState({ hasFocus: false }, onBlur);
   };
 
-  handleChange = e => {
+  handleChange = (e: SyntheticInputEvent<>) => {
     const { onChange, name } = this.props;
     onChange(e, name, e.target.value);
   };

@@ -1,5 +1,6 @@
-import PropTypes from 'prop-types';
-import React from 'react';
+//@flow
+
+import * as React from 'react';
 import cx from 'classnames';
 
 import LeftRight from '../LeftRight/LeftRight';
@@ -8,7 +9,31 @@ import Icon from '../Icon/Icon';
 import m from '../../globals/modifiers.css';
 import defaultCss from './ProgressSteps.css';
 
-const Step = props => {
+type Css = {
+  stepIconContainer: string,
+  stepIconContainerCompleted: string,
+  stepIcon: string,
+  stepIconCompleted: string,
+  stepTitle: string,
+  stepTitleCompleted: string,
+  stepBody: string,
+  stepBodyCompleted: string,
+  stepContent: string,
+  stepContentCompleted: string,
+  step: string,
+  stepIconCircle: string,
+}
+
+type Props = {
+  completed: boolean,
+  title: React.Node,
+  children: React.Node,
+  css: Css,
+  step: React.Node,
+  icon: string,
+}
+
+const Step = (props: Props) => {
   const { step, completed, title, children, css, icon, ...rest } = props;
 
   const leftClassName = cx(
@@ -76,24 +101,6 @@ const Step = props => {
       primarySide="right"
     />
   );
-};
-
-Step.propTypes = {
-  completed: PropTypes.bool,
-  title: PropTypes.node,
-  children: PropTypes.node,
-  css: PropTypes.shape({
-    stepIconContainer: PropTypes.string,
-    stepIconContainerCompleted: PropTypes.string,
-    stepIcon: PropTypes.string,
-    stepIconCompleted: PropTypes.string,
-    stepTitle: PropTypes.string,
-    stepTitleCompleted: PropTypes.string,
-    stepBody: PropTypes.string,
-    stepBodyCompleted: PropTypes.string,
-  }),
-  step: PropTypes.node,
-  icon: PropTypes.string,
 };
 
 Step.defaultProps = {

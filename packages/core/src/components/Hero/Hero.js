@@ -1,11 +1,21 @@
-import PropTypes from 'prop-types';
-import React from 'react';
+//@flow
+import * as React from 'react';
 import cx from 'classnames';
 
 import m from '../../globals/modifiers.css';
 import css from './Hero.css';
 
-const Hero = props => {
+type Props = {
+  className: string,
+  innerClassName: string,
+  backgroundImage: string,
+  children: React.Node,
+  caption: React.Node,
+  animate: boolean,
+  backgroundClassName: string,
+}
+
+const Hero = (props: Props) => {
   const {
     className,
     innerClassName,
@@ -45,16 +55,6 @@ const Hero = props => {
       </div>
     </div>
   );
-};
-
-Hero.propTypes = {
-  className: PropTypes.string,
-  innerClassName: PropTypes.string,
-  backgroundImage: PropTypes.string,
-  children: PropTypes.node.isRequired,
-  caption: PropTypes.node,
-  animate: PropTypes.bool,
-  backgroundClassName: PropTypes.string,
 };
 
 export default Hero;

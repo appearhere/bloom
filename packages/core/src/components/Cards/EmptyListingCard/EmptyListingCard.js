@@ -1,12 +1,16 @@
-import PropTypes from 'prop-types';
+//@flow
 import React from 'react';
 import cx from 'classnames';
-
 import Blokk from '../../Blokk/Blokk';
-
 import css from '../DestinationListingCard/DestinationListingCard.css';
 
-const EmptyListingCard = ({ className, carouselClassName, bodyClassName }) => (
+type Props = {
+  className?: string,
+  carouselClassName?: string,
+  bodyClassName?: string,
+};
+
+const EmptyListingCard = ({ className, carouselClassName, bodyClassName }: Props) => (
   <div className={className}>
     <div className={cx(css.carousel, carouselClassName)} />
     <div className={cx(css.body, bodyClassName)}>
@@ -16,11 +20,5 @@ const EmptyListingCard = ({ className, carouselClassName, bodyClassName }) => (
     </div>
   </div>
 );
-
-EmptyListingCard.propTypes = {
-  className: PropTypes.string,
-  carouselClassName: PropTypes.string,
-  bodyClassName: PropTypes.string,
-};
 
 export default EmptyListingCard;

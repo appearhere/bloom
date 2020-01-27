@@ -1,10 +1,16 @@
-import PropTypes from 'prop-types';
-import React from 'react';
+//@flow
+
+import * as React from 'react';
 import shortid from 'shortid';
 
 import css from './MobileCarousel.css';
 
-const MobileCarousel = ({ children = [], title }) => {
+type Props = {
+  children: Array<React.Node>,
+  title: string
+}
+
+const MobileCarousel = ({ children = [], title }: Props) => {
   return (
     <div>
       <h2 className={css.title}>{title}</h2>
@@ -21,11 +27,6 @@ const MobileCarousel = ({ children = [], title }) => {
 
 MobileCarousel.defaultProps = {
   title: '',
-};
-
-MobileCarousel.propTypes = {
-  children: PropTypes.array.isRequired,
-  title: PropTypes.string,
 };
 
 export default MobileCarousel;

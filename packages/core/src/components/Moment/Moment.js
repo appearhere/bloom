@@ -1,5 +1,6 @@
-import PropTypes from 'prop-types';
-import React from 'react';
+//@flow
+
+import * as React from 'react';
 import cx from 'classnames';
 
 import Wrapper from '../Wrapper/Wrapper';
@@ -7,7 +8,14 @@ import Wrapper from '../Wrapper/Wrapper';
 import css from './Moment.css';
 import Icon from '../Icon/Icon';
 
-const Moment = ({ icon, title, children, className }) => (
+type Props = {
+  icon: string,
+  title: React.Node,
+  children: React.Node,
+  className: string,
+}
+
+const Moment = ({ icon, title, children, className }: Props) => (
   <Wrapper className={cx(css.root, className)}>
     <div className={css.inner}>
       <div className={css.header}>
@@ -18,13 +26,6 @@ const Moment = ({ icon, title, children, className }) => (
     </div>
   </Wrapper>
 );
-
-Moment.propTypes = {
-  icon: PropTypes.string,
-  title: PropTypes.node.isRequired,
-  children: PropTypes.node.isRequired,
-  className: PropTypes.string,
-};
 
 Moment.defaultProps = {
   icon: 'tick-c',

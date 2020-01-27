@@ -1,5 +1,5 @@
-import PropTypes from 'prop-types';
-import React, { Component } from 'react';
+//@flow
+import * as React from 'react';
 import cx from 'classnames';
 import momentPropTypes from 'react-moment-proptypes';
 
@@ -22,21 +22,21 @@ export const defaultDayState = {
 
 const defaultGetDateState = () => defaultDayState;
 
-export default class DayPickerItem extends Component {
-  static propTypes = {
-    day: momentPropTypes.momentObj,
-    getDayState: PropTypes.func,
-    onInteraction: PropTypes.func,
-    onHighlight: PropTypes.func,
-  };
+type Props = {
+  day: momentPropTypes.momentObj,
+  getDayState: Function,
+  onInteraction: Function,
+  onHighlight: Function,
+}
 
+export default class DayPickerItem extends React.Component<Props> {
   static defaultProps = {
     getDayState: defaultGetDateState,
     onInteraction: noop,
     onMouseOver: noop,
   };
 
-  handleInteraction = e => {
+  handleInteraction = (e: SyntheticKeyboardEvent<>) => {
     const { type, keyCode } = e;
     const { day, onInteraction, getDayState } = this.props;
     const { isDisabled } = getDayState(day);
@@ -60,7 +60,7 @@ export default class DayPickerItem extends Component {
     }
   };
 
-  handleHighlight = e => {
+  handleHighlight = (e: SyntheticMouseEvent<>) => {
     const { day, onHighlight, getDayState } = this.props;
     const { isDisabled } = getDayState(day);
 
@@ -95,7 +95,7 @@ export default class DayPickerItem extends Component {
 
     return (
       <CalendarItem
-        {...rest}
+        {...(rest: any)}
         onClick={this.handleInteraction}
         onTouchEnd={this.handleInteraction}
         onKeyUp={this.handleInteraction}

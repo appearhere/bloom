@@ -1,5 +1,6 @@
-import PropTypes from 'prop-types';
-import React, { Component } from 'react';
+// @flow
+
+import * as React from 'react';
 import videoConnect, { apiHelpers as videoApiHelpers } from 'react-html5video';
 import cx from 'classnames';
 
@@ -9,6 +10,25 @@ import Scrubber from './Scrubber/Scrubber';
 import PlayBtn from './PlayBtn/PlayBtn';
 import css from './Video.css';
 
+type VideoType = {
+  paused: boolean,
+  duration: number,
+  currentTime: number,
+}
+
+type Props = {
+  children: Array<React.Element<any>> | React.Element<any>,
+  video: VideoType,
+  className: ?string,
+  controls: ?boolean,
+  onPlayPauseClick: Function,
+  onSeekChange: ?Function,
+}
+
+type State = {
+  hasPlayed: boolean
+}
+
 const {
   togglePause,
   setCurrentTime,
@@ -16,19 +36,7 @@ const {
   getPercentageBuffered,
 } = videoApiHelpers;
 
-class Video extends Component {
-  static propTypes = {
-    children: PropTypes.oneOfType([
-      PropTypes.element,
-      PropTypes.arrayOf(PropTypes.element),
-    ]).isRequired,
-    video: PropTypes.shape({}).isRequired,
-    className: PropTypes.string,
-    controls: PropTypes.bool,
-    onPlayPauseClick: PropTypes.func.isRequired,
-    onSeekChange: PropTypes.func.isRequired,
-  };
-
+class Video extends React.Component<Props, State> {
   static defaultProps = {
     controls: false,
   };

@@ -1,18 +1,19 @@
-import PropTypes from 'prop-types';
-import React from 'react';
+//@flow
+
+import * as React from 'react';
 import cx from 'classnames';
 
 import css from './Control.css';
 
-const Control = ({ className, children, ...rest }) => (
-  <button className={cx(css.root, className)} {...rest}>
+type Props = {
+  className?: string,
+  children: React.Node,
+}
+
+const Control = ({ className, children, ...rest }: Props) => (
+  <button className={cx(css.root, className)} {...(rest: any)}>
     {children}
   </button>
 );
-
-Control.propTypes = {
-  className: PropTypes.string,
-  children: PropTypes.node.isRequired,
-};
 
 export default Control;

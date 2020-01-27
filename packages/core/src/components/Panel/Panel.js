@@ -1,5 +1,6 @@
-import PropTypes from 'prop-types';
-import React from 'react';
+//@flow
+
+import * as React from 'react';
 import cx from 'classnames';
 
 import css from './Panel.css';
@@ -11,7 +12,17 @@ export const PANEL_CONTEXT = {
   SUCCESS: 'success',
 };
 
-const Panel = props => {
+type Props = {
+  className: string,
+  context:
+    typeof PANEL_CONTEXT.DEFAULT |
+    typeof PANEL_CONTEXT.BLACKOUT |
+    typeof PANEL_CONTEXT.ERROR |
+    typeof PANEL_CONTEXT.SUCCESS,
+  children: React.Node,
+}
+
+const Panel = (props: Props) => {
   const { children, className, context, ...rest } = props;
 
   return (
@@ -19,17 +30,6 @@ const Panel = props => {
       {children}
     </div>
   );
-};
-
-Panel.propTypes = {
-  className: PropTypes.string,
-  context: PropTypes.oneOf([
-    PANEL_CONTEXT.DEFAULT,
-    PANEL_CONTEXT.BLACKOUT,
-    PANEL_CONTEXT.ERROR,
-    PANEL_CONTEXT.SUCCESS,
-  ]),
-  children: PropTypes.node,
 };
 
 Panel.defaultProps = {

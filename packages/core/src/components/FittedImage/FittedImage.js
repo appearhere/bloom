@@ -1,16 +1,21 @@
-import PropTypes from 'prop-types';
-import React, { Component } from 'react';
+//@flow
+import * as React from 'react';
 import ExecutionEnvironment from 'exenv';
 
 const objectFitImages = ExecutionEnvironment.canUseDOM ? require('object-fit-images') : null;
 
-export default class FittedImage extends Component {
-  static propTypes = {
-    src: PropTypes.string.isRequired,
-    alt: PropTypes.string,
-    className: PropTypes.string,
-  };
+export type Image = { 
+  src: string,
+  alt: string,
+}
 
+type Props = {
+  ...Image,
+  className?: string,
+}
+export default class FittedImage extends React.Component<Props> {
+  component: ?HTMLImageElement;
+  
   componentDidMount() {
     if (ExecutionEnvironment.canUseDOM && typeof objectFitImages === 'function') {
       objectFitImages(this.component);

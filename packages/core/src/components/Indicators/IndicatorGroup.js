@@ -1,10 +1,16 @@
-import PropTypes from 'prop-types';
-import React from 'react';
+//@flow
+import * as React from 'react';
 import warning from 'warning';
 
 import Indicator from './Indicator';
 
-const IndicatorGroup = props => {
+type Props = {
+  children: Function,
+  activeIndicator: number,
+  Component: Function,
+}
+
+const IndicatorGroup = (props: Props) => {
   const { children, activeIndicator, Component, ...parentProps } = props;
 
   return (
@@ -17,12 +23,6 @@ const IndicatorGroup = props => {
         })}
     </div>
   );
-};
-
-IndicatorGroup.propTypes = {
-  children: PropTypes.func.isRequired,
-  activeIndicator: PropTypes.number,
-  Component: PropTypes.func,
 };
 
 IndicatorGroup.defaultProps = {

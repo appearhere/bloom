@@ -1,13 +1,24 @@
-import PropTypes from 'prop-types';
-import React from 'react';
+//@flow
+import * as React from 'react';
 import cx from 'classnames';
 
 import css from './CondensedSpaceCard.css';
 
 import LeftRight from '../../LeftRight/LeftRight';
 import FittedImage from '../../FittedImage/FittedImage';
+import type { Image } from '../../FittedImage/FittedImage';
 
-const CondensedSpaceCard = props => {
+type Props = {
+  href: string,
+  images: Array<Image>,
+  name: string,
+  price: string,
+  className?: string,
+  priceFromLabel?: string,
+  priceUnit: string,
+}
+
+const CondensedSpaceCard = (props: Props) => {
   const { href, images, name, price, priceFromLabel, priceUnit, className } = props;
 
   /* eslint-disable react/jsx-no-target-blank */
@@ -35,16 +46,6 @@ const CondensedSpaceCard = props => {
     </a>
   );
   /* eslint-enable react/jsx-no-target-blank */
-};
-
-CondensedSpaceCard.propTypes = {
-  href: PropTypes.string,
-  images: PropTypes.array,
-  name: PropTypes.string,
-  price: PropTypes.string,
-  className: PropTypes.string,
-  priceFromLabel: PropTypes.string,
-  priceUnit: PropTypes.string,
 };
 
 CondensedSpaceCard.defaultProps = {

@@ -1,22 +1,23 @@
-import PropTypes from 'prop-types';
-import React, { Children, cloneElement } from 'react';
+//@flow
+
+import * as React from 'react';
 import cx from 'classnames';
 
 import css from './ControlGroup.css';
 
-const ControlGroup = ({ children, className }) => (
+type Props = {
+  children: React.Node,
+  className: string,
+}
+
+const ControlGroup = ({ children, className }: Props) => (
   <div className={cx(css.root, css.controlGroup, className)}>
-    {Children.map(children, child =>
-      cloneElement(child, {
+    {React.Children.map(children, child =>
+      React.cloneElement(child, {
         className: cx(css.control, child.props.className),
       }),
     )}
   </div>
 );
-
-ControlGroup.propTypes = {
-  className: PropTypes.string,
-  children: PropTypes.node.isRequired,
-};
 
 export default ControlGroup;

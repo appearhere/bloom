@@ -1,31 +1,32 @@
-import PropTypes from 'prop-types';
-import React, { Component } from 'react';
+//@flow
+import * as React from 'react';
 
 import Radio from '../Radio/Radio';
 import noop from '../../../utils/noop';
 
-export default class RadioGroup extends Component {
-  static propTypes = {
-    Input: PropTypes.oneOfType([PropTypes.func, PropTypes.string]),
-    children: PropTypes.func.isRequired,
-    value: PropTypes.oneOfType([PropTypes.string, PropTypes.number]),
-    onChange: PropTypes.func,
-    optional: PropTypes.bool,
-    name: PropTypes.string,
-    className: PropTypes.string,
-    id: PropTypes.string,
-  };
+type Props = {
+  Input: Function | string,
+  children: Function,
+  value: string | number,
+  onChange: Function,
+  optional: boolean,
+  name: string,
+  className: string,
+  id: string,
+}
+export default class RadioGroup extends React.Component<Props> {
+  input: any;
 
   static defaultProps = {
     onChange: noop,
     Input: Radio,
   };
 
-  focus = () => {
+  focus = (): void => {
     this.input.focus();
   };
 
-  blur = () => {
+  blur = (): void => {
     this.input.blur();
   };
 

@@ -1,18 +1,19 @@
-import PropTypes from 'prop-types';
-import React from 'react';
+//@flow
+import * as React from 'react';
 import cx from 'classnames';
 
 import css from './Suggestion.css';
 
-const Suggestion = ({ className, children, ...rest }) => (
+type Props = {
+  className?: string,
+  children: React.Node,
+}
+
+const Suggestion = ({ className, children, ...rest }: Props) => (
   <span {...rest} className={cx(css.root, className)}>
     {children}
   </span>
 );
 
-Suggestion.propTypes = {
-  className: PropTypes.string,
-  children: PropTypes.node,
-};
 
 export default Suggestion;

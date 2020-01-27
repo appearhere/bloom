@@ -1,5 +1,5 @@
-import PropTypes from 'prop-types';
-import React, { Component } from 'react';
+//@flow
+import * as React from 'react';
 import cx from 'classnames';
 import momentPropTypes from 'react-moment-proptypes';
 import keyMirror from 'key-mirror';
@@ -23,32 +23,36 @@ export const SELECT_DATE = keyMirror({
   END: null,
 });
 
-export const getDates = (startDate, endDate) => {
+export const getDates = (startDate: momentPropTypes.momentObj, endDate: momentPropTypes.momentObj) => {
   if (!endDate) return [startDate];
   if (!startDate) return [endDate];
 
   return startDate.isAfter(endDate)
-    ? Array.from(moment.range(endDate, startDate).by('day'))
-    : Array.from(moment.range(startDate, endDate).by('day'));
+    ? (Array.from(moment.range(endDate, startDate).by('day')): Array<momentPropTypes.momentObj>)
+    : (Array.from(moment.range(startDate, endDate).by('day')): Array<momentPropTypes.momentObj>);
 };
 
 const today = moment();
 
-export default class DayPicker extends Component {
-  static propTypes = {
-    month: momentPropTypes.momentObj,
-    onInteraction: PropTypes.func,
-    onMonthChange: PropTypes.func,
-    dayProps: PropTypes.object,
-    columnHeadingProps: PropTypes.object,
-    accessibilityNextLabel: PropTypes.string,
-    accessibilityPrevLabel: PropTypes.string,
-    classNames: PropTypes.shape({
-      root: PropTypes.string,
-      header: PropTypes.string,
-    }),
-  };
+type Classnames = {
+  root: string,
+  header: string,
+}
 
+type Props = {
+  month: momentPropTypes.momentObj,
+  onInteraction: Function,
+  onMonthChange: Function,
+  dayProps: Object,
+  columnHeadingProps: Object,
+  accessibilityNextLabel: string,
+  accessibilityPrevLabel: string,
+  classNames: Classnames,
+  children?: React.Node,
+  maskSize: number
+}
+
+export default class DayPicker extends React.Component<Props> {
   static defaultProps = {
     month: today,
     onInteraction: noop,
@@ -65,13 +69,13 @@ export default class DayPicker extends Component {
     maskSize: 1,
   };
 
-  handleNextMonth = e => {
+  handleNextMonth = (e: HTMLButtonElement) => {
     const { month, onMonthChange } = this.props;
     const nextMonth = month.clone().add(1, 'month');
     onMonthChange(e, nextMonth);
   };
 
-  handlePreviousMonth = e => {
+  handlePreviousMonth = (e: HTMLButtonElement) => {
     const { month, onMonthChange } = this.props;
     const prevMonth = month.clone().add(-1, 'month');
     onMonthChange(e, prevMonth);
@@ -115,7 +119,7 @@ export default class DayPicker extends Component {
                 </div>
               </div>
               <CalendarMonth
-                {...this.props}
+                {...(this.props: any)}
                 classNames={calendarMonthClassNames}
                 month={month}
                 columnHeadingProps={{

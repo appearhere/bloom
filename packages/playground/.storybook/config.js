@@ -33,7 +33,6 @@ function loadStories() {
   require('../stories/GridLayout.story.js');
   require('../stories/HeartBtn.story.js');
   require('../stories/Hero.story.js');
-  require('../stories/HorizontalOverflowBar.story.js');
   require('../stories/Icon.story.js');
   require('../stories/IconInput.story.js');
   require('../stories/IconLink.story.js');
@@ -54,14 +53,12 @@ function loadStories() {
   require('../stories/OptionCard.story.js');
   require('../stories/Pagination.story.js');
   require('../stories/Panel.story.js');
-  require('../stories/ParallaxContainer.story.js');
   require('../stories/PhotoGrid.story.js');
   require('../stories/ProgressSteps.story.js');
   require('../stories/Radio.story.js');
   require('../stories/RadioGroup.story.js');
   require('../stories/ScreenReadable.story.js');
   require('../stories/Select.story.js');
-  require('../stories/SiblingTransition.story.js');
   require('../stories/SignPost.story.js');
   require('../stories/SocialLinks.story.js');
   require('../stories/SpaceTypeIcon.story.js');
@@ -69,7 +66,6 @@ function loadStories() {
   require('../stories/StarRating.story.js');
   require('../stories/StepIcon.story.js');
   require('../stories/StickyNode.story.js');
-  require('../stories/TabBar.story.js');
   require('../stories/Tabs.story.js');
   require('../stories/Tether.story.js');
   require('../stories/Tooltip.story.js');

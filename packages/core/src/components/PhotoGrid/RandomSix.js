@@ -1,12 +1,23 @@
-import PropTypes from 'prop-types';
-import React from 'react';
+//@flow
+
+import * as React from 'react';
 import cx from 'classnames';
 
 import m from '../../globals/modifiers.css';
 import css from './RandomSix.css';
 
-const RandomSix = ({ children, className }) => {
-  const { 0: one, 1: two, 2: three, 3: four, 4: five, 5: six } = children;
+type Image = {
+  src: string,
+  alt: string,
+}
+
+type Props = {
+  children: Image,
+  className: string,
+}
+
+const RandomSix = ({ children, className }: Props) => {
+  const { [0]: one, [1]: two, [2]: three, [3]: four, [4]: five, [5]: six } = children;
 
   return (
     <div className={cx(css.root, className)}>
@@ -34,16 +45,6 @@ const RandomSix = ({ children, className }) => {
       </div>
     </div>
   );
-};
-
-RandomSix.propTypes = {
-  children: PropTypes.arrayOf(
-    PropTypes.shape({
-      src: PropTypes.string,
-      alt: PropTypes.string,
-    }),
-  ).isRequired,
-  className: PropTypes.string,
 };
 
 export default RandomSix;

@@ -1,12 +1,13 @@
-import PropTypes from 'prop-types';
-import React from 'react';
+// @flow
+
+import * as React from 'react';
 
 import css from './Controls.css';
 
-const Controls = ({ children }) => <div className={css.root}>{children}</div>;
+type Props = {
+  children: Array<React.Element<any>> | React.Element<any>
+}
 
-Controls.propTypes = {
-  children: PropTypes.oneOfType([PropTypes.array, PropTypes.element]),
-};
+const Controls = ({ children }: Props) => <div className={css.root}>{children}</div>;
 
 export default Controls;

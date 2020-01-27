@@ -1,5 +1,6 @@
-import PropTypes from 'prop-types';
-import React, { Component } from 'react';
+//@flow
+import * as React from 'react';
+
 import cx from 'classnames';
 import uniqueId from 'lodash/fp/uniqueId';
 
@@ -9,18 +10,31 @@ import Icon from '../../Icon/Icon';
 import ScreenReadable from '../../ScreenReadable/ScreenReadable';
 import LeftRight from '../../LeftRight/LeftRight';
 
-export default class Checkbox extends Component {
-  static propTypes = {
-    name: PropTypes.string.isRequired,
-    onFocus: PropTypes.func,
-    onBlur: PropTypes.func,
-    onChange: PropTypes.func,
-    children: PropTypes.node,
-    value: PropTypes.oneOfType([PropTypes.string, PropTypes.number]).isRequired,
-    checked: PropTypes.bool,
-    className: PropTypes.string,
-    label: PropTypes.node,
-  };
+type Props = {
+  name: string,
+  onFocus: Function,
+  onBlur: Function,
+  onChange: Function,
+  children?: React.Node,
+  value: string | number,
+  checked?: boolean,
+  className?: string,
+  label: React.Node,
+}
+
+type State = {
+  hasFocus: boolean,
+};
+
+export default class Checkbox extends React.Component<Props, State> {
+  input: any;
+  id: any;
+
+  constructor(props: Props) {
+    super(props);
+
+    this.id = uniqueId('radio');
+  }
 
   static defaultProps = {
     onChange: noop,
@@ -28,37 +42,31 @@ export default class Checkbox extends Component {
     onBlur: noop,
   };
 
-  constructor(props) {
-    super(props);
-
-    this.id = uniqueId('radio');
-  }
-
   state = {
     hasFocus: false,
   };
 
-  focus = () => {
+  focus = (): void => {
     this.input.focus();
     this.handleFocus();
   };
 
-  blur = () => {
+  blur = (): void => {
     this.input.blur();
     this.handleBlur();
   };
 
-  handleFocus = () => {
+  handleFocus = (): void => {
     const { onFocus } = this.props;
     this.setState({ hasFocus: true }, onFocus);
   };
 
-  handleBlur = () => {
+  handleBlur = (): void => {
     const { onBlur } = this.props;
     this.setState({ hasFocus: false }, onBlur);
   };
 
-  handleChange = e => {
+  handleChange = (e: SyntheticEvent<HTMLButtonElement>) => {
     const { name, value, onChange } = this.props;
     onChange(e, name, value);
   };

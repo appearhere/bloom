@@ -1,17 +1,18 @@
-import PropTypes from 'prop-types';
+//@flow
+
 import React from 'react';
 
 import css from './MarkerContainer.css';
 
-const MarkerContainer = ({ MarkerComponent, props }) => (
+type Props = {
+  MarkerComponent: Function,
+  props: Object,
+}
+
+const MarkerContainer = ({ MarkerComponent, props }: Props) => (
   <div className={css.root}>
     <MarkerComponent {...props} />
   </div>
 );
-
-MarkerContainer.propTypes = {
-  MarkerComponent: PropTypes.func.isRequired,
-  props: PropTypes.object,
-};
 
 export default MarkerContainer;

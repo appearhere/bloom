@@ -1,20 +1,21 @@
-import PropTypes from 'prop-types';
-import React from 'react';
+//@flow
+
+import * as React from 'react';
 import cx from 'classnames';
 
 import css from './SignPost.css';
 
-const SignPost = ({ title, children, className, ...rest }) => (
+type Props = {
+  title: React.Node,
+  children: React.Node,
+  className: string,
+}
+
+const SignPost = ({ title, children, className, ...rest }: Props) => (
   <div {...rest} className={cx(css.root, className)}>
     <span className={css.title}>{title}</span>
     <div className={css.body}>{children}</div>
   </div>
 );
-
-SignPost.propTypes = {
-  title: PropTypes.node.isRequired,
-  children: PropTypes.node.isRequired,
-  className: PropTypes.string,
-};
 
 export default SignPost;

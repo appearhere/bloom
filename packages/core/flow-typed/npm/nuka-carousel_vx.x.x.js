@@ -1,4 +1,4 @@
-// flow-typed signature: 99220ce2ff0d39c37ae7c80979f85d9b
+// flow-typed signature: 8e0e8ca432c85a3681c4556b38a0c967
 // flow-typed version: <<STUB>>/nuka-carousel_v^4.5.13/flow_v0.117.0
 
 /**
@@ -50,10 +50,6 @@ declare module 'nuka-carousel/es/transitions/scroll-transition' {
   declare module.exports: any;
 }
 
-declare module 'nuka-carousel/es/utilities' {
-  declare module.exports: any;
-}
-
 declare module 'nuka-carousel/es/utilities/bootstrapping-utilities' {
   declare module.exports: any;
 }
@@ -94,10 +90,6 @@ declare module 'nuka-carousel/lib/transitions/scroll-transition' {
   declare module.exports: any;
 }
 
-declare module 'nuka-carousel/lib/utilities' {
-  declare module.exports: any;
-}
-
 declare module 'nuka-carousel/lib/utilities/bootstrapping-utilities' {
   declare module.exports: any;
 }
@@ -134,9 +126,6 @@ declare module 'nuka-carousel/es/transitions/fade-transition.js' {
 }
 declare module 'nuka-carousel/es/transitions/scroll-transition.js' {
   declare module.exports: $Exports<'nuka-carousel/es/transitions/scroll-transition'>;
-}
-declare module 'nuka-carousel/es/utilities.js' {
-  declare module.exports: $Exports<'nuka-carousel/es/utilities'>;
 }
 declare module 'nuka-carousel/es/utilities/bootstrapping-utilities.js' {
   declare module.exports: $Exports<'nuka-carousel/es/utilities/bootstrapping-utilities'>;
@@ -176,9 +165,6 @@ declare module 'nuka-carousel/lib/transitions/fade-transition.js' {
 }
 declare module 'nuka-carousel/lib/transitions/scroll-transition.js' {
   declare module.exports: $Exports<'nuka-carousel/lib/transitions/scroll-transition'>;
-}
-declare module 'nuka-carousel/lib/utilities.js' {
-  declare module.exports: $Exports<'nuka-carousel/lib/utilities'>;
 }
 declare module 'nuka-carousel/lib/utilities/bootstrapping-utilities.js' {
   declare module.exports: $Exports<'nuka-carousel/lib/utilities/bootstrapping-utilities'>;

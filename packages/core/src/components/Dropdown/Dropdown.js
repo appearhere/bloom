@@ -1,21 +1,20 @@
-import PropTypes from 'prop-types';
-import React from 'react';
+//@flow
+import * as React from 'react';
 
 import Tether from '../Tether/Tether';
 import Inner from './DropdownInner';
 
 export { HORIZONTAL_ATTACHMENTS, VERTICAL_ATTACHMENTS } from '../Tether/Tether';
 
-const Dropdown = ({ target, children, className, ...rest }) => (
+type Props = {
+  target: React.Element<any>,
+  children: React.Node,
+  className: string, 
+}
+const Dropdown = ({ target, children, className, ...rest }: Props) => (
   <Tether {...rest} target={target}>
     <Inner className={className}>{children}</Inner>
   </Tether>
 );
-
-Dropdown.propTypes = {
-  target: PropTypes.node.isRequired,
-  children: PropTypes.node.isRequired,
-  className: PropTypes.string,
-};
 
 export default Dropdown;

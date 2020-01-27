@@ -1,10 +1,17 @@
-import PropTypes from 'prop-types';
-import React from 'react';
+//@flow
+
+import * as React from 'react';
 import cx from 'classnames';
 
 import css from './Statement.css';
 
-const Statement = ({ children, className, number, ...rest }) => (
+type Props = {
+  number: number,
+  children: React.Node,
+  className: string,
+}
+
+const Statement = ({ children, className, number, ...rest }: Props) => (
   <span>
     <strong {...rest} className={cx(css.statement, className)}>
       {children}
@@ -12,11 +19,5 @@ const Statement = ({ children, className, number, ...rest }) => (
     {number && <span className={cx(css.number)}>{number}</span>}
   </span>
 );
-
-Statement.propTypes = {
-  number: PropTypes.number,
-  children: PropTypes.node.isRequired,
-  className: PropTypes.string,
-};
 
 export default Statement;

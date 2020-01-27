@@ -1,5 +1,6 @@
-import PropTypes from 'prop-types';
-import React, { Component } from 'react';
+// @flow
+
+import * as React from 'react';
 import cx from 'classnames';
 
 import Controls from '../Video/Controls/Controls';
@@ -7,18 +8,20 @@ import PlayBtn from '../Video/PlayBtn/PlayBtn';
 import css from './VideoWithRichPoster.css';
 import Video from '../Video/Video';
 
-export default class VideoWithPoster extends Component {
-  static propTypes = {
-    posterSrc: PropTypes.oneOfType([PropTypes.arrayOf(PropTypes.element), PropTypes.element])
-      .isRequired,
-    videoSrc: PropTypes.oneOfType([PropTypes.arrayOf(PropTypes.element), PropTypes.element])
-      .isRequired,
-    className: PropTypes.string,
-    posterClassName: PropTypes.string,
-    videoClassName: PropTypes.string,
-  };
+export type VideoProps = {
+  videoSrc: Array<React.Element<any>> | React.Element<any>,
+  posterSrc: Array<React.Element<any>> | React.Element<any>,
+  className: ?any,
+  videoClassName: ?any,
+  posterClassName: ?any,
+}
 
-  constructor(props) {
+type State = {
+  isPlaying: boolean,
+}
+
+export default class VideoWithPoster extends React.Component<VideoProps, State> {
+  constructor(props: VideoProps) {
     super(props);
 
     this.state = {

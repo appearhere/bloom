@@ -1,31 +1,34 @@
-import PropTypes from 'prop-types';
-import React, { Component } from 'react';
+//@flow
+
+import * as React from 'react';
 import cx from 'classnames';
 
 import css from './Tabs.css';
 
-export default class Tab extends Component {
-  static propTypes = {
-    value: PropTypes.number,
-    selected: PropTypes.bool,
-    className: PropTypes.string,
-    children: PropTypes.node,
-    onClick: PropTypes.func,
-    onFocus: PropTypes.func,
-    onBlur: PropTypes.func,
-  };
+type Props = {
+  value: number,
+  selected: boolean,
+  className: string,
+  children: React.Node,
+  onClick: Function,
+  onFocus: Function,
+  onBlur: Function,
+}
 
-  handleClick = e => {
+export default class Tab extends React.Component<Props> {
+  component: any;
+
+  handleClick = (e: SyntheticEvent<>) => {
     const { onClick, value } = this.props;
     onClick(e, parseInt(value, 10));
   };
 
-  handleFocus = e => {
+  handleFocus = (e: SyntheticEvent<>) => {
     const { onFocus, value } = this.props;
     onFocus(e, parseInt(value, 10));
   };
 
-  handleBlur = e => {
+  handleBlur = (e: SyntheticEvent<>) => {
     const { onBlur, value } = this.props;
     onBlur(e, parseInt(value, 10));
   };

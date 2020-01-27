@@ -1,17 +1,22 @@
-import PropTypes from 'prop-types';
-import React, { Component } from 'react';
+// @flow
+
+import * as React from 'react';
 import cx from 'classnames';
 
 import css from './Scrubber.css';
 
-export default class Scrubber extends Component {
-  static propTypes = {
-    duration: PropTypes.number,
-    currentTime: PropTypes.number,
-    seek: PropTypes.func,
-  };
+type Props = {
+  currentTime: number,
+  duration: number,
+  seek: Function,
+}
 
-  constructor(props) {
+type State = {
+  focused: boolean
+}
+
+export default class Scrubber extends React.Component<Props, State> {
+  constructor(props: Props) {
     super(props);
 
     this.state = {
@@ -32,7 +37,7 @@ export default class Scrubber extends Component {
     this.setState({ focused: false });
   };
 
-  handleSeek = e => {
+  handleSeek = (e: Event) => {
     const { seek } = this.props;
     seek(e);
   };

@@ -1,4 +1,5 @@
-import PropTypes from 'prop-types';
+//TO DO: Add Flow
+
 import React, { Component } from 'react';
 /* eslint-disable camelcase */
 import {
@@ -31,28 +32,60 @@ import {
 
 import css from './MarkableMap.css';
 
-export default class MarkableMap extends Component {
-  static propTypes = {
-    markers: PropTypes.arrayOf(
-      PropTypes.shape({
-        id: PropTypes.oneOfType([PropTypes.string, PropTypes.number]).isRequired,
-        lngLat: lngLatType.isRequired,
-        label: PropTypes.string.isRequired,
-        props: PropTypes.object,
-      }),
-    ),
-    metaMarkers: PropTypes.array,
-    colorStops: PropTypes.arrayOf(PropTypes.array),
-    intensity: PropTypes.number,
-    spread: PropTypes.number,
-    cellDensity: PropTypes.number,
-    MarkerComponent: PropTypes.func.isRequired,
-    GroupMarkerComponent: PropTypes.func.isRequired,
-    autoFit: PropTypes.bool,
-    highlightedId: PropTypes.oneOfType([PropTypes.string, PropTypes.number]),
-    onMarkerClick: PropTypes.func,
-    animateFitBounds: PropTypes.bool,
-  };
+type Geometry = {
+  coordinates: Array<any>
+}
+
+type Property = {
+  cluster: Array<any>,
+  id: string,
+  point_count: string
+}
+
+type Marker = {
+  id: string | number,
+  lngLat: lngLatType.isRequired,
+  label: string,
+  props: Array<any>,
+  geometry: Geometry,
+  properties: Property,
+}
+
+type MetaMarker = {
+  id: string,
+  label: string,
+}
+
+type Props = {
+  markers: Array<Marker>,
+  metaMarkers: Array<MetaMarker>,
+  colorStops: Array<any>,
+  intensity: number,
+  spread: number,
+  cellDensity: number,
+  MarkerComponent: Function,
+  GroupMarkerComponent: Function,
+  autoFit: boolean,
+  highlightedId:string | number,
+  onMarkerClick: Function,
+  animateFitBounds: boolean,
+}
+
+type ActiveFeature = {
+  properties: Property,
+  id: number | string,
+  geometry: Geometry,
+}
+
+type State = {
+  activeFeature: ?ActiveFeature
+}
+
+export default class MarkableMap extends Component<Props, State> {
+  id: string;
+  map: any;
+  mapboxMarkerSource: any;
+  activeMarker: any;
 
   static defaultProps = {
     markers: [],
@@ -61,7 +94,7 @@ export default class MarkableMap extends Component {
     animateFitBounds: true,
   };
 
-  constructor(props) {
+  constructor(props: Props) {
     super(props);
     this.id = uniqueId('map_');
   }
@@ -76,7 +109,7 @@ export default class MarkableMap extends Component {
     if (autoFit) this.fitMarkers(markers);
   }
 
-  componentDidUpdate(prevProps, prevState) {
+  componentDidUpdate(prevProps: Props, prevState: State) {
     const { markers: prevMarkers, metaMarkers: prevMetaMarkers } = prevProps;
     const { activeFeature: prevActiveFeature } = prevState;
     const { markers, autoFit, metaMarkers } = this.props;
@@ -114,7 +147,7 @@ export default class MarkableMap extends Component {
     const { markers } = this.props;
     const { activeFeature } = this.state;
 
-    if (activeFeature.properties.cluster) {
+    if (activeFeature && activeFeature.properties.cluster) {
       return activeFeature;
     }
 
@@ -125,7 +158,7 @@ export default class MarkableMap extends Component {
     return undefined;
   };
 
-  setCenter = center => {
+  setCenter = (center: lngLat) => {
     this.map.setCenter(center);
   };
 
@@ -256,7 +289,7 @@ export default class MarkableMap extends Component {
     });
   };
 
-  updateMetaMarkerSource = prevMetaMarkers => {
+  updateMetaMarkerSource = (prevMetaMarkers: Array<MetaMarker>) => {
     const { metaMarkers } = this.props;
     const mapbox = this.getMapboxGL();
 
@@ -297,7 +330,7 @@ export default class MarkableMap extends Component {
     });
   };
 
-  handleMapClick = e => {
+  handleMapClick = (e: any) => {
     const { originalEvent, point } = e;
     if (originalEvent.target !== this.getMapboxGL().getCanvas()) return;
 
@@ -313,14 +346,14 @@ export default class MarkableMap extends Component {
     }
   };
 
-  handleMarkerClick = marker => {
+  handleMarkerClick = (marker: Marker) => {
     if (this.props.onMarkerClick) {
       this.props.onMarkerClick(marker);
     }
     this.setState({ activeFeature: marker });
   };
 
-  handleClusterClick = cluster => {
+  handleClusterClick = (cluster: ActiveFeature) => {
     const map = this.map;
 
     const unbreakableCluster = cluster => {
@@ -342,7 +375,7 @@ export default class MarkableMap extends Component {
     });
   };
 
-  fitMarkers = markers => {
+  fitMarkers = (markers: Array<Marker>) => {
     if (!markers.length) return;
 
     this.map.fitBounds(minLngLatBounds(markers.map(marker => marker.lngLat)), {
@@ -352,7 +385,7 @@ export default class MarkableMap extends Component {
     });
   };
 
-  easeTo = lngLat => {
+  easeTo = (lngLat: lngLatType) => {
     const [lng, lat] = lngLat;
     const zoom = this.getMapboxGL().getZoom();
 
@@ -371,7 +404,7 @@ export default class MarkableMap extends Component {
     this.activeMarker = null;
   };
 
-  markerPopupElement = lngLat => {
+  markerPopupElement = (lngLat: lngLatType) => {
     if (!this.activeMarker) {
       this.activeMarker = new mapboxgl.Marker().setLngLat(lngLat).addTo(this.getMapboxGL());
     } else {
@@ -391,7 +424,7 @@ export default class MarkableMap extends Component {
     this.map.zoomOut();
   };
 
-  renderMarkerPopup = activeFeature => {
+  renderMarkerPopup = (activeFeature: ActiveFeature) => {
     const { MarkerComponent, GroupMarkerComponent, markers } = this.props;
     const lngLat = activeFeature.geometry.coordinates;
 
@@ -440,7 +473,7 @@ export default class MarkableMap extends Component {
           this.map = c;
         }}
         onMapLoad={this.handleMapLoad}
-        {...rest}
+        {...(rest: any)}
         onClick={this.handleMapClick}
       />
     );

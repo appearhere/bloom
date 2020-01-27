@@ -1,18 +1,19 @@
-import PropTypes from 'prop-types';
-import React, { Component } from 'react';
+//@flow
+import * as React from 'react';
 import cx from 'classnames';
 
 import css from './Star.css';
 import Icon from '../../Icon/Icon';
 import Radio from '../Radio/Radio';
 
-export default class Star extends Component {
-  static propTypes = {
-    name: PropTypes.string.isRequired,
-    value: PropTypes.oneOfType([PropTypes.string, PropTypes.number]).isRequired,
-    className: PropTypes.string,
-    iconClassName: PropTypes.string,
-  };
+type Props = {
+  name: string,
+  value: string | number,
+  className: string,
+  iconClassName: string,
+}
+export default class Star extends React.Component<Props> {
+  component: any;
 
   focus = () => {
     this.component.focus();
@@ -27,7 +28,7 @@ export default class Star extends Component {
 
     return (
       <Radio
-        {...rest}
+        {...(rest: any)}
         name={name}
         value={value}
         className={cx(css.root, className)}

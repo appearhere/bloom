@@ -1,6 +1,8 @@
+//@flow
+
 const TRACK_FLOOR = 2;
 
-const getPaginationTrack = (currentPage, totalPages, minimumTrackLength = 3) => {
+const getPaginationTrack = (currentPage: number, totalPages: number, minimumTrackLength: number = 3) => {
   const arr = [];
   let startPoint;
   let trackLength = minimumTrackLength;

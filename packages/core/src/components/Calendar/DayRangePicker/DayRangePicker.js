@@ -1,5 +1,5 @@
-import PropTypes from 'prop-types';
-import React, { Component } from 'react';
+//@flow
+import * as React from 'react';
 import keyMirror from 'key-mirror';
 import momentPropTypes from 'react-moment-proptypes';
 
@@ -12,7 +12,11 @@ export const SELECT_DATE = keyMirror({
   END: null,
 });
 
-export const dayInRange = (day, startDate, endDate) => {
+export const dayInRange = (
+  day: momentPropTypes.momentObj,
+  startDate: momentPropTypes.momentObj,
+  endDate: momentPropTypes.momentObj,
+) => {
   if (!day) return false;
 
   const isEqualToStart = day.isSame(startDate, 'day');
@@ -32,16 +36,20 @@ export const dayInRange = (day, startDate, endDate) => {
 
 const defaultIsDisabledDay = () => false;
 
-export default class DayRangePicker extends Component {
-  static propTypes = {
-    startDate: momentPropTypes.momentObj,
-    endDate: momentPropTypes.momentObj,
-    selectDate: PropTypes.oneOf([SELECT_DATE.START, SELECT_DATE.END]),
-    onInteraction: PropTypes.func,
-    onMonthChange: PropTypes.func,
-    isDisabled: PropTypes.func,
-  };
+type Props = {
+  startDate: momentPropTypes.momentObj,
+  endDate: momentPropTypes.momentObj,
+  selectDate: SELECT_DATE.START | SELECT_DATE.END,
+  onInteraction: Function,
+  onMonthChange: Function,
+  isDisabled: Function,
+};
 
+type State = {
+  endHighlight: momentPropTypes.momentObj,
+};
+
+export default class DayRangePicker extends React.Component<Props, State> {
   static defaultProps = {
     startDate: null,
     endDate: null,
@@ -55,7 +63,7 @@ export default class DayRangePicker extends Component {
     endHighlight: null,
   };
 
-  getDayState = day => {
+  getDayState = (day: momentPropTypes.momentObj) => {
     const { startDate, endDate, isDisabled } = this.props;
     const { endHighlight } = this.state;
 
@@ -74,7 +82,7 @@ export default class DayRangePicker extends Component {
     };
   };
 
-  handleInteraction = (e, date) => {
+  handleInteraction = (e: SyntheticKeyboardEvent<>, date: momentPropTypes.momentObj) => {
     const { startDate, endDate, selectDate, onInteraction } = this.props;
 
     if (selectDate === SELECT_DATE.START) {
@@ -95,7 +103,7 @@ export default class DayRangePicker extends Component {
     }
   };
 
-  handleHighlight = (e, date) => {
+  handleHighlight = (e: SyntheticKeyboardEvent<>, date: momentPropTypes.momentObj) => {
     this.setState((currentState, props) => {
       if (props.startDate && props.endDate) {
         return {
@@ -117,7 +125,7 @@ export default class DayRangePicker extends Component {
 
     return (
       <DayPicker
-        {...rest}
+        {...(rest: any)}
         dayProps={{
           getDayState: this.getDayState,
           onHighlight: this.handleHighlight,

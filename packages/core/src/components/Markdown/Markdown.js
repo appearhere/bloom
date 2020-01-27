@@ -1,4 +1,5 @@
-import PropTypes from 'prop-types';
+//@flow
+
 import React, { Component } from 'react';
 import CommonMark from 'commonmark';
 import ReactRenderer from 'commonmark-react-renderer';
@@ -9,13 +10,14 @@ import css from './Markdown.css';
 const parser = new CommonMark.Parser();
 const renderer = new ReactRenderer();
 
-export default class Markdown extends Component {
-  static propTypes = {
-    children: PropTypes.string.isRequired,
-    className: PropTypes.string,
-    overrideClassname: PropTypes.bool,
-  };
+type Props = {
+  children: string,
+  className: string,
+  overrideClassname: boolean,
+  targetBlank: Boolean,
+}
 
+export default class Markdown extends Component<Props> {
   static defaultProps = {
     overrideClassname: false,
   };

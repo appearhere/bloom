@@ -1,25 +1,27 @@
-import PropTypes from 'prop-types';
-import React from 'react';
+//@flow
+import * as React from 'react';
 
 import mergeObjectStrings from '../../utils/mergeObjectStrings/mergeObjectStrings';
 import InputField from '../Form/InputField/InputField';
 import css from './FunnelInputField.css';
 
-const FunnelInputField = ({ classNames, ...rest }) => {
+type Classnames = {
+  root: string,
+  meta: string,
+  label: string,
+  valueReplay: string,
+  placeholder: string,
+  description: string,
+}
+
+type Props = {
+  classNames: Classnames,
+}
+
+const FunnelInputField = ({ classNames, ...rest }: Props) => {
   const classes = mergeObjectStrings(css, classNames);
 
-  return <InputField {...rest} classNames={classes} />;
-};
-
-FunnelInputField.propTypes = {
-  classNames: PropTypes.shape({
-    root: PropTypes.string,
-    meta: PropTypes.string,
-    label: PropTypes.string,
-    valueReplay: PropTypes.string,
-    placeholder: PropTypes.string,
-    description: PropTypes.string,
-  }),
+  return <InputField {...(rest: any)} classNames={classes} />;
 };
 
 FunnelInputField.defaultProps = {

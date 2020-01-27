@@ -1,5 +1,6 @@
-import PropTypes from 'prop-types';
-import React, { Component, Children, cloneElement } from 'react';
+//@flow
+
+import * as React from 'react';
 import uniqueId from 'lodash/fp/uniqueId';
 import cx from 'classnames';
 
@@ -11,17 +12,24 @@ import css from './Tabs.css';
  * Taken heavy influence from http://codepen.io/svinkle/pen/edmDF?editors=0010
  * for a11y
  */
-export default class Tabs extends Component {
-  static propTypes = {
-    accessibilityDescription: PropTypes.string,
-    children: PropTypes.node,
-  };
+type Props = {
+  accessibilityDescription: string,
+  children: React.Node,
+}
+
+type State = {
+  activeTabIndex: number,
+  focusedTabIndex: ?number,
+}
+
+export default class Tabs extends React.Component<Props, State> {
+  id: any;
 
   static defaultProps = {
     accessibilityDescription: 'Use left and right arrows to navigate between tabs.',
   };
 
-  constructor(props) {
+  constructor(props: Props) {
     super(props);
 
     this.id = uniqueId('tabs_');
@@ -34,7 +42,7 @@ export default class Tabs extends Component {
 
   tabs = {};
 
-  updateTabIndexes = i => {
+  updateTabIndexes = (i: number) => {
     this.setState({
       activeTabIndex: i,
       focusedTabIndex: i,
@@ -43,11 +51,11 @@ export default class Tabs extends Component {
     this.tabs[i].focus();
   };
 
-  handleClick = (e, i) => {
+  handleClick = (e: SyntheticEvent<>, i: number) => {
     this.updateTabIndexes(i);
   };
 
-  handleFocus = (e, i) => {
+  handleFocus = (e: SyntheticEvent<>, i: number) => {
     this.setState({ focusedTabIndex: i });
   };
 
@@ -55,10 +63,10 @@ export default class Tabs extends Component {
     this.setState({ focusedTabIndex: null });
   };
 
-  handleKeyDown = e => {
+  handleKeyDown = (e: KeyboardEvent) => {
     const { activeTabIndex } = this.state;
     const { children } = this.props;
-    const i = keyboardHandler(e.which, activeTabIndex, Children.count(children));
+    const i = keyboardHandler(e.which, activeTabIndex, React.Children.count(children));
 
     if (i > -1) {
       e.preventDefault();
@@ -78,10 +86,10 @@ export default class Tabs extends Component {
           <span id={`${this.id}-description`}>{accessibilityDescription}</span>
         </ScreenReadable>
         <div className={css.tabsContainer}>
-          {Children.map(children, (child, i) => {
+          {React.Children.map(children, (child, i) => {
             const id = `${this.id}-${i}-tab`;
 
-            return cloneElement(
+            return React.cloneElement(
               child,
               {
                 ref: c => {
@@ -104,7 +112,7 @@ export default class Tabs extends Component {
           })}
         </div>
         <div className={css.tabsContent}>
-          {Children.map(children, (child, i) => {
+          {React.Children.map(children, (child, i) => {
             const id = `${this.id}-${i}-panel`;
             const classes = cx(css.tabContent, activeTabIndex === i ? css.tabContentActive : null);
 

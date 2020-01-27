@@ -1,16 +1,17 @@
-import PropTypes from 'prop-types';
-import React from 'react';
+//@flow
+
+import * as React from 'react';
 
 import css from './ScreenReadable.css';
 
-const ScreenReadable = ({ children, ...rest }) => (
-  <span className={css.root} {...rest}>
+type Props = {
+  children: string | Array<any> | React.Element<any> | number,
+}
+
+const ScreenReadable = ({ children, ...rest }: Props) => (
+  <span className={css.root} {...(rest: any)}>
     {children}
   </span>
 );
-
-ScreenReadable.propTypes = {
-  children: PropTypes.node.isRequired,
-};
 
 export default ScreenReadable;

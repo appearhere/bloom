@@ -1,12 +1,25 @@
-import PropTypes from 'prop-types';
-import React from 'react';
+//@flow
+import * as React from 'react';
 import cx from 'classnames';
 
 import PictureCard from '../PictureCard/PictureCard';
 
 import css from './PlaceListingCard.css';
 
-const PlaceListingCard = props => {
+type Props = {
+  imageSrc: string,
+  href: string,
+  priceFromLabel: string,
+  className?: string,
+  price: React.Node,
+  priceUnit: React.Node,
+  name: React.Node,
+  location: React.Node,
+  spaceDetail: React.Node,
+  onClick: Function,
+};
+
+const PlaceListingCard = (props: Props) => {
   const {
     imageSrc,
     href,
@@ -25,7 +38,7 @@ const PlaceListingCard = props => {
 
   return (
     <PictureCard
-      {...rest}
+      {...(rest: any)}
       href={href}
       onClick={onClick}
       className={cx(css.root, className)}
@@ -62,19 +75,6 @@ const PlaceListingCard = props => {
       </div>
     </PictureCard>
   );
-};
-
-PlaceListingCard.propTypes = {
-  imageSrc: PropTypes.string.isRequired,
-  href: PropTypes.string,
-  priceFromLabel: PropTypes.string,
-  className: PropTypes.string,
-  price: PropTypes.node,
-  priceUnit: PropTypes.node,
-  name: PropTypes.node,
-  location: PropTypes.node,
-  spaceDetail: PropTypes.node,
-  onClick: PropTypes.func,
 };
 
 PlaceListingCard.defaultProps = {

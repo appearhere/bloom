@@ -1,15 +1,31 @@
-import React, { createContext, useContext, useState, useEffect } from 'react'
+//@flow
+
+import * as React from 'react'
+import { createContext, useContext, useState, useEffect } from 'react';
 import { subscribe } from 'subscribe-ui-event';
 import ExecutionEnvironment from 'exenv';
 
-export const WindowDimensionsCtx = createContext(null);
+type Props = {
+  children: React.Element<any>,
+}
+
+type Dimensions = {
+  height: number,
+  width: number,
+}
+
+type State = {
+  dimensions?: Dimensions
+}
+
+export const WindowDimensionsCtx: Object = React.createContext(null);
 
 const windowDims = () => ({
   height: window.innerHeight,
   width: window.innerWidth,
 });
 
-const WindowDimensionsProvider = ({ children }) => {
+const WindowDimensionsProvider = ({ children }: Props) => {
   if (!ExecutionEnvironment.canUseDOM) {
     return null;
   }

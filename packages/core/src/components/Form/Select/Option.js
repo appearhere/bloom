@@ -1,16 +1,15 @@
-import PropTypes from 'prop-types';
-import React from 'react';
+//@flow
+import * as React from 'react';
 
-const Option = ({ selected, value, children, ...rest }) => (
-  <option selected={selected} value={value} {...rest}>
+type Props = {
+  selected: boolean,
+  children: React.Node,
+  value: string | number,
+}
+const Option = ({ selected, value, children, ...rest }: Props) => (
+  <option selected={selected} value={value} {...(rest: any)}>
     {children}
   </option>
 );
-
-Option.propTypes = {
-  selected: PropTypes.bool,
-  children: PropTypes.node,
-  value: PropTypes.oneOfType([PropTypes.string, PropTypes.number]),
-};
 
 export default Option;

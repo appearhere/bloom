@@ -1,27 +1,28 @@
-import PropTypes from 'prop-types';
-import React, { createElement } from 'react';
+//@flow
+
+import * as React from 'react';
 import cx from 'classnames';
 
 import css from './Synopsis.css';
 
+type Props = {
+  title: React.Node,
+  children: React.Node,
+  className: string,
+  level: number,
+}
+
 const bodyClasses = cx(css.base, css.body);
 
-const Synopsis = ({ title, children, className, level, ...rest }) => {
+const Synopsis = ({ title, children, className, level, ...rest }: Props) => {
   const titleClasses = cx(css.base, css.title);
 
   return (
-    <div className={className} {...rest}>
-      {createElement(`h${level}`, { className: titleClasses, ...rest }, title)}
+    <div className={className} {...(rest: any)}>
+      {React.createElement(`h${level}`, { className: titleClasses, ...(rest: any) }, title)}
       <div className={bodyClasses}>{children}</div>
     </div>
   );
-};
-
-Synopsis.propTypes = {
-  title: PropTypes.node.isRequired,
-  children: PropTypes.node.isRequired,
-  className: PropTypes.string,
-  level: PropTypes.number,
 };
 
 Synopsis.defaultProps = {

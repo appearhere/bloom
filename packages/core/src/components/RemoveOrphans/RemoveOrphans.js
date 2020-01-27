@@ -1,15 +1,16 @@
-import PropTypes from 'prop-types';
+//@flow
+
 import React from 'react';
 import ReactDOM from 'react-dom';
 
-const RemoveOrphans = ({ text }) => {
+type Props = {
+  text: string,
+}
+
+const RemoveOrphans = ({ text }: Props) => {
   return (<span
     dangerouslySetInnerHTML={{ __html: text.replace(/ ([^ ]*)$/,'&nbsp;$1') }}
   />);
-};
-
-RemoveOrphans.propTypes = {
-  text: PropTypes.string.isRequired,
 };
 
 export default RemoveOrphans;

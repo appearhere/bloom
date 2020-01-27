@@ -1,5 +1,5 @@
-import PropTypes from 'prop-types';
-import React, { Component } from 'react';
+//@flow
+import * as React from 'react';
 import { CSSTransitionGroup } from 'react-transition-group';
 import cx from 'classnames';
 
@@ -7,20 +7,24 @@ import getRandomInt from '../../utils/getRandomInt';
 import css from './GridFader.css';
 import transitions from './Animation.css';
 
-export default class GridFader extends Component {
-  static propTypes = {
-    grid: PropTypes.arrayOf(
-      PropTypes.shape({
-        /* eslint-disable react/no-unused-prop-types */
-        key: PropTypes.oneOfType([PropTypes.string, PropTypes.number]).isRequired,
-        /* eslint-enable react/no-unused-prop-types */
-      }),
-    ).isRequired,
-    GridItemComponent: PropTypes.oneOfType([PropTypes.string, PropTypes.func]),
-    columnClass: PropTypes.string,
-    limit: PropTypes.number,
-    swapInterval: PropTypes.number,
-  };
+type Grid = {
+  key: string | number,
+}
+
+type Props = {
+  grid: Array<Grid>,
+  GridItemComponent: string | Function,
+  columnClass: string,
+  limit: number,
+  swapInterval: number,
+}
+
+type State = {
+  grid: Array<any>,
+  queue: Array<any>,
+}
+export default class GridFader extends React.Component<Props, State> {
+  interval: any
 
   static defaultProps = {
     grid: [],
@@ -29,25 +33,17 @@ export default class GridFader extends Component {
     swapInterval: 2100,
   };
 
-  constructor(props) {
-    super(props);
-
-    const { grid, limit } = props;
-
-    this.state = {
-      grid: grid.slice(0, limit),
-      queue: grid.slice(limit, grid.length),
+    state = {
+      grid: this.props.grid.slice(0, this.props.limit),
+      queue: this.props.grid.slice(this.props.limit, this.props.grid.length),
     };
-
-    this.updateQueue = this.updateQueue.bind(this);
-  }
 
   componentDidMount() {
     const { swapInterval } = this.props;
     this.interval = setInterval(this.updateQueue, swapInterval);
   }
 
-  componentWillReceiveProps(props) {
+  componentWillReceiveProps(props: Props) {
     const { grid, limit } = props;
 
     this.setState({
@@ -60,7 +56,7 @@ export default class GridFader extends Component {
     clearInterval(this.interval);
   }
 
-  updateQueue() {
+  updateQueue = (): void => {
     const { limit } = this.props;
     // clone the grid and queue so we can use mutative methods
     const grid = [...this.state.grid];

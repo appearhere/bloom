@@ -1,16 +1,38 @@
-import PropTypes from 'prop-types';
-import React from 'react';
+//@flow
+import * as React from 'react';
 import cx from 'classnames';
 
 import css from './PictureCard.css';
 import Card from '../Card/Card';
 
-const PictureCard = props => {
-  const { src, href, children, className, center, bottom, style, overlayClassName, ...rest } = props;
+type Props = {
+  src?: string,
+  href?: string,
+  children: React.Node,
+  className?: string,
+  innerClassName?: string,
+  center?: boolean,
+  bottom?: boolean,
+  style?: Object,
+  overlayClassName?: string,
+};
+
+const PictureCard = (props: Props) => {
+  const {
+    src,
+    href,
+    children,
+    className,
+    center,
+    bottom,
+    style,
+    overlayClassName,
+    ...rest
+  } = props;
 
   return (
     <Card
-      {...rest}
+      {...(rest: any)}
       href={href}
       className={cx(
         css.root,
@@ -21,25 +43,13 @@ const PictureCard = props => {
       )}
       style={{
         ...style,
-        backgroundImage: `url(${src})`,
+        backgroundImage: src && `url(${src})`,
       }}
     >
       <div className={cx(css.overlay, overlayClassName)} />
       <div className={css.inner}>{children}</div>
     </Card>
   );
-};
-
-PictureCard.propTypes = {
-  src: PropTypes.string.isRequired,
-  href: PropTypes.string,
-  children: PropTypes.node,
-  className: PropTypes.string,
-  innerClassName: PropTypes.string,
-  center: PropTypes.bool,
-  bottom: PropTypes.bool,
-  style: PropTypes.object,
-  overlayClassName: PropTypes.string,
 };
 
 export default PictureCard;

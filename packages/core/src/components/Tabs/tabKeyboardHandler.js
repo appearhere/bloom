@@ -1,6 +1,8 @@
+//@flow
+
 import getValidIndex from '../../utils/getValidIndex/getValidIndex';
 
-const tabKeyboardHandler = (keyCode, currentIndex, tabsLength) => {
+const tabKeyboardHandler = (keyCode: number, currentIndex: number, tabsLength: number) => {
   switch (keyCode) {
     // Left/Up
     case 37:

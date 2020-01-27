@@ -96,6 +96,7 @@
   "jest": {
     "displayName": "bloom",
     "testEnvironment": "jsdom",
+    "testURL": "http://localhost/",
     "moduleNameMapper": {
       "\\.(svg)$": "<rootDir>../../__mocks__/fileMock.js",
       "\\.(css)$": "<rootDir>../../__mocks__/cssMock.js"
