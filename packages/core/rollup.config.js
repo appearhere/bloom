@@ -123,7 +123,6 @@ export default {
     'react-container-query',
     'react-dom',
     'react-html5video',
-    'react-markdown',
     'react-moment-proptypes',
     'react-motion',
     'react-on-visible',
