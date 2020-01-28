@@ -19,7 +19,7 @@
     "build-storybook": "cd packages/playground && yarn run build-storybook",
     "deploy-storybook": "cd packages/playground && yarn run deploy",
     "styleguide": "cd packages/styleguide && yarn start",
-    "test": "jest --projects packages/*",
+    "test": "jest --projects packages/core",
     "bump": "lerna publish --exact --skip-npm --since \"v$(npm info @appearhere/bloom version)\"",
     "test:travis": "yarn test --coverage --maxWorkers=4",
     "now-build": "yarn build && yarn build-storybook"
