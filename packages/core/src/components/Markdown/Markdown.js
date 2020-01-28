@@ -1,35 +1,35 @@
 import PropTypes from 'prop-types';
 import React, { Component } from 'react';
-import CommonMark from 'commonmark';
-import ReactRenderer from 'commonmark-react-renderer';
 import cx from 'classnames';
+import ReactMarkdown from 'react-markdown';
 
 import css from './Markdown.css';
-
-const parser = new CommonMark.Parser();
-const renderer = new ReactRenderer();
 
 export default class Markdown extends Component {
   static propTypes = {
     children: PropTypes.string.isRequired,
     className: PropTypes.string,
     overrideClassname: PropTypes.bool,
+    targetBlank: PropTypes.bool,
   };
 
   static defaultProps = {
     overrideClassname: false,
+    targetBlank: false,
   };
 
   render() {
-    const { children, className, overrideClassname, ...rest } = this.props;
-
-    const ast = parser.parse(children);
+    const { children, className, overrideClassname, targetBlank, ...rest } = this.props;
 
     const props = {
       className: overrideClassname ? className : cx(css.root, className),
       ...rest,
     };
 
-    return React.createElement('div', props, renderer.render(ast));
+    return React.createElement(
+      'div',
+      props,
+      <ReactMarkdown source={children} linkTarget={targetBlank ? "_blank" : "_self"} />
+    );
   }
 }
