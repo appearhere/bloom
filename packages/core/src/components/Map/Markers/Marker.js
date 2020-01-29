@@ -1,21 +1,22 @@
-import PropTypes from 'prop-types';
-import React from 'react';
+// @flow
+
+import * as React from 'react';
 import cx from 'classnames';
 
 import css from './Marker.css';
 
-const Marker = ({ className, scrollClassName, children, variant }) => (
+type Props = {
+  className?: string,
+  children: React.Node,
+  scrollClassName?: string,
+  variant: 'light' | 'dark',
+}
+
+const Marker = ({ className, scrollClassName, children, variant }: Props) => (
   <div className={cx(css.root, css[variant], className)}>
     <div className={cx(css.scrollContainer, scrollClassName)}>{children}</div>
   </div>
 );
-
-Marker.propTypes = {
-  className: PropTypes.string,
-  children: PropTypes.node.isRequired,
-  scrollClassName: PropTypes.string,
-  variant: PropTypes.oneOf(['light', 'dark']),
-};
 
 Marker.defaultProps = {
   variant: 'light',
