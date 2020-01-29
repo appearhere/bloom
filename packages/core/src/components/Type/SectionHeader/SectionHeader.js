@@ -1,10 +1,24 @@
-import PropTypes from 'prop-types';
-import React, { createElement } from 'react';
+// @flow
+
+import * as React from 'react';
 import classnames from 'classnames';
 
 import defaultCss from './SectionHeader.css';
 
-const SectionHeader = props => {
+type Css = {
+  title: string,
+  strapline: string,
+}
+
+type Props = {
+  className?: string,
+  title: React.Node,
+  strapline: React.Node,
+  level: number,
+  css: Css
+}
+
+const SectionHeader = (props: Props) => {
   const { title, strapline, className, level, css, ...rest } = props;
 
   const titleClasses = classnames(
@@ -18,18 +32,7 @@ const SectionHeader = props => {
   const titleEl = <span className={titleClasses}>{title}</span>;
   const straplineEl = strapline && <span className={straplineClasses}>{strapline}</span>;
 
-  return createElement(`h${level}`, { className, ...rest }, titleEl, straplineEl);
-};
-
-SectionHeader.propTypes = {
-  className: PropTypes.string,
-  title: PropTypes.node.isRequired,
-  strapline: PropTypes.node,
-  level: PropTypes.number,
-  css: PropTypes.shape({
-    title: PropTypes.string,
-    strapline: PropTypes.string,
-  }),
+  return React.createElement(`h${level}`, { className, ...(rest: any) }, titleEl, straplineEl);
 };
 
 SectionHeader.defaultProps = {

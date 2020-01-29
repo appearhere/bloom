@@ -1,15 +1,21 @@
-import PropTypes from 'prop-types';
+// @flow
+
 import React from 'react';
 import cx from 'classnames';
 
 import defaultcss from './ValueIcon.css';
 import css from './ValueIconScissors.css';
 
-const ValueIconScissors = props => {
+
+type Props = {
+  className?: string,
+}
+
+const ValueIconScissors = (props: Props) => {
   const { className, ...rest } = props;
 
   return (
-    <span className={cx(defaultcss.root, className)} {...rest}>
+    <span className={cx(defaultcss.root, className)} {...(rest: any)}>
       <svg viewBox="0 0 63.06 42">
         <rect
           x="16.28"
@@ -52,10 +58,6 @@ const ValueIconScissors = props => {
       </svg>
     </span>
   );
-};
-
-ValueIconScissors.propTypes = {
-  className: PropTypes.string,
 };
 
 export default ValueIconScissors;

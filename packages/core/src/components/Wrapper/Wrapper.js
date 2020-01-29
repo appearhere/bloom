@@ -1,16 +1,17 @@
-import PropTypes from 'prop-types';
-import React from 'react';
+// @flow
+
+import * as React from 'react';
 import cx from 'classnames';
 
 import css from './Wrapper.css';
 
-const Wrapper = ({ children, className }) => (
+type Props = {
+  children: React.Element<any>,
+  className: string,
+}
+
+const Wrapper = ({ children, className }: Props) => (
   <div className={cx(css.root, className)}>{children}</div>
 );
-
-Wrapper.propTypes = {
-  children: PropTypes.node,
-  className: PropTypes.string,
-};
 
 export default Wrapper;
