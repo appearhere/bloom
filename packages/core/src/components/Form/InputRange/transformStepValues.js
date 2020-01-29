@@ -1,8 +1,20 @@
-import PropTypes from 'prop-types';
+// @flow
 import React, { Component } from 'react';
 import noop from '../../../utils/noop';
 
-export const getDomainValue = (rawValue, steps) => {
+type MinMax = {
+  min: number,
+  max: number,
+}
+type Props = {
+  onChange: Function,
+  onChangeComplete: Function,
+  value: number | MinMax,
+  maxValue: number,
+  minValue: number,
+}
+
+export const getDomainValue = (rawValue: number, steps: Array<number>) => {
   if (typeof rawValue === 'object') {
     return {
       min: steps[rawValue.min],
@@ -13,7 +25,7 @@ export const getDomainValue = (rawValue, steps) => {
   return steps[rawValue];
 };
 
-export const getRawValue = (domainValue, steps) => {
+export const getRawValue = (domainValue: Object, steps: Array<number>) => {
   if (typeof domainValue === 'object') {
     return {
       min: steps.indexOf(domainValue.min),
@@ -24,33 +36,21 @@ export const getRawValue = (domainValue, steps) => {
   return steps.indexOf(domainValue);
 };
 
-const transformStepValues = WrappedComponent => steps =>
-  class extends Component {
-    static propTypes = {
-      onChange: PropTypes.func,
-      onChangeComplete: PropTypes.func,
-      value: PropTypes.oneOfType([
-        PropTypes.number,
-        PropTypes.shape({
-          min: PropTypes.number,
-          max: PropTypes.number,
-        }),
-      ]),
-      maxValue: PropTypes.number,
-      minValue: PropTypes.number,
-    };
-
+const transformStepValues = (WrappedComponent: any) => (steps: Array<number>) =>
+  class extends Component<Props> {
+    component: ?HTMLDivElement;
+    
     static defaultProps = {
       onChange: noop,
       onChangeComplete: noop,
     };
 
-    handleChange = (e, name, rawValue) => {
+    handleChange = (e: SyntheticEvent<>, name: string, rawValue: number) => {
       const { onChange } = this.props;
       onChange(e, name, getDomainValue(rawValue, steps));
     };
 
-    handleChangeComplete = (e, name, rawValue) => {
+    handleChangeComplete = (e: SyntheticEvent<>, name: string, rawValue: number) => {
       const { onChangeComplete } = this.props;
       onChangeComplete(e, name, getDomainValue(rawValue, steps));
     };

@@ -1,5 +1,5 @@
-import PropTypes from 'prop-types';
-import React, { Component } from 'react';
+// @flow
+import * as React from 'react';
 import { CSSTransitionGroup } from 'react-transition-group';
 import cx from 'classnames';
 
@@ -8,35 +8,42 @@ import Icon from '../../Icon/Icon';
 import noop from '../../../utils/noop';
 import css from './Select.css';
 
-export default class Select extends Component {
-  static propTypes = {
-    onFocus: PropTypes.func,
-    onBlur: PropTypes.func,
-    onChange: PropTypes.func,
-    name: PropTypes.string,
-    id: PropTypes.string,
-    required: PropTypes.bool,
-    classNames: PropTypes.shape({
-      wrapper: PropTypes.string,
-      select: PropTypes.string,
-      high: PropTypes.string,
-      error: PropTypes.string,
-      post: PropTypes.string,
-      errorMsg: PropTypes.string,
-      enter: PropTypes.string,
-      enterActive: PropTypes.string,
-      appear: PropTypes.string,
-      appearActive: PropTypes.string,
-      leave: PropTypes.string,
-      leaveActive: PropTypes.string,
-    }),
-    hasError: PropTypes.bool,
-    multiple: PropTypes.bool,
-    children: PropTypes.node.isRequired,
-    value: PropTypes.oneOfType([PropTypes.string, PropTypes.array]),
-    error: PropTypes.string,
-    priority: PropTypes.oneOf(['high']),
-  };
+type Classnames = {
+  wrapper: string,
+  select: string,
+  high: string,
+  error: string,
+  post: string,
+  errorMsg: string,
+  enter: string,
+  enterActive: string,
+  appear: string,
+  appearActive: string,
+  leave: string,
+  leaveActive: string,
+}
+
+type Props = {
+  onFocus: Function,
+  onBlur: Function,
+  onChange: Function,
+  name: string,
+  id: string,
+  required: boolean,
+  classNames: Classnames,
+  hasError: boolean,
+  multiple: boolean,
+  children: React.Node,
+  value: string | Array<number>,
+  error: string,
+  priority: 'high',
+}
+
+type State = {
+  hasFocus: boolean,
+}
+export default class Select extends React.Component<Props, State> {
+  select: ?HTMLSelectElement;
 
   static defaultProps = {
     onChange: noop,
@@ -48,28 +55,29 @@ export default class Select extends Component {
     hasFocus: false,
   };
 
-  focus = () => {
-    this.select.focus();
+  focus = (): void => {
+    this.select && this.select.focus();
     this.handleFocus();
   };
 
-  blur = () => {
-    this.select.blur();
+  blur = (): void => {
+    this.select && this.select.blur();
     this.handleBlur();
   };
 
-  handleFocus = () => {
+  handleFocus = (): void => {
     const { onFocus } = this.props;
     this.setState({ hasFocus: true }, onFocus);
   };
 
-  handleBlur = () => {
+  handleBlur = (): void => {
     const { onBlur } = this.props;
     this.setState({ hasFocus: false }, onBlur);
   };
 
-  handleChange = e => {
+  handleChange = (e: SyntheticInputEvent<>) => {
     const { onChange, name, multiple } = this.props;
+    if (!this.select) return;
     const value = multiple
       ? [].filter.call(this.select.options, o => o.selected).map(o => o.value)
       : e.target.value;

@@ -1,5 +1,5 @@
-import PropTypes from 'prop-types';
-import React, { Component, cloneElement } from 'react';
+// @flow
+import * as React from 'react';
 
 import {
   Field,
@@ -11,27 +11,32 @@ import {
   InputWrapper,
 } from '../FormComponents';
 
-export default class InputField extends Component {
-  static propTypes = {
-    classNames: PropTypes.shape({
-      root: PropTypes.string,
-      meta: PropTypes.string,
-      label: PropTypes.string,
-      valueReplay: PropTypes.string,
-      description: PropTypes.string,
-    }),
-    Element: PropTypes.oneOfType([PropTypes.string, PropTypes.func]),
-    id: PropTypes.string.isRequired,
-    meta: PropTypes.node,
-    label: PropTypes.node,
-    description: PropTypes.node,
-    children: PropTypes.element,
-    error: PropTypes.node,
-    valueReplay: PropTypes.node,
-    placeholderValue: PropTypes.node,
-    required: PropTypes.bool,
-    optionalLabel: PropTypes.string,
-  };
+type Classnames = {
+  root: string,
+  meta: string,
+  label: string,
+  valueReplay: string,
+  description: string,
+  inputWrapper: string,
+};
+
+type Props = {
+  classNames: Classnames,
+  Element: string | Function,
+  id: string,
+  meta?: React.Node,
+  label: React.Node,
+  description?: React.Node,
+  children?: React.Element<any>,
+  error: React.Node,
+  valueReplay?: React.Node,
+  placeholderValue?: React.Node,
+  required?: boolean,
+  optionalLabel?: string,
+};
+
+export default class InputField extends React.Component<Props> {
+  input: ?HTMLInputElement;
 
   static defaultProps = {
     classNames: {},
@@ -70,16 +75,15 @@ export default class InputField extends Component {
           {...sharedProps}
           htmlFor={id}
           className={classNames.label}
-          optionalLabel={!required && optionalLabel}
+          optionalLabel={!required ? optionalLabel : undefined}
         >
           {label}
         </Label>
-        {!valueReplay &&
-          placeholderValue && (
-            <Placeholder {...sharedProps} className={classNames.valueReplay}>
-              {placeholderValue}
-            </Placeholder>
-          )}
+        {!valueReplay && placeholderValue && (
+          <Placeholder {...sharedProps} className={classNames.valueReplay}>
+            {placeholderValue}
+          </Placeholder>
+        )}
         {valueReplay && (
           <Value {...sharedProps} className={classNames.valueReplay}>
             {valueReplay}
@@ -92,7 +96,7 @@ export default class InputField extends Component {
         )}
         {children && (
           <InputWrapper {...sharedProps} className={classNames.inputWrapper}>
-            {cloneElement(children, {
+            {React.cloneElement(children, {
               ...rest,
               ...sharedProps,
               ref: c => {
