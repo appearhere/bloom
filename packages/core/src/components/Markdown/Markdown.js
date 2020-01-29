@@ -1,35 +1,33 @@
-import PropTypes from 'prop-types';
-import React, { Component } from 'react';
+// @flow
+import React from 'react';
 import CommonMark from 'commonmark';
 import ReactRenderer from 'commonmark-react-renderer';
 import cx from 'classnames';
 
 import css from './Markdown.css';
 
-const parser = new CommonMark.Parser();
-const renderer = new ReactRenderer();
+type Props = {
+  children: string,
+  className?: string,
+  overrideClassname?: boolean,
+  linkTarget: '_self' | '_blank',
+  escapeHtml?: boolean,
+};
 
-export default class Markdown extends Component {
-  static propTypes = {
-    children: PropTypes.string.isRequired,
-    className: PropTypes.string,
-    overrideClassname: PropTypes.bool,
+const Markdown = ({ children, className, overrideClassname = false, linkTarget = '_self', escapeHtml = false, ...rest }: Props) => {
+  const parser = new CommonMark.Parser();
+  const renderer = new ReactRenderer({
+    linkTarget: linkTarget,
+    escapeHtml: escapeHtml,
+  });
+  const ast = parser.parse(children);
+
+  const props = {
+    className: overrideClassname ? className : cx(css.root, className),
+    ...rest,
   };
 
-  static defaultProps = {
-    overrideClassname: false,
-  };
-
-  render() {
-    const { children, className, overrideClassname, ...rest } = this.props;
-
-    const ast = parser.parse(children);
-
-    const props = {
-      className: overrideClassname ? className : cx(css.root, className),
-      ...rest,
-    };
-
-    return React.createElement('div', props, renderer.render(ast));
-  }
+  return React.createElement('div', props, renderer.render(ast));
 }
+
+export default Markdown;
