@@ -1,22 +1,23 @@
-import PropTypes from 'prop-types';
-import React, { Component } from 'react';
+// @flow
+
+import * as React from 'react';
 import cx from 'classnames';
 
 import css from './Pagination.css';
 import { PreviousLink, NextLink } from './PaginationLink';
 
-export default class Pagination extends Component {
-  static propTypes = {
-    currentPage: PropTypes.number.isRequired,
-    totalPages: PropTypes.number.isRequired,
-    children: PropTypes.node,
-    PreviousComponent: PropTypes.func,
-    NextComponent: PropTypes.func,
-    className: PropTypes.string,
-    showPrevNext: PropTypes.bool,
-    arrowProps: PropTypes.object,
-  };
+type Props = {
+  currentPage: number,
+  totalPages: number,
+  children: React.Node,
+  PreviousComponent: Function,
+  NextComponent: Function,
+  className?: string,
+  showPrevNext: boolean,
+  arrowProps: Object,
+}
 
+export default class Pagination extends React.Component<Props> {
   static defaultProps = {
     NextComponent: NextLink,
     PreviousComponent: PreviousLink,

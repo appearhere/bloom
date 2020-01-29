@@ -1,13 +1,32 @@
-import PropTypes from 'prop-types';
-import React, { createElement } from 'react';
+// @flow
+import * as React from 'react';
 import cx from 'classnames';
 
 import FittedImage from '../FittedImage/FittedImage';
 import VideoWithRichPoster from '../VideoWithRichPoster/VideoWithRichPoster';
 
 import defaultCss from './SquareHero.css';
+import ImageType from '../../utils/propTypeValidations/image';
+import type { VideoProps } from '../VideoWithRichPoster/VideoWithRichPoster'; 
 
-const SquareHero = props => {
+type CSS = {
+  square: string,
+  image: string,
+  video: string,
+}
+
+type Props = {
+  children: React.Node,
+  image: ImageType,
+  alt: string,
+  className?: string,
+  css: CSS,
+  level: number,
+  headingSide: 'left' |'right',
+  videoProps: VideoProps,
+}
+
+const SquareHero = (props: Props) => {
   const { children, image, videoProps, alt, css, className, level, headingSide, ...rest } = props;
 
   const rootClass = cx(
@@ -27,7 +46,7 @@ const SquareHero = props => {
         )}
       </div>
       <div className={cx(defaultCss.square, css.square)}>
-        {createElement(
+        {React.createElement(
           `h${level}`,
           {
             className: cx(defaultCss.title),
@@ -37,42 +56,6 @@ const SquareHero = props => {
       </div>
     </div>
   );
-};
-
-SquareHero.propTypes = {
-  children: PropTypes.node.isRequired,
-  image: (props, propName, descriptiveName, location) => {
-    const name = descriptiveName || 'ANONYMOUS';
-
-    if (!props.videoProps) {
-      const type = typeof props[propName];
-      const expected = 'string';
-
-      if (type !== expected) {
-        return new Error(
-          `Invalid ${location} \`${propName}\` of type \`${type}\` ` +
-            `supplied to \`${name}\`, expected \`${expected}\`.`,
-        );
-      }
-    }
-
-    return null;
-  },
-  alt: PropTypes.string,
-  className: PropTypes.string,
-  css: PropTypes.shape({
-    square: PropTypes.string,
-    image: PropTypes.string,
-    video: PropTypes.string,
-  }),
-  level: PropTypes.number,
-  headingSide: PropTypes.oneOf(['left', 'right']),
-  videoProps: PropTypes.shape({
-    videoClassName: PropTypes.string,
-    posterClassName: PropTypes.string,
-    posterSrc: PropTypes.node.isRequired,
-    videoSrc: PropTypes.node.isRequired,
-  }),
 };
 
 SquareHero.defaultProps = {

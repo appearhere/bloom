@@ -1,10 +1,19 @@
-import PropTypes from 'prop-types';
-import React from 'react';
+// @flow
+import * as React from 'react';
 import cx from 'classnames';
 
 import css from './LeftRight.css';
 
-const LeftRight = props => {
+type Props = {
+  className?: string,
+  leftClassName?: string,
+  rightClassName?: string,
+  leftChildren: React.Node,
+  rightChildren: React.Node,
+  primarySide: 'left' | 'right',
+}
+
+const LeftRight = (props: Props) => {
   const {
     className,
     leftClassName,
@@ -27,15 +36,6 @@ const LeftRight = props => {
       <div className={rightClasses}>{rightChildren}</div>
     </div>
   );
-};
-
-LeftRight.propTypes = {
-  className: PropTypes.string,
-  leftClassName: PropTypes.string,
-  rightClassName: PropTypes.string,
-  leftChildren: PropTypes.node,
-  rightChildren: PropTypes.node,
-  primarySide: PropTypes.oneOf(['left', 'right']),
 };
 
 LeftRight.defaultProps = {

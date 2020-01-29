@@ -1,5 +1,6 @@
-import PropTypes from 'prop-types';
-import React, { Component } from 'react';
+// @flow
+
+import * as React from 'react';
 import cx from 'classnames';
 
 import Window from './Window';
@@ -12,13 +13,14 @@ import BtnContainer from '../BtnContainer/BtnContainer';
 /**
  * TODO: Figure out react-motion compatible focus trap
  */
-class WindowWithCross extends Component {
-  static propTypes = {
-    children: PropTypes.node,
-    onClose: PropTypes.func,
-    variant: PropTypes.oneOf(['light', 'dark']),
-  };
 
+type Props = {
+  children: React.Node,
+  onClose: Function,
+  variant: 'light' | 'dark',
+}
+
+class WindowWithCross extends React.Component<Props> {
   static defaultProps = {
     onClose: noop,
     variant: 'light',
