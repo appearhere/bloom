@@ -1,39 +1,49 @@
-import PropTypes from 'prop-types';
-import React, { Component } from 'react';
+// @flow
+
+import * as React from 'react';
 import OnVisible from 'react-on-visible';
 import cx from 'classnames';
 
 import css from './Sunrise.css';
 
-export default class Sunrise extends Component {
-  static propTypes = {
-    visible: PropTypes.bool,
-    children: PropTypes.node,
-    percent: PropTypes.number,
-    start: PropTypes.bool,
-    transitionDelay: PropTypes.number,
-  };
+type Props = {
+  visible: boolean,
+  children: React.Node,
+  percent: number,
+  start: boolean,
+  transitionDelay: number,
+}
 
+type State = {
+  start: boolean,
+  transitionDelay: number,
+  visible: boolean,
+  hasPlayed: boolean,
+}
+
+export default class Sunrise extends React.Component<Props, State> {
   static defaultProps = {
     start: true,
     transitionDelay: 0,
   };
 
-  constructor(props) {
+  constructor(props: Props) {
     super(props);
 
     this.state = {
+      start: props.start,
       visible: props.visible,
       hasPlayed: false,
+      transitionDelay: props.transitionDelay
     };
   }
 
-  componentWillReceiveProps({ start }) {
+  componentWillReceiveProps({ start }: { start: boolean }) {
     const { visible } = this.state;
     if (start && visible) this.hasPlayed();
   }
 
-  handleChange = visible => {
+  handleChange = (visible: boolean) => {
     const { start } = this.props;
 
     this.setState({

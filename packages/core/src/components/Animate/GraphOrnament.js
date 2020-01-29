@@ -1,4 +1,4 @@
-import PropTypes from 'prop-types';
+// @flow
 import React, { Component } from 'react';
 import uniqueId from 'lodash/fp/uniqueId';
 import cx from 'classnames';
@@ -22,14 +22,16 @@ const fill =
   '341.083003,147.55683 361.320948,140 C381.558893,132.44317 390,129 390,129 L390,351 ' +
   'L2.84217094e-14,351 L2.84217094e-14,296 Z';
 
-export default class GraphOrnament extends Component {
-  static propTypes = {
-    animate: PropTypes.bool,
-    play: PropTypes.bool,
-    className: PropTypes.string,
-  };
+type Props = {
+  animate?: boolean,
+  play?: boolean,
+  className?: string,
+}
 
-  constructor(props) {
+export default class GraphOrnament extends Component<Props> {
+  id: string;
+
+  constructor(props: Props) {
     super(props);
 
     this.id = uniqueId('graph-ornament');
