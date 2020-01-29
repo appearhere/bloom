@@ -1,4 +1,4 @@
-// flow-typed signature: a9d266bab445035cfb8447991e062664
+// flow-typed signature: 5b1bb7145a2e672ae023d8940dab890a
 // flow-typed version: <<STUB>>/react-moment-proptypes_v^1.5.0/flow_v0.117.0
 
 /**
@@ -66,6 +66,14 @@ declare module 'react-moment-proptypes/test/moment-validation-wrapper-tests' {
   declare module.exports: any;
 }
 
+declare module 'react-moment-proptypes/test/require-enzyme-adapter' {
+  declare module.exports: any;
+}
+
+declare module 'react-moment-proptypes/test/suppress-fallback-warning' {
+  declare module.exports: any;
+}
+
 // Filename aliases
 declare module 'react-moment-proptypes/src/core.js' {
   declare module.exports: $Exports<'react-moment-proptypes/src/core'>;
@@ -102,4 +110,10 @@ declare module 'react-moment-proptypes/test/integration/util.js' {
 }
 declare module 'react-moment-proptypes/test/moment-validation-wrapper-tests.js' {
   declare module.exports: $Exports<'react-moment-proptypes/test/moment-validation-wrapper-tests'>;
+}
+declare module 'react-moment-proptypes/test/require-enzyme-adapter.js' {
+  declare module.exports: $Exports<'react-moment-proptypes/test/require-enzyme-adapter'>;
+}
+declare module 'react-moment-proptypes/test/suppress-fallback-warning.js' {
+  declare module.exports: $Exports<'react-moment-proptypes/test/suppress-fallback-warning'>;
 }
