@@ -1,22 +1,23 @@
-import PropTypes from 'prop-types';
-import React, { Component } from 'react';
+// @flow
+
+import * as React from 'react';
 import cx from 'classnames';
 import css from './OptionCard.css';
 
-export default class OptionCard extends Component {
-  static propTypes = {
-    img: PropTypes.string,
-    children: PropTypes.node,
-    heading: PropTypes.string,
-    subheading: PropTypes.string,
-    active: PropTypes.bool,
-  };
+type Props = {
+  img: string,
+  children: React.Node,
+  heading: string,
+  subheading: string,
+  active: boolean,
+}
 
+export default class OptionCard extends React.Component<Props> {
   render() {
     const { img, children, heading, subheading, active, ...rest } = this.props;
 
     return (
-      <div className={cx(css.wrapper, { [css.active]: active })} {...rest}>
+      <div className={cx(css.wrapper, { [css.active]: active })} {...(rest: any)}>
         <div className={css.content} >
           <h4 className={css.title}>{heading}</h4>
           <p className={css.subtitle}>{subheading}</p>

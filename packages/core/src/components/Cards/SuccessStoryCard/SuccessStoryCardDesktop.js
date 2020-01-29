@@ -1,5 +1,5 @@
+// @flow
 import React from 'react';
-import PropTypes from 'prop-types';
 import cx from 'classnames';
 import shortid from 'shortid';
 import FittedImage from '../../FittedImage/FittedImage';
@@ -8,15 +8,25 @@ import RemoveOrphans from '../../RemoveOrphans/RemoveOrphans';
 
 import css from './SuccessStoryCardDesktop.css';
 
+type Props = {
+  title: string,
+  imageSrc: string,
+  copy: string,
+  brands: Array<any>,
+  href: string,
+  variant?: string,
+  brandsTitle: string,
+}
+
 const SuccessStoryCardDesktop = ({
   title,
   imageSrc,
   copy,
-  brands = [],
+  brands,
   href,
   variant,
   brandsTitle,
-}) => (
+}: Props) => (
   <div className={cx(css.successStoryCard, {
     [css.goldBackground]: variant === 'gold',
     [css.blackBackground]: variant === 'black',
@@ -57,18 +67,9 @@ const SuccessStoryCardDesktop = ({
   </div>
 );
 
-SuccessStoryCardDesktop.propTypes = {
-  title: PropTypes.string.isRequired,
-  imageSrc: PropTypes.string.isRequired,
-  copy: PropTypes.string.isRequired,
-  brands: PropTypes.array.isRequired,
-  href: PropTypes.string.isRequired,
-  variant: PropTypes.string,
-  brandsTitle: PropTypes.string.isRequired,
-};
-
 SuccessStoryCardDesktop.defaultProps = {
   variant: 'black',
+  brands: [],
 };
 
 export default SuccessStoryCardDesktop;

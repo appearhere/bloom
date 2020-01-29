@@ -1,15 +1,23 @@
-import PropTypes from 'prop-types';
+// @flow
 import React from 'react';
 import css from './DistrictCard.css';
 import FittedImage from "../../FittedImage/FittedImage";
 import Card from "../Card/Card";
 
-const DistrictCard = props => {
+type Props = {
+  title: string,
+  subtitle: string,
+  src: string,
+  alt: string,
+  href: string,
+}
+
+
+const DistrictCard = (props: Props) => {
   const {title, subtitle, src, alt, href, ...rest} = props;
 
-
   return (
-    <Card href={href} className={css.district} {...rest}>
+    <Card href={href} className={css.district} {...(rest: any)}>
       <div className={css.imageContainer}>
         <FittedImage src={src} alt={alt} className={css.image}/>
       </div>
@@ -22,11 +30,5 @@ const DistrictCard = props => {
   );
 };
 
-DistrictCard.propTypes = {
-  title: PropTypes.string,
-  subtitle: PropTypes.string,
-  src: PropTypes.string,
-  href: PropTypes.string,
-};
 
 export default DistrictCard;

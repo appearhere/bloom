@@ -1,5 +1,5 @@
-import PropTypes from 'prop-types';
-import React, { Component } from 'react';
+import * as React from 'react';
+
 import cx from 'classnames';
 import { applyContainerQuery } from 'react-container-query';
 
@@ -22,21 +22,27 @@ const query = {
   },
 };
 
-class GuideCard extends Component {
-  static propTypes = {
-    description: PropTypes.node,
-    downloadCallback: PropTypes.func,
-    unlockCallback: PropTypes.func,
-    downloadLabel: PropTypes.string,
-    unlockLabel: PropTypes.string,
-    href: PropTypes.string,
-    className: PropTypes.string,
-    containerQuery: PropTypes.shape({
-      [css.showDescription]: PropTypes.bool,
-      [css.singleLineDescription]: PropTypes.bool,
-      [css.showLink]: PropTypes.bool,
-    }),
-  };
+type CSS = {
+  showDescription: boolean,
+  singleLineDescription: boolean,
+  showLink: boolean,
+}
+
+type ContainerQueryType = {
+  css: CSS
+}
+
+type Props = {
+  description: React.Node,
+  downloadCallback?: Function,
+  unlockCallback: Function,
+  downloadLabel: string,
+  unlockLabel: string,
+  href: string,
+  className?: string,
+  containerQuery: ContainerQueryType,
+}
+class GuideCard extends React.Component<Props> {
 
   static defaultProps = {
     unlockCallback: noop,
