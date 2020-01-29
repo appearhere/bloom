@@ -1,4 +1,4 @@
-import PropTypes from 'prop-types';
+// @flow
 import React, { Component } from 'react';
 import ExecutionEnvironment from 'exenv';
 
@@ -9,13 +9,14 @@ export type Image = {
   alt: string,
 }
 
-export default class FittedImage extends Component {
-  static propTypes = {
-    src: PropTypes.string.isRequired,
-    alt: PropTypes.string,
-    className: PropTypes.string,
-  };
+type Props = {
+  ...Image,
+  className?: string,
+}
 
+export default class FittedImage extends Component<Props> {
+  component: ?HTMLImageElement;
+  
   componentDidMount() {
     if (ExecutionEnvironment.canUseDOM && typeof objectFitImages === 'function') {
       objectFitImages(this.component);

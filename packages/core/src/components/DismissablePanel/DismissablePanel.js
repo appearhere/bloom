@@ -1,5 +1,5 @@
-import PropTypes from 'prop-types';
-import React from 'react';
+// @flow
+import * as React from 'react';
 import cx from 'classnames';
 
 import Panel, { PANEL_CONTEXT } from '../Panel/Panel';
@@ -7,7 +7,17 @@ import BtnContainer from '../BtnContainer/BtnContainer';
 import Icon from '../Icon/Icon';
 import css from './DismissablePanel.css';
 
-const DismissablePanel = props => {
+type Props = {
+  className?: string,
+  context:
+    typeof PANEL_CONTEXT.DEFAULT |
+    typeof PANEL_CONTEXT.BLACKOUT |
+    typeof PANEL_CONTEXT.ERROR |
+    typeof PANEL_CONTEXT.SUCCESS,
+  children: React.Node,
+  onClose?: Function,
+};
+const DismissablePanel = (props: Props) => {
   const { children, className, context, onClose, ...rest } = props;
 
   return (
@@ -24,18 +34,6 @@ const DismissablePanel = props => {
       )}
     </Panel>
   );
-};
-
-DismissablePanel.propTypes = {
-  className: PropTypes.string,
-  context: PropTypes.oneOf([
-    PANEL_CONTEXT.DEFAULT,
-    PANEL_CONTEXT.BLACKOUT,
-    PANEL_CONTEXT.ERROR,
-    PANEL_CONTEXT.SUCCESS,
-  ]),
-  children: PropTypes.node,
-  onClose: PropTypes.func,
 };
 
 DismissablePanel.defaultProps = {

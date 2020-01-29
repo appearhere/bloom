@@ -1,4 +1,4 @@
-import PropTypes from 'prop-types';
+// @flow
 import React from 'react';
 import classNames from 'classnames/bind';
 
@@ -6,17 +6,17 @@ import css from './Badge.css';
 
 const cx = classNames.bind(css);
 
-const Badge = ({ className, children, context, hollow, ...rest }) => (
+type Props = {
+  className?: string,
+  children: any,
+  context: 'primary' | 'special',
+  hollow?: boolean,
+}
+
+const Badge = ({ className, children, context, hollow, ...rest }: Props) => (
   <span {...rest} className={cx(css.root, css[context], hollow ? css.hollow : null, className)}>
     {children}
   </span>
 );
-
-Badge.propTypes = {
-  className: PropTypes.string,
-  children: PropTypes.any,
-  context: PropTypes.oneOf(['primary', 'special']),
-  hollow: PropTypes.bool,
-};
 
 export default Badge;

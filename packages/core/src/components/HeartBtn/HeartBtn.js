@@ -1,5 +1,5 @@
-import PropTypes from 'prop-types';
-import React from 'react';
+// @flow
+import * as React from 'react';
 import cx from 'classnames';
 
 import noop from '../../utils/noop';
@@ -7,18 +7,18 @@ import BtnContainer from '../BtnContainer/BtnContainer';
 import Icon from '../Icon/Icon';
 import css from './HeartBtn.css';
 
-const HeartBtn = ({ active, onClick, className, variant, ...rest }) => (
+type Props = {
+  className: string,
+  active: boolean,
+  onClick: Function,
+  variant: 'light' | 'dark',
+}
+
+const HeartBtn = ({ active, onClick, className, variant, ...rest }: Props) => (
   <BtnContainer {...rest} className={cx(css.root, css[variant], className)} onClick={onClick}>
     <Icon className={cx(css.icon, active ? css.active : null)} name="heart" />
   </BtnContainer>
 );
-
-HeartBtn.propTypes = {
-  className: PropTypes.string,
-  active: PropTypes.bool,
-  onClick: PropTypes.func,
-  variant: PropTypes.oneOf(['light', 'dark']),
-};
 
 HeartBtn.defaultProps = {
   onClick: noop,

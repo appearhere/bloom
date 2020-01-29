@@ -1,22 +1,24 @@
-import PropTypes from 'prop-types';
-import React, { Component } from 'react';
+// @flow
+
+import * as React from 'react';
 import classnames from 'classnames';
 import noop from '../../utils/noop';
 
 import css from './Btn.css';
 
-export default class Btn extends Component {
-  static propTypes = {
-    children: PropTypes.node.isRequired,
-    className: PropTypes.string,
-    onClick: PropTypes.func,
-    type: PropTypes.oneOf(['submit', 'reset', 'button', 'menu']),
-    disabled: PropTypes.bool,
+type Props = {
+  children: React.Node,
+  className?: string,
+  onClick: Function,
+  type: 'submit' | 'reset' | 'button' | 'menu',
+  disabled?: boolean,
+  context: 'default' | 'primary' | 'danger' | 'action' | 'whiteout',
+  variant: 'default' | 'hollow' | 'subtle',
+  priority: 'high' | 'normal'
+}
 
-    context: PropTypes.oneOf(['default', 'primary', 'danger', 'action', 'whiteout']),
-    variant: PropTypes.oneOf(['default', 'hollow', 'subtle']),
-    priority: PropTypes.oneOf(['high', 'normal']),
-  };
+export default class Btn extends React.Component<Props> {
+  button: HTMLButtonElement;
 
   static defaultProps = {
     type: 'button',
@@ -58,7 +60,7 @@ export default class Btn extends Component {
         type={type}
         onClick={onClick}
         disabled={disabled}
-        {...rest}
+        {...(rest: any)}
       >
         {children}
       </button>

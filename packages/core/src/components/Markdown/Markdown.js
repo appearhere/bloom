@@ -24,7 +24,7 @@ const Markdown = ({ children, className, overrideClassname = false, linkTarget =
 
   const props = {
     className: overrideClassname ? className : cx(css.root, className),
-    ...rest,
+    ...(rest: any),
   };
 
   return React.createElement('div', props, renderer.render(ast));
