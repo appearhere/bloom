@@ -1,19 +1,22 @@
-import PropTypes from 'prop-types';
+// @flow
+
 import React, { Component } from 'react';
 import { spring, TransitionMotion } from 'react-motion';
 
 const DEFAULT_SPRINT_CONFIG = { stiffness: 250, damping: 25 };
 
-export default class Roll extends Component {
-  static propTypes = {
-    children: PropTypes.any,
-    width: PropTypes.string,
-    springConfig: PropTypes.shape({
-      stiffness: PropTypes.number,
-      damping: PropTypes.number,
-    }),
-  };
+type SpringConfig = {
+  stiffness: number,
+  damping: number,
+}
 
+type Props = {
+  children: any,
+  width: string,
+  springConfig: SpringConfig,
+}
+
+export default class Roll extends Component<Props> {
   static defaultProps = {
     width: 'auto',
     springConfig: DEFAULT_SPRINT_CONFIG,

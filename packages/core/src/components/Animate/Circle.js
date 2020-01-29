@@ -1,4 +1,5 @@
-import PropTypes from 'prop-types';
+// @flow
+
 import React from 'react';
 var reactMotion = require('react-motion');
 var classNames = require('classnames');
@@ -7,7 +8,11 @@ import css from './Circle.css';
 
 const cx = classNames.bind(css);
 
-const Circle = ({ percent }) => (
+type Props = {
+  percent: number,
+}
+
+const Circle = ({ percent }: Props) => (
   <svg className={css.root} viewBox="0 0 34 34">
     <circle className={cx(css.circle, css.circleTrack)} cx="17" cy="17" r="15.9154943092" />
     <reactMotion.Motion
@@ -31,10 +36,6 @@ const Circle = ({ percent }) => (
     </reactMotion.Motion>
   </svg>
 );
-
-Circle.propTypes = {
-  percent: PropTypes.number,
-};
 
 Circle.defaultProps = {
   percent: 0,

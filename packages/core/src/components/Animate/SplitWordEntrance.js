@@ -1,20 +1,23 @@
-import PropTypes from 'prop-types';
+// @flow
+
 import React, { Component } from 'react';
 import uniqueId from 'lodash/fp/uniqueId';
 
 import css from './SplitWordEntrance.css';
 
-export default class SplitWordEntrance extends Component {
-  static propTypes = {
-    children: PropTypes.string.isRequired,
-    duration: PropTypes.number,
-  };
+type Props = {
+  children: string,
+  duration: number,
+}
+
+export default class SplitWordEntrance extends Component<Props> {
+  id: string;
 
   static defaultProps = {
     duration: 300,
   };
 
-  constructor(props) {
+  constructor(props: Props) {
     super(props);
 
     this.id = uniqueId('Typewriter');

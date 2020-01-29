@@ -1,18 +1,27 @@
+// @flow
 /*
   global
   window: true,
  */
 
-import PropTypes from 'prop-types';
-
-import React, { Component } from 'react';
+import * as React from 'react';
 import { subscribe } from 'subscribe-ui-event';
 
-export default class EdgeFade extends Component {
-  static propTypes = {
-    children: PropTypes.node.isRequired,
-    threshold: PropTypes.number,
-  };
+type Props = {
+  children: React.Node,
+  threshold: number
+}
+
+type State = {
+  opacity: number  
+}
+
+type ReactObjRef<ElementType: React.ElementType> = 
+  {current: null | React.ElementRef<ElementType>}
+
+export default class EdgeFade extends React.Component<Props, State> {
+  scrollEventSubscription: Function;
+  wrapper: any
 
   static defaultProps = {
     threshold: 150,
@@ -52,7 +61,7 @@ export default class EdgeFade extends Component {
       });
     } else if (fromBottom - threshold < 0 && fromBottom) {
       this.setState({
-        opacity: fromBottom.toFixed(0) / threshold,
+        opacity: Number(fromBottom.toFixed(0)) / threshold,
       });
     } else {
       this.setState({
