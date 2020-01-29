@@ -10,7 +10,6 @@ import Cards from './Cards/Cards';
 import Dropdown from './Dropdown/Dropdown';
 import Figure from './Figure/Figure';
 import FittedImage from './FittedImage/FittedImage';
-import HorizontalOverflowBar from './HorizontalOverflowBar/HorizontalOverflowBar';
 import InputField from './InputField/InputField';
 import Inputs from './Inputs/Inputs';
 import LeftRight from './LeftRight/LeftRight';
@@ -22,7 +21,6 @@ import Pagination from './Pagination/Pagination';
 import Panels from './Panels/Panels';
 import SocialLinks from './SocialLinks/SocialLinks';
 import Tabs from './Tabs/Tabs';
-import TabBar from './TabBar/TabBar';
 import Tether from './Tether/Tether';
 
 const Patterns = () => (
@@ -31,7 +29,6 @@ const Patterns = () => (
     <Route path="/patterns/animation" component={Animation} />
     <Route path="/patterns/badge" component={Badge} />
     <Route path="/patterns/buttons" component={Buttons} />
-    <Route path="/patterns/horizontal-overflow-bar" component={HorizontalOverflowBar} />
     <Route path="/patterns/calendar" component={Calendar} />
     <Route path="/patterns/cards" component={Cards} />
     <Route path="/patterns/dropdown" component={Dropdown} />
@@ -48,7 +45,6 @@ const Patterns = () => (
     <Route path="/patterns/panels" component={Panels} />
     <Route path="/patterns/social-links" component={SocialLinks} />
     <Route path="/patterns/tabs" component={Tabs} />
-    <Route path="/patterns/tab-bar" component={TabBar} />
     <Route path="/patterns/tether" component={Tether} />
   </Switch>
 );

@@ -5,10 +5,7 @@ import dedent from 'dedent';
 import Specimen from '../../../components/Specimen/Specimen';
 import { D, H, T, C, Note, Placeholder } from '../../../components/Scaffold/Scaffold';
 import {
-  ModalAnimator,
-  ModalWindow,
-  ModalWindowTitle,
-  ModalWithCross,
+  Modal,
   Btn,
   Markdown,
   Modifiers as m
@@ -79,20 +76,20 @@ export default class ModalDocumentation extends Component {
               root: m.mtr,
             }}
             code={dedent`
-              <ModalAnimator
+              <Modal.ModalAnimator
                 active={ this.state.active }
                 onClose={ this.closeModal }
               >
                 { /* Modal window */ }
-              </ModalAnimator>
+              </Modal.ModalAnimator>
             `}
           >
             <Placeholder onClick={this.toggleAnimator}>Trigger modal</Placeholder>
-            <ModalAnimator active={showAnimator} onClose={this.toggleAnimator}>
+            <Modal.ModalAnimator active={showAnimator} onClose={this.toggleAnimator}>
               <div className={css.exampleModal}>
                 <button onClick={this.toggleAnimator}>Close</button>
               </div>
-            </ModalAnimator>
+            </Modal.ModalAnimator>
           </Specimen>
         </D>
         <D>
@@ -107,13 +104,13 @@ export default class ModalDocumentation extends Component {
               root: m.mtr,
             }}
             code={dedent`
-              <ModalAnimator
+              <Modal.ModalAnimator
                 active={ this.state.active }
                 onClose={ this.closeModal }
               >
-                <ModalWindow
+                <Modal.ModalWindow
                   header={
-                    <ModalWindowTitle>Example modal</ModalWindowTitle>
+                    <Modal.ModalWindowTitle>Example modal</Modal.ModalWindowTitle>
                   }
                   footer={ (
                     <Btn
@@ -126,18 +123,18 @@ export default class ModalDocumentation extends Component {
                   ) }
                 >
                   { /* Modal content */ }
-                </ModalWindow>
-              </ModalAnimator>
+                </Modal.ModalWindow>
+              </Modal.ModalAnimator>
             `}
           >
             <Placeholder onClick={this.toggleWindow}>Trigger modal</Placeholder>
-            <ModalAnimator
+            <Modal.ModalAnimator
               active={showWindow}
               onClose={this.toggleWindow}
             >
-              <ModalWindow
+              <Modal.ModalWindow
                 header={
-                  <ModalWindowTitle>The power of good design</ModalWindowTitle>
+                  <Modal.ModalWindowTitle>The power of good design</Modal.ModalWindowTitle>
                 }
                 footer={(
                   <Btn
@@ -150,8 +147,8 @@ export default class ModalDocumentation extends Component {
                 )}
               >
                 <Markdown className={markdown} overrideClassname>{ exampleContent }</Markdown>
-              </ModalWindow>
-            </ModalAnimator>
+              </Modal.ModalWindow>
+            </Modal.ModalAnimator>
           </Specimen>
           <H level={3} className={m.mtLgIi}>
             Dark variant
@@ -164,25 +161,25 @@ export default class ModalDocumentation extends Component {
               root: m.mtr,
             }}
             code={dedent`
-              <ModalAnimator
+              <Modal.ModalAnimator
                 active={ this.state.active }
                 onClose={ this.closeModal }
               >
-                <ModalWindow variant="dark" ...>
+                <Modal.ModalWindow variant="dark" ...>
                   { /* Modal content */ }
-                </ModalWindow>
-              </ModalAnimator>
+                </Modal.ModalWindow>
+              </Modal.ModalAnimator>
             `}
           >
             <Placeholder onClick={this.toggleWindowDark}>Trigger modal</Placeholder>
-            <ModalAnimator
+            <Modal.ModalAnimator
               active={showWindowDark}
               onClose={this.toggleWindowDark}
             >
-              <ModalWindow
+              <Modal.ModalWindow
                 variant="dark"
                 header={
-                  <ModalWindowTitle>The power of good design</ModalWindowTitle>
+                  <Modal.ModalWindowTitle>The power of good design</Modal.ModalWindowTitle>
                 }
                 footer={(
                   <Btn
@@ -195,8 +192,8 @@ export default class ModalDocumentation extends Component {
                 )}
               >
                 <Markdown className={markdown} overrideClassname>{ exampleContent }</Markdown>
-              </ModalWindow>
-            </ModalAnimator>
+              </Modal.ModalWindow>
+            </Modal.ModalAnimator>
           </Specimen>
         </D>
         <D>
@@ -211,25 +208,25 @@ export default class ModalDocumentation extends Component {
               root: m.mtr,
             }}
             code={dedent`
-              <ModalAnimator
+              <Modal.ModalAnimator
                 active={ this.state.active }
                 onClose={ this.closeModal }
               >
-                <ModalWithCross onClick={ this.closeModal }>
+                <Modal.ModalWithCross onClick={ this.closeModal }>
                   { /* Modal content */ }
-                </ModalWithCross>
-              </ModalAnimator>
+                </Modal.ModalWithCross>
+              </Modal.ModalAnimator>
             `}
           >
             <Placeholder onClick={this.toggleWithCross}>Trigger modal</Placeholder>
-            <ModalAnimator
+            <Modal.ModalAnimator
               active={showWithCross}
               onClose={this.toggleWithCross}
             >
-              <ModalWithCross onClose={this.toggleWithCross}>
+              <Modal.ModalWithCross onClose={this.toggleWithCross}>
                 <Markdown className={markdown} overrideClassname>{ exampleContent }</Markdown>
-              </ModalWithCross>
-            </ModalAnimator>
+              </Modal.ModalWithCross>
+            </Modal.ModalAnimator>
           </Specimen>
           <H level={3} className={m.mtLgIi}>
             Dark variant
@@ -243,28 +240,28 @@ export default class ModalDocumentation extends Component {
               root: m.mtr,
             }}
             code={dedent`
-              <ModalAnimator
+              <Modal.ModalAnimator
                 active={ this.state.active }
                 onClose={ this.closeModal }
               >
-                <ModalWithCross
+                <Modal.ModalWithCross
                   variant="dark"
                   onClose={ this.closeModal }
                 >
                   { /* Modal content */ }
-                </ModalWithCross>
-              </ModalAnimator>
+                </Modal.ModalWithCross>
+              </Modal.ModalAnimator>
             `}
           >
             <Placeholder onClick={this.toggleWithCrossDark}>Trigger modal</Placeholder>
-            <ModalAnimator
+            <Modal.ModalAnimator
               active={showWithCrossDark}
               onClose={this.toggleWithCrossDark}
             >
-              <ModalWithCross variant="dark" onClose={this.toggleWithCrossDark}>
+              <Modal.ModalWithCross variant="dark" onClose={this.toggleWithCrossDark}>
                 <Markdown className={markdown} overrideClassname>{ exampleContent }</Markdown>
-              </ModalWithCross>
-            </ModalAnimator>
+              </Modal.ModalWithCross>
+            </Modal.ModalAnimator>
           </Specimen>
         </D>
       </div>

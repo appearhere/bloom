@@ -156,30 +156,16 @@ export const Modal = {
 
 export Moment from './Moment/Moment';
 
-import HorizontalOverflowBar from './Navigation/HorizontalOverflowBar/HorizontalOverflowBar';
-import TabBar from './Navigation/TabBar/TabBar';
-import TabBarItem from './Navigation/TabBar/TabBarItem';
-import TabBarIconItem from './Navigation/TabBar/TabBarIconItem';
-
-export const Navigation = {
-  HorizontalOverflowBar,
-  TabBar,
-  TabBarItem,
-  TabBarIconItem
-};
-
 export Notification from './Notification/Notification';
 export Pagination from './Pagination/Pagination';
 export PaginationTrack from './Pagination/PaginationTrack';
 export Panel from './Panel/Panel';
-export ParallaxContainer from './ParallaxContainer/ParallaxContainer';
 
 export PhotoGrid from './PhotoGrid/RandomSix';
 
 export ProgressSteps from './ProgressSteps/ProgressSteps';
 export Step from './ProgressSteps/Step';
 export ScreenReadable from './ScreenReadable/ScreenReadable';
-export SiblingTransition from './SiblingTransition/SiblingTransition';
 export SignPost from './SignPost/SignPost';
 export SocialLinks from './SocialLinks/SocialLinks';
 export SpaceTypeIcon from './SpaceTypeIcon/SpaceTypeIcon';
@@ -238,6 +224,5 @@ export CollapsibleProgressSteps from './CollapsibleProgressSteps/CollapsibleProg
 export WindowDimensionsProvider from './WindowDimensionsProvider/WindowDimensionsProvider';
 export Carousel from './Carousel/Carousel';
 export MobileCarousel from './MobileCarousel/MobileCarousel';
-export ScreenWidth from './ScreenWidth/ScreenWidth';
 export IconLink from './IconLink/IconLink';
 export RemoveOrphans from './RemoveOrphans/RemoveOrphans';
