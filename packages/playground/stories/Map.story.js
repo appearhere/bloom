@@ -1,4 +1,3 @@
-import PropTypes from 'prop-types';
 import React, { Component } from 'react';
 import { storiesOf } from '@storybook/react';
 import { withKnobs, boolean } from '@storybook/addon-knobs';
@@ -84,14 +83,6 @@ const generateMarkers = (number = 1, lng, lat) => {
 };
 
 class TestMap extends Component {
-  static propTypes = {
-    metaMarkers: PropTypes.array,
-  };
-
-  static defaultProps = {
-    metaMarkers: [],
-  };
-
   constructor(props) {
     super(props);
     this.state = {
