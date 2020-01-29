@@ -1,3 +1,5 @@
+// @flow
+
 import svgClean from '../../../utils/svgClean/svgClean';
 
 import minus from './icons/icon-minus.svg';
