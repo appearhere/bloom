@@ -1,5 +1,5 @@
-import PropTypes from 'prop-types';
-import React, { Component } from 'react';
+// @flow
+import * as React from 'react';
 import cx from 'classnames';
 import { applyContainerQuery } from 'react-container-query';
 
@@ -12,18 +12,25 @@ const query = {
   },
 };
 
-/* eslint-disable react/prefer-stateless-function */
-class SpaceFeatureCard extends Component {
-  static propTypes = {
-    name: PropTypes.string.isRequired,
-    price: PropTypes.string.isRequired,
-    location: PropTypes.string,
-    containerQuery: PropTypes.shape({
-      [css.large]: PropTypes.bool,
-    }),
-    className: PropTypes.string,
-  };
+type Css = {
+  large: boolean
+}
 
+type ContainerQuery = {
+  css: Css,
+}
+
+type Props = {
+  name: string,
+  price: string,
+  location: string,
+  containerQuery: ContainerQuery,
+  className?: string,
+  children: React.Node,
+}
+
+/* eslint-disable react/prefer-stateless-function */
+class SpaceFeatureCard extends React.Component<Props> {
   render() {
     const {
       name,

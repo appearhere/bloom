@@ -4,6 +4,11 @@ import ExecutionEnvironment from 'exenv';
 
 const objectFitImages = ExecutionEnvironment.canUseDOM ? require('object-fit-images') : null;
 
+export type Image = { 
+  src: string,
+  alt: string,
+}
+
 export default class FittedImage extends Component {
   static propTypes = {
     src: PropTypes.string.isRequired,

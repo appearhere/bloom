@@ -1,5 +1,5 @@
+// @flow
 import React from 'react';
-import PropTypes from 'prop-types';
 import cx from 'classnames';
 import shortid from 'shortid';
 import FittedImage from '../../FittedImage/FittedImage';
@@ -8,7 +8,17 @@ import RemoveOrphans from '../../RemoveOrphans/RemoveOrphans';
 
 import css from './SuccessStoryCardMobile.css';
 
-const SuccessStoryCardMobile = ({title, imageSrc, copy, brands = [], href, brandsTitle, variant}) => (
+type Props = {
+  title: string,
+  imageSrc: string,
+  copy: string,
+  brands: Array<any>,
+  href: string,
+  variant?: string,
+  brandsTitle: string,
+}
+
+const SuccessStoryCardMobile = ({title, imageSrc, copy, brands, href, brandsTitle, variant}: Props) => (
   <div className={cx(css.successStoryCard, {
     [css.goldBackground]: variant === 'gold',
     [css.blackBackground]: variant === 'black',
@@ -41,17 +51,9 @@ const SuccessStoryCardMobile = ({title, imageSrc, copy, brands = [], href, brand
   </div>
 );
 
-SuccessStoryCardMobile.propTypes = {
-  title: PropTypes.string.isRequired,
-  imageSrc: PropTypes.string.isRequired,
-  copy: PropTypes.string.isRequired,
-  brands: PropTypes.array.isRequired,
-  href: PropTypes.string.isRequired,
-  brandsTitle: PropTypes.string.isRequired,
-};
-
 SuccessStoryCardMobile.defaultProps = {
   variant: 'black',
+  brands: [],
 };
 
 export default SuccessStoryCardMobile;
