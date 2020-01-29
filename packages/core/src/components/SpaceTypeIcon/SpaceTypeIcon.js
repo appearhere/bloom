@@ -1,3 +1,5 @@
+// @flow
+
 import iconHelper from '../Icon/iconHelper';
 import icons from './icons';
 
