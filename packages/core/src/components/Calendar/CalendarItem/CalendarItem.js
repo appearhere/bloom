@@ -1,4 +1,4 @@
-import PropTypes from 'prop-types';
+// @flow
 import React from 'react';
 import cx from 'classnames';
 import momentPropTypes from 'react-moment-proptypes';
@@ -8,6 +8,18 @@ import css from './CalendarItem.css';
 
 const defaultDate = moment();
 
+type Props = {
+  day: momentPropTypes.momentObj,
+  format: string,
+  dayClassName: string,
+  className?: string,
+  classNames: Object,
+  today?: boolean,
+  outOfRange?: boolean,
+  isClosed: boolean,
+  subtext?: string,
+}
+
 export const defaultClassNames = {
   root: css.root,
   today: css.today,
@@ -15,7 +27,7 @@ export const defaultClassNames = {
   closed: css.closed,
 };
 
-const CalendarDay = props => {
+const CalendarDay = (props: Props) => {
   const { day, format, className, dayClassName, classNames, today, outOfRange, isClosed, subtext, ...rest } = props;
 
   const classes = cx(
@@ -38,18 +50,6 @@ const CalendarDay = props => {
   ) : (
     <div className={classes}>{'\u00a0'}</div>
   );
-};
-
-CalendarDay.propTypes = {
-  day: momentPropTypes.momentObj,
-  format: PropTypes.string,
-  dayClassName: PropTypes.string,
-  className: PropTypes.string,
-  classNames: PropTypes.object,
-  today: PropTypes.bool,
-  outOfRange: PropTypes.bool,
-  isClosed: PropTypes.bool,
-  subtext: PropTypes.string,
 };
 
 CalendarDay.defaultProps = {

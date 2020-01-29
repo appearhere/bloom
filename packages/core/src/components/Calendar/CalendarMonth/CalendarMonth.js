@@ -1,7 +1,7 @@
-import PropTypes from 'prop-types';
+// @flow
 import React, { Component } from 'react';
 import momentPropTypes from 'react-moment-proptypes';
-import moment from 'moment';
+import moment from '../../../utils/moment/moment';
 
 import css from './CalendarMonth.css';
 import CalendarItem from '../CalendarItem/CalendarItem';
@@ -22,23 +22,24 @@ export const defaultClassNames = {
   cell: css.cell,
 };
 
-export default class CalendarMonth extends Component {
-  static propTypes = {
-    month: momentPropTypes.momentObj,
-    DayComponent: PropTypes.func,
-    ColumnHeadingComponent: PropTypes.func,
-    showOutOfRange: PropTypes.bool,
-    dayProps: PropTypes.object,
-    columnHeadingProps: PropTypes.object,
-    classNames: PropTypes.shape({
-      root: PropTypes.string,
-      head: PropTypes.string,
-      body: PropTypes.string,
-      row: PropTypes.string,
-      cell: PropTypes.string,
-    }),
-  };
+type Classnames = {
+  root: string,
+  head: string,
+  body: string,
+  row: string,
+  cell: string,
+}
 
+type Props = {
+  month: momentPropTypes.momentObj,
+  DayComponent: Function,
+  ColumnHeadingComponent: Function,
+  showOutOfRange: boolean,
+  dayProps: Object,
+  columnHeadingProps: Object,
+  classNames: Classnames,
+}
+export default class CalendarMonth extends Component<Props> {
   static defaultProps = {
     month: today,
     ColumnHeadingComponent: CalendarItem,

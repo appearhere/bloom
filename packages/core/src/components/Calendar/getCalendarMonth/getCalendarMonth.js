@@ -1,21 +1,23 @@
+// @flow
 import { generateArray, generateNumberFilledArray, reshapeArray } from '../../../utils/array/array';
+import momentPropTypes from 'react-moment-proptypes';
 
 export const CALENDAR_MONTH_LENGTH = 42;
 export const DAYS_PER_WEEK = 7;
 export const CALENDAR_ROWS = CALENDAR_MONTH_LENGTH / DAYS_PER_WEEK;
 
-export const getPreDayCount = date =>
+export const getPreDayCount = (date: momentPropTypes.momentObj) =>
   date
     .clone()
     .startOf('month')
     .weekday();
 
-export const getPostDayCount = date => {
+export const getPostDayCount = (date: momentPropTypes.momentObj) => {
   const preDayCount = getPreDayCount(date);
   return CALENDAR_MONTH_LENGTH - date.daysInMonth() - preDayCount;
 };
 
-const getCalendarMonth = (date, preDayCount, postDayCount) => {
+const getCalendarMonth = (date: momentPropTypes.momentObj, preDayCount: number, postDayCount: number) => {
   const month = date.clone().startOf('month');
 
   const preDays = generateArray(preDayCount)
