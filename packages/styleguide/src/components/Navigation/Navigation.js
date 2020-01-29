@@ -182,17 +182,6 @@ const Navigation = ({ className, onLinkClick }) => (
             exact
             activeClassName={css.linkActive}
             className={cx(css.link, t.fontRegular)}
-            to="/patterns/horizontal-overflow-bar"
-            onClick={onLinkClick}
-          >
-            Horizontal Overflow Bar
-          </NavLink>
-        </li>
-        <li className={css.linkListItem}>
-          <NavLink
-            exact
-            activeClassName={css.linkActive}
-            className={cx(css.link, t.fontRegular)}
             to="/patterns/inputs"
             onClick={onLinkClick}
           >
@@ -307,17 +296,6 @@ const Navigation = ({ className, onLinkClick }) => (
             onClick={onLinkClick}
           >
             Tabs
-          </NavLink>
-        </li>
-        <li className={css.linkListItem}>
-          <NavLink
-            exact
-            activeClassName={css.linkActive}
-            className={cx(css.link, t.fontRegular)}
-            to="/patterns/tab-bar"
-            onClick={onLinkClick}
-          >
-            Tab Bar
           </NavLink>
         </li>
         <li className={css.linkListItem}>
