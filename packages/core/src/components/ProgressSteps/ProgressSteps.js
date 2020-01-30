@@ -1,22 +1,23 @@
-import PropTypes from 'prop-types';
-import React, { cloneElement, Children, Component } from 'react';
+// @flow
+
+import * as React from 'react';
 import cx from 'classnames';
 
 import css from './ProgressSteps.css';
 
-export default class ProgressSteps extends Component {
-  static propTypes = {
-    children: PropTypes.array.isRequired,
-    lastCompletedIndex: PropTypes.number,
-    className: PropTypes.string,
-    /* eslint-disable react/no-unused-prop-types */
-    containerQuery: PropTypes.shape({
-      [css.horizontal]: PropTypes.bool,
-    }),
-    /* eslint-enable react/no-unused-prop-types */
-    stepCss: PropTypes.string,
-  };
+type Css = {
+  horizontal: boolean,
+}
 
+type Props = {
+  children: Array<React.Element<any>>,
+  lastCompletedIndex:number,
+  className?: string,
+  containerQuery: Css,
+  stepCss: string,
+}
+
+export default class ProgressSteps extends React.Component<Props> {
   render() {
     const {
       children: steps,
@@ -34,11 +35,11 @@ export default class ProgressSteps extends Component {
     }
 
     return (
-      <dl className={cx(css.root, className, containerQuery)} {...rest}>
-        {Children.map(steps, (step, i) => {
+      <dl className={cx(css.root, className, containerQuery)} {...(rest: any)}>
+        {React.Children.map(steps, (step, i) => {
           const completed = i <= lastCompletedIndex;
 
-          return cloneElement(step, {
+          return React.cloneElement(step, {
             step: i + 1,
             completed,
             style: stepStyles,

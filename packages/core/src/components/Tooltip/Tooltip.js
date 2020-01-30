@@ -1,7 +1,6 @@
+// @flow
 /* eslint-disable react/no-multi-comp */
-import PropTypes from 'prop-types';
-
-import React, { Component, cloneElement } from 'react';
+import * as React from 'react';
 import cx from 'classnames';
 import warning from 'warning';
 
@@ -10,8 +9,37 @@ import css from './Tooltip.css';
 
 export { HORIZONTAL_ATTACHMENTS, VERTICAL_ATTACHMENTS } from '../Tether/Tether';
 
+type Attachments = {
+  center: string,
+  top: string,
+  bottom: string,
+}
+
+type VerticalClassNames = {
+  [VERTICAL_ATTACHMENTS]: Attachments,
+}
+
+type HorizontalClassNames = {
+  [HORIZONTAL_ATTACHMENTS]: Attachments,
+}
+
+const verticalAttachmentTypes = Object.keys(VERTICAL_ATTACHMENTS);
+const horizontalAttachmentTypes = Object.keys(VERTICAL_ATTACHMENTS);
+
+type Props = {
+  children: React.Element<any>,
+  verticalAttachment?: typeof verticalAttachmentTypes,
+  horizontalAttachment?: typeof horizontalAttachmentTypes,
+  className?: string,
+  verticalClassNames: VerticalClassNames,
+  horizontalClassNames: HorizontalClassNames,
+  flushHorizontal?: boolean,
+  flushVertical?: boolean,
+  active?: boolean,
+}
+
 /* eslint-disable react/prefer-stateless-function */
-class TetherDirectionWrapper extends Component {
+class TetherDirectionWrapper extends React.Component<Props> {
   render() {
     const {
       verticalAttachment,
@@ -37,7 +65,7 @@ class TetherDirectionWrapper extends Component {
 
     return (
       <div className={classNames}>
-        {cloneElement(children, {
+        {React.cloneElement(children, {
           ...rest,
           verticalAttachment,
           horizontalAttachment,
@@ -47,37 +75,34 @@ class TetherDirectionWrapper extends Component {
   }
 }
 /* eslint-enable react/prefer-stateless-function */
+type Vertical = {
+  [x: number]: any,
+  flushVertical: any,
+}
 
-TetherDirectionWrapper.propTypes = {
-  children: PropTypes.node,
-  verticalAttachment: PropTypes.oneOf(Object.keys(VERTICAL_ATTACHMENTS)),
-  horizontalAttachment: PropTypes.oneOf(Object.keys(HORIZONTAL_ATTACHMENTS)),
-  className: PropTypes.string,
-  verticalClassNames: PropTypes.shape({
-    [VERTICAL_ATTACHMENTS.CENTER]: PropTypes.string,
-    [VERTICAL_ATTACHMENTS.TOP]: PropTypes.string,
-    [VERTICAL_ATTACHMENTS.BOTTOM]: PropTypes.string,
-  }),
-  horizontalClassNames: PropTypes.shape({
-    [HORIZONTAL_ATTACHMENTS.CENTER]: PropTypes.string,
-    [HORIZONTAL_ATTACHMENTS.LEFT]: PropTypes.string,
-    [HORIZONTAL_ATTACHMENTS.RIGHT]: PropTypes.string,
-  }),
-  flushHorizontal: PropTypes.bool,
-  flushVertical: PropTypes.bool,
-  active: PropTypes.bool,
-};
+type Horizontal = {
+  [x: number]: any,
+  flushHorizontal: any,
+}
 
-export default class Tooltip extends Component {
-  static propTypes = {
-    target: PropTypes.node,
-    children: PropTypes.node,
-    variant: PropTypes.oneOf(['light', 'dark']),
-    targetClassName: PropTypes.string,
-    className: PropTypes.string,
-    flushHorizontal: PropTypes.bool,
-    flushVertical: PropTypes.bool,
-  };
+type TargetClassNames = {
+  vertical: Vertical,
+  horizontal: Horizontal,
+}
+
+type TooltipProps = {
+  target: React.Element<any>,
+  children: React.Element<any>,
+  variant: TargetClassNames,
+  targetClassName: string,
+  className: string,
+  flushHorizontal: boolean,
+  flushVertical: boolean,
+}
+
+export default class Tooltip extends React.Component<TooltipProps> {
+  target: any;
+  tooltip: any;
 
   static defaultProps = {
     variant: 'dark',

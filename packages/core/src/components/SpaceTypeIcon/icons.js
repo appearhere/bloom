@@ -1,3 +1,5 @@
+// @flow
+
 import shopShare from './icons/shop-share.svg';
 import event from './icons/event.svg';
 import barRestaurant from './icons/bar-rest.svg';

@@ -1,10 +1,18 @@
-import PropTypes from 'prop-types';
-import React from 'react';
+// @flow
+
+import * as React from 'react';
 import cx from 'classnames';
 
 import css from './StepIcon.css';
 
-const StepIcon = props => {
+type Props = {
+  children: React.Node,
+  className?: string,
+  completed: boolean,
+  circleClassName: string,
+}
+
+const StepIcon = (props: Props) => {
   const { children, className, circleClassName, completed, ...rest } = props;
 
   const circleClasses = cx(css.circle, completed ? css.circleCompleted : null, circleClassName);
@@ -15,7 +23,7 @@ const StepIcon = props => {
       height="50px"
       viewBox="0 0 46 46"
       className={cx(css.root, className)}
-      {...rest}
+      {...(rest: any)}
     >
       <g fill="none">
         <circle className={circleClasses} cx="23" cy="23" r="22" />
@@ -27,13 +35,6 @@ const StepIcon = props => {
       </g>
     </svg>
   );
-};
-
-StepIcon.propTypes = {
-  children: PropTypes.node.isRequired,
-  className: PropTypes.string,
-  completed: PropTypes.bool,
-  circleClassName: PropTypes.string,
 };
 
 export default StepIcon;
