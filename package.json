@@ -24,8 +24,7 @@
     "test": "jest --projects packages/*",
     "bump": "lerna publish --exact --skip-npm --since \"v$(npm info @appearhere/bloom version)\"",
     "test:travis": "yarn test --coverage --maxWorkers=4",
-    "now-build": "yarn build && yarn build-storybook",
-    "lint:flow": "cd packages/core && flow"
+    "now-build": "yarn build && yarn build-storybook"
   },
   "eslintConfig": {
     "extends": "./eslint.js"
@@ -40,7 +39,7 @@
     "hooks": {
       "pre-commit": "lint-staged"
     }
-  },  
+  },
   "resolutions": {
     "js-yaml": "^3.13.1",
     "braces": "^2.3.1",
