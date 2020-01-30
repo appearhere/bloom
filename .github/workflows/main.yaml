@@ -1,0 +1,25 @@
+name: Lint
+
+on: [push]
+
+jobs:
+  lint:
+    runs-on: ubuntu-latest
+
+    steps:
+    - uses: actions/checkout@v1
+    - name: Set up Node
+      uses: actions/setup-node@v1
+      with:
+        node-version: 12.14.1
+
+    - name: Install Dependancies
+      run: |
+        curl -sS https://dl.yarnpkg.com/debian/pubkey.gpg | sudo apt-key add -
+        echo "deb https://dl.yarnpkg.com/debian/ stable main" | sudo tee /etc/apt/sources.list.d/yarn.list
+        sudo apt update && sudo apt install yarn
+        cd packages/core
+        yarn install
+    - run: |
+        cd packages/core
+        yarn run flow
