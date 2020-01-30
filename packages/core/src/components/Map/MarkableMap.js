@@ -14,7 +14,7 @@ import cx from 'classnames';
 
 import lngLatType from '../../utils/propTypeValidations/lngLat';
 import minLngLatBounds from '../../utils/geoUtils/minLngLatBounds';
-import mapboxgl, { MapboxEvent } from '../../utils/mapboxgl/mapboxgl';
+import mapboxgl from '../../utils/mapboxgl/mapboxgl';
 import MarkerContainer from './Markers/MarkerContainer';
 import BaseMap from './BaseMap';
 
@@ -330,7 +330,7 @@ export default class MarkableMap extends Component<Props, State> {
     });
   };
 
-  handleMapClick = (e: MapboxEvent) => {
+  handleMapClick = (e: Event) => {
     const { originalEvent, point } = e;
     if (originalEvent.target !== this.getMapboxGL().getCanvas()) return;
 

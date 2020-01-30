@@ -1,72 +1,79 @@
 {
-  "env": {
+  "env": {  
     "development": {
       "presets": [
-        "stage-1",
-        "react",
+        "@babel/preset-react",
         [
-          "latest", {
-            "es2015": {
-              "modules": false
+          "@babel/preset-env", {
+            "targets": {
+              "node": "current"
             }
           }
         ],
+        "@babel/preset-flow"
       ],
       "plugins": [
-        "transform-class-properties",
-        "transform-object-rest-spread",
-        ["transform-regenerator", {
+        "@babel/plugin-proposal-class-properties",
+        ["@babel/plugin-transform-regenerator", {
           "async": false
         }],
-        ["transform-runtime", {
-          "helpers": false,
-          "polyfill": false
+        ["@babel/plugin-transform-runtime", {
+          "helpers": false
         }],
-        "external-helpers"
+        "@babel/plugin-proposal-export-default-from",
+        "@babel/plugin-proposal-object-rest-spread",
+        "inline-react-svg"
       ]
     },
     "production": {
       "presets": [
-        "stage-1",
-        "react",
+        "@babel/preset-react",
         [
-          "latest", {
-            "es2015": {
-              "modules": false
+          "@babel/preset-env", {
+            "targets": {
+              "node": "current"
             }
           }
         ],
+        "@babel/preset-flow"
       ],
       "plugins": [
-        "transform-class-properties",
-        "transform-object-rest-spread",
-        ["transform-regenerator", {
+        "@babel/plugin-proposal-class-properties",
+        ["@babel/plugin-transform-regenerator", {
           "async": false
         }],
-        ["transform-runtime", {
-          "helpers": false,
-          "polyfill": false
+        ["@babel/plugin-transform-runtime", {
+          "helpers": false
         }],
-        "external-helpers"
+        "@babel/plugin-proposal-export-default-from",
+        "@babel/plugin-proposal-object-rest-spread",
+        "inline-react-svg"
       ]
     },
     "test": {
       "presets": [
-        "env",
-        "react",
-        "stage-2"
+        "@babel/preset-react",
+        [
+          "@babel/preset-env", {
+            "targets": {
+              "node": "current"
+            }
+          }
+        ],
+        "@babel/preset-flow"
       ],
       "plugins": [
-        "transform-class-properties",
-        "transform-object-rest-spread",
-        ["transform-regenerator", {
+        "@babel/plugin-proposal-class-properties",
+        ["@babel/plugin-transform-regenerator", {
           "async": false
         }],
-        ["transform-runtime", {
-          "helpers": false,
-          "polyfill": false
+        ["@babel/plugin-transform-runtime", {
+          "helpers": false
         }],
+        "@babel/plugin-proposal-export-default-from",
+        "@babel/plugin-proposal-object-rest-spread",
+        "inline-react-svg"
       ]
     }
-  },
+  }
 }

@@ -1,13 +1,12 @@
 import { extname, relative } from 'path';
-import resolve from 'rollup-plugin-node-resolve';
-import commonjs from 'rollup-plugin-commonjs';
-import postcssCssnext from 'postcss-cssnext';
+import resolve from '@rollup/plugin-node-resolve';
+import commonjs from '@rollup/plugin-commonjs';
+import postcssPresetEnv from 'postcss-preset-env';
 import postcssModules from 'postcss-modules';
 import postcss from 'postcss';
 import lost from 'lost';
 import babel from 'rollup-plugin-babel';
-import json from 'rollup-plugin-json';
-import reactSvg from "rollup-plugin-react-svg";
+import json from '@rollup/plugin-json';
 import cssnano from 'cssnano';
 import { writeFileSync } from 'fs';
 
@@ -19,7 +18,7 @@ const cssModules = (options = {}) => {
   let css = '';
 
   const plugins = [
-    postcssCssnext({
+    postcssPresetEnv({
       features: {
         customMedia: {
           extensions: cssMap.media,
@@ -75,7 +74,7 @@ const cssModules = (options = {}) => {
       });
     },
 
-    ongenerate() {
+    generateBundle() {
       cssnano.process(css).then(result => {
         writeFileSync(options.output, result.css);
       });
@@ -91,7 +90,35 @@ export default {
     name: 'bloom',
     globals: {
       'react': 'React',
-      'react-dom': 'ReactDOM'
+      'react-dom': 'ReactDOM',
+      'react-motion': 'reactMotion$1',
+      'subscribe-ui-event': 'subscribeUiEvent',
+      'lodash/fp/uniqueId': 'uniqueId',
+      'classnames': 'cx$2',
+      'react-on-visible': 'OnVisible',
+      'react-transition-group': 'reactTransitionGroup',
+      'prop-types': 'PropTypes',
+      'classnames/bind': 'classNames$1',
+      'exenv': 'ExecutionEnvironment',
+      'moment': 'moment$1',
+      'moment-range': 'momentRange',
+      'react-moment-proptypes': 'reactMomentProptypes',
+      'key-mirror': 'keyMirror',
+      'nuka-carousel': 'Carousel$1',
+      'react-container-query': 'reactContainerQuery',
+      'shortid': 'shortid',
+      '@appearhere/react-input-range': 'ReactInputRange',
+      'react-autosuggest': 'AutoSuggest',
+      'warning': 'warning',
+      'react-html5video': 'videoConnect',
+      'lodash/fp/isEqual': 'isEqual',
+      'lodash/fp/find': 'find',
+      'lodash/fp/isArray': 'isArray',
+      'commonmark': 'CommonMark',
+      'commonmark-react-renderer': 'ReactRenderer',
+      'lodash/fp/first': 'first',
+      'lodash/fp/last': 'last',
+      '@appearhere/react-stickynode': 'StickyNode',
     }
   },
   // All the used libs needs to be here
@@ -121,11 +148,11 @@ export default {
     'moment-range',
     'prop-types',
     'react',
+    'react-moment-proptypes',
     'react-autosuggest',
     'react-container-query',
     'react-dom',
     'react-html5video',
-    'react-moment-proptypes',
     'react-motion',
     'react-on-visible',
     'react-transition-group',
@@ -136,13 +163,6 @@ export default {
     clearScreen: false
   },
   plugins: [
-    reactSvg({
-      svgo: {
-        plugins: [],
-        multipass: true
-      },
-      jsx: true,
-    }),
     cssModules({
       output: 'dist/bloom.css',
     }),
@@ -155,6 +175,11 @@ export default {
         moduleDirectory: '../../node_modules'
       }
     }),
-    commonjs(),
+    commonjs({
+      include: 'node_modules/**',
+      namedExports: {
+        'node_modules/react/index.js': ['Component', 'PureComponent', 'Fragment', 'Children', 'createElement']
+      }
+    }),
   ]
 }

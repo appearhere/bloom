@@ -4,28 +4,16 @@
   "main": "index.js",
   "license": "MIT",
   "private": true,
-  "workspaces": {
-    "nohoist": [
-      "@storybook/react"
-    ]
-  },
-  "dependencies": {
-    "@appearhere/bloom": "^1.1.0-beta.53",
-    "@appearhere/common-styles": "^1.1.0-beta.22"
-  },
-  "devDependencies": {
-    "@babel/core": "^7.5.4",
-    "@storybook/addon-actions": "^5.2.8",
-    "@storybook/addon-knobs": "^5.2.8",
-    "@storybook/addon-links": "^5.2.8",
-    "@storybook/addons": "^5.2.8",
-    "@storybook/react": "^5.2.8",
-    "@storybook/storybook-deployer": "^2.8.1",
-    "babel-loader": "^8.0.6"
-  },
   "scripts": {
     "storybook": "start-storybook -p 6006",
     "build-storybook": "build-storybook",
     "deploy": "storybook-to-ghpages --out=../../docs --ci"
+  },
+  "devDependencies": {
+    "@storybook/addon-actions": "^5.3.9",
+    "@storybook/addon-knobs": "^5.3.9",
+    "@storybook/addon-links": "^5.3.9",
+    "@storybook/react": "^5.3.9",
+    "babel-loader": "^8.0.6"
   }
 }
