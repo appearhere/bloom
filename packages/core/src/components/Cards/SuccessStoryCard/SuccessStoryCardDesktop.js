@@ -16,6 +16,7 @@ type Props = {
   href: string,
   variant?: string,
   brandsTitle: string,
+  linkText: string
 }
 
 const SuccessStoryCardDesktop = ({
@@ -26,6 +27,7 @@ const SuccessStoryCardDesktop = ({
   href,
   variant,
   brandsTitle,
+  linkText,
 }: Props) => (
   <div className={cx(css.successStoryCard, {
     [css.goldBackground]: variant === 'gold',
@@ -60,7 +62,7 @@ const SuccessStoryCardDesktop = ({
           <p className={css.copy}>
             <RemoveOrphans text={copy} />
           </p>
-          <IconLink inverted href={href} iconName="arrow-right" text="Read More" />
+          <IconLink inverted href={href} iconName="arrow-right" text={linkText} />
         </div>
       </div>
     </div>
