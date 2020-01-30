@@ -1,4 +1,3 @@
-import PropTypes from 'prop-types';
 import React from 'react';
 import { storiesOf } from '@storybook/react';
 import { action } from '@storybook/addon-actions';
@@ -26,7 +25,6 @@ const StorySlide = ({ number }) => (
     </PictureCard>
   </div>
 );
-StorySlide.propTypes = { number: PropTypes.number };
 const slides = [...Array(10).keys()].map(i => <StorySlide number={i} key={i} />);
 
 

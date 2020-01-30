@@ -1,4 +1,3 @@
-import PropTypes from 'prop-types';
 import React, { Component } from 'react';
 
 export const getDomainValue = (rawValue, steps) => {
@@ -25,20 +24,6 @@ export const getRawValue = (domainValue, steps) => {
 
 const transformStepValues = WrappedComponent => steps =>
   class extends Component {
-    static propTypes = {
-      onChange: PropTypes.func,
-      onChangeComplete: PropTypes.func,
-      value: PropTypes.oneOfType([
-        PropTypes.number,
-        PropTypes.shape({
-          min: PropTypes.number,
-          max: PropTypes.number,
-        }),
-      ]),
-      maxValue: PropTypes.number,
-      minValue: PropTypes.number,
-    };
-
     static defaultProps = {
       onChange: () => {},
       onChangeComplete: () => {},

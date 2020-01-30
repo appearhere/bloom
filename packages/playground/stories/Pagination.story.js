@@ -1,4 +1,3 @@
-import PropTypes from 'prop-types';
 import React from 'react';
 import { storiesOf } from '@storybook/react';
 import { action } from '@storybook/addon-actions';
@@ -21,7 +20,6 @@ const PageButton = ({ onClick, page }) => (
     {page}
   </button>
 );
-PageButton.propTypes = { onClick: PropTypes.func, page: PropTypes.any };
 
 const NextButton = ({ onClick, page }) => (
   <button
@@ -32,7 +30,6 @@ const NextButton = ({ onClick, page }) => (
     Next
   </button>
 );
-NextButton.propTypes = { onClick: PropTypes.func, page: PropTypes.any };
 
 const PreviousButton = ({ onClick, page }) => (
   <button
@@ -43,7 +40,6 @@ const PreviousButton = ({ onClick, page }) => (
     Previous
   </button>
 );
-PreviousButton.propTypes = { onClick: PropTypes.func, page: PropTypes.any };
 
 const EventedPagination = props => (
   <Pagination
