@@ -19,7 +19,6 @@ engines:
 ratings:
   paths:
   - components/**/*.js
-  - styleguide/**/*.js
 exclude_paths:
 - "config/**/*"
 - "scripts/**/*"

@@ -11,21 +11,21 @@ storiesOf('Type', module)
     <Type.SectionHeader
       className={[m.pa48].join(' ')}
       title="Bloom: Pattern library"
-      strapline="A styleguide & library of React components"
+      strapline="A library of React components"
     />
   ))
   .add('<Type.SectionHeader /> centered', () => (
     <Type.SectionHeader
       className={[m.pa48, m.center].join(' ')}
       title="Bloom: Pattern library"
-      strapline="A styleguide & library of React components"
+      strapline="A library of React components"
     />
   ))
   .add('<Type.SectionHeader /> reverse', () => (
     <Type.SectionHeader
       className={[m.fgWhite, m.bgBlack, m.pa48].join(' ')}
       title="Bloom: Pattern library"
-      strapline="A styleguide & library of React components"
+      strapline="A library of React components"
     />
   ))
   .add('<Type.SectionHeader /> without strapline', () => (
