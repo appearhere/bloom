@@ -1,4 +1,5 @@
-import PropTypes from 'prop-types';
+// @flow
+
 import React from 'react';
 import first from 'lodash/fp/first';
 import last from 'lodash/fp/last';
@@ -14,7 +15,16 @@ const FILLER_THRESHOLD = 2;
 
 const PaginationFiller = () => <span className={css.filler}>&hellip;</span>;
 
-const PaginationTrack = props => {
+type Props = {
+  currentPage: number,
+  totalPages: number,
+  displayRange: number,
+  LinkComponent: Function,
+  FillerComponent: Function,
+  linkProps: Object,
+}
+
+const PaginationTrack = (props: Props) => {
   const {
     LinkComponent,
     FillerComponent,
@@ -66,15 +76,6 @@ const PaginationTrack = props => {
       })}
     </ul>
   );
-};
-
-PaginationTrack.propTypes = {
-  currentPage: PropTypes.number.isRequired,
-  totalPages: PropTypes.number.isRequired,
-  displayRange: PropTypes.number,
-  LinkComponent: PropTypes.func,
-  FillerComponent: PropTypes.func,
-  linkProps: PropTypes.object,
 };
 
 PaginationTrack.defaultProps = {

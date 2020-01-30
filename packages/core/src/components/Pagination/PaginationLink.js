@@ -1,5 +1,6 @@
-import PropTypes from 'prop-types';
-import React, { Component } from 'react';
+// @flow
+
+import * as React from 'react';
 import cx from 'classnames';
 
 import noop from '../../utils/noop';
@@ -8,34 +9,34 @@ import ScreenReadable from '../ScreenReadable/ScreenReadable';
 
 import css from './PaginationLink.css';
 
-export const NextLink = props => (
+type Props = {
+  page: number,
+  children: React.Node,
+  accessibilityLabel: string,
+  active: boolean,
+  disabled: boolean,
+  onClick: Function,
+}
+
+export const NextLink = (props: Props) => (
   <PaginationLink {...props}>
     <Icon name="arrow" className={css.nextArrow} />
   </PaginationLink>
 );
 
-export const PreviousLink = props => (
+export const PreviousLink = (props: Props) => (
   <PaginationLink {...props}>
     <Icon name="arrow" className={css.prevArrow} />
   </PaginationLink>
 );
 
-export class PaginationLink extends Component {
-  static propTypes = {
-    page: PropTypes.number.isRequired,
-    children: PropTypes.node.isRequired,
-    accessibilityLabel: PropTypes.string,
-    active: PropTypes.bool,
-    disabled: PropTypes.bool,
-    onClick: PropTypes.func,
-  };
-
+export class PaginationLink extends React.Component<Props> {
   static defaultProps = {
     accessibilityLabel: 'go to page',
     onClick: noop,
   };
 
-  handleClick = e => {
+  handleClick = (e: Event) => {
     const { page, onClick } = this.props;
     onClick(e, page);
   };

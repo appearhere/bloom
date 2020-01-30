@@ -1,18 +1,21 @@
-import PropTypes from 'prop-types';
+// @flow
 import React, { Component } from 'react';
 import classnames from 'classnames';
 import css from './IconCore.css';
 
-export default (iconSet, theme) =>
-  class Icon extends Component {
-    static propTypes = {
-      name: PropTypes.string.isRequired,
-      className: PropTypes.string,
-      dimensions: PropTypes.shape({
-        height: PropTypes.string,
-        width: PropTypes.string,
-      }),
-    };
+type Dimensions = {
+  height: string,
+  width: string,
+}
+
+type Props = {
+  name: string,
+  className?: string,
+  dimensions: Dimensions,
+}
+
+export default (iconSet: Object, theme: any) =>
+  class Icon extends Component<Props> {
 
     static defaultProps = {
       dimensions: { height: '1em', width: '1em' },
