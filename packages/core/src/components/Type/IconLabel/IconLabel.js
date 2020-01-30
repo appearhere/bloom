@@ -1,11 +1,18 @@
-import PropTypes from 'prop-types';
-import React from 'react';
+// @flow
+
+import * as React from 'react';
 
 import css from './IconLabel.css';
 import Icon from '../../Icon/Icon';
 import LeftRight from '../../LeftRight/LeftRight';
 
-const IconLabel = ({ iconName, children, className }) => (
+type Props = {
+  iconName: string,
+  children: React.Node,
+  className?: string,
+}
+
+const IconLabel = ({ iconName, children, className }: Props) => (
   <LeftRight
     className={className}
     leftClassName={css.icon}
@@ -15,11 +22,5 @@ const IconLabel = ({ iconName, children, className }) => (
     primarySide="right"
   />
 );
-
-IconLabel.propTypes = {
-  iconName: PropTypes.string.isRequired,
-  children: PropTypes.node.isRequired,
-  className: PropTypes.string,
-};
 
 export default IconLabel;

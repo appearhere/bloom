@@ -1,15 +1,20 @@
-import PropTypes from 'prop-types';
+// @flow
+
 import React from 'react';
 import cx from 'classnames';
 
 import defaultcss from './ValueIcon.css';
 import css from './ValueIconHandshake.css';
 
-const ValueIconHandshake = props => {
+type Props = {
+  className?: string,
+}
+
+const ValueIconHandshake = (props: Props) => {
   const { className, ...rest } = props;
 
   return (
-    <span className={cx(defaultcss.root, className)} {...rest}>
+    <span className={cx(defaultcss.root, className)} {...(rest: any)}>
       <svg viewBox="0 0 63.06 42">
         <polyline points="38.01 12.92 46.58 27.24 22.4 37.56 14.23 26.27 14.08 4.44 31.87 4.44" />
         <rect x="48.99" y="4.44" width="13.58" height="22.3" />
@@ -28,10 +33,6 @@ const ValueIconHandshake = props => {
       </svg>
     </span>
   );
-};
-
-ValueIconHandshake.propTypes = {
-  className: PropTypes.string,
 };
 
 export default ValueIconHandshake;
