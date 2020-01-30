@@ -1,4 +1,4 @@
-import PropTypes from 'prop-types';
+// @flow
 import React, { Component } from 'react';
 import cx from 'classnames';
 
@@ -7,22 +7,23 @@ import starCss from '../Star/Star.css';
 import Star from '../Star/Star';
 import RadioGroup from '../RadioGroup/RadioGroup';
 
-export default class StarRating extends Component {
-  static propTypes = {
-    name: PropTypes.string,
-    ratings: PropTypes.arrayOf(PropTypes.number),
-    value: PropTypes.number,
-  };
+type Props = {
+  name: string,
+  ratings: Array<number>,
+  value: number,
+}
+export default class StarRating extends Component<Props> {
+  group: HTMLInputElement;
 
   static defaultProps = {
     ratings: [1, 2, 3, 4, 5],
   };
 
-  focus = () => {
+  focus = (): void => {
     this.group.focus();
   };
 
-  blur = () => {
+  blur = (): void => {
     this.group.blur();
   };
 
@@ -31,7 +32,7 @@ export default class StarRating extends Component {
 
     return (
       <RadioGroup
-        {...rest}
+        {...(rest: any)}
         ref={c => {
           this.group = c;
         }}

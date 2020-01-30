@@ -1,26 +1,26 @@
-import PropTypes from 'prop-types';
+// @flow
 import React, { Component } from 'react';
 
 import css from './InputRange.css';
 import InputRange from './InputRange';
 
 /* eslint-disable arrow-body-style */
-export const getVerticalScale = data =>
+export const getVerticalScale = (data: Array<number>) =>
   data.reduce((currentHighestValue, datum) => {
     return datum >= currentHighestValue ? datum : currentHighestValue;
   }, 0);
 /* eslint-enable arrow-body-style */
 
-export const getPointWidth = data => 100 / data.length;
+export const getPointWidth = (data: Array<number>) => 100 / data.length;
 
-const defaultValueSelector = value => value;
+const defaultValueSelector = (value: number) => value;
 
-export default class InputRangeWithHistogram extends Component {
-  static propTypes = {
-    name: PropTypes.string,
-    data: PropTypes.array.isRequired,
-    valueSelector: PropTypes.func,
-  };
+type Props = {
+  name: string,
+  data: Array<number>,
+  valueSelector: Function,
+}
+export default class InputRangeWithHistogram extends Component<Props> {
 
   static defaultProps = {
     valueSelector: defaultValueSelector,
@@ -49,7 +49,7 @@ export default class InputRangeWithHistogram extends Component {
             </div>
           ))}
         </div>
-        <InputRange name={name} {...rest} />
+        <InputRange name={name} {...(rest: any)} />
       </div>
     );
   }

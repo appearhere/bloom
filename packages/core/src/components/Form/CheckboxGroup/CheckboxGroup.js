@@ -1,35 +1,36 @@
-import PropTypes from 'prop-types';
+// @flow
 import React, { Component } from 'react';
 
 import Checkbox from '../Checkbox/Checkbox';
 import noop from '../../../utils/noop';
 
-export default class CheckboxGroup extends Component {
-  static propTypes = {
-    Input: PropTypes.oneOfType([PropTypes.func, PropTypes.string]),
-    children: PropTypes.func.isRequired,
-    value: PropTypes.arrayOf(PropTypes.string),
-    onChange: PropTypes.func,
-    optional: PropTypes.bool,
-    name: PropTypes.string,
-    className: PropTypes.string,
-    id: PropTypes.string,
-  };
+type Props = {
+  Input: Function | string,
+  children?: Function,
+  value: Array<string>,
+  onChange: Function,
+  optional?: boolean,
+  name: string,
+  className?: string,
+  id: string,
+}
+export default class CheckboxGroup extends Component<Props> {
+  input: HTMLInputElement;
 
   static defaultProps = {
     onChange: noop,
     Input: Checkbox,
   };
 
-  focus = () => {
+  focus = (): void => {
     this.input.focus();
   };
 
-  blur = () => {
+  blur = (): void => {
     this.input.blur();
   };
 
-  handleChange = (e, name, changedValue) => {
+  handleChange = (e:SyntheticEvent<HTMLButtonElement>, name: string, changedValue: any) => {
     const { value, onChange } = this.props;
 
     const selected = new Set(value);

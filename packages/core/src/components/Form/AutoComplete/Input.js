@@ -1,4 +1,4 @@
-import PropTypes from 'prop-types';
+// @flow
 import React, { Component } from 'react';
 import cx from 'classnames';
 
@@ -7,14 +7,20 @@ import noop from '../../../utils/noop';
 import mergeObjectStrings from '../../../utils/mergeObjectStrings/mergeObjectStrings';
 import css from './Input.css';
 
-class AutoCompleteInput extends Component {
-  static propTypes = {
-    InputComponent: PropTypes.any,
-    inputClassNames: PropTypes.object,
-    className: PropTypes.string,
-    onFocus: noop,
-    onBlur: noop,
-  };
+type Props = {
+  InputComponent: any,
+  inputClassNames?: Object,
+  className?: string,
+  onFocus: noop,
+  onBlur: noop,
+}
+
+type State = {
+  hasFocus: boolean
+}
+
+class AutoCompleteInput extends Component<Props, State> {
+  input: ?HTMLInputElement;
 
   static defaultProps = {
     InputComponent: Input,
@@ -25,12 +31,12 @@ class AutoCompleteInput extends Component {
   };
 
   focus = () => {
-    this.input.focus();
+    this.input && this.input.focus();
     this.handleFocus();
   };
 
   blur = () => {
-    this.input.blur();
+    this.input && this.input.blur();
     this.handleBlur();
   };
 
@@ -69,4 +75,4 @@ class AutoCompleteInput extends Component {
   }
 }
 
-export default props => <AutoCompleteInput {...props} />;
+export default (props: Props) => <AutoCompleteInput {...props} />;

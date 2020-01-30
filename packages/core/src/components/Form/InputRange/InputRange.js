@@ -1,4 +1,4 @@
-import PropTypes from 'prop-types';
+// @flow
 import React, { Component } from 'react';
 import ReactInputRange from '@appearhere/react-input-range';
 
@@ -20,47 +20,47 @@ export const defaultClassNames = {
   disabled: css.disabled,
 };
 
-export default class InputRange extends Component {
-  static propTypes = {
-    name: PropTypes.string.isRequired,
-    id: PropTypes.string,
-    value: PropTypes.oneOfType([
-      PropTypes.number,
-      PropTypes.shape({
-        min: PropTypes.number,
-        max: PropTypes.number,
-      }),
-    ]).isRequired,
-    onChange: PropTypes.func,
-    onChangeComplete: PropTypes.func,
-    classNames: PropTypes.shape({
-      component: PropTypes.string,
-      labelContainer: PropTypes.string,
-      labelMax: PropTypes.string,
-      labelMin: PropTypes.string,
-      labelValue: PropTypes.string,
-      slider: PropTypes.string,
-      sliderContainer: PropTypes.string,
-      trackActive: PropTypes.string,
-      trackContainer: PropTypes.string,
-      disabled: PropTypes.string,
-    }),
-    minValue: PropTypes.number.isRequired,
-    maxValue: PropTypes.number.isRequired,
-  };
+type MinMax = {
+  min: number,
+  max: number,
+}
 
+type Classnames = {
+  component: string,
+  labelContainer: string,
+  labelMax: string,
+  labelMin: string,
+  labelValue: string,
+  slider: string,
+  sliderContainer: string,
+  trackActive: string,
+  trackContainer: string,
+  disabled: string,
+}
+type Props = {
+  name: string,
+  id: string,
+  value: number | MinMax,
+  onChange: Function,
+  onChangeComplete: Function,
+  classNames?: Classnames,
+  minValue: number,
+  maxValue: number,
+}
+
+export default class InputRange extends Component<Props> {
   static defaultProps = {
     onChange: noop,
     onChangeComplete: noop,
     classNames: defaultClassNames,
   };
 
-  handleChange = val => {
+  handleChange = (val: number): void => {
     const { name, onChange } = this.props;
     onChange(null, name, val);
   };
 
-  handleChangeComplete = val => {
+  handleChangeComplete = (val: number): void => {
     const { name, onChangeComplete } = this.props;
     onChangeComplete(null, name, val);
   };

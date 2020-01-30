@@ -1,18 +1,19 @@
-import PropTypes from 'prop-types';
-import React from 'react';
+// @flow
+import * as React from 'react';
+
 import cx from 'classnames';
 
 import css from './Heading.css';
 
-const Heading = ({ className, children, ...rest }) => (
+type Props = {
+  className?: string,
+  children: React.Node,
+}
+
+const Heading = ({ className, children, ...rest }: Props) => (
   <span {...rest} className={cx(css.root, className)}>
     {children}
   </span>
 );
-
-Heading.propTypes = {
-  className: PropTypes.string,
-  children: PropTypes.node,
-};
 
 export default Heading;
