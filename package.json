@@ -6,8 +6,10 @@
   "devDependencies": {
     "babel-jest": "^23.0.1",
     "concurrently": "^3.5.1",
+    "husky": "^4.2.1",
     "jest": "22.1.2",
-    "lerna": "^2.9.0"
+    "lerna": "^2.9.0",
+    "lint-staged": "^10.0.4"
   },
   "engines": {
     "node": "12.x"
@@ -22,7 +24,8 @@
     "test": "jest --projects packages/*",
     "bump": "lerna publish --exact --skip-npm --since \"v$(npm info @appearhere/bloom version)\"",
     "test:travis": "yarn test --coverage --maxWorkers=4",
-    "now-build": "yarn build && yarn build-storybook"
+    "now-build": "yarn build && yarn build-storybook",
+    "lint:flow": "cd packages/core && flow"
   },
   "eslintConfig": {
     "extends": "./eslint.js"
@@ -30,12 +33,20 @@
   "dependencies": {
     "upath": "^1.0.5"
   },
+  "lint-staged": {
+    "*.js": "flow"
+  },
+  "husky": {
+    "hooks": {
+      "pre-commit": "lint-staged"
+    }
+  },  
   "resolutions": {
     "js-yaml": "^3.13.1",
     "braces": "^2.3.1",
     "cryptiles": "^3.1.3",
     "deep-extend": "^0.5.1",
-    "hoek":"^4.2.0",
+    "hoek": "^4.2.0",
     "mixin-deep": "^1.3.2",
     "set-value": "^2.0.1",
     "fstream": "^1.0.12",
