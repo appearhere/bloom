@@ -50,26 +50,6 @@ If the module import fails like so, `You may need an appropriate loader to handl
 }
 ```
 
-## Running the style guide
-
-To build the style guide for deployment:
-
-```shell
-yarn run build
-```
-
-This will create a static version of the style guide in `/build`.
-
-To build the style guide for development:
-
-```shell
-yarn start
-```
-
-This will run the style guide, automatically opening your browser window at the root page. We use hot module reloading, so the vast majority of changes you'll make to components or the style guide itself will auto update on the page.
-
-**NOTE: changes to variables current require you to restart the project, as they're consumed on the initial run 🌚**
-
 ## React Storybook
 
 Aside from running the style guide locally on your machine, we also have the option to use [React Storybook](https://getstorybook.io/).
