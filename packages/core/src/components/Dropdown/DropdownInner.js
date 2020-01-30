@@ -1,10 +1,18 @@
-import PropTypes from 'prop-types';
-import React from 'react';
+// @flow
+import * as React from 'react';
 import cx from 'classnames';
 
 import css from './DropdownInner.css';
 
-const DropdownInner = props => {
+type Props = {
+  className?: string,
+  children: React.Node,
+  verticalAttachment?: string,
+  horizontalAttachment?: string,
+  active?: boolean,
+  closePortal?: Function,
+}
+const DropdownInner = (props: Props) => {
   const {
     className,
     children,
@@ -20,15 +28,6 @@ const DropdownInner = props => {
       {children}
     </div>
   );
-};
-
-DropdownInner.propTypes = {
-  className: PropTypes.string,
-  children: PropTypes.node,
-  verticalAttachment: PropTypes.string,
-  horizontalAttachment: PropTypes.string,
-  active: PropTypes.bool,
-  closePortal: PropTypes.func,
 };
 
 export default DropdownInner;

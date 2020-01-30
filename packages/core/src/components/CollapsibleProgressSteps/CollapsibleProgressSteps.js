@@ -1,11 +1,15 @@
+// @flow
 import React, { useEffect, useState } from 'react';
 import cx from 'classnames';
-import PropTypes from 'prop-types';
 import CollapsibleRow from '../CollapsibleRow/CollapsibleRow';
 
 import css from './CollapsibleProgressSteps.css';
 
-const CollapsibleProgressSteps = ({ data }) => {
+type Props = {
+  data: Array<Object>
+}
+
+const CollapsibleProgressSteps = ({ data }: Props) => {
   const [steps, setSteps] = useState(data);
 
   useEffect(() => {
@@ -34,10 +38,6 @@ const CollapsibleProgressSteps = ({ data }) => {
       ))}
     </div>
   );
-};
-
-CollapsibleProgressSteps.propTypes = {
-  data: PropTypes.arrayOf(PropTypes.object).isRequired
 };
 
 export default CollapsibleProgressSteps;

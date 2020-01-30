@@ -1,16 +1,17 @@
-import PropTypes from 'prop-types';
-import React, { Component } from 'react';
+// @flow
+
+import * as React from 'react';
 import cx from 'classnames';
 
 import css from './BtnContainer.css';
 
-export default class BtnContainer extends Component {
-  static propTypes = {
-    className: PropTypes.string,
-    children: PropTypes.node.isRequired,
-    type: PropTypes.oneOf(['submit', 'button', 'reset', 'menu']),
-  };
+type Props = {
+  className?: string,
+  children: React.Node,
+  type: 'submit' | 'button' | 'reset' | 'menu',
+}
 
+export default class BtnContainer extends React.Component<Props> {
   static defaultProps = {
     type: 'button',
   };
@@ -20,7 +21,7 @@ export default class BtnContainer extends Component {
     const classes = cx(css.root, className);
 
     return (
-      <button className={classes} type={type} {...rest}>
+      <button className={classes} type={type} {...(rest: any)}>
         {children}
       </button>
     );

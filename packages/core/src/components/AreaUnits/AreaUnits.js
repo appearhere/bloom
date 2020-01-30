@@ -1,9 +1,15 @@
-import PropTypes from 'prop-types';
+// @flow
 import React from 'react';
 
 import { AREA_UNITS } from '../../constants/units';
 
-const AreaUnits = ({ value, unit, className, ...rest }) => {
+type Props = {
+  value: number | string,
+  unit: string,
+  className?: string,
+}
+
+const AreaUnits = ({ value, unit, className, ...rest }: Props) => {
   switch (unit) {
     case AREA_UNITS.METERS_SQUARED:
       return (
@@ -20,12 +26,6 @@ const AreaUnits = ({ value, unit, className, ...rest }) => {
         </span>
       );
   }
-};
-
-AreaUnits.propTypes = {
-  value: PropTypes.oneOfType([PropTypes.number, PropTypes.string]).isRequired,
-  unit: PropTypes.string.isRequired,
-  className: PropTypes.string,
 };
 
 AreaUnits.defaultProps = {

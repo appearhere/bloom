@@ -1,18 +1,15 @@
-import React, { Component } from 'react';
+// @flow
+import * as React from 'react';
 import css from './GridLayout.css';
-import PropTypes from 'prop-types';
 import shortid from 'shortid';
 
-export default class GridLayout extends Component {
-  static propTypes = {
-    children: PropTypes.oneOfType([
-      PropTypes.arrayOf(PropTypes.node),
-      PropTypes.node
-      ]).isRequired,
-    col: PropTypes.number,
-    colGap: PropTypes.number,
-    rowHeight: PropTypes.number,
-  };
+type Props = {
+  children: Array<React.Node>,
+  col: number,
+  colGap: number,
+  rowHeight: number,
+}
+export default class GridLayout extends React.Component<Props> {
 
   static defaultProps = {
     col: 4,

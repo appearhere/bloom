@@ -1,4 +1,4 @@
-import PropTypes from 'prop-types';
+// @flow
 import React from 'react';
 
 import FittedImage from '../FittedImage/FittedImage';
@@ -7,7 +7,23 @@ import LeftRight from '../LeftRight/LeftRight';
 import css from './BookingRequestPreview.css';
 import Icon from '../Icon/Icon';
 
-const BookingRequestPreview = ({ bookingRequests, className, ...rest }) => {
+type BookingRequest = {
+  id: number,
+  idea_name: string,
+  idea_category: string,
+  start_on: string,
+  end_on: string,
+  primary_photo_thumbnail_url: string,
+  tooltip: string,
+  complete: boolean,
+}
+
+type Props = {
+  bookingRequests: Array<BookingRequest>,
+  className?: string,
+}
+
+const BookingRequestPreview = ({ bookingRequests, className, ...rest }: Props) => {
   const keyedBookingRequests = bookingRequests.reduce((obj, next) => {
     const state = next.tooltip;
     const currentRequests = obj[state] || [];
@@ -53,22 +69,6 @@ const BookingRequestPreview = ({ bookingRequests, className, ...rest }) => {
       })}
     </div>
   );
-};
-
-BookingRequestPreview.propTypes = {
-  bookingRequests: PropTypes.arrayOf(
-    PropTypes.shape({
-      id: PropTypes.number,
-      idea_name: PropTypes.string,
-      idea_category: PropTypes.string,
-      start_on: PropTypes.string,
-      end_on: PropTypes.string,
-      primary_photo_thumbnail_url: PropTypes.string,
-      tooltip: PropTypes.string,
-      complete: PropTypes.bool,
-    }),
-  ),
-  className: PropTypes.string,
 };
 
 export default BookingRequestPreview;

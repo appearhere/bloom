@@ -1,14 +1,25 @@
-import React, { useState, useEffect } from 'react';
+// @flow
+import * as React from 'react';
 import cx from 'classnames';
-import PropTypes from 'prop-types';
 import Icon from '../Icon/Icon';
 
 import css from './CollapsibleRow.css';
 
-const CollapsibleRow = ({ title, body, left, opened, onClick, border, marginBottom, className }) => {
-  const [open, toggle] = useState(false);
+type Props = {
+  title: string | React.Node,
+  body: string | React.Node,
+  border: boolean,
+  marginBottom: boolean,
+  left?: React.Node,
+  onClick?: Function,
+  className?: string,
+  opened?: boolean
+}
 
-  useEffect(() => {
+const CollapsibleRow = ({ title, body, left, opened, onClick, border, marginBottom, className }: Props) => {
+  const [open, toggle] = React.useState(false);
+
+  React.useEffect(() => {
     toggle(opened);
   }, [opened]);
 
@@ -24,9 +35,8 @@ const CollapsibleRow = ({ title, body, left, opened, onClick, border, marginBott
       className={cx(css.root, css.row, {
         [css.opened]: open,
         [css.border]: border,
-        [css.marginBottom]: marginBottom,
-        [className]: className
-      })}
+        [css.marginBottom]: marginBottom
+      }), className}
     >
       <div className={css.container}>
         { left && <div className={css.left}>
@@ -47,16 +57,6 @@ const CollapsibleRow = ({ title, body, left, opened, onClick, border, marginBott
 CollapsibleRow.defaultProps = {
   border: true,
   marginBottom: true,
-};
-
-CollapsibleRow.propTypes = {
-  title: PropTypes.oneOfType([PropTypes.string, PropTypes.node]).isRequired,
-  body: PropTypes.oneOfType([PropTypes.string, PropTypes.node]).isRequired,
-  border: PropTypes.bool,
-  marginBottom: PropTypes.bool,
-  left: PropTypes.node,
-  onClick: PropTypes.func,
-  className: PropTypes.string,
 };
 
 export default CollapsibleRow;
