@@ -20,7 +20,9 @@
   "devDependencies": {
     "babel-jest": "^25.1.0",
     "concurrently": "^5.1.0",
-    "jest": "^25.1.0",
-    "jest-transform-stub": "^2.0.0"
+    "jest": "^25.1.0"
+  },
+  "dependencies": {
+    "upath": "^1.2.0"
   }
 }
