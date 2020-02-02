@@ -30,7 +30,7 @@
     "extends": "./eslint.js"
   },
   "dependencies": {
-    "upath": "^1.0.5"
+    "upath": "^1.2.0"
   },
   "lint-staged": {
     "*.js": "flow"
