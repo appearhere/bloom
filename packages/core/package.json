@@ -71,7 +71,7 @@
     "babel-preset-react": "^6.24.1",
     "babel-preset-stage-1": "^6.24.1",
     "babel-runtime": "^6.26.0",
-    "cssnano": "^3.10.0",
+    "cssnano": "^4.1.10",
     "eslint": "^4.9.0",
     "eslint-config-airbnb": "^16.1.0",
     "eslint-loader": "^2.0.0",
