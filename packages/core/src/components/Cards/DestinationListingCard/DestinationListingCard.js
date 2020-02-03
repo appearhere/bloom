@@ -136,7 +136,7 @@ class DestinationListingCard extends React.Component<Props, State> {
               wrapAround
               swiping={false}
               dragging={false}
-              afterSlide={onCarouselChange}
+              beforeSlide={onCarouselChange}
               withoutControls
             >
               {images.map(({ src, ...imageProps }) => (
