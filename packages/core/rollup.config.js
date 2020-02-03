@@ -1,12 +1,12 @@
 import { extname, relative } from 'path';
-import resolve from 'rollup-plugin-node-resolve';
-import commonjs from 'rollup-plugin-commonjs';
+import resolve from '@rollup/plugin-node-resolve';
+import commonjs from '@rollup/plugin-commonjs';
 import postcssCssnext from 'postcss-cssnext';
 import postcssModules from 'postcss-modules';
 import postcss from 'postcss';
 import lost from 'lost';
 import babel from 'rollup-plugin-babel';
-import json from 'rollup-plugin-json';
+import json from '@rollup/plugin-json';
 import reactSvg from "rollup-plugin-react-svg";
 import cssnano from 'cssnano';
 import { writeFileSync } from 'fs';
@@ -75,7 +75,7 @@ const cssModules = (options = {}) => {
       });
     },
 
-    ongenerate() {
+    generateBundle() {
       cssnano.process(css).then(result => {
         writeFileSync(options.output, result.css);
       });
