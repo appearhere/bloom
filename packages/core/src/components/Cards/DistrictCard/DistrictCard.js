@@ -6,7 +6,7 @@ import Card from "../Card/Card";
 
 type Props = {
   title: string,
-  subtitle: string,
+  subtitle?: string,
   src: string,
   alt: string,
   href: string,
@@ -24,7 +24,7 @@ const DistrictCard = (props: Props) => {
 
       <div className={css.content}>
         <h3 className={css.title}>{title}</h3>
-        <p className={css.subtitle}>{subtitle}</p>
+        { subtitle && <p className={css.subtitle}>{subtitle}</p> }
       </div>
     </Card>
   );
