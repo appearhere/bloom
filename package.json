@@ -34,7 +34,7 @@
     "upath": "^1.0.5"
   },
   "lint-staged": {
-    "*.js, !packages/playground/*.js": "flow"
+    "packages/core/**/*.js": ["flow"]
   },
   "husky": {
     "hooks": {
