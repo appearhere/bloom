@@ -5,6 +5,7 @@
   "main": "dist/bundle.js",
   "style": "dist/bloom.css",
   "scripts": {
+    "precommit": "lint-staged",
     "test": "echo \"Error: no test specified\" && exit 1",
     "build": "rollup -c rollup.config.js",
     "build:watch": "rollup -c rollup.config.js --watch"
