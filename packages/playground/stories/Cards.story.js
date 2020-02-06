@@ -31,6 +31,14 @@ storiesOf('Cards', module)
       href="#"
     />
   ))
+  .add('District Card without subtitle', () => (
+    <DistrictCard
+      title="Covent Garden"
+      src="https://picsum.photos/500"
+      alt="hello"
+      href="#"
+    />
+  ))
   .add('PictureCard', () => (
     <PictureCard style={{ minHeight: '10vh' }} src="https://source.unsplash.com/random">
       Hello, world
