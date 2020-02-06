@@ -33,9 +33,6 @@
   "dependencies": {
     "upath": "^1.0.5"
   },
-  "lint-staged": {
-    "packages/core/**/*.js": "flow"
-  },
   "husky": {
     "hooks": {
       "pre-commit": "lerna run --concurrency 1 --stream precommit"
