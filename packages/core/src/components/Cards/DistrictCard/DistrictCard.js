@@ -6,7 +6,7 @@ import Card from "../Card/Card";
 
 type Props = {
   title: string,
-  subtitle?: string,
+  subtitle: string,
   src: string,
   alt: string,
   href: string,
