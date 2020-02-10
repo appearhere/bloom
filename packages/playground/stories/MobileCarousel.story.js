@@ -34,4 +34,7 @@ storiesOf('MobileCarousel', module)
 ))
 .add('With Title', () => (
   <MobileCarousel title="Carousel Title" slidesToShow={4} onChange={action('Slide changed')}>{slides}</MobileCarousel>
+))
+.add('With small Title', () => (
+  <MobileCarousel titleSize="small" title="Carousel Title" slidesToShow={4} onChange={action('Slide changed')}>{slides}</MobileCarousel>
 ));

@@ -11,7 +11,7 @@ import css from './Carousel.css';
 
 type Props = {
   children: Array<React.Node>,
-  title: string,
+  title?: string,
   slidesToShow: number,
   withoutControls: boolean,
   dragging: boolean,
@@ -20,6 +20,7 @@ type Props = {
   accessibilityNextLabel: string,
   accessibilityPrevLabel: string,
   infinite?: boolean,
+  titleSize: 'small' | 'large'
 };
 
 const Carousel = (props: Props) => {
@@ -34,12 +35,16 @@ const Carousel = (props: Props) => {
     accessibilityNextLabel,
     accessibilityPrevLabel,
     infinite,
+    titleSize,
   } = props;
   const [slideIndex, setSlideIndex] = React.useState(0);
 
   const renderTopRightControls = () => (
     <div className={css.controls}>
-      <h2 className={css.title}>{title}</h2>
+      { title && <h2 className={cx(css.title, {
+        [css.small]: titleSize === 'small',
+        [css.large]: titleSize === 'large'
+      })}>{title}</h2> }
       {slidesToShow < children.length && (
         <div className={css.buttons}>
           <BtnContainer
@@ -114,6 +119,7 @@ Carousel.defaultProps = {
   useCenterControls: false,
   accessibilityNextLabel: 'Show next slide',
   accessibilityPrevLabel: 'Show previous slide',
+  titleSize: 'large'
 };
 
 export default Carousel;

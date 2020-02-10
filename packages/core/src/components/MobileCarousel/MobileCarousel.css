@@ -23,9 +23,17 @@
 }
 
 .title {
-  margin: 0 0 1.5rem 0;
   font-family: var(--font-avenir);
-  font-size: var(--fontsize-large-ii);
   font-weight: var(--fontweight-demi);
   letter-spacing: normal;
 }
+
+.title.large {
+  font-size: var(--fontsize-large-ii);
+  margin: 0 0 1.5rem 0;
+}
+
+.title.small {
+  font-size: var(--fontsize-regular);
+  margin: 0 0 1rem 0;
+} 

@@ -2,18 +2,23 @@
 
 import * as React from 'react';
 import shortid from 'shortid';
+import cx from 'classnames';
 
 import css from './MobileCarousel.css';
 
 type Props = {
   children: Array<React.Node>,
-  title: string
+  title: string,
+  titleSize: 'small' | 'large'
 }
 
-const MobileCarousel = ({ children, title }: Props) => {
+const MobileCarousel = ({ children, title, titleSize }: Props) => {
   return (
     <div>
-      <h2 className={css.title}>{title}</h2>
+      { title && <h2 className={cx(css.title, {
+        [css.small]: titleSize === 'small',
+        [css.large]: titleSize === 'large'
+      })}>{title}</h2> }
       <div className={css.slides}>
         {children.map((slide) => (
           <div key={shortid.generate()} className={css.slide}>
@@ -27,6 +32,7 @@ const MobileCarousel = ({ children, title }: Props) => {
 
 MobileCarousel.defaultProps = {
   title: '',
+  titleSize: 'large',
   children: []
 };
 
