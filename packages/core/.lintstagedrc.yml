@@ -1,2 +1,2 @@
 'src/**/*.js':
-  - flow
+  - flow focus-check
