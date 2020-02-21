@@ -17,6 +17,7 @@ type Props = {
   iconName: string,
   iconSide: 'left' | 'right',
   iconDimensions: IconDimensions,
+  onIconClick: () => void,
 }
 
 export default class IconInput extends Component<Props> {
@@ -28,8 +29,8 @@ export default class IconInput extends Component<Props> {
     iconDimensions: { height: '1em', width: '1em' },
   };
 
-  focus = (): void => {
-    this.input.focus();
+  iconClick = (): void => {
+    this.props.onIconClick ? this.props.onIconClick() : this.input.focus();
   };
 
   blur = (): void => {
@@ -37,13 +38,13 @@ export default class IconInput extends Component<Props> {
   };
 
   render() {
-    const { classNames, iconName, iconSide, iconDimensions, ...rest } = this.props;
+    const { classNames, iconName, iconSide, iconDimensions, onIconClick, ...rest } = this.props;
 
     return (
       <div className={cx(css.root, css[iconSide], classNames.root)}>
         <Icon
           className={cx(css.icon, classNames.icon)}
-          onClick={this.focus}
+          onClick={this.iconClick}
           name={iconName}
           dimensions={iconDimensions}
         />
