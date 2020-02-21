@@ -1,26 +1,11 @@
 .root {
-  display: table;
+  display: flex;
   padding-top: var(--size-lg-i);
   padding-bottom: var(--size-lg-i);
+  justify-content: space-between;
+  align-items: center;
 }
 
 .inner {
-  display: table-cell;
-  width: 100%;
-  vertical-align: middle;
-}
-
-.dismissable .inner {
-  width: 99%;
-}
-
-.dismissContainer {
-  display: table-cell;
-  min-width: 1%;
-  vertical-align: top;
-}
-
-.icon {
-  display: block;
-  margin-left: var(--size-medium);
+  width: 90%;
 }
