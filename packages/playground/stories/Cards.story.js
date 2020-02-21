@@ -31,6 +31,16 @@ storiesOf('Cards', module)
       href="#"
     />
   ))
+  .add('District Card without text truncation', () => (
+    <DistrictCard
+      title="Covent Garden"
+      subtitle="A haven for pleasure and procrastination"
+      src="https://picsum.photos/500"
+      alt="hello"
+      href="#"
+      truncateText={false}
+    />
+  ))
   .add('District Card without subtitle', () => (
     <DistrictCard
       title="Covent Garden"
