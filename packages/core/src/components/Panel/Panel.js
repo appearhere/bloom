@@ -26,7 +26,7 @@ const Panel = (props: Props) => {
   const { children, className, context, ...rest } = props;
 
   return (
-    <div {...rest} className={cx(className, css.root, css[context])}>
+    <div {...rest} className={cx(css.root, css[context], className)}>
       {children}
     </div>
   );
