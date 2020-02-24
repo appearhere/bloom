@@ -8,15 +8,20 @@ import {
 } from '@appearhere/bloom';
 
 const StorySlide = ({ number }) => (
-  <div key={`slide-${number}`}>
+  <div
+    key={`slide-${number}`}
+    style={{
+      height: '100%',
+    }}
+  >
     <PictureCard
       src={`https://placekitten.com/g/287/4${number * 2 + 10}`}
       style={{
-        height: '300px',
         verticalAlign: 'middle',
         textAlign: 'center',
         fontSize: '5rem',
-        width: '200px'
+        width: '200px',
+        height: number % 2 ? '300px' : null,
       }}
       center
       href="#"
