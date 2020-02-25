@@ -43,7 +43,6 @@ function loadStories() {
   require('../stories/LeftRight.story.js');
   require('../stories/Link.story.js');
   require('../stories/Loader.story.js');
-  require('../stories/Map.story.js');
   require('../stories/Markdown.story.js');
   // require('../stories/Marker.story.js');
   require('../stories/Medallion.story.js');

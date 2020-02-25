@@ -124,22 +124,6 @@ export LeftRight from './LeftRight/LeftRight';
 export Link from './Link/Link';
 export Loader from './Loader/Loader';
 
-import BaseMarker from './Map/Markers/Marker';
-import SpaceGroupMarker from './Map/Markers/SpaceGroupMarker';
-import ControlLayer from './Map/ControlLayer/ControlLayer';
-import Control from './Map/Control/Control';
-import MarkableMap from './Map/MarkableMap';
-// import mapTile from './Map/images/tile.jpg';
-
-export const Map = {
-  BaseMarker,
-  SpaceGroupMarker,
-  ControlLayer,
-  Control,
-  MarkableMap,
-  // mapTile
-};
-
 export Markdown from './Markdown/Markdown';
 export Medallion from './Medallion/Medallion';
 

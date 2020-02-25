@@ -1,8 +1,0 @@
-.marker {
-  position: absolute;
-  z-index: 1;
-}
-
-.markerActive {
-  z-index: 2;
-}
