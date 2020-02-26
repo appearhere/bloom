@@ -60,17 +60,4 @@ stories
       onChange={action('Change')}
       error={boolean('Errored', false) ? 'Something went wrong' : ''}
     />
-  ))
-  .add('IconInput w/ custom onIconClick', () => (
-    <IconInput
-      iconName="search"
-      id="1"
-      type={select('Type', inputTypes, inputTypes[0])}
-      value="London"
-      onFocus={action('Focus')}
-      onBlur={action('Blur')}
-      onChange={action('Change')}
-      onIconClick={action('Icon Clicked')}
-      error={boolean('Errored', false) ? 'Something went wrong' : ''}
-    />
   ));
