@@ -10,8 +10,12 @@
   font-size: var(--fontsize-large-ii);
 }
 
-.title.small {
+.title.medium {
   font-size: var(--fontsize-large-i);
+}
+
+.title.small {
+  font-size: var(--fontsize-regular);
 } 
 
 .controls {
