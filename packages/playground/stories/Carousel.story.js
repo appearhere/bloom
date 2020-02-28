@@ -32,11 +32,14 @@ storiesOf('Carousel', module)
 .add('Default', () => (
   <Carousel slidesToShow={4} onChange={action('Slide changed')}>{slides}</Carousel>
 ))
-.add('With Title', () => (
-  <Carousel title="Carousel Title" slidesToShow={4} onChange={action('Slide changed')}>{slides}</Carousel>
-))
 .add('With small Title', () => (
   <Carousel titleSize="small" title="Carousel Title" slidesToShow={4} onChange={action('Slide changed')}>{slides}</Carousel>
+))
+.add('With medium Title', () => (
+  <Carousel titleSize="medium" title="Carousel Title" slidesToShow={4} onChange={action('Slide changed')}>{slides}</Carousel>
+))
+.add('With large Title', () => (
+  <Carousel title="Carousel Title" slidesToShow={4} onChange={action('Slide changed')}>{slides}</Carousel>
 ))
 .add('With Center controls', () => (
   <Carousel title="Carousel Title" useCenterControls useTopRightControls={false} slidesToShow={4} onChange={action('Slide changed')}>{slides}</Carousel>

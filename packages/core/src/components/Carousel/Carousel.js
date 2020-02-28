@@ -20,7 +20,7 @@ type Props = {
   accessibilityNextLabel: string,
   accessibilityPrevLabel: string,
   infinite?: boolean,
-  titleSize: 'small' | 'large'
+  titleSize: 'small' | 'medium' | 'large'
 };
 
 const Carousel = (props: Props) => {
@@ -43,7 +43,8 @@ const Carousel = (props: Props) => {
     <div className={css.controls}>
       { title && <h2 className={cx(css.title, {
         [css.small]: titleSize === 'small',
-        [css.large]: titleSize === 'large'
+        [css.medium]: titleSize === 'medium',
+        [css.large]: titleSize === 'large',
       })}>{title}</h2> }
       {slidesToShow < children.length && (
         <div className={css.buttons}>
