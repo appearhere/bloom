@@ -61,7 +61,6 @@ export {
   LeftRight,
   Link,
   Loader,
-  Map,
   Markdown,
   Medallion,
   Modal,
