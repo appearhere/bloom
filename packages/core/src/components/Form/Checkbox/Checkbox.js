@@ -20,7 +20,8 @@ type Props = {
   checked?: boolean,
   className?: string,
   label: React.Node,
-}
+  subLabel?: string,
+};
 
 type State = {
   hasFocus: boolean,
@@ -72,7 +73,7 @@ export default class Checkbox extends React.Component<Props, State> {
   };
 
   render() {
-    const { children, value, checked, name, label, className, ...rest } = this.props;
+    const { children, value, checked, name, label, subLabel, className, ...rest } = this.props;
 
     return (
       <span className={cx(css.root, className)}>
@@ -109,6 +110,7 @@ export default class Checkbox extends React.Component<Props, State> {
                 primarySide="right"
                 rightClassName={css.labelContainer}
               />
+              {subLabel && <p className={css.subLabel}>{subLabel}</p>}
             </div>
           )}
         </label>

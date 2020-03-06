@@ -16,5 +16,6 @@ stories.add('Checkbox', () => (
     onChange={action('Change')}
     checked={boolean('Checked', false)}
     label="1"
+    subLabel="Optional sublabel"
   />
 ));

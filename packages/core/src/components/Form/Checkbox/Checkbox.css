@@ -30,6 +30,14 @@
   display: block;
 }
 
+.subLabel {
+  display: block;
+  margin-left: 2.3rem;
+  margin-top: 0.25rem;
+  font-size: var(--fontsize-small-i);
+  color: var(--color-grey);
+}
+
 .root input:focus + label .checkbox {
   outline-color: var(--color-focusRing);
   outline-style: auto;
