@@ -64,7 +64,7 @@
 }
 
 .histogram {
-  height: var(--size-lg-ii);
+  height: var( --size-regular);
   width: 100%;
 }
 
