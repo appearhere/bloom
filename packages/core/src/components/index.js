@@ -1,25 +1,4 @@
-import Circle from './Animate/Circle';
-import Counter from './Animate/Counter';
-import EdgeFade from './Animate/EdgeFade';
-import GraphOrnament from './Animate/GraphOrnament';
-import Roll from './Animate/Roll';
-import SplitWordEntrance from './Animate/SplitWordEntrance';
-import Sunrise from './Animate/Sunrise';
-import Swap from './Animate/Swap';
-import Typewriter from './Animate/Typewriter';
-
-export const Animate = {
-  Circle,
-  Counter,
-  EdgeFade,
-  GraphOrnament,
-  Roll,
-  SplitWordEntrance,
-  Sunrise,
-  Swap,
-  Typewriter
-};
-
+export Animate from './Animate/Animate';
 export AreaUnits from './AreaUnits/AreaUnits';
 export Badge from './Badge/Badge';
 export Blokk from './Blokk/Blokk';
@@ -27,7 +6,6 @@ export BookingRequestPreview from './BookingRequestPreview/BookingRequestPreview
 export Btn from './Btn/Btn';
 export BtnContainer from './BtnContainer/BtnContainer';
 export BtnGroup from './BtnGroup/BtnGroup';
-
 export CalendarItem from './Calendar/CalendarItem/CalendarItem';
 export CalendarMonth from './Calendar/CalendarMonth/CalendarMonth';
 export DayPicker from './Calendar/DayPicker/DayPicker';
@@ -35,7 +13,6 @@ export DayRange from './Calendar/DayRange/DayRange';
 export DayRangePicker from './Calendar/DayRangePicker/DayRangePicker';
 export getCalendarMonth from './Calendar/getCalendarMonth/getCalendarMonth';
 export { SELECT_DATE } from './Calendar/DayRangePicker/DayRangePicker';
-
 export Card from './Cards/Card/Card';
 export CondensedSpaceCard from './Cards/CondensedSpaceCard/CondensedSpaceCard';
 export DestinationListingCard from './Cards/DestinationListingCard/DestinationListingCard';
@@ -49,21 +26,12 @@ export PlaceListingCard from './Cards/PlaceListingCard/PlaceListingCard';
 export SpaceFeatureCard from './Cards/SpaceFeatureCard/SpaceFeatureCard';
 export SpaceListingCard from './Cards/SpaceListingCard/SpaceListingCard';
 export DistrictCard from './Cards/DistrictCard/DistrictCard';
-
-import SuccessStoryCardMobile from './Cards/SuccessStoryCard/SuccessStoryCardMobile';
-import SuccessStoryCardDesktop from './Cards/SuccessStoryCard/SuccessStoryCardDesktop';
-
-export const SuccessStoryCard = {
-  SuccessStoryCardMobile,
-  SuccessStoryCardDesktop
-}
-
+export SuccessStoryCard from './Cards/SuccessStoryCard/SuccessStoryCard';
 export DismissablePanel from './DismissablePanel/DismissablePanel';
 export Dropdown from './Dropdown/Dropdown';
 export Figure from './Figure/Figure';
 export FittedImage from './FittedImage/FittedImage';
 export FloatingActionBtn from './FloatingActionBtn/FloatingActionBtn';
-
 export Checkbox from './Form/Checkbox/Checkbox';
 export CheckboxGroup from './Form/CheckboxGroup/CheckboxGroup';
 export IconInput from './Form/IconInput/IconInput';
@@ -78,40 +46,12 @@ export Option from './Form/Select/Option';
 export Star from './Form/Star/Star';
 export StarRating from './Form/StarRating/StarRating';
 export AutoComplete from './Form/AutoComplete/AutoComplete';
-
 export AutoCompleteHeading from './Form/AutoComplete/Heading';
 export AutoCompleteSuggestion from './Form/AutoComplete/Suggestion';
 export AutoCompleteInput from './Form/AutoComplete/Input';
 export autoCompleteTheme from './Form/AutoComplete/AutoComplete.css';
-
-import {
-  Field,
-  Meta,
-  Description,
-  Label,
-  Value,
-  Placeholder,
-  InputWrapper,
-} from './Form/FormComponents';
-
-export const Form = {
-  Field,
-  Meta,
-  Description,
-  Label,
-  Value,
-  Placeholder,
-  InputWrapper
-};
-
-import Indicator from './Indicators/Indicator';
-import IndicatorGroup from './Indicators/IndicatorGroup';
-
-export const Indicators = {
-  Indicator,
-  IndicatorGroup
-};
-
+export Form from './Form/FormComponents';
+export Indicators from './Indicators/Indicators';
 export FunnelInputField from './FunnelInputField/FunnelInputField';
 export GridFader from './GridFader/GridFader';
 export GridLayout from './GridLayout/GridLayout';
@@ -123,30 +63,15 @@ export iconHelper from './Icon/iconHelper';
 export LeftRight from './LeftRight/LeftRight';
 export Link from './Link/Link';
 export Loader from './Loader/Loader';
-
 export Markdown from './Markdown/Markdown';
 export Medallion from './Medallion/Medallion';
-
-import ModalAnimator from './Modal/ModalAnimator';
-import ModalWindow, { WindowTitle as ModalWindowTitle } from './Modal/Window';
-import ModalWithCross from './Modal/WithCross';
-
-export const Modal = {
-  ModalAnimator,
-  ModalWindow,
-  ModalWindowTitle,
-  ModalWithCross,
-};
-
+export Modal from './Modal/Modal';
 export Moment from './Moment/Moment';
-
 export Notification from './Notification/Notification';
 export Pagination from './Pagination/Pagination';
 export PaginationTrack from './Pagination/PaginationTrack';
 export Panel from './Panel/Panel';
-
 export PhotoGrid from './PhotoGrid/RandomSix';
-
 export ProgressSteps from './ProgressSteps/ProgressSteps';
 export Step from './ProgressSteps/Step';
 export ScreenReadable from './ScreenReadable/ScreenReadable';
@@ -157,48 +82,16 @@ export StepIcon from './StepIcon/StepIcon';
 export StickyNode from './StickyNode/StickyNode';
 export Tabs from './Tabs/Tabs';
 export Tab from './Tabs/Tab';
-
 export Tether from './Tether/Tether';
 import {
   HORIZONTAL_ATTACHMENTS,
   VERTICAL_ATTACHMENTS,
 } from './Tether/Tether';
-
 export const TETHER_HORIZONTAL_ATTACHMENTS = HORIZONTAL_ATTACHMENTS;
 export const TETHER_VERTICAL_ATTACHMENTS = VERTICAL_ATTACHMENTS;
-
 export Tooltip from './Tooltip/Tooltip';
-
-import IconLabel from './Type/IconLabel/IconLabel';
-import Quote from './Type/Quote/Quote';
-import SectionHeader from './Type/SectionHeader/SectionHeader';
-import Statement from './Type/Statement/Statement';
-import Synopsis from './Type/Synopsis/Synopsis';
-
-export const Type = {
-  IconLabel,
-  Quote,
-  SectionHeader,
-  Statement,
-  Synopsis
-};
-
-import BoxingGlove from './ValueIcons/ValueIconBoxingGlove';
-import Handshake from './ValueIcons/ValueIconHandshake';
-import NoBull from './ValueIcons/ValueIconNoBull';
-import Open from './ValueIcons/ValueIconOpen';
-import Scissors from './ValueIcons/ValueIconScissors';
-import ThumbsUp from './ValueIcons/ValueIconThumbsUp';
-
-export const ValueIcons ={
-  BoxingGlove,
-  Handshake,
-  NoBull,
-  Open,
-  Scissors,
-  ThumbsUp
-};
-
+export Type from './Type/Type';
+export ValueIcons from './ValueIcons/ValueIcons';
 export Video from './Video/Video';
 export VideoWithRichPoster from './VideoWithRichPoster/VideoWithRichPoster';
 export Wrapper from './Wrapper/Wrapper';
