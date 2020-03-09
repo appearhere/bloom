@@ -15,7 +15,7 @@
     "node": "12.x"
   },
   "scripts": {
-    "dev": "concurrently \"cd packages/core && yarn build:watch\" \"cd packages/common-styles && yarn build:watch\" \"cd packages/playground && yarn storybook\"",
+    "dev": "concurrently \"cd packages/core && yarn build:watch\" \"cd packages/common-styles && yarn build:watch\" \"cd packages/playground && yarn storybook --quiet\"",
     "build": "cd packages/common-styles && yarn build && cd ../core && yarn build",
     "storybook": "cd packages/playground && yarn storybook",
     "build-storybook": "cd packages/playground && yarn run build-storybook",
