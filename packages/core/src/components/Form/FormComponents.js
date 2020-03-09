@@ -47,4 +47,15 @@ export const InputWrapper = ({ className, children }: Props) => (
   <div className={cx(css.inputWrapper, className)}>{children}</div>
 );
 
+const Form = {
+  Field,
+  Meta,
+  Description,
+  Label,
+  Value,
+  Placeholder,
+  InputWrapper
+};
+
+export default Form;
 /* eslint-enable react/no-multi-comp */
