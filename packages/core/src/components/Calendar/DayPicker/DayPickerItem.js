@@ -18,6 +18,9 @@ export const defaultDayState = {
   isFirstHighlighted: false,
   isLastHighlighted: false,
   subtext: undefined,
+  isGreen: false,
+  isOrange: false,
+  isRed: false,
 };
 
 const defaultGetDateState = () => defaultDayState;
@@ -78,7 +81,6 @@ export default class DayPickerItem extends Component<Props> {
       getDayState,
       ...rest
     } = this.props;
-
     const state = getDayState(day);
 
     const className = cx(
@@ -91,6 +93,9 @@ export default class DayPickerItem extends Component<Props> {
       state.isFirstHighlighted ? css.firstHighlighted : null,
       state.isLastHighlighted ? css.lastHighlighted : null,
       state.isClosed ? css.closed : null,
+      state.isGreen ? css.green : null,
+      state.isOrange ? css.orange : null,
+      state.isRed ? css.red : null,
     );
 
     return (

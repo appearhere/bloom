@@ -17,7 +17,6 @@
 }
 
 .closed {
-  color: var(--color-greyLight);
   text-decoration: line-through;
 }
 
@@ -50,4 +49,34 @@
 .lastSelected.highlighted:not(.firstHighlighted) {
   border-top-left-radius: 0;
   border-bottom-left-radius: 0;
+}
+
+.green {
+  background-color: #D3E7D5;
+  color: #395d3b;
+}
+
+.green.selected {
+  background-color: #7bb080;
+  color: #395d3b;
+}
+
+.orange {
+  background-color: #fff2e4;
+  color: #9f5d10;
+}
+
+.orange.selected {
+  background-color: #F5CA99;
+  color: #9f5d10;
+}
+
+.red {
+  background-color: #f0bfbf;
+  color: #770606;
+}
+
+.red.selected {
+  background-color: #DD7C7C;
+  color: #770606;
 }
