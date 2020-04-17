@@ -26,6 +26,6 @@
   "scripts": {
     "storybook": "start-storybook -p 6006",
     "build-storybook": "build-storybook",
-    "deploy": "storybook-to-ghpages --out=../../docs --ci"
+    "deploy": "yarn run build-storybook && echo 'bloom.appearhere.co.uk' > './storybook-static/CNAME' && storybook-to-ghpages --existing-output-dir=./storybook-static --ci"
   }
 }
