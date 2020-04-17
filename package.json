@@ -65,7 +65,7 @@
     "mem": "^4.0.0",
     "**/optimist/**/minimist": "^0.2.1",
     "**/mkdirp/**/minimist": "^0.2.1",
-    "**/strong-log-transformer/**/minimist": "^0.2.1"
-
+    "**/strong-log-transformer/**/minimist": "^0.2.1",
+    "kind-of": "^6.0.3"
   }
 }
