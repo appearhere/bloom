@@ -54,7 +54,8 @@
 .radio svg,
 .search svg,
 .tick svg,
-.twitter svg {
+.twitter svg,
+.instagram svg {
   stroke: transparent;
   fill: currentColor;
   stroke-linecap: round;

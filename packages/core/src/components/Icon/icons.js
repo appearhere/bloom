@@ -51,6 +51,7 @@ import tickStarred from './icons/icon-tick-starred.svg';
 import travelIdea from './icons/icon-travel-idea.svg';
 import twitter from './icons/icon-twitter.svg';
 import vipEntrance from './icons/icon-vip-entrance.svg';
+import instagram from './icons/icon-instagram.svg';
 
 export default {
   'appearhere-brackets': appearhereBrackets,
@@ -104,4 +105,5 @@ export default {
   tick: tick,
   ticket: ticket,
   twitter: twitter,
+  instagram: instagram,
 };
