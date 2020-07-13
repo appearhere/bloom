@@ -16,6 +16,9 @@ import BtnContainer from '../BtnContainer/BtnContainer';
 
 type ClassNames = {
   dismissContainer: string,
+  body: string,
+  header: string,
+  footer: string,
  }
 
 type Props = {
@@ -31,6 +34,9 @@ class WindowWithCross extends React.Component<Props> {
     variant: 'light',
     classNames: {
       dismissContainer: '',
+      body: '',
+      header: '',
+      footer: '',
     }
   };
 
@@ -38,7 +44,7 @@ class WindowWithCross extends React.Component<Props> {
     const { children, onClose, variant, classNames, ...rest } = this.props;
 
     return (
-      <Window {...rest} variant={variant}>
+      <Window {...rest} classNames={classNames} variant={variant}>
         <BtnContainer className={cx(css.dismissContainer, classNames.dismissContainer)} onClick={onClose}>
           <Icon className={css.icon} name="cross" />
         </BtnContainer>
