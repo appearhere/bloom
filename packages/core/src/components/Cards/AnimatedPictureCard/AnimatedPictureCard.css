@@ -18,7 +18,7 @@
   width: 100%;
 }
 
-.animatedPictureCard:after {
+.animatedPictureCard:before {
   content: "";
   position: absolute;
   bottom: 0;
@@ -46,7 +46,7 @@
     cursor: pointer;
   }
 
-  .animatedPictureCard:hover:after {
+  .animatedPictureCard:hover:before {
     opacity: 0.9;
   }
 
