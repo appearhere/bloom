@@ -8,4 +8,9 @@ div.root {
 
 .inner {
   width: 90%;
+  flex-grow: 2;
+}
+
+.dismissContainer {
+  align-self: flex-start;
 }

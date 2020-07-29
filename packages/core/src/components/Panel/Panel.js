@@ -2,6 +2,7 @@
 
 import * as React from 'react';
 import cx from 'classnames';
+import Icon from '../Icon/Icon';
 
 import css from './Panel.css';
 
@@ -20,13 +21,17 @@ type Props = {
     typeof PANEL_CONTEXT.ERROR |
     typeof PANEL_CONTEXT.SUCCESS,
   children: React.Node,
+  icon?: string,
 }
 
 const Panel = (props: Props) => {
-  const { children, className, context, ...rest } = props;
+  const { children, className, context, icon, ...rest } = props;
 
   return (
     <div {...rest} className={cx(css.root, css[context], className)}>
+      {icon && (
+        <Icon className={css.icon} name={icon} dimensions={{ width: '20px', height: '20px' }} />
+      )}
       {children}
     </div>
   );

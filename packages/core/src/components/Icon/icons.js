@@ -52,6 +52,7 @@ import travelIdea from './icons/icon-travel-idea.svg';
 import twitter from './icons/icon-twitter.svg';
 import vipEntrance from './icons/icon-vip-entrance.svg';
 import instagram from './icons/icon-instagram.svg';
+import priceTag from './icons/icon-price-tag.svg';
 
 export default {
   'appearhere-brackets': appearhereBrackets,
@@ -106,4 +107,5 @@ export default {
   ticket: ticket,
   twitter: twitter,
   instagram: instagram,
+  'price-tag': priceTag,
 };

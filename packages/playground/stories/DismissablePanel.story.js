@@ -23,4 +23,9 @@ storiesOf('DismissablePanel', module)
     <DismissablePanel context="error" onClose={action('Closing banner')}>
       Something went wrong 😕
     </DismissablePanel>
+  ))
+  .add('With Icon', () => (
+    <DismissablePanel icon="price-tag" onClose={action('Closing banner')}>
+      What a fabulous icon! 🔥
+    </DismissablePanel>
   ));
