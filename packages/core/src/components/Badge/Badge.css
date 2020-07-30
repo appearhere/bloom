@@ -39,3 +39,7 @@
   color: var(--color-black);
   border-color: currentColor;
 }
+
+.icon {
+  padding-right: var(--size-micro);
+}
