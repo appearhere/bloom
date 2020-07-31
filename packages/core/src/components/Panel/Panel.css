@@ -30,3 +30,8 @@
   background-color: var(--color-danger);
   color: var(--color-white);
 }
+
+.icon {
+  padding-right: var(--size-regular);
+  align-self: flex-start;
+}

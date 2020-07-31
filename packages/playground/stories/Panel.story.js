@@ -10,4 +10,7 @@ storiesOf('Panel', module)
     <Panel context="blackout">Important information that you should look at right now</Panel>
   ))
   .add('Success context', () => <Panel context="success">You did something right! 👏</Panel>)
-  .add('Error context', () => <Panel context="error">Something went wrong 😕</Panel>);
+  .add('Error context', () => <Panel context="error">Something went wrong 😕</Panel>)
+  .add('With icon', () => (
+    <Panel icon="price-tag">Important information that you should look at right now</Panel>
+  ));
