@@ -57,6 +57,8 @@ const story = storiesOf('Icon', module);
   'twitter',
   'vip-entrance',
   'instagram',
+  'price-tag',
+  'security',
 ].forEach(icon => {
   story.add(icon, () => (
     <div className={m.base}>
