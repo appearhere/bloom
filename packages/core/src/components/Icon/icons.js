@@ -53,6 +53,7 @@ import twitter from './icons/icon-twitter.svg';
 import vipEntrance from './icons/icon-vip-entrance.svg';
 import instagram from './icons/icon-instagram.svg';
 import priceTag from './icons/icon-price-tag.svg';
+import security from './icons/icon-security.svg';
 
 export default {
   'appearhere-brackets': appearhereBrackets,
@@ -108,4 +109,5 @@ export default {
   twitter: twitter,
   instagram: instagram,
   'price-tag': priceTag,
+  security: security,
 };
