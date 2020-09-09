@@ -18,7 +18,7 @@ storiesOf('Badge', module)
     </Badge>
   ))
   .add('With icon', () => (
-    <Badge icon="security">
+    <Badge icon="price-tag">
       50% Discount
     </Badge>
   ));
