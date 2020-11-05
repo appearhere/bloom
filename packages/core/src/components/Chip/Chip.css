@@ -9,7 +9,7 @@
   width: auto;
   border: 1px solid var(--color-greyDarkest);
   box-sizing: border-box;
-  font-weight: 600;
+  font-weight: var(--fontweight-demi);
   font-size: var(--fontsize-small-ii);
 }
 
