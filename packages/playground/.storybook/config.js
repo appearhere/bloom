@@ -14,6 +14,7 @@ function loadStories() {
   require('../stories/CalendarMonth.story.js');
   require('../stories/Cards.story.js');
   require('../stories/Carousel.story.js');
+  require('../stories/Chip.story.js');
   require('../stories/MobileCarousel.story.js');
   require('../stories/Checkbox.story.js');
   require('../stories/CheckboxGroup.story.js');

@@ -13,7 +13,7 @@
  * ```
  */
 :root {
-  --font-avenir: 'Avenir Next W01', 'Helvetica Neue', 'Helvetica', 'sans-serif';
+  --font-avenir: 'Avenir Next', 'Helvetica Neue', 'Helvetica', 'sans-serif';
   --font-fira-code: 'Fira Mono', monospace;
 
   --fontweight-bold: 800;
