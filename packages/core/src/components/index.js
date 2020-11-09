@@ -6,6 +6,7 @@ export BookingRequestPreview from './BookingRequestPreview/BookingRequestPreview
 export Btn from './Btn/Btn';
 export BtnContainer from './BtnContainer/BtnContainer';
 export BtnGroup from './BtnGroup/BtnGroup';
+export Chip from './Chip/Chip';
 export CalendarItem from './Calendar/CalendarItem/CalendarItem';
 export CalendarMonth from './Calendar/CalendarMonth/CalendarMonth';
 export DayPicker from './Calendar/DayPicker/DayPicker';

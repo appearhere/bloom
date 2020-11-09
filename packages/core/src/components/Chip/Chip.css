@@ -1,0 +1,26 @@
+.root {
+  color: var(--color-greyLightest);
+  background: var(--color-greyDarkest);
+  font-family: var(--font-avenir);
+  padding: 0.375rem 0.625rem;
+  text-decoration: none;
+  display: inline-block;
+  height: auto;
+  width: auto;
+  border: 1px solid var(--color-greyDarkest);
+  box-sizing: border-box;
+  font-weight: var(--fontweight-demi);
+  font-size: var(--fontsize-small-ii);
+}
+
+.root:hover {
+  background: var(--color-greyDark);
+  border: 1px solid var(--color-greyDarker);
+  box-sizing: border-box;
+}
+
+.root:focus {
+  background: var(--color-greyLight);
+  border: 1px solid var(--color-greyLightest);
+  box-sizing: border-box;
+}
