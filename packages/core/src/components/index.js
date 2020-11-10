@@ -19,6 +19,7 @@ export CondensedSpaceCard from './Cards/CondensedSpaceCard/CondensedSpaceCard';
 export DestinationListingCard from './Cards/DestinationListingCard/DestinationListingCard';
 export EditorialCard from './Cards/EditorialCard/EditorialCard';
 export EventCard from './Cards/EditorialCard/EventCard';
+export ContentHubCard from './Cards/EditorialCard/ContentHubCard';
 export GuideCard from './Cards/EditorialCard/GuideCard';
 export EmptyListingCard from './Cards/EmptyListingCard/EmptyListingCard';
 export PictureCard from './Cards/PictureCard/PictureCard';

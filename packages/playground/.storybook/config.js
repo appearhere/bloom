@@ -1,3 +1,4 @@
+import './fonts.css';
 import { configure } from '@storybook/react';
 import '@appearhere/bloom/dist/bloom.css';
 
