@@ -4,7 +4,7 @@ import * as React from 'react';
 import Card from '../Card/Card';
 import css from './ContentHubCard.css';
 import FittedImage from '../../FittedImage/FittedImage';
-import Chip from '../../Chip/Chip';
+import ChipGroup from '../../ChipGroup/ChipGroup';
 import Btn from '../../Btn/Btn';
 import cx from 'classnames';
 
@@ -48,7 +48,7 @@ const ContentHubCard = ({
   const classes = cx(className, css.root);
 
   return (
-    <Card target="_self" className={classes}>
+    <Card className={classes}>
       <div className={css.imageContainer}>
         <FittedImage src={src} alt={title} className={css.image} />
       </div>
@@ -58,17 +58,9 @@ const ContentHubCard = ({
           {date && category && ' · '}
           <span className={css.date}>{date}</span>
         </div>
-        <a href={href} className={css.title}>{title}</a>
+        <h3><a href={href} className={css.title}>{title}</a></h3>
         <p className={css.description}>{description}</p>
-        <div className={css.chipContainer}>
-          { tags && tags.map((tag) => (
-            <Chip
-              href={tag.href}
-              text={tag.name}
-              className={css.chip}
-            />
-          ))}
-        </div>
+        { tags && <ChipGroup tags={tags} className={css.chipContainer} />}
         {cta &&
           <Btn
             className={css.btn}
