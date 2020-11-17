@@ -58,7 +58,7 @@ const ContentHubCard = ({
           {date && category && ' · '}
           <span className={css.date}>{date}</span>
         </div>
-        <h3><a href={href} className={css.title}>{title}</a></h3>
+        <h3 className={css.title}><a href={href} className={css.titleLink}>{title}</a></h3>
         <p className={css.description}>{description}</p>
         { tags && <ChipGroup tags={tags} className={css.chipContainer} />}
         {cta &&

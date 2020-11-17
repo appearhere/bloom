@@ -4,7 +4,7 @@
   font-family: var(--font-avenir);
   box-sizing: border-box;
   height: 100%;
-  border: 2px solid transparent;
+  background: var(--color-white);
 }
 
 .root:after {
@@ -23,7 +23,8 @@
 
 .root:focus {
   border: 2px solid var(--color-greyLighter);
-  box-sizing: border-box;
+  box-sizing: content-box;
+  margin: -2px;
 }
 
 .imageContainer, .content {
@@ -67,6 +68,11 @@
 }
 
 .title {
+  margin-block-end: 0rem;
+  margin-block-start: 0.5rem;
+}
+
+.titleLink {
   color: var(--color-black);
   font-style: normal;
   font-weight: var(--fontweight-demi);
@@ -78,7 +84,7 @@
   text-decoration: none;
 }
 
-.title:after {
+.titleLink:after {
   content: '';
   position: absolute;
   top: 0;
@@ -130,7 +136,7 @@
     width: 100%;
   }
 
-  .title {
+  .titleLink {
     font-size: var(--font-large-ii);
     line-height: var(--lineheight-large-i);
   }
