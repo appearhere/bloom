@@ -1,0 +1,47 @@
+@font-face{
+  font-family:"Avenir Next W01";
+  font-display: swap;
+  src: url("https://cdn-1.ah-assets.net/uploads/fonts/web/17c55b27-e9ab-43cd-b948-d49f97480d68.eot?#iefix");
+  src: url("https://cdn-1.ah-assets.net/uploads/fonts/web/17c55b27-e9ab-43cd-b948-d49f97480d68.eot?#iefix") format("eot"),
+  url("https://cdn-1.ah-assets.net/uploads/fonts/web/2e3f5cb9-101f-46cf-a7b3-dfaa58261e03.woff2") format("woff2"),
+  url("https://cdn-1.ah-assets.net/uploads/fonts/web/fa19948e-5e38-4909-b31e-41acd170d6f2.woff") format("woff"),
+  url("https://cdn-1.ah-assets.net/uploads/fonts/web/6de0ce4d-9278-467b-b96f-c1f5f0a4c375.ttf") format("truetype"),
+  url("https://cdn-1.ah-assets.net/uploads/fonts/web/9fd4ea0c-b19a-4b21-9fdf-37045707dd78.svg#9fd4ea0c-b19a-4b21-9fdf-37045707dd78") format("svg");
+  font-weight: 300;
+  font-style: normal;
+}
+@font-face{
+  font-family:"Avenir Next W01";
+  font-display: swap;
+  src:url("https://cdn-1.ah-assets.net/uploads/fonts/web/e9167238-3b3f-4813-a04a-a384394eed42.eot?#iefix");
+  src:url("https://cdn-1.ah-assets.net/uploads/fonts/web/e9167238-3b3f-4813-a04a-a384394eed42.eot?#iefix") format("eot"),
+  url("https://cdn-1.ah-assets.net/uploads/fonts/web/2cd55546-ec00-4af9-aeca-4a3cd186da53.woff2") format("woff2"),
+  url("https://cdn-1.ah-assets.net/uploads/fonts/web/1e9892c0-6927-4412-9874-1b82801ba47a.woff") format("woff"),
+  url("https://cdn-1.ah-assets.net/uploads/fonts/web/46cf1067-688d-4aab-b0f7-bd942af6efd8.ttf") format("truetype"),
+  url("https://cdn-1.ah-assets.net/uploads/fonts/web/52a192b1-bea5-4b48-879f-107f009b666f.svg#52a192b1-bea5-4b48-879f-107f009b666f") format("svg");
+  font-weight: 400;
+  font-style: normal;
+}
+@font-face{
+  font-family:"Avenir Next W01";
+  font-display: swap;
+  src:url("https://cdn-1.ah-assets.net/uploads/fonts/web/12d643f2-3899-49d5-a85b-ff430f5fad15.eot?#iefix");
+  src:url("https://cdn-1.ah-assets.net/uploads/fonts/web/12d643f2-3899-49d5-a85b-ff430f5fad15.eot?#iefix") format("eot"),
+  url("https://cdn-1.ah-assets.net/uploads/fonts/web/aad99a1f-7917-4dd6-bbb5-b07cedbff64f.woff2") format("woff2"),
+  url("https://cdn-1.ah-assets.net/uploads/fonts/web/91b50bbb-9aa1-4d54-9159-ec6f19d14a7c.woff") format("woff"),
+  url("https://cdn-1.ah-assets.net/uploads/fonts/web/a0f4c2f9-8a42-4786-ad00-fce42b57b148.ttf") format("truetype"),
+  url("https://cdn-1.ah-assets.net/uploads/fonts/web/99affa9a-a5e9-4559-bd07-20cf0071852d.svg#99affa9a-a5e9-4559-bd07-20cf0071852d") format("svg");
+  font-weight: 700;
+  font-style: normal;
+}
+@font-face{
+  font-family:"Avenir Next W01";
+  font-display: swap;
+  src:url("https://cdn-1.ah-assets.net/uploads/fonts/web/dccb10af-07a2-404c-bfc7-7750e2716bc1.eot?#iefix");
+  src:url("https://cdn-1.ah-assets.net/uploads/fonts/web/dccb10af-07a2-404c-bfc7-7750e2716bc1.eot?#iefix") format("eot"),
+  url("https://cdn-1.ah-assets.net/uploads/uploads/fonts/web/14c73713-e4df-4dba-933b-057feeac8dd1.woff2") format("woff2"),url("https://cdn-1.ah-assets.net/uploads/uploads/fonts/web/b8e906a1-f5e8-4bf1-8e80-82c646ca4d5f.woff") format("woff"),
+  url("https://cdn-1.ah-assets.net/uploads/uploads/fonts/web/890bd988-5306-43ff-bd4b-922bc5ebdeb4.ttf") format("truetype"),
+  url("https://cdn-1.ah-assets.net/uploads/uploads/fonts/web/ed104d8c-7f39-4e8b-90a9-4076be06b857.svg#ed104d8c-7f39-4e8b-90a9-4076be06b857") format("svg");
+  font-weight: 800;
+  font-style: normal;
+}

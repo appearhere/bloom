@@ -5,8 +5,8 @@ import css from './Card.css';
 
 type Props = {
   className?: string,
-  href: string,
-  target: '_blank' | '_self' | '_parent' | '_top',
+  href?: string,
+  target?: '_blank' | '_self' | '_parent' | '_top',
   children: React.Node,
 }
 

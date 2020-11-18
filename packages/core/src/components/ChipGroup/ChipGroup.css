@@ -1,0 +1,8 @@
+.root {
+  display: block;
+}
+
+.chip {
+  margin-right: 1px;
+  margin-bottom: 1px;
+}

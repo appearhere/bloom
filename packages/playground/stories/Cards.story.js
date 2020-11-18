@@ -16,6 +16,7 @@ import {
   EditorialCard,
   GuideCard,
   EventCard,
+  ContentHubCard,
   SuccessStoryCard,
 } from '@appearhere/bloom';
 
@@ -416,6 +417,79 @@ storiesOf('Cards', module)
         e.stopPropagation();
         action('Redirecting')(e);
       }}
+    />
+  ))
+  .add('ContentHubCard - Guide', () => (
+    <ContentHubCard
+      title="How to open a shop"
+      href="https://www.appearhere.co.uk"
+      src="https://source.unsplash.com/random/500x500"
+      description="A really cool guide on how to open a shop.  You'll like it a lot."
+      category="Guide"
+      tags={[
+        { href: "https://www.appearhere.co.uk/cities/london/search", name: 'London'},
+        { href: "https://www.appearhere.co.uk/destinations/collections/fashion", name: 'Fashion' },
+        { href: "https://www.appearhere.co.uk/inspire", name: 'The Week Here'}]
+      }
+      cta="Download Guide"
+      onButtonClick={e => {
+        action('Downloading Guide')(e);
+      }}
+    />
+  ))
+  .add('ContentHubCard - Blog', () => (
+    <ContentHubCard
+      title="Really great blog post"
+      href="https://www.appearhere.co.uk"
+      src="https://source.unsplash.com/random/500x500"
+      description="A really cool blog post on how to open a shop.  You'll like it a lot."
+      category="Blog"
+      date="28th August 2021"
+      tags={[
+        { href: "https://www.appearhere.co.uk/cities/london/search", name: 'London' },
+        { href: "https://www.appearhere.co.uk/destinations/collections/fashion", name: 'Fashion' },
+        { href: "https://www.appearhere.co.uk/inspire", name: 'The Week Here' }]
+      }
+    />
+  ))
+  .add('ContentHubCard - Event', () => (
+    <ContentHubCard
+      title="Underground Session - Cool Event"
+      href="https://www.appearhere.co.uk"
+      src="https://source.unsplash.com/random/500x500"
+      description="A really cool event on how to open a shop.  You'll like it a lot."
+      category="Event"
+      date="28th August 2021"
+      tags={[
+        { href: "https://www.appearhere.co.uk/cities/london/search", name: 'London' },
+        { href: "https://www.appearhere.co.uk/destinations/collections/fashion", name: 'Fashion' },
+        { href: "https://www.appearhere.co.uk/inspire", name: 'The Week Here' }]
+      }
+    />
+  ))
+  .add('ContentHubCard - Video', () => (
+    <ContentHubCard
+      title="Global Gathering - Video"
+      href="https://www.appearhere.co.uk"
+      src="https://source.unsplash.com/random/500x500"
+      description="A really cool video on how to open a shop.  You'll like it a lot."
+      category="Video"
+      date="28th August 2021"
+      tags={[
+        { href: "https://www.appearhere.co.uk/cities/london/search", name: 'London' },
+        { href: "https://www.appearhere.co.uk/destinations/collections/fashion", name: 'Fashion' },
+        { href: "https://www.appearhere.co.uk/inspire", name: 'The Week Here' }]
+      }
+    />
+  ))
+  .add('ContentHubCard - without tags', () => (
+    <ContentHubCard
+      title="Global Gathering - Video"
+      href="https://www.appearhere.co.uk"
+      src="https://source.unsplash.com/random/500x500"
+      description="A really cool video on how to open a shop.  You'll like it a lot."
+      category="Video"
+      date="28th August 2021"
     />
   ))
   .add('SuccessStoryCardMobile', () => (
