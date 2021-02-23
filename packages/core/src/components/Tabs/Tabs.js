@@ -23,6 +23,8 @@ type State = {
   focusedTabIndex: ?number,
 }
 
+type Callback<T> = (e?: T) => void;
+
 export default class Tabs extends React.Component<Props, State> {
   id: string;
 
@@ -52,19 +54,28 @@ export default class Tabs extends React.Component<Props, State> {
     this.tabs[i].focus();
   };
 
-  handleClick = (e: SyntheticEvent<>, i: number) => {
+  handleClick = (onClick: Callback<SyntheticEvent<>>) => (e: SyntheticEvent<>, i: number) => {
     this.updateTabIndexes(i);
+    if (onClick) {
+      onClick(e)
+    }
   };
 
-  handleFocus = (e: SyntheticEvent<>, i: number) => {
+  handleFocus = (onFocus: Callback<SyntheticEvent<>>) => (e: SyntheticEvent<>, i: number) => {
     this.setState({ focusedTabIndex: i });
+    if(onFocus) {
+      onFocus(e);
+    }
   };
 
-  handleBlur = () => {
+  handleBlur = (onBlur: Callback<SyntheticEvent<>>) => () => {
     this.setState({ focusedTabIndex: null });
+    if (onBlur) {
+      onBlur();
+    }
   };
 
-  handleKeyDown = (e: KeyboardEvent) => {
+  handleKeyDown = (onKeyDown: Callback<KeyboardEvent>) => (e: KeyboardEvent) => {
     const { activeTabIndex } = this.state;
     const { children } = this.props;
     const i = keyboardHandler(e.which, activeTabIndex, React.Children.count(children));
@@ -74,6 +85,10 @@ export default class Tabs extends React.Component<Props, State> {
       e.stopPropagation();
 
       this.updateTabIndexes(i);
+    }
+
+    if (onKeyDown) {
+      onKeyDown(e);
     }
   };
 
@@ -100,10 +115,10 @@ export default class Tabs extends React.Component<Props, State> {
                 id,
                 value: i,
                 selected: activeTabIndex === i,
-                onClick: this.handleClick,
-                onFocus: this.handleFocus,
-                onBlur: this.handleBlur,
-                onKeyDown: this.handleKeyDown,
+                onClick: this.handleClick(child.props.onClick),
+                onFocus: this.handleFocus(child.props.onFocus),
+                onBlur: this.handleBlur(child.props.onBlur),
+                onKeyDown: this.handleKeyDown(child.props.onKeyDown),
                 'aria-controls': `${this.id}-${i}-panel`,
                 'aria-describedby': `${this.id}-description`,
                 role: 'tab',
