@@ -1,6 +1,7 @@
 import React from 'react';
 import { storiesOf } from '@storybook/react';
 import { action } from '@storybook/addon-actions';
+import { withKnobs, boolean } from '@storybook/addon-knobs';
 
 import {
   Tabs,
@@ -19,15 +20,17 @@ storiesOf('Tabs', module).add('Default', () => (
           allowFullScreen
         />
       </Tab>
-      <Tab label="Will Sasso">
-        <iframe
-          width="560"
-          height="315"
-          src="https://www.youtube.com/embed/T6i5qHHXjz0"
-          frameBorder="0"
-          allowFullScreen
-        />
-      </Tab>
+      {!boolean('Remove Tab', false) && (
+        <Tab label="Will Sasso">
+          <iframe
+            width="560"
+            height="315"
+            src="https://www.youtube.com/embed/T6i5qHHXjz0"
+            frameBorder="0"
+            allowFullScreen
+          />
+        </Tab>
+      )}
       <Tab label="Go go Power Rangers!">
         <iframe
           width="560"
@@ -39,4 +42,4 @@ storiesOf('Tabs', module).add('Default', () => (
       </Tab>
     </Tabs>
   </div>
-));
+)).addDecorator(withKnobs);

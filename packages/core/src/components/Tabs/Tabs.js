@@ -86,7 +86,7 @@ export default class Tabs extends React.Component<Props, State> {
           <span id={`${this.id}-description`}>{accessibilityDescription}</span>
         </ScreenReadable>
         <div className={css.tabsContainer}>
-          {React.Children.map(children, (child, i) => {
+          {React.Children.toArray(children).filter(Boolean).map((child, i) => {
             const id = `${this.id}-${i}-tab`;
 
             return React.cloneElement(
@@ -112,7 +112,7 @@ export default class Tabs extends React.Component<Props, State> {
           })}
         </div>
         <div className={css.tabsContent}>
-          {React.Children.map(children, (child, i) => {
+          {React.Children.toArray(children).filter(Boolean).map((child, i) => {
             const id = `${this.id}-${i}-panel`;
             const classes = cx(css.tabContent, activeTabIndex === i ? css.tabContentActive : null);
 
