@@ -15,6 +15,7 @@ import css from './Tabs.css';
 type Props = {
   accessibilityDescription: string,
   children: React.Node,
+  initialActiveTabIndex: number,
 }
 
 type State = {
@@ -36,7 +37,7 @@ export default class Tabs extends React.Component<Props, State> {
   }
 
   state = {
-    activeTabIndex: 0,
+    activeTabIndex: this.props.initialActiveTabIndex || 0,
     focusedTabIndex: null,
   };
 
