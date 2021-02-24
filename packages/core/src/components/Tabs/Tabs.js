@@ -15,12 +15,15 @@ import css from './Tabs.css';
 type Props = {
   accessibilityDescription: string,
   children: React.Node,
+  initialActiveTabIndex: number,
 }
 
 type State = {
   activeTabIndex: number,
   focusedTabIndex: ?number,
 }
+
+type Callback<T> = (e?: T) => void;
 
 export default class Tabs extends React.Component<Props, State> {
   id: string;
@@ -36,7 +39,7 @@ export default class Tabs extends React.Component<Props, State> {
   }
 
   state = {
-    activeTabIndex: 0,
+    activeTabIndex: this.props.initialActiveTabIndex || 0,
     focusedTabIndex: null,
   };
 
@@ -51,19 +54,28 @@ export default class Tabs extends React.Component<Props, State> {
     this.tabs[i].focus();
   };
 
-  handleClick = (e: SyntheticEvent<>, i: number) => {
+  handleClick = (onClick: Callback<SyntheticEvent<>>) => (e: SyntheticEvent<>, i: number) => {
     this.updateTabIndexes(i);
+    if (onClick) {
+      onClick(e)
+    }
   };
 
-  handleFocus = (e: SyntheticEvent<>, i: number) => {
+  handleFocus = (onFocus: Callback<SyntheticEvent<>>) => (e: SyntheticEvent<>, i: number) => {
     this.setState({ focusedTabIndex: i });
+    if(onFocus) {
+      onFocus(e);
+    }
   };
 
-  handleBlur = () => {
+  handleBlur = (onBlur: Callback<SyntheticEvent<>>) => () => {
     this.setState({ focusedTabIndex: null });
+    if (onBlur) {
+      onBlur();
+    }
   };
 
-  handleKeyDown = (e: KeyboardEvent) => {
+  handleKeyDown = (onKeyDown: Callback<KeyboardEvent>) => (e: KeyboardEvent) => {
     const { activeTabIndex } = this.state;
     const { children } = this.props;
     const i = keyboardHandler(e.which, activeTabIndex, React.Children.count(children));
@@ -73,6 +85,10 @@ export default class Tabs extends React.Component<Props, State> {
       e.stopPropagation();
 
       this.updateTabIndexes(i);
+    }
+
+    if (onKeyDown) {
+      onKeyDown(e);
     }
   };
 
@@ -86,7 +102,7 @@ export default class Tabs extends React.Component<Props, State> {
           <span id={`${this.id}-description`}>{accessibilityDescription}</span>
         </ScreenReadable>
         <div className={css.tabsContainer}>
-          {React.Children.map(children, (child, i) => {
+          {React.Children.toArray(children).filter(Boolean).map((child, i) => {
             const id = `${this.id}-${i}-tab`;
 
             return React.cloneElement(
@@ -99,10 +115,10 @@ export default class Tabs extends React.Component<Props, State> {
                 id,
                 value: i,
                 selected: activeTabIndex === i,
-                onClick: this.handleClick,
-                onFocus: this.handleFocus,
-                onBlur: this.handleBlur,
-                onKeyDown: this.handleKeyDown,
+                onClick: this.handleClick(child.props.onClick),
+                onFocus: this.handleFocus(child.props.onFocus),
+                onBlur: this.handleBlur(child.props.onBlur),
+                onKeyDown: this.handleKeyDown(child.props.onKeyDown),
                 'aria-controls': `${this.id}-${i}-panel`,
                 'aria-describedby': `${this.id}-description`,
                 role: 'tab',
@@ -112,7 +128,7 @@ export default class Tabs extends React.Component<Props, State> {
           })}
         </div>
         <div className={css.tabsContent}>
-          {React.Children.map(children, (child, i) => {
+          {React.Children.toArray(children).filter(Boolean).map((child, i) => {
             const id = `${this.id}-${i}-panel`;
             const classes = cx(css.tabContent, activeTabIndex === i ? css.tabContentActive : null);
 
