@@ -22,7 +22,7 @@ export default (iconSet: Object, theme: any) =>
     };
 
     render() {
-      const { className, name, dimensions } = this.props;
+      const { className, name, dimensions, onClick } = this.props;
       const IconComponent = iconSet[name];
 
       const classes = classnames(
@@ -34,7 +34,7 @@ export default (iconSet: Object, theme: any) =>
 
       /* eslint-disable react/no-danger */
       return (
-        <span className={classes}>
+        <span className={classes} onClick={onClick}>
           <IconComponent height={dimensions.height} width={dimensions.width} />
         </span>
       );
