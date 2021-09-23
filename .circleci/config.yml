@@ -1,0 +1,64 @@
+version: 2.1
+
+orbs:
+  node: circleci/node@4.7.0
+
+jobs:
+  build-and-publish:
+    docker:
+      - image: cimg/node:12.22.0
+    steps:
+      - checkout
+      - node/install:
+          install-yarn: true 
+          install-npm: false 
+          node-version: '12.22' 
+      - run:
+          name: Yarn install
+          command: yarn install --frozen-lockfile --production=false
+      - run:
+          name: Authenticate with registry
+          command: echo "//registry.npmjs.org/:_authToken=$NPM_ACCESS_TOKEN" > ~/.npmrc
+      - add_ssh_keys:
+          fingerprints:
+            - "73:0e:fc:c8:df:bd:ad:a7:2c:46:69:7f:13:8a:2b:bf"
+      - run: ssh-keyscan github.com >> ~/.ssh/known_hosts
+      - run:
+          name: Add AH Otto email and name to git config
+          command: |
+            git config user.email "tech+otto@appearhere.co.uk"
+            git config user.name "AH Otto"
+      - run:
+          name: Yarn build
+          command: yarn build
+      - run:
+          name: Lerna publish
+          command: |
+            if [ "$CIRCLE_USERNAME" != "appearhere-otto" ]
+            then
+              npx lerna publish prerelease --yes --no-verify-access
+            fi
+
+workflows:
+  unit-test:
+    jobs:
+      - node/test:
+          filters: 
+            branches:
+              ignore: master
+          pkg-manager: yarn 
+          version: '12.22' 
+  build-and-publish:
+    jobs:
+      - node/test:
+          filters: &filters_master_only
+            branches:
+              only: master
+          pkg-manager: yarn 
+          version: '12.22'
+      - build-and-publish:
+          filters:
+            <<: *filters_master_only
+          context: npm
+          requires:
+            - node/test
