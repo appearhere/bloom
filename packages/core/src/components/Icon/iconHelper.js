@@ -12,6 +12,7 @@ type Props = {
   name: string,
   className?: string,
   dimensions: Dimensions,
+  onClick?: Function,
 }
 
 export default (iconSet: Object, theme: any) =>

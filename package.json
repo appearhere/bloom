@@ -8,7 +8,7 @@
     "concurrently": "^3.5.1",
     "husky": "^4.2.1",
     "jest": "22.1.2",
-    "lerna": "^2.9.0",
+    "lerna": "^4.0.0",
     "lint-staged": "^10.0.4"
   },
   "engines": {
@@ -52,7 +52,7 @@
     "stringstream": "^0.0.6",
     "merge": "^1.2.1",
     "extend": "^2.0.2",
-    "tar": "^2.0.2",
+    "tar": "^6.1.0",
     "static-eval": "^2.0.2",
     "debug": "^2.6.9",
     "tough-cookie": "^2.3.3",
