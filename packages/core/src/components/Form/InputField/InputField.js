@@ -71,14 +71,16 @@ export default class InputField extends React.Component<Props> {
             {meta}
           </Meta>
         )}
-        <Label
-          {...sharedProps}
-          htmlFor={id}
-          className={classNames.label}
-          optionalLabel={!required ? optionalLabel : undefined}
-        >
-          {label}
-        </Label>
+        {label && (
+          <Label
+              {...sharedProps}
+              htmlFor={id}
+              className={classNames.label}
+              optionalLabel={!required ? optionalLabel : undefined}
+          >
+            {label}
+          </Label>
+        )}
         {!valueReplay && placeholderValue && (
           <Placeholder {...sharedProps} className={classNames.valueReplay}>
             {placeholderValue}
