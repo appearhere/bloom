@@ -12,3 +12,25 @@ it('renders without crashing', () => {
     div,
   );
 });
+
+it('renders label if passed a label prop', () => {
+  const {container} = render(
+    <InputField label="Test Label">
+      <input />
+    </InputField>,
+  )
+
+  const labelField = container.querySelector('Label');
+  expect(labelField).toBeVisible();
+})
+
+it('does not render label if not passed a label prop', () => {
+  const {container} = render(
+    <InputField>
+      <input />
+    </InputField>,
+  )
+
+  const labelField = container.querySelector('Label');
+  expect(labelField).toBeFalsy();
+})
