@@ -54,6 +54,7 @@ import vipEntrance from './icons/icon-vip-entrance.svg';
 import instagram from './icons/icon-instagram.svg';
 import priceTag from './icons/icon-price-tag.svg';
 import security from './icons/icon-security.svg';
+import unavailableCalendar from './icons/icon-unavailable-calendar.svg';
 
 export default {
   'appearhere-brackets': appearhereBrackets,
@@ -110,4 +111,5 @@ export default {
   instagram: instagram,
   'price-tag': priceTag,
   security: security,
+  'unavailable-calendar': unavailableCalendar,
 };
