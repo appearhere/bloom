@@ -25,6 +25,10 @@
   color: var(--color-greyLight);
 }
 
+.disabled > span {
+  text-decoration: line-through;
+}
+
 .firstSelected.lastSelected {
   border-radius: 4px;
 }
