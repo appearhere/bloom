@@ -6,13 +6,13 @@ orbs:
 jobs:
   build-and-publish:
     docker:
-      - image: cimg/node:12.22.0
+      - image: cimg/node:18.20.1
     steps:
       - checkout
       - node/install:
           install-yarn: true 
           install-npm: false 
-          node-version: '12.22' 
+          node-version: '18.20.1' 
       - run:
           name: Yarn install
           command: yarn install --frozen-lockfile --production=false
@@ -47,7 +47,7 @@ workflows:
             branches:
               ignore: master
           pkg-manager: yarn 
-          version: '12.22' 
+          version: '18.20.1' 
   build-and-publish:
     jobs:
       - node/test:
@@ -55,7 +55,7 @@ workflows:
             branches:
               only: master
           pkg-manager: yarn 
-          version: '12.22'
+          version: '18.20.1'
       - build-and-publish:
           filters:
             <<: *filters_master_only
