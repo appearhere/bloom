@@ -11,7 +11,7 @@ jobs:
     - name: Set up Node
       uses: actions/setup-node@v1
       with:
-        node-version: 12.14.1
+        node-version: 18.x
 
     - name: Install Dependancies
       run: |

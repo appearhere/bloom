@@ -7,12 +7,12 @@
     "babel-jest": "^23.0.1",
     "concurrently": "^3.5.1",
     "husky": "^4.2.1",
-    "jest": "22.1.2",
-    "lerna": "^4.0.0",
+    "jest": "23.6.0",
+    "lerna": "8.0.0",
     "lint-staged": "^10.0.4"
   },
   "engines": {
-    "node": "12.x"
+    "node": "18.x"
   },
   "scripts": {
     "dev": "concurrently \"cd packages/core && yarn build:watch\" \"cd packages/common-styles && yarn build:watch\" \"cd packages/playground && yarn storybook --quiet\"",
