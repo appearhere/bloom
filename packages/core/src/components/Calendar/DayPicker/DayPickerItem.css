@@ -20,13 +20,13 @@
   text-decoration: line-through;
 }
 
+.disabled > span {
+  text-decoration: line-through;
+}
+
 .disabled {
   pointer-events: none;
   color: var(--color-greyLight);
-}
-
-.disabled > span {
-  text-decoration: line-through;
 }
 
 .firstSelected.lastSelected {
