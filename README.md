@@ -51,6 +51,12 @@ If the module import fails like so, `You may need an appropriate loader to handl
 ```
 
 ## Running the style guide
+Note: Check engines from package.json for node version.
+
+Install:
+```shell
+yarn install
+```
 
 To build the style guide for deployment:
 
@@ -63,7 +69,7 @@ This will create a static version of the style guide in `/build`.
 To build the style guide for development:
 
 ```shell
-yarn start
+yarn dev
 ```
 
 This will run the style guide, automatically opening your browser window at the root page. We use hot module reloading, so the vast majority of changes you'll make to components or the style guide itself will auto update on the page.
